@@ -1,0 +1,81 @@
+---
+layout: default
+---
+<style>
+
+.card {
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+}
+
+.bg-img {
+  background-size: cover;
+  min-height: 180px;
+  background-position: center;
+  background-color: #ccc;
+}
+
+.content {
+  padding: 15px;
+}
+
+</style>
+
+<div class="home">
+
+  {{ content }}
+
+  {% assign posts = site.posts %}
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% endif %}
+
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+
+  <ul class="post-list">
+    {% for post in posts %}
+    <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <div class="card">
+            <div class="bg-img" style="background-image: url({{post.image}})"></div>
+            <div class="content">
+              <h4>
+                  <a class="post-link" href="{{ post.url | relative_url }}">
+                      {{ post.title | escape }}
+                    </a>
+              </h4>
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <p> 
+                {%- if site.show_excerpts -%}
+                  {{ post.excerpt }}
+                {%- endif -%}
+              </p> 
+              </div>
+          </div>
+
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if site.paginate %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
+    {% endif %}
+
+    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+
+</div>

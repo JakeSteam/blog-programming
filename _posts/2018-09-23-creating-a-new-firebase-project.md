@@ -6,22 +6,7 @@ author:
     - 'Jake Lee'
 layout: post
 guid: 'https://blog.jakelee.co.uk//?p=1719'
-permalink:
-    - /creating-a-new-firebase-project/
-timeline_notification:
-    - '1537733892'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:207:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:57:\"%FULLTEXT%\r\n\r\nOriginally written by %AUTHORNAME% at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
-post_excerpt:
-    - ''
+permalink: /creating-a-new-firebase-project/
 image: /wp-content/uploads/2018/09/mky2ltg1.png
 categories:
     - Development

@@ -28,6 +28,7 @@ url: ""
 twitter_username: JakeLeeUK
 github_username: JakeSteam
 permalink: /:title/
+show_excerpts: true
 
 # Build settings
 theme: minima
@@ -38,6 +39,9 @@ plugins:
 # Plugin config
 paginate: 5
 paginate_path: page/:num/
+google_analytics: UA-220119060-1
+disqus:
+  shortname: jake-lee
 
 # Exclude from processing.
 # The following items will not be processed, by default.

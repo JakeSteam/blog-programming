@@ -42,12 +42,14 @@ layout: default
     <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <div class="card">
-            <div class="bg-img" style="background-image: url({{post.image}})"></div>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <div class="bg-img" style="background-image: url({{post.image}})"></div>
+            </a>
             <div class="content">
               <h4>
-                  <a class="post-link" href="{{ post.url | relative_url }}">
+                <a class="post-link" href="{{ post.url | relative_url }}">
                       {{ post.title | escape }}
-                    </a>
+                </a>
               </h4>
               <span class="post-meta">{{ post.date | date: date_format }}</span>
               <p> 

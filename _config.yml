@@ -37,6 +37,7 @@ plugins:
 
 # Plugin config
 paginate: 5
+paginate_path: page/:num/
 
 # Exclude from processing.
 # The following items will not be processed, by default.

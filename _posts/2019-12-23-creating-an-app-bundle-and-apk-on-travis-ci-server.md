@@ -4,19 +4,8 @@ title: 'How to create an app bundle (and APK) on Travis / CI server'
 date: '2019-12-23T17:00:01+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2624'
 permalink: /creating-an-app-bundle-and-apk-on-travis-ci-server/
-snap_isAutoPosted:
-    - '1577120404'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1209156734104805383";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1209156734104805383";s:5:"pDate";s:19:"2019-12-23 17:00:05";}}";'
-image: /wp-content/uploads/2019/12/fNlttUh-150x150.png
+image: /wp-content/uploads/2019/12/fNlttUh.png
 categories:
     - 'Android Dev'
 tags:
@@ -47,14 +36,18 @@ If you’d like to see a finished script of this post (recommended), it’s avai
 
 Before we write anything, we need to make our CI config (e.g. `.travis.yml`) able to run a shell script! Otherwise, our build config is going to get very messy. These steps are going to vary a little bit between CIs, but should be pretty similar.
 
-1. Before anything else, make sure the build scripts can be executed by changing their permissions (assuming they’re in `/build-scripts/`): ```
+1. Before anything else, make sure the build scripts can be executed by changing their permissions (assuming they’re in `/build-scripts/`): 
+
+```sh
     before_install: # Make sure build scripts can be executed
           - chmod 755 build-scripts/*.sh
-    ```
-2. Next, add your script to the `script` step, passing the built-in build directory variable: ```
+```
+2. Next, add your script to the `script` step, passing the built-in build directory variable:
+
+```sh
     script: # Runs build script
       - build-scripts/travis_build.sh $TRAVIS_BUILD_DIR
-    ```
+```
 
 Our CI is now going to run `build-scripts/travis_build.sh`, so let’s make that file and make it do something!
 
@@ -62,7 +55,7 @@ Our CI is now going to run `build-scripts/travis_build.sh`, so let’s make that
 
 This is amazingly simple, we just need to run the gradle task for bundle generation inside our `travis_build.sh` file:
 
-```
+```sh
 ./gradlew app:bundleDebug
 ```
 
@@ -72,7 +65,7 @@ If you’re using build variants (e.g. `prodDebug`), you’ll need to do `app:bu
 
 To convert our app bundle into a universal APK (an APK that can be installed on any device), we’ll need [bundletool](https://developer.android.com/studio/command-line/bundletool). This is just a case of `curl`ing it:
 
-```
+```sh
 curl -O -L "https://github.com/google/bundletool/releases/download/0.11.0/bundletool-all-0.11.0.jar"
 ```
 
@@ -80,7 +73,7 @@ curl -O -L "https://github.com/google/bundletool/releases/download/0.11.0/bundle
 
 To create our universal APK we’ll need our keystore information. This can be hardcoded, passed in, stored in environment variables, retrieved from a remote server etc, but we’ll be keeping it simple. We’re also storing a debug keystore in our repo for simplicity, and passing in the bundle &amp; output locations. Travis’ build directory is passed in from our build config.
 
-```
+```sh
 # Get the build directory from build config
 TRAVIS_BUILD_DIR=$1
 
@@ -97,7 +90,7 @@ java -jar bundletool-all-0.11.0.jar build-apks \
 
 Bundletool actually creates an `.apks` file, a zip file of our universal APK. We can get our actual APK with a quick unzip into a new `unzipped` folder:
 
-```
+```sh
 unzip ${TRAVIS_BUILD_DIR}/app/build/outputs/bundle/prodDebug/app.apks -d ${TRAVIS_BUILD_DIR}/app/build/outputs/bundle/prodDebug/unzipped;
 ```
 
@@ -112,7 +105,7 @@ Whilst the above approach does achieve the goal, the code is pretty messy and ha
 
 Inside our `travis_build.sh` script, we should extract all of our file locations and keystore information. Once this is done, it will be possible to pass the variables to a generic function that can handle any build type. For example:
 
-```
+```sh
 # Debug build variables
 DEBUG_BUNDLE_PATH=${TRAVIS_BUILD_DIR}/app/build/outputs/bundle/prodDebug/
 DEBUG_KEYSTORE_PATH=${TRAVIS_BUILD_DIR}/app/build-extras/debug.keystore
@@ -132,7 +125,7 @@ RELEASE_KEYSTORE_KEY_PASSWORD=mykeypassword
 
 Converting our script into functions will simplify the overall logic, and help clarify the code’s meaning. I chose to split my code into “bundle generating” and “bundle to apk conversion” functions. The converter also includes a quick check for the number of parameters passed:
 
-```
+```sh
 function compileAndTestDebugBundle {
     echo "Compiling and testing a debug bundle!"
     ./gradlew app:bundleDebug
@@ -167,7 +160,7 @@ function convertBundleToApk {
 
 Now, we can just call our functions (with the parameters) to perform the task, making the code’s intention much more obvious. Making a release build is as simple as passing different parameters, easy!
 
-```
+```sh
 compileAndTestDebugBundle;
 convertBundleToApk ${DEBUG_BUNDLE_PATH} ${DEBUG_KEYSTORE_PATH} ${DEBUG_KEYSTORE_PASSWORD} ${DEBUG_KEYSTORE_ALIAS} ${DEBUG_KEYSTORE_KEY_PASSWORD}
 ```
@@ -176,14 +169,14 @@ convertBundleToApk ${DEBUG_BUNDLE_PATH} ${DEBUG_KEYSTORE_PATH} ${DEBUG_KEYSTORE_
 
 Whilst our approach so far works well, it isn’t particularly secure. Our keystore passwords are in our build config, meaning they’re visible to anyone who can see our CI logs or repository. Travis’ encrypted environment variables are a great solution to this. They encrypt your password (e.g. `KEYSTORE_PASSWORD` and `KEYSTORE_KEY_PASSWORD`, and only provide it to you during a build ([they can be retrieved though!](https://blog.jakelee.co.uk/retrieving-forgotten-environment-variables-from-travis-ci/)). This can then be passed to your script and used by changing the build config to:
 
-```
+```sh
 script: # Runs build script
   - build-scripts/travis_build.sh $TRAVIS_BRANCH $KEYSTORE_PASSWORD $KEYSTORE_KEY_PASSWORD
 ```
 
 And your variable definitions to:
 
-```
+```sh
 RELEASE_KEYSTORE_PASSWORD=$2
 RELEASE_KEYSTORE_KEY_PASSWORD=$3
 ```
@@ -194,7 +187,7 @@ Whilst [the results of this post](https://gist.github.com/JakeSteam/eacc45ddd0db
 
 You could also perform a release build for specific branches, by passing the `TRAVIS_BRANCH` environment variable from the Travis config. This value can then be used in a simple if statement to create a build:
 
-```
+```sh
 if [[ ${TRAVIS_BRANCH} == "dev" ]]; then
     compileAndTestReleaseBundle;
     convertBundleToApk ${RELEASE_BUNDLE_PATH} ${RELEASE_KEYSTORE_PATH} ${RELEASE_KEYSTORE_PASSWORD} ${RELEASE_KEYSTORE_ALIAS} ${RELEASE_KEYSTORE_KEY_PASSWORD}
@@ -206,8 +199,8 @@ else
 fi
 ```
 
-Finally, the next step for me will be moving away from APKs completely, by using [Google Play Internal App Sharing](https://support.google.com/googleplay/android-developer/answer/9303479?hl=en-GB) for QA. The [article for implementing this](https://blog.jakelee.co.uk/uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/) is now available.
+Finally, the next step for me will be moving away from APKs completely, by using [Google Play Internal App Sharing](https://support.google.com/googleplay/android-developer/answer/9303479?hl=en-GB) for QA. The [article for implementing this](/uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/) is now available.
 
-PS: Just in case anyone missed it, here’s the outcome of this post: <https://gist.github.com/JakeSteam/eacc45ddd0db942d6902150f09dfa39f>
+PS: Just in case anyone missed it, here’s the outcome of this post: [https://gist.github.com/JakeSteam/eacc45ddd0db942d6902150f09dfa39f](https://gist.github.com/JakeSteam/eacc45ddd0db942d6902150f09dfa39f)
 
 PPS: Happy holidays!

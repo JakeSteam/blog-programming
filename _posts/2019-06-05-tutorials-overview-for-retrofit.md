@@ -4,24 +4,13 @@ title: 'Tutorials overview for Retrofit'
 date: '2019-06-05T17:00:51+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2521'
 permalink: /tutorials-overview-for-retrofit/
-snap_isAutoPosted:
-    - '1559750457'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:421:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:32:"urn:li:share:6542067580604162049";s:7:"postURL";s:69:"https://www.linkedin.com/feed/update/urn:li:share:6542067580604162049";s:5:"pDate";s:19:"2019-06-05 16:00:57";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1136301894308171776";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1136301894308171776";s:5:"pDate";s:19:"2019-06-05 16:00:57";}}";'
-image: /wp-content/uploads/2019/06/1_WMf1XcyKU98dOMlNnn-Agg-150x150.png
+image: /wp-content/uploads/2019/06/1_WMf1XcyKU98dOMlNnn-Agg.png
 categories:
     - 'Android Dev'
 tags:
     - API
-    - retrofit
+    - Retrofit
 ---
 
 Whilst I’ve used [Retrofit](https://square.github.io/retrofit/) before, I’d always just used the very basics and not thought much about it. Hey, it’s just the API interface, who cares right? I decided to check out a few implementations of the basics, making a repo along the way. [This GitHub repo is available here](https://github.com/JakeSteam/retrofit-experiments), and contains completed versions of most of the tutorials listed here.
@@ -30,9 +19,9 @@ This post will very briefly cover the few tutorials used, although not all were 
 
 ## “Retrofit – A simple Android tutorial” – Prakash Pun
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/1_VCQULp9m08s4dO2TgXg2Zw.png?resize=169%2C300&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/1_VCQULp9m08s4dO2TgXg2Zw.png?ssl=1)[This tutorial](https://medium.com/@prakash_pun/retrofit-a-simple-android-tutorial-48437e4e5a23) starts off strong, providing prominent links to the example repo and library. Each step is clearly defined, as well as why the code is needed. Luckily, Prakash also avoids falling into the mistake of pages upon pages of boilerplate code, and keeps it simple.
+[This tutorial](https://medium.com/@prakash_pun/retrofit-a-simple-android-tutorial-48437e4e5a23) starts off strong, providing prominent links to the example repo and library. Each step is clearly defined, as well as why the code is needed. Luckily, Prakash also avoids falling into the mistake of pages upon pages of boilerplate code, and keeps it simple.
 
-Whilst there are minor typos (`progressDoalog` springs to mind), the overall code works out of the box, and produces an impressive end result (shown on the left).
+Whilst there are minor typos (`progressDoalog` springs to mind), the overall code works out of the box, and produces an impressive end result.
 
 [The tutorial](https://medium.com/@prakash_pun/retrofit-a-simple-android-tutorial-48437e4e5a23) perfectly shows the core Retrofit concepts, albeit perhaps in not quite enough detail, but it’s an absolutely solid starting point. Another improvement would be suggestions for related resources at the end, for those curious readers who want to learn more.
 

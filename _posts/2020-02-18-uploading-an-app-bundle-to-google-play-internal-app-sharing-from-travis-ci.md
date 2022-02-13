@@ -4,19 +4,8 @@ title: 'Uploading an app bundle to Google Play Internal App Sharing from Travis 
 date: '2020-02-18T16:00:29+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2647'
 permalink: /uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/
-snap_isAutoPosted:
-    - '1582041649'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1229797930808283137";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1229797930808283137";s:5:"pDate";s:19:"2020-02-18 16:00:50";}}";'
-image: /wp-content/uploads/2020/02/UMOLAQe-150x150.png
+image: /wp-content/uploads/2020/02/UMOLAQe.png
 categories:
     - 'Android Dev'
 tags:
@@ -27,13 +16,13 @@ tags:
     - Tutorial
 ---
 
-In a post towards the end of last year, I explained [how to generate app bundles on your CI server](https://blog.jakelee.co.uk/creating-an-app-bundle-and-apk-on-travis-ci-server/) (in my case Travis). Now they’re being generated, the next step is to send them somewhere!
+In a post towards the end of last year, I explained [how to generate app bundles on your CI server](/creating-an-app-bundle-and-apk-on-travis-ci-server/) (in my case Travis). Now they’re being generated, the next step is to send them somewhere!
 
 Google Play Internal App Sharing is my chosen destination, since that allows QAs to easily download and test the app bundle.
 
 **Update**: If using Gradle plugin 3.5.0+, the app bundle will be generated at `app-<variant>.aab` (e.g. `app-debug.aab`) instead of `app.aab`. The following tutorial has been left unchanged, make sure to edit your script if using a later Gradle plugin version!
 
-This post assumes you already have a custom bash script running on your CI, and are already generating app bundles. If that isn’t the case, please read the [previous post in the series](https://blog.jakelee.co.uk/creating-an-app-bundle-and-apk-on-travis-ci-server/) (or view [the end code](https://gist.github.com/JakeSteam/eacc45ddd0db942d6902150f09dfa39f)). You can view the end result of this post [as a gist](https://gist.github.com/JakeSteam/0c68243f7e90da9bea70362461d59f34).
+This post assumes you already have a custom bash script running on your CI, and are already generating app bundles. If that isn’t the case, please read the [previous post in the series](/creating-an-app-bundle-and-apk-on-travis-ci-server/) (or view [the end code](https://gist.github.com/JakeSteam/eacc45ddd0db942d6902150f09dfa39f)). You can view the end result of this post [as a gist](https://gist.github.com/JakeSteam/0c68243f7e90da9bea70362461d59f34).
 
 Whilst the uploading process is simple, the biggest challenge is actually authenticating with Google! We’ll cover that before diving into the code itself.
 
@@ -61,7 +50,7 @@ These instructions are for a Mac, but a similar process will work on a Windows m
 3. Make sure your Terminal is in your project root (so Travis knows which account to store the file against), then enter `travis encrypt-file /scripts/serviceaccount.json`.
 4. This will make a new file `/scripts/serviceaccount.json.enc`, and output the decryption command to add to the `before_install` part of your `.travis.yml`. It will look something like:
 
-```
+```sh
 openssl aes-256-cbc -K $encrypted_def446eb3abc_key -iv $encrypted_def446eb3abc_iv -in scripts/serviceaccount.json.enc -out scripts/serviceaccount.json -d
 ```
 
@@ -73,7 +62,7 @@ Once that’s done, sending the app bundle itself is pretty easy. To start off w
 
 For this script, the overall control is handled by `uploadToInternalAppSharing`, which calls a few functions we’ll be defining shortly. There’s also a parameter check at the very start (as with all other functions in this post) and a few comments, just to help out any future maintainers.
 
-```
+```sh
 function uploadToInternalAppSharing {
     if (($# != 2)); then echo "Please pass the bundle path and service account JSON location!"; exit 2; fi
     BUNDLE_LOCATION="${1}app.aab"
@@ -106,25 +95,25 @@ Now that’s in place, we need to actually implement the functionality! The rest
 
 Inside your `.sh` script (triggered in your `.travis.yml`), specify your decrypted auth file’s location:
 
-```
-AUTH_LOCATION=<span class="pl-smi">${TRAVIS_BUILD_DIR}</span>/scripts/serviceaccount.json
+```sh
+AUTH_LOCATION=${TRAVIS_BUILD_DIR}/scripts/serviceaccount.json
 ```
 
 Next, pass this (and your bundle’s location) into `uploadToInternalAppSharing` so the file can be read:
 
-```
- SERVICE_ACCOUNT_CONFIG=<span class="pl-s"><span class="pl-pds">$(</span><span class="pl-k"><</span><span class="pl-smi">${AUTH_LOCATION}</span><span class="pl-pds">)</span></span>
+```sh
+SERVICE_ACCOUNT_CONFIG=$(${AUTH_LOCATION})
 ```
 
 Next, retrieve the necessary variables from this file. In this case, that’s the token URI, email, and private key:
 
-```
+```sh
 AUTH_SERVER=$(echo ${SERVICE_ACCOUNT_CONFIG} | jq -r '.token_uri')
 AUTH_EMAIL=$(echo ${SERVICE_ACCOUNT_CONFIG} | jq -r '.client_email')
 AUTH_KEY=$(echo ${SERVICE_ACCOUNT_CONFIG} | jq -r '.private_key')
 ```
 
-We now pass these 3 variables into our `getJwt` function, storing the result: `JWT=<span class="pl-s"><span class="pl-pds">$(</span>getJwt <span class="pl-pds">"</span><span class="pl-smi">$AUTH_SERVER</span><span class="pl-pds">"</span> <span class="pl-pds">"</span><span class="pl-smi">$AUTH_EMAIL</span><span class="pl-pds">"</span> <span class="pl-pds">"</span><span class="pl-smi">$AUTH_KEY</span><span class="pl-pds">"</span><span class="pl-pds">)</span></span>`.
+We now pass these 3 variables into our `getJwt` function, storing the result: `JWT=$(getJwt "$AUTH_SERVER" "$AUTH_EMAIL" "$AUTH_KEY")`.
 
 ## Create JWT
 
@@ -132,7 +121,7 @@ Whilst the following block of code does look a bit intimidating, it’s just per
 
 The output of this function should be a fairly lengthy string of characters, which can be used for the next step. Note that the `EOF` **must** be without any indentation, no matter how tidy you usually keep your code!
 
-```
+```sh
 function getJwt {
     if (($# != 3)); then echo "Please pass the auth server, auth email, and auth key!"; exit 2; fi
     AUTH_SERVER=$1
@@ -167,13 +156,13 @@ EOF
 }
 ```
 
-Once we have our JWT, it can be passed to our `getAccessToken` function, again saving the result: `ACCESS_TOKEN=<span class="pl-s"><span class="pl-pds">$(</span>getAccessToken <span class="pl-pds">"</span><span class="pl-smi">$AUTH_SERVER</span><span class="pl-pds">"</span> <span class="pl-pds">"</span><span class="pl-smi">$JWT</span><span class="pl-pds">"</span><span class="pl-pds">)</span></span>`
+Once we have our JWT, it can be passed to our `getAccessToken` function, again saving the result: `ACCESS_TOKEN=$(getAccessToken "$AUTH_SERVER" "$JWT")`
 
 ## Retrieve auth token
 
 We now need to make a call to the auth server we retrieved from our service account config earlier. We’re going to send it our JWT, and hopefully get back a token we can use to send content for the next few minutes. Notice the same `jq -r` technique as earlier used again.
 
-```
+```sh
 function getAccessToken {
     if (($# != 2)); then echo "Please pass the auth server and JWT!"; exit 2; fi
     AUTH_SERVER=$1
@@ -199,7 +188,7 @@ function getAccessToken {
 }
 ```
 
-Finally we’re ready to actually send our bundle! We do this by sending our access token (and bundle location) to our new `uploadBundle` function. We keep track of the result as usual: `URL=<span class="pl-s"><span class="pl-pds">$(</span>uploadBundle <span class="pl-pds">"</span><span class="pl-smi">$ACCESS_TOKEN</span><span class="pl-pds">"</span> <span class="pl-pds">"</span><span class="pl-smi">$BUNDLE_LOCATION</span><span class="pl-pds">"</span><span class="pl-pds">)</span></span>`
+Finally we’re ready to actually send our bundle! We do this by sending our access token (and bundle location) to our new `uploadBundle` function. We keep track of the result as usual: `URL=$(uploadBundle "$ACCESS_TOKEN" "$BUNDLE_LOCATION")`
 
 ## Upload to Internal App Sharing
 
@@ -207,7 +196,7 @@ This function is very similar to the access token fetching, except this time we�
 
 This will finally return the URL we’re after, which testers can use to download the app.
 
-```
+```sh
 function uploadBundle {
     if (($# != 2)); then echo "Please pass the access token and bundle location!"; exit 2; fi
     ACCESS_TOKEN=$1
@@ -238,7 +227,7 @@ function uploadBundle {
 
 Now, when this script runs on your CI, you should see something like:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/02/UMOLAQe.png?resize=700%2C200&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/02/UMOLAQe.png?ssl=1)
+[![](/wp-content/uploads/2020/02/UMOLAQe.png)](/wp-content/uploads/2020/02/UMOLAQe.png)
 
 If anything didn’t quite work out, [the gist of this post](https://gist.github.com/JakeSteam/0c68243f7e90da9bea70362461d59f34) may help! Otherwise, feel free to leave a comment and I’ll help out.
 

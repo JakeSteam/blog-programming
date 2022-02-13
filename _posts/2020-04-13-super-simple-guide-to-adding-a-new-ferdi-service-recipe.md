@@ -4,23 +4,12 @@ title: 'Super simple guide to adding a new Ferdi service recipe'
 date: '2020-04-13T14:00:59+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2730'
 permalink: /super-simple-guide-to-adding-a-new-ferdi-service-recipe/
-snap_isAutoPosted:
-    - '1586782974'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1249684487933505537";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1249684487933505537";s:5:"pDate";s:19:"2020-04-13 13:02:54";}}";'
 image: /wp-content/uploads/2020/04/LKmK4TP.png
 categories:
     - 'Web Dev'
 tags:
-    - ferdi
+    - Ferdi
     - GitHub
     - JavaScript
     - Tutorial
@@ -42,7 +31,7 @@ Whilst it is possible to create a recipe from scratch, it’s far easier to use 
 
 Once you’re there, create a folder called “dev”, and copy one of the existing recipe folders into it. I used Discord, as it seemed to have simpler config files than my other recipes. Here’s how your `recipes` folder should look, with a copied folder inside `dev`:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/RBjHnOs.png?resize=555%2C207&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/RBjHnOs.png?ssl=1)
+[![](/wp-content/uploads/2020/04/RBjHnOs.png)](/wp-content/uploads/2020/04/RBjHnOs.png)
 
 ### Creating your recipe
 
@@ -84,7 +73,8 @@ module.exports = Franz => {
 };
 ```
 
-### Loading into Ferdi[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/LKmK4TP.png?resize=300%2C246&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/LKmK4TP.png?ssl=1)
+### Loading into Ferdi
+[![](/wp-content/uploads/2020/04/LKmK4TP.png)](/wp-content/uploads/2020/04/LKmK4TP.png)
 
 Now that you have the first draft of your custom recipe inside the `dev` folder, it can be loaded into Ferdi:
 

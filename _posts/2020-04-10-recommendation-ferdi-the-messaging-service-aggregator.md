@@ -4,27 +4,16 @@ title: 'Recommendation: Ferdi, the messaging service aggregator'
 date: '2020-04-10T14:40:26+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2716'
 permalink: /recommendation-ferdi-the-messaging-service-aggregator/
-snap_isAutoPosted:
-    - '1586526032'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1248607012998414338";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1248607012998414338";s:5:"pDate";s:19:"2020-04-10 13:41:24";}}";'
 image: /wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d.png
 categories:
     - Tips
 tags:
-    - chat
-    - ferdi
-    - messaging
-    - recommendation
-    - wfh
+    - Chat
+    - Ferdi
+    - Messaging
+    - Recommendation
+    - WFH
 ---
 
 Most of us have a surprisingly wide variety of messaging services installed on our laptops / desktops that we use for different types of communication. Between WhatsApp, Teams, Discord, Slack, Messenger etc, it’s easy to lose track of them all!
@@ -41,7 +30,8 @@ Ferdi lets you combine all of your messaging services into one, behaving essenti
 
 Just like Franz, Ferdi is open source and actively developed. However, by working on a donation model it provides a much more user friendly experience, for free. Ferdi is also [part of the Open Collective](https://opencollective.com/getferdi#section-budget), openly sharing their costs &amp; donations.
 
-## Features[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/feature-more-7eb58f3387e6287ed50def73d5960fb1.png?resize=300%2C290&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/feature-more-7eb58f3387e6287ed50def73d5960fb1.png?ssl=1)
+## Features
+[![](/wp-content/uploads/2020/04/feature-more-7eb58f3387e6287ed50def73d5960fb1.png)](/wp-content/uploads/2020/04/feature-more-7eb58f3387e6287ed50def73d5960fb1.png)
 
 Personally, the main appeal of Ferdi is the straightforward and simple approach to managing my services. However, it has a lot of advanced features for those users that want them, I’ll run through a few:
 
@@ -57,7 +47,8 @@ Personally, the main appeal of Ferdi is the straightforward and simple approach 
 
 **Custom CSS / JS**: Want to customise WhatsApp’s appearance? Add some extra functionality into Slack? No problem, just [configure custom CSS / JS to run](https://github.com/getferdi/ferdi/wiki/Using-user.css-and-user.js), and Franz will inject them for you!
 
-## Messaging Services[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d-1.png?resize=300%2C223&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d-1.png?ssl=1)
+## Messaging Services
+[![](/wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d-1.png)](/wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d-1.png)
 
 Ferdi supports [~100 services out of the box](https://getferdi.com/services/), which is made essentially infinite by the support for custom sites.
 
@@ -69,9 +60,9 @@ As much as I love Ferdi, it’s only fair to discuss drawbacks. Luckily, there a
 
 The only notable one for me has to be the memory usage. As it’s essentially Chrome with 9 tabs, it has the same RAM hunger that Chrome does.
 
-For my relatively high-end desktop, this means ~5% of my CPU and ~2GB of RAM is used. This can be reduced by letting Ferdi disable background messaging services, but it seems reasonable to me.
+For my relatively high-end desktop, this means \~5% of my CPU and \~2GB of RAM is used. This can be reduced by letting Ferdi disable background messaging services, but it seems reasonable to me.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/jR0U7Gz.png?resize=683%2C519&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/jR0U7Gz.png?ssl=1)
+[![](/wp-content/uploads/2020/04/jR0U7Gz.png)](/wp-content/uploads/2020/04/jR0U7Gz.png)
 
 ## Summary
 

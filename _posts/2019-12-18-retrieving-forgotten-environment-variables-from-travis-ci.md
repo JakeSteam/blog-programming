@@ -4,19 +4,8 @@ title: 'Retrieving forgotten environment variables from Travis CI'
 date: '2019-12-18T15:00:37+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2615'
 permalink: /retrieving-forgotten-environment-variables-from-travis-ci/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snap_isAutoPosted:
-    - '1576681270'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1207314873027305472";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1207314873027305472";s:5:"pDate";s:19:"2019-12-18 15:01:11";}}";'
-image: /wp-content/uploads/2019/12/Screenshot-2019-12-16-at-09.29.23-150x150.png
+image: /wp-content/uploads/2019/12/Screenshot-2019-12-16-at-09.29.23.png
 categories:
     - 'Android Dev'
     - Development
@@ -45,7 +34,7 @@ Since Travis (correctly) tries very hard to stop you getting these variables bac
 
 Before running the script, you will need to add a new environment variable to Travis called `ENC_KEY`, and make it only available on your current branch. It should end up looking like this:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png?resize=700%2C139&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png?ssl=1)
+[![](/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png)](/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png)
 
 Note: It’s good practice to always limit the branches your environment variables can run on.
 
@@ -56,14 +45,12 @@ Next, add the following to your `.travis.yml` build config. Don’t forget to re
 - `MY_VARIABLE` (two times) with your target encrypted variable’s name.
 - `arandomfilename` (three times) with a string of your choice.
 
-```
-<pre class="code-block language-yaml ember-view codedisplay line-numbers" id="rccb_itvplayer_android:.travis.yml@5cbc3f3144306ca4">```yaml
-<span class="token key atrule">install</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> sudo apt<span class="token punctuation">-</span>get install <span class="token punctuation">-</span>y ccrypt
-  <span class="token punctuation">-</span> echo MY_VARIABLE = $MY_VARIABLE <span class="token punctuation">></span> arandomfilename.txt
-  <span class="token punctuation">-</span> ccencrypt arandonfilename.txt <span class="token punctuation">-</span>K $ENC_KEY
-  <span class="token punctuation">-</span> curl <span class="token punctuation">-</span>F'file=@arandomfilename.txt.cpt' https<span class="token punctuation">:</span>//file.io
-```
+```yaml
+install:
+  - sudo apt-get install -y ccrypt
+  - echo MY_VARIABLE = $MY_VARIABLE > arandomfilename.txt
+  - ccencrypt arandonfilename.txt -K $ENC_KEY
+  - curl -F'file=@arandomfilename.txt.cpt' https://file.io
 ```
 
 This script installs ccrypt, puts our decrypted variable into a file, encrypts the file, and hosts it.
@@ -74,8 +61,8 @@ This script installs ccrypt, puts our decrypted variable into a file, encrypts t
 2. Push the branch.
 3. You should now see a response with a URL after your last cURL statement, e.g:
 
-```
-<pre class="log-line"><span id="0-1324">$ curl -F'file=@arandomfilename.txt.cpt' https://file.io</span>
+```text
+$ curl -F'file=@arandomfilename.txt.cpt' https://file.io
 {"success":true,"key":"he5h9","link":"https://file.io/he5h9","expiry":"14 days"}
 ```
 

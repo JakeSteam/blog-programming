@@ -4,18 +4,7 @@ title: 'How to see all dependencies in a multi-module Android app'
 date: '2019-12-16T17:00:09+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2610'
 permalink: /how-to-see-all-dependencies-in-a-multi-module-android-app/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snap_isAutoPosted:
-    - '1576515701'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1206620423762436098";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1206620423762436098";s:5:"pDate";s:19:"2019-12-16 17:01:41";}}";'
 image: /wp-content/uploads/2019/12/Screenshot-2019-12-14-at-19.31.20.png
 categories:
     - 'Android Dev'
@@ -35,7 +24,7 @@ If you need a list of all dependencies, and all of their dependencies, and all o
 
 Running `./gradlew app:dependencies` in the terminal will produce something similar to:
 
-```
+```text
 ...
 | +--- androidx.preference:preference:1.1.0
 | | +--- androidx.appcompat:appcompat:1.1.0 (*)
@@ -56,7 +45,7 @@ Running `./gradlew app:dependencies` in the terminal will produce something simi
 
 If however, you just want a simple list of all dependencies, `./gradlew app:androidDependencies` is best. This will list any jar files, submodules, and libraries used in your app.
 
-```
+```text
 +--- :ui (variant: debug)
 +--- me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:3.0.0@aar
 +--- me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:3.0.0@aar

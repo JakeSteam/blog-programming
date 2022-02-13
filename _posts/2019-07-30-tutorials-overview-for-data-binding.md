@@ -4,25 +4,14 @@ title: 'Tutorials overview for data binding'
 date: '2019-07-30T15:00:29+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2568'
 permalink: /tutorials-overview-for-data-binding/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snap_isAutoPosted:
-    - '1564495456'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1156203863143342080";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1156203863143342080";s:5:"pDate";s:19:"2019-07-30 14:04:16";}}";'
-image: /wp-content/uploads/2019/07/6298541688ff31c4-150x150.png
+image: /wp-content/uploads/2019/07/6298541688ff31c4.png
 categories:
     - 'Android Dev'
 tags:
-    - databinding
+    - DataBinding
     - Layout
-    - viewbinding
+    - ViewBinding
 ---
 
 Somehow I’ve spent a few years developing for Android without coming across data binding in a real project. I’ve seen it mentioned, assumed the basics, but never actually used it. I recently had the opportunity to use some of it’s more advanced capabilities for work, which seemed a good time to try out the most popular data binding tutorials!
@@ -41,7 +30,7 @@ I really wish I could get on better with the tutorial, but just being shown scre
 
 ## “Android working with DataBinding” – Ravi Tamada
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/androidhive.png?resize=300%2C279&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/androidhive.png?ssl=1)As a contrast to the previous tutorial, [AndroidHive’s data binding tutorial](https://www.androidhive.info/android-working-with-databinding/) explains all code shown. It very clearly explains the concept and reasoning behind data binding, as well as explaining what every block of code does.
+As a contrast to the previous tutorial, [AndroidHive’s data binding tutorial](https://www.androidhive.info/android-working-with-databinding/) explains all code shown. It very clearly explains the concept and reasoning behind data binding, as well as explaining what every block of code does.
 
 Unusually for these tutorials, FAB / button click events were covered in detail. From passing parameters to binding the handler, the common use cases were covered nicely. A nice touch was providing binding adapter instructions for Picasso &amp; Glide, allowing users to apply whatever existing image loading library knowledge they had.
 
@@ -57,7 +46,7 @@ In the article’s defence it does start with “This is the first article in th
 
 ## **“Android Data Binding codelab” – Google**
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/codelabs.png?resize=248%2C691&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/codelabs.png?ssl=1)As the official data binding resource from Google themselves, I had high hopes for [their codelab tutorial](https://codelabs.developers.google.com/codelabs/android-databinding/#0). High hopes that were lived up to by the extremely high level of quality throughout.
+As the official data binding resource from Google themselves, I had high hopes for [their codelab tutorial](https://codelabs.developers.google.com/codelabs/android-databinding/#0). High hopes that were lived up to by the extremely high level of quality throughout.
 
 The inclusion of screenshots and helpful tips alongside the code really helps enhance understanding. Additionally, as the code files aren’t being shown in their entirety repeatedly, actually implementing the codelab requires reading and understanding the instructions.
 
@@ -71,7 +60,7 @@ From the codelabs’ clean interface to the engaging writing, this tutorial is b
 
 ## “Data Binding in Android” by Morris
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/TqeKhEC.png?resize=286%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/07/TqeKhEC.png?ssl=1)[This tutorial by AndroidWave](https://androidwave.com/data-binding-in-android-tutorial/) made the decision to produce a fully designed prototype to databind, instead of the usual proof of concept style. This has the significant disadvantage of the first block of code being 150 lines of XML. Almost all of it completely irrelevant to databinding (and containing typos).
+[This tutorial by AndroidWave](https://androidwave.com/data-binding-in-android-tutorial/) made the decision to produce a fully designed prototype to databind, instead of the usual proof of concept style. This has the significant disadvantage of the first block of code being 150 lines of XML. Almost all of it completely irrelevant to databinding (and containing typos).
 
 It also has dependencies on drawables, colours, and even custom fonts that need to be implemented, in the first file alone! This same giant block of XML is shown multiple times in the article, with the differences not made clear.
 

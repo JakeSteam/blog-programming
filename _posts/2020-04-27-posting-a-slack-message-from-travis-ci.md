@@ -4,25 +4,14 @@ title: 'Posting a Slack message from Travis CI'
 date: '2020-04-27T16:00:09+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2754'
 permalink: /posting-a-slack-message-from-travis-ci/
-snap_isAutoPosted:
-    - '1587999658'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:218:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
 image: /wp-content/uploads/2020/04/tgzBJ6o.png
 categories:
     - Development
 tags:
     - CI
-    - git
-    - slack
+    - Git
+    - Slack
     - Travis
 ---
 
@@ -32,7 +21,7 @@ We’ll be using our CI’s bash script for this, [the start of this article](ht
 
 Not interested in the full tutorial? [Here’s the final Gist](https://gist.github.com/JakeSteam/671658a8654b0ab19b61cfa9e9c100c9), and here’s what we’ll end up with:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/tgzBJ6o.png?resize=510%2C214&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/tgzBJ6o.png?ssl=1)
+[![](/wp-content/uploads/2020/04/tgzBJ6o.png)](/wp-content/uploads/2020/04/tgzBJ6o.png)
 
 ## Formatting a Slack message
 
@@ -40,11 +29,11 @@ The first step is telling Slack how our message should look. Slack has a [really
 
 [Here is the template](https://api.slack.com/tools/block-kit-builder?mode=message&blocks=%5B%7B%22type%22%3A%22section%22%2C%22text%22%3A%7B%22type%22%3A%22mrkdwn%22%2C%22text%22%3A%22*%24BRANCH%20build%20(%23%24BUILD_NUMBER)%20available%20on%20devices!*%5Cn*Message%3A*%20%24COMMIT_MESSAGE%22%7D%7D%2C%7B%22type%22%3A%22section%22%2C%22fields%22%3A%5B%7B%22type%22%3A%22mrkdwn%22%2C%22text%22%3A%22*Debuggable%3A*%5Cn%24DEBUGGABLE%22%7D%2C%7B%22type%22%3A%22mrkdwn%22%2C%22text%22%3A%22*Hash%3A*%5Cn%24COMMIT_HASH_SHORT%22%7D%5D%7D%2C%7B%22type%22%3A%22actions%22%2C%22elements%22%3A%5B%7B%22type%22%3A%22button%22%2C%22text%22%3A%7B%22type%22%3A%22plain_text%22%2C%22text%22%3A%22Install%22%7D%2C%22value%22%3A%22internal-app-sharing%22%2C%22url%22%3A%22https%3A%2F%2Fexample.com%22%7D%2C%7B%22type%22%3A%22button%22%2C%22text%22%3A%7B%22type%22%3A%22plain_text%22%2C%22text%22%3A%22Help%22%7D%2C%22value%22%3A%22help%22%2C%22url%22%3A%22https%3A%2F%2Fsupport.google.com%2Fgoogleplay%2Fandroid-developer%2Fanswer%2F9303479%23on%22%7D%2C%7B%22type%22%3A%22button%22%2C%22text%22%3A%7B%22type%22%3A%22plain_text%22%2C%22text%22%3A%22Travis%22%7D%2C%22value%22%3A%22travis%22%2C%22url%22%3A%22https%3A%2F%2Fexample.com%22%7D%2C%7B%22type%22%3A%22button%22%2C%22text%22%3A%7B%22type%22%3A%22plain_text%22%2C%22text%22%3A%22GitHub%22%7D%2C%22value%22%3A%22github%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2F%24REPO%2Fcommit%2F%24COMMIT_HASH%22%7D%5D%7D%5D) I created, it might be helpful as a starting point for your own.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/oPB3nFh.png?resize=700%2C328&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/oPB3nFh.png?ssl=1)
+[![](/wp-content/uploads/2020/04/oPB3nFh.png)](/wp-content/uploads/2020/04/oPB3nFh.png)
 
 In my messages, I display metadata QA / other devs might find useful: branch name, build number, commit message, commit hash, debuggable state.
 
-I’ve also included 4 buttons. One for the Google Play Internal App Sharing link ([guide to setting it up](https://blog.jakelee.co.uk/uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/)), one for help installing, one for the Travis build, and one for the commit’s link on GitHub.
+I’ve also included 4 buttons. One for the Google Play Internal App Sharing link ([guide to setting it up](/uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/)), one for help installing, one for the Travis build, and one for the commit’s link on GitHub.
 
 ## Getting a Slack webhook
 
@@ -61,7 +50,7 @@ Slack has [an official guide](https://api.slack.com/messaging/webhooks) to creat
 
 From your existing bash script ([guide to setting it up](https://blog.jakelee.co.uk/creating-an-app-bundle-and-apk-on-travis-ci-server/) if you need to), we just need to do a simple POST to our webhook. This assumes you’ve defined your Slack message’s JSON (`$DATA`) &amp; webhook URL (`$WEBHOOK_URL`) already:
 
-```
+```sh
 HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" \
     --header "Content-type: application/json" \
     --request POST \
@@ -93,10 +82,10 @@ It might be useful to tag user(s) in your message. This can be done by adding th
 2. Clicking “View full profile”
 3. Pressing the 3 dot icon, you can then copy their member ID:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/iO1uMIo.png?resize=475%2C295&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/iO1uMIo.png?ssl=1)
+[![](/wp-content/uploads/2020/04/iO1uMIo.png)](/wp-content/uploads/2020/04/iO1uMIo.png)
 
 Another improvement would be stopping the “warning” icon that appears next to a clicked button. This appears because Slack is trying to transfer (empty) data to the arbitrary URL we’re using, which isn’t accepting it.
 
 Unfortunately there doesn’t seem to be an easy fix, since we’re using simple webhooks and [not anything more advanced](https://github.com/slackapi/node-slack-sdk/issues/869).
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/XFNE0x1.png?resize=478%2C178&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/04/XFNE0x1.png?ssl=1)
+[![](/wp-content/uploads/2020/04/XFNE0x1.png)](/wp-content/uploads/2020/04/XFNE0x1.png)

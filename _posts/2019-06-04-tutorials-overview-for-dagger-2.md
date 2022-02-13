@@ -4,24 +4,14 @@ title: 'Tutorials overview for Dagger 2'
 date: '2019-06-04T14:47:20+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2517'
 permalink: /tutorials-overview-for-dagger-2/
-snap_isAutoPosted:
-    - '1559656041'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:421:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:32:"urn:li:share:6541671624544931840";s:7:"postURL";s:69:"https://www.linkedin.com/feed/update/urn:li:share:6541671624544931840";s:5:"pDate";s:19:"2019-06-04 13:47:34";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1135905938240614401";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1135905938240614401";s:5:"pDate";s:19:"2019-06-04 13:47:34";}}";'
+image: /assets/images/2022/dagger.png
 categories:
     - 'Android Dev'
 tags:
-    - dagger2
-    - dependencyinjection
-    - di
+    - Dagger2
+    - DependencyInjection
+    - DI
     - Tutorial
 ---
 

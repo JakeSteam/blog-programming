@@ -4,25 +4,14 @@ title: 'How to create (and test) an app update listener'
 date: '2019-06-10T12:55:33+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2546'
 permalink: /how-to-create-and-test-an-app-update-listener/
-snap_isAutoPosted:
-    - '1560167734'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1138052142323908608";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1138052142323908608";s:5:"pDate";s:19:"2019-06-10 11:55:49";}}";'
-snapLI:
-    - 's:421:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:32:"urn:li:share:6543817835750268928";s:7:"postURL";s:69:"https://www.linkedin.com/feed/update/urn:li:share:6543817835750268928";s:5:"pDate";s:19:"2019-06-10 11:55:50";}}";'
-image: /wp-content/uploads/2019/06/Untitled-1-150x150.png
+image: /wp-content/uploads/2019/06/Untitled-1.png
 categories:
     - 'Android Dev'
 tags:
     - adb
     - Intents
-    - update
+    - Update
 ---
 
 Running code when your app updates can be a useful marketing tool, and a reliable way of enabling new functionality only when the user updates.
@@ -87,12 +76,12 @@ adb install -r <path to your apk>
 
 For example, the command on a Windows machine to update [this tutorial’s app](https://github.com/JakeSteam/UpdateListener) may look like:
 
-```
+```text
 adb install -r C:\\Repositories\\updatelistener\\app\\build\\outputs\\apk\\debug\\app-debug.apk
 ```
 
 You should see “Success” underneath your command in the terminal.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg?resize=700%2C128&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg?ssl=1)
+[![](/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg)](/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg)
 
 The app is then updated like normal, and your listener called. In [the sample repo](https://github.com/JakeSteam/UpdateListener), an update will cause the new version code to be displayed in a Toast.

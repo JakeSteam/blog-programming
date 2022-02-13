@@ -4,24 +4,13 @@ title: 'How to use 9-patch images for resizable backgrounds in Android'
 date: '2019-06-03T16:24:19+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2504'
 permalink: /how-to-use-9-patch-images-for-resizable-backgrounds-in-android/
-snap_isAutoPosted:
-    - '1559575460'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:421:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:32:"urn:li:share:6541333668001128448";s:7:"postURL";s:69:"https://www.linkedin.com/feed/update/urn:li:share:6541333668001128448";s:5:"pDate";s:19:"2019-06-03 15:24:38";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1135567974675505154";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1135567974675505154";s:5:"pDate";s:19:"2019-06-03 15:24:37";}}";'
-image: /wp-content/uploads/2019/06/Untitled-150x150.png
+image: /wp-content/uploads/2019/06/X8CYLz1.png
 categories:
     - 'Android Dev'
 tags:
     - 9patch
-    - background
+    - Background
     - Drawable
 ---
 
@@ -33,14 +22,18 @@ My early apps suffered from this often (e.g. [Pixel Blacksmith](https://play.goo
 
 ## Normal PNG
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/zzzKxNu.png?resize=181%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/zzzKxNu.png?ssl=1)Just setting the PNG as the background technically works, as the image resizes, but the flaws are immediately obvious if you click the thumbnail on the left to view the full image.
+[![](/wp-content/uploads/2019/06/zzzKxNu.png)](/wp-content/uploads/2019/06/zzzKxNu.png)
+
+Just setting the PNG as the background technically works, as the image resizes, but the flaws are immediately obvious if you click the thumbnail on the left to view the full image.
 
 The corners are impressively both pixellated AND blurry, as Android tries to scale the small image to a much larger area. This effect is most obvious on “Wide”, but even “Small” shows some hints of it.
 
 
 ## 9-Patch PNG
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Annotation-2019-06-03-161729.jpg?resize=169%2C300&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Annotation-2019-06-03-161729.jpg?ssl=1)Once the image has been converted to a 9-patch, it handles all of the earlier situations perfectly. There is no blurriness or pixellation, and the “Small” square is handled just as gracefully as the larger ones.
+[![](/wp-content/uploads/2019/06/Annotation-2019-06-03-161729.jpg)](/wp-content/uploads/2019/06/Annotation-2019-06-03-161729.jpg)
+
+Once the image has been converted to a 9-patch, it handles all of the earlier situations perfectly. There is no blurriness or pixellation, and the “Small” square is handled just as gracefully as the larger ones.
 
 This tutorial will walk you through the 9-patch editor, and provide a few tips for converting your own PNGs.
 
@@ -56,7 +49,7 @@ To create your first 9-patch:
 3. Select where the file should be placed (usually the same `res/drawable` folder).
 4. This will open up the 9 patch editor, described below:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/X8CYLz1.png?resize=700%2C359&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/X8CYLz1.png?ssl=1)
+[![](/wp-content/uploads/2019/06/X8CYLz1.png)](/wp-content/uploads/2019/06/X8CYLz1.png)
 
 The 9-patch editor consists of:
 
@@ -80,7 +73,7 @@ Note: The top and left bars define which areas are **stretchable**, but the bott
 
 In most cases, your 9-patch will end up perfectly symmetrical (vertically &amp; horizontally), with black bars on all 4 edges and transparent corners. This will allow the edges to stretch, but not the corners. For example, here is how the earlier example looks in the editor:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Untitled.png?resize=456%2C254&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/06/Untitled.png?ssl=1)
+[![](/wp-content/uploads/2019/06/Untitled.png)](/wp-content/uploads/2019/06/Untitled.png)
 
 Make sure to check your image with “Show bad patches”, to make sure no almost unnoticeable stretching issues will occur.
 

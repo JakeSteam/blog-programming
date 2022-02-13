@@ -24,6 +24,7 @@ main_url: https://jakelee.co.uk
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 
 # Syntax highlighter settings
 kramdown:

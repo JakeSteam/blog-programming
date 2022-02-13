@@ -4,7 +4,6 @@ title: 'Exporting Levels Into QR Codes Using ZXing'
 date: '2017-04-06T18:49:20+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=942'
 permalink: /exporting-levels-into-qr-codes-using-zxing/
 image: /wp-content/uploads/2017/04/yht4w3v.png
 categories:
@@ -13,9 +12,8 @@ tags:
     - 'QR Code'
     - 'User Generated Content'
     - ZXing
+    - Java
 ---
-
-## The Problem
 
 [Connect Quest](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow) is an android game where players rotate tiles to make a city flow. They also have the ability to create their own levels, and share them with other players. The data transfer method chosen was QR codes, since it was the most widely-used and compact method available.
 
@@ -23,7 +21,7 @@ tags:
 
 To allow the easy transferring of data, card images could be generated from levels, which contained information about the map alongside the QR code. These could then be shared easily via any normal system. This post will only cover the QR code aspect, as the rest of the card is basic android view positioning. The popular [ZXing](https://github.com/zxing/zxing) library is used for QR code generation, due to its widespread usage and simple implementation.
 
-![1IyWDGG](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2017/04/1iywdgg.png?resize=700%2C605&ssl=1)
+![new puzzle](/wp-content/uploads/2017/04/1iywdgg.png)
 
 #### Creating String
 
@@ -32,7 +30,6 @@ First, your level structure must be converted to a string. This needs to be extr
 An example implementation is below, but the data to be stored and the delimiters to use are very problem-specific.
 
 ```
-
 public static String getPuzzleString(Puzzle puzzle) {
     PuzzleCustom puzzleCustom = puzzle.getCustomData();
     StringBuilder sb = new StringBuilder();
@@ -51,8 +48,8 @@ public static String getPuzzleString(Puzzle puzzle) {
     }
     return sb.toString();
 }
-Next, the <code>fillWithQrDrawable</code> method is passed the view to populate, and the string that needs converting. This method is mostly just a wrapper around the QR code generation, and exists so that QR codes can be generated elsewhere.
 ```
+Next, the <code>fillWithQrDrawable</code> method is passed the view to populate, and the string that needs converting. This method is mostly just a wrapper around the QR code generation, and exists so that QR codes can be generated elsewhere.
 
 ```
 public static void fillWithQrDrawable(ImageView imageView, String text) {

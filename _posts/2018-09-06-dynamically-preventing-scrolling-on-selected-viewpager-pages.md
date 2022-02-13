@@ -4,10 +4,7 @@ title: 'Dynamically preventing scrolling on selected ViewPager pages'
 date: '2018-09-06T21:12:05+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1680'
 permalink: /dynamically-preventing-scrolling-on-selected-viewpager-pages/
-timeline_notification:
-    - '1536268326'
 image: /wp-content/uploads/2018/09/2yz7c05.png
 categories:
     - 'Android Dev'
@@ -26,7 +23,6 @@ This article will implement determining and changing at any time the current per
 Just replacing `ViewPager` with the full path of your `LockableViewPager` is the only change needed in your layout XML.
 
 ```
-
 <com.example.LockableViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
@@ -38,7 +34,6 @@ Just replacing `ViewPager` with the full path of your `LockableViewPager` is the
 First, a new class extending `ViewPager` has to be created, as well as values for the `initialXValue` (used to determine swipe direction) and `direction` (used to store permitted swipe direction):
 
 ```
-
 class LockableViewPager(context: Context, attrs: AttributeSet) : ViewPager(context, attrs) {
 
     private var initialXValue: Float = 0f
@@ -48,14 +43,12 @@ class LockableViewPager(context: Context, attrs: AttributeSet) : ViewPager(conte
 Additionally, an enum of the possible scroll directions needs to be defined outside the class:
 
 ```
-
 enum class SwipeDirection { BOTH, LEFT, RIGHT, NONE }
 ```
 
 Next, wrappers around the existing `onTouchEvent` and `onInterceptTouchEvent` functions have to be added, so any attempts to move between pages can be checked before being acted on:
 
 ```
-
     override fun onTouchEvent(event: MotionEvent): Boolean {
         return if (this.isSwipeAllowed(event)) {
             super.onTouchEvent(event)
@@ -74,7 +67,6 @@ Now, the `isSwipeAllowed` function from the previous wrappers has to be implemen
 When the `MotionEvent.ACTION_DOWN` is fired, the `initialXValue` is updated, so we know where the swipe started. When any subsequent `MotionEvent.ACTION_MOVE` event occurs, the `initialXValue` and swipe event’s `x` can be used to calculate which way the user is swiping. The function can then return whether or not the swipe event is in a permitted direction.
 
 ```
-
     private fun isSwipeAllowed(event: MotionEvent): Boolean {
         if (this.direction === SwipeDirection.BOTH) {
             return true
@@ -112,7 +104,6 @@ Finally, a simple function for setting the permitted swipe direction is added, a
 To use the new `LockableViewPager`, just set your desired swipe direction during `onCreate` / `onViewCreated`:
 
 ```
-
 pager.setAllowedSwipeDirection(SwipeDirection.LEFT)
 ```
 
@@ -122,8 +113,7 @@ This code was originally used for inviting other users to an account. In this us
 
 First, during the `onCreate` / `onViewCreated`, a custom page change listener is set using `pager.addOnPageChangeListener(pageChangeListener())` so that swipe logic can be updated whenever a new page is navigated to. This listener is defined as:
 
-```
-
+```java
     private fun pageChangeListener(): ViewPager.SimpleOnPageChangeListener =
         object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
@@ -137,7 +127,6 @@ First, during the `onCreate` / `onViewCreated`, a custom page change listener is
 First, if the current user is required, no swiping is permitted:
 
 ```
-
         if (isDriverRequired(pager.currentItem)) {
             return SwipeDirection.NONE
         }
@@ -146,7 +135,6 @@ First, if the current user is required, no swiping is permitted:
 Next, various useful but simple values are calculated, to ensure there are no unreadably complicated boolean logic statements. The number of pages in the `LockableViewPager` is used extensively, and each statement builds on the last to avoid repeated logic.
 
 ```
-
         val isFirstUser = pager.currentItem == 0
         val isLastUser = pager.currentItem == pager.adapter!!.count - 1
         val isUserToLeft = !isFirstUser && pager.currentItem > 0
@@ -158,7 +146,6 @@ Next, various useful but simple values are calculated, to ensure there are no un
 Now that all the information required to calculate the permitted swipe directions has been calculated, the actual end logic is extremely simple:
 
 ```
-
         if (isOptionalUserOnLeft && isOptionalUserOnRight) {
             return SwipeDirection.BOTH
         } else if (isOptionalUserOnLeft) {

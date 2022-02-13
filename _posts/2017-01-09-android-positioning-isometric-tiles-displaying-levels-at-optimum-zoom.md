@@ -1,10 +1,9 @@
 ---
 id: 264
-title: 'Android: Positioning Isometric Tiles &#038; Displaying Levels At Optimum Zoom'
+title: 'Positioning Isometric Tiles &#038; Displaying Levels At Optimum Zoom in Android'
 date: '2017-01-09T19:49:00+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=264'
 permalink: /android-positioning-isometric-tiles-displaying-levels-at-optimum-zoom/
 image: /wp-content/uploads/2017/01/screenshot_20170107-0034471.png
 categories:
@@ -13,9 +12,8 @@ tags:
     - DisplayMetrics
     - 'Isometric Tiles'
     - 'Zoom Level'
+    - Java
 ---
-
-## The Problem
 
 [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow) is an Android game where players must rotate puzzle tiles until all flows (rivers, paths, etc) match up. Players can play existing levels, or create their own in a level editor. They can zoom in, out, and pan, so as to navigate larger puzzles easily. Whilst playing a level players are on a time limit, so ensuring all of the puzzle is on screen to begin with is very important to ensure the player doesn’t become frustrated having to initially get the puzzle in a good position.
 
@@ -33,15 +31,14 @@ The `setupTileDisplay()` function takes:
 - The selected tile, selected tile imageview, and whether or not we’re in the editor. This are implementation specific, and not necessary.
 
 ```
-<pre class="brush: java; first-line: 272; title: ; notranslate" title="">
-    public TileDisplaySetup setupTileDisplay(PuzzleDisplayer puzzleDisplayer, List tiles, ZoomableViewGroup tileContainer, Tile selectedTile, ImageView selectedTileImage, boolean isEditor) {
-        tileContainer.removeAllViews();
+public TileDisplaySetup setupTileDisplay(PuzzleDisplayer puzzleDisplayer, List tiles, ZoomableViewGroup tileContainer, Tile selectedTile, ImageView selectedTileImage, boolean isEditor) {
+    tileContainer.removeAllViews();
 
-        Setting minimumMillisForDrag = Setting.get(Constants.SETTING_MINIMUM_MILLIS_DRAG);
-        int dragDelay = minimumMillisForDrag != null ? minimumMillisForDrag.getIntValue() : 200;
-        Pair maxXY = TileHelper.getMaxXY(tiles);
+    Setting minimumMillisForDrag = Setting.get(Constants.SETTING_MINIMUM_MILLIS_DRAG);
+    int dragDelay = minimumMillisForDrag != null ? minimumMillisForDrag.getIntValue() : 200;
+    Pair maxXY = TileHelper.getMaxXY(tiles);
 
-        DisplayValues displayValues = getDisplayValues(puzzleDisplayer.getActivity(), maxXY.first + 1, maxXY.second + 1);
+    DisplayValues displayValues = getDisplayValues(puzzleDisplayer.getActivity(), maxXY.first + 1, maxXY.second + 1);
 ```
 
 The drag related code is to do with panning the `ZoomableViewGroup`. The first relevant line is 277, where we call a [small helper function](https://gist.github.com/JakeSteam/cb6cd823a74f2c32723396ef9a8c91ec#file-tilehelper-java) that loops through the list of tiles to work out the total puzzle size. This is used later.
@@ -49,23 +46,22 @@ The drag related code is to do with panning the `ZoomableViewGroup`. The first r
 The bulk of the actual logic happens inside `getDisplayValues()`:
 
 ```
-<pre class="brush: java; first-line: 255; title: ; notranslate" title="">
-    public DisplayValues getDisplayValues(Activity activity, int xTiles, int yTiles) {
-        DisplayMetrics displayMetrics = getSizes(activity);
-        int screenHeight = displayMetrics.heightPixels;
-        int screenWidth = displayMetrics.widthPixels;
+public DisplayValues getDisplayValues(Activity activity, int xTiles, int yTiles) {
+    DisplayMetrics displayMetrics = getSizes(activity);
+    int screenHeight = displayMetrics.heightPixels;
+    int screenWidth = displayMetrics.widthPixels;
 
-        double totalTilesAmount = (xTiles + yTiles) / 2.0;
-        int puzzleHeight = (int) (totalTilesAmount * getTileHeight());
-        int puzzleWidth = (int) (totalTilesAmount * getTileWidth());
+    double totalTilesAmount = (xTiles + yTiles) / 2.0;
+    int puzzleHeight = (int) (totalTilesAmount * getTileHeight());
+    int puzzleWidth = (int) (totalTilesAmount * getTileWidth());
 
-        float xZoomFactor = screenWidth / (float) (puzzleWidth);
-        float yZoomFactor = (screenHeight / (float) (puzzleHeight)) / 2;
-        float zoomFactor = Math.min(xZoomFactor, yZoomFactor);
+    float xZoomFactor = screenWidth / (float) (puzzleWidth);
+    float yZoomFactor = (screenHeight / (float) (puzzleHeight)) / 2;
+    float zoomFactor = Math.min(xZoomFactor, yZoomFactor);
 
-        int offset = puzzleHeight / 2;
-        return new DisplayValues(zoomFactor, offset, yZoomFactor &lt; xZoomFactor);
-    }
+    int offset = puzzleHeight / 2;
+    return new DisplayValues(zoomFactor, offset, yZoomFactor &lt; xZoomFactor);
+}
 ```
 
 First, we get the screen size as `DisplayMetrics`, since we’ll need that to work out what we can fit on it.
@@ -78,7 +74,7 @@ Now we know how screen / puzzle width / height. To calculate the highest possibl
 
 Having trouble visualising all these widths and heights? Here’s an annotated in-game screenshot, with all mentioned values:
 
-![screenshot_20170107-003447](https://i0.wp.com/blog.jakelee.co.uk//wp-content/uploads/2017/01/screenshot_20170107-0034471.png?resize=700%2C394&ssl=1)
+![screenshot_20170107-003447](/wp-content/uploads/2017/01/screenshot_20170107-0034471.png)
 
 We return the optimum zoom factor, how much we should offset the puzzle by, and a quick check of whether the puzzle is going to have space above it or left of it. This is used shortly to calculate where to add an offset to centre the puzzle.
 
@@ -87,26 +83,25 @@ We return the optimum zoom factor, how much we should offset the puzzle by, and 
 Now that we know the ideal zoom level, we just need to actually apply it to the tiles, by looping through each tile in the list and performing some calculations.
 
 ```
-<pre class="brush: java; first-line: 280; title: ; notranslate" title="">
-        float optimumScale = displayValues.getZoomFactor();
+float optimumScale = displayValues.getZoomFactor();
 
-        int topOffset = displayValues.isLeftOffset() ? 0 : displayValues.getOffset();
-        int leftOffset = displayValues.isLeftOffset() ? displayValues.getOffset() : 0;
+int topOffset = displayValues.isLeftOffset() ? 0 : displayValues.getOffset();
+int leftOffset = displayValues.isLeftOffset() ? displayValues.getOffset() : 0;
 
-        tileContainer.setScaleFactor(optimumScale, true);
-        tileContainer.removeAllViews();
-        for (final Tile tile : tiles) {
-            if (!puzzleDisplayer.displayEmptyTile() &amp;&amp; tile.getTileTypeId() == Constants.TILE_EMPTY) {
-                continue;
-            }
+tileContainer.setScaleFactor(optimumScale, true);
+tileContainer.removeAllViews();
+for (final Tile tile : tiles) {
+    if (!puzzleDisplayer.displayEmptyTile() &amp;&amp; tile.getTileTypeId() == Constants.TILE_EMPTY) {
+        continue;
+    }
 
-            ZoomableViewGroup.LayoutParams layoutParams = new ZoomableViewGroup.LayoutParams(ZoomableViewGroup.LayoutParams.WRAP_CONTENT, ZoomableViewGroup.LayoutParams.WRAP_CONTENT);
-            int leftPadding = leftOffset + (tile.getY() + tile.getX()) * (getTileWidth() / 2);
-            int topPadding = topOffset + (tile.getX() + maxXY.second - tile.getY()) * (getTileHeight() / 2);
-            layoutParams.setMargins(leftPadding, topPadding, 0, 0);
+    ZoomableViewGroup.LayoutParams layoutParams = new ZoomableViewGroup.LayoutParams(ZoomableViewGroup.LayoutParams.WRAP_CONTENT, ZoomableViewGroup.LayoutParams.WRAP_CONTENT);
+    int leftPadding = leftOffset + (tile.getY() + tile.getX()) * (getTileWidth() / 2);
+    int topPadding = topOffset + (tile.getX() + maxXY.second - tile.getY()) * (getTileHeight() / 2);
+    layoutParams.setMargins(leftPadding, topPadding, 0, 0);
 
-            int drawableId = getTileDrawableId(puzzleDisplayer.getActivity(), tile.getTileTypeId(), tile.getRotation());
-            ImageView image = createTileImageView(puzzleDisplayer, tile, drawableId, dragDelay);
+    int drawableId = getTileDrawableId(puzzleDisplayer.getActivity(), tile.getTileTypeId(), tile.getRotation());
+    ImageView image = createTileImageView(puzzleDisplayer, tile, drawableId, dragDelay);
 ```
 
 From the boolean parameter passed back from `getDisplayValues()`, we know whether the offset calculated should be applied to the top or left of the puzzle.
@@ -120,14 +115,13 @@ Once we know the margins we want to give the individual tile, we make the imagev
 Finally, we return the selected tile imageview for future reference, and the optimum puzzle scale (inside a basic data structure object `TileDisplaySetup()`. This is used by custom puzzles in order to take a screenshot of the puzzle ready for sharing, but that’s another article!
 
 ```
-<pre class="brush: java; first-line: 300; title: ; notranslate" title="">
-        --- snipped lines that handle displaying a tile as selected ---
+    --- snipped lines that handle displaying a tile as selected ---
 
-            tileContainer.addView(image, layoutParams);
-        }
-
-        return new TileDisplaySetup(selectedTileImage, optimumScale);
+        tileContainer.addView(image, layoutParams);
     }
+
+    return new TileDisplaySetup(selectedTileImage, optimumScale);
+}
 ```
 
 ## The Conclusion

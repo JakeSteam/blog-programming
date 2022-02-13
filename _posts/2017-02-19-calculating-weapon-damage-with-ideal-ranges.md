@@ -4,18 +4,7 @@ title: 'Calculating Weapon Damage Using Ideal Ranges'
 date: '2017-02-19T14:08:09+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=762'
 permalink: /calculating-weapon-damage-with-ideal-ranges/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:216:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:218:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
 image: /wp-content/uploads/2017/02/g8wh9wt.png
 categories:
     - 'Game Dev'
@@ -23,8 +12,6 @@ tags:
     - Formula
     - Tiles
 ---
-
-## The Problem
 
 Whilst building a turn based strategy shooter, weapons needed to have “ideal ranges”. For example, a melee weapon should only work from 1 tile away, a shotgun should prefer short ranges, a sniper rifle should prefer long ranges, etc. The non-melee weapons should still work outside of their ideal range, but with reduced damage.
 

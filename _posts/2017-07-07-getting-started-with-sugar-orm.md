@@ -4,8 +4,8 @@ title: 'Getting Started with Sugar ORM'
 date: '2017-07-07T11:40:25+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=1456'
 permalink: /getting-started-with-sugar-orm/
+image: /assets/images/2022/sugarorm.png
 categories:
     - 'Android Dev'
 tags:
@@ -29,7 +29,7 @@ Setting up Sugar is very straightforward, and contains just three simple steps.
 As with any other Gradle library, add the following to your `build.gradle` dependencies, and perform a rebuild (Android Studio will prompt to do this automatically). This will let us reference the library’s functionality:
 
 ```
-compile <span class="pl-s"><span class="pl-pds">'</span>com.github.satyan:sugar:1.5<span class="pl-pds">'</span></span>
+compile 'com.github.satyan:sugar:1.5'
 ```
 
 #### 2. Connecting app to Sugar
@@ -37,7 +37,6 @@ compile <span class="pl-s"><span class="pl-pds">'</span>com.github.satyan:sugar:
 So that Sugar can run when the application starts, and perform other tasks, it needs to be created and destroyed when the application is, not an individual activity. To do this, we need to make a new class that extends `Application`, which we can then use to initialise Sugar and other services. I generally put this file outside of any subfolders in the project structure, but it can go anywhere.
 
 ```
-
 public class MainApplication extends Application {
     @Override
     public void onCreate() {
@@ -56,7 +55,6 @@ public class MainApplication extends Application {
 Now that we have our `MainApplication` class, we need to define it in the `AndroidManifest.xml`. To do this, just add / modify the `android:name=` attribute on `` to point to `.MainApplication`. If you placed the new class in a subfolder, it will be at `.Subfolder.MainApplication`:
 
 ```
-
 <application
     android:name=".MainApplication"
 ```
@@ -81,7 +79,6 @@ That’s it, you’re good to go! The rest of this guide will cover creating you
 In this example, we’ll use a simple table with just an `id` and a `text`.
 
 ```
-
 @Table(name="mytable")
 public class Text extends SugarRecord {
     @Column(name = "a") private Long id;
@@ -125,7 +122,6 @@ Finally, we add a constructor with all parameters, and one with none. A construc
 Data can be saved by creating a new instance of the object, and calling `.save()` on it. This can also be included in your constructor if auto-save is desired.
 
 ```
-
 Text text = new Text(1, "Example text");
 text.setText("New test");
 text.save();

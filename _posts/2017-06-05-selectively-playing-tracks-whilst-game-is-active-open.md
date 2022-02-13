@@ -4,7 +4,6 @@ title: 'Selectively Playing Tracks Whilst Game Is Active / Open'
 date: '2017-06-05T19:29:04+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=1297'
 permalink: /selectively-playing-tracks-whilst-game-is-active-open/
 image: /wp-content/uploads/2017/06/vaidqil.png
 categories:
@@ -16,7 +15,6 @@ tags:
     - Music
 ---
 
-## The Problem
 
 Playing background music on Android is pretty easy: just start a service with a media player. Great, that was easy! However, when the user presses the home button, the music… continues. This is good for music apps, but awful for games. In this example, [Blacksmith Slots](https://www.reddit.com/r/BlacksmithSlots/) had one music track for the intro, and one for the main game.
 
@@ -31,7 +29,6 @@ The media service is a relatively basic service that creates a media player and 
 A reference to the service is stored within the `MusicHelper`, and assigned by the following:
 
 ```
-
 musicService = new Intent(context.getApplicationContext(), MusicService.class)
     .putExtra("songId", trackToPlay);
 ```
@@ -43,7 +40,6 @@ This article assumes all of the application’s activities extend the same base 
 When an activity is paused (application exited, user receives a call, starting a new activity, etc) if the `movingInApp` flag isn’t set, the music is paused.
 
 ```
-
 @Override
 public void onPause() {
     super.onPause();
@@ -56,7 +52,6 @@ public void onPause() {
 When an activity resumes the `movingInApp` flag is set to false, so that the next time an activity pauses it can be checked again.
 
 ```
-
 @Override
 protected void onResume() {
     super.onResume();
@@ -69,7 +64,6 @@ protected void onResume() {
 In order for the `isMovingInApp()` check to work, every time an activity is closed or opened, `movingInApp` must be set to true first. As a base activity was used in this example, a generic close method could be used, but the same code must be called just before starting a new activity too.
 
 ```
-
 public void close(View v) {
     MusicHelper.getInstance(this).setMovingInApp(true);
     finish();
@@ -87,7 +81,6 @@ MusicHelper.getInstance(this).playIfPossible(R.raw.village_consort);
 As mentioned before, `playIfPossible()` checks if the track isn’t currently playing, then starts the service if necessary. This is done in a new thread to avoid UI stutters. Note that the project used as an example allows the user to mute music at any time, including before settings have been setup, hence playing if it is intro music, and checking the user’s preference. This is of course optional.
 
 ```
-
 public void playIfPossible(final int trackToPlay) {
     new Thread(new Runnable() {
         public void run() {

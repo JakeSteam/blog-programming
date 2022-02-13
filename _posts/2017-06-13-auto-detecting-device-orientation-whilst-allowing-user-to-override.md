@@ -4,7 +4,6 @@ title: 'Auto-detecting Device Orientation Whilst Allowing User to Override'
 date: '2017-06-13T11:20:01+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=1381'
 permalink: /auto-detecting-device-orientation-whilst-allowing-user-to-override/
 image: /wp-content/uploads/2017/06/09ggcwp.png
 categories:
@@ -15,8 +14,6 @@ tags:
     - Portrait
     - 'User Options'
 ---
-
-## The Problem
 
 When creating games (and other apps), screen orientation is very important. In general, more casual games use portrait, whilst more hardcore / intense games use landscape. However, some games may be inbetween these two categories, or may wish to reach a wider audience by supporting both. Automatically rotating to match device orientation is easy, but allowing the user to “lock” one orientation is a little trickier.
 

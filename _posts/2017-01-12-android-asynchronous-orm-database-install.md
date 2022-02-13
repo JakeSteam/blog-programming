@@ -1,10 +1,9 @@
 ---
 id: 406
-title: 'Android: Asynchronous ORM Database Install'
+title: 'Asynchronous ORM Database Install in Android'
 date: '2017-01-12T15:39:15+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=406'
 permalink: /android-asynchronous-orm-database-install/
 image: /wp-content/uploads/2017/01/kvc1tsw.png
 categories:
@@ -15,9 +14,8 @@ tags:
     - ORM
     - Patches
     - SugarORM
+    - Java
 ---
-
-## The Problem
 
 Many apps need to ship with a local database, and many apps also use a ORM to handle their database actions (I personally use and recommend [Sugar](http://satyan.github.io/sugar/)). Tying together these two approaches requires some sort of compromise, often manually copying a SQLite database around the device’s filesystem.
 
@@ -25,21 +23,19 @@ Instead for City Flow a different approach was decided: Installing the database 
 
 ## The Solution
 
-The core part of the solution will be the `AsyncTask` described in an earlier article about [asynchronous map generation](https://blog.jakelee.co.uk//android-asynchronous-map-generator/). We’ll be starting an asynchronous task on first start, which will be reporting progress back to the progress bar and text on screen. In addition, we’ll be using ORM-specific techniques to actually save the new data, however they are common to almost every ORM.
+The core part of the solution will be the `AsyncTask` described in an earlier article about [asynchronous map generation](https://blog.jakelee.co.uk/android-asynchronous-map-generator/). We’ll be starting an asynchronous task on first start, which will be reporting progress back to the progress bar and text on screen. In addition, we’ll be using ORM-specific techniques to actually save the new data, however they are common to almost every ORM.
 
 #### Preparing The Installer
 
 A separate `PatchHelper` class is used to handle the initial database install and subsequent patches. This is then called every time the app starts, in case any new databases patches are available. The app’s main activity creates a new `PatchHelper` instance (passing itself), then starts the AsyncTask.
 
 ```
-
     new PatchHelper(this).execute();
 ```
 
 In the `PatchHelper` constructor, we find the install text and progress bar from the calling activity so that we can update them during installation. These are just a `TextView` and a `ProgressBar`, the XML of which can be [viewed at this Gist](https://gist.github.com/JakeSteam/25e82a6527be4061294e0636ecf3dbf9).
 
 ```
-
 public class PatchHelper extends AsyncTask {
     public final static int NO_DATABASE = 0;
     public final static int V1_0_0 = 1;
@@ -61,7 +57,6 @@ Shared preferences are used to store the current database version. It’s very r
 If the current database version is non-existent, or set to `NO_DATABASE`(0), then the initial database install needs to be performed, and the new database version saved. Otherwise, just return, since no install is needed.
 
 ```
-
 @Override
 protected String doInBackground(String... params) {
     SharedPreferences prefs = activity.getSharedPreferences("uk.co.jakelee.cityflow", MODE_PRIVATE);
@@ -79,7 +74,6 @@ protected String doInBackground(String... params) {
 The overarching `createDatabase()` calls 2 types of methods repeatedly, one to update the user, the other to actually perform the action.
 
 ```
-
 private void createDatabase() {
     setProgress("Achievements", 0);
     createAchievement();
@@ -94,7 +88,6 @@ Two parameters are passed to `setProgress()`, the name of the current item, and 
 `setProgress()` updates the progress bar’s value, and passes the current item text onto `publishProgress()`. Somewhat confusingly, calling `publishProgress` triggers `onProgressUpdate`, which updates the progress text’s value. Note that multiple strings could very easily be passed.
 
 ```
-
 private void setProgress(String currentTask, int percentage) {
     if (progressText != null && progressBar != null) {
         publishProgress(currentTask);
@@ -111,7 +104,6 @@ protected void onProgressUpdate(String... values) {
 The actual creation methods are very simple, and will be ORM specific. For Sugar ORM, the most efficient way to bulk-add records is to create a `List` of them, then pass the whole set to `saveInTx()`, where they will all be added very quickly (a few hundred records a second).
 
 ```
-
 private void createAchievement() {
     List achievements = new ArrayList();
     achievements.add(new Achievement("An achievement");
@@ -125,7 +117,6 @@ private void createAchievement() {
 Finally, the “progress” container is hidden, and the normal main menu is displayed. Included below for completeness, but hopefully it should be pretty obvious!
 
 ```
-
     progressWrapper.setVisibility(View.GONE);
     mainMenuWrapper.setVisibility(View.VISIBLE);
 ```

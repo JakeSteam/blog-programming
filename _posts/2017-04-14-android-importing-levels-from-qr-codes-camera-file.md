@@ -1,10 +1,9 @@
 ---
 id: 1024
-title: 'Importing Levels From QR Codes (Camera / File)'
+title: 'Importing Levels From QR Codes (Camera / File) in Android'
 date: '2017-04-14T09:00:21+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=1024'
 permalink: /android-importing-levels-from-qr-codes-camera-file/
 image: /wp-content/uploads/2017/04/chyvb3i.png
 categories:
@@ -19,9 +18,7 @@ tags:
     - ZXing
 ---
 
-## The Problem
-
-In a [previous post](https://gamedevalgorithms.com/2017/04/06/exporting-levels-into-qr-codes-using-zxing/), it was discussed how to export levels from an Android game (in this case [Connect Quest](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow)) so that other players could play them. Now that they’re exported, we need to be able to import them again! This post will explain how to import QR codes either directly from the camera, or embedded within an image on the file system.
+In a [previous post](/exporting-levels-into-qr-codes-using-zxing/), it was discussed how to export levels from an Android game (in this case [Connect Quest](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow)) so that other players could play them. Now that they’re exported, we need to be able to import them again! This post will explain how to import QR codes either directly from the camera, or embedded within an image on the file system.
 
 ## The Solution
 
@@ -34,7 +31,6 @@ When launching the barcode scanner, we also inform it (via the `SCAN_MODE` inten
 The following is set as the `onClick` action for an import button, the result will be received by `onActivityResult`, described later in this post.
 
 ```
-
 public void importFromCamera(View v) {
     try {
         Intent intent = new Intent("com.google.zxing.client.android.SCAN");
@@ -51,12 +47,13 @@ public void importFromCamera(View v) {
 
 A video of this in action is embedded below. Note the quick scanning of the QR code, and how the data is immediately available for processing (level imported &amp; ready to play straight away).
 
-<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/Je0qBQhsTbE?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>#### Photo
+<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/Je0qBQhsTbE?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>
+
+#### Photo
 
 Retrieving a photo is a little more complex than live scanning a QR code, but it’s done without requiring another application. First, the `onClick` method of the import button is called, and passes the permission required (`READ_EXTERNAL_STORAGE`) and work to do (`importFromFile()`) to a `runIfPossible` function.
 
 ```
-
 public void importFromFile(View v) {
     PermissionHelper.runIfPossible(Manifest.permission.READ_EXTERNAL_STORAGE, new Runnable() {
         @Override
@@ -70,7 +67,6 @@ public void importFromFile(View v) {
 This `runIfPossible` function utilises the very straightforward [AllowMe library](https://github.com/aitorvs/allowme). First, it checks if the permission is granted already. If it is, then we can run the callback (work to do) we passed through, otherwise the permission needs to be gained.
 
 ```
-
 public static void runIfPossible(final String permission, final Runnable callback) {
     if (!AllowMe.isPermissionGranted(permission)) {
         new AllowMe.Builder()
@@ -92,7 +88,7 @@ public static void runIfPossible(final String permission, final Runnable callbac
 
 To gain the permission, a standard Android permission request is displayed, where the user can choose to allow or deny the app access to external storage. If it is approved (`result.isGranted()`), then the callback is run. If they deny the permission, then nothing is done, since we don’t have the access we need. Note that the request code here is irrelevant, since there are no other request codes being used in this code area.
 
-![hmE7YgB](https://i1.wp.com/blog.jakelee.co.uk//wp-content/uploads/2017/04/hme7ygb.png?resize=700%2C442&ssl=1)
+![permissions prompt](/wp-content/uploads/2017/04/hme7ygb.png)
 
 The `importFromFile` function that does the actual work is very simple, and just opens a native Android image picker. This allows the user to use an interface that is familiar to them to navigate their images, and eventually select one to send back to our activity.
 
@@ -115,7 +111,6 @@ The `INTENT_CAMERA` and `INTENT_FILE` values are just constants we used when sta
 If the `puzzleString` has data, and it is successfully imported (split up, sanity checked, and added to database), then perform any post-import actions required.
 
 ```
-
 @Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
@@ -151,7 +146,6 @@ The ZXing barcode scanner returns the data as a string extra under the key `SCAN
 Initially, ZXing was used for processing, however it was quite unreliable and regularly could not detect codes. As such, the [Google Vision library](https://codelabs.developers.google.com/codelabs/bar-codes/) was used instead. Using this library, we create a `BarcodeDetector` that is looking for QR codes, scan the image, then retrieve the first barcode found (there should only be one anyway!). The image
 
 ```
-
 public static String readQRImage(Activity activity, Bitmap bitmap) {
     String contents = "";
 

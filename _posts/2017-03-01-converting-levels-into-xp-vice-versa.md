@@ -4,7 +4,6 @@ title: 'Converting Levels Into XP &#038; Vice Versa'
 date: '2017-03-01T12:07:29+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=867'
 permalink: /converting-levels-into-xp-vice-versa/
 image: /wp-content/uploads/2017/03/uatufwj.png
 categories:
@@ -14,8 +13,6 @@ tags:
     - Levels
     - XP
 ---
-
-## The Problem
 
 Many games (such as my own [Pixel Blacksmith](https://play.google.com/store/apps/details?id=uk.co.jakelee.blacksmith) and [Blacksmith Slots](https://www.reddit.com/r/BlacksmithSlots/)) contain an XP / level system, where performing actions will reward experience, and eventually new levels. These new levels often unlock new content, or provide currency, so keeping players incentivised without feeling like a “grind” is a tricky balance.
 

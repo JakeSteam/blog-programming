@@ -4,7 +4,6 @@ title: 'Implementing A Locale / Language Selector'
 date: '2017-05-13T14:52:18+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'http://gamedevalgorithms.com/?p=1213'
 permalink: /implementing-a-locale-language-selector/
 image: /wp-content/uploads/2017/05/qnq1f7d.png
 categories:
@@ -14,9 +13,8 @@ tags:
     - Language
     - Locale
     - Localisation
+    - Java
 ---
-
-## The Problem
 
 Android applications are distributed to users around the world, and these users aren’t always going to speak the same languages as you. Luckily, Android has [excellent built-in support](https://developer.android.com/guide/topics/resources/localization.html) for automatically applying the right language, however this isn’t always enough. Sometimes a user may want to choose their language, and unfortunately there’s no built-in way to support this. The game [Pixel Blacksmith](https://play.google.com/store/apps/details?id=uk.co.jakelee.blacksmith) uses the technique described in this article.
 
@@ -31,7 +29,6 @@ Inside the application class, or early on in the main activity, a call to `Langu
 This function looks up the saved language from shared preferences, then passes that to the main `updateLanguage()` function, described in the next section.
 
 ```
-
 public static void updateLanguage(Context ctx) {
     String lang = PreferenceManager.getDefaultSharedPreferences(ctx).getString("locale", "");
     updateLanguage(ctx, lang);
@@ -43,7 +40,6 @@ public static void updateLanguage(Context ctx) {
 When a context and 2 character locale (e.g. “en” for English or “es” for Spanish) are passed, this new locale is saved in shared preferences. Then, so long as the language string isn’t empty, a new Locale is created using it, and this Locale is applied using `updateConfiguration()`. Note that this method now appears to be deprecated, and it [doesn’t look like a quick fix](http://stackoverflow.com/questions/40221711/android-context-getresources-updateconfiguration-deprecated/40704077#40704077), but in your case it may be worth implementing.
 
 ```
-
 private static void updateLanguage(Context ctx, String lang) {
     PreferenceManager.getDefaultSharedPreferences(ctx).edit().putString("locale", lang).apply();
     Configuration cfg = new Configuration();
@@ -62,7 +58,6 @@ private static void updateLanguage(Context ctx, String lang) {
 When a language from the spinner is selected, the following `onItemSelected()` method is called. Most of the code is not specific to this example, but the important line is the `LanguageHelper.updateLanguage()` method, which is passed a context, and the position selected (+1 to account for zero indexing), which refers to a predefined language ID.
 
 ```
-
 public void onItemSelected(AdapterView parentView, View selectedItemView, int position, long id) {
     setting.setIntValue(position + 1);
     setting.save();
@@ -76,7 +71,6 @@ public void onItemSelected(AdapterView parentView, View selectedItemView, int po
 This `updateLanguage()` wrapper needs to look up the locale string from the ID / position passed. The numbers are sequential for ease of us in this example.
 
 ```
-
 public static void updateLanguage(Context context, int language) {
     updateLanguage(context, getLocaleById(language));
 }

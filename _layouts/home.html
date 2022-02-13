@@ -25,6 +25,31 @@ layout: default
   .tag, .tag:visited {
     color: #828282;
   }
+
+
+  .pagination {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.pagination ul {
+  list-style: none;
+}
+.pagination ul li {
+  display: inline;
+  margin: 0 5px;
+}
+.pagination ul li a {
+  color: black;
+  text-decoration: none;
+}
+.pagination ul li a:hover {
+  color: grey;
+  text-decoration: underline;
+}
+.pagination ul li.current-page a {
+  color: red;
+}
 </style>
 
 <div class="home">
@@ -60,7 +85,7 @@ layout: default
           <span class="post-meta">{{ post.date | date: date_format }} • {% include custom/read_time.html %} • {% include custom/tags.html %}</span>
           <p>
             {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+            {{ post.excerpt | strip_html }}
             {%- endif -%}
           </p>
         </div>
@@ -76,7 +101,7 @@ layout: default
     <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
     {% endif %}
 
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <span class="page_number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>

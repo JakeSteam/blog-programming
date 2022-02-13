@@ -9,7 +9,7 @@ show_excerpts: true
 
 # Theme settings
 theme: minima
-paginate: 5
+paginate: 10
 paginate_path: page/:num/
 twitter_username: JakeLeeUK
 github_username: JakeSteam

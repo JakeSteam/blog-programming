@@ -4,21 +4,8 @@ title: 'Converting non-Amazon eBooks and sending them to your Kindle using Calib
 date: '2018-12-11T20:33:43+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2194'
 permalink: /converting-non-amazon-ebooks-and-sending-them-to-your-kindle-using-calibre/
-snap_isAutoPosted:
-    - '1544560423'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6478356186990288896";s:5:"pDate";s:19:"2018-12-11 20:34:37";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1072590500018954243";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1072590500018954243";s:5:"pDate";s:19:"2018-12-11 20:34:37";}}";'
-snapMD:
-    - "s:450:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"f6d2d7964d91\";s:7:\"postURL\";s:117:\"https://medium.com/@JakeSteam/converting-non-amazon-ebooks-and-sending-them-to-your-kindle-using-calibre-f6d2d7964d91\";s:5:\"pDate\";s:19:\"2018-12-11 20:34:38\";}}\";"
-image: /wp-content/uploads/2018/12/overview-150x150.png
+image: /wp-content/uploads/2018/12/overview.png
 categories:
     - Tips
 tags:
@@ -40,19 +27,21 @@ The first step is getting an email address to email your eBooks to, this was cre
 
 1. First, go to the [“Preferences” tab of “Managed Your Content and Devices”](https://www.amazon.com/hz/mycd/myx#/home/settings/payment) (change `.com` to your country’s Amazon if necessary, e.g. `.co.uk`!).
 2. Scroll down to “Personal Document Settings”, and click the title or description.
-3. Under “Send-to-Kindle E-mail Settings”, you should see your Kindle listed, as well as an email address. Make a note of this email for later (you can also change it if you wish).[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle2.png?resize=700%2C209&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle2.png?ssl=1)
+3. Under “Send-to-Kindle E-mail Settings”, you should see your Kindle listed, as well as an email address. Make a note of this email for later (you can also change it if you wish).[![](/wp-content/uploads/2018/12/kindle2.png)](/wp-content/uploads/2018/12/kindle2.png)
 
 Next, we need to set up an email that we are allowed to send ebooks from, we don’t want anyone to be able to put stuff on our Kindle!
 
 This is done by scrolling down a little bit to “Approved Personal Document E-mail List”, and adding your own email address to the list. You can also add an entire domain, which is very useful if you use multiple emails (e.g. I use many different emails, all at `@jakelee.co.uk`).
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle3.png?resize=700%2C144&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle3.png?ssl=1)
+[![](/wp-content/uploads/2018/12/kindle3.png)](/wp-content/uploads/2018/12/kindle3.png)
 
 ## Setting up Calibre
 
 [Calibre](https://calibre-ebook.com/) is an extremely powerful eBook management tool, but we’re only going to be using the eBook conversion &amp; emailing functionality. There is a comprehensive beginner’s guide by the creator himself embedded below, but viewing it is not essential for this tutorial!
 
-<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/Wosani93FQQ?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>### Installing Calibre
+<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/Wosani93FQQ?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>
+
+### Installing Calibre
 
 1. Download Calibre [here](https://calibre-ebook.com/download), by selecting your operating system and pressing “Download calibre”.
 2. Install the application like any other, accepting Terms of Service etc.
@@ -69,7 +58,9 @@ When Calibre starts for the first time, it will run the Welcome Wizard to help s
 5. Click “Test email”.
 6. A few minutes later, you should receive an email in your inbox from Amazon, saying your email didn’t contain any eBooks. It works!
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle4.png?resize=300%2C219&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindle4.png?ssl=1)[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindleemail.png?resize=300%2C143&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/kindleemail.png?ssl=1)
+| Setup | Email |
+| -- | -- |
+| [![](/wp-content/uploads/2018/12/kindle4.png)](/wp-content/uploads/2018/12/kindle4.png) | [![](/wp-content/uploads/2018/12/kindleemail.png)](/wp-content/uploads/2018/12/kindleemail.png) |
 
 ### Configuring file conversion
 
@@ -80,7 +71,7 @@ Next, we need to make sure Calibre outputs the files in a format appropriate for
 3. Make sure your Kindle’s email is listed there, with “Formats” set to “MOBI”. If it is set to anything else, double click to change it to “MOBI”.
 4. Apply these changes.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/calibre.png?resize=700%2C230&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/calibre.png?ssl=1)
+[![](/wp-content/uploads/2018/12/calibre.png)](/wp-content/uploads/2018/12/calibre.png)
 
 You’re all set up! Now it’s time to actually try sending an eBook…
 
@@ -89,7 +80,10 @@ You’re all set up! Now it’s time to actually try sending an eBook…
 1. Get an eBook. This can be a `.pdf`, `.epub`, `.txt`, `.doc`, `.mobi`, pretty much anything will work! Free, legal eBooks can be [downloaded from Project Gutenberg](https://www.gutenberg.org/browse/scores/top) if you need inspiration.
 2. Click “Add books” on Calibre.
 3. Pick your eBook file from your file system.
-4. Calibre should now show all the metadata about your book (title, author, publication date, etc). This can be changed by clicking “Edit metadata” at the top.[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/ebooklibrary.png?resize=663%2C237&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/ebooklibrary.png?ssl=1)
+4. Calibre should now show all the metadata about your book (title, author, publication date, etc). This can be changed by clicking “Edit metadata” at the top.
+
+[![](/wp-content/uploads/2018/12/ebooklibrary.png)](/wp-content/uploads/2018/12/ebooklibrary.png)
+
 5. Right click your book, select “Connect/Share”, and choose “Email to youremail@kindle.com”.
 6. You should now see “Jobs: 1” or “Jobs: 2” in the bottom right of Calibre. This can be clicked for more information, but once it says “Jobs: 0” your eBook has been sent!
 7. Your eBook will sync eventually if your Kindle has internet, but you can force it to sync immediately. For example, from a Paperwhite: 
@@ -98,6 +92,6 @@ You’re all set up! Now it’s time to actually try sending an eBook…
     3. Tap “Sync My Kindle”.
 8. Your eBook is now on your device!
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/overview.png?resize=700%2C253&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/overview.png?ssl=1)
+[![](/wp-content/uploads/2018/12/overview.png)](/wp-content/uploads/2018/12/overview.png)
 
 If you encounter any problems, feel free to leave a comment and I’ll do my best to help!

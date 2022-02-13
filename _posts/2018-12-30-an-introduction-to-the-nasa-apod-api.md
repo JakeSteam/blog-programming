@@ -4,21 +4,8 @@ title: 'An introduction to the NASA APOD API'
 date: '2018-12-30T18:00:47+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2305'
 permalink: /an-introduction-to-the-nasa-apod-api/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6485204396522246144";s:5:"pDate";s:19:"2018-12-30 18:06:57";}}";'
-snapMD:
-    - "s:410:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"ca73050209ca\";s:7:\"postURL\";s:79:\"https://medium.com/@JakeSteam/an-introduction-to-the-nasa-apod-api-ca73050209ca\";s:5:\"pDate\";s:19:\"2018-12-30 18:06:58\";}}\";"
-snap_isAutoPosted:
-    - '1546193218'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1079438713296424960";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1079438713296424960";s:5:"pDate";s:19:"2018-12-30 18:06:59";}}";'
-image: /wp-content/uploads/2018/12/header-150x150.png
+image: /wp-content/uploads/2018/12/header.png
 categories:
     - Development
 tags:
@@ -38,7 +25,7 @@ Every request made in this tutorial is available in a Postman collection, so you
 
 To use the collection, [save this link](https://pastebin.com/raw/nwvEaHHN) as `postman.json`, then import it into your Postman collections:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/GMmn5ah.png?resize=300%2C190&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/GMmn5ah.png?ssl=1)
+[![](/wp-content/uploads/2018/12/GMmn5ah.png)](/wp-content/uploads/2018/12/GMmn5ah.png)
 
 ## Request
 
@@ -85,8 +72,7 @@ Whilst the API is an excellent service, it definitely isn’t perfect. The follo
 
 The API quite often simply doesn’t work. It’ll return a (HTML) server error page from their CDN after a long delay (20-30 seconds). This usually persists for 5-10 minutes, the API then performs normally again. Luckily, these failed requests don’t seem to use up your quota, but you’ll still need to handle this unusual response.
 
-```
-
+```html
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -157,21 +143,21 @@ If the 1000/hr quota isn’t enough, NASA ask you to contact them for a higher l
 
 Every response contains the following headers, although only the `X-RateLimit` ones are likely to be useful:
 
-```
-<pre class="response-header-item"><span class="response-header-name">Server →</span><span class="response-header-value">openresty</span>
-<span class="response-header-name">Date →</span><span class="response-header-value">Fri, 28 Dec 2018 23:51:36 GMT</span>
-<span class="response-header-name">Content-Type →</span><span class="response-header-value">application/json</span>
-<span class="response-header-name">Transfer-Encoding →</span><span class="response-header-value">chunked</span>
-<span class="response-header-name">Connection →</span><span class="response-header-value">keep-alive</span>
-<span class="response-header-name">Vary →</span><span class="response-header-value">Accept-Encoding</span>
-<span class="response-header-name">X-RateLimit-Limit →</span><span class="response-header-value">1000</span>
-<span class="response-header-name">X-RateLimit-Remaining →</span><span class="response-header-value">979</span>
-<span class="response-header-name">Via →</span><span class="response-header-value">1.1 vegur, http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])</span>
-<span class="response-header-name">Age →</span><span class="response-header-value">0</span>
-<span class="response-header-name">X-Cache →</span><span class="response-header-value">MISS</span>
-<span class="response-header-name">Access-Control-Allow-Origin →</span><span class="response-header-value">*</span>
-<span class="response-header-name">Strict-Transport-Security →</span><span class="response-header-value">max-age=31536000; preload</span>
-<span class="response-header-name">Content-Encoding →</span><span class="response-header-value">gzip</span>
+```html
+Server → openresty
+Date → Fri, 28 Dec 2018 23:51:36 GMT
+Content-Type → application/json
+Transfer-Encoding → chunked
+Connection → keep-alive
+Vary → Accept-Encoding
+X-RateLimit-Limit → 1000
+X-RateLimit-Remaining → 979
+Via → 1.1 vegur, http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+Age → 0
+X-Cache → MISS
+Access-Control-Allow-Origin → *
+Strict-Transport-Security → max-age=31536000; preload
+Content-Encoding → gzip
 ```
 
 ## Summary
@@ -179,5 +165,3 @@ Every response contains the following headers, although only the `X-RateLimit` o
 As mentioned at the start of this post, NASA’s APOD API is an extremely useful resource, even with it’s faults and quirks.
 
 I strongly recommend you [download the Postman collection I created](https://pastebin.com/raw/nwvEaHHN) (save as a `.json` and import) and start playing around yourself!
-
-</body></html>

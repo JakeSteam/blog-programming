@@ -4,21 +4,8 @@ title: 'Saving and restoring a RecyclerView&#8217;s position in Android'
 date: '2019-01-08T18:00:37+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2330'
 permalink: /saving-and-restoring-a-recyclerviews-position-in-android/
-snap_isAutoPosted:
-    - '1546970504'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6488464569730764800";s:5:"pDate";s:19:"2019-01-08 18:01:43";}}";'
-snapMD:
-    - "s:430:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"3adaacd09ac9\";s:7:\"postURL\";s:99:\"https://medium.com/@JakeSteam/saving-and-restoring-a-recyclerviews-position-in-android-3adaacd09ac9\";s:5:\"pDate\";s:19:\"2019-01-08 18:01:44\";}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1082698888262443014";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1082698888262443014";s:5:"pDate";s:19:"2019-01-08 18:01:45";}}";'
-image: /wp-content/uploads/2019/01/6Dac4Xo-150x150.png
+image: /wp-content/uploads/2019/01/6Dac4Xo.png
 categories:
     - 'Android Dev'
 tags:

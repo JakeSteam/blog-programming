@@ -4,20 +4,8 @@ title: 'Creating a history clearing Chrome extension'
 date: '2018-12-09T18:21:35+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2173'
+image: /wp-content/uploads/2018/12/dashboard.png
 permalink: /creating-a-history-clearing-chrome-extension/
-snap_isAutoPosted:
-    - '1544379697'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapMD:
-    - "s:419:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"a9ecdc3fe517\";s:7:\"postURL\";s:87:\"https://medium.com/@JakeSteam/creating-a-history-clearing-chrome-extension-a9ecdc3fe517\";s:5:\"pDate\";s:19:\"2018-12-09 18:22:47\";}}\";"
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6477598239796400128";s:5:"pDate";s:19:"2018-12-09 18:22:48";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1071832553223569409";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1071832553223569409";s:5:"pDate";s:19:"2018-12-09 18:22:49";}}";'
 categories:
     - 'Chrome Dev'
 tags:
@@ -39,12 +27,12 @@ Before diving into this project, I strongly recommend [looking at the final resu
 To start, we’re going to use the simplest extension possible, a project folder containing a file called `manifest.json`. Add the following into the file:
 
 ```
-<pre class="prettyprint" data-filename="manifest.json"><span class="pun">{</span>
-    <span class="str">"name"</span><span class="pun">:</span> <span class="str">"My extension"</span><span class="pun">,</span>
-    <span class="str">"version"</span><span class="pun">:</span> <span class="str">"1.0.0"</span><span class="pun">,</span>
-    <span class="str">"description"</span><span class="pun">:</span> <span class="str">"My extension doesn't do anything yet!"</span><span class="pun">,</span>
-    <span class="str">"manifest_version"</span><span class="pun">:</span> <span class="lit">2</span>
-  <span class="pun">}</span>
+{
+    "name": "My extension",
+    "version": "1.0.0",
+    "description": "My extension doesn't do anything yet!",
+    "manifest_version": 2
+}
 ```
 
 Technically you’ve now created an extension, congratulations! There’s a bit more work to do for it to be actually useful however…
@@ -59,7 +47,7 @@ Before any extension code can be run, running local unpacked extensions must be 
 
 Your extension should now be visible in your extensions list! The little “Reload” icon must be clicked after every time you make code changes to make Chrome run the updated code.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/extensionoverview.png?resize=300%2C159&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/extensionoverview.png?ssl=1)
+[![](/wp-content/uploads/2018/12/extensionoverview.png)](/wp-content/uploads/2018/12/extensionoverview.png)
 
 ## Preparing the manifest
 
@@ -85,19 +73,19 @@ We’re also going to have an options page, so that must be registered in the `m
 
 Again, create the `options.html` page in the project folder. After reloading the extension (with the reload button on the extension’s card), you should now see a “Inspect views background page” link. Clicking this won’t do anything, but it’s presence confirms your background script earlier has been registered successfully!
 
-## [![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/extensionbackground.png?resize=300%2C160&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/extensionbackground.png?ssl=1)
+[![](/wp-content/uploads/2018/12/extensionbackground.png)](/wp-content/uploads/2018/12/extensionbackground.png)
 
 We’re also going to need permissions for storage (for preferences) and history (for deleting entries), so add the following into the manifest too:
 
 ```
-<span class="pl-s"><span class="pl-pds">"</span>permissions<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>history<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>storage<span class="pl-pds">"</span></span>],
+"permissions": ["history", "storage"],
 ```
 
 ## Adding toolbar icon
 
 Next, we’re going to add a toolbar icon for our extension, so that we can see it is installed and access the options. To do this, we need an app icon in both 48×48 and 96×96 sizes. I’d recommend using [Google’s Material Design icon library](https://material.io/tools/icons/), and exporting PNG icons in 48dp (this provides both the necessary app sizes). For this tutorial, I’ll use [the `find_replace` icon](https://material.io/tools/icons/?icon=find_replace&style=baseline).
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icon.png?resize=300%2C248&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icon.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icon.png)](/wp-content/uploads/2018/12/icon.png)
 
 Once you’ve got your icons, rename them to `icon_48.png` and `icon_96.png`, then place them inside an `images` folder in your project folder. Now that we’ve got image assets, edit the `manifest.json` to include them as icons (for the extension store), and as a `browser_action` to appear in the toolbar.
 
@@ -113,7 +101,7 @@ Once you’ve got your icons, rename them to `icon_48.png` and `icon_96.png`, th
 
 After reloading the extension, it will now appear in your Chrome toolbar! Right clicking it shows an “Options” menu, which currently… opens an empty page. Time to fix that!
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/options.png?resize=173%2C150&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/options.png?ssl=1)
+[![](/wp-content/uploads/2018/12/options.png)](/wp-content/uploads/2018/12/options.png)
 
 ## Creating the options screen
 
@@ -123,7 +111,7 @@ In this section, we’ll be creating the Chrome extension’s options, where use
 
 Open up the `options.html` file inside the project root. The HTML content is very simple, containing a text area, a checkbox, a button, and a status:
 
-```
+```html
 <html>
     <body>
         <p>Which sites / phrases should be scrubbed? One per line!</p>
@@ -143,13 +131,13 @@ Create the `options.js` file inside the `js` folder, this will contain all of th
 
 First, an event listener must be added to the “Save” button, so that saving happens when it is pressed. Add the following into `options.js`:
 
-```
+```javascript
 document.getElementById('save').addEventListener('click', save);
 ```
 
 Now we need to create the `save` function that the listener calls. This function gets the list of sites from the text area and the “Display scrub summary?” checkbox answer, then places them in Chrome storage. Note that `displaySavedMessage` is the function to be called when data has been successfully saved. This function just displays a piece of text in the status field of the page, then removes it after 2 seconds.
 
-```
+```javascript
 function save() {
     var sitesToSave = document.getElementById('sites').value;
     var displayPopup = document.getElementById('popup').checked;
@@ -172,13 +160,13 @@ function displaySavedMessage() {
 
 Data is now being saved! The next step is to load this data when the options page is opened. This is done using event listeners again:
 
-```
+```js
 document.addEventListener('DOMContentLoaded', load);
 ```
 
 Again, we now need to create the `load` function. The options are pulled from Chrome storage again, this time with a default site list and popup value. Once options are loaded (default or user-set), the UI is updated accordingly.
 
-```
+```js
 function load() {
     chrome.storage.sync.get({
         sites: 'supersecretsite.com',
@@ -192,7 +180,7 @@ function load() {
 
 Saving and loading data is now complete! This can be tested by changing your options, saving, then reopening the options page. If everything worked, your changes should have persisted.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/saveload.png?resize=300%2C204&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/saveload.png?ssl=1)
+[![](/wp-content/uploads/2018/12/saveload.png)](/wp-content/uploads/2018/12/saveload.png)
 
 ## Clearing out history when clicked
 
@@ -200,7 +188,7 @@ For the actual history clearing, we’re going to need to open up the `clear_his
 
 First, add a listener to the browser button being clicked. When clicked, the options will be loaded, then passed to `deleteBySites` when ready:
 
-```
+```js
 chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.storage.sync.get({
         sites: 'supersecretsite.com',
@@ -211,7 +199,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 `deleteBySites` splits the `sites` value loaded from Chrome storage, one site per line. `numSites` is set for later, then for each site `deleteBySite` is called:
 
-```
+```js
 var numSites = 0;
 function deleteBySites(storage) {
     var allSites = storage.sites.split("\n");
@@ -224,7 +212,7 @@ function deleteBySites(storage) {
 
 `deleteBySite` performs a search of Chrome’s history for the specified phrase, which returns a list of results. These results are then iterated over, deleting all, as well as keeping a running tally of the number of results deleted. Finally, if the `popup` option is true, the results are passed to `siteDeleted`.
 
-```
+```js
 function deleteBySite(site, popup) {
     chrome.history.search({
             text: site,
@@ -247,7 +235,7 @@ function deleteBySite(site, popup) {
 
 `siteDeleted` adds the site and deleted entries count to `siteString`, then displays a summary if every site has been processed. This is checked by making sure `sitesProcessed` is equal to (or larger than) the `numSites` we defined earlier. Finally, this text is shown as a popup alert.
 
-```
+```js
 var sitesProcessed = 0;
 var siteString = "Scrub complete:\n";
 function siteDeleted(site, count) {
@@ -261,7 +249,7 @@ function siteDeleted(site, count) {
 }
 ```
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/scrubbed.png?resize=300%2C181&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/scrubbed.png?ssl=1)
+[![](/wp-content/uploads/2018/12/scrubbed.png)](/wp-content/uploads/2018/12/scrubbed.png)
 
 The extension is now fully working! The only thing left to do is prepare it for release, and upload it.
 
@@ -285,7 +273,7 @@ Once these 3 fields have been filled in, your extension is ready to publish! How
 
 **Congratulations, it’s published!**
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/dashboard.png?resize=300%2C218&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/dashboard.png?ssl=1)
+[![](/wp-content/uploads/2018/12/dashboard.png)](/wp-content/uploads/2018/12/dashboard.png)
 
 This entire project is [available as a repository](https://github.com/JakeSteam/SelectiveScrubber), and the [finished extension can be installed here](https://chrome.google.com/webstore/detail/ljjdcbfpdmjelppcfeiadnjagdhompkb/).
 
@@ -293,5 +281,3 @@ Additional resources:
 
 - [Simple getting started guide by Google](https://developer.chrome.com/webstore/get_started_simple)
 - [Complete guide to publishing by Google](https://developer.chrome.com/webstore/publish)
-
-</body></html>

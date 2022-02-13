@@ -4,21 +4,8 @@ title: 'Creating custom stacked icons with FontAwesome'
 date: '2018-12-29T16:00:50+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2292'
 permalink: /creating-custom-square-icons-with-fontawesome/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6484810382811758592";s:5:"pDate";s:19:"2018-12-29 16:01:17";}}";'
-snapMD:
-    - "s:420:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"8cc42c03376e\";s:7:\"postURL\";s:89:\"https://medium.com/@JakeSteam/creating-custom-stacked-icons-with-fontawesome-8cc42c03376e\";s:5:\"pDate\";s:19:\"2018-12-29 16:01:18\";}}\";"
-snap_isAutoPosted:
-    - '1546099278'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1079044701020397569";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1079044701020397569";s:5:"pDate";s:19:"2018-12-29 16:01:19";}}";'
-image: /wp-content/uploads/2018/12/icons-150x150.png
+image: /wp-content/uploads/2018/12/icons.png
 categories:
     - 'Web Dev'
 tags:
@@ -32,9 +19,11 @@ In this tutorial, I’ll show how to create square icons for any FontAwesome ico
 
 As mentioned before, here’s the end goal: 10 matching icons.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons-1.png?resize=410%2C203&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons-1.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icons-1.png?)](/wp-content/uploads/2018/12/icons-1.png)
 
-If we’re just using existing [FontAwesome icons](https://fontawesome.com/icons), we’d end up with the following. Note the 4 mismatching icons![![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons2.png?resize=402%2C157&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons2.png?ssl=1)
+If we’re just using existing [FontAwesome icons](https://fontawesome.com/icons), we’d end up with the following. Note the 4 mismatching icons!
+
+[![](/wp-content/uploads/2018/12/icons2.png)](/wp-content/uploads/2018/12/icons2.png)
 
 Throughout this tutorial, the current progress of the 4 mismatched icons will be shown alongside their final forms, so that every change is immediately obvious.
 
@@ -50,7 +39,9 @@ First, our starting code is an `<a>` tag (to link to the service), containing an
 
 This displays a basic icon, in the default link colour for the page (black). The example above is for StackOverflow, when applied to all 4 icons it ends up like this:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons3.png?resize=325%2C97&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons3.png?ssl=1)It’s a start, they’re all clearly much too small and mismatching though!
+[![](/wp-content/uploads/2018/12/icons3.png)](/wp-content/uploads/2018/12/icons3.png)
+
+It’s a start, they’re all clearly much too small and mismatching though!
 
 ## Preparing for stack
 
@@ -68,7 +59,9 @@ Our code from before now becomes:
 2. `fa-2x` doubles the size of the icon, since they’re far too small currently.
 3. `fa-fw` sets the icons to be a fixed width, necessary for them to fit in a grid of icons.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons4.png?resize=283%2C156&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons4.png?ssl=1)We’re already pretty close! Just need to add the stacked background, and our icons will be ready to go.
+[![](/wp-content/uploads/2018/12/icons4.png)](/wp-content/uploads/2018/12/icons4.png)
+
+We’re already pretty close! Just need to add the stacked background, and our icons will be ready to go.
 
 ## Implementing stack
 
@@ -85,7 +78,7 @@ Finally, a brand new element needs adding; the background. In this example we’
 </a>
 ```
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons5.png?resize=300%2C147&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons5.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icons5.png)](/wp-content/uploads/2018/12/icons5.png)
 
 All done! A [Gist of my portfolio’s implementation](https://gist.github.com/JakeSteam/3d1d3dd9ff88d23f26da3f61f4f83bfa) is available if you’d like to see the final version.
 
@@ -95,23 +88,24 @@ All done! A [Gist of my portfolio’s implementation](https://gist.github.com/Ja
 
 Using the stack technique for all icons does improve consistency, both in the UI and in the code. For example, replacing `fa-linkedin` with `fa-linkedin-in` or `fa-github-square` with `fa-github`, then performing all the other steps. However, some services (only IMDb in my case) doesn’t have a non-square icon! Here’s the 10 services, with all the existing square icons converted to stacked square icons:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons6.png?resize=366%2C137&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons6.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icons6.png)](/wp-content/uploads/2018/12/icons6.png)
 
 ### All circles
 
 Replacing all `fa-square` backgrounds with `fa-circle` results in the following. Note the IMDb inability to play nicely!
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons7.png?resize=370%2C159&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons7.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icons7.png)](/wp-content/uploads/2018/12/icons7.png)
 
 ### Tower
 
 To create a “tower” of icons, with no gaps, just replace `fa-square` with `fa-square-full` and a `<br>` between each icon:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons8.png?resize=72%2C339&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons8.png?ssl=1)
+[![](/wp-content/uploads/2018/12/icons8.png)](/wp-content/uploads/2018/12/icons8.png)
 
 ### Other shapes
 
-Most [FontAwesome shapes](https://fontawesome.com/icons?d=gallery&c=shapes) work well as a background. Here’s `fa-` `play` / `certificate` / `comment` / `heart` / `cloud`, most of which look pretty good![![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons9.png?resize=387%2C76&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/icons9.png?ssl=1)
+Most [FontAwesome shapes](https://fontawesome.com/icons?d=gallery&c=shapes) work well as a background. Here’s `fa-` `play` / `certificate` / `comment` / `heart` / `cloud`, most of which look pretty good!
+[![](/wp-content/uploads/2018/12/icons9.png)](/wp-content/uploads/2018/12/icons9.png)
 
 ### Further modifications
 

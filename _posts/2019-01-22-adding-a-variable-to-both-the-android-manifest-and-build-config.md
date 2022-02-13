@@ -4,21 +4,8 @@ title: 'Adding a variable to both the Android Manifest and Build Config'
 date: '2019-01-22T17:00:51+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2349'
 permalink: /adding-a-variable-to-both-the-android-manifest-and-build-config/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6493522707072851968";s:5:"pDate";s:19:"2019-01-22 17:00:57";}}";'
-snapMD:
-    - "s:438:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"df40354966af\";s:7:\"postURL\";s:106:\"https://medium.com/@JakeSteam/adding-a-variable-to-both-the-android-manifest-and-build-config-df40354966af\";s:5:\"pDate\";s:19:\"2019-01-22 17:00:58\";}}\";"
-snap_isAutoPosted:
-    - '1548176458'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1087757024627183616";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1087757024627183616";s:5:"pDate";s:19:"2019-01-22 17:00:59";}}";'
-image: /wp-content/uploads/2019/01/hSQQnfU-150x150.png
+image: /wp-content/uploads/2019/01/hSQQnfU.png
 categories:
     - 'Android Dev'
 tags:
@@ -36,17 +23,15 @@ Defining these variables twice is likely to cause future discrepancies, a much m
 The main idea behind this approach is creating a function in `build.gradle` to perform two tasks at once for us at the same time. This `addConstantTo` function should go inside your `defaultConfig { }`, and takes 2 parameters; the variable name and variable values:
 
 ```
-<pre class="default prettyprint prettyprinted">```
-<span class="pln">android </span><span class="pun">{</span><span class="pln">
-    defaultConfig </span><span class="pun">{</span>
-        <span class="kwd">def</span><span class="pln"> addConstant </span><span class="pun">=</span> <span class="pun">{</span><span class="pln">constantName</span><span class="pun">,</span><span class="pln"> constantValue </span><span class="pun">-></span><span class="pln">
-            manifestPlaceholders </span><span class="pun">+=</span> <span class="pun">[</span> <span class="pun">(</span><span class="pln">constantName</span><span class="pun">):</span><span class="pln">constantValue</span><span class="pun">]</span><span class="pln">
-            buildConfigField </span><span class="str">"String"</span><span class="pun">,</span> <span class="str">"${constantName}"</span><span class="pun">,</span> <span class="str">"\"${constantValue}\""</span>
-        <span class="pun">}</span><span class="pln">
-        addConstant<span class="pun">(</span><span class="str">"DEEPLINK_HOST"</span><span class="pun">,</span> <span class="str">"https://blog.jakelee.co.uk"</span><span class="pun">)</span>
-        addConstant</span><span class="pun">(</span><span class="str">"DEEPLINK_PATH"</span><span class="pun">,</span> <span class="str">"/deeplink/myprofile"</span><span class="pun">)</span>
-    <span class="pun">}</span>
-```
+android {
+    defaultConfig {
+        def addConstant = {constantName, constantValue ->
+            manifestPlaceholders += [ (constantName):constantValue]
+            buildConfigField <span class="str">"String", <span class="str">"${constantName}", <span class="str">"\"${constantValue}\""
+        }
+        addConstant(<span class="str">"DEEPLINK_HOST", <span class="str">"https://blog.jakelee.co.uk")
+        addConstant(<span class="str">"DEEPLINK_PATH", <span class="str">"/deeplink/myprofile")
+    }
 ```
 
 This can then be accessed in your manifest with `${NAME}`:

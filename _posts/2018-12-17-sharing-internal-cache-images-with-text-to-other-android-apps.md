@@ -4,26 +4,13 @@ title: 'Sharing internal / cache images (with text) to other Android apps'
 date: '2018-12-17T19:08:12+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2220'
 permalink: /sharing-internal-cache-images-with-text-to-other-android-apps/
-snap_isAutoPosted:
-    - '1545073693'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6480508902197858304";s:5:"pDate";s:19:"2018-12-17 19:08:44";}}";'
-snapMD:
-    - "s:434:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:11:\"6c18a53b42a\";s:7:\"postURL\";s:103:\"https://medium.com/@JakeSteam/sharing-internal-cache-images-with-text-to-other-android-apps-6c18a53b42a\";s:5:\"pDate\";s:19:\"2018-12-17 19:08:46\";}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1074743223183126533";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1074743223183126533";s:5:"pDate";s:19:"2018-12-17 19:08:46";}}";'
-image: /wp-content/uploads/2018/12/sharing-150x150.png
+image: /wp-content/uploads/2018/12/sharing.png
 categories:
     - 'Android Dev'
 tags:
-    - androidx
-    - fileprovider
+    - Androidx
+    - Fileprovider
     - Sharing
 ---
 
@@ -50,7 +37,7 @@ Note that if you are using `.filesDir` and not `.cacheDir` in your sharing code,
 
 The `FileProvider` library needs to be added to your project. If you are using AndroidX, it is included already. If you are not, make sure to add the following dependency to your app-level `build.gradle`:
 
-```
+```groovy
 compile 'com.android.support:support-v4:28.0.0'
 ```
 
@@ -58,13 +45,13 @@ Now that our directory to share has been defined, it has to be added to the `And
 
 ```
 <provider
-        android:name="androidx.core.content.FileProvider"
-        android:authorities="${applicationId}.fileprovider"
-        android:grantUriPermissions="true"
-        android:exported="false">
+    android:name="androidx.core.content.FileProvider"
+    android:authorities="${applicationId}.fileprovider"
+    android:grantUriPermissions="true"
+    android:exported="false">
     <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/filepaths" />
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/filepaths" />
 </provider>
 ```
 
@@ -110,4 +97,4 @@ When your image sharing function is called, the user will receive a popup sugges
 
 All code in this tutorial is available as a Gist.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/sharing2.png?resize=400%2C479&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/sharing2.png?ssl=1)
+[![](/wp-content/uploads/2018/12/sharing2.png)](/wp-content/uploads/2018/12/sharing2.png)

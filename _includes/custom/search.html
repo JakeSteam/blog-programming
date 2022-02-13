@@ -50,6 +50,14 @@ function lunr_search(term) {
     }
     return false;
 }
+var hasRun = false
+window.addEventListener('load', function() {
+    var searchParam = new URLSearchParams(window.location.search).get("q")
+    if (searchParam != null) {
+        document.getElementById('lunrsearch').value = searchParam
+        lunr_search(searchParam)
+    }
+}, false);
 </script>
 <style>
     #lunrsearchresults {padding-top: 0.2rem;}
@@ -62,7 +70,7 @@ function lunr_search(term) {
 </style>
 
 
-<form onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+<form id="searchform" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
     <p><input type="text" class="form-control" id="lunrsearch" name="q" maxlength="255" value="" placeholder="What are you looking for?" autofocus /></p>
 </form>
 <div id="lunrsearchresults">

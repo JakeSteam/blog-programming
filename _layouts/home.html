@@ -50,7 +50,7 @@ layout: default
         <div class="content">
           <h4>
             <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
+              {{ post.title }}
             </a>
           </h4>
           <span class="post-meta">{{ post.date | date: date_format }} | {% include custom/read_time.html %} | {% include custom/tags.html %}</span>

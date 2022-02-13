@@ -16,7 +16,7 @@ snap_isAutoPosted:
     - '1576515701'
 snapTW:
     - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1206620423762436098";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1206620423762436098";s:5:"pDate";s:19:"2019-12-16 17:01:41";}}";'
-image: /wp-content/uploads/2019/12/Screenshot-2019-12-14-at-19.31.20-150x150.png
+image: /wp-content/uploads/2019/12/Screenshot-2019-12-14-at-19.31.20.png
 categories:
     - 'Android Dev'
 tags:

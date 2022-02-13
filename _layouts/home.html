@@ -21,6 +21,10 @@ layout: default
   .username, .svg-icon {
     vertical-align: middle;
   }
+
+  .tag, .tag:visited {
+    color: #828282;
+  }
 </style>
 
 <div class="home">
@@ -53,7 +57,7 @@ layout: default
               {{ post.title }}
             </a>
           </h4>
-          <span class="post-meta">{{ post.date | date: date_format }} | {% include custom/read_time.html %} | {% include custom/tags.html %}</span>
+          <span class="post-meta">{{ post.date | date: date_format }} • {% include custom/read_time.html %} • {% include custom/tags.html %}</span>
           <p>
             {%- if site.show_excerpts -%}
             {{ post.excerpt }}

@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<style>
+  .tag, .tag:visited {
+    color: #828282;
+  }
+</style>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -11,8 +16,11 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span> </span>
+      {%- endif -%} 
+      •
+      {% include custom/tags.html %}
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

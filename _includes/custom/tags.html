@@ -1,4 +1,6 @@
-{% if post.tags.size > 0 %}
-  Tag{% if post.tags.size > 1 %}s{% endif %}:
-  {{ post.tags | sort | join: ", " }}
-{% endif %}
+{% for tag in post.tags %} <!-- Used by homepage -->
+  <a class="tag" href="/search/?q={{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+{% endfor %}
+{% for tag in page.tags %} <!-- Used by pages -->
+  <a class="tag" href="/search/?q={{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+{% endfor %}

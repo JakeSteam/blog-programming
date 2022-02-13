@@ -1,5 +1,5 @@
 # Blog settings
-title: Jake Lee Programming Blog
+title: Jake Lee's Programming Blog
 email: blog@jakelee.co.uk
 description: Mostly Android tutorials & tips, with a little bit of web dev / tooling. Now on Jekyll! 
 baseurl: ""
@@ -15,6 +15,7 @@ twitter_username: JakeLeeUK
 github_username: JakeSteam
 linkedin_username: Jake-Lee
 rss: RSS
+main_url: https://jakelee.co.uk
 
 # Build settings
 plugins:

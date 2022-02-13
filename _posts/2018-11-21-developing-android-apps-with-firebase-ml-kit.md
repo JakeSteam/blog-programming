@@ -4,21 +4,8 @@ title: 'Developing Android Apps With Firebase ML Kit'
 date: '2018-11-21T21:43:59+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2020'
 permalink: /developing-android-apps-with-firebase-ml-kit/
-snap_isAutoPosted:
-    - '1542836640'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6471126035072192512";s:5:"pDate";s:19:"2018-11-21 21:44:34";}}";'
-snapMD:
-    - "s:419:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"556632e43b5f\";s:7:\"postURL\";s:87:\"https://medium.com/@JakeSteam/developing-android-apps-with-firebase-ml-kit-556632e43b5f\";s:5:\"pDate\";s:19:\"2018-11-21 21:44:37\";}}\";"
-snapTW:
-    - 's:396:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1065360360075657218";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1065360360075657218";s:5:"pDate";s:19:"2018-11-21 21:44:38";}}";'
-image: /wp-content/uploads/2018/11/mlkit-150x150.png
+image: /wp-content/uploads/2018/11/mlkit.png
 categories:
     - 'Android Dev'
 tags:
@@ -32,7 +19,7 @@ Machine Learning is, at its core, a way of letting programs learn how to do thin
 
 Firebase’s API provides “models” (knowledge based on data sets) for common actions such as identifying faces or objects in images. Firebase also provides the ability to utilise custom models (via TensorFlow), but only the built-in models will be covered in this tutorial. Additionally, only on-device APIs will be utilised, as cloud APIs require paid plans.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk//firebase/). Throughout this tutorial, the [official documentation](https://firebase.google.com/docs/ml-kit/) may be useful.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Throughout this tutorial, the [official documentation](https://firebase.google.com/docs/ml-kit/) may be useful.
 
 ## Implementation
 
@@ -44,8 +31,8 @@ In this tutorial, an image will be picked from a file selector, then analysed us
 
 First, add the ML Kit library to your app-level `build.gradle`:
 
-```
-<pre class="prettyprint"><span class="pln">implementation </span><span class="str">'com.google.firebase:firebase-ml-vision:18.0.1'</span>
+```groovy
+implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 ```
 
 Next, add the models you’ll be using to your `AndroidManifest.xml` as a `meta-data` entry. This allows your app to automatically download the model when your app is installed, instead of waiting until they are actually needed. The following example includes all models used in this tutorial:
@@ -147,13 +134,15 @@ private fun retrieveText(image: FirebaseVisionImage) {
 }
 ```
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/text.jpg?resize=400%2C228&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/text.jpg?ssl=1) [![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/textscreenshot.png?resize=146%2C300&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/textscreenshot.png?ssl=1)
+| Input | Output |
+| -- | -- |
+| [![](/wp-content/uploads/2018/11/text.jpg)](/wp-content/uploads/2018/11/text.jpg) | [![](/wp-content/uploads/2018/11/textscreenshot.png)](/wp-content/uploads/2018/11/textscreenshot.png) |
 
 #### Detecting faces in an image
 
 First, make sure `face` is included in your `DEPENDENCIES` meta-data inside `AndroidManifest.xml` and the face detection dependency has been added alongside core ML Kit:
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 implementation 'com.google.firebase:firebase-ml-vision-face-model:17.0.2'
 ```
@@ -203,13 +192,15 @@ FirebaseVision.getInstance()
         .addOnFailureListener { output.text = it.localizedMessage }
 ```
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/face.jpg?resize=396%2C223&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/face.jpg?ssl=1) [![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/facescreenshot.png?resize=146%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/facescreenshot.png?ssl=1)
+| Input | Output |
+| -- | -- |
+| [![](/wp-content/uploads/2018/11/face.jpg)](/wp-content/uploads/2018/11/face.jpg) | [![](/wp-content/uploads/2018/11/facescreenshot.png)](/wp-content/uploads/2018/11/facescreenshot.png) |
 
 #### Identifying barcodes in an image
 
 As usual, make sure `barcode` is in the `android:value` of your `DEPENDENCIES` in `Android.Manifest.xml`:
 
-```
+```xml
 <meta-data
     android:name="com.google.firebase.ml.vision.DEPENDENCIES"
     android:value="barcode" />
@@ -228,7 +219,7 @@ val options = FirebaseVisionBarcodeDetectorOptions.Builder()
         .build()
 ```
 
-Next, pass this to `firebase.getVisionBarcodeDetector(options)` and call `detectInImage(image)`. This will return a list of barcodes detected, each of which contains the raw text, the computed value, and the type. For example, a <span style="color: #222222; font-family: Monaco, Consolas, Andale Mono, DejaVu Sans Mono, monospace;"><span style="font-size: 15px; background-color: #e9ebec;">TYPE\_GEO</span></span> QR code will have a `rawText` of `geo:40.1234,75.1234,100`, a type of `TYPE_GEO`, and a `geoPoint` object with `lat` and `lng` doubles. Using the raw text is generally safest, as all data types resolve to a sensible plain text.
+Next, pass this to `firebase.getVisionBarcodeDetector(options)` and call `detectInImage(image)`. This will return a list of barcodes detected, each of which contains the raw text, the computed value, and the type. For example, a `TYPE\_GEO` QR code will have a `rawText` of `geo:40.1234,75.1234,100`, a type of `TYPE_GEO`, and a `geoPoint` object with `lat` and `lng` doubles. Using the raw text is generally safest, as all data types resolve to a sensible plain text.
 
 ```
 FirebaseVision.getInstance()
@@ -250,7 +241,9 @@ FirebaseVision.getInstance()
         .addOnFailureListener { output.text = it.localizedMessage }
 ```
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/barcode.jpg?resize=300%2C225&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/barcode.jpg?ssl=1) [![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/barcodescreenshot.png?resize=146%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/barcodescreenshot.png?ssl=1)
+| Input | Output |
+| -- | -- |
+| [![](/wp-content/uploads/2018/11/barcode.jpg)](/wp-content/uploads/2018/11/barcode.jpg) | [![](/wp-content/uploads/2018/11/barcodescreenshot.png)](/wp-content/uploads/2018/11/barcodescreenshot.png) |
 
 #### Labelling all objects in an image
 
@@ -258,7 +251,7 @@ The on-device version of this API returns the most common 400+ items, whereas th
 
 As always, first add `label` to your `DEPENDENCIES` inside your `AndroidManifest.xml`. Then add the image labelling library to your app-level `build.gradle`:
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 implementation 'com.google.firebase:firebase-ml-vision-image-label-model:17.0.2'
 ```
@@ -286,13 +279,15 @@ private fun retrieveLabels(image: FirebaseVisionImage) {
 }
 ```
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/object.jpg?resize=169%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/object.jpg?ssl=1) [![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/objectscreenshot.png?resize=146%2C300&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/objectscreenshot.png?ssl=1)
+| Input | Output |
+| -- | -- |
+| [![](/wp-content/uploads/2018/11/object.jpg)](/wp-content/uploads/2018/11/object.jpg) | [![](/wp-content/uploads/2018/11/objectscreenshot.png)](/wp-content/uploads/2018/11/objectscreenshot.png) |
 
 ## Web interface
 
 The [APIs tab of the web interface](https://console.firebase.google.com/u/0/project/_/ml/apis) shows all APIs currently in use by your apps, as well as which package name is utilising it.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/mlkitapis.png?resize=700%2C226&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/mlkitapis.png?ssl=1)
+[![](/wp-content/uploads/2018/11/mlkitapis.png)](/wp-content/uploads/2018/11/mlkitapis.png)
 
 ## Conclusion
 
@@ -302,6 +297,6 @@ However, the very nature of the image analysis technique means that there is no 
 
 From my own experimentation, the facial analysing performed amazingly well, as did the object recognition. However, somewhat surprisingly, the text identification was much less successful. This is likely due to the large number of fonts available, as well as the similarity between many letters, but it’s still unusual that the most common use case is the least accurate!
 
-Previous: [Developing Android Apps With Firebase Cloud Storage](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-cloud-storage/)
+Previous: [Developing Android Apps With Firebase Cloud Storage](/developing-android-apps-with-firebase-cloud-storage/)
 
-Next: [Ensuring Your Android App’s Quality With Firebase Crashlytics](https://blog.jakelee.co.uk/ensuring-your-android-apps-quality-with-firebase-crashlytics/)
+Next: [Ensuring Your Android App’s Quality With Firebase Crashlytics](/ensuring-your-android-apps-quality-with-firebase-crashlytics/)

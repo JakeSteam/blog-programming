@@ -4,21 +4,8 @@ title: 'Scheduling A Repeating Background Task On Android, With Power / Internet
 date: '2018-12-03T18:32:17+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2093'
 permalink: /scheduling-a-repeating-background-task-on-android-with-power-internet-requirements/
-snap_isAutoPosted:
-    - '1543861938'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6475426420729483264";s:5:"pDate";s:19:"2018-12-03 18:32:46";}}";'
-snapMD:
-    - "s:458:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"b925b25ecb4d\";s:7:\"postURL\";s:125:\"https://medium.com/@JakeSteam/scheduling-a-repeating-background-task-on-android-with-power-internet-requirements-b925b25ecb4d\";s:5:\"pDate\";s:19:\"2018-12-03 18:32:49\";}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1069660726745276416";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1069660726745276416";s:5:"pDate";s:19:"2018-12-03 18:32:45";}}";'
-image: /wp-content/uploads/2018/12/scheduled-1-150x150.png
+image: /wp-content/uploads/2018/12/scheduled-1.png
 categories:
     - 'Android Dev'
 tags:
@@ -29,7 +16,7 @@ tags:
 
 Whilst developing Android apps, performing a scheduled task at set intervals is a very common requirement. Despite this, there are a surprisingly high number of solutions, each with their own advantages and disadvantages. This tutorial will focus on using [Firebase JobDispatcher](https://github.com/firebase/firebase-jobdispatcher-android), a library that uses Google Play services to provide a backwards compatible (API 14+) job scheduling library. This makes it an attractive option for those that need to support older devices, and know their users will have Google Play installed:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/comparison.png?resize=700%2C129&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/comparison.png?ssl=1)
+[![](/wp-content/uploads/2018/12/comparison.png)](/wp-content/uploads/2018/12/comparison.png)
 
 This tutorial will walk you through the simple steps needed to implement Firebase JobDispatcher, as well as the customisation options available. A minimal example project of this tutorial’s implementation is available [as a repository](https://github.com/JakeSteam/ScheduledJobs), or as a [Gist](https://gist.github.com/JakeSteam/4d87c6472914c714214d9511db340b09). Kotlin is used, but all code is straightforward and can be converted to Java.
 
@@ -43,7 +30,7 @@ adb shell dumpsys activity service GcmService --endpoints uk.co.jakelee.schedule
 
 This will return a **lot** of information, most of it not useful (e.g. every saved WiFi network!). The first of the important parts is the task count, showing the number of registered jobs:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/scheduledtasks.png?resize=243%2C300&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/scheduledtasks.png?ssl=1)
+[![](/wp-content/uploads/2018/12/scheduledtasks.png)](/wp-content/uploads/2018/12/scheduledtasks.png)
 
 The second is the pending &amp; past executions list. This shows your tasks, their internet / scheduling requirements, and their execution history:
 
@@ -64,16 +51,16 @@ successes: 60 reschedules: 0 failures: 0 timeouts: 0 invalid_service: 0 total_el
 
 First, add the [Firebase JobDispatcher library](https://github.com/firebase/firebase-jobdispatcher-android) to your app-level `build.gradle`:
 
-```
+```groovy
 implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
 ```
 
 Next, add a service for the JobScheduler to your `AndroidManifest.xml`. The `.JobScheduler` doesn’t exist yet, but you’ll be making it in the next step!
 
-```
+```xml
 <service
-        android:name=".JobScheduler"
-        android:exported="false">
+    android:name=".JobScheduler"
+    android:exported="false">
     <intent-filter>
         <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
     </intent-filter>
@@ -168,4 +155,4 @@ Firebase’s JobDispatcher library provides a simple way to schedule future task
 
 The only downside is the requirement on Google Play Services to centrally coordinate your job scheduling. If you distribute your app via the Play Store this isn’t an issue, but will cause serious problems for those distributing externally.
 
-Note that this is just one of the many services Firebase offers, and there is [an ongoing series covering each one](https://blog.jakelee.co.uk/firebase/).
+Note that this is just one of the many services Firebase offers, and there is [an ongoing series covering each one](/search/?q=firebase/).

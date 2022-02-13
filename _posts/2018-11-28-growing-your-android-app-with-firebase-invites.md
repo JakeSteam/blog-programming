@@ -4,21 +4,8 @@ title: 'Growing Your Android App With Firebase Invites'
 date: '2018-11-28T22:06:13+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2074'
 permalink: /growing-your-android-app-with-firebase-invites/
-snap_isAutoPosted:
-    - '1543442774'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6473668355336339456";s:5:"pDate";s:19:"2018-11-28 22:06:51";}}";'
-snapMD:
-    - "s:421:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"fb96eda9dadd\";s:7:\"postURL\";s:89:\"https://medium.com/@JakeSteam/growing-your-android-app-with-firebase-invites-fb96eda9dadd\";s:5:\"pDate\";s:19:\"2018-11-28 22:06:54\";}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1067902668616679426";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1067902668616679426";s:5:"pDate";s:19:"2018-11-28 22:06:51";}}";'
-image: /wp-content/uploads/2018/11/zBBxqzi-150x150.png
+image: /wp-content/uploads/2018/11/zBBxqzi-1.png
 categories:
     - 'Android Dev'
 tags:
@@ -32,11 +19,11 @@ Firebase Invites provide a simple way to add user referral schemes to your app f
 
 Invite messages can be customised, and they can include custom data / deep links. This custom information works even if the user doesn’t have the app installed when they initially click the referral link, making Invites an excellent way to build your app’s user base.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk//firebase/). Throughout this tutorial, the [official documentation](https://firebase.google.com/docs/invites/android) and official intro video may be useful:
+This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase/). Throughout this tutorial, the [official documentation](https://firebase.google.com/docs/invites/android)  may be useful:
 
-<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/LkaIJCZ_HyM?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>## Implementation
+## Implementation
 
-As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Invites](https://github.com/JakeSteam/FirebaseReference/pull/10) if you just want to see the code changes required. This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk//adding-firebase-to-an-android-project/).
+As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Invites](https://github.com/JakeSteam/FirebaseReference/pull/10) if you just want to see the code changes required. This tutorial assumes you already have [Firebase added to your project](/adding-firebase-to-an-android-project/).
 
 In this tutorial, you’ll learn how to add the ability for users to send out invite links, and identify if a user has come from an invite link.
 
@@ -46,7 +33,7 @@ First, visit the Dynamic Links tab in the [Firebase console](https://console.fir
 
 Next, add Firebase Invites by adding the following to your dependencies in your app-level `build.gradle` file, then perform a Gradle sync:
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-invites:16.0.5'
 ```
 
@@ -54,7 +41,9 @@ implementation 'com.google.firebase:firebase-invites:16.0.5'
 
 #### Displaying invite screen
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/invites.png?resize=228%2C300&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/invites.png?ssl=1)The invite screen allows the user to customise the invite message, and select one or more email / SMS contacts. In the image below, you can see a user with SMS only (chat icon), email only (envelope icon), and both (envelope icon with arrow). Email addresses and phone numbers can also be manually entered.
+[![](/wp-content/uploads/2018/11/invites.png?resize=228%2C300)](/wp-content/uploads/2018/11/invites.png)
+
+The invite screen allows the user to customise the invite message, and select one or more email / SMS contacts. In the image below, you can see a user with SMS only (chat icon), email only (envelope icon), and both (envelope icon with arrow). Email addresses and phone numbers can also be manually entered.
 
 To actually display this dialog, pass an `AppInviteInvitation` to `startActivityForResult()`, which can be customised using the builder. Only the dialog title and invitation message must be defined, the rest are optional.
 
@@ -100,7 +89,11 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 
 ### Receiving invites
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/zBBxqzi-1.png?resize=300%2C136&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/zBBxqzi-1.png?ssl=1)[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/invite.png?resize=300%2C188&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/invite.png?ssl=1)When a user clicks the dynamic invite link from an email or text, they are taken directly to your app (or to the Play Store to install your app). When this happens, you need to check with Firebase Dynamic Links if there are any unprocessed invitations. Note that this function returns success even if there are no new invites, the difference is in whether `data` is null or not.
+| Text | Email |
+| -- | -- |
+| [![](/wp-content/uploads/2018/11/zBBxqzi-1.png)](/wp-content/uploads/2018/11/zBBxqzi-1.png) | [![](/wp-content/uploads/2018/11/invite.png)](/wp-content/uploads/2018/11/invite.png) |
+
+When a user clicks the dynamic invite link from an email or text, they are taken directly to your app (or to the Play Store to install your app). When this happens, you need to check with Firebase Dynamic Links if there are any unprocessed invitations. Note that this function returns success even if there are no new invites, the difference is in whether `data` is null or not.
 
 This logic should be included on every activity / fragment in your app where you want to check the user’s invite status, which is likely to be almost all.
 
@@ -131,4 +124,4 @@ Firebase Invites is a relatively simple to implement referral system, and whilst
 
 The basic referral system may be useful for simple apps, especially those where a user is likely to download &amp; register for an app just to view a specific piece of content. However, a server should be used for management of these invite links, such as checking if an invite has been accepted. Surprisingly few games also use the feature, despite their dependence on referral &amp; invite mechanics.
 
-It’s also worth noting that for opening a related iOS app, [`setOtherPlatformsTargetApplication` ](https://firebase.google.com/docs/reference/android/com/google/android/gms/appinvite/AppInviteInvitation.IntentBuilder#setOtherPlatformsTargetApplication(int,%20java.lang.String))must be used when displaying the invite dialog.
+It’s also worth noting that for opening a related iOS app, [`setOtherPlatformsTargetApplication`](https://firebase.google.com/docs/reference/android/com/google/android/gms/appinvite/AppInviteInvitation.IntentBuilder#setOtherPlatformsTargetApplication(int,%20java.lang.String))must be used when displaying the invite dialog.

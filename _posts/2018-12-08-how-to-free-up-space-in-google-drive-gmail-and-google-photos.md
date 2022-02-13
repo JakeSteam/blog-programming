@@ -4,23 +4,8 @@ title: 'How To Free Up Space in Google Drive, Gmail, and Google Photos'
 date: '2018-12-08T15:21:26+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2134'
 permalink: /how-to-free-up-space-in-google-drive-gmail-and-google-photos/
-classic-editor-remember:
-    - classic-editor
-snap_isAutoPosted:
-    - '1544282488'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6477190252061687808";s:5:"pDate";s:19:"2018-12-08 15:21:36";}}";'
-snapMD:
-    - "s:436:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"c27368c2356e\";s:7:\"postURL\";s:103:\"https://medium.com/@JakeSteam/how-to-free-up-space-in-google-drive-gmail-and-google-photos-c27368c2356e\";s:5:\"pDate\";s:19:\"2018-12-08 15:21:35\";}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1071424793042399232";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1071424793042399232";s:5:"pDate";s:19:"2018-12-08 15:22:31";}}";'
-image: /wp-content/uploads/2018/12/small-150x150.png
+image: /wp-content/uploads/2018/12/small.png
 categories:
     - Tips
 tags:
@@ -36,7 +21,7 @@ Recently I realised I was getting unnervingly close (84%) to my 19GB limit, and 
 
 First, [view your overall usage at Google One](https://one.google.com/storage), this will help you guide your efforts to the biggest space hoggers. My initial overview is shown below, further updates will be shown throughout this tutorial.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage1.png?resize=654%2C446&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage1.png?ssl=1)
+[![](/wp-content/uploads/2018/12/storage1.png)](/wp-content/uploads/2018/12/storage1.png)
 
 ## Drive
 
@@ -44,17 +29,23 @@ The biggest user of space was Google Drive, so that seemed a sensible place to s
 
 ### Emptying Google Drive bin
 
-I have [Google Drive synced to a local folder on my PC](https://www.google.com/drive/download/), so my first step was checking the disk space used. [![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagelocal.png?resize=226%2C300&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagelocal.png?ssl=1)It turned out to be just 1GB, so where on earth was the extra 8.4GB coming from!?
+I have [Google Drive synced to a local folder on my PC](https://www.google.com/drive/download/), so my first step was checking the disk space used. 
+
+[![](/wp-content/uploads/2018/12/storagelocal.png)](h/wp-content/uploads/2018/12/storagelocal.png)
+
+It turned out to be just 1GB, so where on earth was the extra 8.4GB coming from!?
 
 After a little research, I discovered every deleted file in Google Drive is kept… forever. That 500MB video you used Google Drive to transfer 5 years ago, then deleted the next day? It’s still there! Those few thousand image assets you downloaded for a project then ended up deleting? Still there!
 
 Luckily, it is possible to empty this bin. Just [visit the Trash](https://drive.google.com/drive/u/0/trash), then click “Bin” and “Empty bin”. Due to the 6 years of files hidden away in there for me, this process took around half an hour to complete. During that time, the Trash would show a random selection of files, so it was hard to tell if it was actually making any progress. Viewing the [storage overview page](https://one.google.com/storage) gives a more up to date account of your space usage. Note that due to the time taken to empty the bin, later screenshots in this tutorial will have ever-decreasing Google Drive sizes!
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/emptybin.png?resize=347%2C119&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/emptybin.png?ssl=1)
+[![](/wp-content/uploads/2018/12/emptybin.png)](/wp-content/uploads/2018/12/emptybin.png)
 
 ### Cleaning out Google Drive
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/quota.png?resize=300%2C167&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/quota.png?ssl=1)First, visit [the quota page](https://drive.google.com/drive/u/0/quota) and sort by “Storage used”. This will show you your largest files, and let you delete them. This is useful for any forgotten large files (e.g. videos, 3D renders) that are no longer useful.
+[![](/wp-content/uploads/2018/12/quota.png)](/wp-content/uploads/2018/12/quota.png)
+
+First, visit [the quota page](https://drive.google.com/drive/u/0/quota) and sort by “Storage used”. This will show you your largest files, and let you delete them. This is useful for any forgotten large files (e.g. videos, 3D renders) that are no longer useful.
 
 However, this approach misses any small files, and fails to give you a more general overview of your space used. Luckily, [WinDirStat (Windows Directory Statistics)](https://windirstat.net/index.html) exists, an application which provides a very detailed analysis of the space used in a specific folder.
 
@@ -66,11 +57,11 @@ Whilst WinDirStat definitely isn’t a pretty program, or particularly easy to u
 
 Clicking on a file’s visual representation will show you the location, filename, and filetype. Using this information, you can delete any large files / collections of files you no longer wish to keep. For example, the screenshot below has a large `.psd` selected.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/windirstat.png?resize=300%2C190&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/windirstat.png?ssl=1)
+[![](/wp-content/uploads/2018/12/windirstat.png)](/wp-content/uploads/2018/12/windirstat.png)
 
 Now that large / unneeded files have been removed and the bin has been emptied, the Google Drive space used is just 30% of the original, a very nice start!
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage3.png?resize=300%2C215&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage3.png?ssl=1)
+[![](/wp-content/uploads/2018/12/storage3.png)](/wp-content/uploads/2018/12/storage3.png)
 
 ## Gmail
 
@@ -78,7 +69,7 @@ As I use Gmail for all of my daily emails (across at least 5 accounts), there ar
 
 ### Large files
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagemore.png?resize=300%2C245&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagemore.png?ssl=1)The first task is removing any large attachments that are hidden away in old emails. Luckily, [Gmail has extremely powerful search operators](https://support.google.com/mail/answer/7190) that can be used to filter emails. For this task we want to delete emails with attachments, that are at least 20MB in size. To do this, enter the following into the Gmail search bar:
+[![](/wp-content/uploads/2018/12/storagemore.png)](/wp-content/uploads/2018/12/storagemore.png)The first task is removing any large attachments that are hidden away in old emails. Luckily, [Gmail has extremely powerful search operators](https://support.google.com/mail/answer/7190) that can be used to filter emails. For this task we want to delete emails with attachments, that are at least 20MB in size. To do this, enter the following into the Gmail search bar:
 
 ```
 has:attachment size:20MB
@@ -97,23 +88,31 @@ Luckily, Gmail automatically categorises most emails into “Social”, “Updat
 3. Clicking the “Select all X messages in Y” bar at the top
 4. Pressing the trash icon
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagecategories.png?resize=276%2C160&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagecategories.png?ssl=1) [![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagefolders.png?resize=300%2C99&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagefolders.png?ssl=1) [![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagefolders2.png?resize=300%2C133&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storagefolders2.png?ssl=1)
+| Folders | Select all | Category |
+| -- | -- | -- |
+| [![](/wp-content/uploads/2018/12/storagecategories.png)](/wp-content/uploads/2018/12/storagecategories.png) | [![](/wp-content/uploads/2018/12/storagefolders.png)](/wp-content/uploads/2018/12/storagefolders.png) | [![](/wp-content/uploads/2018/12/storagefolders2.png)](/wp-content/uploads/2018/12/storagefolders2.png) |
 
-Deleting thousands of emails can take a few seconds, make sure not to close the tab before it is done! The space used by Gmail has now dropped from 1.35GB to 0.41GB, without anything important being lost. Note that Google Drive’s space is still slowly going down, as it works through the thousands of deleted files from the previous step![![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage6.png?resize=300%2C209&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage6.png?ssl=1)
+Deleting thousands of emails can take a few seconds, make sure not to close the tab before it is done! The space used by Gmail has now dropped from 1.35GB to 0.41GB, without anything important being lost. Note that Google Drive’s space is still slowly going down, as it works through the thousands of deleted files from the previous step!
+[![](/wp-content/uploads/2018/12/storage6.png)](/wp-content/uploads/2018/12/storage6.png)
 
 ## Google Photos
 
-The final section to clear out is Google Photos. For this, I used Google Photos’ unlimited “High Quality” storage option. With this option, your full quality photos are replaced with “high” quality ones, which don’t count towards your allocation. High quality is defined as a maximum of 16MP, which is good enough for everyday usage (especially with my poor photography skills!).[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/compress1.png?resize=300%2C261&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/compress1.png?ssl=1)
+The final section to clear out is Google Photos. For this, I used Google Photos’ unlimited “High Quality” storage option. With this option, your full quality photos are replaced with “high” quality ones, which don’t count towards your allocation. High quality is defined as a maximum of 16MP, which is good enough for everyday usage (especially with my poor photography skills!).
+[![](/wp-content/uploads/2018/12/compress1.png)](/wp-content/uploads/2018/12/compress1.png)
 
-![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/compress2.png?resize=300%2C124&ssl=1)
+![](/wp-content/uploads/2018/12/compress2.png)
 
 To apply this setting, visit your [Google Photos settings](https://photos.google.com/settings) and change the “Upload size” setting from “Original” to “High quality”. This process takes around 5 minutes per 500MB, and is a good way of freeing up a large amount of space for very little effort.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage7.png?resize=300%2C204&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage7.png?ssl=1)The space used by Google Photos has now dropped from 5.32GB to 0GB. Pretty good!
+[![](/wp-content/uploads/2018/12/storage7.png)](/wp-content/uploads/2018/12/storage7.png)
+
+The space used by Google Photos has now dropped from 5.32GB to 0GB. Pretty good!
 
 ## Conclusion
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage1-1.png?resize=300%2C205&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage1-1.png?ssl=1) [![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage7.png?resize=300%2C204&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/12/storage7.png?ssl=1)
+| Before | After |
+| -- | -- |
+| [![](/wp-content/uploads/2018/12/storage1-1.png)](/wp-content/uploads/2018/12/storage1-1.png) | [![](/wp-content/uploads/2018/12/storage7.png)](/wp-content/uploads/2018/12/storage7.png) |
 
 So, the total space used has dropped from 16.07GB to 1.14GB, and from 84% utilisation to just 6%. Plenty of space now!
 

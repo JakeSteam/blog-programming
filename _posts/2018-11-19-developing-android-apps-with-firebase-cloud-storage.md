@@ -173,7 +173,7 @@ The usage tab shows a summary of your storage space used, number of files, bandw
 - Bandwidth used: 1GB/day
 - Total requests: 50,000 downloads &amp; 20,000 uploads/day
 
-[![](/wp-content/uploads/2018/11/usagetab.png?resize=700%2C359&ssl=1)](/wp-content/uploads/2018/11/usagetab.png?ssl=1)
+[![](/wp-content/uploads/2018/11/usagetab.png)](/wp-content/uploads/2018/11/usagetab.png)
 
 ## Conclusion
 
@@ -181,7 +181,7 @@ Firebase’s Cloud Storage provides an extremely easy to use way to allow users 
 
 The 1GB/day bandwidth limit may be an issue for applications that need to transfer large files often, but should be enough for smaller implementations. Of course, since it runs on Google Cloud Platform, these limits can be scaled up to suit any use case… [for a cost](https://firebase.google.com/pricing/)!
 
-[![](/wp-content/uploads/2018/11/quota.png?resize=700%2C153&ssl=1)](/wp-content/uploads/2018/11/quota.png?ssl=1)
+[![](/wp-content/uploads/2018/11/quota.png)](/wp-content/uploads/2018/11/quota.png)
 
 Previous: [Developing Android Apps With Firebase Cloud Functions](/developing-android-apps-with-firebase-cloud-functions/)
 

@@ -7,12 +7,7 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            <li>Portfolio: <a href="{{ site.main_url }}">{{ site.main_url }}</a></li>
-            <li>Email: <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            <li>Repo: <a class="u-email" href="{{ site.github.repository_url }}">{{ site.github.repository_nwo | default: "GitHub/example" }}</a></li>
-        </ul>
+        {%- include custom/contact.html -%}         
       </div>
 
       <div class="footer-col footer-col-2">
@@ -21,7 +16,7 @@
 
       <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
-        <p>
+        <p>Uses 
           Jekyll v{{ site.github.versions.jekyll | default: 1.0 }}, 
           Liquid v{{ site.github.versions.liquid | default: 1.0 }}, 
           GitHub Pages v{{ site.github.versions.github-pages | default: 1.0 }}.

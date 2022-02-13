@@ -4,20 +4,19 @@ title: 'Android Discord Communities: 2020 edition'
 date: '2020-09-09T16:00:13+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2871'
 permalink: /android-discord-communities-2020-edition/
 image: /wp-content/uploads/2020/09/dkj6uhigu7t21.png
 categories:
     - 'Android Dev'
 tags:
     - Android
-    - community
-    - dev
+    - Community
+    - Dev
     - Discord
-    - subreddit
+    - Subreddit
 ---
 
-Whether working on Android apps, finding new games, or having technical issues, getting real time Android support on places like Discord can be extremely helpful. In this follow-up post to [my December 2018 edition](https://blog.jakelee.co.uk/android-development-discord-communities/), I will cover the main Android Discord communities, and how they have changed in the last 20 months.
+Whether working on Android apps, finding new games, or having technical issues, getting real time Android support on places like Discord can be extremely helpful. In this follow-up post to [my December 2018 edition](/android-development-discord-communities/), I will cover the main Android Discord communities, and how they have changed in the last 20 months.
 
 I still help moderate all of these communities, please let me know if there are other communities I’m missing!
 
@@ -29,7 +28,7 @@ In the last 20 months, the Android Dev server has almost tripled in size from 3k
 
 The server has undergone dramatic reorganisation recently, and now has better channel organisation and even multiple “beginner help” channels to avoid overlapping conversations. Finding the right channel is easy with dedicated channels for topics, a #team-up channel for collaborating, and #app-showcase for sharing created apps.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/09/Aktjpfr.png?resize=478%2C361&ssl=1)](https://discord.com/invite/TnJRnf4)
+[![](/wp-content/uploads/2020/09/Aktjpfr.png)](https://discord.com/invite/TnJRnf4)
 
 ### Flutter Dev
 
@@ -37,7 +36,7 @@ Whilst the Android Dev server’s growth is impressive, the Flutter Dev one is b
 
 This growth has been helped by close partnership with the [/r/FlutterDev subreddit](https://www.reddit.com/r/FlutterDev/), as well as becoming an [official community resource](https://flutter.dev/community). It remains closely paired with the /r/AndroidDev server, and has a dedicated bot that provides Flutter documentation lookups.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/09/NNOou6q.png?resize=472%2C355&ssl=1)](https://discord.com/invite/qgs7DNe)
+[![](/wp-content/uploads/2020/09/NNOou6q.png)](https://discord.com/invite/qgs7DNe)
 
 ## General Android Discord Servers
 
@@ -49,7 +48,7 @@ Whilst the development servers have been pairing more closely with their subredd
 
 *Disclaimer: I now own the server instead of just moderating it!*
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/09/zSXP5Hk.png?resize=472%2C358&ssl=1)](https://discord.com/invite/JHgrY86)
+[![](/wp-content/uploads/2020/09/zSXP5Hk.png)](https://discord.com/invite/JHgrY86)
 
 ### Android Gaming
 
@@ -57,10 +56,10 @@ Whilst quieter than the above servers, the Android Gaming server has continued t
 
 It has doubled in size to just over 3k members, and has a cute new icon!
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/09/KsNgM7a.png?resize=473%2C358&ssl=1)](https://discord.com/invite/Fa9ahHK)
+[![](/wp-content/uploads/2020/09/KsNgM7a.png)](https://discord.com/invite/Fa9ahHK)
 
 ### Android Questions
 
 This server is unfortunately a bit neglected, and questions receive quicker answers on the Android or Android Dev servers instead. However it continues to grow, over doubling in size to reach 1.1k members.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/09/YqxFs6D.png?resize=471%2C355&ssl=1)](https://discord.com/invite/Cw62EkV)
+[![](/wp-content/uploads/2020/09/YqxFs6D.png)](https://discord.com/invite/Cw62EkV)

@@ -4,17 +4,15 @@ title: 'Accessing an Android app secret from GitHub Actions using Gradle'
 date: '2020-10-09T16:00:08+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2915'
-permalink: /accessing-android-app-secret-from-github-actions-using-gradle/
 image: /wp-content/uploads/2020/10/0L626L8.png
 categories:
     - 'Android Dev'
 tags:
-    - actions
+    - Actions
     - BuildConfig
     - CI
     - GitHub
-    - secrets
+    - Secrets
 ---
 
 Often an open source project will have API keys, auth tokens, and other secrets that definitely shouldn’t end up in source code. In my [current open source project](https://github.com/JakeSteam/Apod-Wallpaper-2) (a rewrite of APOD Wallpaper) I needed to store my APOD API key.
@@ -48,7 +46,7 @@ APOD_API_KEY="abcd1234"
 
 Next, we need to go to the repository’s “Settings”, then “Secrets”, then “New secret”. This will let us add a secret with a name &amp; value. Don’t include speech marks this time!
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/zsffTDX.png?resize=700%2C410&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/zsffTDX.png?ssl=1)
+[![](/wp-content/uploads/2020/10/zsffTDX.png)](/wp-content/uploads/2020/10/zsffTDX.png)
 
 ## 3. Accessing secret in GitHub Actions
 
@@ -56,7 +54,7 @@ There’s already plenty of great guides to getting GitHub Actions working with 
 
 The only addition we need to make is a new job step in `build.yml` to put the secret into a new `local.properties` file. This must be done **after** the code is checked out, or the file will be put in the wrong location:
 
-```
+```yaml
 - name: Access APOD_API_KEY
   env:
     APOD_API_KEY: ${{ secrets.APOD_API_KEY }}
@@ -76,7 +74,7 @@ In our app-level `build.gradle`, we need to load our properties file manually, t
 
 We do this by adding a new function, outside of `android {}` or `dependencies {}` etc:
 
-```
+```groovy
 String getApiKey() {
     def propFile = rootProject.file("./local.properties")
     def properties = new Properties()
@@ -87,9 +85,9 @@ String getApiKey() {
 
 ## 5. Loading the secret into BuildConfig
 
-Next, still in the same file, we need to add our secret into the `BuildConfig`. I’m using the default config, but it’s [pretty straightforward](https://blog.jakelee.co.uk/how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/) to have different values for different flavours / build types:
+Next, still in the same file, we need to add our secret into the `BuildConfig`. I’m using the default config, but it’s [pretty straightforward](/how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/) to have different values for different flavours / build types:
 
-```
+```groovy
 android {
     ...
     defaultConfig {
@@ -103,7 +101,7 @@ android {
 
 Finally, the simplest step of all! Once we’ve done a build to populate the `BuildConfig`, we can just access our secret with `BuildConfig.API_KEY`. Now, when GitHub actions runs our app can access the secret, and the build passes.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/0L626L8.png?resize=700%2C291&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/0L626L8.png?ssl=1)
+[![](/wp-content/uploads/2020/10/0L626L8.png)](/wp-content/uploads/2020/10/0L626L8.png)
 
 ## Conclusion
 

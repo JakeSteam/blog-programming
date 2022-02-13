@@ -4,16 +4,15 @@ title: 'Creating a MVVM RecyclerView grid with quick drag and drop item swapping
 date: '2021-07-12T20:02:13+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=3013'
 permalink: /creating-a-mvvm-recyclerview-grid-with-quick-drag-and-drop-item-swapping-room-livedata-support-and-more/
 image: /wp-content/uploads/2021/07/qznkK2f.png
 categories:
     - 'Android Dev'
 tags:
     - Android
-    - diffutil
-    - gridlayoutmanager
-    - mvvm
+    - DiffUtil
+    - GridLayoutManager
+    - MVVM
     - RecyclerView
 ---
 
@@ -23,7 +22,8 @@ One of the biggest challenges is moving items when the items are loaded and sort
 
 Whilst the solution in this post definitely isn’t perfect, it’s much better than snippets I could find already. There’s a video preview below, and a [full Gist of the solution](https://gist.github.com/JakeSteam/b5739b3fbdd367a9fb624b85196d8fcc) is available, this post is mostly to point out the interesting parts of it.
 
-<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/78WBKo7e9Jw?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>*Note: The video also contains “merging” items together, which isn’t included in this tutorial.*
+<div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/78WBKo7e9Jw?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>
+*Note: The video also contains “merging” items together, which isn’t included in this tutorial.*
 
 ## XML (table\_fragment.xml)
 
@@ -33,7 +33,7 @@ A RecyclerView with a GridLayoutManager is used to let us use more up-to-date An
 - `app:spanCount="5"`: Use a 5 column grid.
 - `android:overScrollMode="never"`: Disables the “overscroll” animations (the semi-circles of colour when you reach the start / end of a RecyclerView).
 
-```
+```xml
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/itemGrid"
     android:layout_width="0dp"
@@ -58,7 +58,7 @@ The fragment just sets up the adapter and RecyclerView, and observes a `items` L
 - `adapter.itemTouchHelper.attachToRecyclerView`: Adds the touch listener that we’ll set up later.
 - `setHasFixedSize(true)`: Lets the RecyclerView optimise for a fixed length of content.
 
-```
+```kotlin
 class TableFragment : Fragment() {
 
     private var binding: TableFragmentBinding by autoCleared()
@@ -101,7 +101,7 @@ class TableFragment : Fragment() {
 
 The ViewModel usually does most of the work, but in this example the adapter handles almost all of it. As such, it just needs the callbacks we passed to the adapter.
 
-```
+```kotlin
     fun handleItemClick(ownedItem: OwnedItem) {
         _textToShow.postValue(String.format("That's a %s at position %d!", ownedItem.item.name, ownedItem.position))
     }
@@ -117,7 +117,7 @@ The ViewModel usually does most of the work, but in this example the adapter han
 
 The Adapter is very simple, but quite lengthy due to using `DiffUtil` and `ItemTouchHelper` (covered next). It’s pretty much just a bare-bones adapter:
 
-```
+```kotlin
 class ItemAdapter(
     private val itemClickListener: (OwnedItem) -> Unit,
     private val itemSaver: (List) -> Unit
@@ -150,7 +150,7 @@ class ItemAdapter(
 
 The ViewHolder is why we needed item touch and click listeners earlier! The touch listener triggers the drag as soon as you put your finger down on the item, which makes moving items much easier.
 
-```
+```kotlin
 class ItemViewHolder(
     private val itemBinding: BoardItemBinding,
     private val itemClickListener: (OwnedItem) -> Unit,
@@ -185,9 +185,8 @@ class ItemViewHolder(
 
 Using a DiffUtil essentially enables clever animations when data changes, just by telling it how to compare items! Nothing unique here, the code will be very similar to all other DiffUtils.
 
-```
-    private fun calculateDiff(newItems: List) = DiffUtil.calculateDiff(object :
-        DiffUtil.Callback() {
+```kotlin
+    private fun calculateDiff(newItems: List) = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
 
         override fun getOldListSize() = items.size
 
@@ -221,7 +220,7 @@ These two positions are then “swapped” when the item is “dropped” (`ACTI
 3. Swap their positions within the adapter’s list of items (so that the adapter is currently correct).
 4. Save the items from step 2 (this `itemSaver` is the `viewModel::saveItems` passed inside the adapter constructor, that inserts them into the database!)
 
-```
+```kotlin
     val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
         ItemTouchHelper.UP or ItemTouchHelper.DOWN or
                 ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT, 0

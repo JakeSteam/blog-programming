@@ -4,16 +4,15 @@ title: 'Don&#8217;t revert merges! A story of a mystery pull request merge'
 date: '2021-08-07T16:36:32+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=3027'
 permalink: /dont-revert-merges/
 image: /wp-content/uploads/2021/08/3.png
 categories:
     - Development
 tags:
-    - branch
-    - git
+    - Branch
+    - Git
     - GitHub
-    - pr
+    - PR
 ---
 
 A Friday afternoon, after work hours. You and a colleague are merging the final few pull requests before giving a build to weekend testers.
@@ -45,7 +44,7 @@ So, what happened? Looking at [a recreation of the “small, finished feature”
 
 The git branch graph shows these events:
 
-[![gitkraken branch diagram](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/08/3.png?resize=566%2C395&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/08/3.png?ssl=1)
+[![gitkraken branch diagram](/wp-content/uploads/2021/08/3.png)](/wp-content/uploads/2021/08/3.png)
 
 Now it becomes obvious that all of big feature (`branchB`)’s commits are merged into small feature (`branchA`), but none of the code remains!
 

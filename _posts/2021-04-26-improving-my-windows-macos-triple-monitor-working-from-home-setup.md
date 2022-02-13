@@ -4,14 +4,13 @@ title: 'Improving my Windows &#038; MacOS triple monitor working from home setup
 date: '2021-04-26T14:59:26+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2958'
 permalink: /improving-my-windows-macos-triple-monitor-working-from-home-setup/
 image: /wp-content/uploads/2021/04/20210424_130510-scaled.jpg
 categories:
     - Tips
 tags:
-    - logitech
-    - wfh
+    - Logitech
+    - WFH
     - 'working from home'
 ---
 
@@ -23,18 +22,18 @@ This requires a few unique solutions, and recently I decided to spend a bit of m
 
 ## Before / After
 
-[![old wfh setup](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/vzk1Vo6.jpg?resize=300%2C224&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/vzk1Vo6.jpg?ssl=1)First, my absolutely awful **previous setup**. Beyond the immediately obvious cable chaos, here’s the main problems:
-
+First, my absolutely awful **previous setup**. Beyond the immediately obvious cable chaos, here’s the main problems:
 - Two mice, two keyboards
 - Low monitors causing poor posture
 - Laptop blocking a significant portion of right screen
 - Bulky cable tray underneath desk occasionally getting nudged by legs
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/above2.jpeg?resize=320%2C235&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/above2.jpeg?ssl=1)[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/under.jpeg?resize=320%2C235&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/under.jpeg?ssl=1)
+| Overview | From above | Under |
+| -- | -- | -- |
+| [![](/wp-content/uploads/2021/04/vzk1Vo6.jpg)](/wp-content/uploads/2021/04/vzk1Vo6.jpg) | [![](/wp-content/uploads/2021/04/above2.jpeg)](/wp-content/uploads/2021/04/above2.jpeg) | [![](/wp-content/uploads/2021/04/under.jpeg)](/wp-content/uploads/2021/04/under.jpeg) |
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/hum2TEM.png?resize=300%2C222&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/hum2TEM.png?ssl=1)  
+
 Next, my **current setup**. All of the above issues are now resolved completely, and hopefully the difference is immediately obvious! The changes are:
-
 - One mouse &amp; keyboard
 - Higher monitors leading to better posture
 - No screen blocking
@@ -42,7 +41,9 @@ Next, my **current setup**. All of the above issues are now resolved completely,
 - Few visible cables
 - Much more desk space, due to no stands
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/20210424_130510.jpg?resize=320%2C240&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/20210424_130510-scaled.jpg?ssl=1)[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/20210424_130549.jpg?resize=320%2C240&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/20210424_130549-scaled.jpg?ssl=1)
+| Overview | From above | Under |
+| -- | -- | -- |
+| [![](/wp-content/uploads/2021/04/hum2TEM.png)](/wp-content/uploads/2021/04/hum2TEM.png) | [![](/wp-content/uploads/2021/04/20210424_130510.jpg)](/wp-content/uploads/2021/04/20210424_130510-scaled.jpg) | [![](/wp-content/uploads/2021/04/20210424_130549.jpg)](/wp-content/uploads/2021/04/20210424_130549-scaled.jpg) |
 
 ## Requirements
 
@@ -60,13 +61,17 @@ I previously had the [Logitech G213](https://smile.amazon.co.uk/Logitech-G213-Pr
 
 Due to these factors, I went for the confusingly named [Logitech MX Keys](https://smile.amazon.co.uk/Logitech-Advanced-Illuminated-Bluetooth-Responsive/dp/B07W6HXZ5J/). It fit all of my criteria, being wireless, able to switch devices instantly, and laptop-style keys. It also has Logitech Flow, covered in the mouse section.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/2WODInk.png?resize=700%2C235&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/2WODInk.png?ssl=1)After 2 weeks, it’s easily the best keyboard I’ve ever used, and everyday typing suddenly feels much easier than it has before. The cross-platform labelled keys are a nice touch, and help when my muscle memory gets confused by the multiple OS!
+[![](/wp-content/uploads/2021/04/2WODInk.png)](/wp-content/uploads/2021/04/2WODInk.png)
+
+After 2 weeks, it’s easily the best keyboard I’ve ever used, and everyday typing suddenly feels much easier than it has before. The cross-platform labelled keys are a nice touch, and help when my muscle memory gets confused by the multiple OS!
 
 #### Mouse
 
 I previously used two [Logitech G203](https://smile.amazon.co.uk/Logitech-Customising-Gaming-Optical-Colour/dp/B01MYQ4HJD) mice, and found them excellent. However, they were wired, meaning they were no longer suitable for my new setup!
 
-I instead went for the [Logitech MX Master 3](https://smile.amazon.co.uk/Logitech-Master-Ultrafast-Customisation-Compatible/dp/B07W6HDNNV/), mostly because it goes perfectly with the keyboard, and contains the same Logitech Flow technology. Essentially, Flow lets you seamlessly move &amp; copy/paste between up to 3 machines just by moving your mouse to the edge of the screen (and optionally pressing CTRL). Here’s [a demo video](https://youtu.be/RHaLIq7CV68?t=307).[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/vBdgyhL.png?resize=700%2C283&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2021/04/vBdgyhL.png?ssl=1)
+I instead went for the [Logitech MX Master 3](https://smile.amazon.co.uk/Logitech-Master-Ultrafast-Customisation-Compatible/dp/B07W6HDNNV/), mostly because it goes perfectly with the keyboard, and contains the same Logitech Flow technology. Essentially, Flow lets you seamlessly move &amp; copy/paste between up to 3 machines just by moving your mouse to the edge of the screen (and optionally pressing CTRL). Here’s [a demo video](https://youtu.be/RHaLIq7CV68?t=307).
+
+[![](/wp-content/uploads/2021/04/vBdgyhL.png)](/wp-content/uploads/2021/04/vBdgyhL.png)
 
 After a couple of weeks, I still feel like the mouse has a lot of potential I’m not using. For example there’s a disabled button on the thumb rest that can be used for gestures, and even a horizontal scroll wheel. Perhaps these will be useful one day! The vertical scrollwheel also deserves complimenting, the super smooth movement at high speeds means I find myself idly scrolling just for the feel.
 

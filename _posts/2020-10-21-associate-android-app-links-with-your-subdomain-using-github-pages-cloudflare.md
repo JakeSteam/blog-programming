@@ -4,14 +4,13 @@ title: 'Associate Android app links with your subdomain using GitHub Pages &#038
 date: '2020-10-21T15:00:21+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2929'
 permalink: /associate-android-app-links-with-your-subdomain-using-github-pages-cloudflare/
 image: /wp-content/uploads/2020/10/S5kYMlw.png
 categories:
     - 'Android Dev'
 tags:
-    - 'app links'
-    - 'deep links'
+    - 'App Links'
+    - 'Deep Links'
     - GitHub
     - json
 ---
@@ -38,7 +37,7 @@ This can be made manually, but Android Studio’s wizard (Tools -&gt; App Links 
 
 Simply enter your domain and package, along with your signing information (to retrieve the certificate), and the file will be made for you. Save it somewhere, and we’ll move on to hosting it.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/fmBaJx6.png?resize=700%2C496&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/fmBaJx6.png?ssl=1)
+[![](/wp-content/uploads/2020/10/fmBaJx6.png)](/wp-content/uploads/2020/10/fmBaJx6.png)
 
 ## Making a GitHub pages repository
 
@@ -51,7 +50,7 @@ Next, we need to make and configure a repository to host our file (free hosting!
 
 Your settings should look like this, note that “Enforce HTTPS” won’t be available yet, and your site won’t be published yet.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/SBMV43c.png?resize=700%2C466&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/SBMV43c.png?ssl=1)
+[![](/wp-content/uploads/2020/10/SBMV43c.png)](/wp-content/uploads/2020/10/SBMV43c.png)
 
 ## Setting up DNS in Cloudflare
 
@@ -65,7 +64,7 @@ Here’s how I got it working:
 2. On GitHub’s walkthrough, scroll to Step 4 of “[Configuring an apex domain](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)“. This contains the IP addresses we need.
 3. Using at least 2 of those IPs, add proxied “A” records for your subdomain. It will end up looking like this:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/aLyRemB.png?resize=700%2C170&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/aLyRemB.png?ssl=1)
+[![](/wp-content/uploads/2020/10/aLyRemB.png)](/wp-content/uploads/2020/10/aLyRemB.png)
 
 When you visit your subdomain’s URL, you should now see some information about your GitHub repository. Whilst it can take up to 24 hours for these changes to propagate, for me it was just a few seconds!
 
@@ -108,7 +107,7 @@ An intent filter will then be added to your `AndroidManifest.xml` looking someth
 
 Your screen will end up looking like this, you can click a URL to see it in the manifest:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/I0oX3qx.png?resize=700%2C704&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/I0oX3qx.png?ssl=1)
+[![](/wp-content/uploads/2020/10/I0oX3qx.png)](/wp-content/uploads/2020/10/I0oX3qx.png)
 
 ## Conclusion
 

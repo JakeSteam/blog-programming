@@ -4,10 +4,7 @@ title: 'Programmatically creating and scheduling animations for Android drawable
 date: '2020-10-05T17:00:06+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2896'
 permalink: /programmatically-creating-and-scheduling-animations-for-android-drawable-layers-with-objectanimator/
-enclosure:
-    - "https://blog.jakelee.co.uk/wp-content/uploads/2020/10/ezgif.com-gif-maker.webm\n335846\nvideo/webm\n"
 image: /wp-content/uploads/2020/10/818vMSe.png
 categories:
     - 'Android Dev'
@@ -24,7 +21,9 @@ To implement this I combined the animating parts into a single layer list, where
 
 In this post we’ll perform similar effects on a layer list drawable without any XML animations:
 
-<div class="wp-video" style="width: 640px;"><video class="wp-video-shortcode" controls="controls" height="384" id="video-2896-1" preload="metadata" width="640"><source src="https://blog.jakelee.co.uk/wp-content/uploads/2020/10/ezgif.com-gif-maker.webm?_=1" type="video/webm"></source><https://blog.jakelee.co.uk/wp-content/uploads/2020/10/ezgif.com-gif-maker.webm></video></div>This post is available as a [proof of concept repository](https://github.com/JakeSteam/animating-layerlists), and as [a GitHub gist](https://gist.github.com/JakeSteam/c610598867b80fde6fedfc74ce282dd0).
+<div class="wp-video" style="width: 640px;"><video class="wp-video-shortcode" controls="controls" height="384" id="video-2896-1" preload="metadata" width="640"><source src="/wp-content/uploads/2020/10/ezgif.com-gif-maker.webm?_=1" type="video/webm"></source></wp-content/uploads/2020/10/ezgif.com-gif-maker.webm></video></div>
+
+This post is available as a [proof of concept repository](https://github.com/JakeSteam/animating-layerlists), and as [a GitHub gist](https://gist.github.com/JakeSteam/c610598867b80fde6fedfc74ce282dd0).
 
 ## Preparing the drawable
 
@@ -59,7 +58,7 @@ The type of `Drawable` required varies depending on how the layer-list is define
 
 There are 40 subclasses of `Drawable`, but these 2 will do for now!
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/eVGhPpe.png?resize=700%2C205&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/10/eVGhPpe.png?ssl=1)
+[![](/wp-content/uploads/2020/10/eVGhPpe.png)](/wp-content/uploads/2020/10/eVGhPpe.png)
 
 Looking at these `.class` files will tell you what animations are supported. For example, `RotateDrawable` has `onLevelChange` for rotation, but `GradientDrawable` has `setAlpha` for changing transparency.
 

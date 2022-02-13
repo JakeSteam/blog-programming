@@ -4,15 +4,15 @@ title: 'How to extract a Room list column into a new linked table, migrating dat
 date: '2022-01-12T18:00:34+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=3077'
 permalink: /how-to-extract-a-room-list-column-into-a-new-linked-table-migrating-data/
 image: /wp-content/uploads/2022/01/Tp3iZQX.png
 categories:
     - 'Android Dev'
 tags:
     - Kotlin
-    - room
+    - Room
     - SQLite
+    - Migration
 ---
 
 On a project recently the Room database consisted of a single table with many fields, some of which were `List`s. This was fine, and easy to work with until… it wasn’t. We started [seeing an error](https://i.imgur.com/a1Jcd6Y.png) in Crashlytics caused by certain columns exceeding size limits. Uh oh.

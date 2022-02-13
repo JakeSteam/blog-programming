@@ -4,7 +4,6 @@ title: 'Creating the PR template that Future You wishes Past You used'
 date: '2020-12-01T16:14:28+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2946'
 permalink: /creating-a-pr-template/
 image: /wp-content/uploads/2020/12/GpDWTLD.png
 categories:
@@ -45,7 +44,7 @@ The actual location varies by code host, but the approach is always a markdown t
 
 The PR template is provided in [an example repository](https://github.com/JakeSteam/pr-process-demo), [here is the raw markdown](https://raw.githubusercontent.com/JakeSteam/pr-process-demo/main/.github/pull_request_template.md), and [here is an example PR raised with it](https://github.com/JakeSteam/pr-process-demo/pull/1).
 
-[![Example PR screenshot](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/12/kVXcYMQ.png?resize=700%2C633&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/12/kVXcYMQ.png?ssl=1)
+[![Example PR screenshot](/wp-content/uploads/2020/12/kVXcYMQ.png)](/wp-content/uploads/2020/12/kVXcYMQ.png)
 
 Here’s why each section is essential:
 
@@ -89,4 +88,4 @@ Since the template provided will probably be customised over time according to h
 
 Whilst having testing steps on the PR is useful for code review, ideally it should be accessible to QAs &amp; POs too. A basic way to do this is just put a link to the PR on the ticket when moving it to “Ready to test”, but I’m sure there are automated solutions!
 
-Finally, remember that if you’re using GitHub for PRs you also have [access to the extremely useful rich diffs](https://blog.jakelee.co.uk/exploring-pull-requests-with-githubs-rich-diff-functionality/) in PRs!
+Finally, remember that if you’re using GitHub for PRs you also have [access to the extremely useful rich diffs](/exploring-pull-requests-with-githubs-rich-diff-functionality/) in PRs!

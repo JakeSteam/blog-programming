@@ -10,12 +10,13 @@ image: /wp-content/uploads/2020/08/3qjoZ8A.png
 categories:
     - Development
 tags:
-    - git
+    - Git
     - GitHub
 ---
 
-Like many developers, I spend a surprisingly large amount of time reviewing other people’s code. In fact, according to GitHub that’s around 20% of my day![  
-![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/A7EFN1q.png?resize=300%2C251&ssl=1)](https://blog.jakelee.co.uk/wp-content/uploads/2020/08/A7EFN1q.png)
+Like many developers, I spend a surprisingly large amount of time reviewing other people’s code. In fact, according to GitHub that’s around 20% of my day!
+
+[![](/wp-content/uploads/2020/08/A7EFN1q.png)](/wp-content/uploads/2020/08/A7EFN1q.png)
 
 When reviewing pull requests, code changes are very easy to review and approve. However, comparing images can be much harder to check, since by default GitHub only shows an unintuitive “Binary file not shown” message. Luckily, I recently discovered the rarely mentioned “rich diff” feature that makes this so, so much easier. I’ll briefly run through the functionality it offers, all screenshots in this post are from [my Rich Diff repo](https://github.com/JakeSteam/RichDiffExperiments).
 
@@ -23,7 +24,7 @@ When reviewing pull requests, code changes are very easy to review and approve. 
 
 First of all, how do you access rich diff? Simple, click the “page” icon next to many file types! Once clicked, this will compare the two files in a much more helpful way. If no “page” icon is visible, rich diff is not available.
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/dCv3J6o.png?resize=700%2C91&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/dCv3J6o.png?ssl=1)
+[![](/wp-content/uploads/2020/08/dCv3J6o.png)](/wp-content/uploads/2020/08/dCv3J6o.png)
 
 ## Image rich diff
 
@@ -31,19 +32,22 @@ Images are probably the best use cases for rich diff. I created a collection of 
 
 I found SVGs, PNGs, JPGs, and GIFs can use rich diff, but BMPs cannot. For the compatible file types, there are 3 options for the rich diff:
 
-### 2-up[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/3qjoZ8A.png?resize=150%2C150&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/3qjoZ8A.png?ssl=1)
+### 2-up
+[![](/wp-content/uploads/2020/08/3qjoZ8A.png)](/wp-content/uploads/2020/08/3qjoZ8A.png)
 
 This mode displays the images side by side, as well as their width, height, and file size. This is a great way to notice an image has slightly changed dimensions, since this might not be noticeable with the naked eye.
 
 Unfortunately, this mode does not help when identifying small visual changes within the image itself, the other modes are better for that.
 
-### Swipe[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/Rjf3nY8.png?resize=150%2C150&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/Rjf3nY8.png?ssl=1)
+### Swipe
+[![](/wp-content/uploads/2020/08/Rjf3nY8.png)](/wp-content/uploads/2020/08/Rjf3nY8.png)
 
 This mode displays the two versions of the image with a left to right slider over the top.
 
 This is an excellent way of noticing small changes within an image, whilst still keeping track of the overall image.
 
-### Onion Skin[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/u2wqvqB.png?resize=150%2C150&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/u2wqvqB.png?ssl=1)
+### Onion Skin
+[![](/wp-content/uploads/2020/08/u2wqvqB.png?resize=150%2C150&ssl=1)](/wp-content/uploads/2020/08/u2wqvqB.png)
 
 This mode overlays the new image over the old one, and lets you control the transparency.
 
@@ -55,13 +59,13 @@ Whilst images performed well, I was curious if common document types would work.
 
 As before, I created &amp; [updated a selection of common formats](https://github.com/JakeSteam/RichDiffExperiments/commit/33ea6257db94e9f41d4ce4754fe99b1140bff5e1) (DOC, DOCX, HTML, PDF, RTF, MD), and only MD (markdown) had rich diff. The RTF and HTML files *did* show the code changes, but this isn’t particularly helpful for a verbose format like RTF!
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/KUBjqor.png?resize=700%2C225&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/KUBjqor.png?ssl=1)
+[![](/wp-content/uploads/2020/08/KUBjqor.png)](/wp-content/uploads/2020/08/KUBjqor.png)
 
 The Markdown file fared much better, showing a very helpful visual indicator of what has been added and removed.
 
 The coloured bars on the left indicate the line status (first line changed, second line added). The coloured highlights in the changed line indicate the removed and added sections, in an easy to understand format.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/FOya3Dn.png?resize=700%2C213&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/FOya3Dn.png?ssl=1)
+[![](/wp-content/uploads/2020/08/FOya3Dn.png)](/wp-content/uploads/2020/08/FOya3Dn.png)
 
 Whilst this indicator usually works well, [in some commits](https://github.com/Aircoookie/WLED/commit/35098c474cecaff316bccab7e6bf925a03ef8fbe#diff-0730bb7c2e8f9ea2438b52e419dd86c9) it instead shows an entire section as changed instead of only the specific lines.
 
@@ -73,4 +77,4 @@ One likely reason for the feature not being heavily promoted is the extra proces
 
 Hopefully this post helps you next time you need to compare changed images in a GitHub pull request. It was a lifesaver when I recently needed to look at [a colleague](https://github.com/chris-sloan)‘s PR containing 180 JPGs!
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/Z5uYxKj.png?resize=501%2C215&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2020/08/Z5uYxKj.png?ssl=1)
+[![](/wp-content/uploads/2020/08/Z5uYxKj.png)](/wp-content/uploads/2020/08/Z5uYxKj.png)

@@ -4,21 +4,8 @@ title: 'Developing Android Apps With Firebase Cloud Storage'
 date: '2018-11-19T10:14:08+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=1986'
 permalink: /developing-android-apps-with-firebase-cloud-storage/
-snap_isAutoPosted:
-    - '1542622509'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6470228121462411264";s:5:"pDate";s:19:"2018-11-19 10:16:35";}}";'
-snapMD:
-    - "s:426:\"a:1:{i:0;a:10:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;s:8:\"isPosted\";s:1:\"1\";s:4:\"pgID\";s:12:\"16c20aedfcee\";s:7:\"postURL\";s:94:\"https://medium.com/@JakeSteam/developing-android-apps-with-firebase-cloud-storage-16c20aedfcee\";s:5:\"pDate\";s:19:\"2018-11-19 10:16:37\";}}\";"
-snapTW:
-    - 's:396:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1064462444842663936";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1064462444842663936";s:5:"pDate";s:19:"2018-11-19 10:16:38";}}";'
-image: /wp-content/uploads/2018/11/storage-150x150.png
+image: /wp-content/uploads/2018/11/storage.png
 categories:
     - 'Android Dev'
 tags:
@@ -29,21 +16,21 @@ tags:
 
 Firebase Cloud Storage provides an easy way to store user’s files, or provide existing files to the user. Additionally, heavily customisable access control is included, and all files can be browsed via a web interface. In this tutorial’s implementation, the user will be able to download sample files, and upload / delete their own arbitrary files.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk//firebase/). Throughout this tutorial, you’ll need access to the [Firebase Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage), and the [official documentation](https://firebase.google.com/docs/storage/) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Throughout this tutorial, you’ll need access to the [Firebase Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage), and the [official documentation](https://firebase.google.com/docs/storage/) may be useful too.
 
 ## Implementation
 
 As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Cloud Storage](https://github.com/JakeSteam/FirebaseReference/pull/6) if you just want to see the code changes required.
 
-This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk//adding-firebase-to-an-android-project/).
+This tutorial assumes you already have [Firebase added to your project](/adding-firebase-to-an-android-project/).
 
 ### Setting up Firebase Cloud Storage environment
 
 Visiting the [Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage) and clicking “Get Started” will display a dialog confirming the default security rules. These rules state that any logged-in users can read and write any files, a relatively lax default ruleset! Once these default rules have been agreed to, you’ll have an empty storage “bucket”, ready to fill up with files.
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/nofiles.png?resize=700%2C143&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/nofiles.png?ssl=1)
+[![](/wp-content/uploads/2018/11/nofiles.png)](/wp-content/uploads/2018/11/nofiles.png)
 
-Navigate to [the rules tab](https://console.firebase.google.com/u/0/project/_/storage/rules), and the default rules from earlier will be visible. Whilst these rules can be [intricately applied](https://firebase.google.com/docs/storage/security/start), in this use case 2 directories will be configured; one non-writable (`<span style="font-family: 'courier new', courier, monospace;">sample</span>`) and one writable (`<span style="font-family: 'courier new', courier, monospace;">userFolder</span>`). The following config is very straightforward, and configures the 2 directories and all subdirectories / files inside them. Additionally, a maximum filesize of 5MB (5 \* 1024 \* 1024 bytes) will be implemented to prevent excessive storage usage. The latter part of the conditional statement (`|| request.resource == null`) is to allow file deletion.
+Navigate to [the rules tab](https://console.firebase.google.com/u/0/project/_/storage/rules), and the default rules from earlier will be visible. Whilst these rules can be [intricately applied](https://firebase.google.com/docs/storage/security/start), in this use case 2 directories will be configured; one non-writable (`sample`) and one writable (`userFolder`). The following config is very straightforward, and configures the 2 directories and all subdirectories / files inside them. Additionally, a maximum filesize of 5MB (5 \* 1024 \* 1024 bytes) will be implemented to prevent excessive storage usage. The latter part of the conditional statement (`|| request.resource == null`) is to allow file deletion.
 
 ```
 service firebase.storage {
@@ -61,7 +48,7 @@ service firebase.storage {
 
 Finally, to include Cloud Storage in your project, add the following to your app-level build.gradle. If you are prompted to update the library’s version number, do so.
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-storage:16.0.4'
 ```
 
@@ -80,12 +67,12 @@ On your file reference, call `.metadata`, followed by `.addOnSuccessListener` an
 
 ```
 private fun viewMetadata(reference: StorageReference) = reference.metadata
-        .addOnSuccessListener {
-            Toast.makeText(activity, "${it.name} has a size of ${it.sizeBytes} bytes, and is a ${it.contentType}", Toast.LENGTH_SHORT).show()
-        }
-        .addOnFailureListener {
-            Toast.makeText(activity, "Failed to load metadata: ${it.localizedMessage}", Toast.LENGTH_SHORT).show()
-        }
+    .addOnSuccessListener {
+        Toast.makeText(activity, "${it.name} has a size of ${it.sizeBytes} bytes, and is a ${it.contentType}", Toast.LENGTH_SHORT).show()
+    }
+    .addOnFailureListener {
+        Toast.makeText(activity, "Failed to load metadata: ${it.localizedMessage}", Toast.LENGTH_SHORT).show()
+    }
 ```
 
 The `StorageMetadata` object returned on successful metadata retrieval contains a lot of useful information by default, and can be improved by adding custom metadata fields. It contains the name (`.name`), size (`.sizeBytes`), type (`.contentType`), MD5 hash (`.md5Hash`) and [much more](https://firebase.google.com/docs/reference/android/com/google/firebase/storage/StorageMetadata.html).
@@ -169,13 +156,13 @@ private fun deleteFile(reference: StorageReference) = reference
 
 The files tab can be very useful when debugging. It provides a traditional view of all folders, subfolders, and files in your Cloud Storage bucket. Whilst you cannot rename files / folders, you can delete them and view file previews / metadata. Additionally, you can create new folders and upload files manually.
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/filestab.png?resize=700%2C490&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/filestab.png?ssl=1)
+[![](/wp-content/uploads/2018/11/filestab.png)](/wp-content/uploads/2018/11/filestab.png)
 
 ### Rules
 
 The rules tab displays your current configuration, as well as letting you test it by sending fake requests. These fake requests can be used to check if certain sections of your users have the correct permissions for various files. The fake request payload is also displayed, so you can manually enter it in request execution programs like [Postman](https://www.getpostman.com/apps).
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/rulestab.png?resize=700%2C285&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/rulestab.png?ssl=1)
+[![](/wp-content/uploads/2018/11/rulestab.png)](/wp-content/uploads/2018/11/rulestab.png)
 
 ### Usage
 
@@ -186,7 +173,7 @@ The usage tab shows a summary of your storage space used, number of files, bandw
 - Bandwidth used: 1GB/day
 - Total requests: 50,000 downloads &amp; 20,000 uploads/day
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/usagetab.png?resize=700%2C359&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/usagetab.png?ssl=1)
+[![](/wp-content/uploads/2018/11/usagetab.png?resize=700%2C359&ssl=1)](/wp-content/uploads/2018/11/usagetab.png?ssl=1)
 
 ## Conclusion
 
@@ -194,8 +181,8 @@ Firebase’s Cloud Storage provides an extremely easy to use way to allow users 
 
 The 1GB/day bandwidth limit may be an issue for applications that need to transfer large files often, but should be enough for smaller implementations. Of course, since it runs on Google Cloud Platform, these limits can be scaled up to suit any use case… [for a cost](https://firebase.google.com/pricing/)!
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/quota.png?resize=700%2C153&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2018/11/quota.png?ssl=1)
+[![](/wp-content/uploads/2018/11/quota.png?resize=700%2C153&ssl=1)](/wp-content/uploads/2018/11/quota.png?ssl=1)
 
-Previous: [Developing Android Apps With Firebase Cloud Functions](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-cloud-functions/)
+Previous: [Developing Android Apps With Firebase Cloud Functions](/developing-android-apps-with-firebase-cloud-functions/)
 
-Next: [Developing Android Apps With Firebase ML Kit](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-ml-kit/)
+Next: [Developing Android Apps With Firebase ML Kit](/developing-android-apps-with-firebase-ml-kit/)

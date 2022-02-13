@@ -4,10 +4,7 @@ title: 'Using multi-weighted custom fonts on Android'
 date: '2018-09-10T18:33:37+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1686'
 permalink: /using-multi-weighted-custom-fonts-on-android/
-timeline_notification:
-    - '1536604417'
 image: /wp-content/uploads/2018/09/dribbpj.png
 categories:
     - 'Android Dev'

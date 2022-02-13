@@ -4,20 +4,7 @@ title: 'Developing Android Apps With Firebase Realtime Database'
 date: '2018-10-25T21:20:24+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1806'
 permalink: /developing-android-apps-with-firebase-realtime-database/
-timeline_notification:
-    - '1540502425'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:213:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:63:\"%EXCERPT%\r\n\r\n\r\n\r\n\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
 image: /wp-content/uploads/2018/10/f6fuu6w.png
 categories:
     - 'Android Dev'
@@ -27,17 +14,17 @@ tags:
     - 'Realtime Database'
 ---
 
-Firebase Realtime Database is the more traditional predecessor to [Firestore](https://blog.jakelee.co.uk//2018/10/22/developing-android-apps-with-firebase-cloud-firestore/), and is essentially a way to store data as JSON and sync it between all clients / servers. Google have also [provided a full comparison](https://cloud.google.com/datastore/docs/firestore-or-datastore).
+Firebase Realtime Database is the more traditional predecessor to [Firestore](/developing-android-apps-with-firebase-cloud-firestore/), and is essentially a way to store data as JSON and sync it between all clients / servers. Google have also [provided a full comparison](https://cloud.google.com/datastore/docs/firestore-or-datastore).
 
 Note that the JSON structured format can be quite limiting, and often requires thinking outside the box to make your existing data format fit inside it.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk//firebase/). Throughout this tutorial, you’ll need access to the [Firebase Realtime Database dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/database/android/start/) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Realtime Database dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/database/android/start/) may be useful too.
 
 ## Implementation
 
 As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Realtime Database](https://github.com/JakeSteam/FirebaseReference/pull/4) if you just want to see the code changes required.
 
-This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk//adding-firebase-to-an-android-project/).
+This tutorial assumes you already have [Firebase added to your project](/adding-firebase-to-an-android-project/).
 
 ### Setting up
 
@@ -48,7 +35,7 @@ Create the database in **test mode**, making sure to set up proper access contro
 
 Next, add the dependency to your app-level `build.gradle` file:
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-database:16.0.3'
 ```
 
@@ -75,7 +62,7 @@ As all data is stored as a giant JSON object, advanced filtering is not possible
 #### Filtering
 
 A few filtering methods are available, but are limited to selecting the first or last x results, or displaying results where a value is above, below, or equal to a specified value. These can also be combined, the table below explains these further:  
-![jrj4qpj](https://i1.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/jrj4qpj.png?resize=700%2C185&ssl=1)
+![filtering](/wp-content/uploads/2018/10/jrj4qpj.png)
 
 #### Ordering
 
@@ -96,10 +83,10 @@ Additionally, `nestedData` is the node all operations are performed on, a refere
 To get Firebase to automatically create an ID, `.push()` to a node, then retrieve the key immediately afterwards. This new child node can then be written to.
 
 ```
-        val key = nestedData.push().key
-        key?.let {
-            nestedData.child(key).setValue(DataRow("thisisauuid", 1234))
-        }
+val key = nestedData.push().key
+key?.let {
+    nestedData.child(key).setValue(DataRow("thisisauuid", 1234))
+}
 ```
 
 This child node will now be saved under a random ID inside `nestedData`, with a key similar to “-LPc3jx0y-Hg6aITpvw2”.
@@ -109,7 +96,6 @@ This child node will now be saved under a random ID inside `nestedData`, with a 
 To manually set the ID, just write to your desired ID and the node will be created for you. This can be used for multiple levels of nesting to instantly create a multi-node data structure.
 
 ```
-<pre class="brush: plain; title: ; notranslate" title="">
 nestedData.child("collection").child("group").setValue(DataRow("anotheruuid, 4321"))
 ```
 
@@ -119,7 +105,7 @@ Updating data is almost identical to adding new rows, you just need to set the n
 
 The `.addListenerForSingleValueEvent()` listener is important, as it stops any future data changes (such as the current update!) triggering the listener again.
 
-```
+```kotlin
 nestedData.addListenerForSingleValueEvent(object : ValueEventListener {
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             for (postSnapshot in dataSnapshot.children) {
@@ -147,7 +133,7 @@ The web interface for Realtime Database allows reading / modifying the stored da
 ### Data tab
 
 This tab allows adding, editing, and deleting nodes. It’s also possible to create new nested data, and is a good way to form the basic data structure before beginning programmatically adding data.  
-![pib8cpx](https://i0.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/pib8cpx.png?resize=700%2C225&ssl=1)
+![data tab](/wp-content/uploads/2018/10/pib8cpx.png)
 
 ### Rules tab
 
@@ -160,7 +146,7 @@ This tab is only useful on Blaze or above plans, and will allow you to start a m
 ### Usage tab
 
 This tab provides information on the recent usage of your database. It is updated every minute, and is an excellent way to get a quick overview of system load, and upgrade plans if necessary.  
-![vukqkat](https://i1.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/vukqkat.png?resize=700%2C397&ssl=1)
+![usage tab](/wp-content/uploads/2018/10/vukqkat.png)
 
 ## Conclusion
 
@@ -168,6 +154,6 @@ Whilst Realtime Database’s node based architecture is perfect for some project
 
 The offline data caching and syncing between all clients is as powerful as ever, but I find it hard to see any benefits over Firestore.
 
-Previous: [Developing Android Apps With Firebase Cloud Firestore](https://blog.jakelee.co.uk//developing-android-apps-with-firebase-cloud-firestore)
+Previous: [Developing Android Apps With Firebase Cloud Firestore](/developing-android-apps-with-firebase-cloud-firestore)
 
-Next: [Developing Android Apps With FIrebase Cloud Functions](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-cloud-functions/)
+Next: [Developing Android Apps With FIrebase Cloud Functions](/developing-android-apps-with-firebase-cloud-functions/)

@@ -4,21 +4,8 @@ title: 'Adding Callbacks From Fragment To Activity Or Activity To Application In
 date: '2018-10-24T09:00:23+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1790'
 permalink: /adding-callbacks-from-fragment-to-activity-or-activity-to-application-in-android/
-timeline_notification:
-    - '1540372798'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:213:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:63:\"%EXCERPT%\r\n\r\n\r\n\r\n\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
-image: /wp-content/uploads/2018/10/fragmentclosedcode-150x150.png
+image: /wp-content/uploads/2018/10/fragmentclosedcode.png
 categories:
     - 'Android Dev'
 tags:
@@ -77,12 +64,12 @@ The child fragment or activity needs to have a public constant defined in the co
 Now, when the fragment should be closed (e.g. if it’s a modal and the user has pressed the close button), try to call the parent’s callback. It’s worth wrapping this in a try/catch in case the fragment has accidentally been opened from another activity. The parent should never be null, as an activity can’t live without an application, and a fragment can’t live without an activity!
 
 ```
-            try {
-                (activity as ActionHandler).handleAction(FRAGMENT_A_CLOSED)
-            } catch (e: ClassCastException) {
-                Timber.e("Calling activity can't get callback!")
-            }
-            dismiss()
+    try {
+        (activity as ActionHandler).handleAction(FRAGMENT_A_CLOSED)
+    } catch (e: ClassCastException) {
+        Timber.e("Calling activity can't get callback!")
+    }
+    dismiss()
 ```
 
 That’s it! Now, when the child calls `handleAction`, the parent will receive the callback, and can perform any action needed.

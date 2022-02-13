@@ -4,20 +4,7 @@ title: 'Fixing Dependency Conflict In OneSignal Android'
 date: '2018-10-23T15:00:04+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1786'
 permalink: /fixing-dependency-conflict-in-onesignal-android/
-timeline_notification:
-    - '1540307468'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:216:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:218:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
 image: /wp-content/uploads/2018/10/89dfggs.png
 categories:
     - 'Android Dev'
@@ -30,11 +17,11 @@ tags:
     - OneSignal
 ---
 
-Whilst following OneSignal’s [setup guide](https://documentation.onesignal.com/docs/android-sdk-setup) for their [Android SDK](https://github.com/OneSignal/OneSignal-Android-SDK), everything went smoothly until attempting to run the build past our CI (continuous integration) server, [CircleCI](https://circleci.com/). I’ve [encountered various issues](https://blog.jakelee.co.uk//getting-onesignal-working-on-a-multi-module-project/) when using custom build flavours with OneSignal before, and expect that was the cause of this issue too.
+Whilst following OneSignal’s [setup guide](https://documentation.onesignal.com/docs/android-sdk-setup) for their [Android SDK](https://github.com/OneSignal/OneSignal-Android-SDK), everything went smoothly until attempting to run the build past our CI (continuous integration) server, [CircleCI](https://circleci.com/). I’ve [encountered various issues](/getting-onesignal-working-on-a-multi-module-project/) when using custom build flavours with OneSignal before, and expect that was the cause of this issue too.
 
 The build failed, due to the following exception:
 
-```
+```groovy
 Execution failed for task ':app:preCustomflavourQaAndroidTestBuild'.
 > Conflict with dependency 'com.google.firebase:firebase-messaging' in project ':app'. Resolved versions for app (17.0.0) and test app (12.0.1) differ. See https://d.android.com/r/tools/test-apk-dependency-conflicts.html for details.
 ```

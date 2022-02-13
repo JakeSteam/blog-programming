@@ -4,20 +4,7 @@ title: 'Developing Android Apps With Firebase Cloud Firestore'
 date: '2018-10-22T14:20:01+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1775'
 permalink: /developing-android-apps-with-firebase-cloud-firestore/
-timeline_notification:
-    - '1540218002'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:216:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:66:\"%ANNOUNCE%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:218:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
 image: /wp-content/uploads/2018/10/pngondh.png
 categories:
     - 'Android Dev'
@@ -39,22 +26,22 @@ This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk
 
 As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Cloud Firestore](https://github.com/JakeSteam/FirebaseReference/pull/3) if you just want to see the code changes required.
 
-This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk//adding-firebase-to-an-android-project/).
+This tutorial assumes you already have [Firebase added to your project](/adding-firebase-to-an-android-project/).
 
 ### Setting up
 
 First, open the [Database section of the Firebase Console](https://console.firebase.google.com/u/0/project/_/database). Whilst the actual database service will be covered in a separate post, this post covers the beta Cloud Firestore. Click the “Create database” button on the banner at the top of the page.  
-![pngondh](https://i0.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/pngondh.png?resize=700%2C222&ssl=1)
+![firestore overview](/wp-content/uploads/2018/10/pngondh.png)
 
 In the dialog that appears, start the database in **test mode**. This should never be used in production, as it allows anyone to do anything to the database! For early development though, it’s sufficient. [A guide is available for configuring these security rules](https://firebase.google.com/docs/firestore/security/get-started).  
-![g14i0o2](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/g14i0o2.png?resize=699%2C450&ssl=1)
+![security rules](/wp-content/uploads/2018/10/g14i0o2.png)
 
 It can take 20-30 seconds for the Cloud Firestore database to start up, but once it has you’ll see an empty dashboard, since we’ve currently got no data. That’s it, the database is ready to go, now for the app!  
-![ptkscmb](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/ptkscmb.png?resize=671%2C353&ssl=1)
+![firestore database](/wp-content/uploads/2018/10/ptkscmb.png)
 
 In the app, just add the following dependency to begin using Cloud Firestore:
 
-```
+```groovy
 implementation 'com.google.firebase:firebase-firestore:17.1.1'
 ```
 
@@ -69,9 +56,9 @@ There are 2 ways to get data, automatically when it changes or on demand, both w
 Luckily, setting up a listener for data changes is extremely straightforward, and it provides a `querySnapshot` with the latest version of all rows. This can be run on any query, but for monitoring all data the following should be used:
 
 ```
-        db.collection(tableName).addSnapshotListener { querySnapshot, _ ->
-            displayDocuments(querySnapshot!!.documents)
-        }
+db.collection(tableName).addSnapshotListener { querySnapshot, _ ->
+    displayDocuments(querySnapshot!!.documents)
+}
 ```
 
 #### Selectively getting Firestore data
@@ -80,17 +67,17 @@ Using `db.collection("MyTable")` returns all documents (essentially rows) within
 
 ```
 db.collection(tableName)
-            .orderBy("number", Query.Direction.DESCENDING)
-            .limit(3)
-            .get()
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    displayDocuments(task.result?.documents!!)
-                } else {
-                    showToast("Error getting documents: ${task.exception}")
-                    tableContents.text = ""
-                }
-            }
+    .orderBy("number", Query.Direction.DESCENDING)
+    .limit(3)
+    .get()
+    .addOnCompleteListener { task ->
+        if (task.isSuccessful) {
+            displayDocuments(task.result?.documents!!)
+        } else {
+            showToast("Error getting documents: ${task.exception}")
+            tableContents.text = ""
+        }
+    }
 ```
 
 As with any database, usually when you’re retrieving data it’s going to be with a few criteria, all of which can be combined. For example:
@@ -107,16 +94,16 @@ Creating a new row / document is extremely easy, and just requires passing a `Ha
 
 ```
 db.collection(tableName)
-            .add(hashMapOf(
-                    "columnA" to 123,
-                    "columnB" to "a value"
-            ) as Map)
-            .addOnSuccessListener { documentReference ->
-                showToast("DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                showToast("Error adding document: $e")
-            }
+    .add(hashMapOf(
+            "columnA" to 123,
+            "columnB" to "a value"
+    ) as Map)
+    .addOnSuccessListener { documentReference ->
+        showToast("DocumentSnapshot added with ID: ${documentReference.id}")
+    }
+    .addOnFailureListener { e ->
+        showToast("Error adding document: $e")
+    }
 ```
 
 #### Manually setting Firestore ID
@@ -124,17 +111,17 @@ db.collection(tableName)
 Whilst similar to the previous section, manually setting a Firestore ID (primary key) requires looking up the non-existent ID with `.document()`, then setting it’s values using `set()`.
 
 ```
-       db.collection(tableName).document("newDocumentID")
-            .set(hashMapOf(
-                    "columnA" to 123,
-                    "columnB" to "a value"
-            ) as Map)
-            .addOnSuccessListener {
-                showToast("DocumentSnapshot added with ID: $id")
-            }
-            .addOnFailureListener { e ->
-                showToast("Error writing document: $e")
-            }
+db.collection(tableName).document("newDocumentID")
+    .set(hashMapOf(
+            "columnA" to 123,
+            "columnB" to "a value"
+    ) as Map)
+    .addOnSuccessListener {
+        showToast("DocumentSnapshot added with ID: $id")
+    }
+    .addOnFailureListener { e ->
+        showToast("Error writing document: $e")
+    }
 ```
 
 ### Updating data (`UPDATE`)
@@ -144,10 +131,10 @@ Updating rows is very straightforward, once a reference to a row is obtained `.s
 The following snippets assumes `it.id` is a document reference, and updates “columnName” to “1234”:
 
 ```
-                        val ref = db.collection(tableName).document(it.id)
-                        it.data?.let {
-                            ref.update("columnName", 1234)
-                        }
+val ref = db.collection(tableName).document(it.id)
+it.data?.let {
+    ref.update("columnName", 1234)
+}
 ```
 
 ### Deleting data (`DELETE`)
@@ -155,8 +142,8 @@ The following snippets assumes `it.id` is a document reference, and updates “c
 Similarly to updating data, deleting data just requires calling `.delete()` on the document reference.
 
 ```
-                        val ref = db.collection(tableName).document(it.id)
-                        ref.delete()
+val ref = db.collection(tableName).document(it.id)
+ref.delete()
 ```
 
 ## [Web interface](https://console.firebase.google.com/u/0/project/_/database/firestore)
@@ -166,14 +153,14 @@ Similarly to updating data, deleting data just requires calling `.delete()` on t
 The Cloud Firestore web interface’s [data tab](https://console.firebase.google.com/u/0/project/_/database/firestore/rules) is a convenient way of viewing all data in the database. All collections (tables), documents (rows), and fields can be added, edited, or deleted directly. This can be extremely beneficial when attempting to debug a data issue, as it allows diagnosing the issue from any device.
 
 In addition to viewing all data, rows can be filtered using the standard selection criteria, and sorted.  
-![svifjqu](https://i1.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/svifjqu.png?resize=700%2C266&ssl=1)
+![data tab](/wp-content/uploads/2018/10/svifjqu.png)
 
 ### Rules tab
 
 The [rules tab](https://console.firebase.google.com/u/0/project/_/database/firestore/rules) is worth visiting before publishing any app using Cloud Firestore. Similar to routing tables in a normal server, these rules can be used to configure who can read and write what data. For example, users may be able to edit fields in their row, but not in anybody else’s. Assuming the configuration is still set to “Test” from earlier, Firestore will helpfully warn you that the configuration is a massive security risk.
 
 The [existing documentation for Firestore rules](https://firebase.google.com/docs/firestore/security/rules-structure?authuser=0) is extremely comprehensive, and the ability to simulate all requests (even with fake user authentication) helps ensure access control is correctly setup.  
-![tji8k5l](https://i0.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/tji8k5l.png?resize=700%2C288&ssl=1)
+![rules tab](/wp-content/uploads/2018/10/tji8k5l.png)
 
 ### Indexes tab
 
@@ -182,7 +169,7 @@ Cloud Firestore automatically creates indexes for you, and this is usually enoug
 ### Usage tab
 
 The usage tab just provides a link to Google Cloud Platform, which reveals Cloud Firestore’s [very generous usage limits](https://firebase.google.com/docs/firestore/quotas?authuser=0). The table below shows the capacity provided for free, which should be enough for smaller apps.  
-![qklb0fr](https://i1.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/qklb0fr.png?resize=700%2C192&ssl=1)
+![usage tab](/wp-content/uploads/2018/10/qklb0fr.png)
 
 Note that there are also reasonable limits on data stored, writes, indexes, and security rules. [A project’s current quota can be viewed on Google Cloud Platform](https://console.cloud.google.com/appengine/quotadetails).
 
@@ -192,5 +179,5 @@ Whilst it can be a little bit scary giving up control over data persistence, syn
 
 Another overview of Firebase Cloud Firestore is available by [@mono0926 on Medium](https://medium.com/@mono0926/firestore1-5d04cdb683bc), and an [excellently in-depth look at querying Cloud Firestore](https://dzone.com/articles/cloud-firestore-read-write-update-and-delete) has been written by Peter Ekene Eze on DZone.
 
-Previous: [Developing Android Apps With Firebase Authentication](https://blog.jakelee.co.uk//developing-android-apps-with-firebase-authentication/)  
-Next: [Developing Android Apps With Firebase Realtime Database](https://blog.jakelee.co.uk//developing-android-apps-with-firebase-realtime-database)
+Previous: [Developing Android Apps With Firebase Authentication](/developing-android-apps-with-firebase-authentication/)  
+Next: [Developing Android Apps With Firebase Realtime Database](/developing-android-apps-with-firebase-realtime-database)

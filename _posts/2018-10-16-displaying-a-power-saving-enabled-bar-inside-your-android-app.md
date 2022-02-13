@@ -4,10 +4,7 @@ title: 'Displaying a &#8220;Power Saving Enabled&#8221; Bar Inside Your Android 
 date: '2018-10-16T17:56:59+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1766'
 permalink: /displaying-a-power-saving-enabled-bar-inside-your-android-app/
-timeline_notification:
-    - '1539715368'
 image: /wp-content/uploads/2018/10/5xtlk5x.png
 categories:
     - 'Android Dev'
@@ -22,7 +19,7 @@ In this tutorial, a simple animated “Power saving mode enabled” bar will be 
 
 Please note that this **only works on Lollipop and above**, the APIs needed to safely get power saving status are not available before then.
 
-This tutorial also shares most of it’s code with [an earlier post about displaying a “No Internet” bar](https://blog.jakelee.co.uk//displaying-a-no-internet-bar-inside-your-android-app/) in a similar way.
+This tutorial also shares most of it’s code with [an earlier post about displaying a “No Internet” bar](/displaying-a-no-internet-bar-inside-your-android-app/) in a similar way.
 
 ## Add bar to layout
 
@@ -30,38 +27,37 @@ First, the bar has to actually be added to the layout. This can of course be cus
 
 ```
 <TextView
-android:id="@+id/power_saving_bar"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:background="#F28200"
-android:gravity="center_horizontal"
-android:padding="5dp"
-android:text="Power saving mode is on, this app's super duper features may not work correctly!"
-android:textColor="#FFFFFF"
-android:visibility="gone"
-app:layout_constraintBottom_toBottomOf="parent" />
+    android:id="@+id/power_saving_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F28200"
+    android:gravity="center_horizontal"
+    android:padding="5dp"
+    android:text="Power saving mode is on, this app's super duper features may not work correctly!"
+    android:textColor="#FFFFFF"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent" />
 ```
 
 ## Setup power saving listener
 
 Next, a `BroadcastReceiver` needs to be created to catch the power saving toggle events broadcast by the operating system. The `IntentFilter` ensures that only the correct events are received.
 
-```
+```java
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 private fun setupPowerSavingReceiver() {
-togglePowerSavingBar((getSystemService(Context.POWER_SERVICE) as PowerManager).isPowerSaveMode)
-powerSavingReceiver = object : BroadcastReceiver() {
-override fun onReceive(context: Context, intent: Intent) {
-val powerManager: PowerManager =
-context.getSystemService(Context.POWER_SERVICE) as PowerManager
-togglePowerSavingBar(powerManager.isPowerSaveMode)
-Log.e("PowerSaving", "Enabled: ${powerManager.isPowerSaveMode}")
-}
-}
-registerReceiver(
-powerSavingReceiver,
-IntentFilter("android.os.action.POWER_SAVE_MODE_CHANGED")
-)
+    togglePowerSavingBar((getSystemService(Context.POWER_SERVICE) as PowerManager).isPowerSaveMode)
+    powerSavingReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val powerManager: PowerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
+            togglePowerSavingBar(powerManager.isPowerSaveMode)
+            Log.e("PowerSaving", "Enabled: ${powerManager.isPowerSaveMode}")
+        }
+    }
+    registerReceiver(
+        powerSavingReceiver,
+        IntentFilter("android.os.action.POWER_SAVE_MODE_CHANGED")
+    )
 }
 ```
 
@@ -73,15 +69,15 @@ Next, we need to make sure receivers are only registered whilst our activity is,
 private var powerSavingReceiver: BroadcastReceiver? = null
 
 override fun onStart() {
-super.onStart()
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-setupPowerSavingReceiver()
-}
+    super.onStart()
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        setupPowerSavingReceiver()
+    }
 }
 
 override fun onStop() {
-super.onStop()
-powerSavingReceiver?.let { unregisterReceiver(it) }
+    super.onStop()
+    powerSavingReceiver?.let { unregisterReceiver(it) }
 }
 ```
 
@@ -89,43 +85,45 @@ powerSavingReceiver?.let { unregisterReceiver(it) }
 
 Finally, and most importantly, we need to actually show the bar! `togglePowerSavingMode` is called when the power saving mode is enabled or disabled, and accepts a boolean determining if the bar should be shown or hidden. Two simple animations are used to improve appearances:
 
-1. `enter_from_bottom.xml` is used for the bar appearing: ```
+1. `enter_from_bottom.xml` is used for the bar appearing: 
+```
     <?xml version="1.0" encoding="utf-8"?>
     <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shareInterpolator="false">
-    <translate
-    android:duration="400"
-    android:fromXDelta="0%"
-    android:fromYDelta="100%"
-    android:toXDelta="0%"
-    android:toYDelta="0%" />
+        android:shareInterpolator="false">
+        <translate
+            android:duration="400"
+            android:fromXDelta="0%"
+            android:fromYDelta="100%"
+            android:toXDelta="0%"
+            android:toYDelta="0%" />
     </set>
-    ```
-2. `exit_to_bottom.xml` is used for the bar disappearing: ```
+```
+2. `exit_to_bottom.xml` is used for the bar disappearing: 
+```
     <?xml version="1.0" encoding="utf-8"?>
     <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shareInterpolator="false">
-    <translate
-    android:duration="400"
-    android:fromXDelta="0%"
-    android:fromYDelta="0%"
-    android:toXDelta="0%"
-    android:toYDelta="100%" />
+        android:shareInterpolator="false">
+        <translate
+            android:duration="400"
+            android:fromXDelta="0%"
+            android:fromYDelta="0%"
+            android:toXDelta="0%"
+            android:toYDelta="100%" />
     </set>
-    ```
+```
 
 Finally, these animations are used to toggle visibility:
 
 ```
 private fun togglePowerSavingBar(display: Boolean) {
-if (display && power_saving_bar.visibility != View.VISIBLE) {
-val enterAnim = AnimationUtils.loadAnimation(this, R.anim.enter_from_bottom)
-power_saving_bar.startAnimation(enterAnim)
-} else if (!display && power_saving_bar.visibility != View.GONE) {
-val exitAnim = AnimationUtils.loadAnimation(this, R.anim.exit_to_bottom)
-power_saving_bar.startAnimation(exitAnim)
-}
-power_saving_bar.visibility = if (display) View.VISIBLE else View.GONE
+    if (display && power_saving_bar.visibility != View.VISIBLE) {
+        val enterAnim = AnimationUtils.loadAnimation(this, R.anim.enter_from_bottom)
+        power_saving_bar.startAnimation(enterAnim)
+    } else if (!display && power_saving_bar.visibility != View.GONE) {
+        val exitAnim = AnimationUtils.loadAnimation(this, R.anim.exit_to_bottom)
+        power_saving_bar.startAnimation(exitAnim)
+    }
+    power_saving_bar.visibility = if (display) View.VISIBLE else View.GONE
 }
 ```
 
@@ -137,11 +135,11 @@ Additionally, during testing I discovered Sony’s “STAMINA MODE” isn’t im
 
 ```
 private fun performSonyPowerSavingCheck() {
-if (Build.MANUFACTURER.toUpperCase() == "SONY") {
-togglePowerSavingBar(
-Settings.Secure.getInt(contentResolver, "somc.stamina_mode", 0) == 1
-)
-}
+    if (Build.MANUFACTURER.toUpperCase() == "SONY") {
+        togglePowerSavingBar(
+            Settings.Secure.getInt(contentResolver, "somc.stamina_mode", 0) == 1
+        )
+    }
 }
 ```
 

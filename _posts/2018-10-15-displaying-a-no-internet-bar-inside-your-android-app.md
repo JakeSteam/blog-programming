@@ -4,10 +4,7 @@ title: 'Displaying a &#8220;No Internet&#8221; Bar Inside Your Android App'
 date: '2018-10-15T19:20:18+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1763'
 permalink: /displaying-a-no-internet-bar-inside-your-android-app/
-timeline_notification:
-    - '1539631219'
 image: /wp-content/uploads/2018/10/vqosc2n.png
 categories:
     - 'Android Dev'
@@ -51,14 +48,16 @@ Next, the bar has to actually be added to the layout. This can of course be cust
 
 `NetworkReceiver.kt` is a small class that serves 3 functions:
 
-1. Checking the current internet status on demand: ```
+1. Checking the current internet status on demand: 
+```
         private fun hasInternet(context: Context): Boolean {
             val connectMgr = (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager)
             val activeNetworkInfo = connectMgr.activeNetworkInfo
             return activeNetworkInfo != null &amp;amp;&amp;amp; activeNetworkInfo.isConnected
         }
-    ```
-2. Providing an interface for activities to implement, so that it can broadcast network state change events: ```
+```
+2. Providing an interface for activities to implement, so that it can broadcast network state change events: 
+```
         interface NetworkReceiverListener {
             fun onNetworkConnectionChanged(isConnected: Boolean)
         }
@@ -66,20 +65,21 @@ Next, the bar has to actually be added to the layout. This can of course be cust
         companion object {
             var networkReceiverListener: NetworkReceiverListener? = null
         }
-    ```
-3. Actually broadcasting the events as they are received: ```
+```
+3. Actually broadcasting the events as they are received: 
+```
         override fun onReceive(context: Context, arg1: Intent) {
             if (networkReceiverListener != null) {
                 networkReceiverListener!!.onNetworkConnectionChanged(hasInternet(context))
             }
         }
-    ```
+```
 
 ## Setup network listener
 
 Initialising the `NetworkReceiver`‘s `networkReceiverListener` hooks the activity into the broadcast receiver we just created. This should be done during `onCreate()` or as early as possible:
 
-```
+```java
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -118,7 +118,8 @@ Next, we need to make sure receivers are only registered whilst our activity is,
 
 Finally, and most importantly, we need to actually show the bar! `toggleNoInternetBar` is called when the network state changes, and accepts a boolean determining if the bar should be shown or hidden. Two simple animations are used to improve appearances:
 
-1. `enter_from_bottom.xml` is used for the bar appearing: ```
+1. `enter_from_bottom.xml` is used for the bar appearing: 
+```
     <?xml version="1.0" encoding="utf-8"?>
     <set xmlns:android="http://schemas.android.com/apk/res/android"
         android:shareInterpolator="false">
@@ -129,8 +130,9 @@ Finally, and most importantly, we need to actually show the bar! `toggleNoIntern
             android:toXDelta="0%"
             android:toYDelta="0%" />
     </set>
-    ```
-2. `exit_to_bottom.xml` is used for the bar disappearing: ```
+```
+2. `exit_to_bottom.xml` is used for the bar disappearing: 
+```
     
     <?xml version="1.0" encoding="utf-8"?>
     <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -142,7 +144,7 @@ Finally, and most importantly, we need to actually show the bar! `toggleNoIntern
             android:toXDelta="0%"
             android:toYDelta="100%" />
     </set>
-    ```
+```
 
 Finally, these animations are used to toggle visibility:
 

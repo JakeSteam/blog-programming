@@ -23,8 +23,7 @@ Setting up Fabric is usually pretty straightforward, especially as they have a [
 Initialising Fabric is also just a simple one-liner in your application class’ `onCreate()`:
 
 ```
-
-      Fabric.with(this, new Crashlytics());
+Fabric.with(this, new Crashlytics());
 ```
 
 Easy, run the app and we’re done! Except.. not if we’re using more than one flavour. The package names of the alternate flavours won’t register, uh oh…
@@ -34,13 +33,12 @@ Since Fabric automatically picks up the app identifier from the manifest, it isn
 To get around this, the app identifier has to be manually set when Fabric is initialised, based on the current `BuildConfig`:
 
 ```
-
-        Fabric.with(
-            Fabric.Builder(this)
-                .kits(Crashlytics())
-                .appIdentifier(BuildConfig.APPLICATION_ID)
-                .build()
-        )
+Fabric.with(
+    Fabric.Builder(this)
+        .kits(Crashlytics())
+        .appIdentifier(BuildConfig.APPLICATION_ID)
+        .build()
+)
 ```
 
 Now, the **current** application ID will be registered, instead of the package used in `AndroidManifest.xml`. The different flavours will be treated as completely independent apps in Fabric, so will have different crash reports, Beta release groups, etc.

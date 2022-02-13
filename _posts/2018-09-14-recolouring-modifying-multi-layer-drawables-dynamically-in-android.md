@@ -4,10 +4,7 @@ title: 'Recolouring / modifying multi-layer drawables dynamically in Android'
 date: '2018-09-14T10:00:32+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1689'
 permalink: /recolouring-modifying-multi-layer-drawables-dynamically-in-android/
-timeline_notification:
-    - '1536920881'
 image: /wp-content/uploads/2018/09/dfe6ohk.png
 categories:
     - 'Android Dev'
@@ -28,7 +25,6 @@ This post is also [available as a Gist](https://gist.github.com/JakeSteam/1113e3
 For this example, a simple drawable with a coloured circle background (ID `background_circle`) and a vector image (ID `foreground_icon`) will be used. The following `.xml` should be placed at `/res/drawable/dynamic_drawable.xml`:
 
 ```
-
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
@@ -52,21 +48,18 @@ The first half of the changes to be made are changing the background colour of o
 First, get a reference to your target ImageView (either in a layout or inflated dynamically), and retrieve its drawable as a LayerDrawable (as we need to handle layers):
 
 ```
-
 val layerDrawable = findViewById(R.id.my_drawable).drawable as LayerDrawable
 ```
 
 Next, get the background layer specifically using the `background_circle` ID from earlier:
 
 ```
-
 val backgroundDrawable = layerDrawable.findDrawableByLayerId(R.id.background_circle) as GradientDrawable
 ```
 
 The colour can now be set using the normal `setColor()` method:
 
 ```
-
 backgroundDrawable.setColor(ContextCompat.getColor(context, R.color.my_colour))
 ```
 
@@ -77,7 +70,6 @@ The second half of the changes is changing the foreground drawable.
 Using the `layerDrawable` from earlier, set the `foreground_icon` to an existing drawable resource:
 
 ```
-
 layerDrawable.setDrawableByLayerId(R.id.foreground_icon, ContextCompat.getDrawable(context, R.drawable.new_foreground_icon))
 ```
 

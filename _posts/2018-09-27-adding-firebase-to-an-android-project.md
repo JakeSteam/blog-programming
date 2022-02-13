@@ -4,10 +4,7 @@ title: 'Adding Firebase to an Android Project'
 date: '2018-09-27T21:49:17+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1728'
 permalink: /adding-firebase-to-an-android-project/
-timeline_notification:
-    - '1538084958'
 image: /wp-content/uploads/2018/09/dkl3twd.png
 categories:
     - 'Android Dev'
@@ -28,10 +25,10 @@ This guide however, will focus on the very straightforward steps required to int
 ## Google Services file
 
 The next step is obtaining a `google-services.json` file, so that the app knows which Firebase project to talk to. This can be done by visiting [the project overview](https://console.firebase.google.com/project/_/overview) and clicking the Android icon.  
-![ylq8bsv](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/09/ylq8bsv.png?resize=700%2C242&ssl=1)
+![getting started](/wp-content/uploads/2018/09/ylq8bsv.png)
 
 This will bring up the “Add Firebase” wizard:  
-![gg9tpzq](https://i0.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/09/gg9tpzq.png?resize=664%2C606&ssl=1)
+![add firebase wizard](/wp-content/uploads/2018/09/gg9tpzq.png)
 
 1. **Android package name**: The only required part of this form, this is the package name used when creating your app. It will be visible in the `AndroidManifest.xml` file as `package="com.example.test"`.
 2. **App nickname**: This is an optional “friendly” name you can use to better summarise the app.
@@ -53,9 +50,9 @@ Next, the Firebase library needs to be added to your project. Doing this is just
 ## Final steps
 
 Finally, just run your app, and the “Add Firebase” wizard will confirm Firebase has been set up correctly:  
-![dkl3twd](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/09/dkl3twd.png?resize=700%2C206&ssl=1)
+![complete](/wp-content/uploads/2018/09/dkl3twd.png)
 
 That’s it, Firebase is fully set up! Your project settings (e.g. name) [can be changed later](https://console.firebase.google.com/project/_/settings/general/) if necessary.
 
-Previous: [Creating A New Firebase Project](https://blog.jakelee.co.uk//creating-a-new-firebase-project/)  
-Next: [Developing Android Apps With Firebase Authentication](https://blog.jakelee.co.uk//developing-android-apps-with-firebase-authentication/)
+Previous: [Creating A New Firebase Project](/creating-a-new-firebase-project/)  
+Next: [Developing Android Apps With Firebase Authentication](/developing-android-apps-with-firebase-authentication/)

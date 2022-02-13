@@ -4,10 +4,7 @@ title: 'Centralising Firebase / Google Analytics Screen Tracking Using Android F
 date: '2018-10-27T07:00:02+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1802'
 permalink: /centralising-firebase-google-analytics-screen-tracking-using-android-fragments/
-timeline_notification:
-    - '1540624349'
 image: /wp-content/uploads/2018/10/axtxt2h.png
 categories:
     - 'Android Dev'
@@ -49,7 +46,6 @@ Now, the login fragment / activity can use `TrackingUtil.Login` if it wishes to 
 A simple wrapper will be used for this, without any modification to the incoming screen views. In this example of filtering reported screen views, no data is sent when in debug mode.
 
 ```
-
     fun track(screen: Screens) {
         if (!BuildConfig.DEBUG) {
             FirebaseAnalytics.getInstance(context.applicationContext)
@@ -59,14 +55,13 @@ A simple wrapper will be used for this, without any modification to the incoming
     }
 ```
 
-Alternatively, [user properties can be used to filter environment data](https://blog.jakelee.co.uk//filtering-google-firebase-analytics-traffic-by-buildtype-environment-on-android).
+Alternatively, [user properties can be used to filter environment data](/filtering-google-firebase-analytics-traffic-by-buildtype-environment-on-android).
 
 ## Using TrackingUtil
 
 Now, just call `.track` on an instance of `TrackingUtil` and pass a screen from our earlier enum to send a screen view. If using fragments, the best place is inside `onCreateView`:
 
 ```
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -86,6 +81,6 @@ Performing “Find Usages” on any screen in the enum provides a quick way to c
 On the main Analytics dashboard, the user engagement widget provides a link to “View screen\_view event details”, which will take you to an overview of where users have been in your app.
 
 Next, selecting “Screen name” in the “User engagement” widget will show where users have been in your app, broken down by percentage and average time.  
-![axtxt2h](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/axtxt2h.png?resize=506%2C342&ssl=1)
+![screen view data](/wp-content/uploads/2018/10/axtxt2h.png)
 
 This data on a per-screen basis should help analyse and improve user’s experiences in your app, and tell you the areas people care most about. Even if there is no current goal to track and analyse this data, it’s worth tracking in case it’s needed in the future.

@@ -2,7 +2,13 @@
 
 This is the source code for blog.jakelee.co.uk, generated using Jekyll!
 
+# Are there any related blog posts?
+
+Not yet! There's 4-5 planned...
+
 # What are all the files?
+
+*This definitely isn't here in case I forget...*
 
 * `_includes/`: All the code to be added into the site, on top of the default
     * `custom/`: Contains custom code to be included elsewhere.
@@ -23,7 +29,7 @@ This is the source code for blog.jakelee.co.uk, generated using Jekyll!
     * `minimal-social-icons.svg`: Override of social icons, to add more.
 * `wp_content/`: Migrated images from wordpress blog.
 * `Gemfile`: Defines all the plugins, from GitHub Pages' small selection.
-* `Gemfile.lock`: Defines all the versions / dependcies of plugins.
+* `Gemfile.lock`: Defines all the versions / dependencies of plugins.
 * `_config.yml`: Main config for the site.
 * `index.html`: Default page, nothing interesting.
 * `search.html`: Standalone page for the search functionality.

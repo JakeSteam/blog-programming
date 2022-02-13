@@ -88,7 +88,7 @@ adb install -r <path to your apk>
 For example, the command on a Windows machine to update [this tutorial’s app](https://github.com/JakeSteam/UpdateListener) may look like:
 
 ```
-adb install -r C:\Repositories\updatelistener\app\build\outputs\apk\debug\app-debug.apk
+adb install -r C:\\Repositories\\updatelistener\\app\\build\\outputs\\apk\\debug\\app-debug.apk
 ```
 
 You should see “Success” underneath your command in the terminal.

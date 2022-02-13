@@ -4,21 +4,8 @@ title: 'Using PreferenceFragment to effortlessly handle user settings'
 date: '2019-03-04T15:26:08+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2411'
 permalink: /using-preferencefragment-to-effortlessly-handle-user-settings/
-snap_isAutoPosted:
-    - '1551713169'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:215:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1102591181316341762";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1102591181316341762";s:5:"pDate";s:19:"2019-03-04 15:26:37";}}";'
-image: /wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png-150x150.jpg
+image: /wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg
 categories:
     - 'Android Dev'
 tags:
@@ -39,7 +26,7 @@ Whilst we will be using PreferenceFragment in this example, we’ll actually be 
 
 To add the preference library, add the following to your app-level `build.gradle`‘s dependencies and perform a Gradle sync:
 
-```
+```groovy
 implementation 'com.android.support:preference-v7:28.0.0'
 ```
 
@@ -122,7 +109,7 @@ Whilst a `PreferenceScreen` is the root of your UI, it can also be used to [nest
 
 When dealing with many options, grouping them into categories helps associate related options. To help with this, including preferences inside a `PreferenceCategory` adds a faint line between itself and other elements, and can also be given a title:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg?resize=300%2C158&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg?ssl=1)
+[![](/wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg)](/wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg)
 
 ### Preference
 

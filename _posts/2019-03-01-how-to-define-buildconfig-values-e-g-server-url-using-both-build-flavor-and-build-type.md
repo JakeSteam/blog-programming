@@ -4,21 +4,8 @@ title: 'How to define BuildConfig values (e.g. server URL) using both build flav
 date: '2019-03-01T14:58:31+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2405'
 permalink: /how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/
-snap_isAutoPosted:
-    - '1551452312'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:215:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1101497216991219712";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1101497216991219712";s:5:"pDate";s:19:"2019-03-01 14:59:36";}}";'
-image: /wp-content/uploads/2019/03/569B2579-60F8-48F6-AB63-C3725ACE4074.png-150x150.jpg
+image: /wp-content/uploads/2019/03/569B2579-60F8-48F6-AB63-C3725ACE4074.png.jpg
 categories:
     - 'Android Dev'
 tags:
@@ -28,7 +15,7 @@ tags:
 
 When creating an app, build variants are almost always used to some degree. For example, working on a `debug` build during development but publishing a `release` build. These `buildTypes` are a good way of distinguishing between multiple environments your app may run in. You’ll often have a QA `buildType` that talks to a different server than your live app. Setting server URLs for each `buildType` is a very common practice, and is usually enough.
 
-However, some apps have multiple flavours, such as an app that is [branded with different colours](https://blog.jakelee.co.uk/how-to-handle-colours-logically-in-a-multi-flavour-android-app/) for multiple clients. The problem arises when these two approaches are combined, and a wildly different server URL is needed for every combination of flavour and `buildType`.
+However, some apps have multiple flavours, such as an app that is [branded with different colours](/how-to-handle-colours-logically-in-a-multi-flavour-android-app/) for multiple clients. The problem arises when these two approaches are combined, and a wildly different server URL is needed for every combination of flavour and `buildType`.
 
 ## Approach
 

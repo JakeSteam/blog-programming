@@ -4,23 +4,12 @@ title: 'How to programmatically change your Android app icon and name'
 date: '2019-04-29T15:00:21+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2478'
 permalink: /programmatically-changing-app-icon/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6528629307923927041";s:5:"pDate";s:19:"2019-04-29 14:02:03";}}";'
-snap_isAutoPosted:
-    - '1556546523'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1122863620910669826";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1122863620910669826";s:5:"pDate";s:19:"2019-04-29 14:02:03";}}";'
-image: /wp-content/uploads/2019/04/TJEufHF-150x150.png
+image: /wp-content/uploads/2019/04/TJEufHF.png
 categories:
     - 'Android Dev'
 tags:
-    - icon
+    - Icon
     - Kotlin
     - Manifest
 ---

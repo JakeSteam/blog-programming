@@ -4,21 +4,8 @@ title: 'How to handle colours logically in a multi-flavour Android app'
 date: '2019-02-21T17:05:13+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2381'
 permalink: /how-to-handle-colours-logically-in-a-multi-flavour-android-app/
-snap_isAutoPosted:
-    - '1550774245'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapMD:
-    - "s:215:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1098653135852224518";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1098653135852224518";s:5:"pDate";s:19:"2019-02-21 18:38:14";}}";'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6504418829790253056";s:5:"pDate";s:19:"2019-02-21 18:38:15";}}";'
-image: /wp-content/uploads/2019/02/GbMRMDY-150x150.png
+image: /wp-content/uploads/2019/02/GbMRMDY.png
 categories:
     - 'Android Dev'
 tags:
@@ -35,13 +22,13 @@ These article will walk through 4 “levels” of colour abstraction, in order f
 
 Just putting hex colour codes in your layout is the easiest way to immediately see results, but isn’t at all sustainable. If you want to change a colour in the future, you’ll have to find and replace every instance of the hex code, and make sure there’s not any other uses of that hex code. Not at all reliable! It’s also not possible to provide different colours for different app flavours.
 
-```
+```xml
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="I'm just using the hex codes!"
-        android:background="#FFFFFF"
-        android:textColor="#00000"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I'm just using the hex codes!"
+    android:background="#FFFFFF"
+    android:textColor="#00000"/>
 ```
 
 ## Level 2: Colour names in layouts
@@ -52,16 +39,16 @@ However, “white” still has to be… white, unless you want to end up with ve
 
 More information on product flavors is available in [the official documentation](https://developer.android.com/studio/build/build-variants#product-flavors).
 
-```
+```xml
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="I'm using colors.xml!"
-        android:background="@color/white"
-        android:textColor="@color/black"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I'm using colors.xml!"
+    android:background="@color/white"
+    android:textColor="@color/black"/>
 ```
 
-```
+```xml
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -72,16 +59,16 @@ More information on product flavors is available in [the official documentation]
 
 An improvement essential to any multi-flavour project that has multiple colour schemes is nesting colour names, with the *purpose-named* colour referencing a *colour-named* colour. This can be tricky to explain textually, an example will make more sense:
 
-```
+```xml
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="I'm using purpose names!"
-        android:background="@color/textBackground"
-        android:textColor="@color/textForeground"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I'm using purpose names!"
+    android:background="@color/textBackground"
+    android:textColor="@color/textForeground"/>
 ```
 
-```
+```xml
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -105,15 +92,15 @@ In a current project of mine, the company’s internal palette consists of ~10 c
 
 The final level of logically storing colours is to extract them into `styles.xml`. For example, using the same TextView as before:
 
-```
+```xml
 <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="I'm using styles!"
-        style="@style/bodyText"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I'm using styles!"
+    style="@style/bodyText"/>
 ```
 
-```
+```xml
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -122,7 +109,7 @@ The final level of logically storing colours is to extract them into `styles.xml
 </resources>
 ```
 
-```
+```xml
 <resources>
     <style name="bodyText" parent="android:Widget.TextView">
         <item name="android:background">@color/textBackground</item>
@@ -141,4 +128,4 @@ It’s worth pointing out that these level definitions are only a pattern I’ve
 
 An [example project is available for this post](https://github.com/JakeSteam/MultiFlavourColours), which provides two different flavours with radically different colour schemes, using level 4:
 
-[![](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/02/GbMRMDY.png?resize=700%2C185&ssl=1)](https://i2.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/02/GbMRMDY.png?ssl=1)
+[![](/wp-content/uploads/2019/02/GbMRMDY.png)](/wp-content/uploads/2019/02/GbMRMDY.png)

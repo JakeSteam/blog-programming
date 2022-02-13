@@ -4,19 +4,8 @@ title: 'Using Dyno to create a Discord command that displays a message and DMs a
 date: '2019-05-20T12:09:06+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2486'
 permalink: /using-dyno-to-create-a-discord-command-that-displays-a-message-and-dms-a-specified-user/
-snap_isAutoPosted:
-    - '1558350547'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1130430427129425920";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1130430427129425920";s:5:"pDate";s:19:"2019-05-20 11:09:51";}}";'
-image: /wp-content/uploads/2019/05/Annotation-2019-05-20-115753-150x150.jpg
+image: /wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg
 categories:
     - Development
 tags:
@@ -33,7 +22,7 @@ On the [Android Dev](https://discord.gg/D2cNrqX) and [Flutter Dev](https://disco
 
 Here’s the code used on the [Android Dev](https://discord.gg/D2cNrqX) discord to let users send each other information on Kotlin, using `?kotlin @Username#123`:
 
-```
+```text
 {delete}{!announce {channel} Sending Kotlin resources to $1 on behalf of {user.mention}!} 
 {dm:$1} 
 Looking to get started with Kotlin development? 
@@ -54,11 +43,11 @@ The command can look a little complicated, so here’s what each part does:
 
 Here’s what displays in the channel:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-115614.jpg?resize=596%2C163&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-115614.jpg?ssl=1)
+[![](/wp-content/uploads/2019/05/Annotation-2019-05-20-115614.jpg)](/wp-content/uploads/2019/05/Annotation-2019-05-20-115614.jpg)
 
 And here’s what the user receives in their inbox:
 
-[![](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg?resize=700%2C160&ssl=1)](https://i0.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg?ssl=1)
+[![](/wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg)](/wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg)
 
 This approach unfortunately doesn’t work if a user has blocked Dyno. However, this is relatively unusual it’s generally not worth considering as a downside.
 
@@ -66,4 +55,4 @@ Overall the approach is simple to adapt and extend, and adds powerful functional
 
 Finally, here’s how the command will look on your Dyno Custom Commands list:
 
-[![](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-120517.jpg?resize=700%2C117&ssl=1)](https://i1.wp.com/blog.jakelee.co.uk/wp-content/uploads/2019/05/Annotation-2019-05-20-120517.jpg?ssl=1)
+[![](/wp-content/uploads/2019/05/Annotation-2019-05-20-120517.jpg)](/wp-content/uploads/2019/05/Annotation-2019-05-20-120517.jpg)

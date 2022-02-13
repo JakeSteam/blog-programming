@@ -4,35 +4,24 @@ title: 'Resolving crash &#8220;IllegalArgumentException x is unknown to this Nav
 date: '2019-04-25T14:54:27+01:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2470'
 permalink: /resolving-crash-illegalargumentexception-x-is-unknown-to-this-navcontroller/
-snap_isAutoPosted:
-    - '1556204511'
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:369:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:0:"";s:7:"postURL";s:50:"www.linkedin.com/updates?topic=6527195018074165248";s:5:"pDate";s:19:"2019-04-25 15:02:41";}}";'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1121429319996329984";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1121429319996329984";s:5:"pDate";s:19:"2019-04-25 15:02:39";}}";'
-image: /wp-content/uploads/2019/04/kmzKg1F-150x150.png
+image: /wp-content/uploads/2019/04/kmzKg1F.png
 categories:
     - 'Android Dev'
 tags:
-    - androidx
+    - Androidx
     - Kotlin
     - Navigation
 ---
 
-Google’s [AndroidX navigation libraries](https://developer.android.com/guide/navigation/navigation-getting-started) are undoubtedly extremely useful, however they have a few quirks. For example, the following stack trace recently started showing up in my [Crashlytics crash logs](https://blog.jakelee.co.uk/ensuring-your-android-apps-quality-with-firebase-crashlytics/):
+Google’s [AndroidX navigation libraries](https://developer.android.com/guide/navigation/navigation-getting-started) are undoubtedly extremely useful, however they have a few quirks. For example, the following stack trace recently started showing up in my [Crashlytics crash logs](/ensuring-your-android-apps-quality-with-firebase-crashlytics/):
 
 ```
 Fatal Exception: java.lang.IllegalArgumentException
 navigation destination com.example.myapp:id/myActionId is unknown to this NavController
 ```
 
-I couldn’t figure out how it was happening, as all other logging seemed normal. It was happening very rarely on a wide variety of devices, and the root cause was a little surprising. When navigating to another fragment using `myNavController.navigate(<span class="pl-en">R</span>.id.myFragment, bundle)`, a crash happens if two navigation events are triggered close together. This often happens if you have a list of links, and the user (accidentally) presses on two at once.
+I couldn’t figure out how it was happening, as all other logging seemed normal. It was happening very rarely on a wide variety of devices, and the root cause was a little surprising. When navigating to another fragment using `myNavController.navigate(R.id.myFragment, bundle)`, a crash happens if two navigation events are triggered close together. This often happens if you have a list of links, and the user (accidentally) presses on two at once.
 
 This is caused by the navigation controller changing the user’s location in the app to the destination immediately. This means the second navigation click can’t find the navigation action, as the action is not available on the destination fragment. For example, if a fragment has nav graph actions to go to SubFragmentA and SubFragmentB, pressing both links at once will result in:
 

@@ -4,21 +4,8 @@ title: 'Creating a preference utility to safely handle Android SharedPreferences
 date: '2019-03-05T16:30:18+00:00'
 author: 'Jake Lee'
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2420'
 permalink: /creating-a-preference-utility-to-safely-handle-android-sharedpreferences/
-snap_MYURL:
-    - ''
-snapEdIT:
-    - '1'
-snapLI:
-    - 's:216:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:29:"%TITLE% %HCATS% %HTAGS% %URL%";s:8:"postType";s:1:"A";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doLI";i:0;}}";'
-snapMD:
-    - "s:215:\"a:1:{i:0;a:6:{s:2:\"do\";s:1:\"1\";s:10:\"msgTFormat\";s:7:\"%TITLE%\";s:9:\"msgFormat\";s:65:\"%EXCERPT%\r\n<br><br>\r\nFull post by %AUTHORNAME% available at %URL%\";s:9:\"isAutoURL\";s:1:\"A\";s:8:\"urlToUse\";s:0:\"\";s:4:\"doMD\";i:0;}}\";"
-snap_isAutoPosted:
-    - '1551803559'
-snapTW:
-    - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:31:"%TITLE% (%HCATS% %HTAGS%) %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1102970190151761922";s:7:"postURL";s:57:"https://twitter.com/JakeLeeLtd/status/1102970190151761922";s:5:"pDate";s:19:"2019-03-05 16:32:40";}}";'
-image: /wp-content/uploads/2019/03/A47FE5AC-6298-49CD-9B69-FB44751D1A33.png-150x150.jpg
+image: /wp-content/uploads/2019/03/A47FE5AC-6298-49CD-9B69-FB44751D1A33.png.jpg
 categories:
     - 'Android Dev'
 tags:
@@ -29,7 +16,7 @@ tags:
 
 Saving and retrieving shared preference values in Android is relatively straightforward, but doing it safely can be problematic. For example, you may set a default value, then accidentally use a different default value when retrieving!
 
-This post will cover creating `PreferenceHelper`, a class to safely access preferences of any type. There is also a related post covering [creating a preferences screen in your app](https://blog.jakelee.co.uk/using-preferencefragment-to-effortlessly-handle-user-settings/).
+This post will cover creating `PreferenceHelper`, a class to safely access preferences of any type. There is also a related post covering [creating a preferences screen in your app](/using-preferencefragment-to-effortlessly-handle-user-settings/).
 
 This entire post is [available as a Gist](https://gist.github.com/JakeSteam/0dd41b8ffeedbc8d0d21b182f9e60357), and as an [example preferences project](https://github.com/JakeSteam/PreferencesExample).
 

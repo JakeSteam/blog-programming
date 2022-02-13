@@ -11,7 +11,7 @@
           <li class="p-name">
             <li>Portfolio: <a href="{{ site.main_url }}">{{ site.main_url }}</a></li>
             <li>Email: <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            <li>Repository: <a class="u-email" href="{{ site.github.repository_url }}">{{ site.github.repository_url }}</a></li>
+            <li>Repo: <a class="u-email" href="{{ site.github.repository_url }}">{{ site.github.repository_nwo | default: "GitHub/example" }}</a></li>
         </ul>
       </div>
 
@@ -21,7 +21,11 @@
 
       <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
-        <p>Running on Jekyll {{ site.github.versions.jekyll }}, Liquid {{ site.github.versions.liquid }}, and GitHub pages {{ site.github.versions.github-pages }}.</p>
+        <p>
+          Jekyll v{{ site.github.versions.jekyll | default: 1.0 }}, 
+          Liquid v{{ site.github.versions.liquid | default: 1.0 }}, 
+          GitHub Pages v{{ site.github.versions.github-pages | default: 1.0 }}.
+        </p>
       </div>
     </div>
 

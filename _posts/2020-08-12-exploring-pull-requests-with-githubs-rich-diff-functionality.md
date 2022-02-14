@@ -47,7 +47,7 @@ This mode displays the two versions of the image with a left to right slider ove
 This is an excellent way of noticing small changes within an image, whilst still keeping track of the overall image.
 
 ### Onion Skin
-[![](/wp-content/uploads/2020/08/u2wqvqB.png?resize=150%2C150&ssl=1)](/wp-content/uploads/2020/08/u2wqvqB.png)
+[![](/wp-content/uploads/2020/08/u2wqvqB.png)](/wp-content/uploads/2020/08/u2wqvqB.png)
 
 This mode overlays the new image over the old one, and lets you control the transparency.
 

@@ -38,11 +38,11 @@ The new site only has 1 copy of every image. If I've been silly and used a giant
 | Page | Wordpress | Jekyll | Comment |
 | -- | -- | -- | -- |
 | Homepage | [![](/assets/images/2022/screenshot-old-home.png)](/assets/images/2022/screenshot-old-home.png) | [![](/assets/images/2022/screenshot-new-home.png)](/assets/images/2022/screenshot-new-home.png) | The Wordpress site had far too much going on. Whilst I do like the compact post previews, I prefer the visually striking banners on Jekyll.<br><br>Since my blog is all about content, stripping everything else away seemed the best approach! |
-| Post | [![](/assets/images/2022/screenshot-old-post.png)](/assets/images/2022/screenshot-old-post.png) | [![](/assets/images/2022/screenshot-new-post.png)](/assets/images/2022/screenshot-new-post.png) | The post page has improved more than the homepage. Code samples are now far more readable (they're the point of the blog...), and the content of articles is the focus.<br><br>For less code-based articles ([example](/a-quirk-of-strings-xml-for-multiple-regions-per-language-in-android/)), the differences are even more noticeable. That being said, there's still some tidying to do like the title line height. |
+| Post | [![](/assets/images/2022/screenshot-old-post.png)](/assets/images/2022/screenshot-old-post.png) | [![](/assets/images/2022/screenshot-new-post.png)](/assets/images/2022/screenshot-new-post.png) | The post page has improved more than the homepage. Code samples are now far more readable (they're the point of the blog...), and the content of articles is the focus.<br><br>For less code-based articles ([example](/a-quirk-of-strings-xml-for-multiple-regions-per-language-in-android/)), the differences are even more noticeable. That being said, there's still some tidying to do. |
 
 ## Writing & Maintaining
 
-Previously I had to stay online, and use the Wordpress WYSIWYG editor. This was OK for simple formatting like bold text, but I would often need to preview the actual post. This preview took up to 10 seconds to load.
+Previously when writing a post I had to stay online, and use the Wordpress WYSIWYG editor. This was OK for simple formatting like bold text, but I would often need to preview the actual post. This preview took up to 10 seconds to load.
 
 Now, I can write posts anywhere, using the syntax I'm most comfortable with, and can pick from a variety of offline clients with live preview etc (currently VSCode). I'm still figuring out the "drafts" process (hence this post!), but since it all runs on Git it should be fine!
 

@@ -3,7 +3,7 @@ title: Jake Lee's Programming Blog
 email: blog@jakelee.co.uk
 description: Mostly Android tutorials & tips, with a little bit of web dev / tooling.
 baseurl: ""
-url: ""
+url: "blog.jakelee.co.uk"
 permalink: /:title/
 show_excerpts: true
 

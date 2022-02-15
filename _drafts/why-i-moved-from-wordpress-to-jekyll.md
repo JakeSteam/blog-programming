@@ -18,8 +18,9 @@ Essentially, .org is the blogging software itself, .com is a platform selling ac
 In this post "WordPress" usually refers to both of them, or can be determined from context.
 
 ## History of this blog's migrations
+For context, here's this blog's adventures since 2016:
 1. **Started off as the free `gamedevalgorithms.wordpress.com`**, obviously via WordPress.com.
-2. **Moved to `gamedevalgorithms.com`**, as I started blogging more, still via WordPress.com.
+2. **Moved to `gamedevalgorithms.com`** on a paid plan, still via WordPress.com.
 3. **Moved to `blog.jakelee.co.uk`**, as I was moving away from game development.
 4. **Replaced WordPress.com with BlueHost**, as I wanted a bit more control and to not have to pay more for minor changes.
 5. **Left WordPress entirely for Jekyll**, for the reasons detailed in this post!
@@ -73,7 +74,7 @@ This is probably a "me" issue. As the majority of WordPress users seem to be non
 
 Most of the solutions were a snippet of code via a blog post, with no indication of side effects, risks, etc. Whilst StackOverflow has its issues, the voting and reputation systems at least give some reassurance that running a line of code won't cause anything to explode. 
 
-Similarly, most of the WordPress blogs understandably counter to this large audience, which meant wading through tens of marketing / SEO posts to find out how to change a setting. It ended up feeling like I was very much out of place.
+Similarly, most of the WordPress blogs understandably cater to this large audience, which means wading through tens of marketing / SEO posts to find out how to change a setting. It ended up feeling like I was very much out of place.
 
 ## Reliability
 Finally, this is undoubtedly just a BlueHost issue, but once or twice a year my site would silently go offline. I would have no idea it had happened, would just go to check something and discover it was down. I'd then have to contact support, and get them to... fix whatever they had broken.

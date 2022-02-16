@@ -4,11 +4,12 @@ This is the source code for blog.jakelee.co.uk, generated using Jekyll!
 
 # Are there any related blog posts?
 
-Not yet! There's 4-5 planned...
+* [This blog has migrated to Jekyll!](https://blog.jakelee.co.uk/blog-has-moved-from-wordpress-to-jekyll/)
+* [Why I moved from WordPress to Jekyll](https://blog.jakelee.co.uk/why-i-moved-from-wordpress-to-jekyll/)
 
 # What are all the files?
 
-*This definitely isn't here in case I forget...*
+*These definitely aren't listed here in case I forget...*
 
 * `_includes/`: All the code to be added into the site, on top of the default
     * `custom/`: Contains custom code to be included elsewhere.

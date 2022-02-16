@@ -31,13 +31,10 @@ var idx = lunr(function () {
 function lunr_search(term) {
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
     if(term) {
-        document.getElementById('lunrsearchresults').innerHTML = "<p>Search results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
-        //put results on the screen.
         var results = idx.search(term);
+        document.getElementById('lunrsearchresults').innerHTML = "<p>" + results.length + " results for '" + term + "'</p>" + document.getElementById('lunrsearchresults').innerHTML;
         if(results.length>0){
-            //if results
             for (var i = 0; i < results.length; i++) {
-                // more statements
                 var ref = results[i]['ref'];
                 var url = documents[ref]['url'];
                 var title = documents[ref]['title'];
@@ -61,7 +58,10 @@ window.addEventListener('load', function() {
 </script>
 <style>
     #lunrsearchresults {padding-top: 0.2rem;}
-    .lunrsearchresult {padding-bottom: 1rem;}
+    .lunrsearchresult {
+        list-style-type: none;
+        padding-bottom: 1rem;
+    }
     .lunrsearchresult .title {color: #2a7ae2;}
     .lunrsearchresult .url {color: silver;}
     .lunrsearchresult a {display: block; color: black;}

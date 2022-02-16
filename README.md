@@ -27,6 +27,7 @@ This is the source code for blog.jakelee.co.uk, generated using Jekyll!
 * `assets/`: All the non-markdown custom assets needed.
     * `images/`: Images for newer posts.
     * `js/`: Third party JS scripts.
+    * `css/`: Any additional CSS to run. 
     * `minimal-social-icons.svg`: Override of social icons, to add more.
 * `wp_content/`: Migrated images from wordpress blog.
 * `Gemfile`: Defines all the plugins, from GitHub Pages' small selection.

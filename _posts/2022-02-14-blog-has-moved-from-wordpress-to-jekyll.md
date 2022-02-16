@@ -33,6 +33,8 @@ Since the newer site is essentially all prerendered pages displayed when request
 
 The new site only has 1 copy of every image. If I've been silly and used a giant screenshot as the post header, that's the only size available! Previously, Wordpress would have a few copies of every image, and show the appropriate size. Once I've implemented this to the new site, speeds should improve slightly, and page size too.
 
+***2022-02-16 update: Thumbnails are now implemented, we're no longer loading the full image!***
+
 ## Appearance
 
 | Page | Wordpress | Jekyll | Comment |

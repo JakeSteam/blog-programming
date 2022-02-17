@@ -2,7 +2,7 @@
 title: Announcing an online version of the Settlers 3 game manual
 author: Jake Lee
 layout: post
-image: /assets/images/
+image: /assets/images/2022/settlers.png
 tags:
     - 'Settlers 3'
     - 'HTML'
@@ -12,6 +12,12 @@ tags:
 Settlers 3 is a PC strategy game from the late 90s that I spent countless hours in. It included a very detailed manual on the disc, full of images, tips, and stats. I've begun playing the game's [2018 remaster](https://store.ubi.com/uk/game?pid=5be2b34288a7e3b8170265cf), and discovered the manual's original site format was not available anywhere online... until now!
 
 First of all, the manual is available in [English](https://settlers.jakelee.co.uk/en/fr_start.htm), [French](https://settlers.jakelee.co.uk/fr/fr_start.htm), and the original [German](https://settlers.jakelee.co.uk/de/fr_start.htm). All the images and content should work perfectly, if there's any problems please [raise an issue](https://github.com/JakeSteam/settlers). 
+
+Here's a few sample pages:
+
+| Getting Started | Buildings | Military |
+| -- | -- | -- |
+| [![](/assets/images/2022/settlers-starting-thumbnailsmall.png)](/assets/images/2022/settlers-starting.png) | [![](/assets/images/2022/settlers-buildings-thumbnailsmall.png)](/assets/images/2022/settlers-buildings.png) | [![](/assets/images/2022/settlers-military-thumbnailsmall.png)](/assets/images/2022/settlers-military.png) |
 
 As with this blog and my portfolio, the manual is hosted on GitHub pages. I had to make a few changes to get the site working, and documenting them here might help similar projects.
 

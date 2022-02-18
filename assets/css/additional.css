@@ -17,8 +17,12 @@ code {
     background-color: #f8fbff !important;
 }
 
+.site-header {
+    border-top: 5px solid #2a7ae2;
+}
+
 .card {
-    border: 1px solid #d3d3d3;
+    border: 1px solid #2a7ae2;
     border-radius: .25rem;
 }
 
@@ -38,7 +42,7 @@ code {
     min-height: 180px;
     background-position: center;
     background-color: #fff;
-    border: 1px solid #d3d3d3;
+    border: 1px solid #a6a9ff;
     border-radius: .25rem;
 }
 

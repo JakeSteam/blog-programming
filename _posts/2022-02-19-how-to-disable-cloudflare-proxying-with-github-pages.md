@@ -10,7 +10,7 @@ tags:
     - HTTPS
 ---
 
-When creating a new GitHub pages site with Cloudflare's DNS, the default setting is having proxying all data via Cloudflare. This is OK, but Cloudflare can slow down GitHub pages somewhat, and GitHub pages have no bandwidth limits so might as well serve directly.
+When creating a new GitHub pages site with Cloudflare's DNS, the default setting is proxying all data via Cloudflare. This is OK, but Cloudflare can slow down GitHub pages somewhat, and GitHub pages have no bandwidth limits so might as well serve directly.
 
 ## Problem!
 However, turning off proxying will... break things. Here's an example from [my settlers site](https://settlers.jakelee.co.uk), where Cloudflare was increasing load times from ~100ms to ~300ms:

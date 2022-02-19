@@ -18,7 +18,6 @@ stackoverflow_username: Jake-Lee
 stackoverflow_id: 608312
 utterances_repo: "JakeSteam/blog-programming"
 rss: RSS
-main_url: https://jakelee.co.uk
 
 # Build settings
 plugins:

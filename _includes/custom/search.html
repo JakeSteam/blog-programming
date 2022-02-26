@@ -37,7 +37,6 @@ function lunr_search(term) {
     }
     return false;
 }
-var hasRun = false
 window.addEventListener('load', function() {
     var searchParam = new URLSearchParams(window.location.search).get("q")
     if (searchParam != null) {

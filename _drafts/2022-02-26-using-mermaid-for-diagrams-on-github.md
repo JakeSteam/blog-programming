@@ -34,7 +34,7 @@ stateDiagram-v2
 ```
 ~~~
 
-Will give you a simple but usable diagram!
+Will give you a simple but usable diagram! It's not an image, it's done in CSS so it can be styled, the text can be copied, you can access it via JavaScript, etc.
 
 <div class="mermaid">
 stateDiagram-v2

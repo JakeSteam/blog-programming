@@ -39,7 +39,7 @@ So, pretty scary. Whilst it's easy to notice mini red flags when investigating t
 
 I'd worked with this contact before on a shared Google doc, they'd been testing one of my games for me. As such, an invite to a document was not at all unusual, and there's usually no risk in opening a Google Doc anyway.
 
-For many people, myself included, my gmail account is pretty much the centre of my online account. I use it to login to all services, all password resets go there, it has years of payment records. Due to 2FA (which Google is [very wisely beginning to force](https://arstechnica.com/gadgets/2021/11/google-wants-every-account-to-use-2fa-starts-auto-enrolling-users/)), my account always felt "safe", but this phish would have bypassed it completely. 
+For many people, myself included, my gmail account is pretty much the centre of my online life. I use it to login to all services, all password resets go there, it has years of payment records. Due to 2FA (which Google is [very wisely beginning to force](https://arstechnica.com/gadgets/2021/11/google-wants-every-account-to-use-2fa-starts-auto-enrolling-users/)), my account always felt "safe", but this phish would have bypassed it completely. 
 
 ## Red flags
 

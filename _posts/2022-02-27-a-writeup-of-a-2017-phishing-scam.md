@@ -43,7 +43,7 @@ For many people, myself included, my gmail account is pretty much the centre of 
 
 ## Red flags
 
-I consider myself relatively security-savvy online, but I can absolutely see myself falling for this phish if I was in a hurry or distracted. 
+I consider myself pretty security-savvy online, but I can absolutely see myself falling for this phish if I was in a hurry or distracted. 
 
 The excellent YouTuber [Atomic Shrimp](https://www.youtube.com/channel/UCSl5Uxu2LyaoAoMMGp6oTJA) speaks about scams quite often, and [his recent video](https://www.youtube.com/watch?v=R1wH0TDpmYQ) contained a diagram that prompted this post. He discusses the idea that when analysing an email's trustworthiness, lots of little red flags can add up to make you suspicious. Using it, we can see our phishing scam... doesn't have any of the flags his scam email did:
 

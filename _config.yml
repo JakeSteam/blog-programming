@@ -1,7 +1,7 @@
 # Blog settings
-title: Jake Lee's Programming Blog
+title: Jake Lee on Software
 email: blog@jakelee.co.uk
-description: Mostly Android tutorials & tips, with a little bit of web dev / tooling.
+description: Android tutorials, web dev tips, and general software-y things!
 baseurl: ""
 url: "https://blog.jakelee.co.uk"
 permalink: /:title/

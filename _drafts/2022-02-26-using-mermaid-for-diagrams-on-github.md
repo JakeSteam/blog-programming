@@ -10,11 +10,11 @@ tags:
     - Web
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
 On most larger software projects, at some point you'll probably need to use a diagram on GitHub. Whether it's explaining how components interact, a user's flow, or project timelines, it'll happen eventually, usually in a PR.
 
 In the past I've used something like LucidChart or Miro, then embedded the image and linked to the original file. However, this means a whole new set of access controls, reliance on a (often paid!) third party, and is overall a pretty bad experience.
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
 ## Mermaid
 

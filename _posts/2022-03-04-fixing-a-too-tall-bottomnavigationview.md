@@ -21,9 +21,11 @@ To set the scene, we have an `activity_main.xml` with a `NavHostFragment` and a 
 
 As you can imagine, this was pretty frustrating for the user, having just the tiny top area to actually use! The issue fixed itself when the app was restarted, but on smaller devices made the app almost unusable.
 
+Googling around didn't turn up anything useful, mostly people having problems with the bar's size in general, not in certain situations! 
+
 ## Debugging
 
-We experienced this rare bug during 2 filmed user sessions of our shopping app, so these videos could be compared to find out what happened. Here were the clues:
+We experienced this rare bug during 2 filmed user sessions of our shopping app, so the videos could be compared to find out what happened. Here were the clues gained:
 
 1. It only happens for users on their first order.
 2. It only happens when a user changes their mind after entering their address, but before entering payment details.

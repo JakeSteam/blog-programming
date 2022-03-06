@@ -70,7 +70,7 @@ So, how are we going to do it?
     3. Store these `Component`s in our new format.
     4. Tie it all together!
 
-## Step 1: Creating a Component table
+### Step 1: Creating a Component table
 
 The simplest step, just need to add a few annotations [as per the docs](https://developer.android.com/training/data-storage/room#data-entity)! Our `Component` is now:
 
@@ -102,7 +102,7 @@ We also need to make sure our database knows about this new table, and increment
 internal abstract class CarDatabase : RoomDatabase() {
 ```
 
-## Step 2: Linking Component to Car
+### Step 2: Linking Component to Car
 
 First, we need to make sure our `Component` can have a reference to a `Car`, via a new indexed `carId` column:
 
@@ -157,7 +157,7 @@ data class CarMetadata(
 data class Component(
 ```
 
-## Step 3.1: Preparing the database schema changes
+### Step 3.1: Preparing the database schema changes
 
 So, we now have our new database schema set up, we’re done right? Well.. not quite. We need to migrate existing users! There’s 2 parts to this, migrating the database schema, and migrating the data itself.
 
@@ -193,7 +193,7 @@ private val MIGRATION_1_2 = object : Migration(1, 2) {
 
 Our database is now being migrated, and we have control over the process! Next step, making sure user data survives the trip…
 
-## Step 3.2: Parsing the existing data
+### Step 3.2: Parsing the existing data
 
 Before we remove our `components` column, we need to pull all of the existing data out of it.
 
@@ -253,7 +253,7 @@ fun toComponents(jsonComponents: String): List<Component> {
 }
 ```
 
-## Step 3.3: Storing the updated data
+### Step 3.3: Storing the updated data
 
 We’re nearly there! After step 3.2, we have a list of updated components. Once the schema changes in step 3.1 are performed, we can add our data back in.
 
@@ -279,7 +279,7 @@ private fun insertComponents(database: SupportSQLiteDatabase, components: List<C
 
 As you can see, the SQL isn’t at all complex, we’re just looping through every component object and inserting it in our updated database.
 
-## Step 3.4: Putting the pieces together
+### Step 3.4: Putting the pieces together
 
 All the pieces of the puzzle are now complete! The final step is putting them all in the migration script, in the correct order.
 

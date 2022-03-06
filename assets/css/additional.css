@@ -1,20 +1,6 @@
-table {
-    table-layout: fixed;
-    word-break: break-word;
-}
-
+/* Misc tidying of overall layout */
 .content {
     padding: 15px;
-}
-
-.tag,
-.tag:visited {
-    color: #828282;
-}
-
-.highlight,
-code {
-    background-color: #f8fbff !important;
 }
 
 .site-header {
@@ -42,27 +28,112 @@ code {
     min-height: 180px;
     background-position: center;
     background-color: #fff;
-    border: 1px solid #a6a9ff;
+    border: 1px solid #2a7ae2;
     border-radius: .25rem;
 }
 
+/* Fixes the in-post indent applying to homepage */
+.homepage-title {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+/* Fixes weird table word break behaviour */
+table {
+    table-layout: fixed;
+    word-break: break-word;
+}
+
+/* Fixes "tag" styling */
+.tag,
+.tag:visited {
+    color: #828282;
+}
+
+/* Fixes code block styling */
+.highlight,
+code {
+    background-color: #f8fbff !important;
+}
+
+/* Fixes icon / username alignment in footer */
 .username,
 .svg-icon {
     vertical-align: middle;
 }
 
-.pagination {
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-}
-
+/* Styles the link to other blog */
 .crosslink {
     width: 100%;
     padding: 0 20px;
     text-align: center;
 }
 
+/* Adds extra padding to top right links */
 .page-link {
     padding: 5px;
+}
+
+/* Adds GitHub style links to headers on mouseover */
+h2 {
+    margin-left: -18px;
+    padding-left: 8px;
+}
+
+h3 {
+    margin-left: -16px;
+    padding-left: 6px;
+}
+
+h4 {
+    margin-left: -14px;
+    padding-left: 4px;
+}
+
+h5 {
+    margin-left: -12px;
+    padding-left: 2px;
+}
+
+h6 {
+    margin-left: -10px;
+    padding-left: 0px;
+}
+
+h1 .octicon, h2 .octicon, h3 .octicon, h4 .octicon, h5 .octicon, h6 .octicon {
+    visibility: hidden;
+}
+
+h1:hover .octicon, h2:hover .octicon, h3:hover .octicon, h4:hover .octicon, h5:hover .octicon, h6:hover .octicon {
+    visibility: visible;
+}
+
+.octicon {
+    fill: currentColor;
+    padding: 0;
+    margin-left: -16px;
+    vertical-align: middle;
+}
+
+/* Table of contents */
+.toc {
+    float: right;
+    border: 1px solid #2a7ae2;
+    border-radius: 0.25rem;
+    padding-top: 15px;
+    padding-right: 15px;
+    margin-left: 15px;
+}
+
+.toc b {
+    margin-left: 20px;
+}
+
+.toc ul {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.toc li {
+    margin-left: 10px;
 }

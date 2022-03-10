@@ -36,7 +36,7 @@ Through trial and error, I found our Address Picker screen was to blame. On this
 Eventually I realised the empty space on screen... perfectly matched the space the keyboard would take up! So, the keyboard must be involved somehow, despite not being open. Here's what happened:
 
 1. When the user is typing their address, the keyboard is obviously visible. 
-2. When they select an address, our app navigates away from the screen via a slightly convuluted method involving MVVM and a `RecyclerView` adapter.
+2. When they select an address, our app navigates away from the screen via a slightly convoluted method involving MVVM and a `RecyclerView` adapter.
 3. This navigation action doesn't explicitly dismiss the keyboard.
 4. If the user gets to the homepage without opening the keyboard again, the `BottomNavigationView` tries to fit above this (invisible) keyboard.
 5. We have our giant bottom padding. 

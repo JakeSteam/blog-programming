@@ -43,7 +43,7 @@ Next, my **current setup**. All of the above issues are now resolved completely,
 
 | Overview | From above | Under |
 | -- | -- | -- |
-| [![](/wp-content/uploads/2021/04/hum2TEM.png)](/wp-content/uploads/2021/04/hum2TEM.png) | [![](/wp-content/uploads/2021/04/20210424_130510.jpg)](/wp-content/uploads/2021/04/20210424_130510-scaled.jpg) | [![](/wp-content/uploads/2021/04/20210424_130549.jpg)](/wp-content/uploads/2021/04/20210424_130549-scaled.jpg) |
+| [![](/wp-content/uploads/2021/04/hum2TEM.png)](/wp-content/uploads/2021/04/hum2TEM.png) | [![](/wp-content/uploads/2021/04/20210424_130510.jpg)](/wp-content/uploads/2021/04/20210424_130510.jpg) | [![](/wp-content/uploads/2021/04/20210424_130549.jpg)](/wp-content/uploads/2021/04/20210424_130549.jpg) |
 
 ## Requirements
 

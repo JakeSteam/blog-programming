@@ -1,7 +1,7 @@
 ---
 title: Search
 permalink: /search/
-layout: default
+layout: page
 ---
 
 <style type="text/css" media="screen">
@@ -24,8 +24,5 @@ layout: default
   }
 </style>
 
-<div class="container">
-  <h1>Search</h1>
+{% include custom/search.html %}
 
-  {% include custom/search.html %}
-</div>

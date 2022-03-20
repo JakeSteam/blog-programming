@@ -51,3 +51,26 @@ The solution was to use `text-indent`, which only indents the first line, where 
 
 Additionally, I noticed the indentation was applying to the homepage (which didn't include the anchor heading plugin), so changed the CSS to only apply on a post by adding the `.post-content` selector. 
 
+[Here's the full CSS change](https://github.com/JakeSteam/blog-programming/commit/4e7c6b6a7509324389c8a8d70cd184cc0a0bff4e), but essentially you're just replacing all of the `hX` CSS classes in [the example](https://github.com/allejo/jekyll-anchor-headings/wiki/Examples#github-style-octicon-links) with:
+
+```
+.post-content h2 {
+    text-indent: -10px;
+}
+
+.post-content h3 {
+    text-indent: -8px;
+}
+
+.post-content h4 {
+    text-indent: -6px;
+}
+
+.post-content h5 {
+    text-indent: -4px;
+}
+
+.post-content h6 {
+    text-indent: -2px;
+}
+```

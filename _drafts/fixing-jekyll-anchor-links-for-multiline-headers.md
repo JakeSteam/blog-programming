@@ -26,19 +26,20 @@ Obviously this isn't a *big* deal, but it was annoying enough that I decided to 
 <tr><td>Old</td><td>New</td></tr>
 <tr><td>
 
-```
+<pre>
 h2 {
     margin-left: -18px;
     padding-left: 8px;
 }
-```
+</pre>
+
 </td><td>
 
-```
+<pre>
 .post-content h2 {
     text-indent: -10px;
 }
-```
+</pre>
 
 </td></tr>
 </table>

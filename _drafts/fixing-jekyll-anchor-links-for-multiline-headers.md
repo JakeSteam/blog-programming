@@ -8,7 +8,7 @@ tags:
     - CSS
 ---
 
-As [mentioned a few weeks ago](/blog-v2-1-with-table-of-contents-and-anchor-links/) I'm now using the `jekyll-anchor-headings` scripts to add links to each header. This works great, but... has unfortunately side effects if the header is more than one line. Time to fix that!
+As [mentioned a few weeks ago](/blog-v2-1-with-table-of-contents-and-anchor-links/) I'm now using the `jekyll-anchor-headings` scripts to add links to each header. This works great, but... unfortunately has side effects if the header is more than one line. Time to fix that!
 
 ## The problem 
 

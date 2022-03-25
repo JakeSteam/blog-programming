@@ -12,20 +12,20 @@ Back in December, I got an email about something called the "Google Play Store L
 
 You can read an overview of the certificate [on the official site](https://play.google.com/academy/certificate/), essentially it's a free qualification intended to help digital marketers get into working with the Google Play Store. [Here's my certificate](https://www.credential.net/28a85477-e958-4c87-93b0-999ae899e20a#gs.umraom), it can also be added to LinkedIn!
 
-## The process
+## The certificate process
 
-The process was was straight forward, and from first deciding to complete the certificate to finishing the exam took around 2-3 hours.
+The process was straight forward, with it taking 2-3 hours from first deciding to complete the certificate to finishing the exam. Here's what's involved:
 
 1. Work through the ~13 sections of [the study guide](https://playacademy.exceedlms.com/student/path/313809), each taking between 5 and 10 minutes.
 2. Register for an account on [WebAssessor](https://www.webassessor.com/GooglePlay).
 3. Complete the timed exam of ~60 multiple choice questions.
 4. Receive an immediate pass / fail, with a certificate being emailed to you within a day or so.
 
-## The content
+## The study guide content
 
 All of the study guide's content [is available without registering](https://playacademy.exceedlms.com/student/path/313809), and it's essentially a structured summary of the key points from Google's [Developer Policy Center](https://play.google.com/about/developer-content-policy/).
 
-It's very readable and well written, with plenty of interactive elements (tabs, expandable areas, fictional conversations etc) to keep the content engaging. Let's use the painfully dry sounding *[Track installs, uninstalls, and trends with Play Console statistics* section as an example:
+It's very readable and well written, with plenty of interactive elements (tabs, expandable areas, fictional conversations etc) to keep the content engaging. Let's use the painfully dry sounding *"Track installs, uninstalls, and trends with Play Console statistics"* section as an example.
 
 The learning material starts with an overview of *why* these metrics matter, what you'll be learning in this section, and how to actually use Google Play Console. Simple techniques like hiding parts of information behind a tabbed interface forces the reader to actively engage, instead of just passively scrolling through a wall of text:
 
@@ -47,7 +47,7 @@ Overall, the material was excellently laid out, and I genuinely wish more online
 
 Despite spending perhaps 90-120 minutes reading through all the content, it didn't feel onerous or challenging, and the microinteractions were pleasing enough to motivate continuation. As someone who reads a lot of fiction & non-fiction, I can recognise excellent writing even if I can't write it myself yet!
 
-However, I do want to point out that the content is not going to change your worldview. If you already publish Android apps, or market them, you'll likely know 70-80% of the content already. As someone who used to handle the entire publishing process I'd estimate I knew around 90% of the content, with the unknown aspects being those a mobile SEO expert would likely already know, e.g. custom store listings, analytics, tracking users.
+However, I do want to point out that the content is not going to change your outlook on life or solve any app-related problems you're encountering. If you already publish Android apps, or market them, you'll likely know 70-80% of the content already. As someone who used to handle the entire publishing process I'd estimate I knew around 90% of the content, with the unknown aspects being those a mobile SEO expert would likely already know, e.g. custom store listings, analytics, tracking users.
 
 ## The exam
 
@@ -61,12 +61,12 @@ Once you've completed your exam, you can submit your details to be included in a
 
 ## Review
 
-The [Google Play Store Listing Certificate](https://play.google.com/academy/certificate/) is an *excellent* free resource, and I really hope it's the first of many similar certificates. The overall style reminded me of the Google Codelabs, usually very high quality introductions to technical topics, but non-technical topics are often relegated to a collection of help articles.
+The [Google Play Store Listing Certificate](https://play.google.com/academy/certificate/) is an *excellent* free resource, and I really hope it's the first of many similar certificates. The overall style reminded me of the Google Codelabs (very high quality introductions to technical topics), but non-technical topics are often relegated to a collection of help articles.
 
 Whilst gamification of learning obviously has pros and cons, simple elements such as progress bars, checkboxes, and a certificate at the end really increases the motivation and satisfaction in learning. I would absolutely not have spent a couple of hours reading information on Google Play listings, but adding some kind of reward at the end made me do it happily, and now spend time recommending it to others!
 
-In conclusion, if you're a developer / marketer / product owner working with the Google Play store, this is a *really* good use of your time! It'll help refresh some topics, and probably clarify a few misconceptions that everyone picks up when learning things on the job.
+In conclusion, if you're a developer / marketer / product owner working with the Google Play store, this is a *really* good use of your time. It'll help refresh some topics, and probably clarify a few misconceptions that everyone picks up when learning things on the job.
 
-It's free, and no registration is needed to look at the learning resources. And no, this wasn't a sponsored post!
+It's free, and no registration is needed to look at the resources. And no, this wasn't a sponsored post!
 
 [https://play.google.com/academy/certificate/](https://play.google.com/academy/certificate/)

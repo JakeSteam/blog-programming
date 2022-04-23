@@ -8,7 +8,7 @@ tags:
     - Crashlytics
 ---
 
-In services with uptime, availability is often measured in the number of 9s. So "4 9s" 99.99% uptime etc. Whilst installed apps themselves don't tend to have uptime in the same way, they *do* have another critically important metric: % of crash-free users! I've always heavily focused on this metric, so here's some of the things I've picked up whilst chasing 100%.
+In services with uptime, availability is often measured in the number of 9s, e.g. "4 9s" is 99.99% uptime. Whilst installed apps themselves don't tend to have uptime in the same way, they *do* have another critically important metric: % of crash-free users! I've always heavily focused on this metric, so here's some of the things I've picked up whilst chasing 100%.
 
 For context (and, okay, a little brag), whilst leading the Android teams I led ITV Hub from 98.2% -> 99.7% crash-free users, and Photobox from 99.10% to ~99.98%.
 
@@ -16,21 +16,21 @@ For context (and, okay, a little brag), whilst leading the Android teams I led I
 
 First of all, what are crash-free users? Well, it's an **aggregation over time** of how many of your users in a given time frame experienced a crash. The [Firebase docs](https://firebase.google.com/docs/crashlytics/troubleshooting?platform=android#cfu-calculation) go into this in a bit more detail, but essentially if 1000 people use your app in a day, and 10 of them experience a crash, you have 99.9% crash-free users.
 
-The impact of this obviously depends on the size of your userbase. For some of my smaller apps, having 90% crash-free users is fine, as it's only 1-2 people. For something like [ITV Hub](https://play.google.com/store/apps/details?id=air.ITVMobilePlayer&hl=en_GB), this would be tens of thousands of people! 
+The impact of this obviously depends on the size of your userbase. For some of my smaller apps, having 90% crash-free users is fine, as it's only 1-2 people experiencing crashes. For something like [ITV Hub](https://play.google.com/store/apps/details?id=air.ITVMobilePlayer&hl=en_GB), this would be tens of thousands of people! 
 
-## Why to improve crash-free users %
+## Why improve crash-free users percentage?
 
 So, who cares? Crashes happen, right?
 
-In larger companies, most aspects of an app will be monitored and improved by product / marketing employees. Whether this is the impact of an email campaign, A/B testing a screen design, or customer-exclusive discounts, these all take significant effort to introduce a minor uplift in sales / users. Crashes however, skip this process entirely, yet may be causing more attrition than anything else combined!
+In larger companies, most aspects of an app will be monitored and improved by product / design / marketing / engineering employees. Whether this is the impact of an email campaign, A/B testing a screen design, or customer-exclusive discounts, these all take significant effort to introduce a minor uplift in sales / users. Crashes however, skip this process entirely, yet may be causing more attrition than anything else combined!
 
 From my experience, this is because engineering alone are generally responsible for the crash-free rate, whilst all other initiatives have design and product input. This leads to a lack of visibility, and ultimately no incentive to actually improve the metric unless an engineer champions it. That's what I'll do now!
 
 ### Reflects a real problem for real people
 
-First and foremost, this isn't a metric like conversion rate tracking how many users had a **positive** interaction. Instead, it is tracking how many had a **catastrophic** experience! 
+First and foremost, this isn't a metric like conversion rate tracking how many users had a **positive** interaction. Instead, it is tracking how many had a **catastrophic** experience.
 
-Depending on when and how an app crashes, it might be barely noticeable (e.g. [this crash](https://stackoverflow.com/q/60148919/608312) when a user unlocked their phone whilst Chromecasting) or be completely catastrophic (e.g. a crash on database migration I recently introduced (and fixed!)). Each of those crashes can very easily be a permanently lost user, who might leave a negative review, tell their friends how awful the app is, leading to a single programming typo can cause thousands of lost revenue. Not great.
+Depending on when and how an app crashes, it might be barely noticeable (e.g. [this crash](https://stackoverflow.com/q/60148919/608312) when a user unlocked their phone whilst Chromecasting) or be completely catastrophic (e.g. a crash on app startup I recently introduced (and fixed!)). Each of those crashes can very easily be a permanently lost user, who might leave a negative review and tell their friends how awful the app is, leading to a single programming typo causing thousands in lost revenue. Not great.
 
 ### Crashes beget crashes
 
@@ -40,17 +40,17 @@ Nope! When your app crashes, it can permanently damage the installation. For exa
 
 If the crash had been fixed as soon as it was noticed, and safety checks for any affected user data implemented, this could have been avoided weeks ago.
 
-### Can reveal underlying / upcoming issues
+### Investigations can reveal underlying / upcoming issues
 
 Crashes don't come out of nowhere (well, almost never). Instead they are a symptom of programming issues, from accidentally trusting a variable to be non-nullable to assuming a device will always have a certain characteristic (especially prevalent on Android devices, some of which defy all expectations!). 
 
-As such, during the investigation into a crash the root cause is often a future problem lying in wait. I remember a rare crash about device Widevine DRM capabilities. We ignored it as it was only occurring on "Android TV boxes", the legally shady devices that aren't certified to playback encrypted content. A few weeks later however, we discovered a newly released OnePlus phone had somehow yet to gain the certification, so would crash too!
+As such, during the investigation into a crash the root cause is often a future problem lying in wait. I remember a rare crash about device Widevine DRM capabilities. We ignored it as it was only occurring on "Android TV boxes", the sometimes legally shady devices that aren't certified to playback encrypted content. A few weeks later however, we discovered a newly released OnePlus phone had somehow yet to gain the certification, so would crash too!
 
-The "fix" was to [check the DRM](https://stackoverflow.com/a/69739898/608312) was supported (despite all normal phones & tablets having it), and trying to help the user understand what was wrong by showing dialog. This approach [helps users find a solution](https://droidboxforums.com/threads/drm-protected-content.20209/) themselves, and is a memorable example where I ignored a crash due to the unconventional device and regretted it. 
+The "fix" was to [check the DRM](https://stackoverflow.com/a/69739898/608312) was supported (despite all normal phones & tablets having it), and trying to help the user understand what was wrong by showing an error message. This approach [helps users find a solution themselves](https://droidboxforums.com/threads/drm-protected-content.20209/), and is a memorable example where I ignored a crash due to the unconventional device and regretted it. 
 
 ### Easily understandable metric
 
-When expressing the need for tech debt reduction work, most engineering reasons realistically will have little impact on non-engineers as they're not measurable. "The codebase sucks" is an awful argument, "500 users a day are experiencing crashes in our photo editor" is excellent. Crash-free users works as both an indicator of the app's current state, as well as a tool to measure the impact of any changes, free from metrics such as conversion that are easily contaminated from other initiatives.
+When expressing the need for tech debt reduction work, most engineering reasons realistically will have little impact on non-engineers as they're not measurable. "The codebase sucks" is an awful argument, "500 users a day are experiencing crashes in our photo editor" is excellent. Crash-free users works as both an indicator of the app's current state, as well as a tool to measure the impact of any changes, free from metrics such as conversion that are easily contaminated by other initiatives.
 
 Selfishly, "improved crash-free users from 99.7% to 99.95%" is also an excellent thing to see on a CV! It implies the engineer cares about real users, understands their work is not just code, whilst also being an easy metric to talk about and share with outsiders.
 
@@ -58,9 +58,9 @@ Selfishly, "improved crash-free users from 99.7% to 99.95%" is also an excellent
 
 Finally, crash fixing (at least on Android) is often pretty easy. There are absolutely times when a single crash can take weeks, but in my experience almost all crashes are easy fixes. Maybe a value is unexpectedly null, maybe a variable can take longer than expected to initialise, issues like this can often take longer to write the PR than fix! 
 
-Because of this, a few hours a week of my time has definitively improved the app experience for tens or hundreds or thousands of users. It's somewhat sobering to consider that my almost hobbyist crash fixing could easily have saved my employers more money than any major new feature / improvement I've actively developed! 
+Because of this, a few hours a week of my time has significantly improved the app experience for tens or hundreds of thousands of users. It's somewhat sobering to consider that my almost hobbyist crash fixing could easily have made my employers more money than any major new feature / improvement I've actively developed! 
 
-## How to improve crash-free users %
+## How to improve crash-free users percentage?
 
 Alright, so hopefully at least one of the points above has convinced you that the crash-free users % at least needs to be looked at occasionally, and improved if possible.
 
@@ -68,7 +68,7 @@ So... how?
 
 ### Have the information you need, and use your tools
 
-You can't fix a crash if you can't see what's going on. Most apps already have ~~far too many~~ various tracking solutions already in place, and they're probably good enough if used properly. 
+You can't fix a crash if you can't see what's going on. Most apps have ~~far too many~~ various tracking solutions already in place, and they're probably good enough if used properly. 
 
 I've always used Crashlytics, and it actually has a [custom logging feature built in](https://firebase.google.com/docs/crashlytics/customize-crash-reports?platform=android#add-logs). However, it becomes drastically more powerful when your app also uses Google Analytics (GA), which most do. The GA events are [automatically connected to the crash](https://firebase.blog/posts/2020/09/crashlytics-analytics-together#crash-free-users), meaning you get a detailed history of the user's actions before the crash.
 
@@ -76,21 +76,21 @@ This is unbelievably helpful when tracking down a rare crash, especially when co
 
 [![](/assets/images/2022/crashlytics-overview-740w.png)](/assets/images/2022/crashlytics-overview.png)
 
-Our app's code isn't even included here! A transaction, somewhere, is too large. Unsolveable, right? Well, let's take a look at the logs:
+Our app's code isn't even mentioned here! A transaction, somewhere, is too large. Unsolveable, right? Well, let's take a look at the logs:
 
 [![](/assets/images/2022/crashlytics-logs-740w.png)](/assets/images/2022/crashlytics-logs.png)
 
-Ah! The user is uploading photos! Alright, now we know the screen and action, so have a starting point. However, we test upload often, how come we haven't experienced this ourselves? Maybe there's a clue in the user keys...
+Ah! The user is uploading photos! Alright, now we know the screen and actions taken, so have a starting point. However, we test upload pretty often, how come we haven't experienced this ourselves? Maybe there's a clue in the user keys...
 
 [![](/assets/images/2022/crashlytics-keys-740w.png)](/assets/images/2022/crashlytics-keys.png)
 
-Well, we don't test uploading 846 images that often. From this, we can pretty reliably conclude that inside our image uploader we are using too much metadata per image, leading to crashes on high image counts. Without looking at a single line of code, we've identified a likely cause and fix for a crash! 
+Well, we don't test uploading 846 images that often. From this, we can pretty reliably conclude that inside our image uploader we are using too much metadata per image, leading to crashes on high image counts when passing this data around. Without looking at a single line of code, we've identified a likely cause and fix for a crash! 
 
 ### Build a routine
 
 Personally, I don't think having a "crash fixing week" or similar is super beneficial. Crashes are constantly being introduced into an app and accumulate, so fixing as many as possible every few months means easily fixable crashes spend weeks in the wild.
 
-Instead, fix crashes little and often. At [Photobox](https://play.google.com/store/apps/details?id=com.photobox.android), we use approximately weekly releases. I use Crashlytics to monitor the latest release, and will try to fix the top 2-3 crashes for the next week's release. This way, any newly introduced crashes are fixed, and any historical ones are too.
+Instead, fix crashes little and often. At [Photobox](https://play.google.com/store/apps/details?id=com.photobox.android), we use approximately weekly releases. I use Crashlytics to monitor the latest release, and will try to fix the top 2-3 crashes for the next week's release. This way, any newly introduced crashes are fixed, and historical ones eventually are too.
 
 Additionally, by constantly maintaining the crash rate, any crashes caused by a new architecture / approach / library can be quickly fixed before the use of it spreads further in the codebase. 
 
@@ -98,13 +98,13 @@ Additionally, by constantly maintaining the crash rate, any crashes caused by a 
 
 You can't improve crash rate if you aren't looking at crashes! Firebase has various options for integrating with [Slack](https://support.google.com/firebase/answer/9005934?hl=en), [Jira](https://support.google.com/firebase/answer/9118259?hl=en&ref_topic=6400762), [PagerDuty](https://support.google.com/firebase/answer/9168499?hl=en&ref_topic=6400762), and [email](https://firebase.blog/posts/2019/09/how-to-set-up-crashlytics-alerting), make sure you're at least keeping an eye on high velocity crashes.
 
-I also have a Crashlytics tab filtered to the latest release pinned on Chrome, and quickly check it each morning to make sure we're still at 99.9%+ crash-free. Only takes a second, and has caught a few issues before they've escalated!
+I also have a Crashlytics tab filtered to the latest release pinned on Chrome, and quickly check it each morning to make sure we're still at 99.9%+ crash-free. Only takes a second, and has caught a few issues before they've escalated.
 
 ### Take code quality seriously
 
 Approximately a million posts have been written about programming styles, architectures, paradigms etc, so I won't cover any of those! Instead, I'll just say tools like [lint](https://developer.android.com/studio/write/lint) & [detekt](https://detekt.dev/) and [decent PR processes](/creating-a-pr-template/) exist for a reason. Use them.
 
-The only crash that doesn't impact your crash-free percentage is one that never makes it to real users!
+The only crash that doesn't impact your crash-free percentage is one that never makes it to real users.
 
 ### Publicise your number
 
@@ -118,7 +118,7 @@ The crash rate is also mentioned when it hits a new milestone in wider meetings 
 
 ### Be realistic
 
-Finally, accept that you won't reach 100% crash-free users. On smaller apps you may hit this occasionally, but hitting it consistently is impossible. In decreasing order of likelihood, this is due to:
+Finally, accept that you won't consistently reach 100% crash-free users. On smaller apps you may hit this occasionally, but hitting it for longer periods is impossible. In decreasing order of likelihood, this is due to:
 * Continued development introducing new crashes.
 * The sheer variety of Android hardware and software causing a single unheard-of manufacturer's devices to crash when running your app.
 * Crashes caused by third party libraries.

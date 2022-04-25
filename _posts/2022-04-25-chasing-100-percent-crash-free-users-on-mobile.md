@@ -10,7 +10,7 @@ tags:
 
 In services with uptime, availability is often measured in the number of 9s, e.g. "4 9s" is 99.99% uptime. Whilst installed apps themselves don't tend to have uptime in the same way, they *do* have another critically important metric: % of crash-free users! I've always heavily focused on this metric, so here's some of the things I've picked up whilst chasing 100%.
 
-For context (and, okay, a little brag), whilst leading the Android teams I led ITV Hub from 98.2% -> 99.7% crash-free users, and Photobox from 99.10% to ~99.98%.
+For context (and, okay, a little brag), I led the Android app of ITV Hub from 98.2% -> 99.7% crash-free users, and Photobox from 99.10% to ~99.98%.
 
 ## What is "crash-free users" measuring?
 

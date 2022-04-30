@@ -24,7 +24,7 @@ So, who cares? Crashes happen, right?
 
 In larger companies, most aspects of an app will be monitored and improved by product / design / marketing / engineering employees. Whether this is the impact of an email campaign, A/B testing a screen design, or customer-exclusive discounts, these all take significant effort to introduce a minor uplift in sales / users. Crashes however, skip this process entirely, yet may be causing more attrition than anything else combined!
 
-From my experience, this is because engineering alone are generally responsible for the crash-free rate, whilst all other initiatives have design and product input. This leads to a lack of visibility, and ultimately no incentive to actually improve the metric unless an engineer champions it. That's what I'll do now!
+From my experience, this is because engineering alone are generally responsible for the crash-free rate, whilst all other initiatives have design and product input. This leads to a lack of visibility, and ultimately no incentive to actually improve the metric unless an engineer champions it.... like I am now.
 
 ### Reflects a real problem for real people
 
@@ -44,7 +44,7 @@ If the crash had been fixed as soon as it was noticed, and safety checks for any
 
 Crashes don't come out of nowhere (well, almost never). Instead they are a symptom of programming issues, from accidentally trusting a variable to be non-nullable to assuming a device will always have a certain characteristic (especially prevalent on Android devices, some of which defy all expectations!). 
 
-As such, during the investigation into a crash the root cause is often a future problem lying in wait. I remember a rare crash about device Widevine DRM capabilities. We ignored it as it was only occurring on "Android TV boxes", the sometimes legally shady devices that aren't certified to playback encrypted content. A few weeks later however, we discovered a newly released OnePlus phone had somehow yet to gain the certification, so would crash too!
+As such, during the investigation into a crash the root cause is often a future problem lying in wait. I previously experienced a rare crash around device Widevine DRM capabilities. We ignored it as it was only occurring on "Android TV boxes", the sometimes legally shady devices that aren't certified to playback encrypted content. A few weeks later however, we discovered a newly released OnePlus phone had somehow yet to gain the certification, so would crash too!
 
 The "fix" was to [check the DRM](https://stackoverflow.com/a/69739898/608312) was supported (despite all normal phones & tablets having it), and trying to help the user understand what was wrong by showing an error message. This approach [helps users find a solution themselves](https://droidboxforums.com/threads/drm-protected-content.20209/), and is a memorable example where I ignored a crash due to the unconventional device and regretted it. 
 
@@ -56,7 +56,7 @@ Selfishly, "improved crash-free users from 99.7% to 99.95%" is also an excellent
 
 ### Amazing effort to reward ratio
 
-Finally, crash fixing (at least on Android) is often pretty easy. There are absolutely times when a single crash can take weeks, but in my experience almost all crashes are easy fixes. Maybe a value is unexpectedly null, maybe a variable can take longer than expected to initialise, issues like this can often take longer to write the PR than fix! 
+Finally, crash fixing (at least on Android) is often pretty easy. There are absolutely times when a single crash can take weeks, but in my experience almost all crashes are easy fixes. Maybe a value is unexpectedly null, maybe a variable can take longer than expected to initialise, issues like this can often take longer to write the PR than fix.
 
 Because of this, a few hours a week of my time has significantly improved the app experience for tens or hundreds of thousands of users. It's somewhat sobering to consider that my almost hobbyist crash fixing could easily have made my employers more money than any major new feature / improvement I've actively developed! 
 

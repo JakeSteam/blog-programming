@@ -6,6 +6,7 @@ baseurl: ""
 url: "https://blog.jakelee.co.uk"
 permalink: /:title/
 show_excerpts: true
+timezone: Europe/London
 
 # Theme settings
 theme: minima

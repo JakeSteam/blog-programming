@@ -31,23 +31,23 @@ Unfortunately, it's worth mentioning it also has the same drawback, a [scary-loo
 
 Before Giscus can be enabled, your repository's discussions need to be prepared. First, enable discussions on your repository's settings page. This will automatically create a new placeholder discussion, feel free to delete it.
 
-[![discussions enabled](/assets/images/2022/giscus-discussions-enable.png)]((/assets/images/2022/giscus-discussions-enable.png))
+[![discussions enabled](/assets/images/2022/giscus-discussions-enable.png)](/assets/images/2022/giscus-discussions-enable.png)
 
 Next, we want an announcements-style discussion category (so only admins / Giscus can create topics, but anyone can reply), without reusing the "Announcements" category (since we may still want to make announcements!).
 
 To do this, just click the edit icon next to categories on your repository's discussion page, delete any you don't need, and add your new category:
 
-[![discussions configuration options](/assets/images/2022/giscus-comments-config-thumbnail.png)]((/assets/images/2022/giscus-comments-config.png))
+[![discussions configuration options](/assets/images/2022/giscus-comments-config-thumbnail.png)](/assets/images/2022/giscus-comments-config.png)
 
 Once you're done, your discussion categories should look something like:
 
-[![discussions configured](/assets/images/2022/giscus-comments-configured.png)]((/assets/images/2022/giscus-comments-configured.png))
+[![discussions configured](/assets/images/2022/giscus-comments-configured.png)](/assets/images/2022/giscus-comments-configured.png)
 
 ## Step 2: Preparing Giscus
 
 First of all, [we need to add Giscus](https://github.com/apps/giscus), and give it permissions to manage discussions in any repositories we want to use it on:
 
-[![install giscus app](/assets/images/2022/giscus-install-thumbnail.png)]((/assets/images/2022/giscus-install.png))
+[![install giscus app](/assets/images/2022/giscus-install-thumbnail.png)](/assets/images/2022/giscus-install.png)
 
 Now we've installed the app, we can use the [Giscus project page's handy tool](https://giscus.app/) to configure the comments. 
 
@@ -93,7 +93,7 @@ First, the good news: Issues can be migrated into discussions, and Giscus will b
 
 Alas, the bad news: Issues need to be migrated manually, one by one. [GitHub has an official guide](https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion), just make sure you select your "Comments" category for migrated discussions:
 
-[![github issue to discussion](/assets/images/2022/giscus-issue-to-discussion.png)]((/assets/images/2022/giscus-issue-to-discussion.png))
+[![github issue to discussion](/assets/images/2022/giscus-issue-to-discussion.png)](/assets/images/2022/giscus-issue-to-discussion.png)
 
 Once they're all migrated, you're done! Woo!
 
@@ -105,4 +105,4 @@ If you're currently using lots of custom Utterances styling, it's worth noting t
 
 | Utterances (default) | Giscus (default) |
 | -- | -- |
-| [![giscus before](/assets/images/2022/giscus-before-thumbnail.png)]((/assets/images/2022/giscus-before.png)) | [![giscus after](/assets/images/2022/giscus-after-thumbnail.png)]((/assets/images/2022/giscus-after.png)) | 
+| [![giscus before](/assets/images/2022/giscus-before-thumbnail.png)](/assets/images/2022/giscus-before.png) | [![giscus after](/assets/images/2022/giscus-after-thumbnail.png)](/assets/images/2022/giscus-after.png) | 

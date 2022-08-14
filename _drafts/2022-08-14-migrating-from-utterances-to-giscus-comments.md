@@ -2,22 +2,22 @@
 title: How to migrate from Utterances to Giscus for Jekyll comments
 author: Jake Lee
 layout: post
-image: /assets/images/2022/
+image: /assets/images/2022/giscus-header.png
 tags:
     - Jekyll
     - GitHub
     - Comments
 ---
 
-Since migrating [from Wordpress to Jekyll](https://blog.jakelee.co.uk/blog-has-moved-from-wordpress-to-jekyll/), this blog (and [my non-tech blog](https://jakelee.co.uk)) has used Utterances for comments. This service creatively uses GitHub issues for comment hosting. However, since then GitHub has release the "Discussions" feature which... is a much better fit! Luckily, Giscus is a way to use these, and can easily be migrated to.
+Since migrating [from Wordpress to Jekyll](https://blog.jakelee.co.uk/blog-has-moved-from-wordpress-to-jekyll/), this blog (and [my non-tech blog](https://jakelee.co.uk)) has used Utterances for comments, which creatively uses GitHub issues for comment hosting. However, since then GitHub has released the "Discussions" feature which... is a much better fit! Luckily, Giscus is a way to use these, and can easily be migrated to.
 
-I've now migrated both sites across to Giscus, and whilst it was a relatively simple process there's no all-in-one guide currently. The short version is we're going to enable GitHub discussions, configure Giscus, then add it to our Jekyll blog!
+I've now migrated both sites' comments across to Giscus, and whilst it was a relatively simple process there's no all-in-one guide currently. The short version is we're going to enable GitHub discussions, configure Giscus, add it to our Jekyll blog, then migrate comments!
 
 ## An overview of Giscus
 
 [Giscus](https://giscus.app/) is extremely similar to [Utterances](https://utteranc.es/), with 3 main improvements:
 1. It uses [GitHub discussions](https://docs.github.com/en/discussions) instead of issues, making it less of a hacky implementation (comments logically aren't issues, they're discussions!).
-2. It adds plenty of new features such as adding reactions to the main post, lazy loading comments, multiple languages, self-hosting the bot, and [advanced options](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md).
+2. It adds plenty of new features such as sorting comments, adding reactions to the main post, lazy loading comments, multiple languages, self-hosting the bot, and [advanced options](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md).
 3. It's actually being maintained and updated! Constrastingly, Utterances hasn't been touched in 6 months...
 
 In addition to these benefits, it keeps all the original benefits of Utterances, namely:
@@ -49,12 +49,12 @@ First of all, [we need to add Giscus](https://github.com/apps/giscus), and give 
 
 [![install giscus app](/assets/images/2022/giscus-install-thumbnail.png)]((/assets/images/2022/giscus-install.png))
 
-Now we've installed the app, we can use the [Giscus project page](https://giscus.app/)'s handy tool to configure the comments. 
+Now we've installed the app, we can use the [Giscus project page's handy tool](https://giscus.app/) to configure the comments. 
 
 1. Enter your repository in the text field (in the format `JakeSteam/blog-programming`).
-2. Select how you want to map discussions to posts. I recommend leaving it on the default `pathname` setting, and *not* enabling strict title matching, as this will prevent easy post migration.
+2. Select how you want to map discussions to posts. I recommend leaving it on the default `pathname` setting, and *not* enabling strict title matching, as this will prevent easy post migration ([more info](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-strict)).
 3. Select your new "Comments" discussion category.
-4. Select your features. I enabled reactions, and lazy loading.
+4. Select your features. I enabled reactions and lazy loading.
 5. Select your theme. I just used "GitHub Light", but you can even use custom CSS here!
 
 You'll now have a big block of JavaScript ready to embed in the next step! Here's how mine looks, if you want to compare:
@@ -83,7 +83,7 @@ For this step, all you *need* to do is add that block of JavaScript to your Jeky
 
 Optionally, a more Jekyll-y approach is to extract the IDs into your `_config.yml` file, and reference them in your `post.html`. This approach can be seen [in my migration commit](https://github.com/JakeSteam/blog-programming/commit/6d6c112e5964a2248ad62d8caa36c38714abb078), all we're doing is:
 1. Add `giscus_repo_id: MDEwOlJlcG9zaXRvcnkzNTk5Mzc1OTM=` etc to your `_config.yml`.
-2. In the JavaScript, replace the existing repo ID definition with `data-repo-id="{{ site.giscus_repo_id }}"`.
+2. In the JavaScript, replace the existing repo ID definition with {% raw %}`data-repo-id="{{ site.giscus_repo_id }}"`{% endraw %}.
 
 Run your site, and you should be able to create new discussions & leave comments! Nice! However... don't forget about the existing comments.
 

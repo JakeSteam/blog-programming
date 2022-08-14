@@ -89,7 +89,7 @@ Run your site, and you should be able to create new discussions & leave comments
 
 ## Step 4: Migrating Comments
 
-First, the good news: Issues can be migrated into discussions, and Giscus will be able to use them automatically. All existing comments will be kept, along with the author and reactions.
+First, the good news: Issues can be migrated into discussions, and Giscus will be able to use them automatically. All existing comments will be kept, along with the authors and reactions.
 
 Alas, the bad news: Issues need to be migrated manually, one by one. [GitHub has an official guide](https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion), just make sure you select your "Comments" category for migrated discussions:
 

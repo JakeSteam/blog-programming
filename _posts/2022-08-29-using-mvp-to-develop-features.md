@@ -82,6 +82,14 @@ Instead of building each part of the feature in isolation and then wiring them t
 6. 1 day: Test, fix any problems that are uncovered.
 7. 1 day: Refactor / tidy up all work from "good enough" to "finished".
 
+Okay, so our feature took 7 days before, and now takes... 7 days. How is this any better? Well, the end result is about the same, but with a few advantages during development.
+
+## What're the advantages?
+
+### Daily progress visible to all
+
+An immediate and selfish benefit is the motivational boost gained from seeing visible progress day by day instead of merely knowledge that a certain class now performs as expected. Arguably more importantly however, this progress is also visible to anybody who is interested. Whether this is from automated CI/CD builds or manual demos, being able to visually show your progress to a non-technical audience at any time is a crucial ability for building trust and reliability.
+
 [![Proposed MVP approach](/assets/images/2022/mvp-proposal-740w.png)](/assets/images/2022/mvp-proposal.png)
 {% comment %}
 ```mermaid
@@ -97,10 +105,6 @@ journey
 ```
 {% endcomment %}
 
-Okay, so our feature took 7 days before, and now takes... 7 days. How is this any better? Well, the end result is about the same, but with a few advantages during development.
-
-## What're the advantages?
-
 ### No nasty surprises!
 
 Ever got to the very last stage of a feature, then realised a blocker that requires rethinking the whole approach? It's a painful experience, and whilst it ideally should be avoided by rigorous refinement, any traditional way of working on a feature will experience this sometimes.
@@ -115,10 +119,6 @@ Features often have unexpected minor issues as they are being finished, perhaps 
 
 By having a (just about) functioning demo of your feature ready from the start, you'll end up testing your own work constantly throughout. Simple bugs like a back button not working will turn up whilst you're trying to implement something else, and by then then you'll fully understand the user flow. This will also give you an insight into any potential performance issues or confusing aspects. Using a traditional approach, you'll only use your feature like a real user during the UI development stage or the fixing at the very end.
 
-### Daily progress visible to all
-
-An immediate and selfish benefit is the motivational boost gained from seeing visible progress day by day instead of merely knowledge that a certain class now performs as expected. Arguably more importantly however, this progress is also visible to anybody who is interested. Whether this is from automated CI/CD builds or manual demos, being able to visually show your progress to a non-technical audience at any time is a crucial ability for building trust and reliability.
-
 ### Easier to tidy code
 
 Whilst finishing and tidying sections as you work on them might produce tidier separated sections of code, will they stay that way? During the connecting and fixing stages, the oh-so-clever architecture might suffer from a workaround or two, yet you'll be too deeply invested to refactor it completely.
@@ -127,7 +127,7 @@ If you accept that all areas will be tidied during dedicated time at the end, yo
 
 Tidying once a feature is completed also lets you tidy according to what is best for the entire system, not just each section in isolation. For example, a class you initially thought should be generic can perhaps actually be a concrete implementation, letting you get rid of some earlier messy generic-handling code.
 
-### You're always ready
+### You could release at any time
 
 I know I just said this approach doesn't give you a license to skip the essential refactoring and tidying, but... you *can* if absolutely necessary. Instead of the feature being utterly useless until the very end, you could technically merge & ship your feature at any point after the first first day. Of course it would be awful, missing features, and be full of bugs, but you have the *capability*!
 

@@ -1,5 +1,5 @@
 ---
-title: How an MVP-inspired approach can improve visibility & flexibility of software feature development
+title: How an MVP-inspired approach to small feature development can improve your work's visibility & flexibility 
 author: Jake Lee
 layout: post
 image: /assets/images/2022/mvp-proposal-740w.png
@@ -24,7 +24,7 @@ For example, perhaps you need to build a new checkout flow. The obvious sub-task
 
 This works! The feature is delivered, and so long as the specifications were perfectly defined, it might be the best approach.
 
-Here's a representation of this workflow. The x-axis is time, y-axis is externally visible progress, where the horizontal line represents completion.
+Here's a representation of this workflow. The x-axis is time, y-axis is externally visible progress, where the thick black line represents completion.
 
 [![Traditional approach](/assets/images/2022/mvp-traditional-740w.png)](/assets/images/2022/mvp-traditional.png)
 {% comment %}
@@ -41,7 +41,7 @@ journey
 ```
 {% endcomment %}
 
-## What's wrong with that?
+## What's wrong with it?
 
 ### Obfuscated progress
 With this approach, the progress that can be shown to product managers / stakeholders is only on the UI related days. Instead of being a steady progression, the progress seems to move in jumps. For example, it looks like zero progress is being made the first 2 days, when this is actually probably the most challenging work.
@@ -69,7 +69,7 @@ journey
 ```
 {% endcomment %}
 
-Not very encouraging for the developer or stakeholders!
+Not very encouraging or predictable for the developer or stakeholders!
 
 ## What's the MVP approach?
 
@@ -117,13 +117,13 @@ By having a (just about) functioning demo of your feature ready from the start, 
 
 ### Daily progress visible to all
 
-An immediate and selfish benefit is the motivational boost gained from seeing visible non-code progress day by day instead of merely knowledge that a certain class now performs as expected. Arguably more importantly however, this progress is also visible to anybody who is interested. Whether this is from automated CI/CD builds or manual demos, being able to visually show your progress to a non-technical audience at any time is a crucial ability for building trust and reliability.
+An immediate and selfish benefit is the motivational boost gained from seeing visible progress day by day instead of merely knowledge that a certain class now performs as expected. Arguably more importantly however, this progress is also visible to anybody who is interested. Whether this is from automated CI/CD builds or manual demos, being able to visually show your progress to a non-technical audience at any time is a crucial ability for building trust and reliability.
 
 ### Easier to tidy code
 
-Whilst tidying as you go might product tidier separated sections of code, will they stay that way? During the connecting and fixing stages, the oh-so-clever architecture might suffer from a workaround or two, yet you'll be too deeply invested to refactor it completely.
+Whilst finishing and tidying sections as you work on them might produce tidier separated sections of code, will they stay that way? During the connecting and fixing stages, the oh-so-clever architecture might suffer from a workaround or two, yet you'll be too deeply invested to refactor it completely.
 
-If you accept that all areas will be tidied during dedicated time at the end, you can instead focus on the actual functionality. This does of course require keeping track of the areas that need tidying, and isn't a license to skip this essential work! 
+If you accept that all areas will be tidied during dedicated time at the end, you can instead focus on the actual functionality. This does of course require keeping track of the areas that need tidying, and isn't a license to skip this essential work! The overall architecture also needs planning out in advance regardless of approach.
 
 Tidying once a feature is completed also lets you tidy according to what is best for the entire system, not just each section in isolation. For example, a class you initially thought should be generic can perhaps actually be a concrete implementation, letting you get rid of some earlier messy generic-handling code.
 
@@ -139,10 +139,18 @@ Using a traditional approach, the overall approach likely exists in your head fo
 
 With the MVP approach, the plan is immediately visible. If you disappear halfway through development (e.g. on holiday, somewhat less drastically!) another engineer can likely pick it up with minimal handover. This is especially true during the fixing / tidying stages, where the hard work is already finished.
 
-## What're the disadvantages?
+### Work "breaks" are possible
 
-### Perfectionists look away
+Usually, if you get stuck whilst developing a feature, you just have to keep trying or pause work on the ticket until you've solved the problem. Using the MVP approach, you can take a "break" by working on another aspect of the ticket, letting your subconscious consider the tricky problem blocking your progress.
 
-Your feature *will* look and perform awfully at the start. If you're someone who refuses to move onto the next part of development until the current part is perfected the MVP approach might drive you crazy!
+I've often found myself stuck on a complex problem and taken a break to do some relatively straightforward UI work, then by the time I get back to my original task the approach is obvious. I actually encourage having "break" tickets anyway (I often use crash fixes), but doing this within the feature avoids starting new work whilst existing work is stuck.
 
 ## Conclusion
+
+Whilst this approach clearly has many advantages for the flexibility and visibility of your work, it's not without some downsides.
+
+Non-feature tickets sometimes can't be completed this way, as each section of the work truly does require the previous stages to be completed (e.g. a database schema must be completed before a migration script can be generated). Even for feature tickets, dependencies between stages are sometimes inevitable, so this technique should be a "use if possible" approach, not a "use no matter what".
+
+Finally, this way of working definitely isn't for everyone, and what works best for me might not work at all for you. However, I'd encourage at least giving it a go the next time you have a standalone feature ticket with various parts. You might discover a new way of working!
+
+

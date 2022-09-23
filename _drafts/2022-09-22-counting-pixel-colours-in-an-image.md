@@ -1,5 +1,5 @@
 ---
-title: How to count the number of pixels for each hex colour in an image
+title: How to count the number of pixels per colour in an image
 author: Jake Lee
 layout: post
 image: /assets/images/2022/colours-banner.png
@@ -34,7 +34,7 @@ Alright, 36 is too many colours to look each up, there must be a better way.
 
 ## Catching the raw data
 
-Since we know this is a simple JavaScript webapp, we can look directly at the colour data after it's been processed! If you've not used Chrome's dev console before this might be a little bit confusing, but it's easier than it looks:
+Since we know [Pixel Color Counter](https://townsean.github.io/canvas-pixel-color-counter/) is a simple JavaScript webapp, we can look directly at the colour data after it's been processed! If you've not used Chrome's dev console before this might be a little bit confusing, but it's easier than it looks:
 
 1. **Open the console**: Press F12, or Ctrl + Shift + I, or Options -> More tools -> Developer tools.
 2. **Find our target code**: Use the "Sources" tab at the top, and open `counter.js` under `/assets/`.
@@ -54,7 +54,7 @@ If we switch to the "Console" tab, type `colorCounts`, and press enter, we can s
 
 [![initial view of data](/assets/images/2022/colours-initial.png)](/assets/images/2022/colours-initial.png)
 
-Here's where we get our first red flag. The data looks OK at a glance, but eventually you may notice the data's keys (e.g. each colour) are named as the CSS code required to display them on screen. This works fine if we only ever want to show these colours on the website, but we want to extract all the data, preferably as standard hex codes! 
+Here's where we get our first red flag. The data looks OK at first glance, but eventually you may notice the data's keys (e.g. each colour) are named as the CSS code required to display them on screen. This works fine if we only ever want to show these colours on the website, but we want to extract all the data, preferably as standard hex codes! 
 
 ## Converting the raw data
 

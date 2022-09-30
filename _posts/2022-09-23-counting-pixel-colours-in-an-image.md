@@ -1,5 +1,5 @@
 ---
-title: How to count the number of pixels per colour in an image
+title: How to count the number of pixels per colour in an image, without installing any software
 author: Jake Lee
 layout: post
 image: /assets/images/2022/colours-banner.png
@@ -9,6 +9,8 @@ tags:
 ---
 
 Whilst working on a new project recently, I needed a list of all hex codes used in a very large pixel art image (1,000,000 pixels), sorted by how many pixels had each colour. I struggled to find any simple solution, so here's how I did it!
+
+An important caveat is that I'm very aware I could have downloaded various libraries / image editors to solve this but... maybe I don't want to! This solution just needs Chrome, and access to dev tools.
 
 ## Photoshop's limitations
 

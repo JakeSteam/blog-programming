@@ -58,6 +58,8 @@ Note that lint complains that we’re not filtering the incoming intent (to make
 
 And that’s it! Your listener is registered, and will show a Toast message of the new version code whenever your app updates.
 
+*Update (2022-10-06): A helpful commentor (see bottom of post) mentioned that instead of suppressing the lint warning, you can use replace the check with `if (context == null || intent?.action != "android.intent.action.MY_PACKAGE_REPLACED") {`. This is likely a better solution!*
+
 ## Testing
 
 Testing this functionality initially seems intimidating, as uploading a new version to the Play Store every time would be very time consuming; luckily, we can update apps yourselves!

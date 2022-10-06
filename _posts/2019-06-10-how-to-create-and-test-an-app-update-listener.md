@@ -56,9 +56,9 @@ class AppUpgradeReceiver : BroadcastReceiver() {
 
 Note that lint complains that we’re not filtering the incoming intent (to make sure it’s for our package), but this is not needed as we are using the `MY_PACKAGE_REPLACED` intent. The `SuppressLint` annotation should only be used when you are intentionally disagreeing with lint’s analysis, as in this situation!
 
-And that’s it! Your listener is registered, and will show a Toast message of the new version code whenever your app updates.
+And that’s it! Your listener is registered and will show a Toast message of the new version code whenever your app updates.
 
-*Update (2022-10-06): A helpful commentor (see bottom of post) mentioned that instead of suppressing the lint warning, you can use replace the check with `if (context == null || intent?.action != "android.intent.action.MY_PACKAGE_REPLACED") {`. This is likely a better solution!*
+*Update (2022-10-06): A helpful commenter (see bottom of post) mentioned that instead of suppressing the lint warning, you can use replace the check with `if (context == null || intent?.action != "android.intent.action.MY_PACKAGE_REPLACED") {`. This is likely a better solution!*
 
 ## Testing
 

@@ -11,9 +11,9 @@ tags:
 [gitStream](https://linearb.io/dev/gitstream/) is a GitHub plugin / application that aims to improve the PR review process, a common bottleneck during development. It aims to extend CI/CD to include CM: Continuous Merge. In this post, I'll explain what it is, how it works, and what it can be used for. 
 
 ## What can it do?
-Pretty much anything on a PR involving labelling, adding reviewers, or autoapproving based on criteria. The [examples pages](https://docs.gitstream.cm/examples/) lists some great starting points most projects could benefit from. Some of the basic capabilities are showcased in my [example repository](https://github.com/JakeSteam/gitStream/pulls), such as review time labels and auto approvals.
+Pretty much anything on a PR involving labelling, adding reviewers, or autoapproving based on criteria. The [examples page](https://docs.gitstream.cm/examples/) lists some great starting points most projects could benefit from. Some basic capabilities are showcased in my [example repository](https://github.com/JakeSteam/gitStream/pulls), such as review time labels and auto approvals.
 
-There is [a blog post by the creators](https://devinterrupted.substack.com/p/solving-the-next-engineering-challenge) (and [a podcast](https://devinterrupted.com/podcast/solving-the-pull-request-problem-with-continuous-merge/)) about the reason behind gitStream's creation and what it aims to solve that is definitely worth a read. Unlimited usage of gitStream is provided free by [LinearB](https://linearb.io/dev/gitstream/), presumably as a loss leader for their paid "WorkerB" Chrome extension[^workerb] and "LinearB" workflow automation / analytics solution[^linearb]. 
+There is [a blog post by the creators](https://devinterrupted.substack.com/p/solving-the-next-engineering-challenge) (and [a podcast](https://devinterrupted.com/podcast/solving-the-pull-request-problem-with-continuous-merge/)) about the reason behind gitStream's creation and what it aims to solve that is definitely worth a read. Unlimited usage of gitStream is provided free by [LinearB](https://linearb.io/dev/gitstream/), presumably as a loss-leader for their paid "WorkerB" Chrome extension[^workerb] and "LinearB" workflow automation / analytics solution[^linearb]. 
 
 [^workerb]: [https://linearb.io/dev/workerb-for-chrome-onboarding/](https://linearb.io/dev/workerb-for-chrome-onboarding/)
 [^linearb]: [https://linearb.io/](https://linearb.io/)
@@ -25,7 +25,7 @@ Specific individuals (or groups) can be assigned as reviewers based on PR charac
 Adding labels based on the content of a PR doesn't seem very powerful initially, but it has a lot of potential! GitHub's PR overview screen doesn't show many details about the contents of a PR, so even something as simple as colour-coded labels based on estimated review time could help smaller PRs get approved quicker[^labelling-prs]. 
 
 ### Approving PRs
-When working on a project with experienced engineers, there'll likely be a few PRs that realistically don't need human eyes. This could be test updating, documentation updating, or some project-specific metadata that needs frequent changes (e.g. release notes). Luckily, gitStream lets you set criteria under which a PR should be autoapproved or even merged, avoiding the situation where a small typo fix takes days to be deployed.
+When working on a project with experienced engineers, there'll likely be a few PRs that realistically don't need human eyes. This could be test updating, documentation updating, or some project-specific metadata that needs frequent changes (e.g., release notes). Luckily, gitStream lets you set criteria under which a PR should be autoapproved or even merged, avoiding the situation where a small typo fix takes days to be deployed.
 
 Good starting criteria could be if a PR only contains documentation[^approve-documentation], or if the PR only adds new tests[^approve-tests]. 
 
@@ -35,7 +35,7 @@ Whilst most languages / developer environments have their own ways of indicating
 ### Multiple actions
 Whilst these individual actions are already useful by themselves, the true value comes when they are used with each other, making lots of little optimisations to the PR workflow. 
 
-Using [this PR](https://github.com/JakeSteam/gitStream/pull/5) featuring only small changes to a markdown file as an example, it has been autoapproved with a 1 minute review estimate and a `safe-changes` label. On a busy team, these clear indicators of an easily mergable PR will help it progress quickly, whilst reducing the cognitive load added by a long list of pending PRs. 
+Using [this PR](https://github.com/JakeSteam/gitStream/pull/5) featuring only small changes to a markdown file as an example, it has been autoapproved with a 1-minute review estimate and a `safe-changes` label. On a busy team, these clear indicators of an easily mergeable PR will help it progress quickly, whilst reducing the cognitive load added by a long list of pending PRs. 
 
 ### Additional functionality
 Along with these basic implementations, [the documentation](https://docs.gitstream.cm/automation-actions/) contains a detailed list of data manipulation tools and actions that can be combined and utilised. I'll briefly summarise these below, to give an idea of possibilities.
@@ -59,7 +59,7 @@ Whilst additional data can also be extracted using:
 
 #### Actions ([docs](https://docs.gitstream.cm/automation-actions/))
 
-All of the actions are self explanatory, and contain basic customisation (e.g. label text). Currently the actions available are `add-comment`, `add-label`, `add-reviewers`, `approve`, `merge`, `set-required-approvals`, `require-reviewers`, `request-changes`, and finally `update-check` (to override a check's outcome).
+All of the actions are self explanatory, and contain basic customisation (e.g. label text). Currently, the actions available are `add-comment`, `add-label`, `add-reviewers`, `approve`, `merge`, `set-required-approvals`, `require-reviewers`, `request-changes`, and finally `update-check` (to override a check's outcome).
 
 [^labelling-prs]: [https://docs.gitstream.cm/examples/#label-prs-by-their-complexity](https://docs.gitstream.cm/examples/#label-prs-by-their-complexity)
 [^assign-reviewers]: [https://docs.gitstream.cm/examples/#assign-reviewers-by-type-of-change](https://docs.gitstream.cm/examples/#assign-reviewers-by-type-of-change)
@@ -88,7 +88,7 @@ Whilst the small collection of low level functions are useful for creating more 
 
 ### Closed source
 
-Considering gitStream's trusted access to all source code in a repository in realtime, it would be beneficial to know what it is actually doing. This is doubly so for an application that requires the ability to add and merge code[^same-permission]. Whilst the FAQ states "the source code is being scanned in the repo and is not shared with any external services", it does not seem possible to actually validate this.
+Considering gitStream's trusted access to all source code in a repository in real-time, it would be beneficial to know what it is actually doing. This is doubly so for an application that requires the ability to add and merge code[^same-permission]. Whilst the FAQ states "the source code is being scanned in the repo and is not shared with any external services", it does not seem possible to actually validate this.
 
 Besides security concerns, there is the everyday annoyance of being unsure how the high level filter functions work. For example, `estimatedReviewTime` contains no information as to how it calculates the result, and as such the accuracy is unknowable[^estimatedreviewtime]:
 > Returns the estimated review time in minutes based on statistical model. The model uses the PR size and type of file changed to produce the estimation.
@@ -99,7 +99,7 @@ Besides security concerns, there is the everyday annoyance of being unsure how t
 
 ### No community
 
-Whilst gitStream has a lot of helpful functionality, it seems to have very little traction in the developer community yet. As such, there are not many (read: none) "out of the box" configuration files that can be copied. Instead, any advanced functionality desired would require writing from scratch. In fact, [Googling "gitstream"](https://www.google.com/search?q=gitstream) returns several different projects, with the correct one only featuring in around half the results. 
+Whilst gitStream has a lot of helpful functionality, it seems to have very little traction in the developer community yet. As such, there are not many (read: none) "out of the box" configuration files that can be copied. Instead, any advanced functionality desired would require writing from scratch. In fact, [Googling "gitstream"](https://www.google.com/search?q=gitstream) returns several projects, with the correct one only featuring in around half the results. 
 
 Whilst this is likely due to the very recent nature of gitStream (it appears to only be a few weeks old), the lack of any customer forums or [StackOverflow questions](https://stackoverflow.com/search?q=gitstream) suggests the only source for assistance will be from the application developer.
 

@@ -8,7 +8,7 @@ tags:
     - GitHub
 ---
 
-[gitStream](https://linearb.io/dev/gitstream/) is a GitHub plugin / application that aims to improve the PR review process, a common bottleneck during development. It aims to extend CI/CD to include CM: Continuous Merge. In this post, I'll explain what it is, how it works, and what it can be used for. 
+[gitStream](https://gitstream.cm) is a GitHub app that aims to improve the PR review process, a common bottleneck during development. It aims to extend CI/CD to include CM: Continuous Merge. In this post, I'll explain what it is, how it works, and what it can be used for. 
 
 ## What can it do?
 Pretty much anything on a PR involving labelling, adding reviewers, or autoapproving based on criteria. The [examples page](https://docs.gitstream.cm/examples/) lists some great starting points most projects could benefit from. Some basic capabilities are showcased in my [example repository](https://github.com/JakeSteam/gitStream/pulls), such as review time labels and auto approvals.
@@ -73,7 +73,7 @@ All of the actions are self explanatory, and contain basic customisation (e.g. l
 The [official documentation](https://docs.gitstream.cm/github-installation/) contains straightforward instructions, with the core steps being:
 
 1. Add [gitStream](https://github.com/marketplace/gitstream-by-linearb) to your account / organisation, and give it access to the target repository.
-2. Add the basic framework file to your project's GitHub workflow (`.github/workflows/gitstream.yml) to let gitStream run & access what it requires.
+2. Add the basic framework file to your project's GitHub workflow (`.github/workflows/gitstream.yml`) to let gitStream run & access what it requires.
 3. Add a configuration file with the specific automations required (`.cm/gitstream.cm`).
 4. Create a temporary PR, so that gitStream is triggered. You should see it running as a GitHub Action.
 5. (Optional) Set gitStream as a required check on your main branch.

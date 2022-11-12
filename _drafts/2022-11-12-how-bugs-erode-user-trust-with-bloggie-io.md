@@ -48,6 +48,8 @@ This part of the experience had a few nice surprises, primarily the ability to s
 
 Unfortunately, here's where the first tiny potential security issue made itself clear to me. I noticed my post editing URL contained `/705/`. And if I started a new post, it was `/706/`. Uh oh, I now know the site likely has around 700 combined posts and drafts. Not necessarily an issue, but not information I needed to know. Publishing the post went smoothly.
 
+[![](/assets/images/2022/bloggie-post-thumbnail.png)](/assets/images/2022/bloggie-post.png)
+
 Bloggie.io also has a "Notes" features, essentially the same as GitHub's Gists. This uses a totally different editor to posts, with the preview being in a separate tab instead of side by side. The published note page is similar to the post page (minus author information & comments), but here they use a GUID in the URL instead!
 
 In a digital version of confirmation bias, the small URL decision for posts made the crucial change to my Bloggie.io exploration. Instead of being "I wonder if I can use this interesting platform", it became "I wonder how many bugs I can find on here", and by that stage anything less than a perfect site is doomed. 
@@ -58,12 +60,14 @@ Alas, Bloggie.io is not perfect.
 
 So far, I have only found an unnecessary button that doesn't work, and unusual decisions for URLs and signup options. These are all easily overlooked.
 
+### Live editor
 Since I was starting to look for bugs, I opened up [the demo editor](https://bloggie.io/demo). It invited me to "Try editing this area", and after doing as instructued... the preview didn't change. Considering the live editor worked whilst writing a post and the overall experience had been pretty smooth, I didn't expect to face issues so soon!
 
 [![](/assets/images/2022/bloggie-liveeditor-740w.png)](/assets/images/2022/bloggie-liveeditor.png)
 
 After trying to give it a helping hand by disabling adblock, clicking the preview, and refreshing the page, I had to conclude it's just broken. Oops.
 
+### Overlapping menus
 Next I looked at my example post, and realised the post "Share" and "Options" popup menus went underneath the very pretty code block, making them unreadable. Again, oops.
 
 [![](/assets/images/2022/bloggie-codeblockbug.png)](/assets/images/2022/bloggie-codeblockbug.png)
@@ -72,14 +76,17 @@ Alright, so we've got some minor UI issues. And a bit of broken functionality he
 
 ## The cracks widening
 
+### Maximum lengths
 At this point I decided to see what non-destructive mischief I could get up to in the account page. First up, what's the maximum name / description length? Well, it appears to be pretty much infinite. Setting a long name and bio also breaks the "Updated!" dialog at the top. 
 
 [![](/assets/images/2022/bloggie-maxlength-thumbnail.png)](/assets/images/2022/bloggie-maxlength.png)
 
 At this point, the number and variety of bugs has ruled out the platform for me. If I've found 4-5 bugs in my first 10-15 minutes, I sadly can't trust that any posts I make will be safe from deletion / corruption at any time.
 
+### Rules of engagement
 I also made the conscious decision at this point to not do any "advanced" bug finding. For example, no SQL injection, no header manipulation, I will only do simple things that any user could do without any technical knowledge. I decided to do this as performing actual attacks, proof of concept or not, against an unwilling hobby project just isn't fair.
 
+### Slug conflicts
 Next, I suspected post slugs (the bit that identifies it) weren't being handled properly. To test this, I tried to publish a test post with the same name as an existing post (e.g. "An example post"). Since this is my only post with this name, it should be fine, but it looks like Bloggie.io only allows 1 post per slug across all users. Trying to publish a post with the same name as an existing one gives an unhelpful error:
 
 [![](/assets/images/2022/bloggie-sameslug.png)](/assets/images/2022/bloggie-sameslug.png)
@@ -109,14 +116,15 @@ Using symbols to impersonate any user almost undetectably is a good start. What 
 
 [![](/assets/images/2022/bloggie-codename.png)](/assets/images/2022/bloggie-codename.png)
 
-... Oh.
+... Oh. There really are no limits!
 
 ### Avatar
 If you were going to pick an avatar, what would your initial filters be? Filetype, filesize, things like that? Well, none of those here!
 
-To test this, I tried selecting a 1GB zip file. It happily tried to upload it as a binary in a multipart form data, I closed the tab after ~10 seconds, in case I broke anything on the server. When trying a smaller non-image file, I got sent to a 500 person. Again, hopefully this didn't break anything.
+To test this, I tried selecting a 1GB zip file. It happily tried to upload it as a binary in a multipart form data, I closed the tab after ~10 seconds, in case I broke anything on the server. When trying a smaller non-image file, I got sent to a error 500 page. Again, hopefully this didn't break anything.
 
-[![](/assets/images/2022/bloggie-500.png)](/assets/images/2022/bloggie-500.png)
+[![](/assets/images/2022/bloggie-header-740w.png)](/assets/images/2022/bloggie-header.png)
 
 ## Conclusion
 
+## References

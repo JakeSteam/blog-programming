@@ -99,16 +99,24 @@ At this point, the number and variety of bugs has ruled out the platform for me.
 ### Rules of engagement
 I also made the conscious decision at this point to not do any "advanced" bug finding. For example, no SQL injection, no header manipulation, I will only do simple things that any user could do without any technical knowledge. I decided to do this as performing actual attacks, proof of concept or not, against an unwilling hobby project just isn't fair.
 
-### Slug conflicts
+### Globally unique titles
 Next, I suspected post slugs (the bit that identifies it) weren't being handled properly. To test this, I tried to publish a test post with the same name as an existing post (e.g., "An example post"). Since this is my only post with this name, it should be fine, but it looks like Bloggie.io only allows 1 post per slug across all users. Trying to publish a post with the same name as an existing one gives an unhelpful error:
 
 [![](/assets/images/2022/bloggie-sameslug.png)](/assets/images/2022/bloggie-sameslug.png)
 
-Whilst I definitely could have dived deeper into the potential cross-user exploits available here, I did not wish to cause any real damage so left it alone. Next up, the profile page! 
-
 ## The abyss
 
 Unfortunately here's where I found some very concerning things. 
+
+### Breaking any post
+
+I discovered that it was possible to **break any post on the site** by creating a draft post with the same title. The incorrect "does this post exist" check above only applies on publishing, meaning it is trivial to break any link:
+
+1. A popular post with URL `bloggie.io/@exampleuser/my-example-post` exists.
+2. I create a draft post called "My example post". Publishing it won't work, but that's OK.
+3. When the above URL is clicked, the site presumably gets the most recent post (mine!) with that slug.
+4. As my post is a draft, other users can't view it, so nothing happens.
+5. As easily as that, the popular post cannot be accessed (even directly).
 
 ### Username
 How's the username (used in URLs) filtering?
@@ -142,7 +150,7 @@ To test this, I tried selecting a 1 GB zip file. It happily tried to upload it 
 
 So, after all those issues, surely the site is not worth anyone's time, right?
 
-The opposite! Despite these many comparatively small issues, the core idea and functionality is solid. If I didn't have my own sites already, or had limited web hosting knowledge, I would love a place to easily self-host a Markdown blog. This appeal increases massively when Bloggie.io appears to essentially be Medium without all the advertising / anti-consumer practices[^anti-consumer]! It helps to have a catchy name too, right?
+The opposite! Despite these many fairly small issues, the core idea and functionality is solid. If I didn't have my own sites already, or had limited web hosting knowledge, I would love a place to easily self-host a Markdown blog. This appeal increases massively when Bloggie.io appears to essentially be Medium without all the advertising / anti-consumer practices[^anti-consumer]! It helps to have a catchy name too, right?
 
 Given a bit of tidying, and a bit more work growing the user base (all "Latest" posts in 2022 are from 2 authors, the owners), there is massive potential. Many software developers like writing about their experience, are comfortable with Markdown, and don't seek any financial benefit: Bloggie.io would suit this.
 

@@ -94,6 +94,16 @@ At this point I decided to see what non-destructive mischief I could get up to i
 
 [![](/assets/images/2022/bloggie-maxlength-thumbnail.png)](/assets/images/2022/bloggie-maxlength.png)
 
+### Unlimited "claps"
+Just like Medium, Bloggie.io has a "Claps" feature that are essentially a "like" button. Unfortunately, it has a very obvious bug that occurs when clapping whilst logged out:
+
+1. Click the "clap" button.
+2. Click it again to "unclap".
+3. Repeat this as many times as you like.
+4. Refresh the page, the article will have all the "claps", but none of the "unclaps"!
+
+[![](/assets/images/2022/bloggie-claps.png)](/assets/images/2022/bloggie-claps.png)
+
 At this point, the number and variety of bugs has ruled out the platform for me. If I've found 4-5 bugs in my first 10-15 minutes, I sadly can't trust that any posts I make will be safe from deletion / corruption in the future.
 
 ### Rules of engagement

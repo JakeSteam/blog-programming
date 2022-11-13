@@ -31,18 +31,18 @@ Before I run through each step in detail, here's the high level overview:
 | I didn't have any existing tags, so I selected "Install a Google tag" and clicked "Next". | [![](/assets/images/2022/ga4-1-4-thumbnail.png)](/assets/images/2022/ga4-1-4.png) |
 | Finally, I opened the "Install manually" tab and saw both my GA4 tag (`G-99...`) and the HTML I need to embed. | [![](/assets/images/2022/ga4-1-5-thumbnail.png)](/assets/images/2022/ga4-1-5.png) |
 
-Once you've got your bunch of HTML, copy it somewhere safe, we'll need it in Step 2. I've included sample code below, if you use it make sure to replace the GA4 tag with your own!
+Once you've got your bunch of HTML, copy it somewhere safe, we'll need it in Step 2. I've included sample code below with Step 3 of this article already done.
 
 ### Google tag code
 ```
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-99X0QYL123"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-99X0QYL123');
+  gtag('config', '{{ site.google_analytics }}');
 </script>
 ```
 

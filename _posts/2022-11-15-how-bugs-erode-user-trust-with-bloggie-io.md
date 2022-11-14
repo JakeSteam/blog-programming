@@ -10,7 +10,7 @@ tags:
 
 Whilst wandering through GitHub recently, I discovered the Tokyo-based [Bloggie.io](https://bloggie.io), a markdown  blogging platform that gave a great first impression. Unfortunately, after an hour or so of clicking around, I realised my enthusiasm and trust had completely eroded. But why & how?
 
-Before I get too into the article, I want to clarify that I do genuinely like the idea behind Bloggie.io, despite how this post might come across! However, it is a great personal example of the "user trust" concept that affects all software engineering / product teams.
+Before I get too into the article, I want to clarify that I do genuinely like the idea behind Bloggie.io, despite how this post might come across! However, it is a great personal example of how user trust erodes a little with each minor bug, a principle with relevance to all software engineering / product teams.
 
 ## How I discovered Bloggie.io
 
@@ -54,10 +54,10 @@ Signing up was also very smooth, with GitHub (my preference!) and Twitter option
 
 I started a test post, and got thrown into a Markdown editor. No problem, I'm fluent in Markdown. I assumed the "Aa" button in the top right was some basic text styling (e.g., bold, italic) for those with less markdown experience. Nope, it says "Capitalise" in the hover text and when clicked… does nothing. A bit unexpected, but not a blocker.
 
-Next, I spent a couple of minutes writing my text post, and went to publish.
+Next I spent a couple of minutes playing with the editor and writing my test post, then went to publish.
 
 ### Posting
-This part of the experience had a few nice surprises, primarily the ability to share a draft version of your post with someone. I often wish I had this feature myself, and end up just showing people the GitHub version of pages, which sometimes have minor formatting issues in comparison to the final post. Very cool.
+This part of the experience had a few nice surprises, primarily the ability to share a draft version of your post with someone. I often wish I had this feature myself, and currently end up just showing people the GitHub version of a post, which sometimes have minor formatting issues in comparison to the final version. Very cool.
 
 Unfortunately, here's where the first tiny potential security issue made itself clear to me. I noticed my post editing URL contained `/705/`. And if I started a new post, it was `/706/`. Uh oh, I now know the site likely has around 700 combined posts and drafts. Not necessarily an issue, but not information I needed to know. Publishing the post went smoothly.
 
@@ -110,7 +110,7 @@ At this point, the number and variety of bugs has ruled out the platform for me.
 I also made the conscious decision at this point to not do any "advanced" bug finding. For example, no SQL injection, no header manipulation, I will only do simple things that any user could do without any technical knowledge. I decided to do this as performing actual attacks, proof of concept or not, against an unwilling hobby project just isn't fair.
 
 ### Globally unique titles
-Next, I suspected post slugs (the bit that identifies it) weren't being handled properly. To test this, I tried to publish a test post with the same name as an existing post (e.g., "An example post"). Since this is my only post with this name, it should be fine, but it looks like Bloggie.io only allows 1 post per slug across all users. Trying to publish a post with the same name as an existing one gives an unhelpful error:
+Next, I suspected post slugs (the bit that identifies a post) weren't being handled properly. To test this, I tried to publish a test post with the same name as an existing post (e.g., "An example post"). Since this is my only post with this name, it should be fine, but it looks like Bloggie.io only allows 1 post per slug across all users. Trying to publish a post with the same name as an existing one gives an unhelpful error:
 
 [![](/assets/images/2022/bloggie-sameslug.png)](/assets/images/2022/bloggie-sameslug.png)
 
@@ -120,7 +120,7 @@ Unfortunately here's where I found some very concerning things.
 
 ### Breaking any post
 
-I discovered that it was possible to **break any post on the site** by creating a draft post with the same title. The incorrect "does this post exist" check above only applies on publishing, meaning it is trivial to break any link:
+I discovered that it was possible to **break any post on the site** by creating a draft post with the same title. The incorrect "does this post exist" check above only applies on publishing, meaning it is trivial to break anyone's posts:
 
 1. A popular post with URL `bloggie.io/@exampleuser/my-example-post` exists.
 2. I create a draft post called "My example post". Publishing it won't work, but that's OK.

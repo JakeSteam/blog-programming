@@ -10,9 +10,17 @@ tags:
 
 When I first set up my Jekyll blog with Minima, it had built-in support for Google Analytics. Great! However, only using a legacy "Universal Analytics" ID seemed to work. This was fine for a few years, until I discovered the system is being sunset, and all users *need* to move to Google Analytics 4 ASAP… Here's how to do it.
 
+On the 10th November I received the following email from Google, prompting me to actually fix this long-ignored issue:
+
+> We'll soon sunset Universal Analytics
+> 
+> On 1 July 2023, Universal Analytics will stop processing new hits. If you still rely on Universal Analytics, we urge you to prepare for the future by moving over to Google Analytics 4, our next-generation measurement solution.
+
+I only use the very basic Google Analytics features (which pages are viewed, how often), and as such the migration was pretty simple.
+
 ## Summary
 
-Before I run through each step in detail, here's the high level overview:
+Before I run through each step in detail, here's the high level overview of how to migrate from UA to GA4:
 
 1. Create a new GA4 property in Google Analytics to get a GA4 ID.
 2. Override your Jekyll blog's UA code to support GA4.
@@ -34,7 +42,8 @@ Before I run through each step in detail, here's the high level overview:
 Once you've got your bunch of HTML, copy it somewhere safe, we'll need it in Step 2. I've included sample code below with Step 3 of this article already done.
 
 ### Google tag code
-```
+{% raw %}
+```html
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
@@ -45,6 +54,7 @@ Once you've got your bunch of HTML, copy it somewhere safe, we'll need it in Ste
   gtag('config', '{{ site.google_analytics }}');
 </script>
 ```
+{% endraw %}
 
 ## Step 2: Replace existing tracking
 

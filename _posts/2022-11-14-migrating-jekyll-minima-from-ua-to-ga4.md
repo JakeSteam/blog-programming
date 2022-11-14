@@ -60,7 +60,7 @@ Once you've got your bunch of HTML, copy it somewhere safe, we'll need it in Ste
 
 Now that we have our new GA4 HTML, we need to replace what is currently on our site. This is done by overriding the included `google-analytics.html` file.
 
-1. Inside your Jekyll blog's base folder (e.g. where `_posts` is), create `_includes`.
+1. Inside your Jekyll blog's base folder (e.g., where `_posts` is), create `_includes`.
 2. Find your Minima theme's `_includes` folder, commonly found at:
     * Windows: `C:\Ruby27-x64\lib\ruby\gems\2.7.0\gems\minima-2.5.1\_includes`
     * Mac: `/usr/local/lib/ruby/gems/2.6/gems/minima-2.5.1/_includes`

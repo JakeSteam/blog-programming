@@ -1,5 +1,5 @@
 ---
-title: "Using gitStream for \"Continuous Merge\": automatically approving safe PRs, assigning reviewers, estimating review time, and more"
+title: "Using gitStream for 'Continuous Merge': automatically approving safe PRs, assigning reviewers, estimating review time, and more"
 author: Jake Lee
 layout: post
 image: /assets/images/2022/gitstream-banner.png

@@ -1,5 +1,5 @@
 ---
-title: Migrating from Chrome Password Manager to LastPass, and tidying up 10+ years of password clutter
+title: Migrating from Chrome's Password Manager to LastPass, and tidying up 10+ years of password clutter
 author: Jake Lee
 layout: post
 image: /assets/images/2022/lastpass-header.png
@@ -9,7 +9,7 @@ tags:
     - Security
 ---
 
-I've been using Chrome since release, and rely on the password manager daily. As you might expect, after 14 years I built up a lot of saved passwords (1000+)! However, migration to a proper solution is long overdue, here's how I did it and tidied up my passwords at the same time.
+I've been using Chrome since its 2008 release, and rely on the password manager daily. As you might expect, after 14 years I built up a lot of saved passwords (1000+)! However, migration to a proper solution is long overdue, here's how I did it and tidied up my passwords at the same time.
 
 ## Backstory
 
@@ -23,7 +23,10 @@ However, I need to get my 1000+ Chrome passwords over there…
 
 ### Initial setup
 
-To start with, I installed LastPass' Chrome extension and Android app. I generally used the default settings, and whilst I would have appreciated a little more guidance on which options were more secure, nothing was impossible to Google.
+To start with, I installed LastPass' Chrome extension[^chrome-extension] and Android app[^android-app]. I generally used the default settings, and whilst I would have appreciated a little more guidance on which options were more secure, nothing was impossible to Google.
+
+[^chrome-extension]: [https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
+[^android-app]: [https://play.google.com/store/apps/details?id=com.lastpass.lpandroid](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid)
 
 ### Import & export
 
@@ -31,13 +34,13 @@ Luckily, LastPass is ready for Chrome's password file format, so this process is
 
 1. Go to [Google Password Manager's options](https://passwords.google.com/options?ep=1).
 2. Click "Export", `Chrome Passwords.csv` will download.
-3. Open LastPass -> Advanced Options -> Import -> Chrome.
+3. Open LastPass → Advanced Options → Import → Chrome.
 4. Upload the `.csv`.
 
 LastPass handles this pretty smoothly, even with 1000 passwords. I encountered a few "broken" passwords, where an Android app's package name & password had been transferred, but this isn't LastPass' fault!
 
 
-### Initial state
+### Post-import state
 
 Now all the passwords have been imported, we can use LastPass' "Security score" to determine roughly how secure we are. 74.4% is pretty low, however I was pretty confident this was actually due to duplicated / bad data. So, the next step is tidying up the passwords into something more useful.
 
@@ -53,11 +56,11 @@ First, I wanted to group all my passwords by category. This way the list will be
 
 I went for the following fairly generic categories:
 
-* **Android**: Logins for apps, these are in a unique format unlike all other logins.
+* **Android**: Logins for apps, these are in a format unlike all other logins and were deleted later.
 * **Financial**: Banking, investment, property purchases, etc.
 * **Gaming**: Steam, Epic Games, various sites with unique logins.
 * **Media**: Videos, music, artwork, etc.
-* **Online**: Services that you just "need" a login to when using the internet. Samsung, Google, Apple, Emails, etc.
+* **Online**: Services that you "need" a login to when using the internet. Samsung, Google, Apple, etc.
 * **Personal**: Healthcare services, pet care services, piracy sites(!).
 * **Shopping**: Amazon, eBay, supermarkets, hardware, etc.
 * **Social**: Slack, Reddit, Twitter, etc.
@@ -104,10 +107,10 @@ It's a shame 100% doesn't appear possible, but it'll have to do! Especially as "
 
 ### Final steps
 
-To finish up my migration, I took the scary step of deleting all my saved Chrome passwords! This can be done in "Privacy and security" -> "Clear browsing data" -> "Advanced", and make sure "Passwords and other sign-in data" is selected, along with the "All time" time frame.
+To finish up my migration, I took the scary step of deleting all my saved Chrome passwords! This can be done in "Privacy and security" → "Clear browsing data" → "Advanced", and make sure "Passwords and other sign-in data" is selected, along with the "All time" time frame.
 
 Next, I made sure to properly delete the `.csv` file used for the import, since that file has all the passwords without *any* protection! Finally, in Chrome I turned off autofill prompts under the "Auto-fill" tab.
 
-## Conclusion
+Finally, my passwords actually feel secure for the first time!
 
 ## References

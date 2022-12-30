@@ -11,13 +11,13 @@ tags:
 
 Like many engineering teams, the Photobox app team lets colleagues from other departments report bugs internally via Slack. To ensure sufficient detail, we use a Slack workflow to standardise bug reporting and simplify Jira ticket raising. Here's how to implement something similar.
 
-Here's what we're working towards:
-
 ## End result
 
 ### Submitter's perspective
 
-The workflow aims to reduce the friction colleagues may face when raising bugs. As all the actions are public, the submitter can easily keep track of any bugs they want to follow the progress of, whilst also being confident that their report has been acted on.
+The workflow aims to reduce the friction colleagues may face when raising bugs. As all the actions are public, the submitter can easily keep track of any bugs they want to follow the progress of, whilst also being confident that their report has been acted on. 
+
+Just as importantly, they can also add any relevant photos / videos / files, and answer any questions the triaging engineer might have whilst trying to reproduce the issue.
 
 | Creating | Submitting | Confirmation |
 | --- | --- | --- |
@@ -33,18 +33,17 @@ This semi-automated approach makes the process easier for the engineers / whoeve
 
 ## Approach
 
-Most steps in implementing this solution are quite customisable, so feel free to skip / modify any to your needs:
+To make this approach, we're going to need to achieve 2 main tasks:
 
-1. Connect our Jira instance to our Slack.
-2. Create a bug report form.
-3. Send the data to Jira.
+1. Create a bug report form within Slack.
+2. Send this bug report form's information to Jira.
 
 There are a couple of important caveats with this method, that are worth considering before implementing:
 
 1. The "workflow" feature used for the form requires a paid Slack plan.
-2. The form results are not converted directly into Jira, and require copying from the description during creation.
+2. The form's fields don't prefill the Jira form, and require copying from the description during ticket creation.
 
-## 1. Connecting Jira to Slack
+## Connecting Jira to Slack
 
 Once connected, you will be able to make Jira tickets from any Slack message, as well as receive updates for new tickets, updated tickets, etc. Both Slack and Jira officially support connections to each other, so this process is straightforward.
 
@@ -56,7 +55,7 @@ Once connected, you will be able to make Jira tickets from any Slack message, as
 | The Jira bot should have posted in the connected channel. You now have the ability to create tickets from any message! | [![](/assets/images/2022/slack-setup-4-thumbnail.png)](/assets/images/2022/slack-setup-4.png) |
 
 
-## 2. Creating a bug report form
+## Creating a bug report form
 
 Next, we want a form that colleagues can fill in to give us any information we need. This can include simple things like a description of the bug, or a multiple choice dropdown asking the bug's severity.
 
@@ -73,7 +72,7 @@ Now, whenever somebody fills in the form, a message is sent to the channel. Nice
 
 ![](/assets/images/2022/slack-create-7.png)
 
-## 3. Fixing & improving
+## Tidying up
 
 If you try using Jira's create ticket functionality from the form results, you may notice something... not great. The output is all combined into one line, making it essentially unreadable even for short forms:
 
@@ -87,8 +86,13 @@ To fix this, we need to change our workflow. Instead of sending the form results
 | We now have to essentially recreate the previous message. All the variables are easy to access, including metadata such as who submitted the form. | [![](/assets/images/2022/slack-issue-2-thumbnail.png)](/assets/images/2022/slack-issue-2.png) |
 | Our workflow now has an additional step. Don't forget to disable the message sending in the "Open a form" step, or the results will be sent twice! | [![](/assets/images/2022/slack-issue-3-thumbnail.png)](/assets/images/2022/slack-issue-3.png) |
 
+All done! Anyone submitting the bug report form should now see the data posted in the Slack channel, where it can be triaged easily. 
+
 ## Potential improvements
 
+Whilst this setup is an improvement over our former process (or no process!), it's definitely not perfect. The obvious improvement would be converting the form directly into a JIRA ticket, but I'm not sure how to do that whilst also ensuring potential bugs are triaged / discussed first. 
+
+Besides that, in the shorter term a couple of simple changes can make the process smoother:
+
 1. In the Slack channel's settings, you can change posting permissions so that only the workflow has permission to post.
-2. Ideally the Slack fields would directly fill in the Jira form. I couldn't get this to work, unfortunately.
-3. The workflow's icon can be customised via it's settings.
+2. The workflow's icon can be customised via its settings.

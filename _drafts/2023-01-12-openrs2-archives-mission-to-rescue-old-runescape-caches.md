@@ -15,7 +15,7 @@ Like a lot of people my age, I got *really* into RuneScape in the 2000s-2010s (m
 
 So what are these caches? Well, they contain most of the game's resources (sounds, textures, models, etc) but none of the player's data or anything sensitive. They are used to reduce loading screens within the game, and are automatically replaced over time as the game updates.
 
-This means that anyone who regularly plays the game won't have these missing old caches, only people who haven't touched the game in a decade! 
+This means that anyone who regularly plays the game won't have all of these old caches, only a copy from just before the 5-6 times the location / format has changed over the years, and from their most recent version played.
 
 ## Why preserve the caches?
 
@@ -40,9 +40,11 @@ Of course, storing hundreds of cache files full of game assets can get big. Real
 
 ## OpenRS2
 
-**Graham** (Graham#5361) helps organise "OpenRS2 Archive", a sister project that optimises this 5TB of data into just 125GB. In their own [project page](https://archive.openrs2.org/)'s words (since it all goes over my head):
+**Graham** (Graham#5361) helps organise "OpenRS2 Archive", a sister project that optimises this 5TB of data into just 125GB. In their own [project page](https://archive.openrs2.org/)'s words:
 
 > The archive uses content-addressable storage, converting caches to the client's native `.dat2`/`.idx` format on demand. This provides several benefits: the disk space required to store all available caches is reduced, and groups or XTEA keys missing from one copy of the cache can be sourced automatically from other copies - provided the checksums and version numbers match.
+
+In plain English, this means instead of storing many copies of the same file, OpenRS2 isolates each asset and stores a single copy of it. This also makes checking new caches for missing content much easier!
 
 You can [view the pending cache import queue](https://docs.google.com/spreadsheets/d/1vLMgnzQqcGv830UTDzYKD8tfPEYGrktAZTE76XHblPU/edit#gid=0) and the [status of each cache](https://archive.openrs2.org/caches/runescape/1), which helps provide an insight into the "behind the scenes" magic that allows this project to exist. 
 
@@ -89,6 +91,6 @@ Here are the locations for the highest priority caches:
 
 Overall, this project is an excellent example of how previously lost content can sometimes eventually be restored if enough people help out. Whilst the bulk of the archiving and organising work appears to be done by a few key individuals, there are many more helping with various areas, and hundreds if not thousands contributing their caches. 
 
-"Completing" the archive is technically possible, but it's somewhat unlikely that every single version will be found, especially considering hotfixes and other minor updates. However, this is no reason not to try: every cache submitted helps. Take a look on your old PCs / laptops for caches, and maybe you can help the archive get one step closer!
+"Completing" the archive is technically possible, but personally I'm unsure that every single version will be found, especially considering hotfixes and other minor updates. However, this is no reason not to try: every cache submitted helps. The organisers are more optimistic, and with almost 50% of caches found, only 150 lucky caches are remaining! Take a look on your old PCs / laptops for caches, and maybe you can help the archive get one step closer.
 
 If you have any further questions, [RuneScape Archive's FAQ page](https://rs-archive.github.io/faq.html) might have the answer. Alternatively, the [RuneScape Archive Discord](https://discord.gg/UTCE5EfzSg) is quite active, and the [OpenRS2 Discord](https://discord.gg/WqTmUPMMMm) can help with storage-related questions.

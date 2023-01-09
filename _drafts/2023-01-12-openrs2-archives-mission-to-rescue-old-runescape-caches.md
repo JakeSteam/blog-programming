@@ -65,7 +65,7 @@ For me, this tool outputted a `RSCaches.dat` file. Opening this up in a text edi
 
 ### Manually finding
 
-Of course, you can also look in the usual directories yourself if you don't want to run an `.exe`. The cache's expected locations are known, and vary according to the version of RuneScape. Additional information on these paths can be found on the "[Game Data Preservation Project](https://runescape.wiki/w/User:Manpaint55/T:CHD-main)" on RS wiki.
+Of course, you can also look in the usual directories yourself if you don't want to run the finder `.exe`. The cache's common locations are known, and vary according to the version of RuneScape, however looking manually may miss unusual cache locations (or backups). Additional information on these typical paths can be found on the "[Game Data Preservation Project](https://runescape.wiki/w/User:Manpaint55/T:CHD-main)" on RS wiki.
 
 Here are the locations for the highest priority caches:
 
@@ -75,12 +75,15 @@ Here are the locations for the highest priority caches:
 * `C:\WINDOWS\.file_store_32`
 * `C:\Documents and Settings\<USERNAME>\Local Settings\Temporary Internet Files`
 * `C:\WINNT\Temporary Internet Files`
+* `C:\WINDOWS\cache-93423-17382-59373-28323`
 
-#### Runescape 2 (2003-2006)
+*Note: Before December 2002 RSC caches can be in many places, but always contain `mudclient` and have the extension `.jag`. I recommend using the automatic finding tool instead of manually looking.*
+
+#### RuneScape 2 (2003-2006)
 
 * `C:\WINDOWS\.file_store_32`
 
-#### Other versions
+#### Other versions / betas
 
 * `C:\WINDOWS\.jagex_cache_32`
 * `C:\Users\[USERNAME]\jagexcache`

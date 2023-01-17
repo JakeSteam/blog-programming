@@ -26,7 +26,7 @@ The table below shows a results summary of which technique works where, unfortun
 The following sections will show the code & detailed results of this testing along with a bit of commentary. The table's appearance was checked for accuracy in the following scenarios:
 
 * **Markdown**: Whether the table renders correctly in my markdown editor: [Visual Studio Code](https://code.visualstudio.com/) with [GitHub styled markdown](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles).
-* **GitHub**: Whether the table renders correctly [on GitHub](https://github.com/JakeSteam/blog-programming/blob/main/_drafts/2023-01-18-displaying-complex-content-inside-jekyll-tables.md).
+* **GitHub**: Whether the table renders correctly [on GitHub](https://github.com/JakeSteam/blog-programming/blob/main/_posts/2023-01-18-displaying-complex-content-inside-jekyll-tables.md).
 * **Jekyll**: Whether the table renders correctly on Jekyll (this post!). 
 
 ## No technique

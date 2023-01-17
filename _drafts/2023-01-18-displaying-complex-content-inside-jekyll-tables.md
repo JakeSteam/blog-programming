@@ -1,19 +1,19 @@
 ---
-title: How to display complex content (lists, code) inside a table in GitHub / Jekyll
+title: How to display complex content (lists, code, images) inside a table reliably in Markdown / GitHub / Jekyll
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/tables-header.png
 tags:
     - Jekyll
     - GitHub
     - Markdown
 ---
 
-As anyone who writes in Markdown knows, it's a very concise and easy way to write content. However, more complex content like tables can be a little bit awkward, especially if the table includes multi-line content like a list! Here's a quick comparison of techniques that can be used to solve this, and whether they work in plain Markdown, GitHub, and Jekyll blogs.
+As anyone who writes in Markdown knows, it's a very concise and easy way to write almost all content. However, tables can be a little bit awkward, especially if it includes multi-line content like a list! Here's a quick comparison of techniques that can be used to solve this, and whether they work in plain Markdown, GitHub, and Jekyll blogs.
 
 ## Summary of results
 
-The table below shows a results summary, unfortunately there's no "one solution works everywhere" answer! A one sentence summary would be:
+The table below shows a results summary of which technique works where, unfortunately there's no "one solution works everywhere" answer! A one sentence summary would be:
 > Either tolerate a fully HTML table, or use `{::nomarkdown}` on Jekyll & HTML content on GitHub.
 
 | Technique | Markdown | GitHub | Jekyll |
@@ -23,7 +23,7 @@ The table below shows a results summary, unfortunately there's no "one solution 
 | Using HTML for content only | ✅ | ✅ | ❌ |
 | Using `{::nomarkdown}` and HTML | ❌ | ❌ | ✅ |
 
-The following sections will show the detailed results of this testing along with a bit of commentary. The table's appearance was checked for accuracy in the following scenarios:
+The following sections will show the code & detailed results of this testing along with a bit of commentary. The table's appearance was checked for accuracy in the following scenarios:
 
 * **Markdown**: Whether the table renders correctly in my markdown editor: [Visual Studio Code](https://code.visualstudio.com/) with [GitHub styled markdown](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles).
 * **GitHub**: Whether the table renders correctly [on GitHub](https://github.com/JakeSteam/blog-programming/blob/main/_drafts/2023-01-18-displaying-complex-content-inside-jekyll-tables.md).
@@ -43,7 +43,8 @@ Unsurprisingly, using regular Markdown inside a table causes impressively bad fo
 * bbb |
 | Code block | \```
 ccc 
-\``` |
+\``` | 
+| Image | ![](/assets/images/2023/tables-example.png) |
 ```
 {% endraw %}
 
@@ -55,8 +56,8 @@ ccc
 * bbb |
 | Code block | ```
 ccc 
-``` | ```
-
+``` | 
+```
 | Image | ![](/assets/images/2023/tables-example.png) |
 
 ## Fully HTML table

@@ -88,7 +88,7 @@ This autolinking syntax is only required for Jekyll, as GitHub automatically mak
 
 ## Conclusion
 
-Ultimately, I didn't discover anything particularly shocking about footnotes, except that GitHub is way more lenient with the identifiers than Jekyll! That being said, the discovery of [autolinking](#autolinking) is a good example of why reading the documentation is often helpful, even if it doesn't help the immediate problem.
+Ultimately, I didn't discover anything particularly shocking about footnotes, except that GitHub is way more lenient with the identifiers than Jekyll! That being said, the discovery of [autolinking](#autolinking) is a good example of why reading the documentation is often helpful, even if it doesn't solve the immediate problem.
 
 Perhaps there's no greater indicator of how underutilised footnotes are than a Google search for "jekyll footnotes" returning... 114 results. "footnotes in jekyll" similarly returns just 10. Most of these results are for now unnecessary third party plugins[^unnecessary], or simplistic / broken guides[^broken-guide], but at least "markdown footnotes" returns 2.5k results! 
 

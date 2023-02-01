@@ -1,15 +1,15 @@
 ---
-title: How to add a new social media link to Minima 2.5.1 or the unreleased Minima 3.0.0
+title: How to add a new social media link to Minima 2.5.1 or latest
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/minima-header.png
 tags:
     - Minima
     - Web
     - SVG
 ---
 
-Recently I migrated all of my sites from Minima 2.5.1 (updated August 2019) to the latest version on GitHub (updated January 2023). This came with lots of new features, but also changed how social links are handled. In this post, I'll cover both the old and new method for adding new social links.
+Recently I migrated all of my sites from Minima 2.5.1 (updated August 2019) to the latest version on GitHub (updated January 2023). This came with lots of new features, but also changed how social links are handled. In this post I'll cover both the old and new method for adding new social links, as well as the technical details.
 
 Before we get started, [here is the Minima 2.5.1 sourcecode](https://github.com/jekyll/minima/tree/v2.5.1), and [here is the latest source code](https://github.com/jekyll/minima). Minima inexplicably hasn't had a new release in over 3 years, so the latest codebase has diverged from the latest release. 
 
@@ -21,7 +21,7 @@ If you've manually set `remote_theme=jekyll/minima` in your `_config.yml`, **you
 
 ## Adding social link in Minima 2.5.1
 
-Adding a new social link is pretty straightforward, but there's no official guide! You can see an example of this process in a commit from [when I added a Substack link to my site](https://github.com/JakeSteam/blog-programming/commit/14e81949ab5c9cd9ffab9f6e5f3f5fdf64ec9caf#diff-6f8682cd360f5dfab6e928d3ec0bd71221b5f3dbba0d596dad0df2069d6418ad). Note that the SVG is minimised (all on one line), but you can still see the `<symbol>`!
+Adding a new social link is pretty straightforward, but there's no official guide! You can see an example of this process in a commit from [when I added a Substack link to my site](https://github.com/JakeSteam/blog-programming/commit/14e81949ab5c9cd9ffab9f6e5f3f5fdf64ec9caf#diff-6f8682cd360f5dfab6e928d3ec0bd71221b5f3dbba0d596dad0df2069d6418ad). Note that the SVG is minimised (all on one line), but you can still see the `<symbol>`.
 
 ### Steps
 
@@ -48,9 +48,9 @@ Adding a new social link is pretty straightforward, but there's no official guid
 
 Whilst the process of adding a new social icon to Minima 2.5.1 is pretty convoluted, at least the use of it is simple!
 
-1. [`footer.html`](https://github.com/jekyll/minima/blob/v2.5.1/_includes/footer.html) includes [`social.html](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html).
-2. [`social.html](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html) checks each social source to see if it is defined in [`_config.yml`](https://github.com/jekyll/minima/blob/v2.5.1/_config.yml), and displays the username & URL if so. 
-3. Additionally, [`social.html](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html) uses the `symbol`'s `id` to fetch a specific section of the [`minima-social-icons.svg`](https://github.com/jekyll/minima/blob/v2.5.1/assets/minima-social-icons.svg), e.g. `#youtube`.
+1. [`footer.html`](https://github.com/jekyll/minima/blob/v2.5.1/_includes/footer.html) includes [`social.html`](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html).
+2. [`social.html`](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html) checks each social source to see if it is defined in [`_config.yml`](https://github.com/jekyll/minima/blob/v2.5.1/_config.yml), and displays the username & URL if so. 
+3. Additionally, [`social.html`](https://github.com/jekyll/minima/blob/v2.5.1/_includes/social.html) uses the `symbol`'s `id` to fetch a specific section of the [`minima-social-icons.svg`](https://github.com/jekyll/minima/blob/v2.5.1/assets/minima-social-icons.svg), e.g. `#youtube`.
 
 ## Adding social link to latest Minima
 
@@ -88,5 +88,3 @@ Personally I think this is overly convoluted, and would be better served by just
 1. [`_includes/footer.html`](https://github.com/jekyll/minima/blob/master/_includes/footer.html) (the site's footer) includes [`social.html`](](https://github.com/jekyll/minima/blob/master/_includes/social.html)).
 2. [`social.html`](https://github.com/jekyll/minima/blob/master/_includes/social.html) loops through the `social_links` defined in [`_config.yml`](https://github.com/jekyll/minima/blob/master/_config.yml), and includes [`social-item.html`](https://github.com/jekyll/minima/blob/master/_includes/social-item.html) once per social link.
 3. [`social-item.html`](https://github.com/jekyll/minima/blob/master/_includes/social-item.html) looks in the `minima-social-icons.svg` file for an SVG with the social link's name, and displays a clickable icon.
-
- [![](/assets/images/2023/example-thumbnail.png)](/assets/images/2023/example.png)

@@ -1,5 +1,5 @@
 ---
-title: How to add a new social media link to Minima 2.5.1 or latest
+title: How to add a new social media link to Minima 2.5.1 and latest unreleased version (3.0.0)
 author: Jake Lee
 layout: post
 image: /assets/images/2023/minima-header.png
@@ -9,7 +9,7 @@ tags:
     - SVG
 ---
 
-Recently I migrated all of my sites from Minima 2.5.1 (updated August 2019) to the latest version on GitHub (updated January 2023). This came with lots of new features, but also changed how social links are handled. In this post I'll cover both the old and new method for adding new social links, as well as the technical details.
+Recently I migrated all of my Jekyll sites from Minima 2.5.1 (updated August 2019) to the latest version on GitHub (updated January 2023). This came with lots of new features, but also changed how social links are handled. In this post I'll cover both the old and new method for adding new social links, as well as the technical details.
 
 Before we get started, [here is the Minima 2.5.1 sourcecode](https://github.com/jekyll/minima/tree/v2.5.1), and [here is the latest source code](https://github.com/jekyll/minima). Minima inexplicably hasn't had a new release in over 3 years, so the latest codebase has diverged from the latest release. 
 

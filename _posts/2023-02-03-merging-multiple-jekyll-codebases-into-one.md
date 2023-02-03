@@ -98,6 +98,8 @@ In some ways, this migration reminds me of my move from Wordpress to Jekyll [alm
 
 Due to this, there's plenty of next steps I'm excited for! First, I want to write proper documentation for minimaJake and all the blogs that use it. Right now they just have basic documentation from when I was learning Jekyll, not particularly helpful for anyone who has spent 5 minutes with Jekyll! Next, some way to navigate easily between my growing collection of sites...
 
+PS: This is my first post using [Excalidraw](https://excalidraw.com/) for diagrams, it's great!
+
 ## Notes
 
 ### Actions taken

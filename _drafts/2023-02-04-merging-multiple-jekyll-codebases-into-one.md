@@ -1,5 +1,5 @@
 ---
-title: How I merged 3 Jekyll blog codebases into 1, to avoid code duplication
+title: How I merged my 3 Jekyll site codebases into 1, as a public theme
 author: Jake Lee
 layout: post
 image: /assets/images/2023/merge-original-situation.png
@@ -8,7 +8,7 @@ tags:
     - Minima
 ---
 
-Up until last week I had 3 blogs, each with their own GitHub repositories, copies of code, and configuration. Whilst this *worked*, it was horrible to maintain. In this post I'll describe how I merged all of these into 1, making future improvements much easier to implement.
+Up until last week I had 3 blogs, each with their own GitHub repositories, copies of code, CSS modifications, and overall configuration. Whilst this *worked*, it was impossible to maintain or scale up. In this post I'll describe how I merged all of these into 1, whilst also updating to the latest Minima version and making future improvements much easier to implement.
 
 ## The situation
 
@@ -26,13 +26,13 @@ However, since I am now considering a 4th blog, it was time to bite the bullet a
 
 ## The problem
 
-You might be asking, since the blogs were thriving in their own codebases, what's the issue?
+You might be asking since the blogs were thriving in their own codebases, what's the issue?
 
 ### Duplicate work 
 
 Well, day to day it was fine. I could write a new post, add images, do whatever I needed to nice and easily. The problem came when I wanted to make a CSS fix, or add a new feature to the site. I'd have to manually copy blocks of code between the 3 sites, which is a recipe for disaster. 
 
-Even with the very limited feature disparity between sites (one site has a donation button, the rest don't), the few additional lines of code caused line numbers to differ, making future copy & pasting error-prone. 
+Even with the very limited feature disparity between sites (e.g. one site has a donation button, the rest don't), the few additional lines of code cause line numbers to differ, making future copy & pasting error-prone. 
 
 ### Hard to migrate
 
@@ -40,12 +40,12 @@ Additionally, I wanted to migrate to the unreleased Minima 3.0.0 theme. It inclu
 
 ## The solution
 
-My target end state is no duplication. This is likely to be achieved by merging the Minima theme & custom code blocks of the above diagram, leaving just the site's config and any posts. I also want to:
+My target end state is no duplication. This is likely to be achieved by merging the Minima theme & custom code blocks from the diagram earlier, leaving just a per-site config and any posts. I also want to:
 
 1. Be able to configure my blogs (accent colour, title, features, etc) in one file each.
 2. Only need to add new functionality in one place. 
-3. Be able to "update" to the latest shared codebase version on a per-blog basis at the time I choose.
-4. Be able to "update" within seconds with a simple change.
+3. Be able to easily "update" to the latest shared codebase version on a per-blog basis at the time I choose.
+4. Be able to push changes to the core codebase without any risk of them ending up on a real site.
 
 Since I was making significant changes and merging codebases, I also decided to update to the unreleased Minima 3!
 
@@ -65,7 +65,7 @@ Unfortunately, it would have required recreating all of my repositories as forks
 
 #### Submodules
 
-Next, I considered pulling all the shared code into one repository, then including this in a git submodule within my blog repositories. This was perhaps a more accurate logical mapping, since the shared code was a "part" of the overall blog. Additionally, updating would be easy, just update the submodule commit.
+Next, I considered pulling all the shared code into one repository, then including this as a git submodule within my blog repositories. This was perhaps a more accurate logical mapping, since the shared code was a "part" of the overall blog. Additionally, updating would be easy, just update the submodule commit.
 
 Again, this idea didn't end up working. The shared files (e.g. `_includes`) are in the same directory level as the posts themselves, whereas a submodule needs to be inside a dedicated folder. Whilst I *could* have reconfigured the build system to look for the posts somewhere else, I've worked in a project that depended on submodules before, and it wasn't very fun!
 
@@ -73,7 +73,7 @@ Again, this idea didn't end up working. The shared files (e.g. `_includes`) are 
 
 ### What did work
 
-So, I'd tried a couple of git features I knew, and neither of them had been quite right. I put the project aside for a day or two, and tried to come at it from a new angle. Whilst researching how to use the "new" unreleased version of Minima, I discovered Jekyll had the ability to load the theme from a GitHub repository using [`remote_theme`](https://github.com/benbalter/jekyll-remote-theme).
+So, I'd tried a couple of git features I knew, and neither of them had been quite right. I put the project aside for a day or two, and tried to come at it from a new angle. Whilst researching how to use the "new" unreleased version of Minima, I discovered Jekyll had the ability to load the theme from a GitHub repository using [`remote_theme`](https://github.com/benbalter/jekyll-remote-theme). This gives a similar effect to a submodule.
 
 In my original architecture, I'm layering all my custom code and config on top of the Minima theme. What if... my custom code is included in a theme? What if, instead of using the default theme and layering changes on top, I just used my own customised copy of it to begin with?
 
@@ -88,13 +88,15 @@ This has a number of advantages:
 1. The solution uses built-in Jekyll features (well, with a supported plugin), avoiding any weird configuration hacking.
 2. Each blog's repository (e.g. [programming blog](https://github.com/JakeSteam/blog-programming)) only contains the assets it needs (posts, images, configuration, any static pages).
 3. The "merged" theme is available to the public, in case anyone wants to use features from my blogs. There's also a chance others might want to help add new features.
-4. Any improvements I make to the theme aren't trapped inside my sites, they're included in the standalone theme.
+4. The remote theme system is aware of GitHub releases. This means I can peg all my sites to v1.0.0 of minimaJake, safely make & push changes to the repository, and eventually release v1.0.1 when it is stable.
 
 ## Conclusion
 
 Overall, the migration went much more smoothly than I expected. Once I had the first site configured, the other sites took almost no effort at all, showing the flexibility of the theme system. I'm very, very appreciative of how open the Jekyll theming and configuration system is, whereby it takes almost no effort to add new feature toggles, design changes, or config variables. 
 
-In some ways, this migration reminds me of my move from Wordpress to Jekyll [almost a year ago](https://blog.jakelee.co.uk/blog-has-moved-from-wordpress-to-jekyll/). Whilst I generally avoided improving the codebase due to the messy nature of the duplicated code, recently I've had endless ideas about improvements all the sites would benefit from. 
+In some ways, this migration reminds me of my move from Wordpress to Jekyll [almost a year ago](https://blog.jakelee.co.uk/blog-has-moved-from-wordpress-to-jekyll/). Whilst I previously avoided improving the codebase due to the messy nature of the duplicated code, recently I've had endless ideas about improvements all the sites would benefit from.
+
+Due to this, there's plenty of next steps I'm excited for! First, I want to write proper documentation for minimaJake and all the blogs that use it. Right now they just have basic documentation from when I was learning Jekyll, not particularly helpful for anyone who has spent 5 minutes with Jekyll! Next, some way to navigate easily between my growing collection of sites...
 
 ## Notes
 
@@ -103,10 +105,11 @@ In some ways, this migration reminds me of my move from Wordpress to Jekyll [alm
 To summarise, here's the actual changes I made:
 
 1. Checked out the official [Minima repo](https://github.com/jekyll/minima).
-2. Delete everything I don't need (e.g. GitHub scripts).
-3. Reimplement every feature & CSS change from my current sites, in a config-controlled way.
-4. For each site repository, delete everything except posts & related assets, then set up the `_config.yml` file.
-5. Check this local site matches the current live site, and publish it if so.
+2. Deleted everything I didn't need (e.g. GitHub Actions scripts).
+3. Pushed to a new repository.
+4. Copied across every feature & CSS change from my current sites, in a config-controlled way.
+5. For each site repository, deleted everything except posts & related assets, then set up the `_config.yml` file.
+6. Checked this local site matched the current live site, and published.
 
 ### Differences to Minima
 

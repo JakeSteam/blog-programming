@@ -62,6 +62,14 @@ You might have also noticed the "reading time" in the above screenshots. This is
 
 This obviously isn't very accurate, as some very technical articles might take hours to properly follow, whereas others are simple enough to be skim-read. However, it's a nice indicator of approximate article length.
 
+### Pagination
+
+The "pagination" at the bottom of the home screen (most visible on sites like <https://blog.jakelee.co.uk>) uses more complex pagination than Jekyll's default. By default it just creates a link to each page, but this looks pretty bad with more than 3-4 pages. minimaJake's pagination shows the surrounding few pages, and the first / last. The code is in [paginator.html](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/paginator.html).
+
+I'm having a little trouble finding where exactly the version I use is taken from, but it is *somewhere* in [this tutorial by "Epsi"](https://epsi-rns.gitlab.io/ssg/2019/01/06/jekyll-pagination-indicator/). The below gif is also from their site, mine currently has no CSS:
+
+[![](/assets/images/2023/minimajake-pagination.gif)](/assets/images/2023/minimajake-pagination.gif)
+
 ### End of post CTA
 
 The bottom of every post contains a CTA (call-to-action) encouraging readers to subscribe to my weekly newsletter. This is just [a block of HTML](https://github.com/JakeSteam/minimaJake/blob/main/_config.yml#L8) in the config, where removing the line entirely will also hide the CTA. 

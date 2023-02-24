@@ -1,6 +1,6 @@
 ---
 id: 2045
-title: 'Ensuring Your Android App&#8217;s Quality With Firebase Crashlytics'
+title: Ensuring Your Android App's Quality With Firebase Crashlytics
 date: '2018-11-25T17:31:48+00:00'
 author: 'Jake Lee'
 layout: post

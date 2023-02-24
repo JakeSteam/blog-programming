@@ -1,6 +1,6 @@
 ---
 id: 1901
-title: 'How To Fix Nextscripts&#8217; Social Networks Auto-Poster Not Using Correct Categories / Tags'
+title: 'How To Fix Nextscripts Social Networks Auto-Poster Not Using Correct Categories / Tags'
 date: '2018-10-31T20:11:26+00:00'
 author: 'Jake Lee'
 layout: post

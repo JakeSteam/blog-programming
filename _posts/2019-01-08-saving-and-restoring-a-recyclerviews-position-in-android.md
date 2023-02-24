@@ -1,6 +1,6 @@
 ---
 id: 2330
-title: 'Saving and restoring a RecyclerView&#8217;s position in Android'
+title: Saving and restoring a RecyclerView's position in Android
 date: '2019-01-08T18:00:37+00:00'
 author: 'Jake Lee'
 layout: post

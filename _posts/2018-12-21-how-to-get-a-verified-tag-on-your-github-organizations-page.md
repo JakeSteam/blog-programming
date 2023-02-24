@@ -1,6 +1,6 @@
 ---
 id: 2244
-title: 'How to get a &#8220;Verified&#8221; tag on your GitHub organization&#8217;s page'
+title: How to get "Verified" tag on your GitHub organization's page
 date: '2018-12-21T17:00:32+00:00'
 author: 'Jake Lee'
 layout: post

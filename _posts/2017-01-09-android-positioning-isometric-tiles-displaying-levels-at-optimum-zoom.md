@@ -1,6 +1,6 @@
 ---
 id: 264
-title: 'Positioning Isometric Tiles &#038; Displaying Levels At Optimum Zoom in Android'
+title: Positioning Isometric Tiles & Displaying Levels At Optimum Zoom in Android
 date: '2017-01-09T19:49:00+00:00'
 author: 'Jake Lee'
 layout: post

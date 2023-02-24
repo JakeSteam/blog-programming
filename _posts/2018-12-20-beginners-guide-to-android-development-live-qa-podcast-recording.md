@@ -1,6 +1,6 @@
 ---
 id: 2233
-title: '&#8220;Beginner&#8217;s Guide to Android Development&#8221; live Q&#038;A podcast recording'
+title: Beginner's Guide to Android Development live Q&A podcast recording
 date: '2018-12-20T18:00:06+00:00'
 author: 'Jake Lee'
 layout: post

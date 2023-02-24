@@ -1,6 +1,6 @@
 ---
 id: 1763
-title: 'Displaying a &#8220;No Internet&#8221; Bar Inside Your Android App'
+title: 'Displaying a "No Internet" Bar Inside Your Android App'
 date: '2018-10-15T19:20:18+01:00'
 author: 'Jake Lee'
 layout: post

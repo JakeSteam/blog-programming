@@ -1,6 +1,6 @@
 ---
 id: 3056
-title: 'Fixing a misleading &#8220;duplicate class&#8221; error during kaptDebugKotlin after merging'
+title: 'Fixing a misleading "duplicate class" error during kaptDebugKotlin after merging'
 date: '2021-10-13T19:12:34+01:00'
 author: 'Jake Lee'
 layout: post

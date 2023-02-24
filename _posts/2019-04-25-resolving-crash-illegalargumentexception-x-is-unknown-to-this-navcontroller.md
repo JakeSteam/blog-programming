@@ -1,6 +1,6 @@
 ---
 id: 2470
-title: 'Resolving crash &#8220;IllegalArgumentException x is unknown to this NavController&#8221;'
+title: 'Resolving crash "IllegalArgumentException x is unknown to this NavController"'
 date: '2019-04-25T14:54:27+01:00'
 author: 'Jake Lee'
 layout: post

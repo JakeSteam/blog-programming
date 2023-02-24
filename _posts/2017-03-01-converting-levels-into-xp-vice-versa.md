@@ -1,6 +1,6 @@
 ---
 id: 867
-title: 'Converting Levels Into XP &#038; Vice Versa'
+title: Converting Levels Into XP & Vice Versa
 date: '2017-03-01T12:07:29+00:00'
 author: 'Jake Lee'
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 2958
-title: 'Improving my Windows &#038; MacOS triple monitor working from home setup'
+title: 'Improving my Windows & MacOS triple monitor working from home setup'
 date: '2021-04-26T14:59:26+01:00'
 author: 'Jake Lee'
 layout: post

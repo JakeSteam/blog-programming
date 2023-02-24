@@ -1,6 +1,6 @@
 ---
 id: 2803
-title: 'Exploring pull requests with GitHub&#8217;s rich diff functionality'
+title: Exploring pull requests with GitHub's rich diff functionality
 date: '2020-08-12T15:15:52+01:00'
 author: 'Jake Lee'
 layout: post

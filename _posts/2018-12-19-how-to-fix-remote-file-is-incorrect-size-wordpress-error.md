@@ -1,6 +1,6 @@
 ---
 id: 2227
-title: 'How to fix &#8220;Remote file is incorrect size&#8221; WordPress error'
+title: 'How to fix "Remote file is incorrect size" WordPress error'
 date: '2018-12-19T22:09:09+00:00'
 author: 'Jake Lee'
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 1963
-title: 'Learning How To Manage Your Apps With Google Play&#8217;s Academy for App Success'
+title: 'Learning How To Manage Your Apps With Google Plays Academy for App Success'
 date: '2018-11-06T13:00:42+00:00'
 author: 'Jake Lee'
 layout: post

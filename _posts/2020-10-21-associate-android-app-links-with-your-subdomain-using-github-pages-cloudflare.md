@@ -1,6 +1,6 @@
 ---
 id: 2929
-title: 'Associate Android app links with your subdomain using GitHub Pages &#038; Cloudflare'
+title: 'Associate Android app links with your subdomain using GitHub Pages & Cloudflare'
 date: '2020-10-21T15:00:21+01:00'
 author: 'Jake Lee'
 layout: post

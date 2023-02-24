@@ -1,6 +1,6 @@
 ---
 id: 2466
-title: 'How to check if a Sony Android device has &#8220;Stamina mode&#8221; enabled'
+title: 'How to check if a Sony Android device has "Stamina mode" enabled'
 date: '2019-04-17T20:59:55+01:00'
 author: 'Jake Lee'
 layout: post

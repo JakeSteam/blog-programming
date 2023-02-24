@@ -1,6 +1,6 @@
 ---
 id: 1766
-title: 'Displaying a &#8220;Power Saving Enabled&#8221; Bar Inside Your Android App'
+title: 'Displaying a "Power Saving Enabled" Bar Inside Your Android App'
 date: '2018-10-16T17:56:59+01:00'
 author: 'Jake Lee'
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 1651
-title: 'Loco 1: String management for multi-platform &#038; multi-locale projects'
+title: 'Loco 1: String management for multi-platform & multi-locale projects'
 date: '2018-08-29T20:50:32+01:00'
 author: 'Jake Lee'
 layout: post

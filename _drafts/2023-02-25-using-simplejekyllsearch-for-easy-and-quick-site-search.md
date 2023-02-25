@@ -2,13 +2,13 @@
 title: Using SimpleJekyllSearch for easy and quick site searching
 author: Jake Lee
 layout: post
-image: /assets/images/2023/v103-search-new-appearance.png
+image: /assets/images/2023/new-search-banner.png
 tags:
     - Search
     - Jekyll
 ---
 
-Historically, my Jekyll sites have always have a very slow search. Recently I updated minimaJake to use SimpleJekyllSearch, and now it's almost instant and easy to customise! Here's some more detail on how it works.
+Historically, my Jekyll sites have always have a very slow search. Recently I updated [minimaJake](https://github.com/JakeSteam/minimaJake/) to use [SimpleJekyllSearch](https://github.com/christian-fei/Simple-Jekyll-Search), and now it's almost instant and easy to customise! Here's some more detail on how it works.
 
 ## Before & after 
 
@@ -90,7 +90,7 @@ var sjs = SimpleJekyllSearch({
 
 You now have a functioning, speedy search!
 
-## Customising SimpleJekyllSearch 
+### Customisation
 
 For minimaJake, I chose to make a few additional changes to customise the "no results" message, and also format the data properly on the page:
 
@@ -106,7 +106,7 @@ For minimaJake, I chose to make a few additional changes to customise the "no re
       }
 ```
 
-You might notice that the variables there (e.g. `{excerpt}`) are just data we output in an earlier stage (`{{ post.excerpt | jsonify | strip_html }}`). It's very easy to customise these fields, if you want to search by some sort of custom metadata.
+You might notice that the variables there (e.g. `{excerpt}`) are just data we output in an earlier stage ({% raw %}`{{ post.excerpt | jsonify | strip_html }}`{% endraw %}). It's very easy to customise these fields, if you want to search by some sort of custom metadata.
 
 Additionally, I want the functionality to link directly to a set of results. For example, a [search for my name](https://blog.jakelee.co.uk/search/?q=jake). This is done by checking for a `q` URL parameter on page load, then if it exists populate & submit the search form:
 
@@ -134,4 +134,24 @@ This can then be included elsewhere with just:
 ```
 {% endraw %}
 
+## Drawbacks 
+
+Whilst the new search's performance is undoubtedly better, and there's far less hacky code around, it isn't perfect.
+
+The main drawback I've found is that it doesn't search very selectively. For example if I search "a", it will just return every single post in date order that contains "a" anywhere in it. This even includes words like "apple", and doesn't prioritise tags or titles over the full text of the article.
+
+I'm intending to eventually improve this, by ideally:
+
+1. Returning all tag matches, then title matches, then excerpt matches, and *finally* full text matches.
+2. Only matching full words, ideally with variants. For example "cat" should return "cats" but not "scatter". 
+3. Highlighting where the result has been found, just like when searching in a page on Chrome.
+
+I suspect the difficulty in implementing these well varies from tricky (#1) to almost impossible (#2). The library does have [`templateMiddleware`](https://github.com/christian-fei/Simple-Jekyll-Search#templatemiddleware-function-optional) and [`sortMiddleware`](https://github.com/christian-fei/Simple-Jekyll-Search#sortmiddleware-function-optional) so it should be possible with enough work!
+
 ## Conclusion
+
+Overall I'm happy with this migration, and how consumers of [minimaJake](https://github.com/JakeSteam/minimaJake/) now just need to include the search page to have a full-text, instant search available.
+
+The change to use the same CSS as the homepage (minus the header image) also make the site feel much more coherent, whilst reducing the amount of visual areas that need tweaking. Previously, search was hard to read in dark mode due to hard-coded colours, now it's all automatic.
+
+Having a search that works quickly frees up future interesting options, such as having a search available in the header of the site. If you're looking to add search to your site, give [SimpleJekyllSearch](https://github.com/christian-fei/Simple-Jekyll-Search) a go!

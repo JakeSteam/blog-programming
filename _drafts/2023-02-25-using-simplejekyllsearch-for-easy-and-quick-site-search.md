@@ -37,7 +37,8 @@ And, luckily, this is pretty much exactly what SimpleJekyllSearch does. This lib
 
 First, we need to provide a list of all our posts (e.g. as [`posts.json`](/assets/js/posts.json)), complete with the searchable fields. This can be edited to suit your needs, minimaJake tidies up [the repo's example](https://github.com/christian-fei/Simple-Jekyll-Search#create-searchjson) to include post excerpts, format dates better, and avoid character encoding issues:
 
-```
+{% raw %}
+```liquid
 ---
 layout: none
 ---
@@ -54,6 +55,7 @@ layout: none
   {% endfor %}
 ]
 ```
+{% endraw %}
 
 ### Adding JavaScript 
 
@@ -61,7 +63,7 @@ Next, copy either the [regular or minified search script](https://github.com/chr
 
 We should also include this on the page we want to have the search on, similar to:
 
-```
+```html
 <script src="/assets/js/search.js" type="text/javascript"></script>
 ```
 
@@ -69,7 +71,7 @@ We should also include this on the page we want to have the search on, similar t
 
 Now we need to add the text field and search results area onto the search page, something like:
 
-```
+```html
 <form id="searchform">
   <p><input type="text" id="search-input" class="form-control" name="q" value="" autofocus /></p>
 </form>
@@ -78,7 +80,7 @@ Now we need to add the text field and search results area onto the search page, 
 
 Finally, we need to create a `SimpleJekyllSearch` object, and pass in all the bits we've setup:
 
-```
+```js
 var sjs = SimpleJekyllSearch({
   searchInput: document.getElementById('searchform'),
   resultsContainer: document.getElementById('searchresults'),
@@ -92,7 +94,7 @@ You now have a functioning, speedy search!
 
 For minimaJake, I chose to make a few additional changes to customise the "no results" message, and also format the data properly on the page:
 
-```
+```js
       noResultsText: 'No results found :(',
       searchResultTemplate: "<li class='card'>" +
           "<div class='content'>" +
@@ -108,7 +110,7 @@ You might notice that the variables there (e.g. `{excerpt}`) are just data we ou
 
 Additionally, I want the functionality to link directly to a set of results. For example, a [search for my name](https://blog.jakelee.co.uk/search/?q=jake). This is done by checking for a `q` URL parameter on page load, then if it exists populate & submit the search form:
 
-```
+```js
     window.addEventListener('load', function() {
         var searchParam = new URLSearchParams(window.location.search).get("q")
         if (searchParam != null) {
@@ -124,6 +126,12 @@ This snippet also handles setting a placeholder text, which needs to be done *af
 
 So, if you follow all these steps what do you get? [A complete search page](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/search.html)!
 
-This can then be included elsewhere with just `{% include custom/search.html %}`.
+This can then be included elsewhere with just:
+
+{% raw %}
+```
+{% include custom/search.html %}
+```
+{% endraw %}
 
 ## Conclusion

@@ -8,7 +8,7 @@ tags:
     - Jekyll
 ---
 
-Historically, my Jekyll sites have always have a very slow search. Recently I updated [minimaJake](https://github.com/JakeSteam/minimaJake/) to use [SimpleJekyllSearch](https://github.com/christian-fei/Simple-Jekyll-Search), and now it's almost instant and easy to customise! Here's some more detail on how it works.
+Historically, my Jekyll sites have always had a very slow search feature. Recently I updated [minimaJake](https://github.com/JakeSteam/minimaJake/) to use [SimpleJekyllSearch](https://github.com/christian-fei/Simple-Jekyll-Search), and now it's almost instant (99.5% reduction in time taken) and easy to customise! Here's some more detail on how it works, how to implement it, and some further improvements I'd love to try.
 
 ## Before & after 
 
@@ -57,16 +57,6 @@ layout: none
 ```
 {% endraw %}
 
-### Adding JavaScript 
-
-Next, copy either the [regular or minified search script](https://github.com/christian-fei/Simple-Jekyll-Search/tree/master/dest) into your site, perhaps at `/assets/js/search.js`.
-
-We should also include this on the page we want to have the search on, similar to:
-
-```html
-<script src="/assets/js/search.js" type="text/javascript"></script>
-```
-
 ### Adding HTML elements
 
 Now we need to add the text field and search results area onto the search page, something like:
@@ -76,6 +66,16 @@ Now we need to add the text field and search results area onto the search page, 
   <p><input type="text" id="search-input" class="form-control" name="q" value="" autofocus /></p>
 </form>
 <ul id="searchresults" class="post-list"></ul>
+```
+
+### Adding JavaScript 
+
+Next, copy either the [regular or minified search script](https://github.com/christian-fei/Simple-Jekyll-Search/tree/master/dest) into your site, perhaps at `/assets/js/search.js`.
+
+We should also include this on the page we want to have the search on, similar to:
+
+```html
+<script src="/assets/js/search.js" type="text/javascript"></script>
 ```
 
 Finally, we need to create a `SimpleJekyllSearch` object, and pass in all the bits we've setup:

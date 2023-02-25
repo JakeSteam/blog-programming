@@ -16,9 +16,9 @@ This change brings a lot of visual improvements, but they were technically possi
 
 On a bad connection, loading the [search page](/search) would completely block the UI for over 7 seconds. Now, it's... 30 ms! That's an almost unbelievable 99.5% decrease in page loading time, and doesn't even factor in the fact that the search is now per-keystroke, instead of waiting for enter to be pressed.
 
-| | Before (v1.0.2) | After (v1.0.3) |
-| Appearance | [![](/assets/images/2023/v103-search-old-appearance.png)](/assets/images/2023/v103-search-old-appearance.png) | [![](/assets/images/2023/v103-search-new-appearance.png)](/assets/images/2023/v103-search-new-appearance.png) | 
-| Performance | [![](/assets/images/2023/v103-search-old.png)](/assets/images/2023/v103-search-old.png) | [![](/assets/images/2023/v103-search-new.png)](/assets/images/2023/v103-search-new.png) | 
+| Before (v1.0.2) | After (v1.0.3) |
+| [![](/assets/images/2023/v103-search-old-appearance.png)](/assets/images/2023/v103-search-old-appearance.png) | [![](/assets/images/2023/v103-search-new-appearance.png)](/assets/images/2023/v103-search-new-appearance.png) | 
+| [![](/assets/images/2023/v103-search-old.png)](/assets/images/2023/v103-search-old.png) | [![](/assets/images/2023/v103-search-new.png)](/assets/images/2023/v103-search-new.png) | 
 
 ## Introducing SimpleJekyllSearch
 

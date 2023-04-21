@@ -33,7 +33,7 @@ Okay so yes, pretty much everything has changed!
 
 Yes, I've moved! I'm now in a dedicated office with lots more space, shelves where I want them, soft carpets, etc. I'll do a full room tour eventually, but for now the main improvements are:
 
-* **View**: A large window looking out over my new garden, where my cat Cassie is often hunting leaves or similarly dangerous prey.
+* **View**: A large window looking out over my new garden, where my cat Cassie is often hunting leaves or similarly dangerous prey. There's also a blind colour-matched to the wall (Breton Blue).
 * **Lighting**: This large window also means I have natural light on my face, with the option of additional soft lighting from a lamp. Much better than the monitor-lit face before, now I have more options than washed out / in darkness.
 * **Creativity**: Having more space means I can have a basic whiteboard up on the wall for notes / UI sketching, and my old desk can become a big space for... something.
 
@@ -61,7 +61,9 @@ The stereotype of a relatively powerful laptop that can also run games is an ang
 
 ### Desk & power
 
-Yep, that's a standing desk. I've wanted one for a while, and moving seemed like the time to make the change over to a Flexispot E7. I've also got Flexispot's cable tray to bring some sanity to my cables.
+Yep, that's a standing desk. I've wanted one for a while, and moving seemed like the time to make the change over to a Flexispot E7 (with 140x80cm black walnut top). I've also got Flexispot's cable tray to bring some sanity to my cables.
+
+So far I've found it's made me much more focussed in meetings, especially those just after lunch or in the mornings. I tend to use it for 2-3 hours total per day, and it convinced my partner to get a matching one too!
 
 I briefly tried using a standing desk before getting my laptop but... it was a little bit silly:
 
@@ -83,4 +85,20 @@ With the old setup, 2 of my monitors had 2 cables coming out of them, one to eac
 
 This avoids the issue of my mouse sometimes going to an invisible monitor (e.g. not the currently selected monitor input), and also allows any other USB-C output device to be easily plugged in. To hold the cables I just used a [set of white basic cable management clips](https://www.amazon.co.uk/dp/B08P2P8HM2).
 
+## Cost
+
+This is a tricky one, since the total varies massively if I include the cost of the house!
+
+* £879: Laptop
+* £500: Standing desk
+* £179: Chair
+* £15: Extension leads
+* £15: Laptop / cable mounting
+* Life savings: House!
+
+So, yep, around £1.5k, but with the majority going towards a far more powerful machine it seems worth it. 
+
 ## Conclusion
+
+* excited for next iteration
+* basically clean slate, no limitations

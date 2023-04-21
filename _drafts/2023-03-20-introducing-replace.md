@@ -15,7 +15,7 @@ TO DO BEFORE FINISHING:
 - Add extra rules (beach, deep sea) to example
 - Add basic structure support
 - Add boat / beach hut to example
-- Update score / resources
+- Update score / resources, and tidy up output
 
 ## What is rp.lc?
 
@@ -75,5 +75,8 @@ rp.lc can chain together multiple analysis / action rules and recipe rules, then
 * **Deployable**: Make rp.lc usable as a player without any technical knowledge / installation, perhaps as a webapp.
 
 ## Project inspiration
+
+* Tile based comparisons (city flow)
+* Image manipulation (work)
 
 ## Conclusion

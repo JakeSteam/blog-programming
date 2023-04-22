@@ -6,6 +6,7 @@ image: /assets/images/2023/newdesk-standing.jpg
 tags:
     - WFH
     - Flexispot
+    - Technology
 ---
 
 Exactly [2 years ago](https://blog.jakelee.co.uk/improving-my-windows-macos-triple-monitor-working-from-home-setup/), I wrote about my revamped WFH setup. Now I've moved... everything has changed again! Here's everything wrong with my old setup, and how I built the new one. As before, this is partially to remember my own reasoning, and partially to provide ideas for anyone with similar needs.

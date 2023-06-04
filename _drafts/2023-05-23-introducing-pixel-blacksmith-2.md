@@ -14,6 +14,14 @@ I first got into Android development 7-8 years ago, and learned entirely through
 
 So, since I'm moving back into Android development (from management) in July, what better time to relearn Android with a sequel?
 
+## Overview
+
+So what is Pixel Blacksmith 2? Well, it's a layered idle / incremental game.
+
+The vision is to end up with multiple layers of cohesive games, with each layer having multiple playthrough / automation options.
+
+For example, the first layer "Machine" is a puzzle-solving layer. Whilst this can be manually solved by solving all the puzzles, it can also be automated via each "path". Unlocking additional solving options will require a specific manual action, so players will need to balance the ease of automation with the control of manual completion.
+
 ## Project goals
 
 Similar to Pixel Blacksmith 1, this project has a number of goals that mostly align:
@@ -36,9 +44,9 @@ I haven't dealt with "real users" in a while. During Pixel Blacksmith's peak I w
 
 As my new job is at a startup I'll likely be a bit closer to our userbase, and having recent experience with the positive & negative pressures this entails can't hurt. 
 
-###
+### Money
 
-## Overview
+Realistically, Pixel Blacksmith never made *that* much money. However, it would be nice to have a side income, although it's unlikely to even pay minimum wage for the hours worked!
 
 ## Technology
 

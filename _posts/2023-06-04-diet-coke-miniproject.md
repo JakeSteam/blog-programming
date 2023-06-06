@@ -31,17 +31,17 @@ The .co.ke registrar (at least, the "webhost kenya" one I found) is... not perfe
 
 Updating nameservers and other changes were a little confusing, with things like success messages showing where they shouldn't:
 
-![](/assets/images/2023/coke-nameserver_thumbnail.png)
+[![](/assets/images/2023/coke-nameserver_thumbnail.png)](/assets/images/2023/coke-nameserver.png)
 
 Whilst writing this article the management site also appears to have gone down completely for a bit, not what you want from the place that controls your domain:
 
-![](/assets/images/2023/coke-registrar_thumbnail.png)
+[![](/assets/images/2023/coke-registrar_thumbnail.png)](/assets//images/2023/coke-registrar.png)
 
 ### Cloudflare
 
 Cloudflare don't support .co.ke domain registrations. You can still use Cloudflare, but the domain can't be transferred to them:
 
-![](/assets/images/2023/coke-cloudflare_thumbnail.png)
+[![](/assets/images/2023/coke-cloudflare_thumbnail.png)](/assets/images/2023/coke-cloudflare.png)
 
 ## Conclusion
 

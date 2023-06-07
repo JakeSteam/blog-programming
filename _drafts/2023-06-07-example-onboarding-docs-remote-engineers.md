@@ -2,7 +2,7 @@
 title: An example of onboarding process & documentation for remote developers joining a specialised team
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/onboarding-banner.png
 tags:
     - Remote
     - Onboarding
@@ -10,7 +10,7 @@ tags:
 
 Onboarding engineers to a project is hard. Especially if you're in a small team (e.g. Android developers) without a whole HR framework, and instead have to make up your own processes! I've onboarded tens of engineers (and been onboarded of course), so here's a few mistakes I've learned from, and my current preferred approach for onboarding new engineers.
 
-Importantly, I am excluding all company-wide onboarding. For example, GDPR training, company history, all of that is completely out of scope. I'll only cover the onboarding into an actual software team, not the company itself.
+Importantly, I am excluding all company-wide onboarding. For example, GDPR training, financial predictions, all of that is completely out of scope. I'll only cover the onboarding into an actual software team, not the company itself.
 
 ## Previous approaches
 
@@ -38,7 +38,7 @@ All teams struggle with documentation, but almost all have at least a "semi-usef
 
 The trade-off with this approach is essentially the opposite of [too many meetings](#too-many-meetings). Whilst the starter will have all the information they could ever need, they won't know what they need to know. With a flood of hundreds of pages, how can the new starter know what they need? 
 
-I typically provided 5-10 "starter" pages for them, but this changed over time, and the documentation base of course suffered all the usual issues of being out of date, unmaintained, misleading, etc. Additionally, this approach requires entirely on the joiner being very self-sufficient, finding out for themselves what they need to find out, etc.
+I typically provided 5-10 "starter" pages for them, but this changed over time, and the documentation of course suffered all the usual issues of being out of date, unmaintained, misleading, etc. Additionally, this approach relies entirely on the joiner being very self-sufficient, finding out for themselves what they need to find out, etc.
 
 ## Priorities
 
@@ -48,24 +48,13 @@ Okay, so I know what didn't work. What should my approach have?
 2. **Always up to date information**: The documentation should be useful for *everyone*, not just the new joiner. This way it's in everyone's best interests to maintain it.
 3. **Guided, with flexibility**: The new starter should never feel lost, but should have the freedom to dive deeper into areas that interest them.
 
-Here's what I went for:
-
-* Async (with sync for catchups)
-* Useful for all members
-* Always up to date
-* Time boxed (doing x per day)
-* Clear, not overwhelming
-* Mention docs for developers book!
-
-maybe mention learning styles, how I massively prefer written info
-
 ## Day by day
 
 The onboarding should be guided, with a clear set of goals and information for each of the first few days.
 
 Information like team members, office information, company systems are split into a day-by-day basis, and this is the main source for this information. As such, these pages are useful to (and maintained by) all existing employees too!
 
-I used Notion for this, but any documentation site works.
+I used Notion for this, the platform doesn't matter. I highly recommend giving [Docs for Developers](https://www.amazon.com/Docs-Developers-Engineers-Technical-Writing/dp/1484272161/) a read beforehand if possible, to make sure the knowledge is shared as effectively as possible.
 
 ### Day 1: Product & Team
 
@@ -91,7 +80,7 @@ Of course, this would be much tidier if everyone had similar length names, and I
 
 #### Locations
 
-Depending on how in-person your team is, office information might be essential. This doesn't need to be a detailed history of the company offices etc, but each of 3 locations have a page containing this information:
+Depending on how in-person your team is, office information might be essential. This doesn't need to be a detailed history of the company offices etc, but each of our 3 locations have a page containing essential information:
 
 * **Floor plan**: People forget where meeting rooms / bathrooms are!
 * **Facilities**: If there is a gym, bike rack, shower, document them.
@@ -100,7 +89,7 @@ Depending on how in-person your team is, office information might be essential. 
 
 #### Systems
 
-As mentioned, the new starter likely needs access to a surprising amount of company & team specific systems. Whilst many of these will be controlled by Single Sign-on or other in-house systems, they still likely need documentation on how they work.
+As mentioned, the new starter likely needs access to a surprising amount of company & team specific systems. Whilst many of these will be controlled by Single Sign On or other in-house systems, they still likely need documentation on how they work.
 
 Even though most people will have experience with common systems like Firebase and JIRA, there will be specific quirks that should be documented. This might be how to gain access, how to workaround a bug, etc. Note that this documentation can (and should) be reused whenever non-team members also need basic training in a system.
 
@@ -128,7 +117,9 @@ For Goal #2, most of this will be done by a [meeting with a senior or principal]
 
 ### Day 3: Everything else
 
-The final onboarding day is a bit of a "catch-all" for everything missed so far. This can grow or shrink as needed, but ours includes:
+The final onboarding day is a bit of a "catch-all" for everything missed so far. The goal for this final day is nice and simple:
+
+* New starter understands everything so far, and is ready to pick up their first (small!) ticket!
 
 #### Further reading
 
@@ -148,7 +139,7 @@ For example, there will likely be teams that work closely with your team, your c
 
 #### Misc notes
 
-Finally, there's a lot of information that's just good to know. This might be finishing early during summer, the history of the team / product, or anything else. 
+Finally, there's a lot of information that's just good to know. This might be finishing early during summer, the history of the team / product, or anything else. As this is the "everything else" of the "everything else", it's very flexible. 
 
 ## Onboarding sessions
 
@@ -174,11 +165,11 @@ This will likely be a typical onboarding to the codebase, software development p
 
 Whilst product and engineering may seem to be a complete picture, there's often a role that has an outsized impact, and ends up representing the customer to some degree. In your company this might be a customer support representative, a quality engineer, or perhaps also a designer.
 
-This session should show the product from a customer perspective, to help the new starter understand what the app is capable of, and why it feels and behaves the way it does. Possible outcomes could be:
+This session should show the product from a customer perspective, to help the new starter understand what the product is capable of, and why it feels and behaves the way it does. Possible outcomes could be:
 
-* New starter knows all screens of the app, and the flow.
+* New starter knows all screens / areas of the product, and the user flow.
 * New starter knows why historical decisions were made around UX / UI.
-* New starter knows what the future is for the app's UX / UI.
+* New starter knows what the future is for the product's UX / UI.
 
 ## Improvements to make
 

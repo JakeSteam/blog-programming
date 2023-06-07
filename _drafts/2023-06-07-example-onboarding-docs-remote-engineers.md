@@ -77,7 +77,7 @@ The first day isn't at all technical, it's all about the product itself and the 
 
 Whilst this may seem like almost nothing on a first day, that's by design! If the new joiner has capacity they can dive deeper into areas they want to get ahead on, or even just socialise more. There's a million new things to learn, there's no need to front-load all the information.
 
-To that end, here's the documentation included in Day 1:
+The introductory sessions should be organised by the hiring manager (who should be doing mini-checkins throughout), and will be covered in [product](#product) and [design](#design). For asynchronous information, here's the documentation included in Day 1:
 
 #### Team
 
@@ -112,16 +112,86 @@ Finally, they also need to know the formal and informal discussions areas. Teams
 
 [![](/assets/images/2023/onboarding-slack-thumbnail.png)](/assets/images/2023/onboarding-slack.png)
 
-### Day 2
+### Day 2: Engineering
 
-### Day 3
+Day 2 is more of a traditional "onboarding" session, with a focus on technical knowledge sharing.
 
-## Meetings
+The goals are:
 
-* Product
-* Design
-* Software
+1. Have access to all necessary codebases.
+2. Understand the basic parts of the product.
+3. Have a local development environment setup, and can deploy the service / app / website locally.
+
+I'd usually define Goal #1 as being in the organisation's GitHub team, and can pull & push to all projects that need to be worked on. Codebase access will of course vary between organisations, and may take multiple days depending on security / IT.
+
+For Goal #2, most of this will be done by a [meeting with a senior or principal](#engineering). Finally, Goal #3 may need descoping if a full local deployment isn't realistic, as deploying locally can be a 5 minute or 5 hour job.
+
+### Day 3: Everything else
+
+The final onboarding day is a bit of a "catch-all" for everything missed so far. This can grow or shrink as needed, but ours includes:
+
+#### Further reading
+
+A list of additional pages to read can help eager new joiners get ahead of the game, whilst also providing a clear list of "great" pages. For us, this was things like how to handle bugs, the app roadmap, how to handle queries from other teams, etc.
+
+#### Processes
+
+Whilst most companies use some form of agile, the new starter will likely need to be shown how the team handles things specifically. Ideally this will also be documented somewhere, but a session with an engineering manager (or agile coach / scrummaster) might help. Additionally, PR and release processes will need sharing.
+
+#### Wider company
+
+Often forgotten, the new starter probably needs to know people outside the current team!
+
+For example, there will likely be teams that work closely with your team, your counterparts in sister companies, as well as of course all the senior management figures. It's good to know where the "chain of management" goes, from the new starter all the way up to the CEO.
+
+[![](/assets/images/2023/onboarding-widercompany.png)](/assets/images/2023/onboarding-widercompany.png)
+
+#### Misc notes
+
+Finally, there's a lot of information that's just good to know. This might be finishing early during summer, the history of the team / product, or anything else. 
+
+## Onboarding sessions
+
+Whilst most of the information will be asynchronous, actual handovers of information are still absolutely crucial. The specific make-up varies by company, but for us the three main entities during development are Product (e.g. Product Manager), Design (e.g. App UI Designer), and Engineering (e.g. Principal Android Engineer). All 3 of these key individuals have a unique perspective, and the combination of them should ensure the new starter gets a great overview.
+
+### Product session
+
+A product manager often has the most complete view of the product, understandably so. This session should cover what the product does, where it currently is, and where it's planning to go. Possible outcomes could be:
+
+* New starter has in-depth understanding of the product, and understands the vision behind it.
+* New starter knows what the company's major upcoming features are, and how their team fits in.
+* New starter understands how these features are planned, prioritised, and worked on.
+
+### Engineering session
+
+This will likely be a typical onboarding to the codebase, software development practices, and overall approach. The basic outcomes of this could be:
+
+* New starter knows the overall vision of the codebase.
+* New starter understands the coding conventions followed.
+* New starter is confident they can navigate the codebase themselves.
+
+### Design session
+
+Whilst product and engineering may seem to be a complete picture, there's often a role that has an outsized impact, and ends up representing the customer to some degree. In your company this might be a customer support representative, a quality engineer, or perhaps also a designer.
+
+This session should show the product from a customer perspective, to help the new starter understand what the app is capable of, and why it feels and behaves the way it does. Possible outcomes could be:
+
+* New starter knows all screens of the app, and the flow.
+* New starter knows why historical decisions were made around UX / UI.
+* New starter knows what the future is for the app's UX / UI.
 
 ## Improvements to make
 
-* Overwhelming w/company onboarding, underwhelming if used alone
+Of course, this approach isn't perfect. No approach is! However, it seems a bit better than the previous attempts, and hopefully it's made new engineers have an easier transition into our team.
+
+It's crucial to factor in non-team onboarding throughout this process. If your company already has a structured onboarding for the first few days, it may not be worth starting your onboarding until a few days later. Contrastingly, if there is no wider onboarding (for payroll, customer support, everything else) you may need more than 3 days.
+
+Whilst I've extoled the virtues of giving the new starter flexibility in when they learn new information, I think ideally the onboarding process would be slightly more structured. It's often a challenge to fit the [onboarding sessions](#onboarding-sessions) around busy calendars, and it's important the new starter doesn't feel like they are a burden.
+
+## Conclusion
+
+Overall, I'm really happy with the day-by-day approach, and the flexibility it gives both the onboarder and the onboardee. It's definitely a tricky balance providing too much vs not enough information, and it needs adjusting to the specific company, team, and even individual joining. 
+
+For example, I personally massively prefer reading information and being able to refer back to it, to the extent that things told to me in meetings are essentially forgotten unless I make notes! As such, this approach would suit me perfectly, as I could easily "read ahead" of the next day, remind myself who key individuals are, etc. However, for someone who prefers more conversations and discussions, it might be helpful to be "walked through" some of the information on a call. Catering the onboarding to the individual is a good way to ensure it all actually sinks in. 
+
+If you've tried the day-by-day onboarding style let me know how it went, otherwise I'm very interested in alternative approaches that might work better!

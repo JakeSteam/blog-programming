@@ -172,7 +172,7 @@ Possible outcomes could be:
 * New starter knows all screens / areas of the product, and the current user flow.
 * New starter understands how the design team works, and the tools they use for wireframing, prototyping, reviewing work etc.
 * New starter can work effectively with design, knows how / when engineers are involved in feedback, how to raise design concerns, etc. 
-
+ 
 ## Improvements to make
 
 Of course, this approach isn't perfect. No approach is! However, it seems a bit better than the previous attempts, and hopefully it's made new engineers have an easier transition into our team.

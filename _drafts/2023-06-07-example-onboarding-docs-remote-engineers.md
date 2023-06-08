@@ -147,7 +147,7 @@ Whilst most of the information will be asynchronous, actual handovers of informa
 
 ### Product session
 
-A product manager often has the most complete view of the product, understandably so. This session should cover what the product does, where it currently is, and where it's planning to go. Possible outcomes could be:
+A product manager often has the most complete view of the product, understandably so. This session should cover what the product does (e.g. Mission), where it currently is, and where it's planning to go (e.g. Vision / Roadmap). Possible outcomes could be:
 
 * New starter has in-depth understanding of the product, and understands the vision behind it.
 * New starter knows what the company's major upcoming features are, and how their team fits in.
@@ -163,13 +163,15 @@ This will likely be a typical onboarding to the codebase, software development p
 
 ### Design session
 
-Whilst product and engineering may seem to be a complete picture, there's often a role that has an outsized impact, and ends up representing the customer to some degree. In your company this might be a customer support representative, a quality engineer, or perhaps also a designer.
+Whilst product and engineering may seem to be a complete picture, there's often a role / individual in a team that has an outsized impact, and ends up representing the customer to some degree. In your company this might be a customer support representative, a quality engineer, or perhaps also a designer. 
 
-This session should show the product from a customer perspective, to help the new starter understand what the product is capable of, and why it feels and behaves the way it does. Possible outcomes could be:
+This session should show the product from a customer perspective, to help the new starter understand what the product is capable of, and why it feels and behaves the way it does. If this role is filled by design in your team, it will necessarily be a more visual session.
 
-* New starter knows all screens / areas of the product, and the user flow.
-* New starter knows why historical decisions were made around UX / UI.
-* New starter knows what the future is for the product's UX / UI.
+Possible outcomes could be:
+
+* New starter knows all screens / areas of the product, and the current user flow.
+* New starter understands how the design team works, and the tools they use for wireframing, prototyping, reviewing work etc.
+* New starter can work effectively with design, knows how / when engineers are involved in feedback, how to raise design concerns, etc. 
 
 ## Improvements to make
 
@@ -177,7 +179,7 @@ Of course, this approach isn't perfect. No approach is! However, it seems a bit 
 
 It's crucial to factor in non-team onboarding throughout this process. If your company already has a structured onboarding for the first few days, it may not be worth starting your onboarding until a few days later. Contrastingly, if there is no wider onboarding (for payroll, customer support, everything else) you may need more than 3 days.
 
-Whilst I've extoled the virtues of giving the new starter flexibility in when they learn new information, I think ideally the onboarding process would be slightly more structured. It's often a challenge to fit the [onboarding sessions](#onboarding-sessions) around busy calendars, and it's important the new starter doesn't feel like they are a burden.
+Whilst I've extolled the virtues of giving the new starter flexibility in when they learn new information, I think ideally the onboarding process would be slightly more structured. It's often a challenge to fit the [onboarding sessions](#onboarding-sessions) around busy calendars, and it's important the new starter doesn't feel like they are a burden.
 
 ## Conclusion
 

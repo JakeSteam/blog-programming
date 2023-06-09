@@ -12,7 +12,7 @@ Onboarding engineers to a project is hard. Especially if you're in a small team 
 
 Importantly, I am excluding all company-wide onboarding. For example, GDPR training, financial predictions, all of that is completely out of scope. I'll only cover the onboarding into an actual software team, not the company itself.
 
-## Previous approaches
+## Failed approaches
 
 Before I get into the approach I went for, there's been a few previous approaches that didn't work too well:
 
@@ -26,7 +26,7 @@ This is probably the worst option possible, but the one most teams will fall int
 
 Having multiple, multi-hour "onboarding" calls / screen shares in the first few days ensured the new joiner was exposed to everything they needed... but did they absorb any of it? Whilst this is undoubtedly better than having no onboarding at all, it has a few risks.
 
-I found new joiners totally understood everything whilst in the calls, but didn't really retain much of it. A good example of this is technical onboarding: whilst having 1hr of general project architecture followed by 1hr of looking into the actual code is efficient, it's overwhelming. The key points at the start will be totally lost by the end, regardless of how many notes the new joiners is making.
+I found new joiners totally understood everything whilst in the calls, but didn't really retain much of it. A good example of this is technical onboarding: whilst having 1hr of general project architecture followed by 1hr of looking into the actual code is efficient, it's overwhelming. The key points at the start will be totally lost by the end, regardless of how many notes the new joiner is making.
 
 It's also very hard for the new starter to refer back to missed bits and pieces later, besides asking someone to repeat themselves. This is a lot of wasted time and effort on both sides. Finally, new joiners are often focusing quite a bit on making sure their new employer / colleagues like them, so are socialising as much as learning. Not ideal!
 
@@ -50,7 +50,7 @@ Okay, so I know what didn't work. What should my approach have?
 
 ## Day by day
 
-The onboarding should be guided, with a clear set of goals and information for each of the first few days.
+The onboarding should be guided, with a clear set of goals and information for each of the first few days. The engineering manager should always be available to answer any questions and schedule any [121 sessions](#onboarding-sessions), but won't be needed every hour of every day. 
 
 Information like team members, office information, company systems are split into a day-by-day basis, and this is the main source for this information. As such, these pages are useful to (and maintained by) all existing employees too!
 
@@ -66,7 +66,7 @@ The first day isn't at all technical, it's all about the product itself and the 
 
 Whilst this may seem like almost nothing on a first day, that's by design! If the new joiner has capacity they can dive deeper into areas they want to get ahead on, or even just socialise more. There's a million new things to learn, there's no need to front-load all the information.
 
-The introductory sessions should be organised by the hiring manager (who should be doing mini-checkins throughout), and will be covered in [product](#product) and [design](#design). For asynchronous information, here's the documentation included in Day 1:
+The introductory sessions should be organised by the hiring manager (who should be doing mini-checkins throughout), and will be covered in [product](#product-session) and [design](#design-session). For asynchronous information, here's the documentation included in Day 1:
 
 #### Team
 
@@ -97,7 +97,7 @@ The new starter probably won't need these systems initially, but they should kno
 
 #### Communication channels
 
-Finally, they also need to know the formal and informal discussions areas. Teams often have a subteam channel, a speciality channel, a formal discussion channel, a casual discussion channel, and many, many more. New starters will often need 100+ channels, so a brief description & categorisation of these will help the newcomer know what can be safely muted!
+Finally, they also need to know the formal and informal discussion areas. Teams often have a subteam channel, a speciality channel, a formal discussion channel, a casual discussion channel, and many, many more. New starters will often need 100+ channels, so a brief description & categorisation of these will help the newcomer know what can be safely muted!
 
 [![](/assets/images/2023/onboarding-slack-thumbnail.png)](/assets/images/2023/onboarding-slack.png)
 
@@ -179,11 +179,11 @@ Of course, this approach isn't perfect. No approach is! However, it seems a bit 
 
 It's crucial to factor in non-team onboarding throughout this process. If your company already has a structured onboarding for the first few days, it may not be worth starting your onboarding until a few days later. Contrastingly, if there is no wider onboarding (for payroll, customer support, everything else) you may need more than 3 days.
 
-Whilst I've extolled the virtues of giving the new starter flexibility in when they learn new information, I think ideally the onboarding process would be slightly more structured. It's often a challenge to fit the [onboarding sessions](#onboarding-sessions) around busy calendars, and it's important the new starter doesn't feel like they are a burden.
+Whilst I've extolled the virtues of giving the new starter flexibility in when they learn new information, I think ideally the onboarding process would be slightly more structured. It's often a challenge to fit the [onboarding sessions](#onboarding-sessions) around busy calendars, and it's important the new starter doesn't feel like they are a burden to existing employees.
 
 ## Conclusion
 
-Overall, I'm really happy with the day-by-day approach, and the flexibility it gives both the onboarder and the onboardee. It's definitely a tricky balance providing too much vs not enough information, and it needs adjusting to the specific company, team, and even individual joining. 
+Overall, I'm really happy with the day-by-day approach, and the flexibility it gives both the onboarder and the onboardee. However, itt's definitely a tricky balance providing too much vs not enough information, and it needs personalising to the specific company, team, and even individual joining. 
 
 For example, I personally massively prefer reading information and being able to refer back to it, to the extent that things told to me in meetings are essentially forgotten unless I make notes! As such, this approach would suit me perfectly, as I could easily "read ahead" of the next day, remind myself who key individuals are, etc. However, for someone who prefers more conversations and discussions, it might be helpful to be "walked through" some of the information on a call. Catering the onboarding to the individual is a good way to ensure it all actually sinks in. 
 

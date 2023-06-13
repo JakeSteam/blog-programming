@@ -8,11 +8,11 @@ tags:
     - Android
 ---
 
-8=9 years later, it's time for a sequel to a project I worked on obsessively, which taught me all the basics of Android development and publishing! Pixel Blacksmith's sequel has finally started development, here's all the info on the game, and some explanation for why it's happening now.
+8-9 years later, it's time for a sequel to a project I worked on obsessively, which taught me all the basics of Android development and publishing! Pixel Blacksmith's sequel has finally started development, here's all the info on the game, and some explanation for why it's happening now.
 
-I first got into Android development close to a decade ago, and learned entirely through building my game Pixel Blacksmith in my spare time. Having a project like that *really* helped provide the motivation & direction for learning, and the fact that it became surprisingly successful (and profitable!) undoubtedly helped my career.
+I first got into Android development close to a decade ago, and learned entirely through building my game [Pixel Blacksmith](https://play.google.com/store/apps/details?id=uk.co.jakelee.blacksmith) in my spare time. Having a project like that *really* helped provide the motivation & direction for learning, and the fact that it became surprisingly successful (and profitable!) undoubtedly helped my career.
 
-So, since I'm moving back into Android development (from management) in July, what better time to relearn Android with a sequel?
+So, since I'm moving back into Android development (from management) in July, what better time to relearn modern Android than with a sequel?
 
 ## Game overview
 
@@ -30,7 +30,11 @@ The easiest way to think of the game's structure is with an overview of all the 
 
 [![](/assets/images/2023/pb2-paths-thumbnail.png)](/assets/images/2023/pb2-paths.png)
 
-The first "layer" will be a fully contained game, all about fixing a machine. Whilst I haven't ironed out the details yet, this will likely be done by solving a multi-level collection of different puzzle types. For example, maybe a few "tap numbers in ascending order", "predict the coin toss 3x in a row", or countless others.
+Each layer will be a different genre of game, and almost unrecognisable from the layer before. For example one may be solving basic puzzles, one might be strategy, one might be an RPG, etc. I'm tackling the easiest one first...
+
+### Layer 1: Machine
+
+The first horizontal "layer" will be a fully contained game, all about fixing a machine. Whilst I haven't ironed out the details yet, this will likely be done by solving a multi-level collection of different puzzle types. For example, maybe a few "tap numbers in ascending order", "predict the coin toss 3x in a row", or countless others.
 
 As this is the first playthrough, these puzzles will all have to be solved manually. This might take a while, especially if there are more difficult ones mixed in (e.g. "win a game of solitaire"). So where's the complexity?
 
@@ -38,7 +42,7 @@ As this is the first playthrough, these puzzles will all have to be solved manua
 
 Once every puzzle on every part of the machine has been completed, the machine is fixed! However, this is only the "manual" path, the simplest but also most tap-intensive. 
 
-As can be seen in the diagram above, there are likely to be 5 paths that control how a layer can be completed. Unlocking new paths will likely be done via completing feats (e.g. "Manually complete Machine in under 10 mins"). In-game, this will be explained as passing on the machine (/ shop / town etc) to your sibling / descendant / another family!
+As can be seen in the diagram above, there are likely to be 5 paths that control how a layer can be completed. Unlocking new paths will likely be done via completing feats whilst replaying layers (e.g. "Manually complete Machine in under 10 mins"). In-game, this will be explained as passing on the machine (/ shop / town etc) to your sibling / descendant / another family!
 
 These paths will relate to each other constantly, and you'll end up needing to master all of them to progress. Using Machine as an example, here's the possible completion paths (note that they are very unbalanced currently!):
 
@@ -86,7 +90,7 @@ I've been trying to get into writing fiction, since I've always found it so much
 
 ## Technology
 
-So, what technology is Purple Blacksmith going to use? Well, basically just a list of what Google currently recommended!
+So, what technology is Purple Blacksmith going to use? Well, basically just a list of what Google currently recommends!
 
 * Language: Kotlin
 * Architecture: Modules, MVVM
@@ -131,3 +135,7 @@ Anyone who has worked with me before knows I'll have much more in-depth notes th
 [![](/assets/images/2023/pb2-progress2.png)](/assets/images/2023/pb2-progress2.png)
 
 ## Conclusion
+
+So, what's the summary of this long, rambling post? Well, that Purple Blacksmith is a thing, it's very early in development, but it feels really, really good to be passionate about making a game again.
+
+Hopefully more updates soon, thanks for reading!

@@ -2,10 +2,11 @@
 title: "New project: Pixel Blacksmith 2 AKA Purple Blacksmith"
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/pb2-banner.png
 tags:
     - Pixel Blacksmith
     - Android
+    - Project
 ---
 
 8-9 years later, it's time for a sequel to a project I worked on obsessively, which taught me all the basics of Android development and publishing! Pixel Blacksmith's sequel has finally started development, here's all the info on the game, and some explanation for why it's happening now.
@@ -82,7 +83,7 @@ As my new job is at a startup I'll likely be a bit closer to our userbase, and h
 
 ### Money
 
-Realistically, Pixel Blacksmith never made *that* much money. However, it would be nice to have a side income, although it's unlikely to even pay minimum wage for the hours worked!
+Realistically, Pixel Blacksmith never made *that* much money. However, it would be nice to have a side income, although it's unlikely to ever pay close to minimum wage for the hours worked!
 
 ### Writing
 

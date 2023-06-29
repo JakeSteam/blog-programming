@@ -59,6 +59,10 @@ In the following example, certain processes go through a "Change Approval Board"
 
 [![](/assets/images/2023/emoji-humour.png)](/assets/images/2023/emoji-humour.png)
 
+Oh, and of course reactions are also great for recognising text-based comedy!
+
+[![](/assets/images/2023/emoji-tweet.png)](https://twitter.com/CheeseCakePCK/status/1673687737243664386?t=kUl6fmtC_82k6aV6oeamHw&s=09)
+
 ### Passively shape culture
 
 If your team has appealing emojis, they will be used. 

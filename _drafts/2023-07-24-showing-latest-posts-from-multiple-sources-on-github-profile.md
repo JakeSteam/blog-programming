@@ -2,12 +2,13 @@
 title: Showing your latest posts (from multiple sources) on your GitHub profile
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/profile-header.png
 tags:
-    - GitHub
+    - GitHub Actions
+    - Automation
 ---
 
-[GitHub profile READMEs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) are a relatively new addition, letting devs add a little description of themselves, and even display dynamic content like latest blog posts or current Spotify track. Whilst [I've had a basic README](https://github.com/JakeSteam) for over a year, I recently added a combined list of recent articles from all my sites using a GitHub Action.
+[GitHub profile READMEs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) are a relatively new addition (2020), letting devs add a little description of themselves, and even display dynamic content like latest blog posts or current Spotify track. Whilst [I've had a basic README](https://github.com/JakeSteam) for over a year, I recently added a combined list of recent articles from all my sites using a GitHub Action.
 
 Whilst there are quite a few GitHub Actions available to display an RSS feed, most of them don't support multiple sources. I found a few ways to solve the problem by writing my own RSS poller and parsing the data myself, but I wanted something much easier! 
 
@@ -35,10 +36,15 @@ Next, inside your profile repository, add a new file at `.github/workflows/blog-
 
 [![](/assets/images/2023/profile-newfile.png)](/assets/images/2023/profile-newfile.png)
 
+Finally, you'll also need to [give the GitHub action the ability to commit code](https://stackoverflow.com/a/75308228), so that it can actually update! This is done in the repository's settings, under `Actions`, `General`, `Workflow permissions`:
+
+[![](/assets/images/2023/profile-permissions.png)](/assets/images/2023/profile-permissions.png)
+
 ## Adding automation
 
 Now the actual GitHub Action that lives in `blog-post-workflow.yml` needs to be written! The [action's repository](https://github.com/sarisia/actions-readme-feed) has detailed instructions, here's my config:
 
+{% raw %}
 ```yml
 name: All recent posts
 on:
@@ -64,6 +70,7 @@ jobs:
       - if: ${{ steps.feed.outputs.changed == true }}
         uses: sarisia/actions-commit@master
 ```
+{% endraw %}
 
 And the output:
 
@@ -79,7 +86,7 @@ However, you'll undoubtedly want to make some changes, so here are the parts to 
 * **`format`**: Defines a slightly different format for each post, [as per docs](https://github.com/sarisia/actions-readme-feed#formatting).
 * **`url`**: Defines a list of RSS URLs to pull from, in this case all my sites.
 
-## Final notes
+## Notes
 
 ### Performance
 
@@ -97,3 +104,13 @@ The [`actions-readme-feed` action](https://github.com/sarisia/actions-readme-fee
 * An option to only show the first X characters / words of a post.
 * The ability to pull a thumbnail for each post.
 * The ability to "prettify" dates, e.g. "24th June" instead of "24 June".
+* The ability to set the user-agent for the polling, so that it can be distinguished in server logs from other robots (e.g. for whitelisting).
+
+### Conclusion
+
+So, [my profile](https://github.com/JakeSteam) now has recent posts showing, nice! It would probably look a bit nicer if my titles were shorter, but old habits die hard.
+
+I'm still unsure what I actually want my GitHub profile to look like. A short personal description and these recent posts is good enough for now, but one day I'd love to have an actually aesthetic profile. Perhaps a banner with nice typography, along with some very subtle automatic statistics around commits, languages used, activity elsewhere online, etc.
+
+However, it's very easy to take this too far. There is a [showcase site](https://zzetao.github.io/awesome-github-profile/) of GitHub profiles, and some of them... are an absolute mess. Personally, I feel the `README.md` has to be as short as possible, to make the more useful content (recent activity, pinned repos) easier to access. The only exception to this is the intentionally ridiculous ones, like [playable Chess](https://github.com/timburgan) or [playable tic-tac-toe (with no automation!)](https://github.com/kylepls). 
+

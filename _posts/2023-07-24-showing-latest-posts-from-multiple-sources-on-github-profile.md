@@ -12,7 +12,7 @@ tags:
 
 Whilst there are quite a few GitHub Actions available to display an RSS feed, most of them don't support multiple sources. I found a few ways to solve the problem by writing my own RSS poller and parsing the data myself, but I wanted something much easier! 
 
-Luckily, I found [Sarisia's `actions-readme-feed`](https://github.com/sarisia/actions-readme-feed), here's how to use it:
+Luckily, I found [Sarisia's `actions-readme-feed`](https://github.com/sarisia/actions-readme-feed), and used it to [create my profile](https://github.com/JakeSteam/JakeSteam). Here's how to use it:
 
 ## Creating a profile repository
 

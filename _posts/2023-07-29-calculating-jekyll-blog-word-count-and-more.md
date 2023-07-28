@@ -1,14 +1,14 @@
 ---
-title: How to discover your Jekyll site's total word count, longest / shortest post, and more
+title: How to discover your Jekyll site's total word count, longest / shortest post, and more 🔡
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/wordcount-banner.png
 tags:
     - Ruby
     - Jekyll
 ---
 
-I've been writing blog posts for quite a few years, and when a single post can easily be thousands of words... my total word count must be in the hundreds of thousands! To find out, I expanded an existing Jekyll plugin's functionality, here's how to use it 📊
+I've been writing blog posts for quite a few years, and when a single post can easily be thousands of words... my total word count must be in the hundreds of thousands! To find out, I expanded an existing Jekyll plugin's functionality, here's how to use it.
 
 ## The plugin
 
@@ -80,7 +80,7 @@ This will (when deployed locally) show something like:
 * Longest post: [Asynchronous Map Generator for Android](https://blog.jakelee.co.uk/android-asynchronous-map-generator/) (3661 words)
 * Shortest post: [2020’s essential Android development techniques](https://blog.jakelee.co.uk/2020s-essential-android-development-techniques/) (62 words)
 
-3.6k words in a single post!? The map generator writeup was my very first post on the site way back in 2017, so I understandably spend quite a lot of time going into... perhaps too much detail. The shortest post is essentially just an advert for an article I wrote for my employer, hence the impressively low 62 words.
+3.6k words in a single post!? The map generator writeup was my very first post on the site way back in 2017, so I understandably spend quite a lot of time going into... perhaps too much detail. However, I wonder if code is somehow included, since the post doesn't seem *that* long. The shortest post is essentially just an advert for an article I wrote for my employer, hence the impressively low 62 words.
 
 Overall I'm pretty happy with an average of ~1k words per post. I've always intended to write detailed, unique articles, and this shows they're usually "meaty" enough to justify publication. Nice! 150k words over 5.5 years is also not too bad, eventually I'd love to do an analysis over time.
 
@@ -111,3 +111,11 @@ I probably could have worked this out manually, there's only 3 posts! They're no
 Adding up word counts across the 3 sites, we end with **230,126** (152243+72107+5776). 230k words feels like quite a lot, especially as 2 of the sites are under 18 months old, with likely around 90-100k words written in that time period. [Apparently](https://prowritingaid.com/average-book-length#:~:text=What%20Is%20the%20Average%20Novel,shorter%20than%20novels%20for%20adults.) 90k words is typical for a novel, so I hope you've all enjoyed reading the rather chaotic and varied story over that time period!
 
 ## Conclusion
+
+Before any calculations, I predicted "my total word count must be in the hundreds of thousands"... and 230k fits within that very broad range. Whilst the totals themselves are relatively impressive, in the future I might improve the plugin to add a breakdown by year, since I strongly suspect mine will ramp up drastically. 
+
+Speaking of the plugin, it's entirely possible better ones exist. However, a search for "jekyll count words" (and a lot of similar terms) generally showed either the word count in a post (which is included already...), or random chaotic scripts. [Matt's script](https://github.com/mattgemmell/Jekyll-Posts-Word-Count/blob/master/posts-word-count.rb), whilst simple, was a very understandable "loop through posts, build up stats" style plugin, more of a script than a fully fledged plugin.
+
+This simplicity meant I could technically write my first ever Ruby code, since his framework could easily have new keywords, logic, or even entire tags added to it. I'm very grateful to his great start, and very impressed that it's almost all 9 years old with only 1-2 merged PRs since then! Hopefully he'll agree with my changes to the project, but if not this article should serve as a useful enough guide for others.
+
+Benefiting from then contributing to an open source library is always a good feeling!

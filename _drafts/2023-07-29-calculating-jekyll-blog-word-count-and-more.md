@@ -77,12 +77,37 @@ This will (when deployed locally) show something like:
 
 * Total site words: 152243 (average 945 per post)
 * Total site characters: 1767231 (average 10976 per post)
-* Longest post: [Asynchronous Map Generator for Android](/android-asynchronous-map-generator/) (3661 words)
-* Shortest post: [2020’s essential Android development techniques](/2020s-essential-android-development-techniques/) (62 words)
+* Longest post: [Asynchronous Map Generator for Android](https://blog.jakelee.co.uk/android-asynchronous-map-generator/) (3661 words)
+* Shortest post: [2020’s essential Android development techniques](https://blog.jakelee.co.uk/2020s-essential-android-development-techniques/) (62 words)
+
+3.6k words in a single post!? The map generator writeup was my very first post on the site way back in 2017, so I understandably spend quite a lot of time going into... perhaps too much detail. The shortest post is essentially just an advert for an article I wrote for my employer, hence the impressively low 62 words.
+
+Overall I'm pretty happy with an average of ~1k words per post. I've always intended to write detailed, unique articles, and this shows they're usually "meaty" enough to justify publication. Nice! 150k words over 5.5 years is also not too bad, eventually I'd love to do an analysis over time.
+
+Oh, and these stats exclude... most of this post, as they were calculated during the writing process!
 
 ### Personal site
 
+* Total site words: 72107 (average 1716 per post)
+* Total site characters: 613702 (average 14611 per post)
+* Longest post: [Reviewing ALL 83 Steam games from the Yogscast’s Jingle Jam charity bundle (part 1 of 3)](https://jakelee.co.uk/reviewing-every-jingle-jam-steam-game/) (6700 words)
+* Shortest post: [How to replace a faulty Flexispot standing desk leg motor](https://jakelee.co.uk/replacing-flexispot-e7-leg-motor/) (348 words)
+
+Okay, 6.7k words on a single post is clearly too many, *especially* as it is just 1 of 3 parts! The Jingle Jam write-up was an incredibly time-consuming project, but I didn't realise quite how detailed my reviews were until now. Terrifying.
+
+The short Flexispot article is primarily photos with descriptive text, so no concerns over post quality from me. I'm pretty happy with 72k total words, considering I only started my personal site in February 2022. The average length being significantly longer than my programming site is interesting, I suspect this is due to lots of very long game review / spreadsheet explanation posts, whereas my programming blog has quite a few text-light but code-heavy articles.
+
 ### Internet history site
 
+* Total site words: 5776 (average 1444 per post)
+* Total site characters: 49704 (average 12426 per post)
+* Longest post: [17 years ago today, the Million Dollar Homepage was completed, making a student $1m in 5 months](https://history.jakelee.co.uk/million-dollar-homepage/) (2373 words)
+* Shortest post: [20 years ago today, the ‘Most Annoying Webpage’ was launched, trapping victims in popups for a few minutes](https://history.jakelee.co.uk/most-annoying-webpage/) (1392 words)
+
+I probably could have worked this out manually, there's only 3 posts! They're not as long as I was expecting, especially since these posts usually take multiple days to research. I guess their research per paragraph ratio is far higher, but this isn't reflected in a simple word count! Similarly, the tens of references in each post aren't included in the word count.
+
+### Totals
+
+Adding up word counts across the 3 sites, we end with **230,126** (152243+72107+5776). 230k words feels like quite a lot, especially as 2 of the sites are under 18 months old, with likely around 90-100k words written in that time period. [Apparently](https://prowritingaid.com/average-book-length#:~:text=What%20Is%20the%20Average%20Novel,shorter%20than%20novels%20for%20adults.) 90k words is typical for a novel, so I hope you've all enjoyed reading the rather chaotic and varied story over that time period!
 
 ## Conclusion

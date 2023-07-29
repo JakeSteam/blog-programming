@@ -55,3 +55,9 @@ Both syntaxes render identically, however the second "will gradually replace the
 Whilst I do have my issues with the blockquote hijacking syntax, it does have the advantage of having a well defined set of rules to follow. For example, adding spaces after the `[!NOTE]` does nothing, whilst spaces before also does nothing... until there are enough to trigger a code block.
 
 ## Conclusion
+
+Writing this post was tricky, since I had to write it directly on GitHub! Additionally, the alerts only appeared to preview correctly when *creating* a new file, and not when editing an existing one. This is perhaps to be expected for a beta feature, but still made it all feel a bit hacky.
+
+Despite my complaints, I do like the feature. I like that GitHub is trying to add new bits and pieces to Markdown (such as [Mermaid last year](/using-mermaid-for-diagrams-on-github/)), they are in the unique position to make a syntax standard by just implementing it. I also like the openness with the community, and seemingly exchanging views with both supporters and those with... surprisingly strong negative opinions. The development seems a little unusual, with silence since May 2022, then 3 updates at the end of July 2023! However, I hope there's more bits and pieces to come.
+
+If you'd like to contribute your opinions on GitHub's alert feature, [the original discussion](https://github.com/orgs/community/discussions/16925) is the best place.

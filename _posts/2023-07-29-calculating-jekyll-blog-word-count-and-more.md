@@ -12,7 +12,7 @@ I've been writing blog posts for quite a few years, and when a single post can e
 
 ## The plugin
 
-The base of this post's work is (author!) [Matt Gemmell](https://mattgemmell.com/)'s [`Jekyll-Posts-Word-Count` plugin](https://github.com/mattgemmell/Jekyll-Posts-Word-Count), *however* we'll be [using my fork](https://github.com/JakeSteam/Jekyll-Posts-Word-Count) since it adds a ton of functionality.
+The base of this post's work is (author!) [Matt Gemmell](https://mattgemmell.com/)'s [`Jekyll-Posts-Word-Count` plugin](https://github.com/mattgemmell/Jekyll-Posts-Word-Count), who kindly merged in [my many changes](https://github.com/mattgemmell/Jekyll-Posts-Word-Count/pull/4) shortly after I raised them 🎉
 
 The original plugin hasn't had more than minor updates in 9 years(!), yet it still works perfectly. The beauty of simple, functional code, huh? 
 
@@ -119,3 +119,5 @@ Speaking of the plugin, it's entirely possible better ones exist. However, a sea
 This simplicity meant I could technically write my first ever Ruby code, since his framework could easily have new keywords, logic, or even entire tags added to it. I'm very grateful to his great start, and very impressed that it's almost all 9 years old with only 1-2 merged PRs since then! Hopefully he'll agree with my changes to the project, but if not this article should serve as a useful enough guide for others.
 
 Benefiting from then contributing to an open source library is always a good feeling!
+
+*Edit: The original plugin author merged my PR only a few hours later, perfect! Have updated wording within the post.*

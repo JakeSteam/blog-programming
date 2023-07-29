@@ -12,7 +12,7 @@ Back in May 2022, [GitHub announced the ability](https://github.com/orgs/communi
 
 ## Types of alert
 
-First of all, there's 3 categories of alert: Note, Important, and Warning. Each uses a different text, icon, and quote indicator colour, but with the same syntax:
+There are 3 categories of alert (or "[admonition](https://github.com/dipree/github-markdown#admonition-beta)"): Note, Important, and Warning. Each uses a different text, icon, and quote indicator colour, but with the same syntax:
 
 > [!NOTE]
 > This alert uses `[!NOTE]` 
@@ -74,3 +74,5 @@ For example, [eduardogerentklein suggested](https://github.com/orgs/community/di
 Within [the original discussion](https://github.com/orgs/community/discussions/16925), an excellent point is raised about localisation, and how this is currently only useful for English documents. I'm not sure if this can be solved easily, besides splitting out the appearance modifying term and the text displayed. Otherwise, every language's variation will have to be defined as a keyword, and it'll be unmanageable. A syntax like `[!NOTE Nota]` (for Spanish) would let the author customise the appearance.
 
 If you'd like to contribute your opinions on GitHub's alert feature, [the original discussion](https://github.com/orgs/community/discussions/16925) is the best place.
+
+Finally, the product manager for this feature has a [public test repository for it](https://github.com/dipree/markdown-highlight-test), so you can peek there if you want to be *extremely* up-to-date!

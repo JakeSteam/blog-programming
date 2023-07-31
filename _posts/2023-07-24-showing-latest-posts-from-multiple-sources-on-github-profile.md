@@ -56,12 +56,13 @@ jobs:
   readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: sarisia/actions-readme-feed@v1
         id: feed
         with:
           file: 'README.md'
           format: '- ${day} ${monthlong} - [${title}](${url})'
+          timezone: 'Europe/London'
           url: |
             https://jakelee.co.uk/feed.xml
             https://blog.jakelee.co.uk/feed.xml
@@ -84,6 +85,7 @@ However, you'll undoubtedly want to make some changes, so here are the parts to 
 * **`schedule:cron`**: Sets this action to run every 6 hours. I recommend using [a cron helper](https://crontab.guru/) if you want a different time.
 * **`workflow_dispatch`**: Allows this action to be run manually, great for testing.
 * **`format`**: Defines a slightly different format for each post, [as per docs](https://github.com/sarisia/actions-readme-feed#formatting).
+* **`timezone`**: Defines the time zone the dates will be formatted in, [the "TZ identifier" here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 * **`url`**: Defines a list of RSS URLs to pull from, in this case all my sites.
 
 ## Notes
@@ -109,6 +111,8 @@ The [`actions-readme-feed` action](https://github.com/sarisia/actions-readme-fee
 ### Conclusion
 
 So, [my profile](https://github.com/JakeSteam) now has recent posts showing, nice! It would probably look a bit nicer if my titles were shorter, but old habits die hard.
+
+Shortly after *originally* posting this article, I realised all my displayed dates were a day earlier! This was caused by not setting a `timezone` and the default being UTC, gotta love dates and times right? 
 
 I'm still unsure what I actually want my GitHub profile to look like. A short personal description and these recent posts is good enough for now, but one day I'd love to have an actually aesthetic profile. Perhaps a banner with nice typography, along with some very subtle automatic statistics around commits, languages used, activity elsewhere online, etc.
 

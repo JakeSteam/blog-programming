@@ -209,11 +209,3 @@ Finally, here's a slightly longer version of the sample quote (following the ins
 > **Abe**: Yeah, yeah. Do you think that's too cautious?
 >
 > **Aaron**: I don't know. I know there's a lot of stocks out there that do a lot more than double, but this is my first day.
-
-<style>
-    /* To be removed when minimaJake updates */
-    blockquote {
-        text-indent: -35px !important;
-        padding-left: 50px !important;
-    }
-</style>

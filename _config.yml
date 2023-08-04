@@ -1,5 +1,5 @@
 # Basic site setup
-remote_theme: JakeSteam/minimaJake@1.0.6
+remote_theme: JakeSteam/minimaJake@1.0.7
 title: Jake Lee on Software
 description: In-depth ad-free articles about software development, Android, and the internet
 accent_colour: "#2a7ae2"

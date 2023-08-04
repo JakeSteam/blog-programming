@@ -1,13 +1,14 @@
 ---
-title: Different approaches to conversation transcript formatting in Markdown
+title: Different approaches to conversation transcript formatting in Markdown 🗣️✍️
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/conversations-banner.png
 tags:
     - Markdown
+    - CSS
 ---
 
-I'm currently trying to write a bit of fiction, and conversation transcripts are a key part of this. However, there doesn't seem to be any standard way of displaying a conversation transcript in Markdown. Here's a few approaches, and my recommendation.
+I'm currently trying to write some fiction, and conversation transcripts are a key part of this. However, there doesn't seem to be any standard way of displaying a conversation transcript in Markdown, with plain text looking pretty ugly! Here's a few approaches, and my recommendation.
 
 To compare approaches, I'll use a short exchange about stock trading from one of my favourite underrated films of all time: [Primer](https://www.imdb.com/title/tt0390384/). Here's the conversation in plain text, as you can see it doesn't stand out much, and is quite basic:
 
@@ -75,8 +76,9 @@ How about improving on an issue with the basic approach: No way to distinguish c
 
 Using the appropriate tools (blockquote) for the conversation also means any automated tools can understand the messages a chat transcript. For example on this site, a solid indent is placed on the left, and all words are put in italics. These small stylistic additions are included by default, and make it look much more like a quote! 
 
-Additionally, the bold tags mean the names and messages will be displayed differently in most text editors, perhaps making the writing / editing process a little bit easier.
+Additionally, the bold tags mean the names and messages will be displayed differently in most text editors, making the writing / editing process slightly easier.
 
+*Note: The indentation here has been improved by [a later CSS change](#second-line-indenting).*
 > **Aaron**: What do they do?
 >
 > **Abe**: What do you mean?
@@ -145,13 +147,23 @@ Alright, so I've tried a few ways of formatting text using basic Markdown syntax
 
 ### Alternating sides
 
-Whilst looking for a way to make the [list of messages](#list-of-messages) more conversation like, I found [this StackOverflow solution](https://stackoverflow.com/a/39286060/608312). 
+Whilst looking for a way to make the [list of messages](#list-of-messages) more conversation like, I found [this StackOverflow solution](https://stackoverflow.com/a/39286060/608312) that alternates the alignment of messages. 
 
 For short messages this isn't too awful, and ends up looking like a [2-column table](#2-column-table) but with the ability to overlap. However, for longer messages it just becomes a mess.
 
 Whilst this could be improved by improving padding etc, a CSS reliant approach isn't ideal. I actually couldn't immediately get this working within my site's style (hence the image), whereas a Markdown based solution will work far more reliably.
 
 [![](/assets/images/2023/conversations-alternating.png)](/assets/images/2023/conversations-alternating.png)
+
+### Second line indenting
+
+One small change that can make dialogue far more readable whilst not becoming absolutely essential is indenting all lines except the first. [This StackOverflow answer](https://stackoverflow.com/a/2833097/608312) shows how 2 lines of CSS can make a massive difference:
+
+| Before | After |
+| --- | --- |
+| [![](/assets/images/2023/conversations-indent-before.png)](/assets/images/2023/conversations-indent-before.png) | [![](/assets/images/2023/conversations-indent-after.png)](/assets/images/2023/conversations-indent-after.png) |
+
+Even in this example the improvement is immediately obvious, in a conversation with longer messages this would be an eye-saver!
 
 ### General avoidance
 
@@ -163,11 +175,15 @@ As such, I'm not sure any specific CSS should be used for displaying a conversat
 
 I'm not sure any of the approaches I've looked at have been perfect. I love the simplicity of the [basic syntax](#basic-syntax) or [list of messages](#list-of-messages), but the end result just isn't good enough.
 
-Despite the slightly verbose syntax (`>` & `**x**`) of [quote and bold](#quote--bold), the aesthetically pleasing output seems better than any of the custom CSS heavy solutions I came across. Additionally, using HTML elements (`blockquote`) for their intended purposes can only have positive side effects in terms of SEO and accessibility!
+Despite the slightly verbose syntax (`>` & `**x**`) of [quote and bold](#quote--bold), the aesthetically pleasing output seems better than any of the custom CSS heavy solutions I came across. Additionally, using HTML elements (`blockquote`) for their intended purposes can only have positive side effects in terms of SEO and accessibility! Whilst I'll keep an eye out for syntax improvements, I think a blockquote and bold names is good enough. 
 
-Whilst I'll keep an eye out for syntax improvements, I think quoted and bold names is good enough. I'll add the `**bold**` asterisks as I type names, realistically it isn't much more effort. 
+## Recommendation usage 
+
+I'll add the `**bold**` asterisks as I type names, realistically it isn't much more effort. 
 
 For adding the block quote & empty lines it's probably easier to wait until a section is done, and add them all at once, like so:
+
+*Note: Make sure to turn off word wrap (`Opt` / `Alt` + `Z` in VSCode) before bulk editing lines.*
 
 | Step | Instructions | Example |
 | --- | --- | --- |
@@ -193,3 +209,11 @@ Finally, here's a slightly longer version of the sample quote (following the ins
 > **Abe**: Yeah, yeah. Do you think that's too cautious?
 >
 > **Aaron**: I don't know. I know there's a lot of stocks out there that do a lot more than double, but this is my first day.
+
+<style>
+    /* To be removed when minimaJake updates */
+    blockquote {
+        text-indent: -35px !important;
+        padding-left: 50px !important;
+    }
+</style>

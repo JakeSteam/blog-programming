@@ -74,7 +74,7 @@ We can reduce the vertical space between transcript messages by making them each
 
 How about improving on an issue with the basic approach: No way to distinguish character names from the words they've said? Just making the character's names bold should help with this, and putting them inside a block quote makes a bit more sense semantically (since the conversation *is* essentially a quote).
 
-Using the appropriate tools (blockquote) for the conversation also means any automated tools can understand the messages a chat transcript. For example on this site, a solid indent is placed on the left, and all words are put in italics. These small stylistic additions are included by default, and make it look much more like a quote! 
+Using the appropriate tools (blockquote) for the conversation also means any automated tools can understand the messages a chat transcript. For example on this site, a solid indent is placed on the left, and all words are put in italics. These small stylistic additions are included by default in my site's theme, with other platforms having similar included styles, and make it look much more like a quote! 
 
 Additionally, the bold tags mean the names and messages will be displayed differently in most text editors, making the writing / editing process slightly easier.
 
@@ -185,11 +185,11 @@ For adding the block quote & empty lines it's probably easier to wait until a se
 
 *Note: Make sure to turn off word wrap (`Opt` / `Alt` + `Z` in VSCode) before bulk editing lines.*
 
-| Step | Instructions | Example |
-| --- | --- | --- |
-| 1 | Put the cursor at the start of the **first** line | [![](/assets/images/2023/conversations-step1.png)](/assets/images/2023/conversations-step1.png) |
-| 2 | Hold `Alt` + `Shift`, then click the start of the **last** line | [![](/assets/images/2023/conversations-step2.png)](/assets/images/2023/conversations-step2.png) |
-| 3 | Type `>`, press `enter`, type `>`, press `space` | [![](/assets/images/2023/conversations-step3.png)](/assets/images/2023/conversations-step3.png) |
+| Step | Example |
+| --- | --- |
+| Put the cursor at the start of the **first** line | [![](/assets/images/2023/conversations-step1.png)](/assets/images/2023/conversations-step1.png) |
+| Hold `Alt` + `Shift`, then click the start of the **last** line | [![](/assets/images/2023/conversations-step2.png)](/assets/images/2023/conversations-step2.png) |
+| Type `>`, press `enter`, type `>`, press `space` | [![](/assets/images/2023/conversations-step3.png)](/assets/images/2023/conversations-step3.png) |
 
 Finally, here's a slightly longer version of the sample quote (following the instructions above), to check it looks OK in longer conversations:
 

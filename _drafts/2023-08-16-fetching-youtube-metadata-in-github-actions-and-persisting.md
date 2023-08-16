@@ -10,30 +10,282 @@ tags:
     - Bash
 ---
 
-I recently [created a list of Jerma fan channels](), and have now added automatically updating channel statistics! This requires interacting with YouTube's API, parsing JSON, writing Markdown, merging files and more, here's a full guide to building something similar.
+I recently [created a list of Jerma fan channels](https://jerma.jakelee.co.uk), and have now added automatically updating channel statistics! This requires interacting with YouTube's API, parsing JSON, writing Markdown, merging files and more, so here's a full guide to building something similar.
 
 ## Objective
 
-- what it should do
-- links to finished output, example runs, code review stack etc
+So, what am I trying to create? Ultimately, a way to convert a list of YouTube channels into a Markdown file with channel statistics, and I want this list to update both on demand and on a schedule.
 
-## Building
+Before I dive into the technical details, here's all the code in case you want to skip the words:
+
+* [GitHub Actions workflow](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml)
+* [YouTube metadata bash script](https://github.com/JakeSteam/Jerma/blob/main/automation/youtube-update.sh)
+
+And some relevant inputs / outputs:
+
+* [Console log of the script executing](https://github.com/JakeSteam/Jerma/actions/runs/5872232345/job/15923388744)
+* [Example channel list](https://github.com/JakeSteam/Jerma/blob/main/automation/channels.txt)
+* [Example template](https://github.com/JakeSteam/Jerma/blob/main/automation/template.md)
+* [Example output file](https://github.com/JakeSteam/Jerma/blob/main/README.md)
+
+## Prep work
+
+I'm going to use GitHub Actions for my script, and perform this series of steps:
+
+1. Pull down the repo.
+2. Update YouTube channel stats:
+    1. Parse a list of YouTube channel IDs and nicknames.
+    2. Fetch their metadata via [YouTube's Channel API](https://developers.google.com/youtube/v3/docs/channels/list?apix_params=%7B%22part%22%3A%5B%22statistics%2Csnippet%22%5D%2C%22forUsername%22%3A%22GoogleDevelopers%22%7D).
+    3. Build up Markdown tables using this metadata.
+    4. Load a Markdown template, and replace a placeholder with the generated Markdown.
+3. Save these changes.
+
+Before we build our script however, we need to generate an API key, and have the ability to actually run the script on GitHub Actions!
 
 ### Accessing YouTube API
 
-- creating google cloud stuff
-- getting API key
-- limiting api key
-- setting as secret
-https://developers.google.com/maps/api-security-best-practice
+[YouTube's official API guide](https://developers.google.com/youtube/v3/getting-started)[^youtube-api] is a great resource, and I'll just be providing more specific steps here. 
+
+1. Open [Google Developer Console](https://console.developers.google.com/)[^console] and create a new project.
+2. With this project selected, go to Credentials[^credentials] and `Create Credentials` -> `API key`. 
+3. Go to the API Library[^api-library], search `YouTube Data API v3`[^yt-v3], and click `Enable`. 
+3. Once created, click `Edit API key` (on Credentials screen)
+    1. Give it a sensible name.
+    2. Set an API restriction to `YouTube Data API v3`.
+
+    
+[![](/assets/images/2023/actions-api-key-thumbnail.png)](/assets/images/2023/actions-api-key.png)
+
+That's it! You now have an API key that is relatively safe (as it can only be used for YouTube), ready to store securely in GitHub and fetch YouTube data with.
+
+It's worth pointing out that Google recommends[^google-rec] restricting who can use this API key. Unfortunately GitHub Actions uses thousands of (occasionally changing) IP addresses[^github-ip], so whitelisting them all is not viable!
+
+[^console]: <https://console.developers.google.com/>
+[^credentials]: <https://console.developers.google.com/apis/credentials>
+[^library]: <https://console.cloud.google.com/apis/library/browse>
+[^yt-v3]: <https://console.cloud.google.com/apis/library/youtubeanalytics.googleapis.com>
+[^google-rec]: <https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions>
+[^github-ip]: <https://api.github.com/meta>
+[^youtube-api]: <https://developers.google.com/youtube/v3/getting-started>
+[^github-guide]: <https://docs.github.com/en/get-started/quickstart/create-a-repo>
 
 ### Preparing GitHub Action
 
-### JSON parsing
+I won't go through the basics of making a GitHub repo (although GitHub has a guide[^github-guide](https://docs.github.com/en/get-started/quickstart/create-a-repo)), and will assume it already exists.
 
-### Merging template and content
+#### Adding GitHub secret
 
-### Finishing touches
+We're going to add our new API key as a GitHub Action secret, so that the CI can access it without it being in plaintext. Under your repo's `Settings`, navigate to `Security` -> `Secrets and variables` -> `Actions`, then `New repository secret`.
+
+Give your secret a simple name (e.g. `API_KEY`), put the key itself under `Secret`, and add it. 
+
+[![](/assets/images/2023/actions-repo-secret-thumbnail.png)](/assets/images/2023/actions-repo-secret.png)
+
+#### Basic workflow setup
+
+Next, we need to make a workflow[^workflow] to actually trigger our upcoming code. 
+
+To do this, create a YAML config file inside `.github/workflows/` called something intuitive like `metadata-update.yml`. [Here is mine](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml).
+
+Before adding any steps, we need some basic framework to be able to run the workflow manually (`workflow_dispatch`), schedule it (`schedule: cron`), and have the ability to edit our own code (`permissions`):
+
+```
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  metadata-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+```
+
+It won't actually do anything yet, but it is now technically a functional job called `metadata-update`.
+[^workflow]: <https://docs.github.com/en/actions/using-workflows>
+
+#### Further workflow setup
+
+Now time to add some actually useful steps! Just underneath the code added in the previous section, we need to add 3 steps:
+
+1. **Checkout a few files we need** with GitHub's `actions/checkout`[^checkout]. For this repo `sparse-checkout`[^sparse-checkout] doesn't save much time, but on a large repo it would help massively.
+
+```
+    - name: Checkout channel config file
+      uses: actions/checkout@v3.5.3
+      with: 
+        sparse-checkout: |
+          automation/*
+          README.md
+        sparse-checkout-cone-mode: false
+```
+
+[^checkout]: <https://github.com/actions/checkout>
+[^sparse-checkout]: <https://git-scm.com/docs/git-sparse-checkout>
+
+2. **Run our script** (`./automation/youtube.sh`) to perform all our tasks. We do `chmod +x` beforehand so we can execute the script, and configure both the `API_KEY` and `WORKSPACE` so our script has access to them.
+
+```
+    - name: Update YouTube data
+      run: |
+        chmod +x ./automation/youtube-update.sh
+        ./automation/youtube-update.sh
+      env:
+          API_KEY: ${{ secrets.API_KEY }}
+          WORKSPACE: ${{ github.workspace }}
+```
+
+3. **Save our changes** to our statistics (stored in `README.md`) using `git-auto-commit-action`[^autocommit]. Note that I have intentionally configured the `commit_author` to *not* be me, by default it will use whoever triggered the workflow.
+```
+    - name: Save changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Updated YouTube statistics
+        commit_author: GitHub Actions <actions@github.com>
+        file_pattern: 'README.md'
+```
+
+Once we put all those parts together, we end up with a functional [`metadata-upate.yml`](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml) file. 
+
+[^autocommit]: <https://github.com/stefanzweifel/git-auto-commit-action>
+
+## Bash script
+
+As a reminder, our script will convert a list of channels into a table of channels with metadata. It will also allow displaying an arbitrary emoji (e.g. for "best" channels).
+
+For example, our input of:
+
+```
+#### Stream Archives
+UC2oWuUSd3t3t5O3Vxp4lgAA;2018-streams;🐶
+UC4ik7iSQI1DZVqL18t-Tffw;2016-2018streams
+UCjyrSUk-1AGjALTcWneRaeA;2016-2017streams
+```
+
+should result in an output of:
+
+```
+#### Stream Archives
+
+| Channel | # Videos | Subscribers | Views |
+| --- | --- | --- | --- |
+| 🐶[Jerma Stream Archive](https://youtube.com/@jermastreamarchive) | 770 | 274K | 88M |
+| [Ster/Jerma Stream Archive](https://youtube.com/@sterjermastreamarchive) | 972 | 47K | 20M |
+| [starkiller201096x](https://youtube.com/@starkiller201096x) | 79 | 2.9K | 1.5M |
+```
+
+### Creating script file
+
+First, we need to make a bash file to actually run! Create your `.sh` file wherever you defined in step 2 above, I chose [`/automation/youtube-update.sh`](https://github.com/JakeSteam/Jerma/blob/main/automation/youtube-update.sh).
+
+### Parsing channel list
+
+We have a plain text list of channels ([`channels.txt`](https://github.com/JakeSteam/Jerma/blob/main/automation/channels.txt)), with 2 types of data:
+1. Headers, in plain Markdown format (e.g. `### Title`).
+2. Channels, in the format `channel ID;nickname;emoji`, where emoji is optional.
+
+Reading the file is basically just "while there are lines left, parse them":
+
+```
+HEADER_PREFIX="#### "
+OUTPUT=""
+while read -r LINE; do
+    if [[ ${LINE} == ${HEADER_PREFIX}* ]]; then
+        echo "Adding header ${LINE}"
+        OUTPUT="${OUTPUT}\n${LINE}\n\n"
+        OUTPUT="${OUTPUT}| Channel | # Videos | Subscribers | Views |\n| --- | --- | --- | --- |\n"
+    else
+        # Skipped for now
+    fi
+done < "${WORKSPACE}/automation/channels.txt"
+```
+
+We're finding header lines by just looking if they start with our `HEADER_PREFIX` string. If they are, we create a Markdown table header, ready to populate with rows (1 per channel).
+
+Note that `OUTPUT` is a constantly added to variable used to store the full Markdown data.
+
+### Calling YouTube API
+
+Inside the `else` branch above, we first need to split our semicolon separated `LINE` into an `ARRAY_LINE` array of 2-3 items (due to optional emoji):
+
+```
+        IFS=';' read -r -a ARRAY_LINE <<< "${LINE}"
+```
+
+Next, we output the channel ID (`[0]`) and nickname (`[1]`) to our logs, and use the ID (along with our API key from earlier) to call YouTube's channel API and save the results to `output.json`:
+
+```
+        echo "Adding channel ${ARRAY_LINE[1]} (${ARRAY_LINE[0]})"
+        curl "https://youtube.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=${ARRAY_LINE[0]}&key=${API_KEY}" \
+            --header 'Accept: application/json' \
+            -fsSL -o output.json
+```
+
+Luckily YouTube's `channels` API[^apidocs] are very well documented and easy to use, and `-fsSL` is just [helpful curl flags](https://explainshell.com/explain?cmd=curl+-fsSL+example.org). We're going to be fetching the `statistics` and `snippet` parts of the API, which will return JSON containing these key fields (irrelevant ones omitted): 
+
+```
+{
+  "pageInfo": {
+    "totalResults": 1
+  },
+  "items": [
+    {
+      "snippet": {
+        "title": "Google for Developers",
+        "customUrl": "@googledevelopers"
+      },
+      "statistics": {
+        "viewCount": "234466180",
+        "subscriberCount": "2300000",
+        "videoCount": "5807"
+      }
+    }
+  ]
+}
+```
+
+[^apidocs]: <https://developers.google.com/youtube/v3/docs/channels/list>
+
+### Parsing JSON
+
+Now that our useful data has been saved to `output.json`, we need to make it useful and parse it!
+
+First, I make sure we have exactly 1 response by looking for the `totalResults`. If any error or unexpected behaviour is encountered, this is where it will be caught:
+
+```
+        if [[ $(jq -r '.pageInfo.totalResults' output.json) == 1 ]]; then
+            # Skipped for now
+        else
+            echo "Failed! Bad response received: $(<output.json)"
+            exit 1
+        fi
+```
+
+If a single channel is returned, then we can pull out the useful data from `output.json` using `jq`[^jq] and prepare our Markdown table row:
+
+```
+            TITLE=$(jq -r '.items[0].snippet.title' output.json)
+            URL=$(jq -r '.items[0].snippet.customUrl' output.json)
+            VIDEO_COUNT=$(jq -r '.items[0].statistics.videoCount' output.json | numfmt --to=si)
+            SUBSCRIBER_COUNT=$(jq -r '.items[0].statistics.subscriberCount' output.json | numfmt --to=si)
+            VIEW_COUNT=$(jq -r '.items[0].statistics.viewCount' output.json | numfmt --to=si)
+            echo "Added ${TITLE}: ${VIDEO_COUNT} videos (${VIEW_COUNT} views)"
+            OUTPUT="${OUTPUT}| ${ARRAY_LINE[2]}[${TITLE}](https://youtube.com/${URL}) | ${VIDEO_COUNT} | ${SUBSCRIBER_COUNT} | ${VIEW_COUNT} |\n"
+
+```
+
+Some of these outputs (e.g. `VIEW_COUNT`) are then passed to `numfmt`[^numfmt] to make them "pretty" (e.g. `2400` -> `2.4K`). All of the values are then used to build a self-explanatory row of data in Markdown format.
+
+Note that currently the script inefficiently parses the JSON 5x. I intend to improve this, but as it is a small file it is not urgent.
+
+[^jq]: <https://jqlang.github.io/jq/manual/>
+[^numfmt]: <https://www.gnu.org/software/coreutils/manual/html_node/numfmt-invocation.html>
+
+### Saving data
+
+
 
 ## Lessons learned
 
@@ -45,3 +297,5 @@ https://developers.google.com/maps/api-security-best-practice
 ## Conclusion
 
 ## References
+
+* YouTube's Channel API: <https://developers.google.com/youtube/v3/docs/channels/list?apix_params=%7B%22part%22%3A%5B%22statistics%2Csnippet%22%5D%2C%22forUsername%22%3A%22GoogleDevelopers%22%7D>

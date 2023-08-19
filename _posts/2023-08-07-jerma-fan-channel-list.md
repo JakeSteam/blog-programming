@@ -16,4 +16,6 @@ Since it's just a simple GitHub pages site & open-source ([repo](https://github.
 
 There's also links to 4 Jerma games, and all kinds of bizarre soundboards / tools / utilities. Eventually I might hook it up to a GitHub Action using YouTube's API to update the video & subscriber counts, but that's only worth the time investment if it becomes a useful resource.
 
+*Edit: I **did** hook this up to a GitHub Action! A full write-up [has now been published](/fetching-youtube-metadata-in-github-actions-and-persisting/).*
+
 Anyway, enjoy!

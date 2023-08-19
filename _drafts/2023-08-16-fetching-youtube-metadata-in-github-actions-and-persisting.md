@@ -2,7 +2,7 @@
 title: Building a GitHub Actions script to fetch metadata from multiple YouTube channels, and save it into a Markdown file
 author: Jake Lee
 layout: post
-image: /assets/images/2023/jerma-automation.png
+image: /assets/images/2023/actions-banner.png
 tags:
     - YouTube
     - GitHub Actions
@@ -64,7 +64,7 @@ It's worth pointing out that Google recommends[^google-rec] restricting who can 
 
 [^console]: <https://console.developers.google.com/>
 [^credentials]: <https://console.developers.google.com/apis/credentials>
-[^library]: <https://console.cloud.google.com/apis/library/browse>
+[^api-library]: <https://console.cloud.google.com/apis/library/browse>
 [^yt-v3]: <https://console.cloud.google.com/apis/library/youtubeanalytics.googleapis.com>
 [^google-rec]: <https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions>
 [^github-ip]: <https://api.github.com/meta>
@@ -73,7 +73,7 @@ It's worth pointing out that Google recommends[^google-rec] restricting who can 
 
 ### Preparing GitHub Action
 
-I won't go through the basics of making a GitHub repo (although GitHub has a guide[^github-guide](https://docs.github.com/en/get-started/quickstart/create-a-repo)), and will assume it already exists.
+I won't go through the basics of making a GitHub repo (although GitHub has a guide[^github-guide]), and will assume it already exists.
 
 #### Adding GitHub secret
 
@@ -127,6 +127,7 @@ Now time to add some actually useful steps! Just underneath the code added in th
 
 **2: Run our script** (`./automation/youtube.sh`) to perform all our tasks. We do `chmod +x` beforehand so we can execute the script, and configure both the `API_KEY` and `WORKSPACE` so our script has access to them.
 
+{% raw %}
 ```yml
     - name: Update YouTube data
       run: |
@@ -136,6 +137,7 @@ Now time to add some actually useful steps! Just underneath the code added in th
           API_KEY: ${{ secrets.API_KEY }}
           WORKSPACE: ${{ github.workspace }}
 ```
+{% endraw %}
 
 **3: Save the changes** to the fetched metadata (stored in `README.md`) using `git-auto-commit-action`[^autocommit]. Note that I have intentionally configured the `commit_author` to *not* be me, by default it will use whoever triggered the workflow.
 
@@ -148,7 +150,7 @@ Now time to add some actually useful steps! Just underneath the code added in th
         file_pattern: 'README.md'
 ```
 
-Once we put all those parts together, we end up with a functional [`metadata-upate.yml`](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml) file. 
+Once we put all those parts together, we end up with a functional [`metadata-update.yml`](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml) file. 
 
 [^autocommit]: <https://github.com/stefanzweifel/git-auto-commit-action>
 [^checkout]: <https://github.com/actions/checkout>
@@ -205,7 +207,7 @@ while read -r LINE; do
 done < "${WORKSPACE}/automation/channels.txt"
 ```
 
-We're finding header lines by just looking if they start with our `HEADER_PREFIX` string. If they are, we create a Markdown table header, ready to populate with rows (1 per channel).
+We're finding header lines by just looking if they start with our `HEADER_PREFIX` string. If they are, we output the header, then create a Markdown table header, ready to populate with rows (1 per channel).
 
 Note that `OUTPUT` is a constantly added to variable used to store the full Markdown data.
 
@@ -226,7 +228,7 @@ Next, we output the channel ID (`[0]`) and nickname (`[1]`) to our logs, and use
             -fsSL -o output.json
 ```
 
-Luckily YouTube's `channels` API[^apidocs] are very well documented and easy to use, and `-fsSL` is just [helpful curl flags](https://explainshell.com/explain?cmd=curl+-fsSL+example.org). We're going to be fetching the `statistics` and `snippet` parts of the API, which will return JSON containing these key fields (irrelevant ones omitted): 
+Luckily YouTube's `channels` API[^apidocs] is very well documented and easy to use, and `-fsSL` is just [a helpful curl config](https://explainshell.com/explain?cmd=curl+-fsSL+example.org). We're going to be fetching the `statistics` and `snippet` parts of the API, which will return JSON containing these key fields (irrelevant ones omitted): 
 
 ```json
 {
@@ -280,7 +282,7 @@ If a single channel is returned, then we can pull out the useful data from `outp
 
 Some of these outputs (e.g. `VIEW_COUNT`) are then passed to `numfmt`[^numfmt] to make them "pretty" (e.g. `2400` -> `2.4K`). All the values are then used to build a self-explanatory row of data in Markdown format.
 
-Note that currently the script inefficiently parses the JSON 5x. I intend to improve this, but as it is a small file it is not urgent.
+Note that currently the script inefficiently parses the JSON 5x. I intend to improve this, but as this script is very short and rarely run it is not urgent.
 
 [^jq]: <https://jqlang.github.io/jq/manual/>
 [^numfmt]: <https://www.gnu.org/software/coreutils/manual/html_node/numfmt-invocation.html>
@@ -306,6 +308,7 @@ All we're doing is loading up the template (`$(<file)`), replacing `PLACEHOLDER_
 
 All done! Here's the final script, with `API_KEY` and `WORKSPACE` being environment variables:
 
+{% raw %}
 ```bash
 #!/bin/bash
 
@@ -349,6 +352,7 @@ echo -e "${TEMPLATE_CONTENTS//${PLACEHOLDER_TEXT}/${OUTPUT}}" > "${WORKSPACE}/RE
 # Debug
 cat "${WORKSPACE}/README.md"
 ```
+{% endraw %}
 
 ## Lessons learned
 
@@ -358,11 +362,11 @@ My bash / shell knowledge is pretty weak. I don't write any local automation / s
 
 However, making a useful script like this has definitely made me appreciate how easy it makes tasks that would be awful in other languages. For example, loading the contents of a file into a variable is just... `$(<file)`. Sure, I bet it doesn't work perfectly for all situations, but realistically when programming you usually just want super simple "default" syntax.
 
-I also really appreciated how easy it was to pass data between utilities, and how useful these utilities could be. When I wanted to make numbers human-readable (e.g. "2.5M"), I initially got lost in a rabbit hole of writing a helper function, doing string manipulation, etc. Then, by sheer chance, [this Stack Exchange question](https://unix.stackexchange.com/q/650571/427682) came up mentioning "convert ... to human-readable", and I discovered []`numfmt`](https://www.gnu.org/software/coreutils/manual/html_node/numfmt-invocation.html) exists! It does exactly what I want, is built-in, yet *none* of the 10+ answers about number formatting mentioned it whatsoever.
+I also really appreciated how easy it was to pass data between utilities, and how useful these utilities could be. When I wanted to make numbers human-readable (e.g. "2.5M"), I initially got lost in a rabbit hole of writing a helper function, doing string manipulation, etc. Then, by sheer chance, [this Stack Exchange question](https://unix.stackexchange.com/q/650571/427682) came up mentioning "convert ... to human-readable", and I discovered [`numfmt`](https://www.gnu.org/software/coreutils/manual/html_node/numfmt-invocation.html) exists! It does exactly what I want, is built-in, yet *none* of the 10+ answers about number formatting mentioned it whatsoever.
 
-I can't entirely explain why it took so long for me to find `numfmt`. Perhaps the primary fault is with me assuming I'd have to solve it myself, so looking for manual solutions instead. However, a large part of the issue is with every bash related question either:
+I can't entirely explain why it took so long for me to find `numfmt`. Perhaps the primary fault is with me assuming I'd have to solve it myself, so looking for manual solutions instead. However, a large part of the issue is with every bash related answer either:
 1. Saying "use x", with either no extra information, or an extensive argument in comments about why other options were better.
-2. Giving a comprehensive "use x if y, or z if a, but only use b if cde is true" style answer. For example, [this semi-related answer](https://stackoverflow.com/a/30809912/608312) actually included the `numfmt` information I wanted, but it was so length and caveat-filled that I just didn't read it. 
+2. Giving a comprehensive "use x if y, or z if a, but only use b if cde is true" style answer. For example, [this semi-related answer](https://stackoverflow.com/a/30809912/608312) actually included the `numfmt` information I wanted, but it was so lengthy and caveat-filled that I just didn't read it. 
 
 ### Shellcheck
 
@@ -370,8 +374,45 @@ I can't entirely explain why it took so long for me to find `numfmt`. Perhaps th
 
 ### YouTube API quirk
 
+Whilst YouTube's Channel API[^apidocs] is great, as is the ability to make test calls in the browser, it has a weird quirk. Searching by username... doesn't seem to work half the time? I'm not sure if this is due to channel size or something else, but around 50% of the channel names simply returned 0 results. The documentation provides no explanation for this, just:
+
+> The `forUsername` parameter specifies a YouTube username, thereby requesting the channel associated with that username.
+
+Luckily, searching by `id` worked perfectly, and has the added benefit of never changing. It could also (one day) be used to look up multiple channels at once:
+
+> The `id` parameter specifies a comma-separated list of the YouTube channel ID(s) for the resource(s) that are being retrieved. In a channel resource, the `id`` property specifies the channel's YouTube channel ID.
+
 ### Quotas
 
+GitHub Actions and YouTube have generous free quotas!
+
+Whilst I do have a GitHub Pro plan, the CI time per month is only 3,000 vs 2,000 for a free plan[^github-minutes]. Since the script takes under a minute for the current channel list, and runs once a day, we're using ~1% of the free quota. Oddly enough, my usage statement[^github-usage] (even the raw downloadable CSV) shows 0 minutes used so far this month, not sure why:
+
+[![](/assets/images/2023/actions-github-quota.png)](/assets/images/2023/actions-github-quota.png)
+
+[^github-minutes]: <https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions#included-storage-and-minutes>
+[^github-usage]: <https://github.com/settings/billing#usage>
+
+For YouTube, you can make 10k requests per day for free. Considering each channel lookup only counts as 1, this is *way* more than we need! This opens up the possibility of fetching the latest / most popular video for each channel in the future.
+
+[![](/assets/images/2023/actions-cloud-quota.png)](/assets/images/2023/actions-cloud-quota.png)
+
+### Error handling
+
+Currently, my script has basically no error handling, and if anything goes wrong just throws an error and gives up.
+
+Whilst this might seem like a flaw, it's by design. As a failed run doesn't make the data any less valid, just slightly out of date, that is massively preferable to a corrupted run with invalid outputs. Additionally, I automatically a recieve an email on failed builds, so I can just rely on this to let me know if any channels have been deleted or other errors have occurred.
+
 ## Conclusion
+
+In conclusion, this was a very fun mini project! I learned a lot about GitHub Actions and Bash, both of which I wanted to get better at. 
+
+Whilst the actual *project* is obviously a little silly, I like the idea of turning random hobbies into useful tools for others. This also gives me an automated tool that I can use if I want to try GitHub Actions features in the future, and has plenty of additional functionality that could be implemented.
+
+I was pretty impressed with how simple GitHub Actions was to use, with even spurious ideas ("hey can I only fetch the required files?") being well documented and easy to implement. The "auto-commit" library was also impressive (and seems well maintained), with default functionality working exactly as expected, yet also having the ability to customise it to my requirements.
+
+Finally, this writing up of how the script works is mostly to remind myself about bash. I know when I try and do something else CI-related in 6 months I'll be confused by the syntax, so hopefully this post will remind me that I briefly understood it once!
+
+One last time, the results of this article are available at [jerma.jakelee.co.uk](https://jerma.jakelee.co.uk). 
 
 ## References

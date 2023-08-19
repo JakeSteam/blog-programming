@@ -278,7 +278,7 @@ If a single channel is returned, then we can pull out the useful data from `outp
             OUTPUT="${OUTPUT}| ${ARRAY_LINE[2]}[${TITLE}](https://youtube.com/${URL}) | ${VIDEO_COUNT} | ${SUBSCRIBER_COUNT} | ${VIEW_COUNT} |\n"
 ```
 
-Some of these outputs (e.g. `VIEW_COUNT`) are then passed to `numfmt`[^numfmt] to make them "pretty" (e.g. `2400` -> `2.4K`). All of the values are then used to build a self-explanatory row of data in Markdown format.
+Some of these outputs (e.g. `VIEW_COUNT`) are then passed to `numfmt`[^numfmt] to make them "pretty" (e.g. `2400` -> `2.4K`). All the values are then used to build a self-explanatory row of data in Markdown format.
 
 Note that currently the script inefficiently parses the JSON 5x. I intend to improve this, but as it is a small file it is not urgent.
 
@@ -354,7 +354,19 @@ cat "${WORKSPACE}/README.md"
 
 ### Bash
 
-- shellcheck
+My bash / shell knowledge is pretty weak. I don't write any local automation / scripts, and only interact with it for CI things like this, so I've always found it painful and unintuitive to work with.
+
+However, making a useful script like this has definitely made me appreciate how easy it makes tasks that would be awful in other languages. For example, loading the contents of a file into a variable is just... `$(<file)`. Sure, I bet it doesn't work perfectly for all situations, but realistically when programming you usually just want super simple "default" syntax.
+
+I also really appreciated how easy it was to pass data between utilities, and how useful these utilities could be. When I wanted to make numbers human-readable (e.g. "2.5M"), I initially got lost in a rabbit hole of writing a helper function, doing string manipulation, etc. Then, by sheer chance, [this Stack Exchange question](https://unix.stackexchange.com/q/650571/427682) came up mentioning "convert ... to human-readable", and I discovered []`numfmt`](https://www.gnu.org/software/coreutils/manual/html_node/numfmt-invocation.html) exists! It does exactly what I want, is built-in, yet *none* of the 10+ answers about number formatting mentioned it whatsoever.
+
+I can't entirely explain why it took so long for me to find `numfmt`. Perhaps the primary fault is with me assuming I'd have to solve it myself, so looking for manual solutions instead. However, a large part of the issue is with every bash related question either:
+1. Saying "use x", with either no extra information, or an extensive argument in comments about why other options were better.
+2. Giving a comprehensive "use x if y, or z if a, but only use b if cde is true" style answer. For example, [this semi-related answer](https://stackoverflow.com/a/30809912/608312) actually included the `numfmt` information I wanted, but it was so length and caveat-filled that I just didn't read it. 
+
+### Shellcheck
+
+[Shellcheck](https://www.shellcheck.net/) exists! It's a super simple utility available as a website or package that tells you why your code sucks, basically providing linting. This helped me make a few simple improvements to my script around string escaping, and provided justifications for everything (e.g. [why `${OUTPUT}` is significantly better than `OUTPUT`](https://people.duke.edu/~ccc14/duke-hts-2018/cliburn/The_Unix_Shell_05___Shell_Scripts.html#:~:text=Use%20of%20curly%20braces%20unambiguously,as%20a%20defensive%20programming%20technique.&text=%24Namel%20is%20not%20defined%2C%20and%20so%20returns%20an%20empty%20string!&text=One%20of%20the%20quirks%20of,after%20the%20%3D%20in%20an%20assignment.)).
 
 ### YouTube API quirk
 

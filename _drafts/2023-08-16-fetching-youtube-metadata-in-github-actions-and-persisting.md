@@ -12,6 +12,8 @@ tags:
 
 I recently [created a list of Jerma fan channels](https://jerma.jakelee.co.uk), and have now added automatically updating channel statistics! This requires interacting with YouTube's API, parsing JSON, writing Markdown, merging files and more, so here's a full guide to building something similar.
 
+*Note: A super-summarised version of this post (without any explanations) [appeared on Code Review Stack Exchange](https://codereview.stackexchange.com/q/286532/172139).*
+
 ## Objective
 
 So, what am I trying to create? Ultimately, a way to convert a list of YouTube channels into a Markdown file with channel statistics, and I want this list to update both on demand and on a schedule.
@@ -79,7 +81,7 @@ We're going to add our new API key as a GitHub Action secret, so that the CI can
 
 Give your secret a simple name (e.g. `API_KEY`), put the key itself under `Secret`, and add it. 
 
-[![](/assets/images/2023/actions-repo-secret-thumbnail.png)](/assets/images/2023/actions-repo-secret.png)
+[![](/assets/images/2023/actions-repo-secret.png)](/assets/images/2023/actions-repo-secret.png)
 
 #### Basic workflow setup
 
@@ -89,7 +91,7 @@ To do this, create a YAML config file inside `.github/workflows/` called somethi
 
 Before adding any steps, we need some basic framework to be able to run the workflow manually (`workflow_dispatch`), schedule it (`schedule: cron`), and have the ability to edit our own code (`permissions`):
 
-```
+```yml
 on:
   schedule:
     - cron: '0 8 * * *'
@@ -104,15 +106,16 @@ jobs:
 ```
 
 It won't actually do anything yet, but it is now technically a functional job called `metadata-update`.
+
 [^workflow]: <https://docs.github.com/en/actions/using-workflows>
 
 #### Further workflow setup
 
 Now time to add some actually useful steps! Just underneath the code added in the previous section, we need to add 3 steps:
 
-1. **Checkout a few files we need** with GitHub's `actions/checkout`[^checkout]. For this repo `sparse-checkout`[^sparse-checkout] doesn't save much time, but on a large repo it would help massively.
+**1: Checkout a few files we need** with GitHub's `actions/checkout`[^checkout]. For this repo `sparse-checkout`[^sparse-checkout] doesn't save much time, but on a large repo it would help massively.
 
-```
+```yml
     - name: Checkout channel config file
       uses: actions/checkout@v3.5.3
       with: 
@@ -122,12 +125,9 @@ Now time to add some actually useful steps! Just underneath the code added in th
         sparse-checkout-cone-mode: false
 ```
 
-[^checkout]: <https://github.com/actions/checkout>
-[^sparse-checkout]: <https://git-scm.com/docs/git-sparse-checkout>
+**2: Run our script** (`./automation/youtube.sh`) to perform all our tasks. We do `chmod +x` beforehand so we can execute the script, and configure both the `API_KEY` and `WORKSPACE` so our script has access to them.
 
-2. **Run our script** (`./automation/youtube.sh`) to perform all our tasks. We do `chmod +x` beforehand so we can execute the script, and configure both the `API_KEY` and `WORKSPACE` so our script has access to them.
-
-```
+```yml
     - name: Update YouTube data
       run: |
         chmod +x ./automation/youtube-update.sh
@@ -137,8 +137,9 @@ Now time to add some actually useful steps! Just underneath the code added in th
           WORKSPACE: ${{ github.workspace }}
 ```
 
-3. **Save our changes** to our statistics (stored in `README.md`) using `git-auto-commit-action`[^autocommit]. Note that I have intentionally configured the `commit_author` to *not* be me, by default it will use whoever triggered the workflow.
-```
+**3: Save the changes** to the fetched metadata (stored in `README.md`) using `git-auto-commit-action`[^autocommit]. Note that I have intentionally configured the `commit_author` to *not* be me, by default it will use whoever triggered the workflow.
+
+```yml
     - name: Save changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
@@ -150,6 +151,8 @@ Now time to add some actually useful steps! Just underneath the code added in th
 Once we put all those parts together, we end up with a functional [`metadata-upate.yml`](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml) file. 
 
 [^autocommit]: <https://github.com/stefanzweifel/git-auto-commit-action>
+[^checkout]: <https://github.com/actions/checkout>
+[^sparse-checkout]: <https://git-scm.com/docs/git-sparse-checkout>
 
 ## Bash script
 
@@ -157,7 +160,7 @@ As a reminder, our script will convert a list of channels into a table of channe
 
 For example, our input of:
 
-```
+```csv
 #### Stream Archives
 UC2oWuUSd3t3t5O3Vxp4lgAA;2018-streams;🐶
 UC4ik7iSQI1DZVqL18t-Tffw;2016-2018streams
@@ -166,7 +169,7 @@ UCjyrSUk-1AGjALTcWneRaeA;2016-2017streams
 
 should result in an output of:
 
-```
+```markdown
 #### Stream Archives
 
 | Channel | # Videos | Subscribers | Views |
@@ -188,7 +191,7 @@ We have a plain text list of channels ([`channels.txt`](https://github.com/JakeS
 
 Reading the file is basically just "while there are lines left, parse them":
 
-```
+```bash
 HEADER_PREFIX="#### "
 OUTPUT=""
 while read -r LINE; do
@@ -210,13 +213,13 @@ Note that `OUTPUT` is a constantly added to variable used to store the full Mark
 
 Inside the `else` branch above, we first need to split our semicolon separated `LINE` into an `ARRAY_LINE` array of 2-3 items (due to optional emoji):
 
-```
+```bash
         IFS=';' read -r -a ARRAY_LINE <<< "${LINE}"
 ```
 
 Next, we output the channel ID (`[0]`) and nickname (`[1]`) to our logs, and use the ID (along with our API key from earlier) to call YouTube's channel API and save the results to `output.json`:
 
-```
+```bash
         echo "Adding channel ${ARRAY_LINE[1]} (${ARRAY_LINE[0]})"
         curl "https://youtube.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=${ARRAY_LINE[0]}&key=${API_KEY}" \
             --header 'Accept: application/json' \
@@ -225,7 +228,7 @@ Next, we output the channel ID (`[0]`) and nickname (`[1]`) to our logs, and use
 
 Luckily YouTube's `channels` API[^apidocs] are very well documented and easy to use, and `-fsSL` is just [helpful curl flags](https://explainshell.com/explain?cmd=curl+-fsSL+example.org). We're going to be fetching the `statistics` and `snippet` parts of the API, which will return JSON containing these key fields (irrelevant ones omitted): 
 
-```
+```json
 {
   "pageInfo": {
     "totalResults": 1
@@ -254,9 +257,9 @@ Now that our useful data has been saved to `output.json`, we need to make it use
 
 First, I make sure we have exactly 1 response by looking for the `totalResults`. If any error or unexpected behaviour is encountered, this is where it will be caught:
 
-```
+```bash
         if [[ $(jq -r '.pageInfo.totalResults' output.json) == 1 ]]; then
-            # Skipped for now
+            # Skipped for now, see next code block!
         else
             echo "Failed! Bad response received: $(<output.json)"
             exit 1
@@ -265,7 +268,7 @@ First, I make sure we have exactly 1 response by looking for the `totalResults`.
 
 If a single channel is returned, then we can pull out the useful data from `output.json` using `jq`[^jq] and prepare our Markdown table row:
 
-```
+```bash
             TITLE=$(jq -r '.items[0].snippet.title' output.json)
             URL=$(jq -r '.items[0].snippet.customUrl' output.json)
             VIDEO_COUNT=$(jq -r '.items[0].statistics.videoCount' output.json | numfmt --to=si)
@@ -273,7 +276,6 @@ If a single channel is returned, then we can pull out the useful data from `outp
             VIEW_COUNT=$(jq -r '.items[0].statistics.viewCount' output.json | numfmt --to=si)
             echo "Added ${TITLE}: ${VIDEO_COUNT} videos (${VIEW_COUNT} views)"
             OUTPUT="${OUTPUT}| ${ARRAY_LINE[2]}[${TITLE}](https://youtube.com/${URL}) | ${VIDEO_COUNT} | ${SUBSCRIBER_COUNT} | ${VIEW_COUNT} |\n"
-
 ```
 
 Some of these outputs (e.g. `VIEW_COUNT`) are then passed to `numfmt`[^numfmt] to make them "pretty" (e.g. `2400` -> `2.4K`). All of the values are then used to build a self-explanatory row of data in Markdown format.
@@ -285,17 +287,79 @@ Note that currently the script inefficiently parses the JSON 5x. I intend to imp
 
 ### Saving data
 
+Okay! So `OUTPUT` now contains lots of headers, and Markdown tables with lots of statistics. How do we do something useful with this?
 
+I chose to use a [placeholder file](https://github.com/JakeSteam/Jerma/blob/main/automation/template.md) (with `dynamic-channel-data` being replaced by the list of channels), with the output replacing the repository's `README.md`. This is surprisingly easy in bash:
+
+```bash
+# Replace placeholder in template with output, updating the README
+TEMPLATE_CONTENTS=$(<"${WORKSPACE}/automation/template.md")
+echo -e "${TEMPLATE_CONTENTS//${PLACEHOLDER_TEXT}/${OUTPUT}}" > "${WORKSPACE}/README.md"
+
+# Debug
+cat "${WORKSPACE}/README.md"
+```
+
+All we're doing is loading up the template (`$(<file)`), replacing `PLACEHOLDER_TEXT` with our `OUTPUT`, and sending the output to `README.md`. Finally, the script outputs the contents of `README.md` so that there's a copy in the logs.
+
+### Putting it all together
+
+All done! Here's the final script, with `API_KEY` and `WORKSPACE` being environment variables:
+
+```bash
+#!/bin/bash
+
+HEADER_PREFIX="#### "
+PLACEHOLDER_TEXT="dynamic-channel-data"
+OUTPUT=""
+
+# Convert list of channels into Markdown tables
+while read -r LINE; do
+    if [[ ${LINE} == ${HEADER_PREFIX}* ]]; then
+        echo "Adding header ${LINE}"
+        OUTPUT="${OUTPUT}\n${LINE}\n\n"
+        OUTPUT="${OUTPUT}| Channel | # Videos | Subscribers | Views |\n| --- | --- | --- | --- |\n"
+    else
+        IFS=';' read -r -a ARRAY_LINE <<< "${LINE}" # Split line by semi-colon
+        echo "Adding channel ${ARRAY_LINE[1]} (${ARRAY_LINE[0]})"
+        curl "https://youtube.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=${ARRAY_LINE[0]}&key=${API_KEY}" \
+            --header 'Accept: application/json' \
+            -fsSL -o output.json
+
+        # Pull channel data out of response if possible
+        if [[ $(jq -r '.pageInfo.totalResults' output.json) == 1 ]]; then
+            TITLE=$(jq -r '.items[0].snippet.title' output.json)
+            URL=$(jq -r '.items[0].snippet.customUrl' output.json)
+            VIDEO_COUNT=$(jq -r '.items[0].statistics.videoCount' output.json | numfmt --to=si)
+            SUBSCRIBER_COUNT=$(jq -r '.items[0].statistics.subscriberCount' output.json | numfmt --to=si)
+            VIEW_COUNT=$(jq -r '.items[0].statistics.viewCount' output.json | numfmt --to=si)
+            echo "Added ${TITLE}: ${VIDEO_COUNT} videos (${VIEW_COUNT} views)"
+            OUTPUT="${OUTPUT}| ${ARRAY_LINE[2]}[${TITLE}](https://youtube.com/${URL}) | ${VIDEO_COUNT} | ${SUBSCRIBER_COUNT} | ${VIEW_COUNT} |\n"
+        else
+            echo "Failed! Bad response received: $(<output.json)"
+            exit 1
+        fi
+    fi
+done < "${WORKSPACE}/automation/channels.txt"
+
+# Replace placeholder in template with output, updating the README
+TEMPLATE_CONTENTS=$(<"${WORKSPACE}/automation/template.md")
+echo -e "${TEMPLATE_CONTENTS//${PLACEHOLDER_TEXT}/${OUTPUT}}" > "${WORKSPACE}/README.md"
+
+# Debug
+cat "${WORKSPACE}/README.md"
+```
 
 ## Lessons learned
 
-- shell knowledge was weak, worth learning
-- youtube usernames weird behaviour
+### Bash
+
 - shellcheck
-- discuss quotas (github & youtube)
+
+### YouTube API quirk
+
+### Quotas
 
 ## Conclusion
 
 ## References
-
-* YouTube's Channel API: <https://developers.google.com/youtube/v3/docs/channels/list?apix_params=%7B%22part%22%3A%5B%22statistics%2Csnippet%22%5D%2C%22forUsername%22%3A%22GoogleDevelopers%22%7D>

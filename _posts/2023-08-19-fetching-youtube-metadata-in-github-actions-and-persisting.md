@@ -10,9 +10,9 @@ tags:
     - Bash
 ---
 
-I recently [created a list of Jerma fan channels](https://jerma.jakelee.co.uk), and have now added automatically updating channel statistics! This requires interacting with YouTube's API, parsing JSON, writing Markdown, merging files and more, so here's a full guide to building something similar.
+I recently [created a list of Jerma fan channels](https://channels.jerma.io), and have now added automatically updating channel statistics! This requires interacting with YouTube's API, parsing JSON, writing Markdown, merging files and more, so here's a full guide to building something similar.
 
-*Note: A super-summarised version of this post (without any explanations) [appeared on Code Review Stack Exchange](https://codereview.stackexchange.com/q/286532/172139).*
+*Note: A super-summarised version of this post (without any explanations) [appeared on Code Review Stack Exchange](https://codereview.stackexchange.com/q/286532/172139). Additionally, the site was previously at `jerma.jakelee.co.uk` before moving to `channels.jerma.io`.*
 
 ## Objective
 
@@ -20,15 +20,15 @@ So, what am I trying to create? Ultimately, a way to convert a list of YouTube c
 
 Before I dive into the technical details, here's all the code in case you want to skip the words:
 
-* [GitHub Actions workflow](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml)
-* [YouTube metadata bash script](https://github.com/JakeSteam/Jerma/blob/main/automation/youtube-update.sh)
+* [GitHub Actions workflow](https://github.com/JermaSites/channels/blob/main/.github/workflows/metadata-update.yml)
+* [YouTube metadata bash script](https://github.com/JermaSites/channels/blob/main/automation/youtube-update.sh)
 
 And some relevant inputs / outputs:
 
-* [Console log of the script executing](https://github.com/JakeSteam/Jerma/actions/runs/5872232345/job/15923388744)
-* [Example channel list](https://github.com/JakeSteam/Jerma/blob/main/automation/channels.txt)
-* [Example template](https://github.com/JakeSteam/Jerma/blob/main/automation/template.md)
-* [Example output file](https://github.com/JakeSteam/Jerma/blob/main/README.md)
+* [Console log of the script executing](https://github.com/JermaSites/channels/actions/runs/5872232345/job/15923388744)
+* [Example channel list](https://github.com/JermaSites/channels/blob/main/automation/channels.txt)
+* [Example template](https://github.com/JermaSites/channels/blob/main/automation/template.md)
+* [Example output file](https://github.com/JermaSites/channels/blob/main/README.md)
 
 ## Prep work
 
@@ -87,7 +87,7 @@ Give your secret a simple name (e.g. `API_KEY`), put the key itself under `Secre
 
 Next, we need to make a workflow[^workflow] to actually trigger our upcoming code. 
 
-To do this, create a YAML config file inside `.github/workflows/` called something intuitive like `metadata-update.yml`. [Here is mine](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml).
+To do this, create a YAML config file inside `.github/workflows/` called something intuitive like `metadata-update.yml`. [Here is mine](https://github.com/JermaSites/channels/blob/main/.github/workflows/metadata-update.yml).
 
 Before adding any steps, we need some basic framework to be able to run the workflow manually (`workflow_dispatch`), schedule it (`schedule: cron`), and have the ability to edit our own code (`permissions`):
 
@@ -150,7 +150,7 @@ Now time to add some actually useful steps! Just underneath the code added in th
         file_pattern: 'README.md'
 ```
 
-Once we put all those parts together, we end up with a functional [`metadata-update.yml`](https://github.com/JakeSteam/Jerma/blob/main/.github/workflows/metadata-update.yml) file. 
+Once we put all those parts together, we end up with a functional [`metadata-update.yml`](https://github.com/JermaSites/channels/blob/main/.github/workflows/metadata-update.yml) file. 
 
 [^autocommit]: <https://github.com/stefanzweifel/git-auto-commit-action>
 [^checkout]: <https://github.com/actions/checkout>
@@ -183,11 +183,11 @@ should result in an output of:
 
 ### Creating script file
 
-First, we need to make a bash file to actually run! Create your `.sh` file wherever you defined in step 2 above, I chose [`/automation/youtube-update.sh`](https://github.com/JakeSteam/Jerma/blob/main/automation/youtube-update.sh).
+First, we need to make a bash file to actually run! Create your `.sh` file wherever you defined in step 2 above, I chose [`/automation/youtube-update.sh`](https://github.com/JermaSites/channels/blob/main/automation/youtube-update.sh).
 
 ### Parsing channel list
 
-We have a plain text list of channels ([`channels.txt`](https://github.com/JakeSteam/Jerma/blob/main/automation/channels.txt)), with 2 types of data:
+We have a plain text list of channels ([`channels.txt`](https://github.com/JermaSites/channels/blob/main/automation/channels.txt)), with 2 types of data:
 1. Headers, in plain Markdown format (e.g. `### Title`).
 2. Channels, in the format `channel ID;nickname;emoji`, where emoji is optional.
 
@@ -291,7 +291,7 @@ Note that currently the script inefficiently parses the JSON 5x. I intend to imp
 
 Okay! So `OUTPUT` now contains lots of headers, and Markdown tables with lots of statistics. How do we do something useful with this?
 
-I chose to use a [placeholder file](https://github.com/JakeSteam/Jerma/blob/main/automation/template.md) (with `dynamic-channel-data` being replaced by the list of channels), with the output replacing the repository's `README.md`. This is surprisingly easy in bash:
+I chose to use a [placeholder file](https://github.com/JermaSites/channels/blob/main/automation/template.md) (with `dynamic-channel-data` being replaced by the list of channels), with the output replacing the repository's `README.md`. This is surprisingly easy in bash:
 
 ```bash
 # Replace placeholder in template with output, updating the README
@@ -413,6 +413,6 @@ I was pretty impressed with how simple GitHub Actions was to use, with even spur
 
 Finally, this writing up of how the script works is mostly to remind myself about bash. I know when I try and do something else CI-related in 6 months I'll be confused by the syntax, so hopefully this post will remind me that I briefly understood it once!
 
-One last time, the results of this article are available at [jerma.jakelee.co.uk](https://jerma.jakelee.co.uk). 
+One last time, the results of this article are available at [channels.jerma.io](https://channels.jerma.io). 
 
 ## References

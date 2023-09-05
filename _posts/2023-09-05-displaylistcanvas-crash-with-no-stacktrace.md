@@ -1,11 +1,12 @@
 ---
-title: Identifying and fixing a DisplayListCanvas crash (too large bitmap) with no Android app code in the stacktrace
+title: Identifying and fixing a DisplayListCanvas crash (too large bitmap) with none of my Android code in the stacktrace
 author: Jake Lee
 layout: post
-image: /assets/images/2023/
+image: /assets/images/2023/densities-banner.png
 tags:
     - Android
     - Drawable
+    - Crashes
 ---
 
 A project recently had a crash that had been reported in low numbers for the lifetime of the app. Interestingly, the stack trace was unchanging, but only displayed "`android.`" code, nothing from my codebase! Here's how I debugged it and found a fix (hint: it's caused by drawables).
@@ -20,7 +21,7 @@ The first thing to look at with an unusual crash is the stack trace, to see if t
 
 My crash's stack trace did not reference any lines of my code. It consisted of a lot of `view` related code eventually calling some sort of image displaying logic:
 
-```
+```java
 Fatal Exception: java.lang.RuntimeException: Canvas: trying to draw too large(177707520bytes) bitmap.
        at android.view.DisplayListCanvas.throwIfCannotDraw(DisplayListCanvas.java:229)
        at android.view.RecordingCanvas.drawBitmap(RecordingCanvas.java:97)
@@ -42,7 +43,7 @@ Fatal Exception: java.lang.RuntimeException: Canvas: trying to draw too large(17
        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1374)
 ```
 
-Alright, so it's... an image somewhere in the app. This is not particularly helpful.
+Alright, so it's... a massive image somewhere in the app. This is not particularly helpful.
 
 What other information do we have available?
 
@@ -120,18 +121,26 @@ Remember the number `177707520` from our stack trace? Time to see where that com
 
 ## The solution
 
-The problem can be solved in many ways, as it is a combination of 3 minor issues:
+The problem can be solved in many ways, as it is a combination of multiple minor issues:
 
 1. **Replace the PNG with XML**: The correct fix, but may be high effort.
 2. **Replace the PNG with multiple scaled versions**: Also a good fix, if XML isn't possible.
-3. **Replace the PNG with a JPG / GIF**: This would likely stop the crash occurring, but would still use up MB of memory unnecessary.
+3. **Replace the PNG with a JPG / GIF**: This might stop the crash occurring, but would still use up extra memory unnecessarily.
 4. **Move the PNG out of `drawable` into `drawable-nodpi`**: Will stop the image being scaled absurdly, but will also result in some devices loading larger images than necessary.
 
-I ended up going for solution 4 as an immediate fix, with solution 1 & 2 planned for this & other currently unscaled drawables. 
+I ended up going for solution 4 as an immediate fix, with solutions 1 & 2 planned for this & other currently unscaled drawables. I also discovered we have a couple of hundred country flags in our `drawable` folder, so they got moved too!
+
+[![](/assets/images/2023/densities-pr.png)](/assets/images/2023/densities-pr.png)
 
 ### Drawable folders 
 
-The `drawable` folders is a constant source of confusion for Android devs, even experienced ones. The core rules are simple:
+The `drawable` folders are a constant source of confusion for Android devs, even experienced ones. This isn't helped by [the official docs](https://developer.android.com/develop/ui/views/graphics/drawables) stating the oddly misleading:
+
+> To use an image resource, add your file to the `res/drawable/` directory of your project. 
+
+In reality, any PNG / JPG / GIFs put in `/drawable/` get treated as `drawable-mdpi`, which is almost certainly not what a developer intends ([more info](https://stackoverflow.com/a/33632112/608312)).
+
+The core rules for real-world usage are simple:
 
 * XML files are put in `/drawable/`.
 * PNG files get scaled to multiple sizes and put in `/drawable-xhdpi/`, `/drawable-xxhdpi/`, etc.

@@ -116,7 +116,7 @@ Remember the number `177707520` from our stack trace? Time to see where that com
 1. Our image has a resolution of `1440*3428`. This is `4,936,320` pixels.
 2. Our test device is XXHDPI density, and since the image is placed in the `drawable` folder, it gets scaled up 3x ([source](https://stackoverflow.com/a/28507826/608312)) to fit the screen (despite the already large size!)
 3. This gives us a resolution of `(1440*3)*(3428*3)`, or `78,981,120` pixels. This is a lot.
-4. Our lossless, transparency-supporting PNG needs 4 bytes per pixel (alpha, red, green blue). `78,981,120*4` = 177,707,520 bytes needed. 
+4. Our lossless, transparency-supporting PNG needs 4 bytes per pixel (alpha, red, green, blue). `78,981,120*4` = 177,707,520 bytes needed. 
 5. That's the number we started with! So yes, this image is 100% the cause of the crash.
 
 ## The solution
@@ -125,10 +125,10 @@ The problem can be solved in many ways, as it is a combination of multiple minor
 
 1. **Replace the PNG with XML**: The correct fix, but may be high effort.
 2. **Replace the PNG with multiple scaled versions**: Also a good fix, if XML isn't possible.
-3. **Replace the PNG with a JPG / GIF**: This might stop the crash occurring, but would still use up extra memory unnecessarily.
+3. **Replace the PNG with a JPG / GIF**: This might stop the crash occurring (although probably not due to the scaling still happening), but would still use up extra memory unnecessarily.
 4. **Move the PNG out of `drawable` into `drawable-nodpi`**: Will stop the image being scaled absurdly, but will also result in some devices loading larger images than necessary.
 
-I ended up going for solution 4 as an immediate fix, with solutions 1 & 2 planned for this & other currently unscaled drawables. I also discovered we have a couple of hundred country flags in our `drawable` folder, so they got moved too!
+I ended up going for solution 4 as an immediate fix, with solutions 1 & 2 planned for this & other currently unscaled drawables. I also discovered we have a couple of hundred country flags in our `drawable` folder, so they got moved too! Always fun raising a PR with hundreds of changes, yet zero additions or deletions.
 
 [![](/assets/images/2023/densities-pr.png)](/assets/images/2023/densities-pr.png)
 
@@ -138,7 +138,7 @@ The `drawable` folders are a constant source of confusion for Android devs, even
 
 > To use an image resource, add your file to the `res/drawable/` directory of your project. 
 
-In reality, any PNG / JPG / GIFs put in `/drawable/` get treated as `drawable-mdpi`, which is almost certainly not what a developer intends ([more info](https://stackoverflow.com/a/33632112/608312)).
+In reality, any PNG / JPG / GIFs put in `/drawable/` get treated as `/drawable-mdpi/`, which is almost certainly not what a developer intends ([more info](https://stackoverflow.com/a/33632112/608312)).
 
 The core rules for real-world usage are simple:
 

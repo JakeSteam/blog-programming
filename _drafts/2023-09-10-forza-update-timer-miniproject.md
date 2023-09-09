@@ -2,7 +2,7 @@
 title: Introducing "Forza Update", a minisite automatically tracking the next Forza Horizon 5 season & series
 author: Jake Lee
 layout: post
-image: /assets/images/2023/fh5minisite.png
+image: /assets/images/2023/fh5minisite-header.png
 tags:
     - Forza Horizon 5
     - Gaming
@@ -13,15 +13,9 @@ As you might have realised from my previous Forza Horizon 5 posts, I play it a l
 
 The site is available at [forza.jakelee.co.uk](https://forza.jakelee.co.uk/).
 
+It is very intentionally functionality-first, so don't expect any fancy design ideas here! Here's how it looks:
+
 [![](/assets/images/2023/fh5minisite.png)](/assets/images/2023/fh5minisite.png)
-
-## Functionality
-
-Although the site has limited functionality, *hopefully* it is a useful resource. The site tracks the next series & season dates, whilst also providing information on them where possible. 
-
-## Plans 
-
-I'd like to expand on the site eventually to have an actual design besides GitHub Pages' default. For now though, it's "good enough".
 
 ## How it works
 
@@ -33,6 +27,12 @@ Every function that is adapted from a StackOverflow answer is credited, but here
 * [Displaying a countdown to a date](https://stackoverflow.com/a/9335296/608312).
 * [Calculating weeks between 2 dates](https://stackoverflow.com/a/22859920/608312).
 * [Adding days to a date]( https://stackoverflow.com/a/19691491/608312)
+
+## Plans 
+
+I'd like to expand on the site eventually to have an actual design besides GitHub Pages' default. For now though, it's "good enough".
+
+Additionally, currently I have to manually update the new series' title once per month. Ideally this would be automated, but I am not particularly interested in parsing the Forza team's news posts!
 
 ## Conclusion
 

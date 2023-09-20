@@ -8,7 +8,7 @@ tags:
     - Web
 ---
 
-Like a lot of developers, I've somehow ended up with a collection of mini-projects online that require no maintenance, are missing a few features, but still get some Google traffic. I used to use Google Analytics for this, but I've been really, really impressed by Google Search Console!
+Like a lot of developers, I've somehow ended up with a collection of mini-projects online that require no maintenance, are missing a few features, but still get some Google traffic. I used to use Google Analytics for this, but I've been really, really impressed by [Google Search Console](https://search.google.com/search-console)!
 
 ## What is Google Search Console?
 
@@ -18,13 +18,16 @@ For example, are there any errors found following links? Are any pages giving co
 
 All of these factors factor into Google's search algorithm, as they are symptoms of a high quality site. As such, following recommendations to improve your site's Google listing... also improves the quality in general!
 
+Google themselves [describe it as](https://support.google.com/webmasters/answer/9128668?hl=en&sjid=5299712260308016178-EU):
+> Google Search Console is a free service offered by Google that helps you monitor, maintain, and troubleshoot your site's presence in Google Search results. You don't have to sign up for Search Console to be included in Google Search results, but Search Console helps you understand and improve how Google sees your site.
+
 ## Why use it?
 
 There are a *lot* of reasons to try out Google Search Console, even before getting into the actual [features](#what-features-does-it-have)!
 
 ### Simple
 
-I don't get on with Google Analytics. I get lost, I find it impossible to manage multiple sites, and get lost in trying to filter... dimensions... audiences... funnels. Google Search Console has drastically less data, but surfaces it in an extremely usable and helpful way.
+I don't get on with Google Analytics. I get lost, I find it impossible to manage multiple sites, and get lost in trying to filter... dimensions... audiences... funnels. [Google Search Console](https://search.google.com/search-console) has drastically less data, but surfaces it in an extremely usable and helpful way.
 
 Usability can be somewhat subjective, but given the drastically smaller userbase of this platform, I get the feeling that Google's designers have been more "free" to make changes. Below is the main overview, it instantly surfaces the 3 things I likely care about most:
 1. How many users are visiting my site?
@@ -80,6 +83,10 @@ I won't show all the detail (the screenshot would be very long!), but the monthl
 This is extremely helpful data, all without any code being added to your site! I find the information on growing & performing pages to be an especially interesting snapshot into why people are visiting your site.
 
 [![](/assets/images/2023/googlesearchconsole-content-thumbnail.png)](/assets/images/2023/googlesearchconsole-content.png)
+
+Finally, the "insights" feature lets you know which search queries you are in the top 5 results for, growing content, clicks per month, etc. Very cool.
+
+[![](/assets/images/2023/googlesearchconsole-insights-thumbnail.png)](/assets/images/2023/googlesearchconsole-insights.png)
 
 ### Quality monitoring
 
@@ -153,13 +160,32 @@ Additionally, due to Reddit's pagination URLs any successful post on there will 
 
 [![](/assets/images/2023/googlesearchconsole-links-thumbnail.png)](/assets/images/2023/googlesearchconsole-links.png)
 
+Under "Settings" there's also fairly standard options to invite other users or services, update your URL, export all your data, etc.
+
 ## How to set it up?
 
+1. Click "Add property".
+2. Add the DNS record to your site (I did it via a Cloudflare integration).
+3. You're done!
 
 ## Downsides of Google Search Console
-- Obviously only Google traffic
-- Very limited reporting
+
+Okay, so yes, despite being a massive fan of Google Search Console for the last year or so, it's not perfect. 
+
+### Mysterious data sources
+
+I don't quite understand how Google Search Console can show which sites link to mine, but it can! I assumed the tool would only be able to show me Google search related data, but apparently not.
+
+Due to this mysterious data acquisition, I only really pay attention to the parts that focus on Google Search or my pages themselves. Perhaps it is linked to my Google Analytics?
+
+### Basic data
+
+Whilst I really appreciate the data that is being surfaced, it's always going to be limited. From search data alone you can't gain the user journey / funnel information that most analytics systems provide.
+
+Personally I think this is a very fair trade-off for being entirely free, irreplaceable (since nobody else has Google's data), and requiring no code changes at all.
 
 ## Conclusion
 
-[![](/assets/images/2023/example-thumbnail.png)](/assets/images/2023/example.png)
+In conclusion, I've no idea why [Google Search Console](https://search.google.com/search-console) isn't more widely used!
+
+Whilst it isn't perfect, it's such a simple and easy to use tool that there seems to be no reason not to use it. 

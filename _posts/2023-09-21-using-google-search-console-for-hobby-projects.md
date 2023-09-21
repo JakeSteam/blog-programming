@@ -1,5 +1,5 @@
 ---
-title: Using Google Search Console to effortlessly monitor small hobby projects
+title: Using Google Search Console to effortlessly monitor small hobby projects (or big ones!)
 author: Jake Lee
 layout: post
 image: /assets/images/2023/google-search-console.png
@@ -34,7 +34,7 @@ Usability can be somewhat subjective, but given the drastically smaller userbase
 2. How many of my pages is Google listing?
 3. How high quality are my pages?
 
-I'll dive into each page in [the features section](#what-features-does-it-have):
+I'll dive into each page in [the features section](#what-features-does-it-have), here's how it looks:
 
 [![](/assets/images/2023/googlesearchconsole-overview-thumbnail.png)](/assets/images/2023/googlesearchconsole-overview.png)
 
@@ -44,7 +44,7 @@ If you have verified a domain property (by adding a DNS record), adding a new su
 
 [![](/assets/images/2023/googlesearchconsole-verification-thumbnail.png)](/assets/images/2023/googlesearchconsole-verification.png)
 
-This means the overall site stats are visible, whilst individual project sites can be dived into easily. I have ended up adding every domain I'm actively working on to Google Search Console, it's very satisfying seeing random old projects experience traffic surges (due to [proactive emails](#proactive-emails)).
+This means the overall site stats are visible, whilst individual project sites can be dived into easily. I have ended up adding every domain I'm actively working on to Google Search Console, it's very satisfying seeing random old projects experience traffic surges (due to [proactive emails](#proactive-emails--achievements)).
 
 [![](/assets/images/2023/googlesearchconsole-sites-thumbnail.png)](/assets/images/2023/googlesearchconsole-sites.png)
 
@@ -60,7 +60,7 @@ As such, the only technical work needed is adding the DNS record to prove domain
 
 I am very confident that Google Analytics etc has the ability to set up emails for spikes in traffic. With Google Search Console however, it's all already there. 
 
-For example, I recently added [my settlers manual](https://settlers.jakelee.co.uk) to Google Search Console, then a few weeks later received an email letting me know it had received 80 users from Google Search! Obviously these aren't big numbers, but as it's a small project I haven't touched in years, I would never have thought to check the analytics without this achievement notification.
+For example, I recently added [my settlers manual](https://settlers.jakelee.co.uk) to Google Search Console, then a few days ago received an email letting me know it had received 80 users from Google Search! Obviously these aren't big numbers, but as it's a small project I haven't touched in years, I would never have thought to check the analytics without this achievement notification.
 
 [![](/assets/images/2023/googlesearchconsole-email-thumbnail.png)](/assets/images/2023/googlesearchconsole-email.png)
 
@@ -84,7 +84,7 @@ This is extremely helpful data, all without any code being added to your site! I
 
 [![](/assets/images/2023/googlesearchconsole-content-thumbnail.png)](/assets/images/2023/googlesearchconsole-content.png)
 
-Finally, the "insights" feature lets you know which search queries you are in the top 5 results for, growing content, clicks per month, etc. Very cool.
+Finally, the "insights" feature lets you know which search queries you are in the top 5 results for, growing content, clicks per month, etc. For my site, it shows that despite all my high effort technical posts... people just want to read about gaming!
 
 [![](/assets/images/2023/googlesearchconsole-insights-thumbnail.png)](/assets/images/2023/googlesearchconsole-insights.png)
 
@@ -115,9 +115,9 @@ Okay, so I've run through why I use Google Search Console. But what features are
 
 [![](/assets/images/2023/googlesearchconsole-overview-thumbnail.png)](/assets/images/2023/googlesearchconsole-overview.png)
 
-As already mentioned, the main overview screen shows performance, indexed pages, and overall experience. "[Enhancements](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)" are also supported, but I don't use thm so can't comment.
+As already mentioned, the main overview screen shows performance, indexed pages, and overall experience. "[Enhancements](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)" are also supported, but I don't use them so can't comment.
 
-Finally, there's also a "URL inspection" feature that shows you how Google Search views a specific page, and when it last updated. I use this feature to submit my new articles manually, since re-indexing can be requested.
+There's also a "URL inspection" feature that shows you how Google Search views a specific page, and when it last updated. I use this feature to submit my new articles manually, since re-indexing can be requested.
 
 [![](/assets/images/2023/googlesearchconsole-urlinspection-thumbnail.png)](/assets/images/2023/googlesearchconsole-urlinspection.png)
 
@@ -164,9 +164,12 @@ Under "Settings" there's also fairly standard options to invite other users or s
 
 ## How to set it up?
 
-1. Click "Add property".
-2. Add the DNS record to your site (I did it via a Cloudflare integration).
-3. You're done!
+1. Go to [Google Search Console](https://search.google.com/search-console).
+2. Click "Add property".
+3. Add the DNS record to your site (I did it via a Cloudflare integration).
+4. You're done!
+
+There's also a short but sweet [series of guides from Google](https://support.google.com/webmasters/answer/10267942) that provide an overview of everything Google Search Console can do. 
 
 ## Downsides of Google Search Console
 
@@ -184,8 +187,15 @@ Whilst I really appreciate the data that is being surfaced, it's always going to
 
 Personally I think this is a very fair trade-off for being entirely free, irreplaceable (since nobody else has Google's data), and requiring no code changes at all.
 
+### Not realtime
+
+Recently I had a massive spike in views for one of my articles (the [Need for Speed Unbound tips](https://jakelee.co.uk/need-for-speed-unbound-tips/)). However, I only found out about it when I reached a new 28-day record a week or so later. Whilst this didn't have any direct impact, it did leave me feeling like I was stuck viewing aggregated past data, which is a bit less exciting than something more realtime.
+
 ## Conclusion
 
 In conclusion, I've no idea why [Google Search Console](https://search.google.com/search-console) isn't more widely used!
 
-Whilst it isn't perfect, it's such a simple and easy to use tool that there seems to be no reason not to use it. 
+Whilst it isn't perfect, it's such a simple and easy to use tool that there seems to be no reason not to use it in combination with more comprehensive tools. Given the zero maintenance it requires and zero impact it has on my site's users, I'll definitely be staying subscribed to the emails.
+
+Since Google doesn't directly make any revenue from it, I do understand why it isn't promoted very heavily at all. However, I'm pretty confident any users of it will gain a bit of goodwill towards Google & Google Search, so surely that makes it worth the effort?
+

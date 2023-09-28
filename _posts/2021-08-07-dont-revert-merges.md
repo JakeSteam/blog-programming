@@ -15,7 +15,7 @@ tags:
     - PR
 ---
 
-A Friday afternoon, after work hours. You and a colleague are merging the final few pull requests before giving a build to weekend testers.
+A Friday afternoon, after work hours. You and a colleague are merging the final few pull requests before giving a build to weekend testers. (Update July 2023: GitHub has [improved the behaviour](https://github.blog/changelog/2023-09-26-more-details-provided-when-a-pull-request-is-merged-indirectly-or-is-still-processing-updates/) for this scenario!)
 
 You agree the “small feature” PR can be merged, but the unrelated “unfinished big feature” PR still needs some work next week. No problem. The “small feature” PR is merged, the build is made. Great.
 
@@ -59,6 +59,8 @@ The part I find particularly concerning is how difficult it is to trace this. Th
 The automatically closed PR should absolutely say WHY it has been closed. Currently, the person who accidentally did the revert and merge isn’t mentioned at all, instead the merger of the branch is “blamed”, and the unusual events aren’t flagged anywhere. Additionally, the person who unintentionally closed this PR isn’t notified that their merge has had side-effects, so this could result in lost work. It’s very easy to imagine a situation where the author of the automatically closed PR sees their PR has been “merged”, and assumes their work is now, well, merged.
 
 The potential for losing work or not knowing the status of code is definitely in this albeit niche situation.
+
+**Update: GitHub [now shows a merge reason](https://github.blog/changelog/2023-09-26-more-details-provided-when-a-pull-request-is-merged-indirectly-or-is-still-processing-updates/) in this scenario!**
 
 ## Recommendations
 

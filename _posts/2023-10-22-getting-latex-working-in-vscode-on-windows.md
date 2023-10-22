@@ -1,5 +1,5 @@
 ---
-title: How to install LaTeX (with previews & autocomplete) in VSCode on Windows
+title: How to install LaTeX (with previews & autocomplete) for VSCode on Windows
 author: Jake Lee
 layout: post
 image: /assets/images/2023/latex-banner.png
@@ -9,11 +9,11 @@ tags:
     - Windows
 ---
 
-I recently decided to learn the basics of LaTeX, a way of formatting documents primarily used in STEM academia. Perhaps foolishly, I decided to only work within my beloved VSCode editor, as I do for almost all other work. This was not as smooth as I expected, so here's a complete beginner's guide to getting LaTeX working in VSCode Windows!
+I recently decided to learn the basics of [LaTeX](https://www.latex-project.org/about/), a way of preparing documents primarily used in STEM academia. I also decided to use VSCode, as I do for almost all other work. This was not as easy as I expected, so here's a complete beginner's guide to getting LaTeX working in Visual Studio Code on Windows!
 
-## Installing LaTeX support
+## Installing LaTeX
 
-First up, we need LaTeX support. This is where it instantly can get a little confusing!
+First up, we need LaTeX support on our system. This is where it instantly can get a little confusing!
 
 There are multiple "distributions" of LaTeX (e.g. TeX Live, MiKTeX), which themselves basically package up "TeX". These distributions have installers, then schemes, packages, it's all a bit overwhelming to a beginner.
 
@@ -23,7 +23,7 @@ Luckily, having just blundered through these mysteries, I can keep it nice and s
 
 You need TeX Live, as it contains all the core components we're after.
 
-Install it [from tug.org](https://www.tug.org/texlive/windows.html) by clicking **install-tl-windows.exe**.
+Install it [from tug.org](https://www.tug.org/texlive/windows.html#:~:text=install%2Dtl%2Dwindows.exe.) by clicking **install-tl-windows.exe**.
 
 Double-click the file once downloaded, and... Windows will likely flag it as from an unknown source. Choose "Proceed anyway". As [this StackExchange answer](https://tex.stackexchange.com/questions/239199/latex-distributions-what-are-their-main-differences/239204#239204) states the same URL, and other search results reference it too, we can trust the source.
 
@@ -126,9 +126,9 @@ Technically, this is spinning up a local server, monitoring the file, generating
 
 At the bottom of your screen, the "Output" tab may show how much work went into this simple preview. Changing and saving your `.tex` file will make a flurry of activity reappear.
 
-I'd recommend changing bottom tabs unless you like seeing lots of logging!
+I'd recommend changing bottom tabs unless you like seeing lots of logs every time you save!
 
-It's worth pointing out that this is also where any issues will surface themselves. For example, I initially didn't install `latexmk`, and the error messages made this pretty clear. If you do happen to see any errors about unable to find `x`, try repeating [the latexmk installation](#installing-latexmk-optional-2) for the mentioned package.
+It's worth pointing out that this is also where any issues will surface themselves. For example, I initially didn't install `latexmk`, and the error messages made this pretty clear. If you do happen to see any errors about unable to find `x`, try repeating [the latexmk installation](#installing-latexmk-optional-2) with the mentioned package.
 
 ### 3: Lots of new files
 
@@ -158,13 +158,38 @@ Your sidebar will now have a new "LaTeX tab". Opening it will reveal a collectio
 
 That's it! You now have LaTeX support within VSCode on Windows, complete with autocomplete, spellcheck, etc.
 
-## Extra notes
+I'm going to be using [this tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) to learn, there might be better ones but this seemed very accessible.
+
+## Misc thoughts
 
 This was far more complicated than it needed to be. I admittedly made it harder on myself by not just accepting the 1 hour 8GB install, but even then there were so many small areas of friction!
 
-Of course this isn't too unusual in open source software, especially anything to do with academia. The installer did not need to be that complicated. The default install did not need to install every obscure package.
+The [LaTeX Project](https://www.latex-project.org/) does do a good job from the documentation side, providing a high level overview without unnecessary technical detail. However, as soon as you click "Get", and are met by multiple ways of getting multiple distributions for multiple OS... it falls apart. 
+
+The very first section starts off extremely promising, drawing complete newcomers in with this wording:
+> If you’re new to TeX and LaTeX or just want an easy installation, get a full TeX distribution. The TeX Users Group (TUG) has a list of notable distributions that are entirely, or least primarily, free software.
+
+Unfortunately, the link takes me to `tug.org`, which is actually timing out for me currently. Once it came back up, the result is not very intuitive. Is one of these better? Is one of them awful? No idea. Whilst I know from elsewhere that the top option is 100% what I want, I could easily have picked an incorrect option!
+
+[![](/assets/images/2023/latex-distributions.png)](/assets/images/2023/latex-distributions.png)
+
+Of course this isn't too unusual in open source software, especially anything to do with academia. The installer did not need to be that complicated. The default install did not need to install every obscure package. I did not need to install an unsigned `.exe`. Etc.
 
 I would love to see a much more user friendly "quick install". The vast majority of users don't care which package server they're connected to, they just want the ability to edit `.tex` files as soon as possible. Install the basics by default, and provide an easy way to install additional bundles of packages. Encourage new users, don't give them a trial by fire.
 
-There is the argument that as an academic tool, all users are likely to have higher education but... is that relevant? If I have an MSc in Physics from the 80s, that's no guarantee that I can configure installed packages!
+There is the argument that as an academic tool, all users are likely to have higher education but... is that relevant? If I have an MSc in Physics from the 80s, that's no guarantee that I can configure installed packages.
+
+Regardless, now it's all setup, I'm looking forward to doing more than writing "Hello world". Maybe there'll be a tutorial or two on here in the coming weeks!
+
+## Useful links
+
+* [LaTeX Project homepage](https://www.latex-project.org/about/)
+* LaTeX Workshop [GitHub](https://github.com/James-Yu/LaTeX-Workshop/) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+* LTeX Language Tool [GitHub](https://github.com/valentjn/vscode-ltex) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)
+* [Beginner-friendly LaTeX Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+* [TeX Live](https://tug.org/texlive/)
+
+
+
+
 

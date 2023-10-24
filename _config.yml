@@ -20,6 +20,7 @@ network:
   - { name: Internet History, url: "https://history.jakelee.co.uk", colour: "#075e78" }
   - { name: Theme, url: "https://minima.jakelee.co.uk", colour: "#951A00" }
   - { name: Cat Charity, url: "https://news.codecured.org", colour: "#111b6d" }
+  - { name: Fragments, url: "https://fragments.jakelee.co.uk", colour: "#ad33a9" }
   - { name: Everything Else, url: "https://jakelee.co.uk", colour: "#acacac" }
 
 # Social / dark mode settings
@@ -29,7 +30,7 @@ minima:
     - { platform: github, user_url: "https://github.com/JakeSteam" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/Jake-Lee" }
     - { platform: stackoverflow, user_url: "https://stackoverflow.com/users/608312/Jake-Lee" }
-    - { platform: twitter, user_url: "https://www.twitter.com/JakeLeeUK" }
+    - { platform: x, user_url: "https://www.twitter.com/JakeLeeUK" }
     - { platform: email, user_url: "mailto:blog@jakelee.co.uk", user_title: "blog@jakelee.co.uk" }
     - { platform: code, user_url: "https://github.com/JakeSteam/blog-programming", user_title: "JakeSteam/blog-programming" }
     - { platform: rss, user_url: "/feed.xml", user_title: "RSS Feed" }

@@ -81,7 +81,7 @@ When it has loaded, scroll all the way down (use the side scroller!) to `latexmk
 
 [![](/assets/images/2023/latex-install8.png)](/assets/images/2023/latex-install8.png)
 
-This won't take more than couple of seconds. Once it is done, close any dialogs and TeX Live Shell.
+This won't take more than a couple of seconds. Once it is done, close any dialogs and TeX Live Shell.
 
 We now have a fully functional LaTeX install! Oh, right, VSCode...
 
@@ -108,7 +108,7 @@ Hello I am just a small document.
 \end{document}
 ```
 
-When you save this document, you should notice 4 things.
+When you save this document, you should notice 4 things:
 
 ### 1: New LaTeX buttons
 

@@ -2,13 +2,13 @@
 title: "Migrating from LastPass to 1Password: Initial pros & cons"
 author: Jake Lee
 layout: post
-image: /assets/images/2023/1password.png
+image: /assets/images/2023/1password-banner.jpeg
 tags:
     - Security
     - Passwords
 ---
 
-Almost exactly a year ago, [I migrated from Chrome's password manager to LastPass](/migrating-to-lastpass-and-tidying-up/). Whilst this was luckily *after* the breach, the constant "oops, worse than stated" updates destroyed my trust in LastPass. Since my renewal date was coming up, I migrated to 1Password instead. Here's my initial thoughts!
+Almost exactly a year ago, [I migrated from Chrome's password manager to LastPass](/migrating-to-lastpass-and-tidying-up/). Whilst this was luckily *after* the breach, the constant "oops, bad news" headlines destroyed my trust in LastPass. My renewal was coming up, but I migrated to 1Password instead: here's how it went.
 
 ## Why leave LastPass?
 
@@ -37,7 +37,7 @@ The timeline of my transfer process is a testament to how eager I was to leave L
 
 ## 1Password good bits
 
-### Import from LastPass includes categories, and even tags the import date
+### LastPass category import
 
 Considering [how much effort](/migrating-to-lastpass-and-tidying-up/#tidying-up-lastpass) I put into deduplicating and organising my 1000+ password into ~10 categories with ~400 total, losing my folders was a big concern. 
 
@@ -61,31 +61,63 @@ This let me get my account set up, be confident it would suit my needs, and *the
 
 Overall, the onboarding was really, really smooth. Despite actually needing quite a lot of things from me (download a desktop app, install an extension, back up a PDF, verify email, understand the actual product), it was done so smoothly that I felt very little friction. 
 
-I was perhaps a little jaded by my experience with 1Password's site, and was actually somewhat surprised when pages actually loaded quickly, kept me logged in, and didn't have UI elements in weird places.
+I was perhaps a little jaded by my experience with LastPass' site, and was actually somewhat surprised when pages actually loaded quickly, kept me logged in, and didn't have UI elements in weird places.
 
 ### Watchtower is great
 
 1Password's "Watchtower" is their version of LastPass' "Security score". It doesn't suffer from the same odd negative points (LastPass removed points for allowing mobile access, and for caching my vault offline), and I love the clear HaveIBeenPwned integration.
 
 [![](/assets/images/2023/1password-watchtower.png)](/assets/images/2023/1password-watchtower.png)
+*Note: The 1 weak password is a temporary unchangeable one.*
 
-However, it isn't perfect. The app shows a score with no definition of the maximum, and is influenced by factors I'm not sure are correct. For example, it flags that I don't have 2FA setup on 71 of the websites (I do, 1Password just doesn't know about it).
+However, it isn't perfect. The app shows a score with no definition of the maximum, and is influenced by factors I'm not sure are correct. For example, it flags that I don't have 2FA setup on 71 of the websites (I do, 1Password just doesn't know about it). My score is 1029, yet "Fantastic", implying this score goes up to 1100? 1200? Who knows! 
+
+Additionally, I wanted to share a screenshot of my security score for this post, and couldn't. Instead, I'd have to Tweet this rather marketing-y message:
+> My Watchtower security score in @1Password is 1029 (Fantastic) 🤩 🏖️ ✅  
+> https://watchtower.1password.com/score/1029/
+
+This link doesn't seem to go anywhere, and just redirects to the homepage. I'll skip Tweeting an advert, thanks!
 
 ### App is very modern
+
+I can't share any screenshots of the app (boo, security policy), and weirdly enough the Play Store & documentation images don't seem to match what I can see in front of me. 
+
+[The app (v8.10.18)](https://play.google.com/store/apps/details?id=com.onepassword.android&hl=en&gl=US) implements an excellent dark mode, and looks more like a digital bank than just a password manager. It's got plenty of options (e.g. changing how autofill functions), and clearly shows that they're technically competent, a stark contrast to the LastPass app.
 
 ## 1Password not-so-good bits
 
 ### Logged out during payment
 
+Whilst on the screen to enter my card details, I got distracted looking in an alternate banking app to use a different card to usual. I can only assume this somehow took more than 10 minutes, since when I finally found my card and entered the details, upon clicking "Submit" I was told my session had expired, and I needed to login again.
+
+I do understand the security benefits of this, but I really wish I'd been told my session had expired *before* I typed in all my details and clicked submit! Not a big deal, but a minor annoyance.
+
 ### Doesn't understand Android logins
+
+This may just be a quirk of transferring from LastPass with Android logins, but 1Password doesn't seem to understand their format. These URIs are in the format `android://abc123` yet 1Password saves them as `http://android://abc123`, and then complains that they aren't `https`!
+
+[![](/assets/images/2023/1password-android.png)](/assets/images/2023/1password-android.png)
 
 ### Doesn't understand local IP logins
 
+Similarly, it treats local IPs like URLs. This technically makes sense, but if I'm logging onto a local server only accessible from my PC, it's only on HTTP. It would have been good if local IPs could be excluded from this check.
+
+[![](/assets/images/2023/1password-ip.png)](/assets/images/2023/1password-ip.png)
+
 ### Reused passwords
 
-* Doesn't understand "safe" reuse across multiple domains
-* Deleting a duplicate keeps one of them
+LastPass had a feature where it understood that multiple subdomains of the same domain might use the same details. For example, `login.example.com` might use the same authentication as `account.example.com`, and they can be treated as the same site.
 
-### Charges in dollars, and doesn't show tax until country selected
+Unfortunately it looks like this didn't transfer across properly, since some passwords got duplicated. For example, `auth3.uber.com` and `auth.uber.com` are clearly the same site, yet I've ended up with 2 records. This wasn't a big problem, I just went through and deleted the less useful copy of the ~40 duplicates.
 
-[![](/assets/images/2023/example-thumbnail.png)](/assets/images/2023/example.png)
+A minor annoyance at this stage was when deleting a duplicate login, the now unduplicated login would remain in this list. A small bug, but one that made deleting duplicates a bit more awkward.
+
+[![](/assets/images/2023/1password-duplicate1.png)](/assets/images/2023/1password-duplicate1.png)[![](/assets/images/2023/1password-duplicate2.png)](/assets/images/2023/1password-duplicate2.png)
+
+### Checkout is in USD
+
+Finally, 1Password uses dollars for all payments and doesn't include tax until the end. This obviously simplifies things from their end, but for a British customer used to prices including VAT, it was an unpleasant 20% price hike at the end of the checkout process. However, this was countered by all prices being in dollars, so the real price being less than I subconsciously expected!
+
+The price went $35.88/yr to $43.05 when I selected my country (20% VAT), but this is £34.79 so... almost the same number we started with.
+
+## Conclusion

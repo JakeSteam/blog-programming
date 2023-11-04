@@ -6,6 +6,8 @@ image: /assets/images/2023/1password-banner.jpeg
 tags:
     - Security
     - Passwords
+    - LastPass
+    - 1Password
 ---
 
 Almost exactly a year ago, [I migrated from Chrome's password manager to LastPass](/migrating-to-lastpass-and-tidying-up/). Whilst this was luckily *after* the breach, the constant "oops, bad news" headlines destroyed my trust in LastPass. My renewal was coming up, but I migrated to 1Password instead: here's how it went.
@@ -92,6 +94,8 @@ Whilst on the screen to enter my card details, I got distracted looking in an al
 
 I do understand the security benefits of this, but I really wish I'd been told my session had expired *before* I typed in all my details and clicked submit! Not a big deal, but a minor annoyance.
 
+After creating an account, I noticed that this timer can be sent to any value, a nice quality of life feature.
+
 ### Doesn't understand Android logins
 
 This may just be a quirk of transferring from LastPass with Android logins, but 1Password doesn't seem to understand their format. These URIs are in the format `android://abc123` yet 1Password saves them as `http://android://abc123`, and then complains that they aren't `https`!
@@ -121,3 +125,13 @@ Finally, 1Password uses dollars for all payments and doesn't include tax until t
 The price went $35.88/yr to $43.05 when I selected my country (20% VAT), but this is £34.79 so... almost the same number we started with.
 
 ## Conclusion
+
+[1Password](https://1password.com) is good, use it! 
+
+I'm *really* hoping I don't have to make another of these posts in a year, migrating to yet another password manager because 1Password has had some catastrophic issue. Really really really hoping.
+
+So far it's been an improvement across all fronts, and has stopped password storage being a niggling "uh oh, might be an issue eventually" thought in the back of my mind. I'm also interested in their [developer tools](https://1password.com/developers), hopefully I'll have some time to play with their GitHub Actions / VSCode / git integrations at some point.
+
+There's also a [Fastmail](https://support.1password.com/fastmail/) integration that I might try. I currently use a unique email per service (all automatically routing to my real email via a catch-all), but another way to achieve this is always appreciated.
+
+It's a great feeling being interested in what my password manager is developing, instead of desperately hoping they don't have a problem!

@@ -1,5 +1,5 @@
 ---
-title: "Migrating from LastPass to 1Password: Initial pros & cons"
+title: "First impressions migrating from LastPass to 1Password"
 author: Jake Lee
 layout: post
 image: /assets/images/2023/1password-banner.jpeg
@@ -108,7 +108,7 @@ Similarly, it treats local IPs like URLs. This technically makes sense, but if I
 
 [![](/assets/images/2023/1password-ip.png)](/assets/images/2023/1password-ip.png)
 
-### Reused passwords
+### Multidomain logins
 
 LastPass had a feature where it understood that multiple subdomains of the same domain might use the same details. For example, `login.example.com` might use the same authentication as `account.example.com`, and they can be treated as the same site.
 

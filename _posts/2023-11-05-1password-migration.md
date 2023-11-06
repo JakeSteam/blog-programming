@@ -41,9 +41,9 @@ The timeline of my transfer process is a testament to how eager I was to leave L
 
 ### LastPass category import
 
-Considering [how much effort](/migrating-to-lastpass-and-tidying-up/#tidying-up-lastpass) I put into deduplicating and organising my 1000+ password into ~10 categories with ~400 total, losing my folders was a big concern. 
+Considering [how much effort](/migrating-to-lastpass-and-tidying-up/#tidying-up-lastpass) I put into deduplicating and organising my 1000+ passwords into ~10 categories with ~400 passwords total, losing my folders was a big concern. 
 
-Luckily, this data migrated across perfectly! 1Password converted the categories into tags, and even took the extra step of adding a "LastPass" "LastPass Import [date]" tags.
+Luckily, this data migrated across perfectly (well, except for an odd missing character tag)! 1Password converted the categories into tags, and even took the extra step of adding a "LastPass" "LastPass Import [date]" tags.
 
 [![](/assets/images/2023/1password-tags.png)](/assets/images/2023/1password-tags.png)
 
@@ -90,7 +90,7 @@ I can't share any screenshots of the app (boo, security policy), and weirdly eno
 
 ### Logged out during payment
 
-Whilst on the screen to enter my card details, I got distracted looking in an alternate banking app to use a different card to usual. I can only assume this somehow took more than 10 minutes, since when I finally found my card and entered the details, upon clicking "Submit" I was told my session had expired, and I needed to login again.
+Whilst on the screen to enter my card details, I got distracted looking in a banking app to use a different card to usual. I can only assume this somehow took more than 10 minutes, since when I finally found my card and entered the details, upon clicking "Submit" I was told my session had expired, and I needed to login again (and re-enter my card details).
 
 I do understand the security benefits of this, but I really wish I'd been told my session had expired *before* I typed in all my details and clicked submit! Not a big deal, but a minor annoyance.
 
@@ -112,7 +112,7 @@ Similarly, it treats local IPs like URLs. This technically makes sense, but if I
 
 LastPass had a feature where it understood that multiple subdomains of the same domain might use the same details. For example, `login.example.com` might use the same authentication as `account.example.com`, and they can be treated as the same site.
 
-Unfortunately it looks like this didn't transfer across properly, since some passwords got duplicated. For example, `auth3.uber.com` and `auth.uber.com` are clearly the same site, yet I've ended up with 2 records. This wasn't a big problem, I just went through and deleted the less useful copy of the ~40 duplicates.
+Unfortunately it looks like this didn't transfer across properly, since some passwords got duplicated (and flagged as such). For example, `auth3.uber.com` and `auth.uber.com` are clearly the same site, yet I've ended up with 2 records. This wasn't a big problem, I just went through and deleted the less useful copy of the ~40 duplicates.
 
 A minor annoyance at this stage was when deleting a duplicate login, the now unduplicated login would remain in this list. A small bug, but one that made deleting duplicates a bit more awkward.
 

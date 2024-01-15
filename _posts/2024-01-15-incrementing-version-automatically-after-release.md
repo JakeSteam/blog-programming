@@ -1,5 +1,5 @@
 ---
-title: How to increment project's version code automatically after a release using GitHub Actions
+title: How to increment a project's version code automatically after a GitHub release using GitHub Actions
 author: Jake Lee
 layout: post
 image: /assets/images/2024/autoincrement-banner.png
@@ -116,7 +116,7 @@ jobs:
 ```
 {% endraw %}
 
-## Explanation
+## Explanation / Tips
 
 I won't walk through each line of code, but I will highlight a few areas that can lead to mistakes.
 
@@ -167,6 +167,12 @@ on:
 ### Skip CI when incrementing
 
 I don't want my `main` branch to rebuild after the version increments, so I added `[skip ci]` to the incrementing's commit message. This may vary in your use case.
+
+### Add to existing workflow
+
+Whilst this post has focused on the version incrementing as a standalone task, it makes more sense to incorporate the actions into your current release workflow.
+
+In my scenario, the incrementing only runs after the build has been created and published to the Play Store. If that fails, the version is not incremented.
 
 ### Using for Android builds
 

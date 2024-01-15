@@ -1,23 +1,25 @@
 ---
-title: How to increment version code automatically after a release, using GitHub Actions
+title: How to increment project's version code automatically after a release using GitHub Actions
 author: Jake Lee
 layout: post
-image: /assets/images/2023/autoincrement-banner.png
+image: /assets/images/2024/autoincrement-banner.png
 tags:
     - GitHub Actions
     - CI
+    - Android
 ---
 
-Releasing software can be awkward. This is especially true when working in a complex ecosystem like Gradle for Android. Recently, I improved how an app releases by autoincrementing version number after a build has been published: here's how! 
+Releasing software can be awkward, especially when working in a complex ecosystem like Gradle for Android. Recently, I at least removed one pain point by autoincrementing version number after a build has been published: here's how! 
 
 ## Overview
 
-To autoincrement a version number inside a GitHub Action, we need the ability to do 3 tasks:
+To autoincrement a version number inside a GitHub Action, we need the ability to do 4 tasks:
 1. **Automatically make changes to the repo**: Using a Personal Access Token.
 2. **Find the version number, increment it, and commit it**: Using [`gh-action-increment-value`](https://github.com/yoichiro/gh-action-increment-value).
-3. **Trigger the workflow on a GitHub release**: `on: release: types: [published]`.
+3. **Trigger the workflow on a GitHub release**: Using `on: release:`.
+4. **Put all the parts together**.
 
-The ability to do these 3 tasks with [example versioning](https://github.com/JakeSteam/autoincrement-version/blob/main/versions.txt) is available as [a GitHub repository](https://github.com/JakeSteam/autoincrement-version/blob/main/.github/workflows/on-release.yml), read on for a step-by-step guide.
+The ability to do these tasks with example versioning is available as [a GitHub repository](https://github.com/JakeSteam/autoincrement-version/blob/main/.github/workflows/on-release.yml) ([example log](https://github.com/JakeSteam/autoincrement-version/actions/runs/7533017130/job/20504765014)), read on for a step-by-step guide.
 
 ## 1. Making changes
 
@@ -25,8 +27,8 @@ To autoincrement the version number, your workflow needs permission to modify yo
 
 ### Creating a PAT
 
-There are 2 options for creating a PAT:
-1. "Tokens (classic)" are easier to use but riskier, as they apply to all repositories.
+Personal Access Tokens can be created on the "Developer settings" section of your personal GitHub settings. There are 2 options for creating a PAT:
+1. "[Tokens (classic)](https://github.com/settings/tokens/new)" are easier to use but riskier, as they apply to all repositories.
 2. "[Fine-grained tokens](https://github.com/settings/personal-access-tokens/new)" are in [beta](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/). They only last a year, but there is much more control over which repositories and permissions they can access. 
 
 Since we need somewhat risky permissions (pushing commits), I'd recommend using the fine-grained tokens despite the extra effort. These unfortunately have a maximum expiry of 1 year, *but* can be scoped to just the repository that needs version incrementing. Whichever option you pick, make sure it has the ability to read and write the contents of your repository that needs autoincrementing.
@@ -55,7 +57,7 @@ Luckily, [a GitHub Action exists](https://github.com/yoichiro/gh-action-incremen
 
 The only task left is configuring where the file is, and the strings before and after the numerical version. Here's an example config, that transforms `{"buildNumber":3}` into `{"buildNumber":4}`
 
-```
+```yml
       - name: Increment value
         uses: yoichiro/gh-action-increment-value@main
         with:
@@ -68,22 +70,23 @@ The only task left is configuring where the file is, and the strings before and 
 
 ## 3. Triggering the workflow
 
-This is the easiest bit, since GitHub Actions supports this functionality already with `on: release:`. I'd also recommend adding `workflow_dispatch` you the workflow can be triggered manually:
+This is the easiest bit, since GitHub Actions supports this functionality already with `on: release:`. I'd also recommend adding `workflow_dispatch` so the workflow can be triggered manually:
 
-```
+```yml
 on:
   release:
     types: [published]
   workflow_dispatch:
 ```
 
-## Workflow
+## 4. Putting it all together
 
 Finally, we can put all the pieces together!
 
-As a reminder, we need to trigger the workflow on a release, checkout the code, and increment the version. Here's the entire workflow, an explanation of each section follows:
+As a reminder, we need to trigger the workflow on a release, checkout the code, and increment the version. Here's the entire workflow, an explanation of unclear bits follows:
 
-```
+{% raw %}
+```yml
 name: On release
 
 on:
@@ -111,6 +114,7 @@ jobs:
           suffix: ']'
           commit_message: '[skip ci] Increments the patch version to'
 ```
+{% endraw %}
 
 ## Explanation
 
@@ -135,26 +139,26 @@ ext.app_versions = [versionMajor:4, versionMinor:1, versionPatch:0]
 
 ### Checkout with PAT
 
-The workflow checks out using the PAT (`with: token: ${{ secrets.PAT }}`) so that all parts of it have the ability to make changes. 
+The workflow checks out using the PAT ({% raw %}`with: token: ${{ secrets.PAT }}`{% endraw %}) so that all actions have the ability to make changes. 
 
-### Need ref to attach to correct branch
+### Need reference to branch
 
 The workflow specifically checks out `main`, otherwise when triggered by a release it will end up with a detached `HEAD` and be unable to commit any changes.
 
-### Use releases not tag
+### Use releases not tags
 
 I initially triggered the action whenever a tag was pushed:
 
-```
+```yml
 on:
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 ```
 
-However, this would have caused problems if an old tag was ever pushed (e.g. for a historical release). As such, it now triggered when a release is published:
+However, this would have caused problems if an old tag was ever pushed (e.g. for a historical release). As such, it now triggers when a release is published:
 
-```
+```yml
 on:
   release:
     types: [published]
@@ -162,28 +166,28 @@ on:
 
 ### Skip CI when incrementing
 
-I don't want my `main` branch to rebuild after the version increments, so I added `[skip ci]` to the incrementer's commit message. This may vary in your use case.
+I don't want my `main` branch to rebuild after the version increments, so I added `[skip ci]` to the incrementing's commit message. This may vary in your use case.
 
 ### Using for Android builds
 
 If you've read this far as an Android developer, you're probably wondering how this would work for Android, since we have both version name and version code. Once solution that worked for me is to define the build version (using [Semantic Versioning](https://semver.org/)) in a `dependencies.gradle` file:
 
-```
+```gradle
 ext.app_versions = [versionMajor:4, versionMinor:1, versionPatch:1]
 ```
 
 The app-level `build.gradle` then reads this using:
-```
+```gradle
 apply from: rootProject.file('dependencies.gradle')
 ```
 
 Now the version name can be created from this as:
-```
+```gradle
 versionName "${app_versions.versionMajor}.${app_versions.versionMinor}.${app_versions.versionPatch}"
 ```
 
 And finally the version code can be created by multiplying the version components by powers of 10:
-```
+```gradle
 versionCode app_versions.versionMajor * 1000000 + app_versions.versionMinor * 10000 + app_versions.versionPatch
 ```
 

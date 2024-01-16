@@ -147,7 +147,7 @@ The workflow specifically checks out `main`, otherwise when triggered by a relea
 
 ### Use releases not tags
 
-I initially triggered the action whenever a tag was pushed:
+I initially triggered the action whenever a version tag was pushed:
 
 ```yml
 on:
@@ -176,7 +176,7 @@ In my scenario, the incrementing only runs after the build has been created and 
 
 ### Using for Android builds
 
-If you've read this far as an Android developer, you're probably wondering how this would work for Android, since we have both version name and version code. Once solution that worked for me is to define the build version (using [Semantic Versioning](https://semver.org/)) in a `dependencies.gradle` file:
+If you've read this far as an Android developer, you're probably wondering how this would work for Android, since we have both version name and version code. One solution that worked for me is to define the build version (using [Semantic Versioning](https://semver.org/)) in a `dependencies.gradle` file:
 
 ```gradle
 ext.app_versions = [versionMajor:4, versionMinor:1, versionPatch:1]

@@ -2,7 +2,7 @@
 title: "Opinionated frameworks escape decision paralysis: How Google and T3 jumpstart a new developer's growth"
 author: Jake Lee
 layout: post
-image: /assets/images/2024/
+image: /assets/images/2024/opinionated-frameworks.png
 tags:
   - Next.js
   - t3.gg
@@ -40,7 +40,7 @@ Whilst the scattered articles, GitHub repos, and tutorials are helpful for someo
 
 Luckily, I'd long followed someone called [Theo AKA "T3"](https://twitter.com/t3dotgg) on Twitter / X. I followed for his general tweets about tech, and didn't know he was influential in Next.js / React, nor that he was primarily a video creator. When I was looking on Reddit for template recommendations, someone recommended him, and I discovered [he has a very popular template](https://create.t3.gg/)!
 
-After being burned on the various Vercel templates, I was sceptical initially. However, T3 seemed to have a clear goal: providing the core functionality, and drawing a strict line about what you need to choose. More importantly, all of these decisions were _documented_, instead of just "it's here because I want it to be".
+After being burned on the various Vercel templates, I was sceptical initially. However, T3 seemed to have a clear goal: providing the core functionality, and drawing a strict line about what you need to choose. More importantly, all of these decisions were [_documented_](https://create.t3.gg/en/why#why-trpcprismatailwindetc), instead of just "it's here because I want it to be".
 
 Having these choices documented meant I could make an educated decision about whether I agreed with them. For example, ["Bleed Responsibly"](https://create.t3.gg/en/introduction#bleed-responsibly) discusses his approach to bleeding edge tech, and how it needs to be considered. It shouldn't be used for core functionality (e.g. database), but is fine to use if it's easy to migrate away (e.g. tRPC). Similarly, the non-negotiable stance on TypeScript and type safety provided some reassurance that this isn't a "wild west" template that will have unsafe or unnecessary code scattered around.
 
@@ -55,7 +55,7 @@ All of these combined meant I went from completely lost and considering learning
 
 ## Comparisons to Android
 
-## How do Google / T3 solve this?
+## How do Google / T3 help?
 
 ## Conclusion
 

@@ -55,7 +55,25 @@ All of these combined meant I went from completely lost and considering learning
 
 ## Comparisons to Android
 
+All of this confusion without any real authoritative source felt somewhat familiar throughout. Finally, I realised... this is what it felt like to first learn Android 10 years ago!
+
+In the earlier days of Android development, Google was far less opinionated than they are now. They didn't provide guidance on databases (Room), asynchronicity / threading (Coroutines), architecture (MVVM), or much besides the absolute basics of putting images and text on the screen.
+
+With Android, a lot of the developers were coming from a Java perspective (like myself), so inevitably brought over a lot of the conventions. For example, RxJava and similar libraries became obvious choices due to the amount of existing knowledge. Whilst most of these libraries became somewhat standardised, they were all from different sources, so there was no guarantee they would work well together.
+
+After a few years, Android developers ended up essentially using Java libraries, with various fixes and workarounds glued on top. This was _fine_, but often ended up with far too many options for a simple function like using a SQLite database. Some developers like myself ended up building their apps (e.g. Pixel Blacksmith) on top of total dead-end ORMs that are now abandoned like [Sugar ORM](https://github.com/chennaione/sugar) (don't use this!).
+
+Once an authority, or in this case _the_ authority, steps in and makes recommendations, it's a massive relief. Developers don't need to learn 5 different ways to complete a simple task, they can just learn the Google-endorsed way and they'll be at home in most apps.
+
+Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a far shorter time and entirely within my own head.
+
 ## How do Google / T3 help?
+
+By providing _an_ answer, with rationale, developers can actually get started on writing code. Whilst experienced developers can absolutely debate whether library X or Y is better, as a beginner you just want to be told which one to start with. You'll likely end up learning both eventually, and making this decision is far easier when you understand the other moving parts.
+
+Both Google and T3 are very opinionated. This is completely intentional, and provides a "happy path" for getting basic functionality working. Sure, you might need to swap out libraries if you have a niche need, but realistically the vast majority of apps (web or mobile) have identical base requirements. You need to fetch data, you need to store data, you need to display data, and you need to update data.
+
+I'm absolutely envious of developers who enter the Android ecosystem when it is already mature, as I did with Next.js. When a technology is new and exciting it's essentially chaos, with countless alternatives for every part of your app, and no way to tell which will become dominant in five years. Joining late lets you skip learning multiple similar approaches, and just learn the one that the community has embraced.
 
 ## Conclusion
 

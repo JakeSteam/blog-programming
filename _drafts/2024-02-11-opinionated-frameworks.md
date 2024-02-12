@@ -1,5 +1,5 @@
 ---
-title: "Opinionated frameworks escape decision paralysis: How Google and T3 jumpstart a new developer's growth"
+title: "Opinionated frameworks escape decision paralysis: How Google and T3 help jumpstart a new developer's learning"
 author: Jake Lee
 layout: post
 image: /assets/images/2024/opinionated-frameworks.png
@@ -9,15 +9,15 @@ tags:
   - Android
 ---
 
-I recently dived into a world I knew nothing about, not even the language: Modern web development. After completing the official tutorials, I was hit with decision paralysis when trying to start an actual project. The solution? Opinionated frameworks like [T3](https://create.t3.gg/).
+I recently dived into a world I knew nothing about, not even the language: Modern web development. After completing the official tutorials, I was hit with decision paralysis when trying to start an actual project. The solution? Opinionated templates like [T3](https://create.t3.gg/).
 
 ## My decision paralysis
 
 So, I wanted to learn Next.js. This required learning the underlying framework (React), a new language (TypeScript), and even an entire ecosystem (npm). I also needed to learn about hosting, databases, APIs, and a million other things I vaguely understood but not enough to actually implement. Sounds easy!
 
-Of course Next.js has different versions. It also has completely different ways of architecting a project, of which has a completely different official tutorial ([pages router](https://nextjs.org/learn-pages-router/basics/create-nextjs-app) or [app router](https://nextjs.org/learn)). It also has 4 ways of displaying content. Do I want SSG? SSR? CSR? ISR? WTF!
+Of course Next.js has different versions. It also has completely different ways of architecting a project, each of which has an unconnected official tutorial ([pages router](https://nextjs.org/learn-pages-router/basics/create-nextjs-app) or [app router](https://nextjs.org/learn)). It also has 4 ways of displaying content. Do I want SSG? SSR? CSR? ISR? WTF!
 
-Aaaand that's before we even get to the various SDKs and tools required, each of which has multiple alternatives. For an ORM do I want Drizzle, or Prisma? For authentication do I build it myself, use NextAuth.js, or a paid solution like Clerk? For the UI do I build it with CSS modules? Sass? Tailwind? A framework library?
+Aaaand that's before we even get to the various SDKs and tools required, each of which has multiple alternatives. For an ORM do I want Drizzle, or Prisma? For authentication do I build it myself, use NextAuth.js, or a paid solution like Clerk? For the UI do I build it with CSS modules? Sass? Tailwind? A UI framework library?
 
 I have no idea what on earth I'm doing.
 
@@ -32,6 +32,8 @@ Since my initial exploration into Next.js / React was via Vercel's official tuto
 3. **Cluttered** ([example](https://vercel.com/templates/next.js/precedent)): Templates that weren't from a company often suffered from the creator adding random utilities they wanted. These probably help an experienced developer, but for a beginner just add pointless complexity and confusion.
 4. **The kitchen sink** ([example](https://vercel.com/templates/next.js/nextjs-enterprise-boilerplate)): Some templates tried to provide everything you could possibly need, and end up becoming word / code soup. The example provided has a "Features" list that is essentially gibberish for a new developer. Who needs "Automated ChatGPT Code Reviews" or whatever "CVA" might be, I just want a modern template to start with!
 
+[![](/assets/images/2024/opinionated-template-gallery.png)](/assets/images/2024/opinionated-template-gallery.png)
+
 I committed some time to a couple of these templates (especially [Precedent](https://vercel.com/templates/next.js/precedent)), and left feeling a little burnt out and lost. I felt adrift in a sea of a thousand options, with only random opinions from companies and articles to guide me.
 
 Whilst the scattered articles, GitHub repos, and tutorials are helpful for someone learning a specific feature or library, for someone trying to learn the entire thing from scratch a more complete solution is needed.
@@ -44,7 +46,9 @@ After being burned on the various Vercel templates, I was sceptical initially. H
 
 Having these choices documented meant I could make an educated decision about whether I agreed with them. For example, ["Bleed Responsibly"](https://create.t3.gg/en/introduction#bleed-responsibly) discusses his approach to bleeding edge tech, and how it needs to be considered. It shouldn't be used for core functionality (e.g. database), but is fine to use if it's easy to migrate away (e.g. tRPC). Similarly, the non-negotiable stance on TypeScript and type safety provided some reassurance that this isn't a "wild west" template that will have unsafe or unnecessary code scattered around.
 
-Finally, the documentation is absolutely excellent. Not only is the mindset and decision-making documented, there are sections that provide more information and help than I could ever ask for:
+[![](/assets/images/2024/opinionated-t3-recommendations.png)](/assets/images/2024/opinionated-t3-recommendations.png)
+
+Finally, the documentation is absolutely excellent. Not only is the mindset and decision-making described in detail, there are sections that provide more information and help than I could ever ask for:
 
 - [Folder structure](https://create.t3.gg/en/folder-structure): Describing the overall file structure in detail to avoid getting lost.
 - [Library introductions](https://create.t3.gg/en/usage/trpc): Absolutely crucial in helping me understand the project, libraries like Prisma [are described](https://create.t3.gg/en/usage/prisma) in just enough detail. Code examples from the actual project are used, helping them make sense in context.
@@ -61,11 +65,13 @@ In the earlier days of Android development, Google was far less opinionated than
 
 With Android, a lot of the developers were coming from a Java perspective (like myself), so inevitably brought over a lot of the conventions. For example, RxJava and similar libraries became obvious choices due to the amount of existing knowledge. Whilst most of these libraries became somewhat standardised, they were all from different sources, so there was no guarantee they would work well together.
 
-After a few years, Android developers ended up essentially using Java libraries, with various fixes and workarounds glued on top. This was _fine_, but often ended up with far too many options for a simple function like using a SQLite database. Some developers like myself ended up building their apps (e.g. Pixel Blacksmith) on top of total dead-end ORMs that are now abandoned like [Sugar ORM](https://github.com/chennaione/sugar) (don't use this!).
+After a few years, Android developers ended up essentially using Java libraries, with various fixes and workarounds glued on top. This was _fine_, but often ended up with far too many options for simple functionality like using a SQLite database. Some developers like myself ended up building their apps (e.g. Pixel Blacksmith) on top of total dead-end ORMs that are now abandoned like [Sugar ORM](https://github.com/chennaione/sugar) (don't use this!).
 
-Once an authority, or in this case _the_ authority, steps in and makes recommendations, it's a massive relief. Developers don't need to learn 5 different ways to complete a simple task, they can just learn the Google-endorsed way and they'll be at home in most apps.
+Once an authority, or in this case _the_ authority, steps in and makes recommendations, it's a massive relief. Developers don't need to learn 5 different ways to complete a simple task, they can just learn the Google-endorsed way and they'll be at home in most codebases.
 
-Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a far shorter time and entirely within my own head.
+[![](/assets/images/2024/opinionated-google-recommendations.png)](/assets/images/2024/opinionated-google-recommendations.png)
+
+Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a days not years and entirely within my own head.
 
 ## How do Google / T3 help?
 
@@ -75,6 +81,16 @@ Both Google and T3 are very opinionated. This is completely intentional, and pro
 
 I'm absolutely envious of developers who enter the Android ecosystem when it is already mature, as I did with Next.js. When a technology is new and exciting it's essentially chaos, with countless alternatives for every part of your app, and no way to tell which will become dominant in five years. Joining late lets you skip learning multiple similar approaches, and just learn the one that the community has embraced.
 
+Once a baseline of understanding has been achieved, it's drastically easier to compare different options.
+
 ## Conclusion
+
+T3 kept me interested in Next.js / React / Tailwind / Prisma. Google kept me from straying away from Android.
+
+As you've probably realised from the contents of articles on here, I'm usually not particularly opinionated on choosing certain libraries over others. If it works, and is widely adopted, it's probably good enough. I'd much rather learn a whole new ability than learn how to store data in yet another ORM library!
+
+However, publicly discussing & debating these opinions _is_ useful for the long term health of an ecosystem. It's just not what a beginner necessarily needs to read.
+
+Time to carry on developing with the T3 stack, and ignore (for now) all the alternatives!
 
 [![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)

@@ -1,5 +1,5 @@
 ---
-title: "Opinionated frameworks escape decision paralysis: How Google and T3 help jumpstart a new developer's learning"
+title: "Opinionated guidance defeats decision paralysis: How Google and T3 help jumpstart a new developer's learning"
 author: Jake Lee
 layout: post
 image: /assets/images/2024/opinionated-frameworks.png
@@ -7,9 +7,10 @@ tags:
   - Next.js
   - t3.gg
   - Android
+  - Learning
 ---
 
-I recently dived into a world I knew nothing about, not even the language: Modern web development. After completing the official tutorials, I was hit with decision paralysis when trying to start an actual project. The solution? Opinionated templates like [T3](https://create.t3.gg/).
+I recently dived into a world I knew nothing about, not even the language: Modern web development with Next.js. After completing the official tutorials, I was hit with decision paralysis when trying to start an actual project. The solution? Opinionated templates like [T3](https://create.t3.gg/).
 
 ## My decision paralysis
 
@@ -27,12 +28,13 @@ I have 50 decisions to make, and no way of knowing which is an unchangeable comm
 
 Since my initial exploration into Next.js / React was via Vercel's official tutorials, their [templates gallery](https://vercel.com/templates/next.js) seemed a good place to start. I spent a few hours looking through the projects, and they always fell into one of four camps:
 
-1. **Skeleton** ([example](https://vercel.com/templates/next.js/nextjs-boilerplate)): A template that essentially gave me less than I ended up with at the end of the tutorial. I'm a bit clueless on where to go first, and there's too little here to really help.
+1. **Skeleton** ([example](https://vercel.com/templates/next.js/nextjs-boilerplate)): Templates that essentially gave me less than I ended up with at the end of the official tutorial. I'm a bit clueless on where to go first, and there's too little here to really help.
 2. **Skeleton plus X** ([example](https://vercel.com/templates/next.js/liveblocks-starter-kit)): Almost all the third party templates follow this format. They provide a basic landing page _plus_ whatever feature the company happens to offer. No better than a basic skeleton.
 3. **Cluttered** ([example](https://vercel.com/templates/next.js/precedent)): Templates that weren't from a company often suffered from the creator adding random utilities they wanted. These probably help an experienced developer, but for a beginner just add pointless complexity and confusion.
 4. **The kitchen sink** ([example](https://vercel.com/templates/next.js/nextjs-enterprise-boilerplate)): Some templates tried to provide everything you could possibly need, and end up becoming word / code soup. The example provided has a "Features" list that is essentially gibberish for a new developer. Who needs "Automated ChatGPT Code Reviews" or whatever "CVA" might be, I just want a modern template to start with!
 
 [![](/assets/images/2024/opinionated-template-gallery.png)](/assets/images/2024/opinionated-template-gallery.png)
+_[Vercel's Next.js template gallery](https://vercel.com/templates)_
 
 I committed some time to a couple of these templates (especially [Precedent](https://vercel.com/templates/next.js/precedent)), and left feeling a little burnt out and lost. I felt adrift in a sea of a thousand options, with only random opinions from companies and articles to guide me.
 
@@ -47,6 +49,9 @@ After being burned on the various Vercel templates, I was sceptical initially. H
 Having these choices documented meant I could make an educated decision about whether I agreed with them. For example, ["Bleed Responsibly"](https://create.t3.gg/en/introduction#bleed-responsibly) discusses his approach to bleeding edge tech, and how it needs to be considered. It shouldn't be used for core functionality (e.g. database), but is fine to use if it's easy to migrate away (e.g. tRPC). Similarly, the non-negotiable stance on TypeScript and type safety provided some reassurance that this isn't a "wild west" template that will have unsafe or unnecessary code scattered around.
 
 [![](/assets/images/2024/opinionated-t3-recommendations.png)](/assets/images/2024/opinionated-t3-recommendations.png)
+_[T3's template rationale](https://create.t3.gg/)_
+
+After some light customisation during the installation process (essentially "do you want to use feature X?", I chose yes for all), you have a mini-site! It has a database, can read and write data, and already feels like it can do something useful. From this, it's easy to imagine the first steps in creating your own project on top.
 
 Finally, the documentation is absolutely excellent. Not only is the mindset and decision-making described in detail, there are sections that provide more information and help than I could ever ask for:
 
@@ -63,13 +68,16 @@ All of this confusion without any real authoritative source felt somewhat famili
 
 In the earlier days of Android development, Google was far less opinionated than they are now. They didn't provide guidance on databases (Room), asynchronicity / threading (Coroutines), architecture (MVVM), or much besides the absolute basics of putting images and text on the screen.
 
-With Android, a lot of the developers were coming from a Java perspective (like myself), so inevitably brought over a lot of the conventions. For example, RxJava and similar libraries became obvious choices due to the amount of existing knowledge. Whilst most of these libraries became somewhat standardised, they were all from different sources, so there was no guarantee they would work well together.
+With Android, a lot of the developers were coming from a Java perspective (like myself), so inevitably brought over a lot of the conventions. For example, RxJava and similar libraries became obvious choices due to the amount of existing knowledge. Whilst most of these libraries became somewhat standardised, they were all from different sources, so there was no guarantee they would work well together. Similarly, they didn't necessarily make sense in the context of Android.
 
 After a few years, Android developers ended up essentially using Java libraries, with various fixes and workarounds glued on top. This was _fine_, but often ended up with far too many options for simple functionality like using a SQLite database. Some developers like myself ended up building their apps (e.g. Pixel Blacksmith) on top of total dead-end ORMs that are now abandoned like [Sugar ORM](https://github.com/chennaione/sugar) (don't use this!).
 
 Once an authority, or in this case _the_ authority, steps in and makes recommendations, it's a massive relief. Developers don't need to learn 5 different ways to complete a simple task, they can just learn the Google-endorsed way and they'll be at home in most codebases.
 
+Google is now very comfortable defining "modern Android development", including the language, libraries, IDE, and various project settings. Excellent.
+
 [![](/assets/images/2024/opinionated-google-recommendations.png)](/assets/images/2024/opinionated-google-recommendations.png)
+_[Google's definition of modern Android development](https://developer.android.com/modern-android-development)_
 
 Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a days not years and entirely within my own head.
 
@@ -85,12 +93,10 @@ Once a baseline of understanding has been achieved, it's drastically easier to c
 
 ## Conclusion
 
-T3 kept me interested in Next.js / React / Tailwind / Prisma. Google kept me from straying away from Android.
+T3 kept me interested in Next.js / React / Tailwind / Prisma. Google kept me from straying away from Android for long.
 
 As you've probably realised from the contents of articles on here, I'm usually not particularly opinionated on choosing certain libraries over others. If it works, and is widely adopted, it's probably good enough. I'd much rather learn a whole new ability than learn how to store data in yet another ORM library!
 
 However, publicly discussing & debating these opinions _is_ useful for the long term health of an ecosystem. It's just not what a beginner necessarily needs to read.
 
-Time to carry on developing with the T3 stack, and ignore (for now) all the alternatives!
-
-[![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)
+All the time saved comparing libraries and approaches on my current project is extra time to carry on developing within the T3 stack, and ignore (for now) all the alternatives!

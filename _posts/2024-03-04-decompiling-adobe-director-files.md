@@ -12,7 +12,13 @@ Heard of Adobe Flash? Well, it has an unloved older brother: Adobe Director! I r
 
 Since almost everything we'll be using is deprecated and abandoned, I can't guarantee the safety of any software mentioned here. I've used it all happily, but abandoned software can be a risk.
 
-The plan is simple: Install Adobe Director, decompile our DCR file, then open it up.
+The plan is simple:
+
+1. Install Adobe Director.
+2. Decompile our DCR file.
+3. Open it up.
+
+If you're interested in doing the same for Flash files (e.g. `swf`), I've [previously written a guide](https://history.jakelee.co.uk/the-scary-maze-game-screamer-decompiled/#how-was-it-decompiled)!
 
 ## Installing Director
 
@@ -48,7 +54,7 @@ Here's how your working folder should now look:
 
 [![](/assets/images/2024/director-output.png)](/assets/images/2024/director-output.png)
 
-## Opening files
+## Opening DCR files
 
 You can now just double-click any `.dir` file you have, and Adobe Director will open (after confirming you wish to continue your free trial).
 

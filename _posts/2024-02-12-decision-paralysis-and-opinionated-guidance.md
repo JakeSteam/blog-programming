@@ -79,7 +79,7 @@ Google is now very comfortable defining "modern Android development", including 
 [![](/assets/images/2024/opinionated-google-recommendations.png)](/assets/images/2024/opinionated-google-recommendations.png)
 _[Google's definition of modern Android development](https://developer.android.com/modern-android-development)_
 
-Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a days not years and entirely within my own head.
+Discovering T3 and instantly wiping away the endless decision paralysis around Next.js felt like the same story, told in a few days not years and entirely within my own head.
 
 ## How do Google / T3 help?
 

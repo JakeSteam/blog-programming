@@ -1,18 +1,18 @@
 ---
 id: 2265
-title: 'Using ShareX to take screenshots and upload them to a private Imgur album'
-date: '2018-12-28T14:58:20+00:00'
-author: 'Jake Lee'
+title: "Using ShareX to take screenshots and upload them to a private Imgur album"
+date: "2018-12-28T14:58:20+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /using-sharex-to-take-screenshots-and-upload-them-to-a-private-imgur-album/
 image: /wp-content/uploads/2018/12/FOLT86E.png
 categories:
-    - Tips
+  - Tips
 tags:
-    - Imgur
-    - Screenshot
-    - ShareX
-    - Sharing
+  - Imgur
+  - Screenshot
+  - ShareX
+  - Sharing
 ---
 
 The ability to quickly share screenshots with others is essential to day to day conversation / work, especially when talking to people in other offices or countries. The built in Windows Snipping Tool has good basic functionality (e.g. press Win + Shift + S to select an area to copy), but lacks any image uploading functionality, or advanced editing.
@@ -34,7 +34,7 @@ It has an absolutely staggering number of features (see gif below), and it’s d
 
 [![](/wp-content/uploads/2018/12/ShareX_Animation.gif)](/wp-content/uploads/2018/12/ShareX_Animation.gif)
 
-*Animation from getsharex.com*
+_Animation from getsharex.com_
 
 Once ShareX is running, it will appear in your toolbar. Double clicking the icon opens the settings screen. Whilst it can be a little confusing to navigate, the following steps will cover all you need for this configuration.
 
@@ -58,7 +58,7 @@ First, under “After capture tasks”, enable “Upload image to host”.
 
 Next, set Imgur as your image host under “Destinations”, “Image Uploader”, then “Imgur”.
 
-[![]/wp-content/uploads/2018/12/nibVcSy.png)](/wp-content/uploads/2018/12/nibVcSy.png)
+[![](/wp-content/uploads/2018/12/nibVcSy.png)](/wp-content/uploads/2018/12/nibVcSy.png)
 
 ### Connecting ShareX to Imgur
 

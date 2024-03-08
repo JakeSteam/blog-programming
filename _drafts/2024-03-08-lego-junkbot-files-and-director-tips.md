@@ -2,14 +2,14 @@
 title: Open sourcing LEGO Junkbot, and tips for Macromedia/Adobe Director asset extracting 🕵️
 author: Jake Lee
 layout: post
-image: /assets/images/2024/
+image: /assets/images/2024/junkbot-open.png
 tags:
   - Digital preservation
   - LEGO
   - Adobe Director
 ---
 
-As part of a larger project, I recently needed to extract all code & assets from a 20+ year old Macromedia/Adobe Director game: LEGO Junkbot. Here are the files, a discord, and some tips!
+As part of a larger project, I recently extracted all code & assets from a 20+ year old unplayable Adobe Director game: [LEGO Junkbot](https://web.archive.org/web/20020803205407/http://www.lego.com:80/build/junkbot/junkbot.asp?x=x&login=0). Here are the files, a discord, and some tips!
 
 ## LEGO Junkbot source code
 
@@ -114,7 +114,7 @@ This can be fixed by double-clicking the "1 bit" in the bottom left of the Direc
 
 #### Bulk renaming
 
-This isn't specific to Director, but I wanted my source code files to be organised into casts (packages) for easier navigation.
+This isn't specific to Director, but I wanted my source code files to be organised into their Casts (packages) as folders for easier navigation.
 
 Whilst DirectorCastRipper can export with names (see [Extracting files](#extracting-files)), this also includes the cast name. For example, `backgrounds_1_bkg1.bmp` means:
 
@@ -133,7 +133,7 @@ Whilst this could be a whole article (or series of articles!), there's a few tec
 1. **Search for developer names**. For example, I know a "Peter" worked on my project, so [searching for his name](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+peter&type=code) finds lots of files / text involving him, like draft levels.
 2. **Search for expletives / emotion words**. Words like "[shit](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+shit&type=code)", "hate", "awful", "sucks" might find hidden text buried away in game files. It's how I found the internal level name "Shit Stormsof Floaters"!
 3. **Search for comments**. Searching for your language's comment syntax (e.g. `--` or `#comment` for Lingo) might find clues like [debugging log text](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+%23comment&type=code).
-4. **Skim the assets**. You'll almost certainly find unused audio and image assets within the game files, and these can be easy to identify since you won't recognise them.
+4. **Skim the assets**. You'll almost certainly find unused audio and image assets within the game files, and these can be easy to identify since you won't recognise them from gameplay.
 5. **Actually reading the code**. The final step! Skimming over the code will help you find any disabled functionality (e.g. Junkbot has a hidden level editor).
 
 ## Community

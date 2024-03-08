@@ -32,7 +32,9 @@ Adobe Director reached end of life in 2013(!), but luckily the installers are st
 
 [![](/assets/images/2024/director-download.png)](/assets/images/2024/direct-download.png)
 
-Once opened, this is a pretty typical Adobe installer. You'll be asked where you want to install it, what you want to install (I chose default settings), and offered a free trial. There might be a legal way to get a full version for free, but the trial was fine for my purposes.
+Once opened, this is a pretty typical Adobe installer. You'll be asked where you want to install it, what you want to install (I chose default settings), and offered a free trial.
+
+You can use the free trial if you want, but free licences for older versions are [available on Adobe's site](https://web.archive.org/web/20130101115113/https://helpx.adobe.com/x-productkb/policy-pricing/macromedia-legacy-activation-error.html).
 
 |                                           Initial dialog                                            |                                                Installing                                                 |                                               License                                               |
 | :-------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |

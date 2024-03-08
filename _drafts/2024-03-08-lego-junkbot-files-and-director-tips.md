@@ -74,8 +74,6 @@ An editor can be set in `Edit` -> `Preferences` -> `Editors`, editing a content 
 
 I was pretty surprised how well this feature worked, allowing Director to work in harmony with software released 20 years later!
 
-/editor changing image
-
 ### Extracting files
 
 Whilst you _can_ extract all the assets manually, by just opening them all in an external editor and resaving (like I did), there is a better way!
@@ -130,12 +128,16 @@ Once the files were in their appropriate folder (e.g. `backgrounds`), I needed t
 
 ### Secret hunting
 
-Searching for names, expletives
+Whilst this could be a whole article (or series of articles!), there's a few techniques for finding hidden info within an old project. Most importantly, get the data out _first_. Once you're browsing your files in VS Code (or similar), searching will become infinitely easier.
+
+1. **Search for developer names**. For example, I know a "Peter" worked on my project, so [searching for his name](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+peter&type=code) finds lots of files / text involving him, like draft levels.
+2. **Search for expletives / emotion words**. Words like "[shit](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+shit&type=code)", "hate", "awful", "sucks" might find hidden text buried away in game files. It's how I found the internal level name "Shit Stormsof Floaters"!
+3. **Search for comments**. Searching for your language's comment syntax (e.g. `--` or `#comment` for Lingo) might find clues like [debugging log text](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+%23comment&type=code).
+4. **Skim the assets**. You'll almost certainly find unused audio and image assets within the game files, and these can be easy to identify since you won't recognise them.
+5. **Actually reading the code**. The final step! Skimming over the code will help you find any disabled functionality (e.g. Junkbot has a hidden level editor).
 
 ## Community
 
 As with any niche project, I learned a _lot_ along the way. Perhaps most importantly, I learned that there's a community of devs working on tools related to preserving Adobe Director projects. The developers of both [ProjectorRays](https://github.com/ProjectorRays/ProjectorRays) and [DirectorCastRipper](https://github.com/n0samu/DirectorCastRipper) can be found in [ProjectorRays' cosy Discord server](https://discord.gg/yCfAraZx5E), and there's plenty of Director-y discussion happening there.
 
 If you find other Adobe Director resources from the last few years (e.g. [a deep-dive into file formats](https://nosamu.medium.com/a-tour-of-the-adobe-director-file-format-e375d1e063c0)) there's a decent chance the author will be in that Discord server!
-
-[![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)

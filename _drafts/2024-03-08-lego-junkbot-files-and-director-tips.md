@@ -7,7 +7,6 @@ tags:
   - Digital preservation
   - LEGO
   - Adobe Director
-maxheader: 3
 ---
 
 As part of a larger project, I recently needed to extract all code & assets from a 20+ year old Macromedia/Adobe Director game: LEGO Junkbot. Here are the files, a discord, and some tips!
@@ -75,19 +74,59 @@ An editor can be set in `Edit` -> `Preferences` -> `Editors`, editing a content 
 
 I was pretty surprised how well this feature worked, allowing Director to work in harmony with software released 20 years later!
 
-/editor changing
+/editor changing image
 
 ### Extracting files
 
 Whilst you _can_ extract all the assets manually, by just opening them all in an external editor and resaving (like I did), there is a better way!
 
-[n0samu's DirectorCastRipper](https://github.com/n0samu/DirectorCastRipper) is an excellent tool that automatically extracts all assets from a `.dir` and gives them appropriate names.
+[n0samu's DirectorCastRipper](https://github.com/n0samu/DirectorCastRipper) is an excellent tool that automatically extracts all common assets from a `.dir` and gives them appropriate names. Make sure you close Director before using it.
+
+The supported types of data it can export, and output formats, are:
+
+- Bitmap, Picture: `PNG`, `BMP`
+- Sound: `WAV`
+- Flash, Vector shape: `SWF`
+- Shockwave 3D: `W3D`
+- Text: `HTML`, `RTF`, `TXT`
+- Field: `TXT`
+- Lingo code: `LS`
+
+I recommend checking `Include member names in filenames` so files have more useful names, otherwise just their numeric IDs will be used.
+
+|                                                              Options                                                              |                                                             In progress                                                             |
+| :-------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/junkbot-open-directorcastripper-thumbnail.png)](/assets/images/2024/junkbot-open-directorcastripper.png) | [![](/assets/images/2024/junkbot-open-directorcastripper2-thumbnail.png)](/assets/images/2024/junkbot-open-directorcastripper2.png) |
 
 ### Fixing files
 
-SWA to MP3
-1 bit BMP to modern BMP
-Ant renamer
+#### SWA files
+
+Some Director sounds will be stored as `.SWA`, which most media players / browsers can't handle. Luckily, this is just an `.MP3` with metadata, so renaming the file makes it fully playable ([source](https://board.flashkit.com/board/showthread.php?368011-SWA-to-WAV&s=8ddbd4570a8a14ad3138caa3912c99d0&p=3051963&viewfull=1#post3051963)).
+
+#### Bitmap bit depths
+
+Some of the bitmaps within a project might look very broken when they get exported. This happens when they have a "bit depth" of 1 (monochrome), a file format that isn't widely supported.
+
+This can be fixed by double-clicking the "1 bit" in the bottom left of the Director image editor, and selecting 8 bits instead.
+
+|                                               Original                                                |                                               Exported                                                |                                                 Fixed                                                 |
+| :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/junkbot-open-bit1-thumbnail.png)](/assets/images/2024/junkbot-open-bit1.png) | [![](/assets/images/2024/junkbot-open-bit2-thumbnail.png)](/assets/images/2024/junkbot-open-bit2.png) | [![](/assets/images/2024/junkbot-open-bit3-thumbnail.png)](/assets/images/2024/junkbot-open-bit3.png) |
+
+#### Bulk renaming
+
+This isn't specific to Director, but I wanted my source code files to be organised into casts (packages) for easier navigation.
+
+Whilst DirectorCastRipper can export with names (see [Extracting files](#extracting-files)), this also includes the cast name. For example, `backgrounds_1_bkg1.bmp` means:
+
+- Package / cast: `backgrounds`
+- ID: `1`
+- Name: `bkg1.bmp`
+
+Once the files were in their appropriate folder (e.g. `backgrounds`), I needed to strip the prefix from them. There are plenty of tools to do this, but I've always used [Ant Renamer](https://antp.be/software/renamer). Here's the regular expression I used to remove all `package_123_` prefixes:
+
+[![](/assets/images/2024/junkbot-open-ant-thumbnail.png)](/assets/images/2024/junkbot-open-ant.png)
 
 ### Secret hunting
 

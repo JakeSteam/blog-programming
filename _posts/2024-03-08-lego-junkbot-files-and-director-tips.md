@@ -40,6 +40,8 @@ I wrote [a detailed guide](/decompiling-adobe-director-files/) to this, but the 
 4. Download [ProjectorRays](https://github.com/ProjectorRays/ProjectorRays) (again, Chrome will block the download).
 5. Drag your `.dcr` file onto ProjectorRays, it'll give you a `.dir` file 🎉
 
+_Note: ProjectorRays can also be used via the command line._
+
 ### Understanding Director
 
 Macromedia/Adobe Director can be pretty confusing when opening a complex project, especially if you haven't created Flash projects before.
@@ -134,10 +136,11 @@ Whilst this could be a whole article (or series of articles!), there's a few tec
 2. **Search for expletives / emotion words**. Words like "[shit](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+shit&type=code)", "hate", "awful", "sucks" might find hidden text buried away in game files. It's how I found the internal level name "Shit Stormsof Floaters"!
 3. **Search for comments**. Searching for your language's comment syntax (e.g. `--` or `#comment` for Lingo) might find clues like [debugging log text](https://github.com/search?q=repo%3AJakeSteam%2Fjunkbot-code+%23comment&type=code).
 4. **Skim the assets**. You'll almost certainly find unused audio and image assets within the game files, and these can be easy to identify since you won't recognise them from gameplay.
-5. **Actually reading the code**. The final step! Skimming over the code will help you find any disabled functionality (e.g. Junkbot has a hidden level editor).
+5. **Look out of bounds**. Sometimes assets are hidden outside the window boundaries during development, but will appear within Adobe Director's stage.
+6. **Actually reading the code**. The final step! Skimming over the code will help you find any disabled functionality (e.g. Junkbot has a hidden level editor).
 
 ## Community
 
 As with any niche project, I learned a _lot_ along the way. Perhaps most importantly, I learned that there's a community of devs working on tools related to preserving Adobe Director projects. The developers of both [ProjectorRays](https://github.com/ProjectorRays/ProjectorRays) and [DirectorCastRipper](https://github.com/n0samu/DirectorCastRipper) can be found in [ProjectorRays' cosy Discord server](https://discord.gg/yCfAraZx5E), and there's plenty of Director-y discussion happening there.
 
-If you find other Adobe Director resources from the last few years (e.g. [a deep-dive into file formats](https://nosamu.medium.com/a-tour-of-the-adobe-director-file-format-e375d1e063c0)) there's a decent chance the author will be in that Discord server!
+If you find other Adobe Director resources from the last few years (e.g. [a deep-dive into file formats](https://nosamu.medium.com/a-tour-of-the-adobe-director-file-format-e375d1e063c0)) there's a decent chance the author will be in that Discord server! For broader Shockwave discussions (with lots of FAQs), there's also the larger [Shockwave Discord server](https://discord.gg/5FDHp8MRma).

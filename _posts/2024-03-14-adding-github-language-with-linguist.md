@@ -1,5 +1,5 @@
 ---
-title: "How to add a new programming language to GitHub: an introduction to Linguist"
+title: "How to add a new programming language to GitHub: an introduction to Linguist 🔡"
 author: Jake Lee
 layout: post
 image: /assets/images/2024/linguist-banner.png

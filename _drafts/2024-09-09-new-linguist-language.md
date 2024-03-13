@@ -77,7 +77,7 @@ If your file extension is unique, just search for your file extension (excluding
 
 However, if your language shares an extension with an existing language, you need to use some sort of filter. This is typically done by including mandatory parts of your language's files if possible, or more typically defining a regular expression to "catch" most of your language's files. This is known as a "heuristic", read on if you need one!
 
-### Heuristic (optional)
+### (Optional) Heuristic
 
 As mentioned, if your language's extension conflicts with another, you'll need a heuristic to let Linguist work out which language to use.
 
@@ -141,8 +141,28 @@ If you are adding a new language with a file extension conflict, you'll likely h
 
 As mentioned, you only need to complete this step if you are adding an extension that is already in use. Luckily, it's not much work at all.
 
-First, open `heuristics.yml`, and find or create your extension's section (again, alphabetically).
+First, open `heuristics.yml`, and find or create your extension's section (again, alphabetically). Add your language, and your pattern AKA [heuristic](#optional-heuristic).
+
+You'll also need to add a test for your heuristic, in `test_heuristics.rb`. This can just copy the format of existing tests, no special logic is needed.
+
+Run `bundle exec rake test`, they should all pass, and you are finally finished!
+
+[![](/assets/images/2024/linguist-heuristics-added.png)](/assets/images/2024/linguist-heuristics-added.png)
 
 ## Raising a PR
 
+First, make sure you've committed all your changes. In Codespaces, there is a source control tab (3rd), select it then click the `+` next to "Changes" to stage all your changes.
+
+Add a meaningful commit message, click "Commit", then "Publish Branch". Choose your fork, and push the `master` branch up.
+
+Opening [the Linguist repository](https://github.com/github-linguist/linguist) will now give a prompt about your recently pushed branch:
+
+[![](/assets/images/2024/linguist-pr-to-add.png)](/assets/images/2024/linguist-pr-to-add.png)
+
+Click this, fill in the PR template carefully, and await feedback from the Linguist maintainers! I received [feedback on my PR](https://github.com/github-linguist/linguist/pull/6746) within a few hours, pointing out that I'd missed a test (oops).
+
 ## Conclusion
+
+GitHub is an extraordinary tool, consisting of hundreds of complex parts that do plenty under the hood to improve developer experience. Linguist's ability to detect and highlight languages is one such feature, and having a basic understanding of how it works is useful!
+
+There's quite a few parts of Linguist that I'd like to look into more (e.g. how do the heuristics actually get used? What if two languages share the same name?), but it seems like a tool that has been happily growing for years, and is maintained with a lot of love.

@@ -30,7 +30,7 @@ Less obviously, but far more significant for developer experience, is the abilit
 
 Linguist solves all of this behind the scenes, with the help of contributors like you and me. Importantly, it (mostly) isn't a team focused on writing new language parsers, instead it coordinates the use of existing software.
 
-## What are the new language requirements?
+## Language popularity
 
 So, you have a programming language that isn't detected by Linguist. Congratulations, it must be a pretty rare language!
 
@@ -40,7 +40,7 @@ As GitHub's search often only shows results from the last few years, there is a 
 
 _Note: Adding a new file extension for an existing language has the same requirements as a brand-new language, to avoid a single language "claiming" too many extensions._
 
-## What do I need to add a new language?
+## Language requirements
 
 Here's everything you need to submit a request for a new language to be added. I'd recommend gathering all this before actually [implementing the new language](#implementing-the-new-language), since it's all required and can take time!
 
@@ -86,7 +86,7 @@ You'll likely want a regular expression for this, and you can use GitHub's searc
 
 My language, Lingo, defines functions using `on abc ... end`. As such, I used a regular expression matching lines starting with `on`, then 1 or more words, followed (after x lines of function) with a line containing just `end`. This Regex looks like: `/^on\s\w+([\s\S]*?)\nend$/`, [here it is in context](https://github.com/search?type=code&q=NOT+is%3Afork+path%3A*.ls+%2F%5Eon%5Cs%5Cw%2B%28%5B%5Cs%5CS%5D*%3F%29%5Cnend%24%2F).
 
-## Implementing the new language
+## Adding a new language
 
 Okay, so you have all your necessary parts! What now?
 
@@ -140,7 +140,7 @@ You can check your work is done by running `bundle exec rake test`. If that repo
 
 If you are adding a new language with a file extension conflict, you'll likely have some failing tests. Time to fix them.
 
-### (Optional) Fixing language tests
+### Language tests
 
 As mentioned, you only need to complete this step if you are adding an extension that is already in use. Luckily, it's not much work at all.
 

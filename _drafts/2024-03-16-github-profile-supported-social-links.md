@@ -59,11 +59,23 @@ I used a short JavaScript snippet to extract these, see ["Checking for yourself"
 
 ### Decentralised networks
 
-[![](/assets/images/2024/githubprofile-invalid-social.png)](/assets/images/2024/gthubprofile-invalid-social.png)
+If your social link ends in `@Something` (specifically if it matches the regex `^https?://([^/]+)/@([^/?]+)/?$`), a completely different system is invoked!
+
+To try and determine if the URL is a decentralised network, a call is made to `https://github.com/settings/nodeinfo_software?host=<domain>`, which returns the decentralised network software being used. For example, `https://mastodon.social/@Jake` returns `{"software_name":"mastodon"}`.
+
+Since the regular expression and network name are stored in the HTML as `try-nodeinfo-pattern` and `nodeinfo-software`, it's safe to assume the "[NodeInfo](https://github.com/jhass/nodeinfo)" protocol is being used to determine if either of the two supported networks (Mastodon, Hometown) are in use.
 
 ## Checking for yourself
 
-```JavaScript
+In case you'd like to double-check this post's list is up-to-date, here's the JavaScript I used to extract all the networks and regular expressions.
+
+Copy and pasting this into the browser's console on your GitHub profile will output a list of networks and regexes, with a `*` next to decentralised ones. The output will look like this:
+
+[![](/assets/images/2024/githubprofile-js-output.png)](/assets/images/2024/githubprofile-js-output.png)
+
+_Note: Always be careful what you paste into the console! Only copy and paste the snippet if you've read it and understood it._
+
+```JS
 (() => {
   const elements = document.querySelectorAll('span[data-targets="social-account-editor.iconOptions"]');
   let dataPairs = {};
@@ -89,9 +101,3 @@ I used a short JavaScript snippet to extract these, see ["Checking for yourself"
   return dataPairs;
 })();
 ```
-
-https://nodeinfo.diaspora.software/protocol.html
-
-https://github.com/jhass/nodeinfo
-
-https://github.com/settings/nodeinfo_software?host=masto.kkoyung.dev

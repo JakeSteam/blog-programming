@@ -67,37 +67,57 @@ Since the regular expression and network name are stored in the HTML as `try-nod
 
 ## Checking for yourself
 
-In case you'd like to double-check this post's list is up-to-date, here's the JavaScript I used to extract all the networks and regular expressions.
+As mentioned, to fetch this information I wrote some JavaScript to look at the possible social link formats in a GitHub profile, and display their regular expression(s).
 
-Copy and pasting this into the browser's console on your GitHub profile will output a list of networks and regexes, with a `*` next to decentralised ones. The output will look like this:
+The output looks like this, with a `*` next to any decentralised networks:
 
-[![](/assets/images/2024/githubprofile-js-output.png)](/assets/images/2024/githubprofile-js-output.png)
+[![](/assets/images/2024/githubprofile-js-output-thumbnail.png)](/assets/images/2024/githubprofile-js-output.png)
 
-_Note: Always be careful what you paste into the console! Only copy and paste the snippet if you've read it and understood it._
+Copy and pasting the JavaScript below into the browser's console on your GitHub profile will output a list of networks and regexes.
 
-```JS
+_Always be careful what you paste into the console!_
+
+```javascript
+// Script to extract supported social platforms & regexes from GitHub profiles
 (() => {
-  const elements = document.querySelectorAll('span[data-targets="social-account-editor.iconOptions"]');
-  let dataPairs = {};
+  const elements = document.querySelectorAll(
+    'span[data-targets="social-account-editor.iconOptions"]'
+  );
+  const dataPairs = {};
 
-  elements.forEach(element => {
-    let titleElement = element.querySelector('svg title');
+  elements.forEach((element) => {
+    const titleElement = element.querySelector("svg title");
     if (!titleElement) return;
 
     let title = titleElement.textContent;
-    let patternElements = element.querySelectorAll('span[data-provider-pattern], span[data-try-nodeinfo-pattern]');
+    const patternElements = element.querySelectorAll(
+      "span[data-provider-pattern], span[data-try-nodeinfo-pattern]"
+    );
 
-    patternElements.forEach(patternElement => {
-      let patternValue = patternElement.getAttribute('data-provider-pattern') || patternElement.getAttribute('data-try-nodeinfo-pattern');
-      if (patternElement.hasAttribute('data-try-nodeinfo-pattern')) {
-        title = '*' + title;
+    patternElements.forEach((patternElement) => {
+      const patternValue =
+        patternElement.dataset.providerPattern ||
+        patternElement.dataset.tryNodeinfoPattern;
+
+      if (patternElement.dataset.tryNodeinfoPattern) {
+        title = "*" + title;
       }
 
       dataPairs[title] = dataPairs[title] || [];
-      if (!dataPairs[title].includes(patternValue)) dataPairs[title].push(patternValue);
+      if (!dataPairs[title].includes(patternValue)) {
+        dataPairs[title].push(patternValue);
+      }
     });
   });
 
   return dataPairs;
 })();
 ```
+
+## Conclusion
+
+This simple but helpful feature is almost completely undocumented, with only [a vague mention](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#adding-links-to-your-social-accounts) in GitHub's docs [and release notes](https://github.blog/changelog/2023-02-02-add-more-social-links-to-your-user-profile/) as:
+
+> You can now add up to 4 links to any social accounts to your user profile, with special support for popular platforms.
+
+It's a shame GitHub don't seem to be actively adding new platforms, especially with platforms like Kick, TikTok, Pinterest, Discord, Threads etc all completely absent. Regardless, hopefully this article helps you improve your profile by including more aesthetic links!

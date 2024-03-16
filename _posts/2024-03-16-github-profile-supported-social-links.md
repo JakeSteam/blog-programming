@@ -73,7 +73,7 @@ The output looks like this, with a `*` next to any decentralised networks:
 
 [![](/assets/images/2024/githubprofile-js-output-thumbnail.png)](/assets/images/2024/githubprofile-js-output.png)
 
-Copy and pasting the JavaScript below into the browser's console on your GitHub profile will output a list of networks and regexes.
+Copy and pasting the JavaScript below into the browser's console on your GitHub profile will output a list of networks and associated regexes.
 
 _Always be careful what you paste into the console!_
 
@@ -83,7 +83,7 @@ _Always be careful what you paste into the console!_
   const elements = document.querySelectorAll(
     'span[data-targets="social-account-editor.iconOptions"]'
   );
-  const dataPairs = {};
+  const networks = {};
 
   elements.forEach((element) => {
     const titleElement = element.querySelector("svg title");
@@ -103,14 +103,14 @@ _Always be careful what you paste into the console!_
         title = "*" + title;
       }
 
-      dataPairs[title] = dataPairs[title] || [];
-      if (!dataPairs[title].includes(patternValue)) {
-        dataPairs[title].push(patternValue);
+      networks[title] = networks[title] || [];
+      if (!networks[title].includes(patternValue)) {
+        networks[title].push(patternValue);
       }
     });
   });
 
-  return dataPairs;
+  return networks;
 })();
 ```
 

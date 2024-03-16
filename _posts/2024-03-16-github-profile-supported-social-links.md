@@ -30,6 +30,8 @@ Plus, 2 decentralised networks:
 1. [Mastodon](https://joinmastodon.org/)
 2. [Hometown (Mastodon fork)](https://github.com/hometown-fork/hometown)
 
+Additionally, any verified emails or a verified ORCID iD can be displayed, although these don't count as social accounts so won't be covered in much detail here.
+
 ## How are they detected?
 
 ### Traditional networks
@@ -120,4 +122,10 @@ This simple but helpful feature is almost completely undocumented, with only [a 
 
 > You can now add up to 4 links to any social accounts to your user profile, with special support for popular platforms.
 
-It's a shame GitHub don't seem to be actively adding new platforms, especially with platforms like Kick, TikTok, Pinterest, Discord, Threads etc all completely absent. Regardless, hopefully this article helps you improve your profile by including more aesthetic links!
+It's a shame GitHub don't seem to be actively adding new platforms, especially with platforms like Kick, TikTok, Pinterest, Discord, Threads etc all completely absent. However, they are adding verified identities such as [ORCID iD](https://github.blog/changelog/2024-03-13-authenticate-orcid-id/) (added 2 days before this article!) to display on your profile:
+
+|                                                  ORCID settings                                                   |                                                ORCID on profile                                                 |
+| :---------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/githubprofile-orcid-settings.png)](/assets/images/2024/githubprofile-orcid-settings.png) | [![](/assets/images/2024/githubprofile-orcid-profile.png)](/assets/images/2024/githubprofile-orcid-profile.png) |
+
+Hopefully this article helps you improve your profile by including more aesthetic links!

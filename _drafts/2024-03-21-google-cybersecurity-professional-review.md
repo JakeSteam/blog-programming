@@ -1,5 +1,5 @@
 ---
-title: An unbiased review of Google's Cybersecurity Professional Certificate 👨‍💻
+title: An unbiased detailed review of Google's Cybersecurity Professional Certificate 👨‍💻
 author: Jake Lee
 layout: post
 image: /assets/images/2024/
@@ -7,9 +7,10 @@ tags:
   - Google
   - Cybersecurity
   - Coursera
+maxheader: 3
 ---
 
-Did you know Google offers a Cybersecurity Professional Certificate? I recently completed it, and wanted to share the good, the bad, and the confusing parts!
+Did you know Google offers a Cybersecurity Professional Certificate? They do! I recently completed it, and wanted to share the good, the bad, and the confusing parts.
 
 Before diving into the review, it's worth mentioning that the learning platform used for this (Coursera) has a very rewarding referral program, but **referral links are NOT used** in this article. This way, the review is guaranteed to be impartial.
 
@@ -23,10 +24,13 @@ A few useful links before going into detail:
 
 I won't cover all the basic information around the objectives of each module, or the areas covered, since this is all available on the official site. Instead, I'll cover all the things that _aren't_ discussed, far more interesting! However, it is worth referencing Google's summary of the certificate objectives:
 
-> 1. Understand the importance of cybersecurity practices and their impact for organizations.
-> 2. Identify common risks, threats, and vulnerabilities, as well as techniques to mitigate them.
-> 3. Protect networks, devices, people, and data from unauthorized access and cyberattacks using Security Information and Event Management (SIEM) tools.
-> 4. Gain hands-on experience with Python, Linux, and SQL.
+> Understand the importance of cybersecurity practices and their impact for organizations.
+>
+> Identify common risks, threats, and vulnerabilities, as well as techniques to mitigate them.
+>
+> Protect networks, devices, people, and data from unauthorized access and cyberattacks using Security Information and Event Management (SIEM) tools.
+>
+> Gain hands-on experience with Python, Linux, and SQL.
 
 ### Duration
 
@@ -64,11 +68,43 @@ People have different preferred learning styles, and I sometimes "bounce off" tr
 
 For example, whilst core information is often provided in a video, it's almost always expanded on in far more detail in text / graphic form in the next activity. This serves as a recap, clarifies any misunderstandings, and lets you absorb a bit more surrounding information.
 
-In total, the format offered, in approximate order of frequency, are:
+In total, the formats offered, in approximate order of frequency, are:
 
-1. **Videos**: Typically 2-8 minutes long, with a relevant Google employee on camera. These will often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#videos).
-2. **Readings**: Typically 100-800 words, with relevant diagrams and links. The writing is very high quality, easy to understand, yet also accurate. In fact, despite usually finding plenty, I didn't spot a single spelling mistake throughout the entire certificate! I wish these readings were provided as standalone content, as they're some of the best summaries I've ever seen.
-3. **Quizzes**: These are short, 4-8 question multiple choice quizzes around recently covered content. They're quite easy, usually require a 75% pass rate, and can be retaken if failed.
+#### Videos
+
+Typically 2-8 minutes long, with a relevant Google employee on camera. These will often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#videos).
+
+[![](/assets/images/2024/coursera-videos-thumbnail.png)](/assets/images/2024/coursera-videos.png)
+
+#### Readings
+
+Usually 100-800 words, with relevant diagrams and links. The writing is very high quality, easy to understand, yet also accurate. In fact, despite usually finding plenty, I didn't spot a single spelling mistake throughout the entire certificate! I wish these readings were provided as standalone content, as they're some of the best summaries I've ever seen.
+
+[![](/assets/images/2024/coursera-readings-thumbnail.png)](/assets/images/2024/coursera-readings.png)
+
+#### Quizzes
+
+These are short, 4-8 question multiple choice quizzes around recently covered content. They're quite easy, usually require a 75% pass rate, and can be retaken if failed.
+
+[![](/assets/images/2024/coursera-quizzes-thumbnail.png)](/assets/images/2024/coursera-quizzes.png)
+
+#### Flashcards / Plugins
+
+There's a few formats of these, but they all revolve around clicking to view summaries of information learned. They all contain high quality artwork, and are useful recaps.
+
+[![](/assets/images/2024/coursera-plugins-thumbnail.png)](/assets/images/2024/coursera-plugins.png)
+
+#### Portfolio builders
+
+After learning about a new type of documentation (e.g. incident report), there'll be a self-marked assignment to create an example of this documentation, with an example provided afterwards. I admittedly skimmed these activities usually, since they were quite a lot of paperwork that I've completed in the real world before.
+
+[![](/assets/images/2024/coursera-portfolio-thumbnail.png)](/assets/images/2024/coursera-portfolio.png)
+
+#### Lab activities
+
+Some technical content, such as learning Linux, Python, or SQL, had an interactive lab activity available via "Qwiklabs". The Linux labs especially were very well-structured, more on those in [Linux labs](#linux-labs).
+
+[![](/assets/images/2024/coursera-labs-thumbnail.png)](/assets/images/2024/coursera-labs.png)
 
 ### Videos
 

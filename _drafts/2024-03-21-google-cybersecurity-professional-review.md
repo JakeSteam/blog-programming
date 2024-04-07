@@ -153,7 +153,7 @@ Whilst this tasks start off very basic, and tell you exactly what to type, later
 
 Importantly, the labs strike a good balance between requiring you to type new commands to become familiar, whilst letting you copy and paste repeated or lengthy commands. This is accompanied by a very reliable progress checker, that offers hints if you've completed a task incorrectly. Sometimes a multiple choice question will be shown instead.
 
-Finally, Qwiklabs also has a detailed "League" system, where you get put into a group of other students and promoted / demoted through leagues. This is more relevant for longer term learning, since I unsurprisingly shot to the top of my group after completing every Linux lab in the certificate!
+Finally, Qwiklabs also has a gamified "League" system, where you get put into a group of other students and promoted / demoted through leaderboard rankings. This is more relevant for longer term learning, since I unsurprisingly shot to the top of my group after completing every Linux lab in the certificate!
 
 [![](/assets/images/2024/coursera-qwiklabs-thumbnail.png)](/assets/images/2024/coursera-qwiklabs.png)
 
@@ -177,15 +177,29 @@ Considering this course is taught entirely by Google, I'm very impressed they re
 
 ### Very easy
 
-- It's very easy, due to ability to retake all exams, and no peer review.
+Most of this certificate _can_ be skimmed through if you're just interested in passing and not in actually learning. I was hoping there'd be some element of coursework or peer review, but it is entirely automatic marking of multiple choice quizzes or self-marking of documentation pieces.
+
+As such, it requires discipline to actually do what is requested of you. I admit I skipped most of the lengthy documentation practices, since they were often essentially doing lab work again, but writing additional words around the actions.
+
+I'm not certain what the completion requirements are for a course, but I _believe_ every video / activity needs to be marked as completed, and the quizzes correct above a certain percentage. This won't be a problem if you're actually paying attention to the material, and the occasional mistake (e.g. forgetting an acronym, misreading a question) is totally fine.
+
+Whilst being easy may sound positive, this has the downside of devaluing the certificate somewhat. If a "6 months" course can actually be skimmed through in a few days by cheating on quizzes, it's far less valuable on a resume!
 
 ### Focus on individuals
 
-- Heavy focus on diversity, everyone is welcome, varied career paths, personal stories.
+This is perhaps just due to the focus of the course being complete newcomers to cybersecurity, but I was amazed how many individuals were sharing their personal career stories. These were all non-traditional (e.g. ex-military, originally in physical security, etc), and very obviously intended to highlight how "anyone can work in cybersecurity".
+
+The message itself is fine, but the constant emphasis was bizarre. Similarly, the importance of diversity and different backgrounds for new viewpoints etc was emphasised at least once per course, usually every other module. I don't disagree, but I'm not sure if it needs to be constantly stated halfway through learning a new programming language!
 
 ### Length
 
-- Much, much shorter than advertised (ahead of the game, you got this). 45m for 9m quiz. 30m for ~6m reading.
+The estimated time on every single activity is multiple times higher than reality. For example, a 10 question multiple choice quiz is estimated at 45 minutes, but ends up taking 6-7. Similarly, reading a few paragraphs about a new topic, even with note-taking, takes students an average of 10 minutes... but is estimated at 30 minutes!
+
+This also applies to the courses as a whole, with every module completed prompting a pop-up telling you how absurdly far ahead of the unrealistic estimates you are.
+
+|                                             Course estimate                                             |                                                Quiz estimate                                                |
+| :-----------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/coursera-courseest-thumbnail.png)](/assets/images/2024/coursera-courseest.png) | [![](/assets/images/2024/coursera-activityest-thumbnail.png)](/assets/images/2024/coursera-activityest.png) |
 
 ### Coursera navigation
 

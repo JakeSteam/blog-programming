@@ -14,6 +14,8 @@ Did you know Google offers a Cybersecurity Professional Certificate? They do! I 
 
 Before diving into the review, it's worth mentioning that the learning platform used for this (Coursera) has a very rewarding referral program, but **referral links are NOT used** in this article. This way, the review is guaranteed to be impartial.
 
+Want to skip alllllll the words and detail? [Skip to the conclusion](#conclusion)!
+
 ## Overview
 
 A few useful links before going into detail:
@@ -72,7 +74,7 @@ In total, the formats offered, in approximate order of frequency, are:
 
 #### Videos
 
-Typically 2-8 minutes long, with a relevant Google employee on camera. These will often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#videos).
+Typically 2-8 minutes long, with a relevant Google employee on camera. These will often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#video-features).
 
 [![](/assets/images/2024/coursera-videos-thumbnail.png)](/assets/images/2024/coursera-videos.png)
 
@@ -100,37 +102,76 @@ After learning about a new type of documentation (e.g. incident report), there'l
 
 [![](/assets/images/2024/coursera-portfolio-thumbnail.png)](/assets/images/2024/coursera-portfolio.png)
 
+#### Discussions
+
+The only weak content type, "Discussions" give you a few prompts, and encourage you to answer in a few sentences, then reply to other student's answers. These are typically open-ended questions such as "Why are you interested in learning about network security?". Unfortunately these are almost entirely ignored (see ["Discussions are pointless"](#discussions-are-pointless")), fortunately they are completely optional!
+
+[![](/assets/images/2024/coursera-discussions-thumbnail.png)](/assets/images/2024/coursera-discussions.png)
+
 #### Lab activities
 
 Some technical content, such as learning Linux, Python, or SQL, had an interactive lab activity available via "Qwiklabs". The Linux labs especially were very well-structured, more on those in [Linux labs](#linux-labs).
 
 [![](/assets/images/2024/coursera-labs-thumbnail.png)](/assets/images/2024/coursera-labs.png)
 
-### Videos
+### Video features
 
-- Content is engaging and extremely varied, including mini-quiz inside videos etc
-  - Video, reading, quizzes, flashcards, lab activities
-- Subtitling, playback speeds etc are great. Combined with more detailed reading after videos is a good combo.
+Whilst playing back a video _should_ be easy, it's startling how awful some non-YouTube video players can be (and even YouTube's sometimes). Luckily, this isn't the case for Coursera, with the player containing education-specific features in addition to the basics. The full list of features offered, in order of usefulness is:
+
+- Playback speed is adjustable in 0.25x increments, from 0.75x - 2.00x. This is essential due to the [slow talking speed](#talking-speed-and-tone).
+- Subtitles in English, with automatic alternatives for Spanish, French, Portuguese, and Chinese.
+- A full, accurate transcript below the video, with the sentence being spoken highlighted. Clicking a sentence skips to that part in the video.
+- The ability to make notes at timestamps in the video. Clicking "Save note" saves a clip, and the relevant transcript, and allows you to add your own comments. These can then be viewed in a central place for the course.
+- The video (or transcript / subtitles) can be downloaded in low or high quality for offline revision.
+- Some videos are interrupted by a multiple choice question halfway through, checking your understanding of the content so far.
+
+[![](/assets/images/2024/coursera-saving-notes.png)](/assets/images/2024/coursera-saving-notes.png)
 
 ### Ambitious scope
 
-- You will learn the basics of SQL, Python, cybersecurity, etc
+This certificate will teach you a _lot_, even if you've already had plenty of related experience.
+
+It's quite unusual for a single program to teach you languages like SQL and Python, how to use Linux, almost all the knowledge both technical and procedural involved in an entry level technical job, _plus_ advice on preparing a resume and interviewing!
+
+This scope means there's a necessarily a quite fast pace, and I imagine most students will speed through some areas, then take extra days or weeks for additional independent study if this is their first time learning a technical topic.
+
+Still, this broad focus, delivered in a structured and high quality way, makes it an easy recommendation for anyone trying to get into cybersecurity.
 
 ### Recurring host
 
-- Each course has a central host, helping centre the whole thing, with guest speakers for bits
+Each course of 4 modules (so, 1/8th of the entire certificate) has a main host presenting the content. They introduce themselves, share some of their background, and present almost all of the content, with a few guest speakers scattered throughout.
+
+Having a single person recurring in video after video on a topic helps you focus on the content itself and not the individual, and get used to their style of speaking. Additionally, each of these host speakers has a very relevant job at Google, such as the CISO of Google Fiber, a Technical Program Manager, or a mid-level Security Engineer.
+
+Knowing that the speakers work for Google in technical roles, not in video creation, gives the content extra authority, since the person speaking about it has real life experience. There's a lovely video surprise at the end of the lab featuring these hosts, I won't spoil it here!
 
 ### Linux labs
 
-- Linux's labs are great, including the leaderboard etc. Requires actual understanding, and is more "real world". Commands can be copied, yet still require thought.
+During some modules, especially the Linux one, the course makes heavy use of "[Qwiklabs](https://go.qwiklabs.com/)". This is an online virtual machine based learning platform with various cloud related courses available, and combines a terminal, instructions, and checking your work.
+
+Whilst this tasks start off very basic, and tell you exactly what to type, later on they'll require actual understanding. The instructions will ask you to change permissions for a user, but you'll need to remember the command's functionality and syntax to actually complete it.
+
+Importantly, the labs strike a good balance between requiring you to type new commands to become familiar, whilst letting you copy and paste repeated or lengthy commands. This is accompanied by a very reliable progress checker, that offers hints if you've completed a task incorrectly. Sometimes a multiple choice question will be shown instead.
+
+Finally, Qwiklabs also has a detailed "League" system, where you get put into a group of other students and promoted / demoted through leagues. This is more relevant for longer term learning, since I unsurprisingly shot to the top of my group after completing every Linux lab in the certificate!
+
+[![](/assets/images/2024/coursera-qwiklabs-thumbnail.png)](/assets/images/2024/coursera-qwiklabs.png)
 
 ### Connected modules
 
-- Some information-dense modules (e.g. all of 3) are explained very well, better than I experienced at uni, and far more efficiently.
+All of the modules within a course _make sense_ together, and build on each other logically. Given the density of content I was concerned each video might end up being a standalone topic, but they're all woven together well.
 
-### Realistic
+For example, each section will mention why the new content is related to the previous content, and an end of module (and course) wrap-up ties all the details together.
 
-- Realistic, sites like Reddit / Stack Exchange are mentioned. Similarly, Google products are mentioned when appropriate (Google Sheets or LibreOffice), it's not blatant advertising.
+### Realistic external sites
+
+Finally, the references to external sources are up-to-date and realistic. Instead of referencing text books or mailing lists, sites like Reddit or Unix Stack Exchange are mentioned as far more realistic places to give & receive help.
+
+This also applies to the training on specific tools. Google's products are mentioned when they are relevant and widespread, not focused on exclusively. For example, when talking about log analysis tools a tutorial on the industry standard "Splunk" was provided, in addition to Google's "Chronicle" alternative.
+
+Surprisingly, this even applied when Google clearly has the superior option, such as free spreadsheet creation. Google Sheets is mentioned, but LibreOffice is also suggested as a possible alternative.
+
+Considering this course is taught entirely by Google, I'm very impressed they resisted the urge to exclusively mention the products they presumably use (or work on) internally!
 
 ## The Bad
 
@@ -146,7 +187,9 @@ Some technical content, such as learning Linux, Python, or SQL, had an interacti
 
 - Much, much shorter than advertised (ahead of the game, you got this). 45m for 9m quiz. 30m for ~6m reading.
 
-### Discussions
+### Coursera navigation
+
+### Discussions are pointless
 
 - Discussions are pointless (discussions.png)
 

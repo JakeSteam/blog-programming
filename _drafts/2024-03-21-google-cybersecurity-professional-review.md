@@ -2,7 +2,7 @@
 title: An unbiased detailed review of Google's Cybersecurity Professional Certificate 👨‍💻
 author: Jake Lee
 layout: post
-image: /assets/images/2024/
+image: /assets/images/2024/coursera-banner.png
 tags:
   - Google
   - Cybersecurity
@@ -22,17 +22,15 @@ A few useful links before going into detail:
 
 - [Google's Cybersecurity Professional Certificate](https://www.coursera.org/professional-certificates/google-cybersecurity)
 - [An example of the final certificate](https://www.coursera.org/account/accomplishments/professional-cert/GLBE227BHPQ9) (mine!)
-- [My notes made throughout the certificate process](https://github.com/JakeSteam/cybersecurity-certificate-notes), organised by course.
+- [YouTube uploads of all video content](https://www.youtube.com/playlist?list=PLTZYG7bZ1u6ocTMdhDwwmfjaNv134KcWn), by Google
+- [My notes made throughout the certificate process](https://github.com/JakeSteam/cybersecurity-certificate-notes)
 
 I won't cover all the basic information around the objectives of each module, or the areas covered, since this is all available on the official site. Instead, I'll cover all the things that _aren't_ discussed, far more interesting! However, it is worth referencing Google's summary of the certificate objectives:
 
-> Understand the importance of cybersecurity practices and their impact for organizations.
->
-> Identify common risks, threats, and vulnerabilities, as well as techniques to mitigate them.
->
-> Protect networks, devices, people, and data from unauthorized access and cyberattacks using Security Information and Event Management (SIEM) tools.
->
-> Gain hands-on experience with Python, Linux, and SQL.
+1. Understand the importance of cybersecurity practices and their impact for organizations.
+2. Identify common risks, threats, and vulnerabilities, as well as techniques to mitigate them.
+3. Protect networks, devices, people, and data from unauthorized access and cyberattacks using Security Information and Event Management (SIEM) tools.
+4. Gain hands-on experience with Python, Linux, and SQL.
 
 ### Duration
 
@@ -50,7 +48,7 @@ The certificate is served on Coursera, and whilst you _can_ pay for access to th
 
 As such, Coursera Plus seems to make far more sense if you intend on completing any additional courses whatsoever, otherwise you'll end up with overlapping $49/month subscriptions!
 
-**[ CLARIFY FREE TRIAL, can take for free then pay for cert, etc ]**
+You also get a 7-day free trial with Coursera Plus, and can also apply for financial aid, although I'm not sure how that process works. There's lots more info on pricing on [Coursera's site](https://www.coursera.support/s/article/360036151872-Coursera-Plus), or [r/Coursera](https://www.reddit.com/r/coursera/).
 
 ### My background / aims
 
@@ -74,7 +72,9 @@ In total, the formats offered, in approximate order of frequency, are:
 
 #### Videos
 
-Typically 2-8 minutes long, with a relevant Google employee on camera. These will often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#video-features).
+Typically 2-8 minutes long, with a relevant Google employee on camera, there are so many of these that it adds up to around 14 hours in total! These videos often include animations, diagrams, or code when helpful, and are clearly filmed and edited professionally. More on these in [Videos](#video-features).
+
+Note that these are also [all available on YouTube for free](https://www.youtube.com/playlist?list=PLTZYG7bZ1u6ocTMdhDwwmfjaNv134KcWn).
 
 [![](/assets/images/2024/coursera-videos-thumbnail.png)](/assets/images/2024/coursera-videos.png)
 
@@ -118,7 +118,7 @@ Some technical content, such as learning Linux, Python, or SQL, had an interacti
 
 Whilst playing back a video _should_ be easy, it's startling how awful some non-YouTube video players can be (and even YouTube's sometimes). Luckily, this isn't the case for Coursera, with the player containing education-specific features in addition to the basics. The full list of features offered, in order of usefulness is:
 
-- Playback speed is adjustable in 0.25x increments, from 0.75x - 2.00x. This is essential due to the [slow talking speed](#talking-speed-and-tone).
+- Playback speed is adjustable in 0.25x increments, from 0.75x - 2.00x. This is essential due to the [slow talking speed](#talking-speed).
 - Subtitles in English, with automatic alternatives for Spanish, French, Portuguese, and Chinese.
 - A full, accurate transcript below the video, with the sentence being spoken highlighted. Clicking a sentence skips to that part in the video.
 - The ability to make notes at timestamps in the video. Clicking "Save note" saves a clip, and the relevant transcript, and allows you to add your own comments. These can then be viewed in a central place for the course.
@@ -173,6 +173,22 @@ Surprisingly, this even applied when Google clearly has the superior option, suc
 
 Considering this course is taught entirely by Google, I'm very impressed they resisted the urge to exclusively mention the products they presumably use (or work on) internally!
 
+### Public videos
+
+Whilst I personally found the videos OK, but only when enhanced with surrounding readings and activities, I know other people prefer them. Luckily, Google have [provided all videos from the course](https://www.youtube.com/playlist?list=PLTZYG7bZ1u6ocTMdhDwwmfjaNv134KcWn) on YouTube, for free!
+
+This is a great gesture to give people a taste of the course, whilst also encouraging actually signing up to experience the course properly.
+
+### Prestigious certificate
+
+Due to Google's heavy branding, and the emphasis on "Cybersecurity Professional" instead of a specific topic, the final certificate actually looks and sounds quite impressive. I've interviewed plenty of software engineers, and to me it would look good on a CV / resume, although this of course might vary by industry.
+
+I'd definitely recommend adding the final certificate to LinkedIn, but I'd skip the 8 courses inside as they're clearly just small single topic courses.
+
+[![](/assets/images/2024/coursera-linkedin.png)](/assets/images/2024/coursera-linkedin.png)
+
+The course states that you'll receive an email from Credly that lets you claim the certificate on Acclaim, a more independent badge platform I've used in the past. Assuming this comes through, I'll likely add this to LinkedIn instead, as a more widely known and used platform than Coursera.
+
 ## The Bad
 
 ### Very easy
@@ -203,46 +219,92 @@ This also applies to the courses as a whole, with every module completed prompti
 
 ### Coursera navigation
 
+Whilst the navigation within each course is OK, I found actually trying to get around the Coursera site relentlessly difficult. I resorted to just bookmarking the next module to work out, since navigating from the Coursera homepage takes many, many clicks on confusing buttons.
+
+Similarly, now I've completed my certificate, the site seems unsure how to tell me this. Sometimes it will say congratulations, sometimes it will ask me to verify my ID (not necessary for this course). In the screenshot below, the larger "Google Cybersecurity Professional" takes me to a random in-course module, whilst the smaller one takes me to the certificate frontpage!
+
+This isn't a deal-breaker, since the actual learning sections have different navigation, it's just a confusing aspect.
+
 ### Discussions are pointless
 
-- Discussions are pointless (discussions.png)
+Most modules have an optional [discussion prompt](#discussions), asking a few questions and encouraging you to reply to others. Unfortunately, this is optional, and there's no benefit whatsoever to putting effort in.
+
+As such, the discussions are pages upon pages of spam 1 letter / word posts & replies, with the occasional actual answer. If the quality of these was higher, they could become useful resources for students, I'd recommend Coursera:
+
+1. Allow the current replies to be seen _before_ posting, to encourage discussion not just shouting into the void.
+2. Add a minimum character count, even 50-100 would encourage useful answers.
+3. Add a task early on in the certificate to set a name and profile picture. Currently, people are partially anonymous, and clearly don't feel connected to their answers.
+
+[![](/assets/images/2024/coursera-discussions-spam-thumbnail.png)](/assets/images/2024/coursera-discussions-spam.png)
 
 ### Learning Python
 
-- Not sure Python in a Jupyter notebook is the best way to learn.
+This is a minor complaint, I'm not sure learning Python in a Jupyter notebook worked very well. Because it's a mixture of Markdown and Python, the instructions and coding areas all overlap, making it relatively easy to accidentally delete the instructions!
+
+Admittedly setting up a local environment would be too much work, but I'd have liked to see [GitHub's Codespaces](https://docs.github.com/en/codespaces/overview) used for an instant, realistic environment. Codespaces have a free usage quota, so this could have been a good opportunity to encourage users to make a GitHub account too.
+
+[![](/assets/images/2024/coursera-python-notebook.png)](/assets/images/2024/coursera-python-notebook.png)
 
 ### Wireshark tutorial
 
-- Windows labs just didn't work for me for Wireshark tutorial.
+Short and sweet, the Windows Qwiklabs for Wireshark training took a couple of minutes to allocate the resources and open, then would disconnect as soon as I changed tab (e.g. to look at the instructions)!
+
+Luckily I already have some Wireshark knowledge, otherwise this part would have been unfinishable without installing it locally and hoping I've configured it as the guide expects.
+
+### Limited career help
+
+Whilst the course pitches itself as including resume advice, interview training, and similar steps, in reality these are more like free resources or post-completion trials. You'll finish the certificate with a resume, an elevator pitch, connections within cybersecurity communities, but this is all things you could do yourself reading any "how to get a job" guide.
+
+The provided resume review is actually just a template, and the [AI interview training](https://grow.google/certificates/interview-warmup/) is free anyway. I didn't try it personally, as it's AI driven with no human reviews. There is a free year's membership to "[Big Interview](https://googlecerts.biginterview.com/)", but this also seems to just record your videos and not have any human feedback given.
+
+American graduates get access to "[CareerCircle](https://www.careercircle.com/google)", and all graduates get a 30% discount off the expensive [CompTIA Security+](https://uk-store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C), a pretty good deal (although other offers are often available).
+
+All that being said, I'm not sure what more Google could actually do! Graduates have far more resources than non-graduates, perhaps an improvement would be a dedicated LinkedIn group of verified graduates to connect and share job opportunities.
 
 ## The Confusing
 
-### Talking speed and tone
+### Talking speed
 
-- Absurdly slow talking speed, highly scripted. The occasional unscripted normal speed interview is startling!
-- Somewhat infantilizing tone of voice:
-  - "You did a fantastic job adding new knowledge to your security analyst toolkit ... Keep up the great work!"
-  - "Wow, well done!"
-  - "I really enjoyed debugging this code with you"
+This is one of the most puzzling things I've ever seen in a video guide. The vast majority of people speak ridiculously slowly, far slower than a normal speaking speed, and with every word and gesture clearly carefully scripted.
 
-### Occasional focus loss
+I usually listen to audiobooks and podcasts at 1.0x or 1.1x depending on the speaker, but I had every video in this certificate at 1.5x! What makes this even more bizarre is there were 2-3 clearly unscripted interviews that are at a normal speed, and due to the 1.5x video speed persisting they only serve to remind you how weird the other videos are.
 
-- Occasionally loses focus on cybersecurity, and becomes generic career advice (resume, cover letter, etc). Presumably due to completely new target audience.
+The certificate's videos are all available on YouTube, try [listening to one](https://www.youtube.com/watch?v=34BtwcL7Mkg) and see how much more natural 1.25x or 1.5x sounds!
+
+### Tone of voice
+
+Perhaps simply a cultural difference, the very upbeat and enthusiastic tone of voice of the hosts never feels like a natural thing. The phrases are obviously intended to encourage you to continue, and be proud of yourself, but instead they just make me feel somewhat infantilised. A few examples of phrases that will crop up during videos:
+
+- "You did a fantastic job adding new knowledge to your security analyst toolkit ... Keep up the great work!"
+- "Wow, well done!"
+- "I really enjoyed debugging this code with you"
 
 ### Distracting cast
 
-- Diversity... 80-90% women, at least as much focus on background as actual content. This extends to flashcards etc where a single scene will have someone in a wheelchair, someone with a hearing aid, and someone in a Hijab, none white. First time I've ever noticed it. A deaf guest speaker?
+Being careful about how I phrase this, the diversity within videos and activities is distracting.
+
+To clarify, diversity and inclusion is obviously a positive, and many of the speakers give great justification for it. Similarly, those from non-typical computer science backgrounds may be reassured that career paths aren't necessarily linear lines. However, this is the first time I've ever explicitly _noticed_ the focus. The course hosts are exactly 50% male and 50% female, no problem with that. Instead, my confusion comes in the activities and interviews.
+
+In a background image showing a typical workplace, when the 3 characters are a person with a hearing aid, a person in a wheelchair, and a person in a Hijab, this is an unusual combination in any culture or setting. It unfortunately distracts from the content itself, and overshoots the mark from "include representations besides stereotypical white men" into "include as many rarely represented groups as possible".
+
+Perhaps the point where this is most noticeable is during a one-sided speech by... a deaf and aphasic (unable to speak) person using sign language, necessitating a voiceover by somebody else. Whilst it is theoretically possible that someone deaf has made it this far into the course, this doesn't make sense for a video interview.
+
+Of course, if this person was sharing information they are an expert on, it's obviously fine. However, they are only here to share their background story, making it (and others) feel like a token inclusion.
 
 ### Unneeded emails and notifications
 
-- Ending course and starting next results in email spam (joining course spam)
+We're getting petty with the complaints, sorry! Considering the clearly linear path through the certificate, with each module and course linking to the next, do I need to be sent _quite_ so many emails when I progress between the courses?
 
-### Varying technical expertise
+I presume this is just due to technically finishing a standalone course and entering another, but it's all a bit unnecessary.
 
-- Sometimes the technical expertise targeted varies massively. For example, 4.1 contains the extreme basics of what is an OS... and then talks about virtualization and hypervisors! Similarly, 5.4 talks about reflected XSS attacks, and also how to determine URL in an email link.
-
-- Page mentions interview prep, career support, resume review... do these exist?
+[![](/assets/images/2024/coursera-spam-thumbnail.png)](/assets/images/2024/coursera-spam.png)
 
 ## Conclusion
 
-[![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)
+I really enjoyed Google's Cybersecurity Certificate, both the contents and how it was presented.
+
+Despite the targeting towards newcomers, I'd actually recommend it to anyone who has worked in technology for a few years and wants to brush up on the basics, it's a great way to ensure a basic understanding of the key topics involved.
+
+Whilst I've raised a few negatives above, after spending the equivalent of a full work week with the course it would be strange if I _didn't_ have improvement suggestions! It's an excellent course, and I'm looking forward to trying out the similar [Google UX Design Professional Certificate](https://www.coursera.org/professional-certificates/google-ux-design) next.
+
+Finally, if you've got any questions about any aspect of the course before purchasing, feel free to leave a comment below (or contact me on any of the social links at the bottom). I know I had a few questions beforehand that I found hard to get simple answers to, especially around whether I should pay for the standalone certificate or Coursera Plus!

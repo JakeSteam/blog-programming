@@ -301,10 +301,14 @@ I presume this is just due to technically finishing a standalone course and ente
 
 ## Conclusion
 
-I really enjoyed Google's Cybersecurity Certificate, both the contents and how it was presented.
-
-Despite the targeting towards newcomers, I'd actually recommend it to anyone who has worked in technology for a few years and wants to brush up on the basics, it's a great way to ensure a basic understanding of the key topics involved.
+I really, really enjoyed Google's Cybersecurity Certificate, both the contents and how it was presented. Despite the targeting towards newcomers, I'd actually recommend it to anyone who has worked in technology for a few years and wants to brush up on the basics, it's a great way to ensure a basic understanding of the key topics involved.
 
 Whilst I've raised a few negatives above, after spending the equivalent of a full work week with the course it would be strange if I _didn't_ have improvement suggestions! It's an excellent course, and I'm looking forward to trying out the similar [Google UX Design Professional Certificate](https://www.coursera.org/professional-certificates/google-ux-design) next.
 
 Finally, if you've got any questions about any aspect of the course before purchasing, feel free to leave a comment below (or contact me on any of the social links at the bottom). I know I had a few questions beforehand that I found hard to get simple answers to, especially around whether I should pay for the standalone certificate or Coursera Plus!
+
+Hopefully this review has given you a better understanding of what to expect from Google's Cybersecurity Certificate via my first-hand experience, and what a useful (if expensive) resource it is.
+
+As a bonus, here's how the final certificate looks:
+
+[![](/assets/images/2024/coursera-cert.png)](https://www.coursera.org/account/accomplishments/professional-cert/GLBE227BHPQ9)

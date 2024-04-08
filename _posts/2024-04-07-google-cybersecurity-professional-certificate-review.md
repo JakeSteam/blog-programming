@@ -291,7 +291,7 @@ Perhaps the point where this is most noticeable is during a one-sided speech by.
 
 Of course, if this person was sharing information they are an expert on, it's obviously fine. However, they are only here to share their background story, making it (and others) feel like a token inclusion.
 
-### Unneeded emails and notifications
+### Unneeded emails
 
 We're getting petty with the complaints, sorry! Considering the clearly linear path through the certificate, with each module and course linking to the next, do I need to be sent _quite_ so many emails when I progress between the courses?
 

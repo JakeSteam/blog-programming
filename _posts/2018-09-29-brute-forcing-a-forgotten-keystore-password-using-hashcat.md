@@ -1,17 +1,17 @@
 ---
 id: 1753
-title: 'Brute Forcing A Forgotten Keystore Password Using Hashcat'
-date: '2018-09-29T14:00:20+01:00'
-author: 'Jake Lee'
+title: "Brute Forcing A Forgotten Keystore Password Using Hashcat"
+date: "2018-09-29T14:00:20+01:00"
+author: "Jake Lee"
 layout: post
 permalink: /brute-forcing-a-forgotten-keystore-password-using-hashcat/
 image: /wp-content/uploads/2018/09/mxcyygz.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Cracking
-    - Hashcat
-    - Keystore
+  - Cracking
+  - Hashcat
+  - Keystore
 ---
 
 Recently, I was preparing an update to a long abandoned Android app of mine when I realised the password to the keystore was long forgotten. A keystore and associated password is essential for updating an app (more information on keystores is available in [easy to understand LEGO form](https://www.youtube.com/watch?v=3lDtAf8Jk_c)), and as such the app could never be updated again!
@@ -43,7 +43,7 @@ On Windows machines, `hash.txt` is output in a slightly incorrect format (contai
 1. First, [download Hashcat](https://hashcat.net/hashcat/) by clicking “Download” on the “hashcat binaries” row.
 2. Unzip the archive (this may require [7zip](https://www.7-zip.org/download.html)).
 3. Move the fixed hash.txt from earlier into the unzipped folder.
-4. Run `.\hashcat64 -m 15500 -a 3 -1 '?l' -w 3 hash.txt ?1?1?1?1?1?1?1`. (`hashcat32` on 32-bit systems, more detail on this command in the next section)
+4. Run `.\hashcat -m 15500 -a 3 -1 '?l' -w 3 hash.txt ?1?1?1?1?1?1?1`. (more detail on this command in the next section)
 5. After a few seconds, you should see the very long hash we retrieved earlier followed by `:android`, telling us that the cracked password is “android”!
 
 ![cracking the hash](/wp-content/uploads/2018/09/lpp8e6k.png)
@@ -52,7 +52,7 @@ On Windows machines, `hash.txt` is output in a slightly incorrect format (contai
 
 The command entered earlier, `.\hashcat64 -m 15500 -a 3 -1 '?l' -w 3 hash.txt ?1?1?1?1?1?1?` is pretty overwhelming at first glance, but each section can be understood individually. A [full list of Hashcat parameters is available](https://hashcat.net/wiki/doku.php?id=hashcat), the following settings are sufficient for this purpose however. All reference tables below come from the official documentation.
 
-- **.\\hashcat64**: Tells Windows we’re trying to use `hashcat64.exe`. On 32-bit machines this should be `hashcat32.exe`.
+- **.\\hashcat**: Tells Windows we’re trying to use `hashcat.exe`.
 - **-m 15500**: Sets the hash type to “JKS Java Key Store Private Keys (SHA1)”, so that hashes can be compared.
 - **-a 3**: Sets the attack mode to “Brute-force”, e.g. trying every possible password until the correct one is found.
 

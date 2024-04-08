@@ -3,6 +3,7 @@ remote_theme: JakeSteam/minimaJake@1.0.13
 title: Jake Lee on Software
 description: In-depth ad-free articles about software development, Android, and the internet
 accent_colour: "#2a7ae2"
+url: https://blog.jakelee.co.uk
 
 # Optional native feature customisation (delete to turn off)
 table_of_contents_header: "Jump to:"

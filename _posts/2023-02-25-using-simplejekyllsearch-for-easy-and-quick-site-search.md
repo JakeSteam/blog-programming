@@ -182,6 +182,8 @@ As suspected, `templateMiddleware` and `sortMiddleware` were essential for this,
 - [`search.html`](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/search.html): The embeddable search HTML, initialises `SimpleJekyllSearch`.
 - [`search.js`](https://github.com/JakeSteam/minimaJake/blob/main/assets/js/search.js): The core search script.
 
+[Rees Draminski](https://reesdraminski.com/garden/search-with-simplejekyllsearch/) has also implemented the ability to display the relevant section of a post instead of the generic excerpt.
+
 ## Conclusion
 
 Overall I'm happy with this migration, and how consumers of [minimaJake](https://github.com/JakeSteam/minimaJake/) now just need to include the search page to have a full-text, instant search available.

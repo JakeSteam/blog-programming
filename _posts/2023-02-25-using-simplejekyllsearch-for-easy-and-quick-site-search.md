@@ -4,21 +4,21 @@ author: Jake Lee
 layout: post
 image: /assets/images/2023/v103-search-banner.png
 tags:
-    - Search
-    - Jekyll
+  - Search
+  - Jekyll
 ---
 
 Historically, my Jekyll sites have always had a very slow search feature. Recently I updated [minimaJake](https://github.com/JakeSteam/minimaJake/) to use [SimpleJekyllSearch](https://github.com/christian-fei/Simple-Jekyll-Search), and now it's almost instant (99.5% reduction in time taken) and easy to customise! Here's some more detail on how it works, how to implement it, and some further improvements I'd love to try.
 
-## Before & after 
+## Before & after
 
 This change brings a lot of visual improvements, but they were technically possible before, just tricky. Far more significant are the massive performance improvements!
 
 On a bad connection, loading the [search page](/search) would completely block the UI for over 7 seconds. Now, it's... 30 ms! That's an almost unbelievable 99.5% decrease in page loading time, and doesn't even factor in the fact that the search is now per-keystroke, instead of waiting for enter to be pressed.
 
 | Before (v1.0.2) | After (v1.0.3) |
-| [![](/assets/images/2023/v103-search-old-appearance.png)](/assets/images/2023/v103-search-old-appearance.png) | [![](/assets/images/2023/v103-search-new-appearance.png)](/assets/images/2023/v103-search-new-appearance.png) | 
-| [![](/assets/images/2023/v103-search-old.png)](/assets/images/2023/v103-search-old.png) | [![](/assets/images/2023/v103-search-new.png)](/assets/images/2023/v103-search-new.png) | 
+| [![](/assets/images/2023/v103-search-old-appearance.png)](/assets/images/2023/v103-search-old-appearance.png) | [![](/assets/images/2023/v103-search-new-appearance.png)](/assets/images/2023/v103-search-new-appearance.png) |
+| [![](/assets/images/2023/v103-search-old.png)](/assets/images/2023/v103-search-old.png) | [![](/assets/images/2023/v103-search-new.png)](/assets/images/2023/v103-search-new.png) |
 
 ## Introducing SimpleJekyllSearch
 
@@ -33,11 +33,12 @@ And, luckily, this is pretty much exactly what SimpleJekyllSearch does. This lib
 
 ## Implementing SimpleJekyllSearch
 
-### Creating searchable posts 
+### Creating searchable posts
 
 First, we need to provide a list of all our posts (e.g. as [`posts.json`](/assets/js/posts.json)), complete with the searchable fields. This can be edited to suit your needs, minimaJake tidies up [the repo's example](https://github.com/christian-fei/Simple-Jekyll-Search#create-searchjson) to include post excerpts, format dates better, and avoid character encoding issues:
 
 {% raw %}
+
 ```liquid
 ---
 layout: none
@@ -55,6 +56,7 @@ layout: none
   {% endfor %}
 ]
 ```
+
 {% endraw %}
 
 ### Adding HTML elements
@@ -63,12 +65,21 @@ Now we need to add the text field and search results area onto the search page, 
 
 ```html
 <form id="searchform">
-  <p><input type="text" id="search-input" class="form-control" name="q" value="" autofocus /></p>
+  <p>
+    <input
+      type="text"
+      id="search-input"
+      class="form-control"
+      name="q"
+      value=""
+      autofocus
+    />
+  </p>
 </form>
 <ul id="searchresults" class="post-list"></ul>
 ```
 
-### Adding JavaScript 
+### Adding JavaScript
 
 Next, copy either the [regular or minified search script](https://github.com/christian-fei/Simple-Jekyll-Search/tree/master/dest) into your site, perhaps at `/assets/js/search.js`.
 
@@ -82,10 +93,10 @@ Finally, we need to create a `SimpleJekyllSearch` object, and pass in all the bi
 
 ```js
 var sjs = SimpleJekyllSearch({
-  searchInput: document.getElementById('searchform'),
-  resultsContainer: document.getElementById('searchresults'),
-  json: '/posts.json'
-})
+  searchInput: document.getElementById("searchform"),
+  resultsContainer: document.getElementById("searchresults"),
+  json: "/posts.json",
+});
 ```
 
 You now have a functioning, speedy search!
@@ -102,7 +113,7 @@ For minimaJake, I chose to make a few additional changes to customise the "no re
             "<span class='post-meta'>{date} • {tags}</span>" +
             "<p>{excerpt}</p>" +
           "</div>" +
-        "</li>" 
+        "</li>"
       }
 ```
 
@@ -111,30 +122,38 @@ You might notice that the variables there (e.g. `{excerpt}`) are just data we ou
 Additionally, I want the functionality to link directly to a set of results. For example, a [search for my name](https://blog.jakelee.co.uk/search/?q=jake). This is done by checking for a `q` URL parameter on page load, then if it exists populate & submit the search form:
 
 ```js
-    window.addEventListener('load', function() {
-        var searchParam = new URLSearchParams(window.location.search).get("q")
-        if (searchParam != null) {
-            document.getElementById('search-input').value = searchParam
-            sjs.search(searchParam)
-        } 
-        document.getElementById('search-input').placeholder = "Type your search here..."
-    }, false);
+window.addEventListener(
+  "load",
+  function () {
+    var searchParam = new URLSearchParams(window.location.search).get("q");
+    if (searchParam != null) {
+      document.getElementById("search-input").value = searchParam;
+      sjs.search(searchParam);
+    }
+    document.getElementById("search-input").placeholder =
+      "Type your search here...";
+  },
+  false
+);
 ```
-This snippet also handles setting a placeholder text, which needs to be done *after* setting any prefilled search term to avoid a brief flicker.
 
-## End result 
+This snippet also handles setting a placeholder text, which needs to be done _after_ setting any prefilled search term to avoid a brief flicker.
+
+## End result
 
 So, if you follow all these steps what do you get? [A complete search page](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/search.html)!
 
 This can then be included elsewhere with just:
 
 {% raw %}
+
 ```
 {% include custom/search.html %}
 ```
+
 {% endraw %}
 
-## Drawbacks 
+## Drawbacks
 
 Whilst the new search's performance is undoubtedly better, and there's far less hacky code around, it isn't perfect.
 
@@ -142,11 +161,26 @@ The main drawback I've found is that it doesn't search very selectively. For exa
 
 I'm intending to eventually improve this, by ideally:
 
-1. Returning all tag matches, then title matches, then excerpt matches, and *finally* full text matches.
-2. Only matching full words, ideally with variants. For example "cat" should return "cats" but not "scatter". 
+1. Returning all tag matches, then title matches, then excerpt matches, and _finally_ full text matches.
+2. Only matching full words, ideally with variants. For example "cat" should return "cats" but not "scatter".
 3. Highlighting where the result has been found, just like when searching in a page on Chrome.
 
 I suspect the difficulty in implementing these well varies from tricky (#1) to almost impossible (#2). The library does have [`templateMiddleware`](https://github.com/christian-fei/Simple-Jekyll-Search#templatemiddleware-function-optional) and [`sortMiddleware`](https://github.com/christian-fei/Simple-Jekyll-Search#sortmiddleware-function-optional) so it should be possible with enough work!
+
+## 2024 update
+
+I implemented #1 & #3 to [minimaJake 1.0.4](https://minima.jakelee.co.uk/v1.0.4/), along with some other features after this article was published! To quote the release notes:
+
+> - Sorts results according to relevance (tags > title > excerpt > url / date / content)
+> - Highlight search term within results (colour needs improving?)
+> - Exclude single-character search
+> - Display number of results
+> - Stops search looking inside character codes (e.g. &amp;)
+
+As suspected, `templateMiddleware` and `sortMiddleware` were essential for this, but a few change to the `search.js` file had to be made to support the concept of "match priority". Check out the latest versions if you'd like the features listed above:
+
+- [`search.html`](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/search.html): The embeddable search HTML, initialises `SimpleJekyllSearch`.
+- [`search.js`](https://github.com/JakeSteam/minimaJake/blob/main/assets/js/search.js): The core search script.
 
 ## Conclusion
 

@@ -4,8 +4,8 @@ author: Jake Lee
 layout: post
 image: /assets/images/2023/coke-header.png
 tags:
-    - Project
-    - Domains
+  - Project
+  - Domains
 ---
 
 This weekend I discovered [Kenya sells "co.ke" domains](https://www.webhostkenya.co.ke/ke-domains-name-registration/). Obviously the only thing to do was register "[diet.co.ke](https://diet.co.ke)", and put up a fun little landing page!
@@ -16,7 +16,8 @@ This weekend I discovered [Kenya sells "co.ke" domains](https://www.webhostkenya
 
 ![](https://raw.githubusercontent.com/JakeSteam/diet.co.ke/main/dietcoke.gif)
 
-## Warnings 
+## Warnings
+
 For anyone else starting a similar project, a few warnings:
 
 ### Buy directly
@@ -27,7 +28,7 @@ Nope. It's 1200 Kenyan shillings [from a Kenyan registrar](https://www.webhostke
 
 ### Kenyan registrar
 
-The .co.ke registrar (at least, the "webhost kenya" one I found) is... not perfect. It took 18 hours after paying for the domain to actually gain access to it, and nameservers / DNS changes have been extremely slow. I'm still waiting for some final propagations 48 hours later, although that isn't entirely the registrar's fault! 
+The .co.ke registrar (at least, the "webhost kenya" one I found) is... not perfect. It took 18 hours after paying for the domain to actually gain access to it, and nameservers / DNS changes have been extremely slow. I'm still waiting for some final propagations 48 hours later, although that isn't entirely the registrar's fault!
 
 Updating nameservers and other changes were a little confusing, with things like success messages showing where they shouldn't:
 
@@ -35,7 +36,7 @@ Updating nameservers and other changes were a little confusing, with things like
 
 Whilst writing this article the management site also appears to have gone down completely for a bit, not what you want from the place that controls your domain:
 
-[![](/assets/images/2023/coke-registrar_thumbnail.png)](/assets//images/2023/coke-registrar.png)
+[![](/assets/images/2023/coke-registrar_thumbnail.png)](/assets/images/2023/coke-registrar.png)
 
 ### Cloudflare
 

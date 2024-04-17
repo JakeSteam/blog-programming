@@ -1,17 +1,17 @@
 ---
 id: 1806
-title: 'Developing Android Apps With Firebase Realtime Database'
-date: '2018-10-25T21:20:24+01:00'
-author: 'Jake Lee'
+title: "Developing Android Apps With Firebase Realtime Database"
+date: "2018-10-25T21:20:24+01:00"
+author: "Jake Lee"
 layout: post
 permalink: /developing-android-apps-with-firebase-realtime-database/
 image: /wp-content/uploads/2018/10/f6fuu6w.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Firebase
-    - Kotlin
-    - 'Realtime Database'
+  - Firebase
+  - Kotlin
+  - "Realtime Database"
 ---
 
 Firebase Realtime Database is the more traditional predecessor to [Firestore](/developing-android-apps-with-firebase-cloud-firestore/), and is essentially a way to store data as JSON and sync it between all clients / servers. Google have also [provided a full comparison](https://cloud.google.com/datastore/docs/firestore-or-datastore).
@@ -29,7 +29,7 @@ This tutorial assumes you already have [Firebase added to your project](/adding-
 ### Setting up
 
 As Google recommends Cloud Firestore, it can be a little tricky to actually create the traditional Realtime Database. On [the Fireside Database page](https://console.firebase.google.com/u/0/project/_/database), scroll down to the Realtime Database banner and select “Create database”.  
-![f6fuu6w](https://i2.wp.com/blog.jakelee.co.uk//wp-content/uploads/2018/10/f6fuu6w.png?resize=700%2C206&ssl=1)
+![f6fuu6w](/wp-content/uploads/2018/10/f6fuu6w.png)
 
 Create the database in **test mode**, making sure to set up proper access control later on before the app gets released to a wider audience.
 

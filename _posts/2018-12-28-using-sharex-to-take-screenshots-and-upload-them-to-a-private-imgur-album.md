@@ -54,11 +54,7 @@ The next stage is uploading your screenshot to imgur, so that it displays in a p
 
 First, under “After capture tasks”, enable “Upload image to host”.
 
-[![](h/wp-content/uploads/2018/12/52vtvJi.png)](/wp-content/uploads/2018/12/52vtvJi.png)
-
 Next, set Imgur as your image host under “Destinations”, “Image Uploader”, then “Imgur”.
-
-[![](/wp-content/uploads/2018/12/nibVcSy.png)](/wp-content/uploads/2018/12/nibVcSy.png)
 
 ### Connecting ShareX to Imgur
 

@@ -1,18 +1,18 @@
 ---
 id: 2020
-title: 'Developing Android Apps With Firebase ML Kit'
-date: '2018-11-21T21:43:59+00:00'
-author: 'Jake Lee'
+title: "Developing Android Apps With Firebase ML Kit"
+date: "2018-11-21T21:43:59+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /developing-android-apps-with-firebase-ml-kit/
 image: /wp-content/uploads/2018/11/mlkit.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Firebase
-    - Kotlin
-    - 'Machine Learning'
-    - 'ML Kit'
+  - Firebase
+  - Kotlin
+  - "Machine Learning"
+  - "ML Kit"
 ---
 
 Machine Learning is, at its core, a way of letting programs learn how to do things by example. It can be used to get a program to self-learn [how to play Mario](https://www.youtube.com/watch?v=qv6UVOQ0F44), or [how to walk](https://www.youtube.com/watch?v=gn4nRCC9TwQ). In this tutorial, Firebase’s Machine Learning Kit (commonly known as ML Kit) will be used to retrieve text, faces, barcodes, and objects from an image.
@@ -23,7 +23,7 @@ This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Thr
 
 ## Implementation
 
-As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase ML Kit](https://github.com/JakeSteam/FirebaseReference/pull/8) if you just want to see the code changes required. This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk//adding-firebase-to-an-android-project/).
+As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase ML Kit](https://github.com/JakeSteam/FirebaseReference/pull/8) if you just want to see the code changes required. This tutorial assumes you already have [Firebase added to your project](https://blog.jakelee.co.uk/adding-firebase-to-an-android-project/).
 
 In this tutorial, an image will be picked from a file selector, then analysed using ML Kit for relevant information. This image can also be provided via a video stream or a camera, but using an existing file is the simplest to demonstrate the core concepts. For each ML Kit model, a raw image and analysed screenshot is provided too.
 
@@ -134,8 +134,8 @@ private fun retrieveText(image: FirebaseVisionImage) {
 }
 ```
 
-| Input | Output |
-| -- | -- |
+| Input                                                                             | Output                                                                                                |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/11/text.jpg)](/wp-content/uploads/2018/11/text.jpg) | [![](/wp-content/uploads/2018/11/textscreenshot.png)](/wp-content/uploads/2018/11/textscreenshot.png) |
 
 #### Detecting faces in an image
@@ -192,8 +192,8 @@ FirebaseVision.getInstance()
         .addOnFailureListener { output.text = it.localizedMessage }
 ```
 
-| Input | Output |
-| -- | -- |
+| Input                                                                             | Output                                                                                                |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/11/face.jpg)](/wp-content/uploads/2018/11/face.jpg) | [![](/wp-content/uploads/2018/11/facescreenshot.png)](/wp-content/uploads/2018/11/facescreenshot.png) |
 
 #### Identifying barcodes in an image
@@ -241,8 +241,8 @@ FirebaseVision.getInstance()
         .addOnFailureListener { output.text = it.localizedMessage }
 ```
 
-| Input | Output |
-| -- | -- |
+| Input                                                                                   | Output                                                                                                      |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/11/barcode.jpg)](/wp-content/uploads/2018/11/barcode.jpg) | [![](/wp-content/uploads/2018/11/barcodescreenshot.png)](/wp-content/uploads/2018/11/barcodescreenshot.png) |
 
 #### Labelling all objects in an image
@@ -279,8 +279,8 @@ private fun retrieveLabels(image: FirebaseVisionImage) {
 }
 ```
 
-| Input | Output |
-| -- | -- |
+| Input                                                                                 | Output                                                                                                    |
+| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/11/object.jpg)](/wp-content/uploads/2018/11/object.jpg) | [![](/wp-content/uploads/2018/11/objectscreenshot.png)](/wp-content/uploads/2018/11/objectscreenshot.png) |
 
 ## Web interface

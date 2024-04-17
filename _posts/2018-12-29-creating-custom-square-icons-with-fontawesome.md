@@ -1,16 +1,16 @@
 ---
 id: 2292
-title: 'Creating custom stacked icons with FontAwesome'
-date: '2018-12-29T16:00:50+00:00'
-author: 'Jake Lee'
+title: "Creating custom stacked icons with FontAwesome"
+date: "2018-12-29T16:00:50+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /creating-custom-square-icons-with-fontawesome/
 image: /wp-content/uploads/2018/12/icons.png
 categories:
-    - 'Web Dev'
+  - "Web Dev"
 tags:
-    - Design
-    - 'Font Awesome'
+  - Design
+  - "Font Awesome"
 ---
 
 [FontAwesome](https://fontawesome.com/) is an excellent resource for web developers, providing almost 1500 icons for free. Whilst these are often enough for your use case, sometimes additional icons are needed. For example, on my portfolio I wanted a square icon for each social media service, but only 6 out of 10 services had a square icon available!
@@ -18,8 +18,6 @@ tags:
 In this tutorial, I’ll show how to create square icons for any FontAwesome icon, as well as circular, borderless, and a few other variations. A [Gist of the approach is available](https://gist.github.com/JakeSteam/3d1d3dd9ff88d23f26da3f61f4f83bfa), if you’d just like to see the code.
 
 As mentioned before, here’s the end goal: 10 matching icons.
-
-[![](/wp-content/uploads/2018/12/icons-1.png?)](/wp-content/uploads/2018/12/icons-1.png)
 
 If we’re just using existing [FontAwesome icons](https://fontawesome.com/icons), we’d end up with the following. Note the 4 mismatching icons!
 
@@ -45,7 +43,7 @@ It’s a start, they’re all clearly much too small and mismatching though!
 
 ## Preparing for stack
 
-To prepare for the “stack” used to layer icons with a fixed background, all the icons need to be made larger, and be consistent. To do that, a few FontAwesome classes need to be applied to the *parent* element, in this case our `<a>`.
+To prepare for the “stack” used to layer icons with a fixed background, all the icons need to be made larger, and be consistent. To do that, a few FontAwesome classes need to be applied to the _parent_ element, in this case our `<a>`.
 
 Our code from before now becomes:
 

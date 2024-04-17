@@ -1,18 +1,18 @@
 ---
 id: 1381
-title: 'Auto-detecting Device Orientation Whilst Allowing User to Override'
-date: '2017-06-13T11:20:01+01:00'
-author: 'Jake Lee'
+title: "Auto-detecting Device Orientation Whilst Allowing User to Override"
+date: "2017-06-13T11:20:01+01:00"
+author: "Jake Lee"
 layout: post
 permalink: /auto-detecting-device-orientation-whilst-allowing-user-to-override/
 image: /wp-content/uploads/2017/06/09ggcwp.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Landscape
-    - Orientation
-    - Portrait
-    - 'User Options'
+  - Landscape
+  - Orientation
+  - Portrait
+  - "User Options"
 ---
 
 When creating games (and other apps), screen orientation is very important. In general, more casual games use portrait, whilst more hardcore / intense games use landscape. However, some games may be inbetween these two categories, or may wish to reach a wider audience by supporting both. Automatically rotating to match device orientation is easy, but allowing the user to “lock” one orientation is a little trickier.
@@ -45,7 +45,7 @@ public final static int ORIENTATION_LANDSCAPE = 6;
 public final static int ORIENTATION_PORTRAIT = 7;
 ```
 
-Adding a dropdown or other selector to actually allow the user to pick whether they want auto / landscape / portrait is outside the scope of this article. However, very similar code was used in the “Selecting a Language” section of [the previous “Implementing A Locale / Language Selector” article](https://blog.jakelee.co.uk//implementing-a-locale-language-selector/).
+Adding a dropdown or other selector to actually allow the user to pick whether they want auto / landscape / portrait is outside the scope of this article. However, very similar code was used in the “Selecting a Language” section of [the previous “Implementing A Locale / Language Selector” article](https://blog.jakelee.co.uk/implementing-a-locale-language-selector/).
 
 As a starting point, the code used to return the constant to save from the position picked on a dropdown consisting of Auto, Portrait, and Landscape, is as follows:
 

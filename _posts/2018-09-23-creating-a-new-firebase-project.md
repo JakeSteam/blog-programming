@@ -1,20 +1,20 @@
 ---
 id: 1719
-title: 'Creating A New Firebase Project'
-date: '2018-09-23T20:18:10+01:00'
+title: "Creating A New Firebase Project"
+date: "2018-09-23T20:18:10+01:00"
 author:
-    - 'Jake Lee'
+  - "Jake Lee"
 layout: post
 permalink: /creating-a-new-firebase-project/
 image: /wp-content/uploads/2018/09/mky2ltg1.png
 categories:
-    - Development
+  - Development
 tags:
-    - Firebase
-    - Tutorial
+  - Firebase
+  - Tutorial
 ---
 
-The first step towards integrating any of the 25+ features included in Firebase is creating a new Firebase project. The same project can be used across for multiple apps, but only one per platform. For example, a web app, Android app, and iOS app can all use the same project. This post is part of the [Firebase tutorial series](https://blog.jakelee.co.uk//firebase/).
+The first step towards integrating any of the 25+ features included in Firebase is creating a new Firebase project. The same project can be used across for multiple apps, but only one per platform. For example, a web app, Android app, and iOS app can all use the same project. This post is part of the [Firebase tutorial series](/search?q=firebase).
 
 ### Firebase console
 

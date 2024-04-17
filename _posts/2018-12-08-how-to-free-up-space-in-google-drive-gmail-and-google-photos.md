@@ -1,18 +1,18 @@
 ---
 id: 2134
-title: 'How To Free Up Space in Google Drive, Gmail, and Google Photos'
-date: '2018-12-08T15:21:26+00:00'
-author: 'Jake Lee'
+title: "How To Free Up Space in Google Drive, Gmail, and Google Photos"
+date: "2018-12-08T15:21:26+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /how-to-free-up-space-in-google-drive-gmail-and-google-photos/
 image: /wp-content/uploads/2018/12/small.png
 categories:
-    - Tips
+  - Tips
 tags:
-    - Drive
-    - Gmail
-    - Google
-    - Storage
+  - Drive
+  - Gmail
+  - Google
+  - Storage
 ---
 
 I’ve been lightly using Google Drive, Gmail, and Google Photos for close to 6 years, with no major complaints. The default space limitation is 15GB, with an extra 2GB available for each year the [security checkup is completed](https://blog.google/products/drive/safer-internet-day-2016/). There was also previously 100GB (expiring after a year) available for local guides, but this [program is now cancelled](https://www.androidpolice.com/2017/03/03/new-level-4-local-guides-google-maps-will-no-longer-receive-free-100gb-drive-storage/).
@@ -29,9 +29,9 @@ The biggest user of space was Google Drive, so that seemed a sensible place to s
 
 ### Emptying Google Drive bin
 
-I have [Google Drive synced to a local folder on my PC](https://www.google.com/drive/download/), so my first step was checking the disk space used. 
+I have [Google Drive synced to a local folder on my PC](https://www.google.com/drive/download/), so my first step was checking the disk space used.
 
-[![](/wp-content/uploads/2018/12/storagelocal.png)](h/wp-content/uploads/2018/12/storagelocal.png)
+[![](/wp-content/uploads/2018/12/storagelocal.png)](/wp-content/uploads/2018/12/storagelocal.png)
 
 It turned out to be just 1GB, so where on earth was the extra 8.4GB coming from!?
 
@@ -88,8 +88,8 @@ Luckily, Gmail automatically categorises most emails into “Social”, “Updat
 3. Clicking the “Select all X messages in Y” bar at the top
 4. Pressing the trash icon
 
-| Folders | Select all | Category |
-| -- | -- | -- |
+| Folders                                                                                                     | Select all                                                                                            | Category                                                                                                |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/12/storagecategories.png)](/wp-content/uploads/2018/12/storagecategories.png) | [![](/wp-content/uploads/2018/12/storagefolders.png)](/wp-content/uploads/2018/12/storagefolders.png) | [![](/wp-content/uploads/2018/12/storagefolders2.png)](/wp-content/uploads/2018/12/storagefolders2.png) |
 
 Deleting thousands of emails can take a few seconds, make sure not to close the tab before it is done! The space used by Gmail has now dropped from 1.35GB to 0.41GB, without anything important being lost. Note that Google Drive’s space is still slowly going down, as it works through the thousands of deleted files from the previous step!
@@ -110,8 +110,8 @@ The space used by Google Photos has now dropped from 5.32GB to 0GB. Pretty good!
 
 ## Conclusion
 
-| Before | After |
-| -- | -- |
+| Before                                                                                        | After                                                                                     |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/12/storage1-1.png)](/wp-content/uploads/2018/12/storage1-1.png) | [![](/wp-content/uploads/2018/12/storage7.png)](/wp-content/uploads/2018/12/storage7.png) |
 
 So, the total space used has dropped from 16.07GB to 1.14GB, and from 84% utilisation to just 6%. Plenty of space now!

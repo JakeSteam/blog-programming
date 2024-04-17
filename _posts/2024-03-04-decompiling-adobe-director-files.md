@@ -30,7 +30,7 @@ Adobe Director reached end of life in 2013(!), but luckily the installers are st
 4. Open a new tab, paste this link in.
 5. Chrome will block it again! This time click "Keep", and you'll finally get your `dmx2004_101_update_en.exe`.
 
-[![](/assets/images/2024/director-download.png)](/assets/images/2024/direct-download.png)
+[![](/assets/images/2024/director-download.png)](/assets/images/2024/director-download.png)
 
 Once opened, this is a pretty typical Adobe installer. You'll be asked where you want to install it, what you want to install (I chose default settings), and offered a free trial.
 

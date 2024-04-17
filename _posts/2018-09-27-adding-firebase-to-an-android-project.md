@@ -1,16 +1,16 @@
 ---
 id: 1728
-title: 'Adding Firebase to an Android Project'
-date: '2018-09-27T21:49:17+01:00'
-author: 'Jake Lee'
+title: "Adding Firebase to an Android Project"
+date: "2018-09-27T21:49:17+01:00"
+author: "Jake Lee"
 layout: post
 permalink: /adding-firebase-to-an-android-project/
 image: /wp-content/uploads/2018/09/dkl3twd.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Firebase
-    - Tutorial
+  - Firebase
+  - Tutorial
 ---
 
 Considering the vast array of features included in Firebase, adding it to your project is surprisingly easy. Later versions of Android Studio even include an assistant that analyses the current project and provides fixes for common integration mistakes.
@@ -19,7 +19,7 @@ This guide however, will focus on the very straightforward steps required to int
 
 ## Prerequisites
 
-1. An existing [Firebase project](https://blog.jakelee.co.uk//2018/09/23/creating-a-new-firebase-project/)
+1. An existing [Firebase project](/creating-a-new-firebase-project/)
 2. An existing Android Studio project ([an example project is available](https://github.com/JakeSteam/FirebaseReference/releases/tag/no-integration))
 
 ## Google Services file
@@ -45,7 +45,7 @@ Next, the Firebase library needs to be added to your project. Doing this is just
 3. Also add `apply plugin: 'com.google.gms.google-services'` to the bottom of the app level `build.gradle`.
 4. Finally, press “Sync now” in the yellow bar at the top.
 
-*Note: As of writing, 16.0.3 is the latest Firebase version, and 4.0.1 the latest Google services version. If these are outdated, Android Studio will prompt you to update.*
+_Note: As of writing, 16.0.3 is the latest Firebase version, and 4.0.1 the latest Google services version. If these are outdated, Android Studio will prompt you to update._
 
 ## Final steps
 

@@ -1,24 +1,22 @@
 ---
 id: 2436
-title: 'Quickly setting up commit verification / signing with GitHub, GitKraken, and GPG'
-date: '2019-03-20T21:31:04+00:00'
-author: 'Jake Lee'
+title: "Quickly setting up commit verification / signing with GitHub, GitKraken, and GPG"
+date: "2019-03-20T21:31:04+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /quickly-setting-up-commit-verification-signing-with-github-gitkraken-and-gpg/
 image: /wp-content/uploads/2019/03/kCuSDTB.png
 categories:
-    - Development
+  - Development
 tags:
-    - Git
-    - GitHub
-    - gpg
+  - Git
+  - GitHub
+  - gpg
 ---
 
-Whilst most developers use hosted git repositories on a service like GitHub, many forget that almost none of these commits are verified. If you own a repository, you can [“fake” a commit](https://dev.to/agrinman/spoof-a-commit-on-github-from-anyone-4gf4) from literally any user if you know their email. If that email matches a GitHub account, their avatar will be displayed next to their name! One famous example is a fake commit by Linus Torvalds:
+Whilst most developers use hosted git repositories on a service like GitHub, many forget that almost none of these commits are verified. If you own a repository, you can [“fake” a commit](https://dev.to/agrinman/spoof-a-commit-on-github-from-anyone-4gf4) from literally any user if you know their email. If that email matches a GitHub account, their avatar will be displayed next to their name! One famous example is a fake commit by Linus Torvalds.
 
-[![](h/wp-content/uploads/2019/03/VFQqkEo.png)](/wp-content/uploads/2019/03/VFQqkEo.png)
-
-An effortless way to protect against this is with git verified signatures. This proves that a commit was *really* from the person. GitKraken [introduced this feature a week ago](https://support.gitkraken.com/release-notes/current/#version-500), and it seems to work perfectly. This tutorial will provide a very simple guide to getting verified commits configured.
+An effortless way to protect against this is with git verified signatures. This proves that a commit was _really_ from the person. GitKraken [introduced this feature a week ago](https://support.gitkraken.com/release-notes/current/#version-500), and it seems to work perfectly. This tutorial will provide a very simple guide to getting verified commits configured.
 
 Note that GitKraken also has [a very in-depth guide](https://support.gitkraken.com/git-workflows-and-extensions/commit-signing-with-gpg/) with lots of extra information.
 

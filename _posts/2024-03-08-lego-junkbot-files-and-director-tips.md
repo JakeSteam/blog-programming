@@ -64,9 +64,9 @@ If you're just trying to view assets, the "Cast" window will be your best friend
 
 When an asset is open, there will be appropriate controls for that time of content. This works pretty well, however you may prefer using an external editor.
 
-|                                                   Code                                                    |                                                  Text                                                   |                                                  Image                                                  |
-| :-------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| [![](/assets/images/2024/junkbot-open-script-thumbnail.png)](/assets/images/2024/junkbot-open-script.png) | [![](/assets/images/2024/junkbot-open-text-thumbnail.png)](/assets/images/2024/junkbot-text-script.png) | [![](/assets/images/2024/junkbot-open-image-thumbnail.png)](/assets/images/2024/junkbot-open-image.png) |
+|                                                   Code                                                    |                                                 Text                                                  |                                                  Image                                                  |
+| :-------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/junkbot-open-script-thumbnail.png)](/assets/images/2024/junkbot-open-script.png) | [![](/assets/images/2024/junkbot-open-text-thumbnail.png)](/assets/images/2024/junkbot-open-text.png) | [![](/assets/images/2024/junkbot-open-image-thumbnail.png)](/assets/images/2024/junkbot-open-image.png) |
 
 #### Editors
 

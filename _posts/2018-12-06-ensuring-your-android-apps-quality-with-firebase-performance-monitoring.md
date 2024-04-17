@@ -1,23 +1,23 @@
 ---
 id: 2116
 title: Ensuring Your Android App's Quality With Firebase Performance Monitoring
-date: '2018-12-06T19:59:37+00:00'
-author: 'Jake Lee'
+date: "2018-12-06T19:59:37+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /ensuring-your-android-apps-quality-with-firebase-performance-monitoring/
 image: /wp-content/uploads/2018/12/cover.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Firebase
-    - Kotlin
-    - Performance
-    - Tutorial
+  - Firebase
+  - Kotlin
+  - Performance
+  - Tutorial
 ---
 
 Firebase Performance Monitoring allows you to gather automatic performance data about your app, as well as performing manual performance traces for later analysis. All of these contain aggregated information about user’s devices, meaning long-term issues can be quickly identified and resolved.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase/). Throughout this tutorial, you’ll need access to the [Firebase Performance Monitoring dashboard](https://console.firebase.google.com/u/0/project/_/performance), and the [official documentation](https://firebase.google.com/docs/perf-mon/get-started-android) may be useful.
+This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Performance Monitoring dashboard](https://console.firebase.google.com/u/0/project/_/performance), and the [official documentation](https://firebase.google.com/docs/perf-mon/get-started-android) may be useful.
 
 ## Implementation
 
@@ -96,11 +96,11 @@ Note that attributes are always stored as strings. However, if you wish to store
 
 The dashboard provides an overview of any emerging issues that require attention, as well as any poorly performing screens and other important metrics.
 
-| Issue list | More |
-| -- | -- |
+| Issue list                                                                                                      | More                                                                                                |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [![](/wp-content/uploads/2018/12/perf-mon-issue-list.png)](/wp-content/uploads/2018/12/perf-mon-issue-list.png) | [![](/wp-content/uploads/2018/12/perf-mon-more.png)](/wp-content/uploads/2018/12/perf-mon-more.png) |
 
-Clicking an issue will provide more information about it (similar to [Crashlytics](h/ensuring-your-android-apps-quality-with-firebase-crashlytics/)), as well as the option to close or mute the issue.
+Clicking an issue will provide more information about it (similar to [Crashlytics](/ensuring-your-android-apps-quality-with-firebase-crashlytics/)), as well as the option to close or mute the issue.
 
 ### On device
 
@@ -123,4 +123,4 @@ Note that there are a few limitations with this method of performance monitoring
 
 Previous: [Ensuring Your Android App’s Quality With Firebase Crashlytics](/ensuring-your-android-apps-quality-with-firebase-crashlytics/)
 
-*Thanks to [Firebase docs](https://firebase.google.com/docs/) for some of the images used in this article.*
+_Thanks to [Firebase docs](https://firebase.google.com/docs/) for some of the images used in this article._

@@ -1,17 +1,17 @@
 ---
 id: 2803
 title: Exploring pull requests with GitHub's rich diff functionality
-date: '2020-08-12T15:15:52+01:00'
-author: 'Jake Lee'
+date: "2020-08-12T15:15:52+01:00"
+author: "Jake Lee"
 layout: post
-guid: 'https://blog.jakelee.co.uk/?p=2803'
+guid: "https://blog.jakelee.co.uk/?p=2803"
 permalink: /exploring-pull-requests-with-githubs-rich-diff-functionality/
 image: /wp-content/uploads/2020/08/3qjoZ8A.png
 categories:
-    - Development
+  - Development
 tags:
-    - Git
-    - GitHub
+  - Git
+  - GitHub
 ---
 
 Like many developers, I spend a surprisingly large amount of time reviewing other people’s code. In fact, according to GitHub that’s around 20% of my day!
@@ -33,6 +33,7 @@ Images are probably the best use cases for rich diff. I created a collection of 
 I found SVGs, PNGs, JPGs, and GIFs can use rich diff, but BMPs cannot. For the compatible file types, there are 3 options for the rich diff:
 
 ### 2-up
+
 [![](/wp-content/uploads/2020/08/3qjoZ8A.png)](/wp-content/uploads/2020/08/3qjoZ8A.png)
 
 This mode displays the images side by side, as well as their width, height, and file size. This is a great way to notice an image has slightly changed dimensions, since this might not be noticeable with the naked eye.
@@ -40,6 +41,7 @@ This mode displays the images side by side, as well as their width, height, and 
 Unfortunately, this mode does not help when identifying small visual changes within the image itself, the other modes are better for that.
 
 ### Swipe
+
 [![](/wp-content/uploads/2020/08/Rjf3nY8.png)](/wp-content/uploads/2020/08/Rjf3nY8.png)
 
 This mode displays the two versions of the image with a left to right slider over the top.
@@ -47,6 +49,7 @@ This mode displays the two versions of the image with a left to right slider ove
 This is an excellent way of noticing small changes within an image, whilst still keeping track of the overall image.
 
 ### Onion Skin
+
 [![](/wp-content/uploads/2020/08/u2wqvqB.png)](/wp-content/uploads/2020/08/u2wqvqB.png)
 
 This mode overlays the new image over the old one, and lets you control the transparency.
@@ -57,7 +60,7 @@ Just like “Swipe”, this lets you easily see small changes, whilst also being
 
 Whilst images performed well, I was curious if common document types would work. In a word… no.
 
-As before, I created &amp; [updated a selection of common formats](https://github.com/JakeSteam/RichDiffExperiments/commit/33ea6257db94e9f41d4ce4754fe99b1140bff5e1) (DOC, DOCX, HTML, PDF, RTF, MD), and only MD (markdown) had rich diff. The RTF and HTML files *did* show the code changes, but this isn’t particularly helpful for a verbose format like RTF!
+As before, I created &amp; [updated a selection of common formats](https://github.com/JakeSteam/RichDiffExperiments/commit/33ea6257db94e9f41d4ce4754fe99b1140bff5e1) (DOC, DOCX, HTML, PDF, RTF, MD), and only MD (markdown) had rich diff. The RTF and HTML files _did_ show the code changes, but this isn’t particularly helpful for a verbose format like RTF!
 
 [![](/wp-content/uploads/2020/08/KUBjqor.png)](/wp-content/uploads/2020/08/KUBjqor.png)
 

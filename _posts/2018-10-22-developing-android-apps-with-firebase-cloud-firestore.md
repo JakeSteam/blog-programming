@@ -1,26 +1,26 @@
 ---
 id: 1775
-title: 'Developing Android Apps With Firebase Cloud Firestore'
-date: '2018-10-22T14:20:01+01:00'
-author: 'Jake Lee'
+title: "Developing Android Apps With Firebase Cloud Firestore"
+date: "2018-10-22T14:20:01+01:00"
+author: "Jake Lee"
 layout: post
 permalink: /developing-android-apps-with-firebase-cloud-firestore/
 image: /wp-content/uploads/2018/10/pngondh.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Android
-    - 'Cloud Firestore'
-    - Database
-    - Firebase
-    - Kotlin
+  - Android
+  - "Cloud Firestore"
+  - Database
+  - Firebase
+  - Kotlin
 ---
 
 Cloud Firestore provides an app an invisibly syncing cloud database. This takes away a lot of the complexity of ensuring data is up to date, and has very simple methods for creating, retrieving, updating, and deleting data. It also allows syncing between multiple clients, and managing the database via a web interface or an API.
 
 Note that this service is in beta, and is intended to replace the existing Cloud Datastore. [Google provides a full comparison](https://cloud.google.com/datastore/docs/firestore-or-datastore) to aid in choosing the most appropriate service.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk//firebase/). Throughout this tutorial, you’ll need access to the [Firebase Cloud Firestore dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/firestore/quickstart) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Cloud Firestore dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/firestore/quickstart) may be useful too.
 
 ## Implementation
 

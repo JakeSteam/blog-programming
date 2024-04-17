@@ -1,21 +1,21 @@
 ---
 id: 1792
-title: 'Using Fabric (Answers / Beta / Crashlytics) With App Flavours'
-date: '2018-10-25T15:00:07+01:00'
-author: 'Jake Lee'
+title: "Using Fabric (Answers / Beta / Crashlytics) With App Flavours"
+date: "2018-10-25T15:00:07+01:00"
+author: "Jake Lee"
 layout: post
-guid: 'https://blog.jakelee.co.uk//?p=1792'
+guid: "https://blog.jakelee.co.uk/?p=1792"
 permalink: /using-fabric-answers-beta-crashlytics-with-app-flavours/
 timeline_notification:
-    - '1540479777'
+  - "1540479777"
 image: /wp-content/uploads/2018/10/xnvbcdh.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Beta
-    - Crashlytics
-    - 'Custom Flavours'
-    - Fabric
+  - Beta
+  - Crashlytics
+  - "Custom Flavours"
+  - Fabric
 ---
 
 Setting up Fabric is usually pretty straightforward, especially as they have a [step by step guide](https://fabric.io/kits/android/crashlytics/install), and even an [Android Studio plugin](https://fabric.io/downloads/android-studio) that can do it all for you.

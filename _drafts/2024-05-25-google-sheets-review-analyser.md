@@ -16,6 +16,10 @@ I recently rebuilt the primary customer complaint within an app, and instantly s
 - Mention it was payments
 - Mention filtering by version
 
+## Exporting data
+
+- Link to previous post
+
 ## Using analysis template
 
 - Link to public example

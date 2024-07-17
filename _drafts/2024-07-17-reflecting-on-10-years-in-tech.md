@@ -55,25 +55,95 @@ The worst part was... infinite essential work, and finite time to do it. With my
 
 ### What was the role?
 
+This was my first dedicated Android role, as a **Senior Android Developer**. This involved leading development on a driving tracking app for a large Dutch company (ANWB).
+
 ### What was the best & worst part?
 
+The best part was working entirely in Android, and having a very competent colleague! Whilst I had a reasonable amount of software development experience as a solo / cowboy developer, I was fortunate to work with a skilled Android Developer who taught me plenty of modern Android topics and libraries.
+
+The worst part was being very distant from the client in terms of planning work and releases, and having no connection to the app's mission as a non-driver. This was my first experience working in a slightly larger company (~30 people), and adjusting to work being translated through layers of management was a somewhat painful learning curve.
+
 ### Why did I leave?
+
+**Management interference and better opportunities.** As internal company politics became more and more prominent (new CEO, high profile firings, restructures, etc), all of my closest friends left the company. With no remaining ties, I stared looking for better opportunities, and found them.
 
 ### What career lesson did I learn?
 
+**Trusted colleagues are essential.** Whilst I'd previously worked alone often enough, experiencing competent, funny, and intelligent colleagues to bounce ideas off was a game-changer. Once I'd had it, the loss was very painful, and would have been enough of a reason to leave in itself. This experience made me pay extra attention to the social aspects of work.
+
 ## 2019 - 2020: Candyspace (ITV Hub)
-
-## 2020 - 2021: Metro Bank
-
-## 2021 - 2023: Photobox
-
-## 2023 - Now: Seatfrog
 
 ### What was the role?
 
+I joined Candyspace, an agency with a long-standing major client (ITV Hub) that I would be 100% on. Initially my role was **Senior Android Developer**, progressing to **Lead Android Developer**.
+
 ### What was the best & worst part?
 
+The best part was my (and the 3-4 other Android developers') work reaching millions of users, and leading development on an app that most people in the country have heard of. This made explaining my job to others very easy, and that name brand recognition will never stop helping me get new jobs! I'm extremely grateful for my manager taking a chance on my limited experience.
+
+The worst part was the one-sided nature of the client / agency relationship. The power was entirely with the client (ITV), and the financial and workload limitations meant I hit the internal "ceiling" of earnings / responsibility quite early with no opportunity to progress further.
+
 ### Why did I leave?
+
+**Earning potential and becoming internal employee**. Due to changing personal circumstances, and the very strong Android developer job market at the time, I had a lot of beneficial offers available (e.g. +40% compensation). Additionally, I wanted to be "inside" a company, where I could actually influence what was done, how it was done, and the direction.
+
+### What career lesson did I learn?
+
+**Pay attention to your job market.** If you're noticing a lot of attention from recruiters on LinkedIn, and the numbers seem significantly higher than yours, maybe it's worth talking to them. Conversations and interviews are free, and practice always helps, so it's worth doing occasionally!
+
+## 2020 - 2021: Metro Bank
+
+### What was the role?
+
+I was only here for 6 months (and was looking for a new job after 3), but I was a **Lead Mobile Developer (Android)** on the UK banking app.
+
+### What was the best & worst part?
+
+The best part was... it's hard to say. Perhaps the salary, it's hard to find any other positives!
+
+The worst part was, at least in the area I worked, the complete lack of conversation / webcams, friendliness, energy, competence, meaningful work, and everything else that is essential for a software development job. Perhaps a company adjusting to fully remote work is to blame for some of this, but it was truly unbelievable, and I'm hesitant to say too much publicly in case it comes back to bite me!
+
+### Why did I leave?
+
+**Culture and work of any value**, or the complete lack thereof. It is truly hard to overstate how much I disliked this role.
+
+### What career lesson did I learn?
+
+**Don't be blinded by the money.** I joined for good money, and I got good money, but it wasn't even slightly worth the boredom and being able to feel my software skills and drive to learn / improve fading in real time.
+
+## 2021 - 2023: Photobox
+
+### What was the role?
+
+I joined Photobox as a **Principal Android Engineer**, later becoming a **Principal Android Engineer / Interim Engineering Manager**, and finally an **Engineering Manager**.
+
+### What was the best & worst part?
+
+The best part was finally having the "inside" experience I wanted, and experiencing life inside a larger team (10+) and organisation (500+). Knowing that every part of the company (especially engineering) had skilled individuals was reassuring, and helped encourage improving skills.
+
+The worst part was the higher-level company decisions resulting in high turnover. During my first few months there my iOS counterpart left, then my manager (a major reason I joined), then the company entered a protracted and technically extremely complex merger of equals, including the C-suite (goodbye CEO!). Whilst this resulted in lots of "gaps" letting me try out management, the relentless political manoeuvring at all levels due to the merger was painful.
+
+### Why did I leave?
+
+**I don't want to be a manager.** Whilst I enjoyed interviewing, mentoring, and influencing product direction, I absolutely loathed the "politics". This included information withholding, allocating budget, jostling for resources, and being forced to enforce and publicly support decisions I strongly disagreed with (e.g. going back on an employment agreement, losing us an excellent developer). I need to be genuine and open at work.
+
+### What career lesson did I learn?
+
+**Try out different employer types**. By now I'd been in a software shop with tens of projects, a bank, ran a startup, worked on a major app, in team sizes of 1-20 and company sizes of 1 - 1000. This varied experience helped me figure out what I actually wanted and needed in a role to actually stick around.
+
+## 2023 - Now: Seatfrog
+
+### What is the role?
+
+I'm currently a **Staff Android Engineer** at Seatfrog, a traveltech startup!
+
+### What is the best & worst part?
+
+The best part(s) are the get-it-done energy and freedom within a startup environment, and the work/life balance that comes with the absurdly excellent 4-day flexible & fully remote week. This suits me absolutely perfectly, letting me work on other projects for at least 1 day a week (e.g. my MBA), and do whatever is needed to stay productive and keep improving.
+
+### Why did I leave?
+
+I haven't, and hope I never do! With a startup, the biggest risk is lay-offs / financial problems, but this doesn't seem to be a concern for the short-term. 🤞
 
 ### What career lesson did I learn?
 

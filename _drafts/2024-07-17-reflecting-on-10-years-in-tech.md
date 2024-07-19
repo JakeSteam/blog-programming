@@ -1,5 +1,5 @@
 ---
-title: Career lessons learned from 10 years (& 7 companies) of hunting for a tech job I enjoy
+title: 7 career lessons learned from 10 years of hunting for a tech job I actually enjoy 🐸
 author: Jake Lee
 layout: post
 image: /assets/images/2024/
@@ -9,7 +9,7 @@ tags:
 maxheader: 2
 ---
 
-This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, constantly learning more about what I want from a career.
+This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, constantly learning more about what I want from a career. Here's my takeaways.
 
 ## Introduction
 
@@ -20,6 +20,18 @@ Additionally, it's very likely that reasons I left companies have been addressed
 Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency this is my compensation throughout my career so far. Despite all the job changes, it's been a fairly consistent progression (excluding the obvious dip for running my startup!):
 
 [![Salary over time](/assets/images/2024/jobs-salary.png)](/assets/images/2024/jobs-salary.png)
+
+## 7 lessons learned
+
+If you'd like to skip aaaaallll the personal information, back-story, and explanations, here are the 7 lessons I've learned, 1 from each employer. They're simply in the order I learned them, and as with all "lessons" they need to evaluated critically not just blindly followed:
+
+1. **Take ownership of your own career.**
+2. **Be honest with yourself about burnout.**
+3. **Supportive colleagues are essential.**
+4. **Pay attention to your job market.**
+5. **Don’t be blinded by the money.**
+6. **Try out different employer & team types.**
+7. **If a job seems too good to be true… you might as well interview!**
 
 ## 2014 - 2017: First Option Software
 
@@ -41,7 +53,7 @@ The worst part was the lack of guidance. As great as it was running massive, imp
 
 ### What career lesson did I learn?
 
-**Take an interest in your own career.** Your employer will take your preferences into consideration, but ultimately if you want to 2x, 3x, 4x your salary and/or work in a new area, you need to make that happen yourself.
+**Take ownership of your own career.** Your employer will take your preferences into consideration, but ultimately if you want to 2x, 3x, 4x your salary and/or work in a new area, you need to make that happen by yourself.
 
 ## 2017 - 2018: Creators.Direct
 
@@ -85,7 +97,7 @@ The worst part was being very distant from the client in terms of planning work 
 
 ### What career lesson did I learn?
 
-**Trusted colleagues are essential.** Whilst I'd previously worked alone often enough, experiencing competent, funny, and intelligent colleagues to bounce ideas off was a game-changer. Once I'd had it, the loss was very painful, and would have been enough of a reason to leave in itself. This experience made me pay extra attention to the social aspects of work.
+**Supportive colleagues are essential.** Whilst I'd previously worked alone often enough, experiencing competent, funny, and intelligent colleagues to bounce ideas off was a game-changer. Once I'd had it, the loss was very painful, and would have been enough of a reason to leave in itself. This experience made me pay extra attention to the social aspects of work.
 
 ## 2019 - 2020: Candyspace (ITV Hub)
 
@@ -165,12 +177,18 @@ I'm currently a **Staff Android Engineer** at Seatfrog, a traveltech startup!
 
 The best part(s) are the get-it-done energy and freedom within a startup environment, and the work/life balance that comes with the absurdly excellent 4-day flexible & fully remote week. This suits me absolutely perfectly, letting me work on other projects for at least 1 day a week (e.g. my MBA), and do whatever is needed to stay productive and keep improving.
 
-Worst part is trickier, but probably having 20 things I want to get done, but limited time in the day. For example new features, bug fixing, improving / removing lower quality code, improving testing, improving build process, etc etc etc. Prioritisation is hard!
+The worst part is trickier to identify, but probably having 20 things I want to get done yet limited time in a day. Realistically this is a (positive) symptom of being empowered and invested in my employer's product, so I can't complain too much! For example should I look at new features, bug fixing, improving / removing lower quality code, improving testing, improving build process, etc etc etc. Prioritisation is hard!
 
 ### Why did I leave?
 
 I haven't, and hope I don't anytime soon! With a startup, the biggest risk is lay-offs / financial problems, but this doesn't seem to be a concern for the short-term. 🤞
 
 ### What career lesson did I learn?
+
+**If a job seems too good to be true... you might as well interview!** For Seatfrog, I was offered work I wanted to do, for an interesting and unique product, with compensation & flexibility that suited my fully remote lifestyle perfectly. Everything seemed literally a perfect fit, including all the interviewers I'd spoken to, so I assumed my chances were extremely low.
+
+Despite moving house a couple of weeks ago and having no internet (or desk!), I obviously interviewed well, and ended up with by far the best job I've ever had.
+
+## Conclusion
 
 [![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)

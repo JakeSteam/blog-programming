@@ -9,7 +9,7 @@ tags:
 maxheader: 2
 ---
 
-This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, constantly learning more about what I want from a career. Here's my takeaways.
+This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, constantly learning more about what I want from a career: here's 7 tips.
 
 ## Introduction
 
@@ -17,7 +17,7 @@ Before diving into each job and the lessons learned, it's worth pointing out how
 
 Additionally, it's very likely that reasons I left companies have been addressed by now, so any information in this article might be out date, it is merely a snapshot of a moment in the past.
 
-Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency this is my compensation throughout my career so far. Despite all the job changes, it's been a fairly consistent progression (excluding the obvious dip for running my startup!):
+Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency & context this is my compensation throughout my career so far, ignoring inflation. Despite all the job changes, it's been a fairly consistent progression (excluding the obvious dip for running my startup!):
 
 [![Salary over time](/assets/images/2024/jobs-salary.png)](/assets/images/2024/jobs-salary.png)
 
@@ -191,4 +191,12 @@ Despite moving house a couple of weeks ago and having no internet (or desk!), I 
 
 ## Conclusion
 
-[![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)
+The tech job market changes often, and so do personal circumstances. Your job needs to meet _your_ specific needs, so no article (including this one!) can accurately guide your career moves, or whether a specific job is right for you.
+
+However, reading a variety of anecdotal stories like this, and being aware of the career moves available, will help with the decision-making. Just because I shuffled between smaller companies instead of getting promoted within a large company doesn't mean it's right for you! Perhaps you're better at internal politics yet worse at interviewing than me, so changing company is harder.
+
+I also made the risky decision to run my own tiny company, which completely drained my finances _but_ let me experience a very different working environment and have complete creative control. The intensity of this experience also let me "skip" a couple of years working my way up to senior, and it's definitely something I couldn't have done if I had an active social / personal life!
+
+As for what's next... I don't know. I'm very satisfied in my current role, and since it's within a growing company with empowered employees, I suspect any move I want to make (e.g. management, or more backend focused) can probably be handled internally saving everyone time, money, and hassle. There's no "promotion" or "transfer" I want, my financial needs are met, it would be very hard to poach me.
+
+I'm looking forward to writing a follow-up post in 10 more years, and seeing how my perspectives and career plan have changed!

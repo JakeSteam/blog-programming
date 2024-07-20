@@ -1,23 +1,23 @@
 ---
-title: 7 career lessons learned from 10 years of hunting for a tech job I actually enjoy 🐸
+title: "Ten years in tech: 7 career lessons from my decade in software development 🐸"
 author: Jake Lee
 layout: post
-image: /assets/images/2024/
+image: /assets/images/2024/10-years-in-tech.png
 tags:
   - Career
   - Software engineering
 maxheader: 2
 ---
 
-This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, constantly learning more about what I want from a career: here's 7 tips.
+This August marks exactly 10 years since my first software development job! I've hopped between industries, companies, and seniority a lot in this time, hopefully learning a few useful lessons. Well, at least 7 anyway.
 
 ## Introduction
 
-Before diving into each job and the lessons learned, it's worth pointing out how drastically the software development market (and of course my own situation) has changed in the past 10 years, especially the past 4. Gergely Orosz has [an excellent article](https://blog.pragmaticengineer.com/is-there-a-drop-in-software-engineer-job-openings-globally/) about the recent changes along with historical analysis, but one takeaway is that some of the career moves I made to make would be impossible now.
+Before diving into each job and the lessons learned, it's worth pointing out how drastically the software development market (and of course my own situation) has changed in the past 10 years, especially the past 4. Gergely Orosz [posts weekly](https://newsletter.pragmaticengineer.com/s/the-pulse) about the state of the software engineering industry, but one takeaway is that some of the career moves I made would be impossible now.
 
-Additionally, it's very likely that reasons I left companies have been addressed by now, so any information in this article might be out date, it is merely a snapshot of a moment in the past.
+Additionally, it's very likely that reasons I left companies have been addressed by now, so any information in this article might be out of date, it is merely a snapshot of a moment in the past.
 
-Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency & context this is my compensation throughout my career so far, ignoring inflation. Despite all the job changes, it's been a fairly consistent progression (excluding the obvious dip for running my startup!):
+Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency & context this is an absurdly over-smoothed graph of compensation throughout my career so far, ignoring inflation. Obviously salary is only one aspect of a job, but it's one that typically rises over time. Despite all the job changes, it's been a fairly consistent progression (excluding the dip for running my startup!):
 
 [![Salary over time](/assets/images/2024/jobs-salary.png)](/assets/images/2024/jobs-salary.png)
 
@@ -39,7 +39,7 @@ If you'd like to skip aaaaallll the personal information, back-story, and explan
 
 ### What was the role?
 
-As a **Software Engineer** as [First Option Software](https://www.firstoptionsoftware.com/) I usually led work on the absurdly varied software systems used by a building surveyor for insurance claims, later on focusing on building an Android app for a social media company.
+As a **Software Engineer** at [First Option Software](https://www.firstoptionsoftware.com/) I usually led work on the absurdly varied software systems used by a building surveyor for insurance claims, later on focusing on building an Android app for a social media company.
 
 ### What was the best & worst part?
 
@@ -54,6 +54,8 @@ The worst part was the lack of guidance. As great as it was running massive, imp
 ### What career lesson did I learn?
 
 **Take ownership of your own career.** Your employer will take your preferences into consideration, but ultimately if you want to 2x, 3x, 4x your salary and/or work in a new area, you need to make that happen by yourself.
+
+This means having an appealing LinkedIn, sharing your work publicly, not burning bridges when you leave companies, being friendly (but realistic) with recruiters, and staying up to date on your chosen technologies. It's not automatic, but a good job is worth the effort!
 
 ## 2017 - 2018: Creators.Direct
 
@@ -177,7 +179,7 @@ I'm currently a **Staff Android Engineer** at Seatfrog, a traveltech startup!
 
 The best part(s) are the get-it-done energy and freedom within a startup environment, and the work/life balance that comes with the absurdly excellent 4-day flexible & fully remote week. This suits me absolutely perfectly, letting me work on other projects for at least 1 day a week (e.g. my MBA), and do whatever is needed to stay productive and keep improving.
 
-The worst part is trickier to identify, but probably having 20 things I want to get done yet limited time in a day. Realistically this is a (positive) symptom of being empowered and invested in my employer's product, so I can't complain too much! For example should I look at new features, bug fixing, improving / removing lower quality code, improving testing, improving build process, etc etc etc. Prioritisation is hard!
+The worst part is trickier to identify, but probably having 20 things I want to get done yet limited time in a day. Realistically this is a (positive) symptom of being empowered and invested in my employer's product, so I can't complain too much! There's a constant balance between implementing new features, bug fixing, improving / removing lower quality code, improving testing, improving build process, etc etc etc. Prioritisation is hard!
 
 ### Why did I leave?
 
@@ -195,7 +197,7 @@ The tech job market changes often, and so do personal circumstances. Your job ne
 
 However, reading a variety of anecdotal stories like this, and being aware of the career moves available, will help with the decision-making. Just because I shuffled between smaller companies instead of getting promoted within a large company doesn't mean it's right for you! Perhaps you're better at internal politics yet worse at interviewing than me, so changing company is harder.
 
-I also made the risky decision to run my own tiny company, which completely drained my finances _but_ let me experience a very different working environment and have complete creative control. The intensity of this experience also let me "skip" a couple of years working my way up to senior, and it's definitely something I couldn't have done if I had an active social / personal life!
+I also made the risky decision to run my own tiny company, which completely drained my finances (and sanity / energy) _but_ let me experience a very different working environment and have complete creative control. The intensity of this experience also let me "skip" a couple of years working my way up to senior, and it's definitely something I couldn't have done if I had an active social / personal life!
 
 As for what's next... I don't know. I'm very satisfied in my current role, and since it's within a growing company with empowered employees, I suspect any move I want to make (e.g. management, or more backend focused) can probably be handled internally saving everyone time, money, and hassle. There's no "promotion" or "transfer" I want, my financial needs are met, it would be very hard to poach me.
 

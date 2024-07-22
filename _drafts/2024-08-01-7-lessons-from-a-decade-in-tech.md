@@ -53,6 +53,8 @@ The worst part was the lack of guidance. As great as it was running massive, imp
 
 This means having an appealing LinkedIn, sharing your work publicly, not burning bridges when you leave companies, being friendly (but realistic) with recruiters, and staying up to date on your chosen technologies. It's not automatic, but a good job is worth the effort!
 
+All of my roles (after this first one) have been via recruiters reaching out via LinkedIn, so keeping that profile appealing to recruiters is absurdly important.
+
 ## 2017 - 2018: Creators.Direct
 
 [![Creators.Direct](/assets/images/2024/jobs-cd.png)](/assets/images/2024/jobs-cd.png)

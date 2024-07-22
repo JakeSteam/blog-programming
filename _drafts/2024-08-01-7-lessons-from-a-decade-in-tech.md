@@ -17,10 +17,6 @@ Before diving into each job and the lessons learned, it's worth pointing out how
 
 Additionally, it's very likely that reasons I left companies have been addressed by now, so any information in this article might be out of date, it is merely a snapshot of a moment in the past.
 
-Finally, whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency & context this is an absurdly over-smoothed graph of compensation throughout my career so far, ignoring inflation. Obviously salary is only one aspect of a job, but it's one that typically rises over time. Despite all the job changes, it's been a fairly consistent progression (excluding the dip for running my startup!):
-
-[![Salary over time](/assets/images/2024/jobs-salary.png)](/assets/images/2024/jobs-salary.png)
-
 ## 7 lessons learned
 
 If you'd like to skip aaaaallll the personal information, back-story, and explanations, here are the 7 lessons I've learned, 1 from each employer. They're simply in the order I learned them, and as with all "lessons" they need to evaluated critically not just blindly followed:
@@ -39,7 +35,7 @@ If you'd like to skip aaaaallll the personal information, back-story, and explan
 
 ### What was the role?
 
-As a **Software Engineer** at [First Option Software](https://www.firstoptionsoftware.com/) I usually led work on the absurdly varied software systems used by a building surveyor for insurance claims, later on focusing on building an Android app for a social media company.
+As a **Software Engineer** at [First Option Software](https://www.firstoptionsoftware.com/) I usually led work on the absurdly varied software systems used by a building surveyor for insurance claims, later focusing on building an Android app for a social media company.
 
 ### What was the best & worst part?
 
@@ -95,7 +91,7 @@ The worst part was being very distant from the client in terms of planning work 
 
 ### Why did I leave?
 
-**Management interference and better opportunities.** As internal company politics became more and more prominent (new CEO, high profile firings, restructures, etc), all of my closest friends left the company. With no remaining ties, I stared looking for better opportunities, and found them.
+**Management interference and better opportunities.** As internal company politics became more and more prominent (new CEO, high profile firings, restructures, etc), all of my closest friends left the company. With no remaining ties, I started looking for better opportunities, and found them.
 
 ### What career lesson did I learn?
 
@@ -143,7 +139,7 @@ The worst part was, at least in the area I worked, the complete lack of conversa
 
 ### What career lesson did I learn?
 
-**Don't be blinded by the money.** I joined for good money, and I got good money, but it wasn't even slightly worth the boredom and being able to feel my software skills and drive to learn / improve fading in real time.
+**Don't be blinded by the money.** I joined for good money, and I got good money, but it wasn't even slightly worth the boredom and being able to feel my software skills and drive to learn / improve deteriorating in real time.
 
 ## 2021 - 2023: Photobox
 
@@ -198,6 +194,10 @@ The tech job market changes often, and so do personal circumstances. Your job ne
 However, reading a variety of anecdotal stories like this, and being aware of the career moves available, will help with the decision-making. Just because I shuffled between smaller companies instead of getting promoted within a large company doesn't mean it's right for you! Perhaps you're better at internal politics yet worse at interviewing than me, so changing company is harder.
 
 I also made the risky decision to run my own tiny company, which completely drained my finances (and sanity / energy) _but_ let me experience a very different working environment and have complete creative control. The intensity of this experience also let me "skip" a couple of years working my way up to senior, and it's definitely something I couldn't have done if I had an active social / personal life!
+
+Whilst doing my best to obscure any actual numbers (or any way to infer them), for transparency & context this is an absurdly over-smoothed graph of compensation throughout my career so far, ignoring inflation. Obviously salary is only one aspect of a job, but it's one that typically rises over time. Despite all the job changes, it's been a fairly consistent progression (excluding the dip for running my startup!):
+
+[![Salary over time](/assets/images/2024/jobs-salary.png)](/assets/images/2024/jobs-salary.png)
 
 As for what's next... I don't know. I'm very satisfied in my current role, and since it's within a growing company with empowered employees, I suspect any move I want to make (e.g. management, or more backend focused) can probably be handled internally saving everyone time, money, and hassle. There's no "promotion" or "transfer" I want, my financial needs are met, it would be very hard to poach me.
 

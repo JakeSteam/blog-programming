@@ -105,7 +105,7 @@ The worst part was being very distant from the client in terms of planning work 
 
 ### What was the role?
 
-I joined Candyspace, an agency with a long-standing major client (ITV Hub) that I would be 100% on. Initially my role was **Senior Android Developer**, progressing to **Lead Android Developer**.
+I joined [Candyspace](https://www.candyspace.com/), an agency with a long-standing major client (ITV Hub) that I would be 100% on. Initially my role was **Senior Android Developer**, progressing to **Lead Android Developer**.
 
 ### What was the best & worst part?
 
@@ -127,7 +127,7 @@ The worst part was the one-sided nature of the client / agency relationship. The
 
 ### What was the role?
 
-I was only here for 6 months (and was looking for a new job after 3), but I was a **Lead Mobile Developer (Android)** on the UK banking app.
+I was only here for 6 months (and was looking for a new job after 3), but I was a **Lead Mobile Developer (Android)** for [Metro Bank](https://www.metrobankonline.co.uk/).
 
 ### What was the best & worst part?
 
@@ -149,7 +149,7 @@ The worst part was, at least in the area I worked, the complete lack of conversa
 
 ### What was the role?
 
-I joined Photobox as a **Principal Android Engineer**, later becoming a **Principal Android Engineer / Interim Engineering Manager**, and finally an **Engineering Manager**.
+I joined [Photobox](https://www.photobox.co.uk/) as a **Principal Android Engineer**, later becoming a **Principal Android Engineer / Interim Engineering Manager**, and finally an **Engineering Manager**.
 
 ### What was the best & worst part?
 
@@ -171,7 +171,7 @@ The worst part was the higher-level company decisions resulting in high turnover
 
 ### What is the role?
 
-I'm currently a **Staff Android Engineer** at Seatfrog, a traveltech startup!
+I'm currently a **Staff Android Engineer** at [Seatfrog](https://seatfrog.com/), a traveltech startup!
 
 ### What is the best & worst part?
 

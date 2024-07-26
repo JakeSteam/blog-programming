@@ -90,7 +90,7 @@ fun TopLeftCircle() {
 ```
 </td>
     <td>
-      <a href="/assets/images/2024/compose-cutouts-topleft.png"><img src="/assets/images/2024/compose-cutouts-topleft.png"></a>
+      <a href="/assets/images/2024/compose-cutouts-topleft.png"><img src="/assets/images/2024/compose-cutouts-topleft.png" alt="Top left circle cutout"></a>
     </td>
   </tr>
   <tr>
@@ -120,7 +120,7 @@ fun MiddleLeftCircle() {
 ```
 </td>
     <td>
-      <a href="/assets/images/2024/compose-cutouts-middleleft.png"><img src="/assets/images/2024/compose-cutouts-middleleft.png"></a>
+      <a href="/assets/images/2024/compose-cutouts-middleleft.png"><img src="/assets/images/2024/compose-cutouts-middleleft.png" alt="Middle left circle cutout"></a>
     </td>
   </tr>
 
@@ -163,7 +163,7 @@ fun MultipleCircles() {
 ```
 </td>
     <td>
-      <a href="/assets/images/2024/compose-cutouts-multiple.png"><img src="/assets/images/2024/compose-cutouts-multiple.png"></a>
+      <a href="/assets/images/2024/compose-cutouts-multiple.png"><img src="/assets/images/2024/compose-cutouts-multiple.png" alt="Multiple circles as cutouts"></a>
     </td>
   </tr>
 
@@ -212,7 +212,7 @@ fun ArbitraryShapes() {
 ```
 </td>
     <td>
-      <a href="/assets/images/2024/compose-cutouts-arbitrary.png"><img src="/assets/images/2024/compose-cutouts-arbitrary.png"></a>
+      <a href="/assets/images/2024/compose-cutouts-arbitrary.png"><img src="/assets/images/2024/compose-cutouts-arbitrary.png" alt="Arbitrary shapes as cutouts"></a>
     </td>
   </tr>
   

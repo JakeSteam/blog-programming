@@ -52,6 +52,8 @@ That's it! Draw the content, then draw a shape to cut away from the content.
 
 [![](/assets/images/2024/compose-cutouts-all.png)](/assets/images/2024/compose-cutouts-all.png)
 
+_Note: My [background photo](https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/res/drawable/sample.jpg) is a photo I took in Uetliberg, Zurich, Switzerland, [in December 2023](https://jakelee.co.uk/zurich-reviews/#uetliberg-lookout-tower-)._
+
 Whilst [the repo itself](<(https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/java/uk/co/jakelee/composetestbed/ComposeIndents.kt)>) provides all of these examples in one large preview, standalone examples may be helpful.
 
 Obviously the colours, shapes, background and box contents are completely up to you, these are just simple samples!

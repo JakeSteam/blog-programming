@@ -1,5 +1,5 @@
 ---
-title: How to make cutouts in Jetpack Compose boxes
+title: How to make cutouts or transparent sections in Jetpack Compose
 author: Jake Lee
 layout: post
 image: /assets/images/2024/compose-cutouts-banner.png
@@ -9,15 +9,13 @@ tags:
   - Graphics
 ---
 
-At work recently we needed to have a semi-circular "cutout" from a rectangle containing content. This was surprisingly tricky, so here's an easy way to cut out arbitrary shapes from a Jetpack Compose `Box`!
-
----
+At work recently we needed to have a semi-circular "cutout" from a rectangular box containing content. This was surprisingly tricky, so here's an easy way to cut out arbitrary shapes from a Jetpack Compose `Box`!
 
 All code in this post is available [as a GitHub repo](https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/java/uk/co/jakelee/composetestbed/ComposeIndents.kt).
 
 ## How does a cutout work
 
-Stripping away all the surrounding code that just provides a working space, the actually functional code is:
+Stripping away all the boilerplate code, the actually useful bit is:
 
 ```
 Box(modifier = Modifier
@@ -217,7 +215,5 @@ fun ArbitraryShapes() {
   </tr>
   
 </table>
-
-## Next steps
 
 ## References

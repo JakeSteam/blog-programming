@@ -36,7 +36,7 @@ Box(modifier = Modifier
 
 There are 3 key parts to this:
 
-1. `drawWithContent` lets you customise how your `Box` content is drawn to screen, so that a circle (or any other shape) can be drawn on top of the content.
+1. `drawWithContent` lets you customise how your `Box` (or other `@Composable`) content is drawn to screen, so that a circle (or any other shape) can be drawn on top of the content.
    - The colour doesn't matter, only the shape / position does.
 2. As this new shape is being drawn on top, a `blendMode` of `BlendMode.DstOut` (a Porter/Duff blend mode[^porterduff]) states that the new shape should be subtracted from the original content[^dstout].
 3. Setting the `compositingStrategy` to `Offscreen` forces the content & any shapes to be drawn to a buffer then placed on screen at once[^compositing]. This is required to allow the `blendMode` to function.
@@ -56,7 +56,7 @@ _Note: My [background photo](https://github.com/JakeSteam/ComposeCutoutsPOC/blob
 
 Whilst [the repo itself](<(https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/java/uk/co/jakelee/composetestbed/ComposeIndents.kt)>) provides all of these examples in one large preview, standalone examples may be helpful.
 
-Obviously the colours, shapes, background and box contents are completely up to you, these are just simple samples!
+Obviously the colours, shapes, background and contents are completely up to you, these are just simple samples!
 
 <table>
   <tr>

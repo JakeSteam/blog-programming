@@ -13,7 +13,7 @@ I recently had a GREAT idea to overlap pixel art letters to form artwork... then
 
 ## Emulator
 
-Available at **[plato.jakelee.co.uk](https://plato.jakelee.co.uk/)**, the core concept is you type letters, and they get overlapped. For example `o` and `l` would draw a circle with a vertical line through it, and so on.
+Available at **[plato.jakelee.co.uk](https://plato.jakelee.co.uk/)**, the core concept is you type letters, and they get overlapped. For example `o` and `l` would draw a circle with a vertical line through it, and so on. Sounds simple, but it's surprising how complex the images can get!
 
 [![](/assets/images/2024/plato.png)](https://plato.jakelee.co.uk)
 
@@ -41,7 +41,9 @@ Whilst a to-do list of features is [available in the source code](https://github
 
 The full source code [is available in a GitHub repo](https://github.com/jakesteam/PLATO-overwrite-emulator/).
 
-The emulator is very simple, and not really an emulator! All it's doing is layering each letter on top of each other, adding the ability to append / replace the text, and a bit of CSS styling on top. It's hosted on GitHub Pages and runs entirely in the browser (obviously!)
+The emulator is very simple, and not really an emulator! All it's doing is layering each letter on top of each other, adding the ability to append / replace the text, and a bit of CSS styling on top. It's hosted on GitHub Pages and runs entirely in the browser (obviously!).
+
+Since my JavaScript and CSS are pretty rusty, GitHub Copilot did a lot of the heavy lifting, especially around clicking to add / edit text. Thanks GitHub!
 
 ## Links
 

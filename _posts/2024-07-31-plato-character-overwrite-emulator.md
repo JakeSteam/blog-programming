@@ -29,7 +29,7 @@ Experimenting is most of the fun, but here's a few examples courtesy of "[Plato 
 
 The emulator is very basic, and only supports full size characters (e.g. not superscript or subscript) included in the font file. This means some PLATO-specific symbols such as arrows are not available yet.
 
-Whilst a to-do list of features is [available in the source code](https://github.com/jakesteam/plATO-overwrite-emulator/?tab=readme-ov-file#capabilities), possible future features include:
+Whilst a to-do list of features is [available in the source code](https://github.com/jakesteam/PLATO-overwrite-emulator/?tab=readme-ov-file#capabilities), possible future features include:
 
 - [ ] Ability to link to a prefilled creation (e.g. `?q=WOBTAX`).
 - [ ] Support every character the real PLATO system can display.

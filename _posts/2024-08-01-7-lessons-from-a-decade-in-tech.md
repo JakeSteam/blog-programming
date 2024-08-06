@@ -19,7 +19,7 @@ Additionally, it's very likely that reasons I left companies have been addressed
 
 ## 7 lessons learned
 
-If you'd like to skip aaaaallll the personal information, back-story, and explanations, here are the 7 lessons I've learned, 1 from each employer. They're simply in the order I learned them, and as with all "lessons" they need to evaluated critically not just blindly followed:
+If you'd like to skip aaaaallll the personal information, back-story, and explanations, here are the 7 lessons I've learned, 1 from each employer. They're simply in the order I learned them, and as with all "lessons" they need to be evaluated critically not just blindly followed:
 
 1. **Take ownership of your own career.**
 2. **Be honest with yourself about burnout.**

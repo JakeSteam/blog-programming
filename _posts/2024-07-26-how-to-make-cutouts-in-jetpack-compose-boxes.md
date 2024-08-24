@@ -7,6 +7,7 @@ tags:
   - Compose
   - Android
   - Graphics
+last_modified: 2024-08-24
 ---
 
 At work recently we needed to have a semi-circular "cutout" from a rectangular box containing content. This was surprisingly tricky, so here's an easy way to cut out arbitrary shapes from a Jetpack Compose `Box`!
@@ -54,7 +55,7 @@ That's it! Draw the content, then draw a shape to cut away from the content.
 
 _Note: My [background photo](https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/res/drawable/sample.jpg) is a photo I took in Uetliberg, Zurich, Switzerland, [in December 2023](https://jakelee.co.uk/zurich-reviews/#uetliberg-lookout-tower-)._
 
-Whilst [the repo itself](<(https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/java/uk/co/jakelee/composetestbed/ComposeIndents.kt)>) provides all of these examples in one large preview, standalone examples may be helpful.
+Whilst [the repo itself](https://github.com/JakeSteam/ComposeCutoutsPOC/blob/main/app/src/main/java/uk/co/jakelee/composetestbed/ComposeIndents.kt) provides all of these examples in one large preview, standalone examples may be helpful.
 
 Obviously the colours, shapes, background and contents are completely up to you, these are just simple samples!
 

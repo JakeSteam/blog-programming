@@ -1,18 +1,18 @@
 ---
 id: 32
-title: 'Asynchronous Map Generator for Android'
-date: '2017-01-06T18:36:31+00:00'
-author: 'Jake Lee'
+title: "Asynchronous Map Generator for Android"
+date: "2017-01-06T18:36:31+00:00"
+author: "Jake Lee"
 layout: post
 permalink: /android-asynchronous-map-generator/
 image: /wp-content/uploads/2017/01/xrulgkh.png
 categories:
-    - 'Android Dev'
+  - "Android Dev"
 tags:
-    - Algorithm
-    - 'Isometric Tiles'
-    - 'Map Generation'
-    - Java
+  - Algorithm
+  - "Isometric Tiles"
+  - "Map Generation"
+  - Java
 ---
 
 [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow) is an Android game that tasks players with solving puzzles by rotating tiles to make all “flows” match up with no loose ends. Each tile has a flow (e.g. road, path, grass, river) on each side, as well as a height (high, normal, low). There are a few hundred built-in levels, but players can also create, share, and import their own levels for extended playability.
@@ -33,7 +33,7 @@ Additionally, since this process could take a long time, it must be performed of
 
 We’re going to display an updating popup on screen, whilst the generation happens in the background using an `AsyncTask` . Generation will occur by cycling through every x and y position, generating a list of all possible tiles, then randomly selecting one. If a “dead end” is reached (e.g. a non-existent tile configuration is requested), limited backtracking will occur.
 
-#### Updating Dialog
+### Updating Dialog
 
 First of all, a “currently generating” popup is displayed on screen, which calls the Puzzle Generator and handles displaying progress.
 
@@ -63,7 +63,7 @@ The required parameters are passed to the generator, namely:
 - Puzzle options (size, environment, whether to play immediately, etc)
 - UI elements that need to be kept updated on current progress (elements in the dialog)
 
-#### Puzzle Generator Constructor
+### Puzzle Generator Constructor
 
 Variables are for the most part just assigned to local variables for future usage, except for UI elements which are found in the calling dialog.
 
@@ -88,7 +88,7 @@ public class PuzzleGenerator extends AsyncTask {
     }
 ```
 
-#### Cancellability
+### Cancellability
 
 To add the ability to cancel puzzle generation despite happening asynchronously, a simple cancel listener was added to the calling dialog before execution. This means that when the back button is pressed, the `cancelReceived` flag will be set to true, which the actual generators check during execution.
 
@@ -108,7 +108,7 @@ public void cancel() {
 }
 ```
 
-#### Beginning Generation
+### Beginning Generation
 
 After `onPreExecute` has run, the main meat of the task `doInBackground` is called. This checks whether full puzzle generation needs to happen. If a blank puzzle is requested, then all tiles are selected as a predetermined “empty” tile for the selected environment, with no flow &amp; a normal height on all sides.
 
@@ -137,7 +137,7 @@ protected void onProgressUpdate(Integer... values) {
 }
 ```
 
-#### Creating The Puzzle
+### Creating The Puzzle
 
 First, placeholder puzzle objects are created. This gives a puzzle ID, so that the tiles can be saved to the correct puzzle. `PuzzleCustom` is also used as this is a player created puzzle, not one included in the game.
 
@@ -225,7 +225,7 @@ The puzzle is now generated, so we shuffle it if the user wants to play it immed
 }
 ```
 
-#### Get All Possible Tiles For Position
+### Get All Possible Tiles For Position
 
 To identify possible tiles, we need to know the existing tiles (since we usually need to match their flow &amp; height), as well as what position we’re looking for.
 
@@ -264,7 +264,7 @@ private List getPossibleTiles(int puzzleId, List existingTiles, int tileX, int t
 }
 ```
 
-#### Get Possible Tiles For Current Rotation
+### Get Possible Tiles For Current Rotation
 
 Since we’re using a database to store all our tile information, we manually construct a query to get all possible tiles based on the parameters received.
 
@@ -320,4 +320,4 @@ To improve performance, reducing the number of `String.format`s would be a good 
 
 The full `PuzzleGenerator.java` file can be downloaded from [GitHub Gist](https://gist.github.com/JakeSteam/b4821859e08202a0040d67f0b6158bec).
 
-*Disclaimer: I wrote [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow), I’m featuring it here because I know the codebase very well!*
+_Disclaimer: I wrote [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow), I’m featuring it here because I know the codebase very well!_

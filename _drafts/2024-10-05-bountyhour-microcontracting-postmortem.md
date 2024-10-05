@@ -7,9 +7,10 @@ tags:
   - Post-mortem
   - Next.js
   - Web
+  - TypeScript
 ---
 
-intro
+Like every developer, I have plenty of ideas, most of which never get beyond the planning stage! BountyHour was one of them that made it into proper development, and was then abandoned. So, what happened?
 
 ## Links
 
@@ -22,7 +23,7 @@ To quote the now public planning docs:
 
 > Bounty Hour is a micro-contracting marketplace, loosely based on the "bug bounty" system. Development teams who are unable to solve an issue (bug / issue / feature) and require a specialist can submit a bounty, that specialists can pick up. The bounty is only paid out when (or if) the work is completed, and may be attempted by multiple specialists. Each specialist only has 24hr to complete a bounty, after which it is freed up for another.
 
-Essentially, it was intended to be a way for specialised software engineers to use some of their spare time to pick up time-sensitive, extremely challenging bounties.
+Essentially, it was intended to be a way for highly skilled software engineers to use some of their spare time to pick up time-sensitive, extremely challenging bounties.
 
 ### Target audience
 
@@ -89,7 +90,7 @@ Authentication is famously hard, and honestly I'm pretty happy with my final res
 | :-------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
 | [![](/assets/images/2024/bountyhour-login-thumbnail.png)](/assets/images/2024/bountyhour-login.png) | [![](/assets/images/2024/bountyhour-login-mobile-thumbnail.png)](/assets/images/2024/bountyhour-login-mobile.png) | [![](/assets/images/2024/bountyhour-login-mobile-light-thumbnail.png)](/assets/images/2024/bountyhour-login-mobile-light.png) |
 
-### Profile
+### Settings
 
 I spent absurdly long on the profile editing, in pursuit of a _perfect_ form. Realistically this obsession to detail might have contributed to the project's demise, but I'm still extremely proud of all the features included in my 2nd-ever form!
 
@@ -122,17 +123,42 @@ Whilst these features were primarily implemented already by shadcn-ui, putting a
 
 ## What tech did it use?
 
+Since BountyHour used T3 as a starting point, all the tech choices were pretty standard:
+
+- [TypeScript (Language)](https://www.typescriptlang.org)
+- [Next.js (Framework)](https://nextjs.org)
+- [NextAuth.js (Authentication)](https://next-auth.js.org)
+- [Prisma (ORM)](https://prisma.io)
+- [Tailwind (CSS)](https://tailwindcss.com)
+- [tRPC (API)](https://trpc.io)
+
+This was my first time using _any_ of these, so it took a while to figure out exactly which bit did what! However, by the end of it I was relatively confident in at least understanding an implementation of these, and making minor changes.
+
+I've [written about this in detail before](/decision-paralysis-and-opinionated-guidance/), but having someone more knowledgeable provide a solid starting point was the only way this project made any progress at all. The choices all seemed to align with my priorities, and if I'd had to pick each library by myself it would have taken months to even make the first commit!
+
 ## Why was it abandoned?
 
 ### Scope
 
-BountyHour is too big. Realistically it requires a whole team to even get started (especially due to the legal, financial, and customer support resources required), with no possibility of "scaling up" a single person idea.
+BountyHour is too big. Realistically it requires a whole team to even get started (especially due to the legal, financial, and customer support resources required), with no possibility of starting small then "scaling up" (since the core functionality requires all the complexity).
 
 Whilst I do still think the idea has massive potential, an Android engineer with a passing interest in web who just about knows the basics is not the guy to realise it! A better match would be an experienced web engineer who specifically has worked with payments, chat, and code management before.
 
 ### Expertise
 
+I'm an Android software engineer who knows about a bit about the web, not an expert web developer! Building BountyHour would have required excellent implementations of payments, tax, code control, timing systems, authentication, and a whole collection of non-technical skills that I just don't have.
+
+During development, I could envisage a world where I eventually finished a functioning site, but... would I be able to actually run it? If there were issues with payments, could I sort them? Probably not! There's also the fear of the site being used for money laundering, tax evasion, or countless other things that require an entire legal department to handle. Terrifying.
+
+Also... security. I didn't feel confident enough in my code to be sure that any payments logic would be immune to attack, that exploits wouldn't exist all over the place, or even that private customer data (financial or personal) would be safe. The internet is a dangerous place, and it needs experienced people handling security, not tourists like myself.
+
+Whilst I could just about get the expertise for a previous startup ([Creators.Direct](/7-lessons-from-a-decade-in-tech/#2017---2018-creatorsdirect)), that was primarily an app that also had a web component. BountyHour would be entirely web, with any app coming far later and being non-essential.
+
 ### Interest
+
+Unfortunately my interest in handling a project of this scale dwindled once I saw... the scale. If I had infinite free time I could probably keep going, but the opportunity cost of other projects was way too high.
+
+I also essentially lost interest in most web development once I "got it", with Android dev being far more enjoyable, understandable, and logical for me personally. If I was coming from a background of not knowing much about software, web development could definitely have held my interest. However, coming from an expertise in a totally unrelated area, spending 6-7+ years relearning web to the same level I know Android was not an appealing concept!
 
 ## What did I learn?
 
@@ -140,10 +166,12 @@ Well, the primary learning was the vast amounts of information around modern web
 
 Considering I went from zero knowledge, gaining hands-on experience creating new things with Next.js, Node.js, Prisma, TypeScript, Tailwind, tRPC, authentication, and Shadcn UI is so, so valuable. It now means I have some sort of reference point when looking at web-related libraries / projects.
 
-Before starting I didn't really _get_ the Node stack, and utilities like [Theo's T3 Stack](https://blog.jakelee.co.uk/decision-paralysis-and-opinionated-guidance/) really helped jumpstart the learning experience. This was also my first time relying heavily on GitHub Copilot to help me with new topics, and it was absurdly powerful!
+Before starting I didn't really _get_ the Node stack, and utilities like [Theo's T3 Stack](/decision-paralysis-and-opinionated-guidance/) really helped jumpstart the learning experience. This was also my first time relying heavily on GitHub Copilot to help me with new topics, and it was absurdly powerful!
 
 This was also my first time using Linear for project management, and it was good to experience it from a broader perspective than I experience in my day job. The project was small enough that a text file probably would have sufficed, but trying out new tools is always good!
 
 [![BountyHour Linear](/assets/images/2024/bountyhour-linear.png)](/assets/images/2024/bountyhour-linear.png)
 
 ## Conclusion
+
+Software development is hard. Starting a new company is hard. Doing both in an area you don't really have expertise is very very hard (and foolish).

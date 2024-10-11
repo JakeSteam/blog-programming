@@ -27,18 +27,18 @@ Well, all the basic features you'd expect of a calendar:
 
 Here are some screenshots:
 
-|                               Dark                                |                                Light                                |                                Mobile                                 |
-| :---------------------------------------------------------------: | :-----------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| [![](/images/v1_1_0_dark-thumbnail.png)](/images/v1_1_0_dark.png) | [![](/images/v1_1_0_light-thumbnail.png)](/images/v1_1_0_light.png) | [![](/images/v1_1_0_mobile-thumbnail.png)](/images/v1_1_0_mobile.png) |
+|                                             Dark                                              |                                              Light                                              |                                              Mobile                                               |
+| :-------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/calendar_dark-thumbnail.png)](/assets/images/2024/calendar_dark.png) | [![](/assets/images/2024/calendar_light-thumbnail.png)](/assets/images/2024/calendar_light.png) | [![](/assets/images/2024/calendar_mobile-thumbnail.png)](/assets/images/2024/calendar_mobile.png) |
 
 ## How can I add it to my Jekyll site?
 
 The calendar is just a Liquid script with a little CSS / HTML / JavaScript to improve functionality / UI, so:
 
 1. Copy [`calendar.html`](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-calendar-html) into any HTML or Markdown page on your Jekyll site.
-   - _Note: I added it to `_includes/custom/calendar.html` and used {% raw %}`{% include custom/calendar.md %}`{% endraw %} on a page._
+   - _Note: I added it to `_includes/custom/calendar.html` and used {% raw %}`{% include custom/calendar.html %}`{% endraw %} on a page._
 2. Copy [`styles.css`](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-styles-scss) to your site's CSS file, replacing `#ca644e` with your site's accent colour.
-3. Add a `dates` list to a post ([example](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-example-post-or-page-html)), containing objects with a `YYYY-MM-DD` `date` and a text `title`.
+3. Add a `dates` list to a post ([example](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-example-post-or-page-html)), containing objects with a `YYYY-MM-DD` `date` and a `title`.
 4. Start your site, visit your new calendar!
 
 ## How can I customise the calendar?
@@ -67,7 +67,60 @@ To change this:
 Whilst I wanted to define custom events for my calendar, you might want to just use post dates. This can be done by:
 
 1. Removing the lines with `for event in post.dates` (line 32) and `endfor` (line 44).
-2. Changing `assign event_date = event.date | date: "%m-%d"` to `assign event_date = post.date | date: "%m-%d"`.
-3. Changing `assign event_year = event.date | date: "%Y"` to `assign event_year = post.date | date: "%Y"`
+2. Changing both `event.date` to `post.date`.
 
 ## How does it work?
+
+These details are mostly to stop me forgetting in a few months, but they may help you make changes to the code too!
+
+As a reminder, all the code is in a GitHub Gist: <https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9>
+
+### Displaying a month
+
+Displaying all the days in a month correctly aligned to the days of the week grid is easily the hardest part of a calendar, and luckily someone already solved it for me!
+
+Specifically, [this post (in Russian)](https://mikhail-yudin.ru/blog/frontend/jekyll-calendar-css-grid). Essentially, to ensure we output placeholder days from the previous month, we:
+
+1. Start 7 days before the start of the month (`-7..30`), and loop through each day by building a `day_timestamp` using the `month_start_timestamp` and current day (`i`).
+2. For each day, if we haven't found the first relevant day yet (`first_day_found`), skip days without outputting (`continue`) until the current day is Monday.
+3. Now we need to output placeholder days for the row until the month actually starts, this is done with `if month_str == month_number` ... output day `span` ... `else` ... output empty `span`.
+4. To output a day's events, we loop through every object in every post's `dates` object.
+5. For each event, we add the HTML output to `events`, which is added to the page's HTML itself as a `data-events` attribute on the day's `span`.
+
+**Styling with CSS:**
+
+1. Using CSS, lay out all the days in `calendar-grid` in a grid with 7 columns and some spacing (`display: grid; grid-template-columns: repeat(7, 2rem);`).
+2. Similarly, lay out the months themselves in a grid that reacts to screen width (`grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));`).
+3. Finally, add some nice touches like `border`s, a `pointer` for clickable days, colours, padding, etc.
+
+Done!
+
+Looping through every event on every post for every day is absurdly inefficient (e.g. 10 posts with 10 events each calculated for every day = 10\*10\*365 = 36,500 checks total), however since this is all done once at compile time... I don't really mind.
+
+The page will always load in milliseconds even with thousands of events / posts. I had a brief try at implementing some sort of events hashmap to optimise the lookups, but Liquid really isn't made for this kind of programming! The dumb, simple solution is good enough.
+
+### Displaying all months
+
+Literally just {% raw %}`{% for month in (1..12) %}`{% endraw %}, plus outputting the month name (`%B`)!
+
+### Displaying a dialog
+
+Shoutout to HTML for now including a native `dialog` element! This element does all the hard work of fading the background, displaying a dialog in the middle of the screen, and even has a special syntax to close it without any JavaScript:
+
+```
+  <form method="dialog">
+    <button autofocus>Close</button>
+  </form>
+```
+
+Some JavaScript is still needed however, to dynamically populate this dialog. When the page loads, we:
+
+1. Select all days with events (`const eventDays = document.querySelectorAll('.calendar-event');`)
+2. For each one, add a click listener.
+3. On click, set the dialog's `eventContent` to the contents of the clicked day's `data-events` attribute, and `showModal()` to display it.
+
+### Displaying years since
+
+Another simple one, just subtract the event's year (`%Y`) from the current year, and display "This year" if this is 0, otherwise "\_ years ago".
+
+## Conclusion

@@ -14,7 +14,7 @@ I recently created a full-year calendar displaying custom events from Jekyll pos
 Before diving into how the calendar works, here's a few useful links:
 
 1. A [live demo of the calendar](https://history.jakelee.co.uk/calendar/) on my Internet History site.
-2. All code is available [as a GitHub Gist](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9), or [in a merge commit](https://github.com/JakeSteam/minimaJake/commit/1d9aced2b346cc13ff16b3b38889b061abecf1ff).
+2. All code is available [as a GitHub Gist](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9), or [in a merge commit](https://github.com/JakeSteam/minimaJake/commit/1d9aced2b346cc13ff16b3b38889b061abecf1ff) to my [minimaJake Jekyll theme](https://github.com/JakeSteam/minimaJake/).
 3. The [latest version](https://github.com/JakeSteam/minimaJake/blob/main/_includes/custom/calendar.md) of the calendar, which might have a few post-release improvements.
 
 ## What can the calendar do?

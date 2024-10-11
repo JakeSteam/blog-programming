@@ -36,7 +36,7 @@ Here are some screenshots:
 The calendar is just a Liquid script with a little CSS / HTML / JavaScript to improve functionality / UI, so:
 
 1. Copy [`calendar.html`](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-calendar-html) into any HTML or Markdown page on your Jekyll site.
-   - _Note: I added it to `_includes/custom/calendar.html` and used {% raw %}`{% include custom/calendar.html %}`{% endraw %} on a page._
+   - _Note: I copied it to `_includes/custom/calendar.html` and used {% raw %}`{% include custom/calendar.html %}`{% endraw %} on a page._
 2. Copy [`styles.css`](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-styles-scss) to your site's CSS file, replacing `#ca644e` with your site's accent colour.
 3. Add a `dates` list to a post ([example](https://gist.github.com/JakeSteam/d7f7c681412989bb3c173cc850b756f9#file-example-post-or-page-html)), containing objects with a `YYYY-MM-DD` `date` and a `title`.
 4. Start your site, visit your new calendar!
@@ -60,14 +60,14 @@ To change this:
 ### Changing popup contents
 
 - To change the per-event text, just modify line 41's `append`s with whatever text you want.
-- To change what the popup dialog looks like, or it's behaviour, the browser's default styling is used so [you'll need new CSS rules / JavaScript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#examples).
+- To change what the popup dialog looks like, or it's behaviour, the browser's default behaviour is used so [you'll need new CSS rules / JavaScript](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#examples).
 
 ### Using post publish dates
 
 Whilst I wanted to define custom events for my calendar, you might want to just use post dates. This can be done by:
 
 1. Removing the lines with `for event in post.dates` (line 32) and `endfor` (line 44).
-2. Changing both `event.date` to `post.date`.
+2. Changing both `event.date`s to `post.date`.
 
 ## How does it work?
 
@@ -79,10 +79,10 @@ As a reminder, all the code is in a GitHub Gist: <https://gist.github.com/JakeSt
 
 Displaying all the days in a month correctly aligned to the days of the week grid is easily the hardest part of a calendar, and luckily someone already solved it for me!
 
-Specifically, [this post (in Russian)](https://mikhail-yudin.ru/blog/frontend/jekyll-calendar-css-grid). Essentially, to ensure we output placeholder days from the previous month, we:
+Specifically, [this post (in Russian)](https://mikhail-yudin.ru/blog/frontend/jekyll-calendar-css-grid) by Mikhail Yudin was used as a starting point, with some adaptations. Essentially, to ensure we output placeholder days from the previous month, we:
 
 1. Start 7 days before the start of the month (`-7..30`), and loop through each day by building a `day_timestamp` using the `month_start_timestamp` and current day (`i`).
-2. For each day, if we haven't found the first relevant day yet (`first_day_found`), skip days without outputting (`continue`) until the current day is Monday.
+2. For each day, if we haven't found the first relevant day yet (`first_day_found`), skip the day without outputting (`continue`) until the current day is Monday.
 3. Now we need to output placeholder days for the row until the month actually starts, this is done with `if month_str == month_number` ... output day `span` ... `else` ... output empty `span`.
 4. To output a day's events, we loop through every object in every post's `dates` object.
 5. For each event, we add the HTML output to `events`, which is added to the page's HTML itself as a `data-events` attribute on the day's `span`.
@@ -101,16 +101,16 @@ The page will always load in milliseconds even with thousands of events / posts.
 
 ### Displaying all months
 
-Literally just {% raw %}`{% for month in (1..12) %}`{% endraw %}, plus outputting the month name (`%B`)!
+Literally just repeat the month displaying {% raw %}`{% for month in (1..12) %}`{% endraw %}, plus outputting the month name (`%B`)!
 
 ### Displaying a dialog
 
-Shoutout to HTML for now including a native `dialog` element! This element does all the hard work of fading the background, displaying a dialog in the middle of the screen, and even has a special syntax to close it without any JavaScript:
+Shoutout to HTML for now including [a native `dialog` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)! This element does all the hard work of fading the background, displaying a dialog in the middle of the screen, and even has a special syntax to close it without any JavaScript:
 
-```
-  <form method="dialog">
-    <button autofocus>Close</button>
-  </form>
+```html
+<form method="dialog">
+  <button autofocus>Close</button>
+</form>
 ```
 
 Some JavaScript is still needed however, to dynamically populate this dialog. When the page loads, we:
@@ -124,3 +124,9 @@ Some JavaScript is still needed however, to dynamically populate this dialog. Wh
 Another simple one, just subtract the event's year (`%Y`) from the current year, and display "This year" if this is 0, otherwise "\_ years ago".
 
 ## Conclusion
+
+This was a fun mini-project, and I'm looking forward to slowly filling up my [Internet History calendar](https://history.jakelee.co.uk/calendar/) with notable dates! It was also good to work in Liquid again, even if syntax highlighting and autoformatting is pretty unreliable.
+
+I'm extremely impressed with the month outputting solution that formed the core of this calendar, the day skipping approach is very creative. Hopefully I need to implement a calendar in another language soon, so I can perform this magic trick for someone!
+
+In terms of additional features, I'm not sure there's anything notable I'd like to add. Some slightly nicer styling, or more efficient event collating perhaps, none of this is essential though. If you end up using the calendar and have ideas, let me know and I'll probably give implementing them a go.

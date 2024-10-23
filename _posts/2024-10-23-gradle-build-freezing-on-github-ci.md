@@ -1,5 +1,5 @@
 ---
-title: Possible cause of an intermittently hanging GitHub Android CI build
+title: A possible fix for intermittently hanging Android builds on GitHub
 author: Jake Lee
 layout: post
 image: /assets/images/2024/github-ram-banner.png
@@ -55,3 +55,9 @@ Whilst I've used 8GB of RAM before, I only retroactively realised this was eithe
 I was pretty surprised by the build process just freezing, I'd have assumed requesting more RAM than the runner has available would cause a pretty catastrophic failure. Diagnosing this issue took far longer than it should have, since some PRs old and new would work perfectly if they just happened to use less than 7GB RAM despite having 8GB available.
 
 Of course, the other solution is to pay for [premium runners](https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners#larger-runners)... but the GitHub-hosted runners are plenty for most use cases. I'll try bumping up to 7GB RAM from 4GB next time I do CI maintenance, for now I've spent too much time staring at workflows today!
+
+Additionally, the error messages currently give zero results(!) when Googled, so they're included here in plaintext to help others:
+
+- build: The runner has received a shutdown signal. This can happen when the runner service is stopped, or a manually started runner is canceled.
+- build: The hosted runner encountered an error while running your job. (Error Type: Disconnect).
+- build: Received request to deprovision: The request was cancelled by the remote provider.

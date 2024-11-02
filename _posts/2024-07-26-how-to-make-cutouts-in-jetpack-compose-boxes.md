@@ -7,7 +7,7 @@ tags:
   - Compose
   - Android
   - Graphics
-last_modified: 2024-08-24
+last_modified_at: 2024-08-24
 ---
 
 At work recently we needed to have a semi-circular "cutout" from a rectangular box containing content. This was surprisingly tricky, so here's an easy way to cut out arbitrary shapes from a Jetpack Compose `Box`!

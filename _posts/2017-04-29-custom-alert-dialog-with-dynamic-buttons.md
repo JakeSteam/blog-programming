@@ -2,8 +2,6 @@
 id: 1142
 title: 'Custom Alert Dialog With Dynamic Buttons in Android'
 date: '2017-04-29T13:39:19+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /custom-alert-dialog-with-dynamic-buttons/
 image: /wp-content/uploads/2017/04/rwzzv5x.png
 categories:

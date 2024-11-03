@@ -2,8 +2,6 @@
 id: 1792
 title: "Using Fabric (Answers / Beta / Crashlytics) With App Flavours"
 date: "2018-10-25T15:00:07+01:00"
-author: "Jake Lee"
-layout: post
 guid: "https://blog.jakelee.co.uk/?p=1792"
 permalink: /using-fabric-answers-beta-crashlytics-with-app-flavours/
 timeline_notification:

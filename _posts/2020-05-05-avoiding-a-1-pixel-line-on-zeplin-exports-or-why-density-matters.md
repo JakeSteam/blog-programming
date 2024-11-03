@@ -2,8 +2,6 @@
 id: 2764
 title: 'Avoiding a 1 pixel line on Zeplin exports, or why density matters'
 date: '2020-05-05T17:30:22+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /avoiding-a-1-pixel-line-on-zeplin-exports-or-why-density-matters/
 image: /wp-content/uploads/2020/05/devices-density_2x.png
 categories:

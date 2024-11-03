@@ -1,7 +1,5 @@
 ---
 title: Introducing "Replace" AKA rp.lc, a platform for creating recipes for simulation games from any image
-author: Jake Lee
-layout: post
 image: /assets/images/2023/
 tags:
     - rp.lc

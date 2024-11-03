@@ -2,8 +2,6 @@
 id: 2233
 title: Beginner's Guide to Android Development live Q&A podcast recording
 date: '2018-12-20T18:00:06+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /beginners-guide-to-android-development-live-qa-podcast-recording/
 image: /assets/images/2022/soundcloudpodcast.png
 categories:

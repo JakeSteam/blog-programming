@@ -1,7 +1,5 @@
 ---
 title: Building a Jekyll / Liquid calendar with custom events
-author: Jake Lee
-layout: post
 image: /assets/images/2024/calendar-header.png
 tags:
   - Liquid

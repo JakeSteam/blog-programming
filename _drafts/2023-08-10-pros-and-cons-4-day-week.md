@@ -1,7 +1,5 @@
 ---
 title: My experience (good and bad!) with a 4 day week, 1 month in
-author: Jake Lee
-layout: post
 image: /assets/images/2023/
 tags:
     - Productivity

@@ -1,7 +1,5 @@
 ---
 title: Which social accounts are supported on GitHub profiles?
-author: Jake Lee
-layout: post
 image: /assets/images/2024/githubprofile-banner.png
 tags:
   - GitHub

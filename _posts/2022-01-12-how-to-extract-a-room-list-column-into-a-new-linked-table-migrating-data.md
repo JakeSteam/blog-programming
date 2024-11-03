@@ -2,8 +2,6 @@
 id: 3077
 title: 'How to extract a Room list column into a new linked table, migrating data'
 date: '2022-01-12T18:00:34+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-extract-a-room-list-column-into-a-new-linked-table-migrating-data/
 image: /wp-content/uploads/2022/01/Tp3iZQX.png
 categories:

@@ -2,8 +2,6 @@
 id: 1456
 title: 'Getting Started with Sugar ORM'
 date: '2017-07-07T11:40:25+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /getting-started-with-sugar-orm/
 image: /assets/images/2022/sugarorm.png
 categories:

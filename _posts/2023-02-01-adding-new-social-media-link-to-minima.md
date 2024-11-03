@@ -1,7 +1,5 @@
 ---
 title: How to add a new social media link to Minima 2.5.1 and latest unreleased version (3.0.0)
-author: Jake Lee
-layout: post
 image: /assets/images/2023/minima-header.png
 tags:
   - Minima

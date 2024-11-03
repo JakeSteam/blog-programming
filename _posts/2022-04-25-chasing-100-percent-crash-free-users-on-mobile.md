@@ -1,7 +1,5 @@
 ---
 title: From 99% to 99.99%, why & how to chase 100% Crashlytics crash-free users
-author: Jake Lee
-layout: post
 image: /assets/images/2022/crashlytics.png
 tags:
     - Firebase

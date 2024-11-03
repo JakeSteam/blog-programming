@@ -1,7 +1,5 @@
 ---
 title: "Opinionated guidance defeats decision paralysis: How Google and T3 help jumpstart a new developer's learning"
-author: Jake Lee
-layout: post
 image: /assets/images/2024/opinionated-frameworks.png
 tags:
   - Next.js

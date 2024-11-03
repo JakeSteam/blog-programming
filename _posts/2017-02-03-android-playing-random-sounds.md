@@ -2,8 +2,6 @@
 id: 714
 title: 'Playing Random Sounds on Android'
 date: '2017-02-03T12:00:50+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-playing-random-sounds/
 image: /wp-content/uploads/2017/01/ayk7zi2.png
 categories:

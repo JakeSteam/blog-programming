@@ -2,8 +2,6 @@
 id: 1381
 title: "Auto-detecting Device Orientation Whilst Allowing User to Override"
 date: "2017-06-13T11:20:01+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /auto-detecting-device-orientation-whilst-allowing-user-to-override/
 image: /wp-content/uploads/2017/06/09ggcwp.png
 categories:

@@ -2,8 +2,6 @@
 id: 2003
 title: 'Developing Web Apps With Firebase Hosting'
 date: '2018-11-19T18:26:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /developing-web-apps-with-firebase-hosting/
 image: /wp-content/uploads/2018/11/QoYLmO5.png
 categories:

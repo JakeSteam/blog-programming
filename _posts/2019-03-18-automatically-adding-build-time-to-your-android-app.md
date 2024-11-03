@@ -2,8 +2,6 @@
 id: 2431
 title: 'Automatically adding build time to your Android app'
 date: '2019-03-18T22:12:06+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /automatically-adding-build-time-to-your-android-app/
 image: /wp-content/uploads/2019/03/0I3501n.png
 categories:

@@ -2,8 +2,6 @@
 id: 1766
 title: 'Displaying a "Power Saving Enabled" Bar Inside Your Android App'
 date: '2018-10-16T17:56:59+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /displaying-a-power-saving-enabled-bar-inside-your-android-app/
 image: /wp-content/uploads/2018/10/5xtlk5x.png
 categories:

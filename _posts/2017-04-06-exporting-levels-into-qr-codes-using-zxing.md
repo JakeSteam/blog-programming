@@ -2,8 +2,6 @@
 id: 942
 title: 'Exporting Levels Into QR Codes Using ZXing'
 date: '2017-04-06T18:49:20+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /exporting-levels-into-qr-codes-using-zxing/
 image: /wp-content/uploads/2017/04/yht4w3v.png
 categories:

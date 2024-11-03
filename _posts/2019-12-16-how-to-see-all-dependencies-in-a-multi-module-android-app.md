@@ -2,8 +2,6 @@
 id: 2610
 title: 'How to see all dependencies in a multi-module Android app'
 date: '2019-12-16T17:00:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-see-all-dependencies-in-a-multi-module-android-app/
 image: /wp-content/uploads/2019/12/Screenshot-2019-12-14-at-19.31.20.png
 categories:

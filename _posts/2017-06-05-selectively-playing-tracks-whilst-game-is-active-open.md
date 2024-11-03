@@ -2,8 +2,6 @@
 id: 1297
 title: 'Selectively Playing Tracks Whilst Game Is Active / Open'
 date: '2017-06-05T19:29:04+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /selectively-playing-tracks-whilst-game-is-active-open/
 image: /wp-content/uploads/2017/06/vaidqil.png
 categories:

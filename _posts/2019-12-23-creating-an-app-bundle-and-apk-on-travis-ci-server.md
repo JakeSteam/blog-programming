@@ -2,8 +2,6 @@
 id: 2624
 title: 'How to create an app bundle (and APK) on Travis / CI server'
 date: '2019-12-23T17:00:01+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-an-app-bundle-and-apk-on-travis-ci-server/
 image: /wp-content/uploads/2019/12/fNlttUh.png
 categories:

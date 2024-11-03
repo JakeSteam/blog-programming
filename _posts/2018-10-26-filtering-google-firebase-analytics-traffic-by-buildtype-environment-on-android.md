@@ -2,8 +2,6 @@
 id: 1795
 title: 'Filtering Google / Firebase Analytics Traffic By BuildType / Environment On Android'
 date: '2018-10-26T17:00:56+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /filtering-google-firebase-analytics-traffic-by-buildtype-environment-on-android/
 image: /wp-content/uploads/2018/10/fcc5jc7.png
 categories:

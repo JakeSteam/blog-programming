@@ -2,8 +2,6 @@
 id: 1926
 title: 'Developing Android Apps With Firebase Cloud Functions'
 date: '2018-11-02T17:12:58+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /developing-android-apps-with-firebase-cloud-functions/
 image: /wp-content/uploads/2018/11/functions.png
 categories:

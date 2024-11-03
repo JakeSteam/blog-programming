@@ -2,8 +2,6 @@
 id: 1786
 title: 'Fixing Dependency Conflict In OneSignal Android'
 date: '2018-10-23T15:00:04+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /fixing-dependency-conflict-in-onesignal-android/
 image: /wp-content/uploads/2018/10/89dfggs.png
 categories:

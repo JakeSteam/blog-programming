@@ -1,7 +1,5 @@
 ---
 title: Announcing an online version of the Settlers 3 game manual
-author: Jake Lee
-layout: post
 image: /assets/images/2022/settlers.png
 tags:
     - 'Settlers 3'

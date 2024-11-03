@@ -1,7 +1,5 @@
 ---
 title: Blog updated (v2.1) with table of contents and anchor links!
-author: Jake Lee
-layout: post
 image: /assets/images/2022/blog21header.png
 tags:
     - Blog

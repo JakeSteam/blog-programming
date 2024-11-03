@@ -2,8 +2,6 @@
 id: 2606
 title: 2020's essential Android development techniques
 date: '2019-12-14T18:40:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /2020s-essential-android-development-techniques/
 image: /wp-content/uploads/2019/12/2020.jpg
 categories:

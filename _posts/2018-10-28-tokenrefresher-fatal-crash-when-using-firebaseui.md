@@ -2,8 +2,6 @@
 id: 1817
 title: 'TokenRefresher Fatal Crash When Using FirebaseUI'
 date: '2018-10-28T15:02:24+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /tokenrefresher-fatal-crash-when-using-firebaseui/
 image: /wp-content/uploads/2018/10/yis68te.png
 categories:

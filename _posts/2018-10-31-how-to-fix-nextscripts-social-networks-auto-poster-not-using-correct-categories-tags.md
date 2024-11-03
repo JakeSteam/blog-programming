@@ -2,8 +2,6 @@
 id: 1901
 title: 'How To Fix Nextscripts Social Networks Auto-Poster Not Using Correct Categories / Tags'
 date: '2018-10-31T20:11:26+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-fix-nextscripts-social-networks-auto-poster-not-using-correct-categories-tags/
 image: /wp-content/uploads/2018/10/twitter.png
 categories:

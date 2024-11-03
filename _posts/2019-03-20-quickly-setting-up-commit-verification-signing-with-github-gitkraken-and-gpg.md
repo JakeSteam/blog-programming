@@ -2,8 +2,6 @@
 id: 2436
 title: "Quickly setting up commit verification / signing with GitHub, GitKraken, and GPG"
 date: "2019-03-20T21:31:04+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /quickly-setting-up-commit-verification-signing-with-github-gitkraken-and-gpg/
 image: /wp-content/uploads/2019/03/kCuSDTB.png
 categories:

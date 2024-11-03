@@ -2,8 +2,6 @@
 id: 2896
 title: 'Programmatically creating and scheduling animations for Android drawable layers with ObjectAnimator'
 date: '2020-10-05T17:00:06+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /programmatically-creating-and-scheduling-animations-for-android-drawable-layers-with-objectanimator/
 image: /wp-content/uploads/2020/10/818vMSe.png
 categories:

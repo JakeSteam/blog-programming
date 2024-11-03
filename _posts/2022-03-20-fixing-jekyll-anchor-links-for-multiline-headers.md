@@ -1,7 +1,5 @@
 ---
 title: Fixing Jekyll Anchor Headings links for multiline headings
-author: Jake Lee
-layout: post
 image: /assets/images/2022/jekyll-header.png
 tags:
     - Jekyll

@@ -1,7 +1,5 @@
 ---
 title: Using Google Search Console to effortlessly monitor small hobby projects (or big ones!)
-author: Jake Lee
-layout: post
 image: /assets/images/2023/google-search-console.png
 tags:
     - Google Search Console

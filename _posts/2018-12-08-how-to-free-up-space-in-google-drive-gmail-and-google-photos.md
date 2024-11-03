@@ -2,8 +2,6 @@
 id: 2134
 title: "How To Free Up Space in Google Drive, Gmail, and Google Photos"
 date: "2018-12-08T15:21:26+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /how-to-free-up-space-in-google-drive-gmail-and-google-photos/
 image: /wp-content/uploads/2018/12/small.png
 categories:

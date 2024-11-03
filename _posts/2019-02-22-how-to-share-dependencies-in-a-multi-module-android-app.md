@@ -2,8 +2,6 @@
 id: 2386
 title: 'How to share dependencies in a multi-module Android app'
 date: '2019-02-22T17:00:52+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-share-dependencies-in-a-multi-module-android-app/
 image: /wp-content/uploads/2019/02/YMIOeHi.png
 categories:

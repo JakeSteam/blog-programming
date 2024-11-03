@@ -1,7 +1,5 @@
 ---
 title: "First impressions migrating from LastPass to 1Password"
-author: Jake Lee
-layout: post
 image: /assets/images/2023/1password-banner.jpeg
 tags:
     - Security

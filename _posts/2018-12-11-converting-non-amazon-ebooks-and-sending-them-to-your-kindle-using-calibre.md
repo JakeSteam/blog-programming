@@ -2,8 +2,6 @@
 id: 2194
 title: 'Converting non-Amazon eBooks and sending them to your Kindle using Calibre'
 date: '2018-12-11T20:33:43+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /converting-non-amazon-ebooks-and-sending-them-to-your-kindle-using-calibre/
 image: /wp-content/uploads/2018/12/overview.png
 categories:

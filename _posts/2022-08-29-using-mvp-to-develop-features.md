@@ -1,7 +1,5 @@
 ---
 title: How an MVP-inspired approach to small feature development can improve your work's visibility & flexibility 
-author: Jake Lee
-layout: post
 image: /assets/images/2022/mvp-proposal-740w.png
 tags:
     - MVP

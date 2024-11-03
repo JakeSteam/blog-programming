@@ -2,8 +2,6 @@
 id: 2466
 title: 'How to check if a Sony Android device has "Stamina mode" enabled'
 date: '2019-04-17T20:59:55+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-check-if-a-sony-android-device-has-stamina-mode-enabled/
 image: /wp-content/uploads/2019/04/q4fwvWP.png
 categories:

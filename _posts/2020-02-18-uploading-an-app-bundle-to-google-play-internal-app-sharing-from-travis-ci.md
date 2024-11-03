@@ -2,8 +2,6 @@
 id: 2647
 title: 'Uploading an app bundle to Google Play Internal App Sharing from Travis CI'
 date: '2020-02-18T16:00:29+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /uploading-an-app-bundle-to-google-play-internal-app-sharing-from-travis-ci/
 image: /wp-content/uploads/2020/02/UMOLAQe.png
 categories:

@@ -2,8 +2,6 @@
 id: 2340
 title: 'Setting an emoji only / blank GitHub status'
 date: '2019-01-15T22:28:05+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /setting-an-emoji-only-blank-github-status/
 image: /wp-content/uploads/2019/01/4iZzDN8.png
 categories:

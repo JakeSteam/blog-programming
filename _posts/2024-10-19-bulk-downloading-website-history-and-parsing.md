@@ -1,7 +1,5 @@
 ---
 title: How to bulk download all past versions of a webpage, parse the data in Python, and save to CSV
-author: Jake Lee
-layout: post
 image: /assets/images/2024/stumbleupon_final_data-740w.png
 tags:
   - Python

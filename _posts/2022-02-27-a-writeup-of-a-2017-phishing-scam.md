@@ -1,7 +1,5 @@
 ---
 title: A writeup of a very convincing 2017 Gmail phishing scam
-author: Jake Lee
-layout: post
 image: /assets/images/2022/googledocsheader.png
 tags:
     - Google

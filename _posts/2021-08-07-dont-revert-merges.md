@@ -2,8 +2,6 @@
 id: 3027
 title: Don't revert merges! A story of a mystery pull request merge
 date: '2021-08-07T16:36:32+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /dont-revert-merges/
 image: /wp-content/uploads/2021/08/3.png
 categories:

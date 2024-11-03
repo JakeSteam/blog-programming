@@ -1,7 +1,5 @@
 ---
 title: "Ten years in tech: 7 career lessons from my decade in software development 🐸"
-author: Jake Lee
-layout: post
 image: /assets/images/2024/10-years-in-tech.png
 tags:
   - Career

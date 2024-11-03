@@ -2,8 +2,6 @@
 id: 2116
 title: Ensuring Your Android App's Quality With Firebase Performance Monitoring
 date: "2018-12-06T19:59:37+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /ensuring-your-android-apps-quality-with-firebase-performance-monitoring/
 image: /wp-content/uploads/2018/12/cover.png
 categories:

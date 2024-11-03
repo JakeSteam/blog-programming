@@ -2,8 +2,6 @@
 id: 1596
 title: 'Getting OneSignal Working On A Multi-Module Project'
 date: '2018-08-19T19:12:41+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /getting-onesignal-working-on-a-multi-module-project/
 image: /wp-content/uploads/2018/08/1_7xHdCFeYfD8zrIivMiQcCQ.png
 categories:

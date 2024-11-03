@@ -2,8 +2,6 @@
 id: 2315
 title: Accessing a deep link intent's data / URL in a fragment with AndroidX
 date: '2019-01-04T18:00:51+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /accessing-a-deep-link-intents-data-url-in-a-fragment-with-androidx/
 image: /wp-content/uploads/2019/01/1mahzi3.png
 categories:

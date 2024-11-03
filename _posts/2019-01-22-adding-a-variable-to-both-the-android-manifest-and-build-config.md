@@ -2,8 +2,6 @@
 id: 2349
 title: 'Adding a variable to both the Android Manifest and Build Config'
 date: '2019-01-22T17:00:51+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /adding-a-variable-to-both-the-android-manifest-and-build-config/
 image: /wp-content/uploads/2019/01/hSQQnfU.png
 categories:

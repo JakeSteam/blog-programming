@@ -1,7 +1,5 @@
 ---
 title: Introducing "The Jerma List™️", a list of 70+ Jerma-related YouTube channels 📺
-author: Jake Lee
-layout: post
 image: /assets/images/2023/jerma.png
 tags:
     - Jerma

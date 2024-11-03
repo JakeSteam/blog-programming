@@ -2,8 +2,6 @@
 id: 2103
 title: 'Android Development Discord Communities'
 date: '2018-12-03T19:59:32+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-development-discord-communities/
 image: /wp-content/uploads/2018/12/androiddev.png
 categories:

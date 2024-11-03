@@ -2,8 +2,6 @@
 id: 1689
 title: 'Recolouring / modifying multi-layer drawables dynamically in Android'
 date: '2018-09-14T10:00:32+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /recolouring-modifying-multi-layer-drawables-dynamically-in-android/
 image: /wp-content/uploads/2018/09/dfe6ohk.png
 categories:

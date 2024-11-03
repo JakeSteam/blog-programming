@@ -2,8 +2,6 @@
 id: 2615
 title: 'Retrieving forgotten environment variables from Travis CI'
 date: '2019-12-18T15:00:37+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /retrieving-forgotten-environment-variables-from-travis-ci/
 image: /wp-content/uploads/2019/12/Screenshot-2019-12-16-at-09.29.23.png
 categories:

@@ -1,7 +1,5 @@
 ---
 title: Introducing a PLATO character overwriting emulator
-author: Jake Lee
-layout: post
 image: /assets/images/2024/plato.png
 tags:
   - Emulation

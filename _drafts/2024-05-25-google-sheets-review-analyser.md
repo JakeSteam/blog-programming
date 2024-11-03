@@ -1,7 +1,5 @@
 ---
 title: Creating a "before and after" review analyser in Google Sheets (for Google Play / Android or similar)
-author: Jake Lee
-layout: post
 image: /assets/images/2024/
 tags:
   - Google Sheets

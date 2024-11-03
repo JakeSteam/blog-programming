@@ -2,8 +2,6 @@
 id: 1680
 title: 'Dynamically preventing scrolling on selected ViewPager pages'
 date: '2018-09-06T21:12:05+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /dynamically-preventing-scrolling-on-selected-viewpager-pages/
 image: /wp-content/uploads/2018/09/2yz7c05.png
 categories:

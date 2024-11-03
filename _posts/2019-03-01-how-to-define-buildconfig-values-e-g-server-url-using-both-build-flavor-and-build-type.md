@@ -2,8 +2,6 @@
 id: 2405
 title: 'How to define BuildConfig values (e.g. server URL) using both build flavor and build type'
 date: '2019-03-01T14:58:31+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/
 image: /wp-content/uploads/2019/03/569B2579-60F8-48F6-AB63-C3725ACE4074.png.jpg
 categories:

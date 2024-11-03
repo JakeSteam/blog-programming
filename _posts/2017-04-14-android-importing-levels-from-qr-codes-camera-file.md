@@ -2,8 +2,6 @@
 id: 1024
 title: 'Importing Levels From QR Codes (Camera / File) in Android'
 date: '2017-04-14T09:00:21+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-importing-levels-from-qr-codes-camera-file/
 image: /wp-content/uploads/2017/04/chyvb3i.png
 categories:

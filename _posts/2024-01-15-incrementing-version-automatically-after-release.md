@@ -1,7 +1,5 @@
 ---
 title: How to increment a project's version code automatically after a GitHub release using GitHub Actions
-author: Jake Lee
-layout: post
 image: /assets/images/2024/autoincrement-banner.png
 tags:
     - GitHub Actions

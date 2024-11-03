@@ -1,7 +1,5 @@
 ---
 title: A brief review of the (free) Google Play Store Listing Certificate as a developer
-author: Jake Lee
-layout: post
 image: /assets/images/2022/googlecert.png
 tags:
     - 'Google Play'

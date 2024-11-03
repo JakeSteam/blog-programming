@@ -2,8 +2,6 @@
 id: 2220
 title: 'Sharing internal / cache images (with text) to other Android apps'
 date: '2018-12-17T19:08:12+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /sharing-internal-cache-images-with-text-to-other-android-apps/
 image: /wp-content/uploads/2018/12/sharing.png
 categories:

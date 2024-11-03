@@ -2,8 +2,6 @@
 id: 2265
 title: "Using ShareX to take screenshots and upload them to a private Imgur album"
 date: "2018-12-28T14:58:20+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /using-sharex-to-take-screenshots-and-upload-them-to-a-private-imgur-album/
 image: /wp-content/uploads/2018/12/FOLT86E.png
 categories:

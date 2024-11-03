@@ -1,7 +1,5 @@
 ---
 title: A post-mortem of "BountyHour", an unfinished microcontracting marketplace using Next.js, tRPC, and Prisma
-author: Jake Lee
-layout: post
 image: /assets/images/2024/bountyhour.png
 tags:
   - Post-mortem

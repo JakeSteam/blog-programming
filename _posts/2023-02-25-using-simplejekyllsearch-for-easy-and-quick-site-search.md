@@ -1,7 +1,5 @@
 ---
 title: Using SimpleJekyllSearch for easy and quick site searching
-author: Jake Lee
-layout: post
 image: /assets/images/2023/v103-search-banner.png
 tags:
   - Search

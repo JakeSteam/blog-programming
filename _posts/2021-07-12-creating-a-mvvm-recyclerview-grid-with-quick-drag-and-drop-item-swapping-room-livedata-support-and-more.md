@@ -2,8 +2,6 @@
 id: 3013
 title: 'Creating a MVVM RecyclerView grid with quick drag and drop item swapping, Room / LiveData support, and more!'
 date: '2021-07-12T20:02:13+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-a-mvvm-recyclerview-grid-with-quick-drag-and-drop-item-swapping-room-livedata-support-and-more/
 image: /wp-content/uploads/2021/07/qznkK2f.png
 categories:

@@ -31,6 +31,17 @@ network:
     }
   - { name: Everything Else, url: "https://jakelee.co.uk", colour: "#acacac" }
 
+# Setting article defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+author:
+  name: Jake Lee
+  url: https://jakelee.co.uk
+
 # Social / dark mode settings
 minima:
   skin: auto

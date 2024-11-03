@@ -1,7 +1,5 @@
 ---
 title: How to migrate a Jekyll Minima blog from Universal Analytics to Google Analytics 4 (UA to GA4)
-author: Jake Lee
-layout: post
 image: /assets/images/2022/ga4-banner.png
 tags:
     - 'Google Analytics'

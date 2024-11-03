@@ -2,8 +2,6 @@
 id: 2504
 title: 'How to use 9-patch images for resizable backgrounds in Android'
 date: '2019-06-03T16:24:19+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-use-9-patch-images-for-resizable-backgrounds-in-android/
 image: /wp-content/uploads/2019/06/X8CYLz1.png
 categories:

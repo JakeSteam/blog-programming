@@ -2,8 +2,6 @@
 id: 1763
 title: 'Displaying a "No Internet" Bar Inside Your Android App'
 date: '2018-10-15T19:20:18+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /displaying-a-no-internet-bar-inside-your-android-app/
 image: /wp-content/uploads/2018/10/vqosc2n.png
 categories:

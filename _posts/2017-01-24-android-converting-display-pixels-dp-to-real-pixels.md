@@ -2,8 +2,6 @@
 id: 597
 title: 'Converting Display Pixels (dp) To Real Pixels'
 date: '2017-01-24T01:55:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-converting-display-pixels-dp-to-real-pixels/
 image: /wp-content/uploads/2017/01/g1renjc.png
 categories:

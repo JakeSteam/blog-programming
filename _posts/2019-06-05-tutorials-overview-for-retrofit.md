@@ -2,8 +2,6 @@
 id: 2521
 title: 'Tutorials overview for Retrofit'
 date: '2019-06-05T17:00:51+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /tutorials-overview-for-retrofit/
 image: /wp-content/uploads/2019/06/1_WMf1XcyKU98dOMlNnn-Agg.png
 categories:

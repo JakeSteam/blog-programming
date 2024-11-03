@@ -2,8 +2,6 @@
 id: 2716
 title: 'Recommendation: Ferdi, the messaging service aggregator'
 date: '2020-04-10T14:40:26+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /recommendation-ferdi-the-messaging-service-aggregator/
 image: /wp-content/uploads/2020/04/feature-services-16b7e22f326a510c5c78b9b8c177386d.png
 categories:

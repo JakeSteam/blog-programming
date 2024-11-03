@@ -2,8 +2,6 @@
 id: 1753
 title: "Brute Forcing A Forgotten Keystore Password Using Hashcat"
 date: "2018-09-29T14:00:20+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /brute-forcing-a-forgotten-keystore-password-using-hashcat/
 image: /wp-content/uploads/2018/09/mxcyygz.png
 categories:

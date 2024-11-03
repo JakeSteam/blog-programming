@@ -2,8 +2,6 @@
 id: 2546
 title: 'How to create (and test) an app update listener'
 date: '2019-06-10T12:55:33+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-create-and-test-an-app-update-listener/
 image: /wp-content/uploads/2019/06/Untitled-1.png
 categories:

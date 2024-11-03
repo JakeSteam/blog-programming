@@ -2,8 +2,6 @@
 id: 2244
 title: How to get "Verified" tag on your GitHub organization's page
 date: '2018-12-21T17:00:32+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-get-a-verified-tag-on-your-github-organizations-page/
 image: /wp-content/uploads/2018/12/HwlROGP.png
 categories:

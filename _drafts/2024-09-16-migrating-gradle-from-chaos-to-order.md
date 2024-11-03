@@ -1,7 +1,5 @@
 ---
 title: Migrating a multi-module Android app's Gradle files from chaotic messes to modern order
-author: Jake Lee
-layout: post
 image: /assets/images/2024/
 tags:
   - Gradle

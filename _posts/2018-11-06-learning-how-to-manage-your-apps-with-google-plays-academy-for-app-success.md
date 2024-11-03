@@ -2,8 +2,6 @@
 id: 1963
 title: 'Learning How To Manage Your Apps With Google Plays Academy for App Success'
 date: '2018-11-06T13:00:42+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /learning-how-to-manage-your-apps-with-google-plays-academy-for-app-success/
 image: /wp-content/uploads/2018/11/app-success.png
 categories:

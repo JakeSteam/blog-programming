@@ -1,7 +1,5 @@
 ---
 title: Introducing "Forza Update", a minisite automatically tracking the next Forza Horizon 5 season & series
-author: Jake Lee
-layout: post
 image: /assets/images/2023/fh5minisite-header.png
 tags:
     - Forza Horizon 5

@@ -1,7 +1,5 @@
 ---
 title: How to display complex content (lists, code, images) inside a table reliably in Markdown / GitHub / Jekyll
-author: Jake Lee
-layout: post
 image: /assets/images/2023/tables-header.png
 tags:
     - Jekyll

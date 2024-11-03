@@ -2,8 +2,6 @@
 id: 2842
 title: 'Should I use a free / cheap resource pack in my game?'
 date: '2020-08-21T14:36:58+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /should-i-use-a-free-cheap-resource-pack-in-my-game/
 image: /wp-content/uploads/2020/08/Sample.png
 categories:

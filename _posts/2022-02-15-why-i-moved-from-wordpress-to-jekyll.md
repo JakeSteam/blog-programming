@@ -1,7 +1,5 @@
 ---
 title: 'Why I moved from WordPress to Jekyll'
-author: 'Jake Lee'
-layout: post
 image: /assets/images/2022/wordpress_to_jekyll.png
 tags:
     - Wordpress

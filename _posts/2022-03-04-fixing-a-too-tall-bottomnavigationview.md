@@ -1,7 +1,5 @@
 ---
 title: Fixing a BottomNavigationView that insists on being too tall
-author: Jake Lee
-layout: post
 image: /assets/images/2022/bottombar-header.png
 tags:
     - BottomNavigationView

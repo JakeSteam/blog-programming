@@ -1,7 +1,5 @@
 ---
 title: Setting up a tidy 3-monitor, 2-laptop standing desk workspace
-author: Jake Lee
-layout: post
 image: /assets/images/2023/newdesk-standing.jpg
 tags:
     - WFH

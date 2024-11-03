@@ -2,9 +2,6 @@
 id: 1719
 title: "Creating A New Firebase Project"
 date: "2018-09-23T20:18:10+01:00"
-author:
-  - "Jake Lee"
-layout: post
 permalink: /creating-a-new-firebase-project/
 image: /wp-content/uploads/2018/09/mky2ltg1.png
 categories:

@@ -2,8 +2,6 @@
 id: 2478
 title: 'How to programmatically change your Android app icon and name'
 date: '2019-04-29T15:00:21+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /programmatically-changing-app-icon/
 image: /wp-content/uploads/2019/04/TJEufHF.png
 categories:

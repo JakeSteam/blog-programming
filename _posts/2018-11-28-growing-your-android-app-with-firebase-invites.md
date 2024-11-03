@@ -2,8 +2,6 @@
 id: 2074
 title: "Growing Your Android App With Firebase Invites"
 date: "2018-11-28T22:06:13+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /growing-your-android-app-with-firebase-invites/
 image: /wp-content/uploads/2018/11/zBBxqzi-1.png
 categories:

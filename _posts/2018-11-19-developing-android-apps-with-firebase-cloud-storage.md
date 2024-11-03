@@ -2,8 +2,6 @@
 id: 1986
 title: 'Developing Android Apps With Firebase Cloud Storage'
 date: '2018-11-19T10:14:08+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /developing-android-apps-with-firebase-cloud-storage/
 image: /wp-content/uploads/2018/11/storage.png
 categories:

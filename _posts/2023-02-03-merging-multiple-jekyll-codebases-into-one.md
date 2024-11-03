@@ -1,7 +1,5 @@
 ---
 title: How I merged my 3 Jekyll site codebases into 1, as a public theme
-author: Jake Lee
-layout: post
 image: /assets/images/2023/merge-original-situation.png
 tags:
     - Jekyll

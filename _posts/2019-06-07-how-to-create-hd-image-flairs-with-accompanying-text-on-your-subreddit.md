@@ -2,8 +2,6 @@
 id: 2530
 title: 'How to create HD image flairs, with accompanying text, on your subreddit'
 date: '2019-06-07T15:39:40+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-create-hd-image-flairs-with-accompanying-text-on-your-subreddit/
 image: /wp-content/uploads/2019/06/g3ax4Tr.png
 categories:

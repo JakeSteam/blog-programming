@@ -2,8 +2,6 @@
 id: 2357
 title: 'Using StickyLayoutManager to give your RecyclerView sticky headers'
 date: '2019-01-30T18:00:15+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /using-stickylayoutmanager-to-give-your-recyclerview-sticky-headers/
 image: /wp-content/uploads/2019/01/fAcq0T0.png
 categories:

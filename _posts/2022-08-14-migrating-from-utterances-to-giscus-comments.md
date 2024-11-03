@@ -1,7 +1,5 @@
 ---
 title: How to migrate from Utterances to Giscus for Jekyll comments
-author: Jake Lee
-layout: post
 image: /assets/images/2022/giscus-header.png
 tags:
     - Jekyll

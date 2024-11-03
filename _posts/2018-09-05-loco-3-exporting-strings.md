@@ -2,8 +2,6 @@
 id: 1671
 title: 'Loco 3: Exporting strings'
 date: '2018-09-05T10:00:21+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /loco-3-exporting-strings/
 image: /wp-content/uploads/2018/09/szugysr.png
 categories:

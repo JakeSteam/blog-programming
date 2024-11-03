@@ -2,8 +2,6 @@
 id: 1885
 title: 'How To View Trello Card Name / Description History'
 date: '2018-10-30T19:31:16+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-view-trello-card-name-description-history/
 image: /wp-content/uploads/2018/10/rr2lf5U.png
 categories:

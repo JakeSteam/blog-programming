@@ -1,7 +1,5 @@
 ---
 title: Identifying and fixing a DisplayListCanvas crash (too large bitmap) with none of my Android code in the stacktrace
-author: Jake Lee
-layout: post
 image: /assets/images/2023/densities-banner.png
 tags:
     - Android

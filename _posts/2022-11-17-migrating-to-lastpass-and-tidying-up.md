@@ -1,7 +1,5 @@
 ---
 title: Migrating from Chrome's Password Manager to LastPass, and tidying up 10+ years of password clutter
-author: Jake Lee
-layout: post
 image: /assets/images/2022/lastpass-header.png
 tags:
     - LastPass

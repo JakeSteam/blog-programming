@@ -2,8 +2,6 @@
 id: 1806
 title: "Developing Android Apps With Firebase Realtime Database"
 date: "2018-10-25T21:20:24+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /developing-android-apps-with-firebase-realtime-database/
 image: /wp-content/uploads/2018/10/f6fuu6w.png
 categories:

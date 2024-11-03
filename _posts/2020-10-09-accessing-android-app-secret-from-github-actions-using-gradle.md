@@ -2,8 +2,6 @@
 id: 2915
 title: 'Accessing an Android app secret from GitHub Actions using Gradle'
 date: '2020-10-09T16:00:08+01:00'
-author: 'Jake Lee'
-layout: post
 image: /wp-content/uploads/2020/10/0L626L8.png
 categories:
     - 'Android Dev'

@@ -2,8 +2,6 @@
 id: 1802
 title: 'Centralising Firebase / Google Analytics Screen Tracking Using Android Fragments'
 date: '2018-10-27T07:00:02+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /centralising-firebase-google-analytics-screen-tracking-using-android-fragments/
 image: /wp-content/uploads/2018/10/axtxt2h.png
 categories:

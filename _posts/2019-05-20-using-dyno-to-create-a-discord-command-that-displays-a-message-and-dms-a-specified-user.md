@@ -2,8 +2,6 @@
 id: 2486
 title: 'Using Dyno to create a Discord command that displays a message and DMs a specified user'
 date: '2019-05-20T12:09:06+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /using-dyno-to-create-a-discord-command-that-displays-a-message-and-dms-a-specified-user/
 image: /wp-content/uploads/2019/05/Annotation-2019-05-20-115753.jpg
 categories:

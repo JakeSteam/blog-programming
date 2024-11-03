@@ -2,8 +2,6 @@
 id: 2730
 title: 'Super simple guide to adding a new Ferdi service recipe'
 date: '2020-04-13T14:00:59+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /super-simple-guide-to-adding-a-new-ferdi-service-recipe/
 image: /wp-content/uploads/2020/04/LKmK4TP.png
 categories:

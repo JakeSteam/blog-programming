@@ -1,7 +1,5 @@
 ---
 title: 'This blog has migrated to Jekyll!'
-author: 'Jake Lee'
-layout: post
 image: /assets/images/2022/jekyll.png
 tags:
     - Wordpress

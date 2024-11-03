@@ -2,8 +2,6 @@
 id: 2775
 title: 'A few experiments with Android drawable gradients'
 date: '2020-07-31T15:20:20+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /a-few-experiments-with-android-drawable-gradients/
 image: /wp-content/uploads/2020/07/wHxeCa2.png
 categories:

@@ -2,8 +2,6 @@
 id: 2330
 title: Saving and restoring a RecyclerView's position in Android
 date: '2019-01-08T18:00:37+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /saving-and-restoring-a-recyclerviews-position-in-android/
 image: /wp-content/uploads/2019/01/6Dac4Xo.png
 categories:

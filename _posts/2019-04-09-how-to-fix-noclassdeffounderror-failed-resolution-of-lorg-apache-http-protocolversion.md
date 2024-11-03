@@ -2,8 +2,6 @@
 id: 2462
 title: 'How to fix NoClassDefFoundError "Failed resolution of: Lorg/apache/http/ProtocolVersion"'
 date: '2019-04-09T16:00:34+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-fix-noclassdeffounderror-failed-resolution-of-lorg-apache-http-protocolversion/
 image: /wp-content/uploads/2019/04/KNSaPEQ.png
 categories:

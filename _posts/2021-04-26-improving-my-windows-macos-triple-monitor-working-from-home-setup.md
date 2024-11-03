@@ -2,8 +2,6 @@
 id: 2958
 title: 'Improving my Windows & MacOS triple monitor working from home setup'
 date: '2021-04-26T14:59:26+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /improving-my-windows-macos-triple-monitor-working-from-home-setup/
 image: /wp-content/uploads/2021/04/20210424_130510-scaled.jpg
 categories:

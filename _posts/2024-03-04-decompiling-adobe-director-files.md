@@ -1,7 +1,5 @@
 ---
 title: How to decompile an Adobe Director DCR file
-author: Jake Lee
-layout: post
 image: /assets/images/2024/director-banner.png
 tags:
   - Adobe

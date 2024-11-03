@@ -1,7 +1,5 @@
 ---
 title: Open sourcing Pixel Blacksmith and my other old Android games
-author: Jake Lee
-layout: post
 image: /assets/images/2022/opensourceheader.png
 tags:
     - 'Open Source'

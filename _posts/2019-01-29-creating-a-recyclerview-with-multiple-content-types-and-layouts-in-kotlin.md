@@ -2,8 +2,6 @@
 id: 2359
 title: 'Creating a RecyclerView with multiple content types and layouts in Kotlin'
 date: '2019-01-29T18:00:10+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-a-recyclerview-with-multiple-content-types-and-layouts-in-kotlin/
 image: /wp-content/uploads/2019/01/oekexkL.png
 categories:

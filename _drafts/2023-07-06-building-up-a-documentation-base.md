@@ -1,7 +1,5 @@
 ---
 title: How to gradually build up a team knowledge base via question answering
-author: Jake Lee
-layout: post
 image: /assets/images/2023/
 tags:
     - Documentation

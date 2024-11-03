@@ -2,8 +2,6 @@
 id: 1659
 title: 'Loco 2: Collaborating with others'
 date: '2018-08-30T19:00:19+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /loco-2-collaborating-with-others/
 image: /wp-content/uploads/2018/08/wmdj2y3.png
 categories:

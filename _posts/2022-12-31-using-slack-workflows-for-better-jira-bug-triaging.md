@@ -1,7 +1,5 @@
 ---
 title: Using a Slack workflow to streamline internal bug triaging & Jira ticket creation
-author: Jake Lee
-layout: post
 image: /assets/images/2022/slack-issue-3.png
 tags:
     - Slack

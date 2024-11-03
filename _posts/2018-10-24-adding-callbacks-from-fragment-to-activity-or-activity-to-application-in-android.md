@@ -2,8 +2,6 @@
 id: 1790
 title: 'Adding Callbacks From Fragment To Activity Or Activity To Application In Android'
 date: '2018-10-24T09:00:23+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /adding-callbacks-from-fragment-to-activity-or-activity-to-application-in-android/
 image: /wp-content/uploads/2018/10/fragmentclosedcode.png
 categories:

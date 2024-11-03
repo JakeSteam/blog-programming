@@ -2,8 +2,6 @@
 id: 2173
 title: 'Creating a history clearing Chrome extension'
 date: '2018-12-09T18:21:35+00:00'
-author: 'Jake Lee'
-layout: post
 image: /wp-content/uploads/2018/12/dashboard.png
 permalink: /creating-a-history-clearing-chrome-extension/
 categories:

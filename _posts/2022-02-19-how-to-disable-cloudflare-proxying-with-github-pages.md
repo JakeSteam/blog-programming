@@ -1,7 +1,5 @@
 ---
 title: How to disable Cloudflare proxying with GitHub pages on a custom subdomain
-author: Jake Lee
-layout: post
 image: /assets/images/2022/cloudflare.png
 tags:
     - Cloudflare

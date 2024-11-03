@@ -2,8 +2,6 @@
 id: 1651
 title: 'Loco 1: String management for multi-platform & multi-locale projects'
 date: '2018-08-29T20:50:32+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /loco-1-string-management-for-multi-platform-multi-locale-projects/
 image: /wp-content/uploads/2018/08/hjrpcec.png
 categories:

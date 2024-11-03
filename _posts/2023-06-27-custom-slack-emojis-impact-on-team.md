@@ -1,7 +1,5 @@
 ---
 title: Using custom Slack emojis (& reactions) to help define a team identity, encourage engagement, and shape culture 🎉
-author: Jake Lee
-layout: post
 image: /assets/images/2023/emoji-clutter.png
 tags:
   - Slack

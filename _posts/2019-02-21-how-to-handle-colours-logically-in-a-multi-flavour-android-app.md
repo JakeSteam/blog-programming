@@ -2,8 +2,6 @@
 id: 2381
 title: 'How to handle colours logically in a multi-flavour Android app'
 date: '2019-02-21T17:05:13+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-handle-colours-logically-in-a-multi-flavour-android-app/
 image: /wp-content/uploads/2019/02/GbMRMDY.png
 categories:

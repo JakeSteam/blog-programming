@@ -1,7 +1,5 @@
 ---
 title: Experimenting with GitHub's "alert" markdown syntax
-author: Jake Lee
-layout: post
 image: /assets/images/2023/alerts-banner.png
 tags:
     - GitHub

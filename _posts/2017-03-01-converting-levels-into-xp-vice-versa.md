@@ -2,8 +2,6 @@
 id: 867
 title: Converting Levels Into XP & Vice Versa
 date: '2017-03-01T12:07:29+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /converting-levels-into-xp-vice-versa/
 image: /wp-content/uploads/2017/03/uatufwj.png
 categories:

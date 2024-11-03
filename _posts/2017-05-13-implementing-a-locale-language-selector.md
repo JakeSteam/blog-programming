@@ -2,8 +2,6 @@
 id: 1213
 title: 'Implementing A Locale / Language Selector'
 date: '2017-05-13T14:52:18+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /implementing-a-locale-language-selector/
 image: /wp-content/uploads/2017/05/qnq1f7d.png
 categories:

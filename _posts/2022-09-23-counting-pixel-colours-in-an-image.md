@@ -1,7 +1,5 @@
 ---
 title: How to count the number of pixels per colour in an image, without installing any software
-author: Jake Lee
-layout: post
 image: /assets/images/2022/colours-banner.png
 tags:
     - Web

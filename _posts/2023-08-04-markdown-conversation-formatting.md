@@ -1,7 +1,5 @@
 ---
 title: Different approaches to conversation transcript formatting in Markdown 🗣️✍️
-author: Jake Lee
-layout: post
 image: /assets/images/2023/conversations-banner.png
 tags:
     - Markdown

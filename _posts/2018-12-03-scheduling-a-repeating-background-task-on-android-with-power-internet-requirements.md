@@ -2,8 +2,6 @@
 id: 2093
 title: 'Scheduling A Repeating Background Task On Android, With Power / Internet Requirements'
 date: '2018-12-03T18:32:17+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /scheduling-a-repeating-background-task-on-android-with-power-internet-requirements/
 image: /wp-content/uploads/2018/12/scheduled-1.png
 categories:

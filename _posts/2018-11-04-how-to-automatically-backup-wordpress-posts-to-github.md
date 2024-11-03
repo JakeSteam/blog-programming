@@ -2,8 +2,6 @@
 id: 1916
 title: 'How To Automatically Backup WordPress Posts To GitHub'
 date: '2018-11-04T19:00:50+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-automatically-backup-wordpress-posts-to-github/
 image: /wp-content/uploads/2018/11/sync.png
 categories:

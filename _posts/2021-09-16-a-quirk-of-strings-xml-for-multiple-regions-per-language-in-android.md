@@ -2,8 +2,6 @@
 id: 3042
 title: "A quirk of strings.xml for multiple regions per language in Android"
 date: "2021-09-16T22:26:34+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /a-quirk-of-strings-xml-for-multiple-regions-per-language-in-android/
 image: /wp-content/uploads/2021/09/h8FxRJu.png
 categories:

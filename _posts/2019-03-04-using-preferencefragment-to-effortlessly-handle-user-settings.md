@@ -2,8 +2,6 @@
 id: 2411
 title: 'Using PreferenceFragment to effortlessly handle user settings'
 date: '2019-03-04T15:26:08+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /using-preferencefragment-to-effortlessly-handle-user-settings/
 image: /wp-content/uploads/2019/03/C66346DC-657F-415A-B758-98FCE194C6CC.png.jpg
 categories:

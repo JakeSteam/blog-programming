@@ -2,8 +2,6 @@
 id: 2568
 title: 'Tutorials overview for data binding'
 date: '2019-07-30T15:00:29+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /tutorials-overview-for-data-binding/
 image: /wp-content/uploads/2019/07/6298541688ff31c4.png
 categories:

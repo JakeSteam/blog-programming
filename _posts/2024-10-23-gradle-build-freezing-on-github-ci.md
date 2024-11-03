@@ -1,7 +1,5 @@
 ---
 title: A possible fix for intermittently hanging Android builds on GitHub
-author: Jake Lee
-layout: post
 image: /assets/images/2024/github-ram-banner.png
 tags:
   - Android

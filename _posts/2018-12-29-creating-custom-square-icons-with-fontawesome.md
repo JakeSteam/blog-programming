@@ -2,8 +2,6 @@
 id: 2292
 title: "Creating custom stacked icons with FontAwesome"
 date: "2018-12-29T16:00:50+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /creating-custom-square-icons-with-fontawesome/
 image: /wp-content/uploads/2018/12/icons.png
 categories:

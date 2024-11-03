@@ -2,8 +2,6 @@
 id: 2871
 title: 'Android Discord Communities: 2020 edition'
 date: '2020-09-09T16:00:13+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-discord-communities-2020-edition/
 image: /wp-content/uploads/2020/09/dkj6uhigu7t21.png
 categories:

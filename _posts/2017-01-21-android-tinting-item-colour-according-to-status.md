@@ -2,8 +2,6 @@
 id: 545
 title: 'Tinting Item Colour According To Status in Android'
 date: '2017-01-21T01:24:00+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-tinting-item-colour-according-to-status/
 image: /wp-content/uploads/2017/01/untitled.png
 categories:

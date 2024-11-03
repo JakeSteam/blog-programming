@@ -2,8 +2,6 @@
 id: 2305
 title: 'An introduction to the NASA APOD API'
 date: '2018-12-30T18:00:47+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /an-introduction-to-the-nasa-apod-api/
 image: /wp-content/uploads/2018/12/header.png
 categories:

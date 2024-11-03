@@ -2,8 +2,6 @@
 id: 1728
 title: "Adding Firebase to an Android Project"
 date: "2018-09-27T21:49:17+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /adding-firebase-to-an-android-project/
 image: /wp-content/uploads/2018/09/dkl3twd.png
 categories:

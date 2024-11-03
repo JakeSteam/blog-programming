@@ -2,8 +2,6 @@
 id: 2470
 title: 'Resolving crash "IllegalArgumentException x is unknown to this NavController"'
 date: '2019-04-25T14:54:27+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /resolving-crash-illegalargumentexception-x-is-unknown-to-this-navcontroller/
 image: /wp-content/uploads/2019/04/kmzKg1F.png
 categories:

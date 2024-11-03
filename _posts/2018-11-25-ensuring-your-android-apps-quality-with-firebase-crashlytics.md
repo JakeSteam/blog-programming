@@ -2,8 +2,6 @@
 id: 2045
 title: Ensuring Your Android App's Quality With Firebase Crashlytics
 date: '2018-11-25T17:31:48+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /ensuring-your-android-apps-quality-with-firebase-crashlytics/
 
 image: /wp-content/uploads/2018/11/crashlytics.png

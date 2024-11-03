@@ -2,8 +2,6 @@
 id: 2373
 title: 'Android Developer Nanodegree enrollment closes soon!'
 date: '2019-02-11T22:20:11+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-developer-nanodegree-enrollment-closes-soon/
 image: /wp-content/uploads/2019/02/Dfql4G4.png
 categories:

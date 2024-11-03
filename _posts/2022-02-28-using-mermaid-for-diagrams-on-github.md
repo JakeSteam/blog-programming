@@ -1,7 +1,5 @@
 ---
 title: Using Mermaid for easy GitHub diagrams in Markdown-ish code
-author: Jake Lee
-layout: post
 image: /assets/images/2022/mermaid.png
 tags:
     - GitHub

@@ -2,8 +2,6 @@
 id: 32
 title: "Asynchronous Map Generator for Android"
 date: "2017-01-06T18:36:31+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /android-asynchronous-map-generator/
 image: /wp-content/uploads/2017/01/xrulgkh.png
 categories:

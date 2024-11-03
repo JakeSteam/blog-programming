@@ -1,7 +1,5 @@
 ---
 title: "A collection of failures: 20 of my abandoned projects from the last 20 years"
-author: Jake Lee
-layout: post
 image: /assets/images/2023/
 tags:
     - Nostalgia

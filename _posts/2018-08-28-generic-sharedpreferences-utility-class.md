@@ -2,8 +2,6 @@
 id: 1639
 title: 'Generic SharedPreferences Utility Class'
 date: '2018-08-28T20:42:59+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /generic-sharedpreferences-utility-class/
 image: /wp-content/uploads/2018/08/ktw807e.png
 categories:

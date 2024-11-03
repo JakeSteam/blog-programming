@@ -1,7 +1,5 @@
 ---
 title: From skepticism to dependency, how GitHub Copilot became my favourite colleague
-author: Jake Lee
-layout: post
 image: /assets/images/2024/
 tags:
   - AI

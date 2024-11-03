@@ -1,7 +1,5 @@
 ---
 title: "New project: Pixel Blacksmith 2 AKA Purple Blacksmith"
-author: Jake Lee
-layout: post
 image: /assets/images/2023/pb2-banner.png
 tags:
     - Pixel Blacksmith

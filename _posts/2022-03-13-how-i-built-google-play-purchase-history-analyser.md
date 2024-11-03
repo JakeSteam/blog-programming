@@ -1,7 +1,5 @@
 ---
 title: How I built the Google Play purchase history analyser
-author: Jake Lee
-layout: post
 image: /assets/images/2022/googleplay-header.png
 tags:
     - JavaScript

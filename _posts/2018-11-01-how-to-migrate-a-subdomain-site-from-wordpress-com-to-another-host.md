@@ -2,8 +2,6 @@
 id: 1888
 title: 'How To Migrate A Subdomain Site From WordPress.com To Another Host'
 date: '2018-11-01T21:50:41+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-migrate-a-subdomain-site-from-wordpress-com-to-another-host/
 image: /wp-content/uploads/2018/11/wordpress-banner.png
 categories:

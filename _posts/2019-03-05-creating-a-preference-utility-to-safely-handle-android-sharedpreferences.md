@@ -2,8 +2,6 @@
 id: 2420
 title: 'Creating a preference utility to safely handle Android SharedPreferences'
 date: '2019-03-05T16:30:18+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-a-preference-utility-to-safely-handle-android-sharedpreferences/
 image: /wp-content/uploads/2019/03/A47FE5AC-6298-49CD-9B69-FB44751D1A33.png.jpg
 categories:

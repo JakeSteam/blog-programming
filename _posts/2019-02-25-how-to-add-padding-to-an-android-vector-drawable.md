@@ -2,8 +2,6 @@
 id: 2391
 title: 'How to add padding to an Android vector drawable'
 date: '2019-02-25T16:30:03+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-add-padding-to-an-android-vector-drawable/
 image: /wp-content/uploads/2019/02/BIrIUwK.png
 categories:

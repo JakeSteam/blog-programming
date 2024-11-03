@@ -2,8 +2,6 @@
 id: 1975
 title: 'Creating Multiple Translations Per Language In Loco'
 date: '2018-11-08T19:21:19+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-multiple-translations-per-language-in-loco/
 image: /wp-content/uploads/2018/11/WB3Zr08.png
 categories:

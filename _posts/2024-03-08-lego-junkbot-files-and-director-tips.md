@@ -1,7 +1,5 @@
 ---
 title: Open sourcing LEGO Junkbot, and tips for Macromedia/Adobe Director asset extracting 🕵️
-author: Jake Lee
-layout: post
 image: /assets/images/2024/junkbot-open.png
 tags:
   - Digital preservation

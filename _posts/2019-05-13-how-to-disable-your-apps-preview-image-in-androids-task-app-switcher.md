@@ -2,8 +2,6 @@
 id: 2488
 title: How to disable your app's preview image in Android's task / app switcher
 date: '2019-05-13T15:00:42+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-disable-your-apps-preview-image-in-androids-task-app-switcher/
 image: /wp-content/uploads/2019/05/0TMKpKg.png
 categories:

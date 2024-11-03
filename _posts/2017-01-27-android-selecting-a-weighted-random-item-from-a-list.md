@@ -2,8 +2,6 @@
 id: 639
 title: 'Selecting A Weighted Random Item From A List in Android'
 date: '2017-01-27T12:00:05+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-selecting-a-weighted-random-item-from-a-list/
 image: /wp-content/uploads/2017/01/nsgt4yc.png
 categories:

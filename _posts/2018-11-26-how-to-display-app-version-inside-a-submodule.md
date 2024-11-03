@@ -2,8 +2,6 @@
 id: 2066
 title: 'How To Display App Version Inside a Submodule'
 date: '2018-11-26T18:00:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-display-app-version-inside-a-submodule/
 image: /wp-content/uploads/2018/11/info.png
 categories:

@@ -2,8 +2,6 @@
 id: 2803
 title: Exploring pull requests with GitHub's rich diff functionality
 date: "2020-08-12T15:15:52+01:00"
-author: "Jake Lee"
-layout: post
 guid: "https://blog.jakelee.co.uk/?p=2803"
 permalink: /exploring-pull-requests-with-githubs-rich-diff-functionality/
 image: /wp-content/uploads/2020/08/3qjoZ8A.png

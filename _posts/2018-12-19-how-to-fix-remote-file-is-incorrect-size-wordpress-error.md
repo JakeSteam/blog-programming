@@ -2,8 +2,6 @@
 id: 2227
 title: 'How to fix "Remote file is incorrect size" WordPress error'
 date: '2018-12-19T22:09:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /how-to-fix-remote-file-is-incorrect-size-wordpress-error/
 image: /wp-content/uploads/2018/12/j93wOuw.png
 categories:

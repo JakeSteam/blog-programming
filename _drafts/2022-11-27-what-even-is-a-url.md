@@ -1,7 +1,5 @@
 ---
 title: "Investigating the structure of URLs, or: What even IS a URL?"
-author: Jake Lee
-layout: post
 image: /assets/images/2022/
 tags:
     - Deep Dive

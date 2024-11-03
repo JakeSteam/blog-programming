@@ -1,7 +1,5 @@
 ---
 title: How to automatically display your latest posts (from multiple RSS feeds) on your GitHub profile
-author: Jake Lee
-layout: post
 image: /assets/images/2023/profile-header.png
 tags:
     - GitHub Actions

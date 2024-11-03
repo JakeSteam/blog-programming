@@ -1,7 +1,5 @@
 ---
 title: How to install LaTeX (with previews & autocomplete) for VSCode on Windows
-author: Jake Lee
-layout: post
 image: /assets/images/2023/latex-banner.png
 tags:
     - VSCode

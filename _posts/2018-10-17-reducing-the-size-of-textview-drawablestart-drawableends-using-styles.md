@@ -2,8 +2,6 @@
 id: 1772
 title: 'Reducing The Size Of TextView DrawableStart / DrawableEnds Using Styles'
 date: '2018-10-17T18:14:10+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /reducing-the-size-of-textview-drawablestart-drawableends-using-styles/
 image: /wp-content/uploads/2018/10/exba22y.png
 categories:

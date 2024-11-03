@@ -1,7 +1,5 @@
 ---
 title: Reviewing Postman's API Fundamentals Student Expert certification
-author: Jake Lee
-layout: post
 image: /assets/images/2024/postman-banner.png
 tags:
   - Postman

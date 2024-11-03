@@ -1,7 +1,5 @@
 ---
 title: 'How minor bugs and security flaws can erode user trust: Examining my unfortunate experience with Bloggie.io'
-author: Jake Lee
-layout: post
 image: /assets/images/2022/bloggie-header.png
 tags:
     - Review

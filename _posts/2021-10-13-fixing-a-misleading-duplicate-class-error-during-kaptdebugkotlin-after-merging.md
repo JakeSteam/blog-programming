@@ -2,8 +2,6 @@
 id: 3056
 title: 'Fixing a misleading "duplicate class" error during kaptDebugKotlin after merging'
 date: '2021-10-13T19:12:34+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /fixing-a-misleading-duplicate-class-error-during-kaptdebugkotlin-after-merging/
 image: /wp-content/uploads/2021/10/errorstacktrace.png
 categories:

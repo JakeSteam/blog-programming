@@ -1,7 +1,5 @@
 ---
 title: How and why the RuneScape Archive project scours old hard drives to preserve MMORPG history and restore lost media
-author: Jake Lee
-layout: post
 image: /assets/images/2023/rsarchive-banner.png
 tags:
     - RuneScape

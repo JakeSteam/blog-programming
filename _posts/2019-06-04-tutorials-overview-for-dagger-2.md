@@ -2,8 +2,6 @@
 id: 2517
 title: 'Tutorials overview for Dagger 2'
 date: '2019-06-04T14:47:20+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /tutorials-overview-for-dagger-2/
 image: /assets/images/2022/dagger.png
 categories:

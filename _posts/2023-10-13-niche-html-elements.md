@@ -1,7 +1,5 @@
 ---
 title: 5 niche but powerful HTML elements that can prevent you reinventing wheels with JS & CSS (e.g. expanding content)
-author: Jake Lee
-layout: post
 image: /assets/images/2023/html-header.png
 tags:
     - HTML 

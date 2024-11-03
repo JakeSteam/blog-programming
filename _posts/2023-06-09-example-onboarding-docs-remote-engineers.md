@@ -1,7 +1,5 @@
 ---
 title: An example of onboarding process & documentation for remote developers joining a specialised team
-author: Jake Lee
-layout: post
 image: /assets/images/2023/onboarding-banner.png
 tags:
     - Remote

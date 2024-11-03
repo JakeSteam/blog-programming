@@ -2,8 +2,6 @@
 id: 1743
 title: 'Developing Android Apps With Firebase Authentication'
 date: '2018-09-29T01:01:57+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /developing-android-apps-with-firebase-authentication/
 image: /wp-content/uploads/2018/09/ndfkatz.png
 categories:

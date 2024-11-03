@@ -2,8 +2,6 @@
 id: 2069
 title: 'Adding A Splash Screen To An Android App'
 date: '2018-11-27T18:00:23+00:00'
-author: 'Jake Lee'
-layout: post
 image: /assets/images/2022/splashscreen.png
 permalink: /adding-a-splash-screen-to-an-android-app/
 

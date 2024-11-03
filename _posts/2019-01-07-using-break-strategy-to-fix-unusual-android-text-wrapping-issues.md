@@ -2,8 +2,6 @@
 id: 2322
 title: 'Using break strategy to fix unusual Android TableRow text wrapping issues'
 date: '2019-01-07T18:00:20+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /using-break-strategy-to-fix-unusual-android-text-wrapping-issues/
 image: /wp-content/uploads/2019/01/n4irBTC.png
 categories:

@@ -2,8 +2,6 @@
 id: 1775
 title: "Developing Android Apps With Firebase Cloud Firestore"
 date: "2018-10-22T14:20:01+01:00"
-author: "Jake Lee"
-layout: post
 permalink: /developing-android-apps-with-firebase-cloud-firestore/
 image: /wp-content/uploads/2018/10/pngondh.png
 categories:

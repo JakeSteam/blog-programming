@@ -1,7 +1,5 @@
 ---
 title: An introduction to GitHub & Jekyll's footnote functionality, and finding its limits
-author: Jake Lee
-layout: post
 image: /assets/images/2023/footnotes-header.png
 tags:
     - GitHub

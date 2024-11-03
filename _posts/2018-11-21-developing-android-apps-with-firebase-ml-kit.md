@@ -2,8 +2,6 @@
 id: 2020
 title: "Developing Android Apps With Firebase ML Kit"
 date: "2018-11-21T21:43:59+00:00"
-author: "Jake Lee"
-layout: post
 permalink: /developing-android-apps-with-firebase-ml-kit/
 image: /wp-content/uploads/2018/11/mlkit.png
 categories:

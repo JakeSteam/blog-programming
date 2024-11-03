@@ -2,8 +2,6 @@
 id: 1629
 title: 'Creating a custom Android ActionBar'
 date: '2018-08-22T22:03:53+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-a-custom-android-actionbar/
 image: /wp-content/uploads/2018/08/4.png
 categories:

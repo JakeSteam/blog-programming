@@ -1,7 +1,5 @@
 ---
 title: Introducing "The Yogscast List™️", a list of 100+ Yogscast-y YouTube channels 📺
-author: Jake Lee
-layout: post
 image: /assets/images/2023/yogscast-header.png
 tags:
     - YouTube

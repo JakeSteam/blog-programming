@@ -1,7 +1,5 @@
 ---
 title: How to fix an incorrectly HTTP canonical URL / resource when serving Jekyll over GitHub Pages with HTTPS
-author: Jake Lee
-layout: post
 image: /assets/images/2023/https-source-code.png
 tags:
     - GitHub Pages

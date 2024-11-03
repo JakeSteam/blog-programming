@@ -1,7 +1,5 @@
 ---
 title: Building a GitHub Actions script to fetch metadata from multiple YouTube channels, and save it into a Markdown file
-author: Jake Lee
-layout: post
 image: /assets/images/2023/actions-banner.png
 tags:
     - YouTube

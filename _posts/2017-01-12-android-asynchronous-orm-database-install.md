@@ -2,8 +2,6 @@
 id: 406
 title: 'Asynchronous ORM Database Install in Android'
 date: '2017-01-12T15:39:15+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /android-asynchronous-orm-database-install/
 image: /wp-content/uploads/2017/01/kvc1tsw.png
 categories:

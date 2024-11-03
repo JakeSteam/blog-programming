@@ -1,7 +1,5 @@
 ---
 title: How to discover your Jekyll site's total word count, longest / shortest post, and more 🔡
-author: Jake Lee
-layout: post
 image: /assets/images/2023/wordcount-banner.png
 tags:
     - Ruby

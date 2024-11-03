@@ -1,7 +1,5 @@
 ---
 title: 6 useful Google Sheets analysis formulas and techniques from my Twitch data analysis
-author: Jake Lee
-layout: post
 image: /assets/images/2022/google-sheets-header.png
 tags:
     - Google Sheets

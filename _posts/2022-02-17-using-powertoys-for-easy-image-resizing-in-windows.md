@@ -1,7 +1,5 @@
 ---
 title: Using Microsoft's PowerToys for easy image resizing in Windows
-author: Jake Lee
-layout: post
 image: /assets/images/2022/imageresizer.png
 tags:
     - Windows

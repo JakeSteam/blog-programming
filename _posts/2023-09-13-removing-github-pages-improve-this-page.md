@@ -1,7 +1,5 @@
 ---
 title: Removing (or customising) the "This site is open source. Improve this page." footer on GitHub Pages
-author: Jake Lee
-layout: post
 image: /assets/images/2023/ghp-banner.png
 tags:
     - GitHub Pages

@@ -2,8 +2,6 @@
 id: 2946
 title: 'Creating the PR template that Future You wishes Past You used'
 date: '2020-12-01T16:14:28+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /creating-a-pr-template/
 image: /wp-content/uploads/2020/12/GpDWTLD.png
 categories:

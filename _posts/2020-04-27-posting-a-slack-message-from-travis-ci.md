@@ -2,8 +2,6 @@
 id: 2754
 title: 'Posting a Slack message from Travis CI'
 date: '2020-04-27T16:00:09+01:00'
-author: 'Jake Lee'
-layout: post
 permalink: /posting-a-slack-message-from-travis-ci/
 image: /wp-content/uploads/2020/04/tgzBJ6o.png
 categories:

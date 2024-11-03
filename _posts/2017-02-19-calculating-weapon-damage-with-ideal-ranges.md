@@ -2,8 +2,6 @@
 id: 762
 title: 'Calculating Weapon Damage Using Ideal Ranges'
 date: '2017-02-19T14:08:09+00:00'
-author: 'Jake Lee'
-layout: post
 permalink: /calculating-weapon-damage-with-ideal-ranges/
 image: /wp-content/uploads/2017/02/g8wh9wt.png
 categories:

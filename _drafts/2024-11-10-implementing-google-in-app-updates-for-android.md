@@ -1,9 +1,10 @@
 ---
 title: How to force update (& test) your Android app using Google's in-app update library
-image: /assets/images/2024/
+image: /assets/images/2024/inapp-banner.png
 tags:
   - Android
   - Kotlin
+  - Google
 ---
 
 Earlier this year, I needed to add the ability to force update users of an app. Whilst I've used custom solutions in the past, Google has a standardised "[in-app updates](https://developer.android.com/guide/playcore/in-app-updates)" library that does all the essentials for you!
@@ -24,7 +25,7 @@ Whilst the in-app library [does support optional ("Flexible") updates](https://d
 
 ## Preparing your app
 
-Unsurprisingly, the library needs to be added to your app! I'm using [version catalogs](https://developer.android.com/build/migrate-to-catalogs) and [Kotlin DSL](https://developer.android.com/build/migrate-to-kotlin-dsl) for Gradle, if you're using Groovy or defining dependencies in a more classic way that works fine too:
+Unsurprisingly, the library needs to be added to your app! I'm using [version catalogs](https://developer.android.com/build/migrate-to-catalogs) and [Kotlin DSL](https://developer.android.com/build/migrate-to-kotlin-dsl) for Gradle, if you're using Groovy or defining dependencies in a more classic way that approach works fine.
 
 ### Defining the dependency
 
@@ -52,20 +53,20 @@ dependencies {
 
 ## Preparing a wrapper
 
-Whilst [there is documentation](https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#update-availability) on calling the library, I found it painful to follow. All you're actually doing is:
+Whilst [there is documentation](https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#update-availability) on calling the library, it's hard to follow. All you're actually doing is:
 
 1. Checking if an update is available.
 2. If it is, display the force update dialog.
 
 That's it! There's complexity added due to the messy callback structure of the library, but this can all be abstracted away.
 
-My wrapper is essentially the same as the official documentation, with a bit of function extracting etc for readability and simplicity. I'll break down the components, feel free [to just look at the full code](https://gist.github.com/JakeSteam/437b1085b9639061955157776911697a#file-forceupdatehandler-kt).
+My wrapper is essentially the same as the official documentation, with a bit of function extracting etc for readability and simplicity. I'll break down the component parts, feel free [to just look at the full code](https://gist.github.com/JakeSteam/437b1085b9639061955157776911697a#file-forceupdatehandler-kt).
 
-### Handling the upgrade dialog's result
+### Handling the update dialog's result
 
 Somewhat counterintuitively, we'll look at the _final_ step first.
 
-Once the force update dialog has been shown, our app [will receive a callback](https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#status-callback). We'll just do basic logging for now in most scenarios, except if the user somehow cancels / closes our dialog. This is a mandatory update, so we'll pass in `activity.finish()` as a callback to close our app if this happens!
+Once the force update dialog has been shown, our app [will receive a callback](https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#status-callback). We'll just do basic logging for now in most scenarios, except if the user cancels / closes our dialog. This is a mandatory update, so we'll pass in `activity.finish()` as a callback to close our app if this happens!
 
 ```kotlin
     handleUpdateResult(result) {
@@ -172,7 +173,7 @@ We've checked the current version requires updating, we've used the library to c
 
 Again, all code in this article is [available as a GitHub Gist](https://gist.github.com/JakeSteam/437b1085b9639061955157776911697a).
 
-## Triggering the library
+## Calling the wrapper
 
 Once you've obtained an instance of your `ForceUpdateHandler` (I used dependency injection), the whole checking and updating process can be kicked off by calling it with an `Activity` or similar class (I used `ComponentActivity`):
 
@@ -180,11 +181,13 @@ Once you've obtained an instance of your `ForceUpdateHandler` (I used dependency
 updateHandler.forceUpdateIfNeeded(this)
 ```
 
-This should be done as soon as possible in your app's main / launcher Activity, wherever users start when opening the app. It's also fine to call this from multiple Activities, e.g. if deep linked users go via a different Activity.
+This should be done as soon as possible in your app's main / launcher Activity (e.g. in `onCreate`), wherever users start when opening the app. It's also fine to call this from multiple Activities, e.g. if deep linked users go via a different Activity.
+
+Note that this _must_ be called before your Activity's `onResume`, as explained [in this StackOverflow comment](https://stackoverflow.com/a/67582633/608312).
 
 ## Testing
 
-To quote myself when raising the PR to implement this feature:
+To quote myself about testing on the PR to implement this feature:
 
 > Oh god. This took as long as the implementation!
 
@@ -218,13 +221,13 @@ On your desktop:
 
 1. Update the list of "Internal sharing" users to include your physical device's primary email.
 2. Find the internal testing opt-in link (will look something like `https://play.google.com/apps/internaltest/123456`).
+3. Open this opt-in link in a browser with this same primary email logged in, and join internal testing (I had to use a desktop browser for this).
 
 On your phone:
 
-1. Open this opt-in link in a browser with this same primary email logged in, and join internal testing (I had to use a desktop browser for this).
-2. Go to the store listing for your app, and check it says "You're an internal tester".
-3. Check the app version matches your test version (`101`), download and install the app.
-4. Turn off automatic updates for this app ([guide](https://support.google.com/pixelphone/thread/218843690?hl=en&msgid=218845943)).
+1. Go to the store listing for your app, and check it says "You're an internal tester".
+2. Check the app version matches your test version (`101`), download and install the app.
+3. Turn off automatic updates for this app ([guide](https://support.google.com/pixelphone/thread/218843690?hl=en&msgid=218845943)).
 
 If that all went smoothly, you now have a test version on your device! There may be small delays at any stage whilst various caches update, techniques like restarting your phone may help.
 
@@ -245,18 +248,32 @@ It's fine to reopen the app during this wait, I didn't find any way to "force" t
 
 Anyway, eventually you'll open your app and... be prompted to update!
 
-[![](/assets/images/2024/inapp-forced-update.png)](/assets/images/2024/inapp-forced-update.png)
+[![](/assets/images/2024/inapp-banner.png)](/assets/images/2024/inapp-banner.png)
 
 ## Next steps
 
-Our app now has the ability to force update on demand, but that's all. It can't gently nudge to update, it can't automatically prompt a user to update if their version is too old, or anything else more advanced. It also doesn't
+Our app now has the ability to force update on demand, but that's all. It can't gently nudge to update, it can't automatically prompt a user to update if their version is too old, or anything else more advanced. It also uses a default system dialog, which may not be desirable.
 
 ### Flexible updates
 
-This is the obvious next step, prompting the user to update before we force them.
+This is the obvious next step, prompting the user to update days before we force them.
 
 Flexible updates [seem more complex](https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#flexible), with the app itself being responsible for (optionally) restarting once the update is downloaded, and an expectation that the update prompting dialog does not show too frequently.
 
-The optional update feature will likely work well with `clientVersionStalenessDays`, as simple logic such as prompting users when their version is >7 days out of date would drastically reduce the users lingering on outdated versions. Performing a force update after another fixed interval is also an attractive proposition, especially as the risk of users getting "stuck" due to minimum SDK requirements etc is very minimal.
+The optional update feature will likely work well with [`clientVersionStalenessDays`](<https://developer.android.com/reference/com/google/android/play/core/appupdate/AppUpdateInfo#clientVersionStalenessDays()>), as simple logic such as prompting users when their version is >7 days out of date would drastically reduce the users lingering on outdated versions. Performing a force update after another fixed interval is also an attractive proposition, especially as the risk of users getting "stuck" due to minimum SDK requirements etc is very minimal.
+
+### Custom screens
+
+Of course, this is just a starting point. You might find the update prompting screen doesn't fit your app's tone of voice or marketing style, and want to build your own.
+
+This can be done by replacing the contents of the `startForceUpdateFlow` function to display whatever blocking dialog you want, whilst being careful to ensure the user can't "escape" by pressing back or using deep links.
 
 ## Conclusion
+
+The ability to force a user to update from a specific version to another is absolutely essential for any app. Nudging to update from outdated versions might be helpful, but getting the user off a bad version can avoid catastrophes.
+
+Implementing this using Google's library allows skipping a lot of the manual work (e.g. how does the app know a new version is available?), and avoids having to keep an up-to-date record _somewhere_ of which versions are acceptable.
+
+However, the trade-off for this is that the library's somewhat roundabout set of functions needs to be used. This library is also rarely updated, with the last update [18 months before this article](https://developer.android.com/reference/com/google/android/play/core/release-notes-in_app_updates). Whilst this _might_ mean it's flawless, I suspect it actually means it's mostly abandoned unless something major breaks! I'm certainly not holding out hope for usability improvements.
+
+Aaaand one last time in case someone scrolled straight to the bottom: [Here's the GitHub Gist for the force update functionality](https://gist.github.com/JakeSteam/437b1085b9639061955157776911697a).

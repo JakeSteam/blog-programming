@@ -10,7 +10,7 @@ table_of_contents_header: "Jump to:"
 post_end_promo: <i><b>Enjoyed this article? You'll like "<a href="https://jakeweeklee.substack.com">Jake Week Lee</a>", a newsletter of articles & online things!</b></i>
 google_analytics: G-99X0QYL39T
 outdated_content_warning:
-  warning_text: "This article was last updated <b>TIME_AGO</b> and may be outdated."
+  warning_text: "⚠️ This article was last updated <b>TIME_AGO</b> and may be outdated."
   placeholder_text: "TIME_AGO"
   warning_threshold_days: 1095 # 3 years
   ignore_date_updated: false

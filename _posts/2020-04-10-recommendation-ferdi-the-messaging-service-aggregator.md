@@ -22,7 +22,7 @@ This post isn't sponsored whatsoever, it's a personal recommendation!
 
 ## Ferdi Overview
 
-[Ferdi](https://getferdi.com/) is based on [Franz](https://meetfranz.com/changelog), a widely used messaging service aggregator, and is built for Mac, Windows, and Linux. I used Franz for many years, but after it started adding artificial delays, nagging for referrals, and making previously free features paid for I looked elsewhere. The number of improvements is [honestly a bit staggering](https://i.imgur.com/8LnQlT4.png)!
+[Ferdi](https://getferdi.com/) is based on [Franz](https://meetfranz.com/changelog), a widely used messaging service aggregator, and is built for Mac, Windows, and Linux. I used Franz for many years, but after it started adding artificial delays, nagging for referrals, and making previously free features paid for I looked elsewhere. The number of improvements is [honestly a bit staggering](/assets/images/2024/ferdi-improvements.png)!
 
 Ferdi lets you combine all of your messaging services into one, behaving essentially like a browser with a tab for each. In doing so, it lets you fine tune the notifications for each service, create "workspaces" for work and home, and take back control of your messaging.
 

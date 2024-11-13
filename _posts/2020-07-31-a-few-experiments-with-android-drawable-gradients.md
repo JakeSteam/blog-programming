@@ -11,6 +11,7 @@ tags:
     - Drawable
     - Gradient
     - XML
+last_modified_at: 2024-11-13
 ---
 
 After recently struggling to make a small modification to a simple translucent overlay, I decided to experiment with gradients in Android drawables. After a few hours, I discovered a few new possibilities! Drawable gradients seem to be rarely used despite their simple syntax, with people preferring to use SVGs or static images.

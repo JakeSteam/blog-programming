@@ -13,7 +13,7 @@ tags:
     - Migration
 ---
 
-On a project recently the Room database consisted of a single table with many fields, some of which were `List`s. This was fine, and easy to work with until… it wasn't. We started [seeing an error](https://i.imgur.com/a1Jcd6Y.png) in Crashlytics caused by certain columns exceeding size limits. Uh oh.
+On a project recently the Room database consisted of a single table with many fields, some of which were `List`s. This was fine, and easy to work with until… it wasn't. We started [seeing an error](/assets/images/2024/blobtoobig.png) in Crashlytics caused by certain columns exceeding size limits. Uh oh.
 
 The solution was obvious: The biggest column needs to be split out into a new table. Actually doing this however, is a bit trickier…
 

@@ -29,9 +29,9 @@ This tutorial assumes you already have [Firebase added to your project](/adding-
 2. Next, open a Command Prompt and enter `npm install -g firebase-tools`, after a few minutes you should see something similar to the following image:[![](/wp-content/uploads/2018/11/2.png)](/wp-content/uploads/2018/11/2.png)
 3. Next, login to your Firebase account using `firebase login`. This will open a browser with a login request. Once logged in, the Command Prompt will report success.[![](/wp-content/uploads/2018/11/yZ61qY0.png)](/wp-content/uploads/2018/11/yZ61qY0.png)
 4. Next run `firebase init functions`, which will ask you a few questions about your setup. Click any of the following items to view a screenshot of the installation at that point. 
-    1. [The project to use](https://i.imgur.com/WD5ZNUk.png), I chose my Firebase Reference Project.
-    2. [The language to use](https://i.imgur.com/taBpPWI.png), I chose JavaScript.
-    3. [Whether style checker ESLint should be used &amp; dependencies should be installed](https://i.imgur.com/h6b7TFp.png), I chose "Yes" to both.
+    1. [The project to use](/assets/images/2024/cf-project-to-use.png), I chose my Firebase Reference Project.
+    2. [The language to use](/assets/images/2024/cf-language-to-use.png), I chose JavaScript.
+    3. [Whether style checker ESLint should be used &amp; dependencies should be installed](/assets/images/2024/cf-eslint.png), I chose "Yes" to both.
 5. You should now have a project folder containing a few files and folders. `functions/index.js` is the most important file, as it contains your functions' actual code. Open this file up and uncomment the lines relating to `export.helloWorld`.
 
 That's it, your local environment is now fully setup, and you've got a "Hello World" function ready to deploy!

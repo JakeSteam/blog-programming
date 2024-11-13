@@ -36,7 +36,7 @@ First, the hex codes of the desired colours were found via trial and error, and 
 
 #### Applying Colours
 
-For (albeit extremely minor, possibly non-existent) performance reasons, a switch statement is used instead of a large if / else. The item's state (i.e. the colour it needs tinting) is checked against the list of states, and the correct colour is applied. The `MULTIPLY` porterduff mode is used. The technicalities of this aren't necessary to know, but [a reference image](https://i.imgur.com/62EDoqI.png) is very useful (source: [Softwyer](https://softwyer.wordpress.com/2012/01/21/1009/)). Essentially, multiple merges the two resources, in this case the item image and the colour overlay, but only the pixels where the first resource isn't fully transparent.
+For (albeit extremely minor, possibly non-existent) performance reasons, a switch statement is used instead of a large if / else. The item's state (i.e. the colour it needs tinting) is checked against the list of states, and the correct colour is applied. The `MULTIPLY` porterduff mode is used. The technicalities of this aren't necessary to know, but [a reference image](/assets/images/2024/tinting-reference.png) is very useful (source: [Softwyer](https://softwyer.wordpress.com/2012/01/21/1009/)). Essentially, multiple merges the two resources, in this case the item image and the colour overlay, but only the pixels where the first resource isn't fully transparent.
 
 `imageResource` is the item drawable to be modified. If no coloured state is identified, any existing colour filters are cleared, in case they've somehow got attached erroneously earlier on.
 

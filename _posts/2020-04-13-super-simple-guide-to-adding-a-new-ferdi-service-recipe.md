@@ -96,9 +96,9 @@ Your recipe has to be uploaded to a public GitHub repository, there's [many guid
 2. Check out your forked repository.
 3. If you don't have [Yarn](https://classic.yarnpkg.com/en/docs/install/) already installed (I didn't), install it with the default options.
 4. Open a terminal / Powershell / Command prompt in the `/scripts/` folder of your forked repo.
-5. Run `yarn install` to run all of the dependencies needed for prepare the packaging script. You should see [a "Done" message](https://i.imgur.com/SDj7siV.png).
-6. Run `yarn github <your recipe repo's URL>` to package your recipe. You should see [a "Done" message](https://i.imgur.com/X6C07X3.png) again.
-7. Your fork of the Ferdi recipes repository should now have 6 new files (your recipe), and 1 modified file (the metadata storage). [This is how it looks in GitKraken](https://i.imgur.com/KMrvh40.png).
+5. Run `yarn install` to run all of the dependencies needed for prepare the packaging script. You should see [a "Done" message](/assets/images/2024/ferdi-donemessage.png).
+6. Run `yarn github <your recipe repo's URL>` to package your recipe. You should see [a "Done" message](/assets/images/2024/ferdi-donemessage2.png) again.
+7. Your fork of the Ferdi recipes repository should now have 6 new files (your recipe), and 1 modified file (the metadata storage). [This is how it looks in GitKraken](/assets/images/2024/ferdi-gitkraken.png).
 8. Commit these files, then push your repository.
 
 ### Raising PR

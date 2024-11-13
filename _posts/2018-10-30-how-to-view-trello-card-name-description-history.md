@@ -35,6 +35,7 @@ Finally, we need to make the results more readable, and retrieve only the change
 To make it more readable, the extension [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) will format the returned results in an easily readable format. Once this is installed, it will automatically apply on pages that contain just JSON content, and can be disabled when not needed.
 
 To display only name changes, add `?filter=updateCard:name` to the end of the URL. For description changes, add `?filter=updateCard:description`. This will display the new value (under `card`), and the previous value (under `old`).  
-![](https://i.imgur.com/rr2lf5U.png)
+
+[![](/assets/images/2024/trello-history.png)](/assets/images/2024/trello-history.png)
 
 Note that this data can take a few minutes to be deleted, so for testing this approach it's best to use an existing card with changes instead of making new changes.

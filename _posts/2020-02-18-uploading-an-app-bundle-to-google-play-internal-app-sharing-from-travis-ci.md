@@ -28,12 +28,12 @@ Whilst the uploading process is simple, the biggest challenge is actually authen
 
 To create a service account, you'll need access to Google Play Console and Google Developers Console. On Google Play Console, you'll need to make a service account. [There are official instructions](https://developers.google.com/android-publisher/getting_started#using_a_service_account), but there's a few steps missing.
 
-1. Go to Settings -&gt; Developer account -&gt; API access, and click "Create service account" [(screenshot)](https://i.imgur.com/OjAdmA6.png).
-2. Click the "Google API console" link [(screenshot)](https://i.imgur.com/Ac5sM5Y.png), then click "Create service account" again[ (screenshot)](https://i.imgur.com/WLk1mob.png).
-3. Fill in the basic details, to help remember what the account is for [(screenshot)](https://i.imgur.com/8Yex41R.png).
-4. Give your new account the "Firebase App Distribution Admin" role [(screenshot)](https://i.imgur.com/lnlMcDJ.png).
-5. Create a key for the new account, and download it in JSON format [(screenshot)](https://i.imgur.com/Ly4lDt2.png). This will download a JSON file [(screenshot)](https://i.imgur.com/rUr6296.png).
-6. Finally, your new service account will show up on Google Play Console, press "Grant access"[ (screenshot)](https://i.imgur.com/ehMJ1oC.png).
+1. Go to Settings -&gt; Developer account -&gt; API access, and click "Create service account" [(screenshot)](/assets/images/2024/travis-serviceaccount.png).
+2. Click the "Google API console" link [(screenshot)](/assets/images/2024/travis-apiconsole.png), then click "Create service account" again[(screenshot)](/assets/images/2024/travis-serviceaccount2.png).
+3. Fill in the basic details, to help remember what the account is for [(screenshot)](/assets/images/2024/travis-basicdetails.png).
+4. Give your new account the "Firebase App Distribution Admin" role [(screenshot)](/assets/images/2024/travis-adminrole.png).
+5. Create a key for the new account, and download it in JSON format [(screenshot)](/assets/images/2024/travis-jsonformat.png). This will download a JSON file [(screenshot)](/assets/images/2024/travis-jsonfile.png).
+6. Finally, your new service account will show up on Google Play Console, press "Grant access"[ (screenshot)](/assets/images/2024/travis-grantaccess.png).
 
 Next, we need to prepare our JSON file for our CI server.
 
@@ -233,7 +233,7 @@ If anything didn't quite work out, [the gist of this post](https://gist.github.c
 
 Before these internal apps can actually be used, we need to set up permissions for them. This is done from the application's page on Google Play Console, then Development Tools -&gt; Internal App Sharing.
 
-On this page, select any other groups of people you'd like to be able to upload bundles manually, and any groups of QA / other testers [(screenshot)](https://i.imgur.com/tK10dtq.png).
+On this page, select any other groups of people you'd like to be able to upload bundles manually, and any groups of QA / other testers [(screenshot)](/assets/images/2024/travis-testergroups.png).
 
 Now, when one of your testers clicks the link generated above on an account with app sharing enabled, they'll be prompted to install the app. For information on enabling app sharing and more information on the system, [Google's documentation is pretty helpful](https://support.google.com/googleplay/android-developer/answer/9303479?hl=en-GB).
 

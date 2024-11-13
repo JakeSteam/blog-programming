@@ -77,4 +77,4 @@ Whilst the actual use case is fairly niche, this post should indicate why a gene
 
 The formula may be useful for anyone needing to calculate values that need to drop off outside of a specific range at a varying rate, based on the size of the range.
 
-Additionally, this was a "iteratively created" formula, where I essentially [played with variables](https://i.imgur.com/QO62X0P.png) in Excel / Google Sheets until I got values that matched what I wanted to see. As such, I strongly suspect some steps are inefficient, particularly when calculating how far out of range a target is.
+Additionally, this was a "iteratively created" formula, where I essentially [played with variables](/assets/images/2024/playing-with-variables.png) in Excel / Google Sheets until I got values that matched what I wanted to see. As such, I strongly suspect some steps are inefficient, particularly when calculating how far out of range a target is.

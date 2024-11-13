@@ -126,4 +126,4 @@ That being said, there's absolutely room for improvement:
 - Ideally the laptop could be mounted somewhere, hiding the cables needed. For now, I still use it for the webcam.
 - The chair I use is very average, being a cheap IKEA one I've had for years!
 - I naturally go to very minimalist white/black, the area probably needs more colour &amp; personality..! The plants / bookcase behind help though.
-- Whilst the setup looks very clean from the front, the "behind the scenes" for all the monitor cables is… [pretty rough](https://i.imgur.com/LTyp9Tw.jpg)!
+- Whilst the setup looks very clean from the front, the "behind the scenes" for all the monitor cables is… [pretty rough](/assets/images/2024/triple-monitor-cables.jpeg)!

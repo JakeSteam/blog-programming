@@ -39,14 +39,14 @@ Slack has [an official guide](https://api.slack.com/messaging/webhooks) to creat
 
 1. Create [a new app](https://api.slack.com/apps/new).
 2. Add the "Incoming WebHooks" app to your Slack workspace by clicking "Add to Slack" from [the app management page](https://api.slack.com/apps) (this will be "Request Configuration" if you're not an admin).
-3. Select which room the messages should go to ([picture](https://i.imgur.com/RspYoeQ.png)). It might be helpful setting this to a private message with yourself whilst testing!
-4. Once added, scroll down to "Integration settings" ([picture](https://i.imgur.com/4qGPM7X.png)), and customise the name and avatar (emoji or uploaded image).
+3. Select which room the messages should go to ([picture](/assets/images/2024/travis-slackroom.png)). It might be helpful setting this to a private message with yourself whilst testing!
+4. Once added, scroll down to "Integration settings" ([picture](/assets/images/2024/travis-integration.png)), and customise the name and avatar (emoji or uploaded image).
 5. Copy the "Webhook URL".
 6. Save settings.
 
 ## Posting messages to Slack
 
-From your existing bash script ([guide to setting it up](https://blog.jakelee.co.uk/creating-an-app-bundle-and-apk-on-travis-ci-server/) if you need to), we just need to do a simple POST to our webhook. This assumes you've defined your Slack message's JSON (`$DATA`) &amp; webhook URL (`$WEBHOOK_URL`) already:
+From your existing bash script ([guide to setting it up](/creating-an-app-bundle-and-apk-on-travis-ci-server/) if you need to), we just need to do a simple POST to our webhook. This assumes you've defined your Slack message's JSON (`$DATA`) &amp; webhook URL (`$WEBHOOK_URL`) already:
 
 ```sh
 HTTP_RESPONSE=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" \

@@ -19,11 +19,11 @@ Alert Dialogs are an excellent way of providing a confirmation screen, or lettin
 
 The core part of the solution is using our own layout for the alert dialog, and handling button creation ourselves. Once we've created custom layouts, they'll need to be populated, and passed Runnables of the actions to be performed.
 
-#### Layouts
+### Layouts
 
 First, a layout is required for the dialog, and for the buttons. Examples are available on [this article's gist](https://gist.github.com/JakeSteam/0ee444726efb9776bcd5046ad66f9006), but essentially the dialog layout is a simple linearlayout with textviews, and the button layout is just a styled textview.
 
-#### Inflating
+### Inflating
 
 The parameters required to create an AlertDialog using the custom class are context (for inflating), title text, body text, and any number of `DialogAction`s.
 
@@ -94,7 +94,7 @@ for (final DialogAction action : actions) {
 
 That's it! It's a relatively simple concept, but allows a lot more flexibility and consistency between Android versions.
 
-#### Example
+### Example
 
 An example of actually displaying an alertdialog using this technique is below, it is called when the player runs out of items in the slots game [Blacksmith Slots](https://www.reddit.com/r/BlacksmithSlots/). In this instance 3 `DialogAction`s are used, the first of which has no action inside the `run()` method, so just closes the alert dialog. Since we have access to the activity at this stage, the alertdialog buttons can easily perform actions on the activity, such as starting another activity.
 

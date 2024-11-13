@@ -22,15 +22,15 @@ There is [official documentation](http://satyan.github.io/sugar/getting-started.
 
 Setting up Sugar is very straightforward, and contains just three simple steps.
 
-#### 1. Adding the library
+### 1. Adding the library
 
 As with any other Gradle library, add the following to your `build.gradle` dependencies, and perform a rebuild (Android Studio will prompt to do this automatically). This will let us reference the library's functionality:
 
-```
+```gradle
 compile 'com.github.satyan:sugar:1.5'
 ```
 
-#### 2. Connecting app to Sugar
+### 2. Connecting app to Sugar
 
 So that Sugar can run when the application starts, and perform other tasks, it needs to be created and destroyed when the application is, not an individual activity. To do this, we need to make a new class that extends `Application`, which we can then use to initialise Sugar and other services. I generally put this file outside of any subfolders in the project structure, but it can go anywhere.
 
@@ -57,7 +57,7 @@ Now that we have our `MainApplication` class, we need to define it in the `Andro
     android:name=".MainApplication"
 ```
 
-#### 3. Configuring options
+### 3. Configuring options
 
 Final step! All that's left to do is configure a few options. These are all inside the `<application` tag in `AndroidManifest.xml` in the format ``:
 
@@ -72,7 +72,7 @@ That's it, you're good to go! The rest of this guide will cover creating your en
 
 ## Using Sugar
 
-#### Creating entities
+### Creating entities
 
 In this example, we'll use a simple table with just an `id` and a `text`.
 
@@ -115,7 +115,7 @@ Next, we declare the columns we want to include, and create getters and setters 
 
 Finally, we add a constructor with all parameters, and one with none. A constructor taking no parameters is **required** by Sugar ORM, and the table will not be usable without it. All of the getters / setters / constructors can be created by Android Studio by pressing `Alt` + `Insert` inside the class.
 
-#### Saving data
+### Saving data
 
 Data can be saved by creating a new instance of the object, and calling `.save()` on it. This can also be included in your constructor if auto-save is desired.
 
@@ -125,7 +125,7 @@ text.setText("New test");
 text.save();
 ```
 
-#### Loading data
+### Loading data
 
 Data can be loaded from the database by id, using the query builder, or directly using SQL. All 3 of the following examples return the same result, the `Text` object with `id` 1.
 

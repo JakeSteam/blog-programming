@@ -93,6 +93,6 @@ Note that I'm using the cache directory in this example, `.filesDir` can be used
 
 When your image sharing function is called, the user will receive a popup suggesting many, many locations to share their content to. A screenshot from newly created emulator is below, real devices will have many pages of options instead!
 
-All code in this tutorial is available as a Gist.
+All code in this tutorial is available [as a Gist](https://gist.github.com/JakeSteam/3a685edee460ad2497fd3827b70622df).
 
 [![](/wp-content/uploads/2018/12/sharing2.png)](/wp-content/uploads/2018/12/sharing2.png)

@@ -20,7 +20,7 @@ Android applications are distributed to users around the world, and these users 
 
 To allow changing language, the Locale needs to be overridden and set to the user's choice. How the user selects a language isn't too important, in this example a spinner was chosen since it was the easiest to work with. This choice is stored as a shared preference that is then applied every time the application launches.
 
-#### On Startup
+### On Startup
 
 Inside the application class, or early on in the main activity, a call to `LanguageHelper.updateLanguage()` is made, which will handle the locale overwriting. It is passed the application context, which is required to access shared preferences and modify the locale later on.
 
@@ -33,7 +33,7 @@ public static void updateLanguage(Context ctx) {
 }
 ```
 
-#### Changing Locale
+### Changing Locale
 
 When a context and 2 character locale (e.g. "en" for English or "es" for Spanish) are passed, this new locale is saved in shared preferences. Then, so long as the language string isn't empty, a new Locale is created using it, and this Locale is applied using `updateConfiguration()`. Note that this method now appears to be deprecated, and it [doesn't look like a quick fix](http://stackoverflow.com/questions/40221711/android-context-getresources-updateconfiguration-deprecated/40704077#40704077), but in your case it may be worth implementing.
 
@@ -51,7 +51,7 @@ private static void updateLanguage(Context ctx, String lang) {
 }
 ```
 
-#### Selecting A Language
+### Selecting A Language
 
 When a language from the spinner is selected, the following `onItemSelected()` method is called. Most of the code is not specific to this example, but the important line is the `LanguageHelper.updateLanguage()` method, which is passed a context, and the position selected (+1 to account for zero indexing), which refers to a predefined language ID.
 

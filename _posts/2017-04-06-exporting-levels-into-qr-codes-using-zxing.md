@@ -21,7 +21,7 @@ To allow the easy transferring of data, card images could be generated from leve
 
 ![new puzzle](/wp-content/uploads/2017/04/1iywdgg.png)
 
-#### Creating String
+### Creating String
 
 First, your level structure must be converted to a string. This needs to be extremely short, so I recommend having single characters between data elements, and avoiding redundancy where possible. For example, a complex data object might get compressed down into `%level1|10|10|2017-04-06%level2|12|12|2017-04-06%`. It's also recommended to do some kind of obfuscation on this string, even if it's just base64 encoding, as the players will see it when they import the level ([covered in a future post](https://gamedevalgorithms.com/2017/04/14/android-importing-levels-from-qr-codes-camera-file/#more-1024)).
 
@@ -60,7 +60,7 @@ public static void fillWithQrDrawable(ImageView imageView, String text) {
 }
 ```
 
-#### Creating QR Code
+### Creating QR Code
 
 Finally, the actual QR code needs to be generated. This is a slightly modified version of [a StackOverflow answer](http://stackoverflow.com/a/30529128/608312), further support / comments can be found there.
 

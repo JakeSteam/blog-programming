@@ -20,7 +20,7 @@ In a [previous post](/exporting-levels-into-qr-codes-using-zxing/), it was discu
 
 ## The Solution
 
-#### Camera
+### Camera
 
 To avoid including a barcode reader, camera display, orientation tracking, and requiring the camera permission, we offload this responsibility to an existing app that is present on many phones, [Barcode Scanner by ZXing](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en_GB). Whilst there is a risk of the user not having this app installed, in my specific use case it wasn't worth spending weeks reinventing the wheel for a little used feature. It is possible to embed ZXing and do the barcode scanning without a third party application.
 
@@ -47,7 +47,7 @@ A video of this in action is embedded below. Note the quick scanning of the QR c
 
 <div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/Je0qBQhsTbE?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>
 
-#### Photo
+### Photo
 
 Retrieving a photo is a little more complex than live scanning a QR code, but it's done without requiring another application. First, the `onClick` method of the import button is called, and passes the permission required (`READ_EXTERNAL_STORAGE`) and work to do (`importFromFile()`) to a `runIfPossible` function.
 
@@ -100,7 +100,7 @@ private void importFromFile() {
 }
 ```
 
-#### Receiving
+### Receiving
 
 The activity that launched the camera or file import tasks now needs to be notified that there is incoming data. This is done via `onActivityResult`, since both of the previous tasks used `startActivityForResult`, so will return data when they are completed (either cancelled, or found an image / QR code to import).
 

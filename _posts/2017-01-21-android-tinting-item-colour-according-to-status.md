@@ -20,7 +20,7 @@ tags:
 
 To modify the item's colour (whilst only affecting the transparent pixels), we'll be using the `MULTIPLY` color filter option. It can be hard to predict the outcome a specific colour code will have when applied to the drawables, so it's recommended to try out 5-6 and choose one which has the desired effect.
 
-#### Defining Colours
+### Defining Colours
 
 First, the hex codes of the desired colours were found via trial and error, and saved in the `colors.xml` file.
 
@@ -34,7 +34,7 @@ First, the hex codes of the desired colours were found via trial and error, and 
 <color name="yellowOverlay">#e2df0b</color>
 ```
 
-#### Applying Colours
+### Applying Colours
 
 For (albeit extremely minor, possibly non-existent) performance reasons, a switch statement is used instead of a large if / else. The item's state (i.e. the colour it needs tinting) is checked against the list of states, and the correct colour is applied. The `MULTIPLY` porterduff mode is used. The technicalities of this aren't necessary to know, but [a reference image](/assets/images/2024/tinting-reference.png) is very useful (source: [Softwyer](https://softwyer.wordpress.com/2012/01/21/1009/)). Essentially, multiple merges the two resources, in this case the item image and the colour overlay, but only the pixels where the first resource isn't fully transparent.
 

@@ -127,7 +127,7 @@ Crashlytics' core functionality of bug reporting is very powerful by itself, but
 
 To allow Crashlytics to [automatically deobfuscate](https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports) your ProGuarded stack traces, make sure to remove `-printmapping mapping.txt` from your ProGuard config, and add:
 
-```
+```txt
 -keepattributes SourceFile,LineNumberTable        # Keep file names and line numbers.
 -keep public class * extends java.lang.Exception  # Optional: Keep custom exceptions.
 ```

@@ -13,13 +13,13 @@ tags:
     - Travis
 ---
 
-When using a CI server, you’ll often need a way to use highly sensitive strings (e.g. signing keys, API keys, passwords), whilst minimising who has access to them. Travis CI solves this using [encrypted environment variables](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables), encrypting your variables using a private key only Travis has access to. These encrypted values are then stored in your `.travis.yml`.
+When using a CI server, you'll often need a way to use highly sensitive strings (e.g. signing keys, API keys, passwords), whilst minimising who has access to them. Travis CI solves this using [encrypted environment variables](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables), encrypting your variables using a private key only Travis has access to. These encrypted values are then stored in your `.travis.yml`.
 
 This means nobody sees your plaintext string except Travis, and it is never sent between servers. The downside of this? **If you lose the secret string, only Travis knows what it is!**
 
-When transitioning from APKs to app bundles recently (article soon!), I discovered our keystore’s password wasn’t stored anywhere besides Travis. The entire app being dependent on our CI staying up scared me! As such, I decided to extract the plaintext value to store in the same secure area as other company passwords.
+When transitioning from APKs to app bundles recently (article soon!), I discovered our keystore's password wasn't stored anywhere besides Travis. The entire app being dependent on our CI staying up scared me! As such, I decided to extract the plaintext value to store in the same secure area as other company passwords.
 
-Since Travis (correctly) tries very hard to stop you getting these variables back out, you’ll need to take a roundabout approach. I also didn’t want our password ever being displayed in the logs, or sent over the internet in plaintext.
+Since Travis (correctly) tries very hard to stop you getting these variables back out, you'll need to take a roundabout approach. I also didn't want our password ever being displayed in the logs, or sent over the internet in plaintext.
 
 ## The plan
 
@@ -34,13 +34,13 @@ Before running the script, you will need to add a new environment variable to Tr
 
 [![](/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png)](/wp-content/uploads/2019/12/Screenshot-2019-12-16-at-08.41.10.png)
 
-Note: It’s good practice to always limit the branches your environment variables can run on.
+Note: It's good practice to always limit the branches your environment variables can run on.
 
 ## Preparing the build config
 
-Next, add the following to your `.travis.yml` build config. Don’t forget to replace:
+Next, add the following to your `.travis.yml` build config. Don't forget to replace:
 
-- `MY_VARIABLE` (two times) with your target encrypted variable’s name.
+- `MY_VARIABLE` (two times) with your target encrypted variable's name.
 - `arandomfilename` (three times) with a string of your choice.
 
 ```yaml
@@ -64,7 +64,7 @@ $ curl -F'file=@arandomfilename.txt.cpt' https://file.io
 {"success":true,"key":"he5h9","link":"https://file.io/he5h9","expiry":"14 days"}
 ```
 
-Note: This line of the log may be hidden by default by Travis, make sure to click any “expand” arrows.
+Note: This line of the log may be hidden by default by Travis, make sure to click any "expand" arrows.
 
 ## Retrieving the value
 
@@ -75,9 +75,9 @@ Note: This line of the log may be hidden by default by Travis, make sure to clic
 
 ## Additional notes
 
-Whilst the ability to retrieve a supposedly secure variable may seem concerning, it’s important to note this is only possible if you have push access to the repo. Travis also has the ability to only allow variables to be accessed from specific branches (e.g. `master`), which should be used when possible.
+Whilst the ability to retrieve a supposedly secure variable may seem concerning, it's important to note this is only possible if you have push access to the repo. Travis also has the ability to only allow variables to be accessed from specific branches (e.g. `master`), which should be used when possible.
 
-Also, whilst transferring even an encrypted value off-site may seem scary, file.io has extra protection. Once your file has been downloaded once, it can never be downloaded again. Thus, there’s no risk of someone else randomly stumbling across the file.
+Also, whilst transferring even an encrypted value off-site may seem scary, file.io has extra protection. Once your file has been downloaded once, it can never be downloaded again. Thus, there's no risk of someone else randomly stumbling across the file.
 
 Finally, file hosts tend to come and go pretty quickly. If [file.io](https://file.io) no longer exists, any other command line based upload service will work!
 

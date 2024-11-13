@@ -17,7 +17,7 @@ Occasionally whilst developing a UI in Android, padding will have to be set prog
 
 ## The Solution
 
-First the density of the screen must be calculated, using the `densityDpi` in `DisplayMetrics`. Once we have that, we can work out how many real pixels one display pixel equals. To do this, the device’s DPI is divided by the default density that all other densities are worked out from (160).
+First the density of the screen must be calculated, using the `densityDpi` in `DisplayMetrics`. Once we have that, we can work out how many real pixels one display pixel equals. To do this, the device's DPI is divided by the default density that all other densities are worked out from (160).
 
 ```
 public int convertDpToPixel(float dp) {

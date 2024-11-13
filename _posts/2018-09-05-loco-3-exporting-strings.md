@@ -18,7 +18,7 @@ tags:
 
 These articles are **not** sponsored!
 
-To export strings, a user needs to have the “Access developer tools” permission. The following options and formats are available
+To export strings, a user needs to have the "Access developer tools" permission. The following options and formats are available
 
 ### Options [(help)](https://localise.biz/help/formats/exporting)
 
@@ -26,10 +26,10 @@ To export strings, a user needs to have the “Access developer tools” permiss
 
 1. **Locale selection**: Locale selection allows you to either export a single, multiple or all locales. If multiple are selected, a zip file will be provided with each file inside a folder structure suited for the export format (4).
 2. **Locale fallback**: Specifying a default locale allows missing strings to be provided with a default translation, this can be useful when a translation has not been completed yet, but all strings are required to build the project.
-3. **Tag filter**: Multiple tags can be used to ensure only the relevant strings are exported. For example, a “Password Reset” module of an app may only need the strings tagged “Password Reset”. [More info on tags](/loco-1-string-management-for-multi-platform-multi-locale-projects/).
+3. **Tag filter**: Multiple tags can be used to ensure only the relevant strings are exported. For example, a "Password Reset" module of an app may only need the strings tagged "Password Reset". [More info on tags](/loco-1-string-management-for-multi-platform-multi-locale-projects/).
 4. **File format**: The format of the exported data. This will be covered fully in the next section.
-5. **Index**: This specifies what ID should be used for the text. Usually this will be the string name (“Asset ID”), but for some use cases it may be useful to use a different locale’s full string.
-6. **Order**: By default, strings are ordered by date added, this options provides the ability to order by a string’s Asset ID instead.
+5. **Index**: This specifies what ID should be used for the text. Usually this will be the string name ("Asset ID"), but for some use cases it may be useful to use a different locale's full string.
+6. **Order**: By default, strings are ordered by date added, this options provides the ability to order by a string's Asset ID instead.
 7. **Status**: Similar to the Tag Filter, this allows only exporting strings that have a specific status / flag, for example only exporting translated strings.
 8. **API Endpoint**: The URL to call to export strings at the current settings, this will be covered in more detail in Part 4 of this series.
 
@@ -59,4 +59,4 @@ Additionally, the following formats have multiple options available:
 
 ### Notes
 
-In many agile projects, string management may be ongoing through the product’s development, particularly if multiple locales are being used. Exporting a full set of Loco data before each new build ensures any updated translations are automatically included, meaning updating all string is just a couple of clicks away instead of manually editing files!
+In many agile projects, string management may be ongoing through the product's development, particularly if multiple locales are being used. Exporting a full set of Loco data before each new build ensures any updated translations are automatically included, meaning updating all string is just a couple of clicks away instead of manually editing files!

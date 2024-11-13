@@ -21,12 +21,12 @@ First, add `BUILD_TIME` (of type `Date`) into your app-level `build.gradle`, wit
 buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + System.currentTimeMillis() + "L)"
 ```
 
-Next, just use `BuildConfig.BUILD_TIME` whenever you want to access this date object. Just like a normal `Date` object, it can be formatted (e.g. to “18 Mar 2019”):
+Next, just use `BuildConfig.BUILD_TIME` whenever you want to access this date object. Just like a normal `Date` object, it can be formatted (e.g. to "18 Mar 2019"):
 
 ```
 SimpleDateFormat("dd MMM yyy", Locale.US).format(BuildConfig.BUILD_TIME)
 ```
 
-That’s it!
+That's it!
 
 This technique is used in [my open source APOD Wallpaper app](https://github.com/JakeSteam/APODWallpaper/blob/master/app/build.gradle#L15), and [available as a Gist](https://gist.github.com/JakeSteam/6052f0f3a7ac523649c4f05d1d1cb1fb).

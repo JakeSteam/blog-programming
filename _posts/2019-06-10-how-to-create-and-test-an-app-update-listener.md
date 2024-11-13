@@ -16,9 +16,9 @@ Running code when your app updates can be a useful marketing tool, and a reliabl
 
 For example, your app may send a message to your server when it updates, so your server knows it can now return more types of content. Similarly, you may want to send a notification to the user (from the app) when it updates, informing them of new content.
 
-Whilst there’s plenty of existing documentation on registering an update listener, much of it is outdated, unsafe, or doesn’t include any information on how to test your implementation. This article will hopefully address these shortcomings, and is also available [as a repository](https://github.com/JakeSteam/UpdateListener) and [a Gist](https://gist.github.com/JakeSteam/4561f0f46a7b08be50785a72559f8fef).
+Whilst there's plenty of existing documentation on registering an update listener, much of it is outdated, unsafe, or doesn't include any information on how to test your implementation. This article will hopefully address these shortcomings, and is also available [as a repository](https://github.com/JakeSteam/UpdateListener) and [a Gist](https://gist.github.com/JakeSteam/4561f0f46a7b08be50785a72559f8fef).
 
-The approach is very simple; we’re just registering an app update listener in the manifest, and then displaying a toast message inside this listener.
+The approach is very simple; we're just registering an app update listener in the manifest, and then displaying a toast message inside this listener.
 
 ## Registering receiver
 
@@ -52,9 +52,9 @@ class AppUpgradeReceiver : BroadcastReceiver() {
 }
 ```
 
-Note that lint complains that we’re not filtering the incoming intent (to make sure it’s for our package), but this is not needed as we are using the `MY_PACKAGE_REPLACED` intent. The `SuppressLint` annotation should only be used when you are intentionally disagreeing with lint’s analysis, as in this situation!
+Note that lint complains that we're not filtering the incoming intent (to make sure it's for our package), but this is not needed as we are using the `MY_PACKAGE_REPLACED` intent. The `SuppressLint` annotation should only be used when you are intentionally disagreeing with lint's analysis, as in this situation!
 
-And that’s it! Your listener is registered and will show a Toast message of the new version code whenever your app updates.
+And that's it! Your listener is registered and will show a Toast message of the new version code whenever your app updates.
 
 *Update (2022-10-06): A helpful commenter (see bottom of post) mentioned that instead of suppressing the lint warning, you can use replace the check with `if (context == null || intent?.action != "android.intent.action.MY_PACKAGE_REPLACED") {`. This is likely a better solution!*
 
@@ -74,13 +74,13 @@ The solution is to actually install the app manually:
 adb install -r <path to your apk>
 ```
 
-For example, the command on a Windows machine to update [this tutorial’s app](https://github.com/JakeSteam/UpdateListener) may look like:
+For example, the command on a Windows machine to update [this tutorial's app](https://github.com/JakeSteam/UpdateListener) may look like:
 
 ```text
 adb install -r C:\\Repositories\\updatelistener\\app\\build\\outputs\\apk\\debug\\app-debug.apk
 ```
 
-You should see “Success” underneath your command in the terminal.
+You should see "Success" underneath your command in the terminal.
 
 [![](/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg)](/wp-content/uploads/2019/06/Annotation-2019-06-10-125106.jpg)
 

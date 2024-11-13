@@ -32,7 +32,7 @@ After looking through my commit history, I realised the problem started appearin
 The library com.google.android.gms:play-services-basement is being requested by various other libraries at [[15.0.1,15.0.1]], but resolves to 16.0.1. Disable the plugin and check your dependencies tree using ./gradlew :app:dependencies.
 ```
 
-To resolve this, I’d added a temporary workaround in my `build.gradle`, which I completely forget to fix properly:
+To resolve this, I'd added a temporary workaround in my `build.gradle`, which I completely forget to fix properly:
 
 ```
 GoogleServicesPlugin.config.disableVersionCheck = true
@@ -40,4 +40,4 @@ GoogleServicesPlugin.config.disableVersionCheck = true
 
 Removing this version check disabler, and actually dealing with the root cause (mismatched libraries) led to the realisation that the FirebaseUI auth dependency was using an older version of `play-services-basement`.
 
-Updating the `com.firebaseui:firebase-ui-auth` dependency to 4.2.1 from 4.1.0 fixed the problem instantly. The “quick fix” was no quicker or easier than actually fixing it properly!
+Updating the `com.firebaseui:firebase-ui-auth` dependency to 4.2.1 from 4.1.0 fixed the problem instantly. The "quick fix" was no quicker or easier than actually fixing it properly!

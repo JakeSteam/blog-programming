@@ -16,6 +16,6 @@ tags:
 
 Earlier this year, myself and the rest of the ITV Hub Android team visited Droidcon UK. We thoroughly enjoyed ourselves, and on my return I wrote up my top 5 techniques for Android development in 2020.
 
-This is over [on Candyspace’s blog](https://blog.candyspace.com/5-essential-android-techniques-for-2020), it’s for both developers and their non-techy managers!
+This is over [on Candyspace's blog](https://blog.candyspace.com/5-essential-android-techniques-for-2020), it's for both developers and their non-techy managers!
 
-PS: If you want spoilers, maybe this post’s tags will help…
+PS: If you want spoilers, maybe this post's tags will help…

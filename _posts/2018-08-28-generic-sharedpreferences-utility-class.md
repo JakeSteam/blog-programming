@@ -20,7 +20,7 @@ Recently, a project required both backed up and non-backed up SharedPreferences,
 
 Most importantly, the datatype to read / write is determined by the default value passed. E.g. if the default datatype is a string, `getString` will be used. This can be a problem when storing numbers, as passing a long for a value saved as an int will not return the correct SharedPreference.
 
-The result of the SharedPreference setting is returned as a boolean so the caller can have confidence in the save’s success.
+The result of the SharedPreference setting is returned as a boolean so the caller can have confidence in the save's success.
 
 ```
 fun set(key: String, value: T, toBackedUp: Boolean = true): Boolean {

@@ -17,7 +17,7 @@ Recently I needed to perform a pretty complex animation on an image button. The 
 
 To implement this I combined the animating parts into a single layer list, where they could then be animated without requiring new views. The end result was very smooth, with a very small amount of code written.
 
-In this post we’ll perform similar effects on a layer list drawable without any XML animations:
+In this post we'll perform similar effects on a layer list drawable without any XML animations:
 
 <div class="wp-video" style="width: 640px;"><video class="wp-video-shortcode" controls="controls" height="384" id="video-2896-1" preload="metadata" width="640"><source src="/wp-content/uploads/2020/10/ezgif.com-gif-maker.webm?_=1" type="video/webm"></source></wp-content/uploads/2020/10/ezgif.com-gif-maker.webm></video></div>
 
@@ -62,7 +62,7 @@ Looking at these `.class` files will tell you what animations are supported. For
 
 ## Preparing animations
 
-All of our animation is going to happen inside a `startAnimation(target: ImageView)` function, and use `ObjectAnimator`. Since we’re going to be animating both `ImageView`s and layer list layers, an important note is needed:
+All of our animation is going to happen inside a `startAnimation(target: ImageView)` function, and use `ObjectAnimator`. Since we're going to be animating both `ImageView`s and layer list layers, an important note is needed:
 
 - If an `ImageView` is being used, a **float** value of the target will be used. For example, the alpha is between 1.0f (fully visible) and 0.0f (fully invisible).
 - If a `Drawable` is being used (e.g. `GradientDrawable` / `RotateDrawable`), an **int** value of the target will be used. For example, the alpha is instead between 255 (fully visible) and 0 (fully invisible).
@@ -133,7 +133,7 @@ private fun startAnimation(target: ImageView) {
 
 ### Resetting view positions
 
-Whilst most of the layer effects automatically reset when cancelled, the view’s movement is not. As such, we need to create a “reset” function:
+Whilst most of the layer effects automatically reset when cancelled, the view's movement is not. As such, we need to create a "reset" function:
 
 ```
 val animationReset = { target.translationX = 0f }

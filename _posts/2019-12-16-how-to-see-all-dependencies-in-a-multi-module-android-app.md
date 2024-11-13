@@ -14,11 +14,11 @@ tags:
 
 Recently at work, I needed to provide a list of all dependencies / external libraries used by an app. Requests like these are inevitable when working on bigger apps, especially with legislation like GDPR.
 
-Whilst it’s easy to check your app’s Gradle file to see dependencies, this only works for that module. For a multi module project however, there must be an easier way than opening every module’s Gradle file and merging them in a text file!
+Whilst it's easy to check your app's Gradle file to see dependencies, this only works for that module. For a multi module project however, there must be an easier way than opening every module's Gradle file and merging them in a text file!
 
 ## Tree view
 
-If you need a list of all dependencies, and all of their dependencies, and all of… etc, you’ll want a tree view. This is useful for checking the same version of common libraries are being used throughout your app. The downside? It’s massive! Including a single AndroidX library can add 20 entries to this list.
+If you need a list of all dependencies, and all of their dependencies, and all of… etc, you'll want a tree view. This is useful for checking the same version of common libraries are being used throughout your app. The downside? It's massive! Including a single AndroidX library can add 20 entries to this list.
 
 Running `./gradlew app:dependencies` in the terminal will produce something similar to:
 
@@ -64,7 +64,7 @@ If this list is to be shared with a non-technical audience, I recommend opening 
 
 1. Find and replacing `@aar` and `@jar` with an empty string.
 2. Next, removing the `+---` from the start of each line.
-3. Next, removing all submodules, as they’re not external dependencies.
+3. Next, removing all submodules, as they're not external dependencies.
 4. (Optionally) removing all AndroidX / Google libraries from the list.
 
 *Thanks to [this StackOverflow answer](https://stackoverflow.com/a/39020703) for the tip.*

@@ -12,13 +12,13 @@ tags:
     - 'No Internet'
 ---
 
-Whilst developing an app, you’re likely to have a strong, reliable data connection at all times. In the real world however, users often will be without connectivity, and your app should react appropriately.
+Whilst developing an app, you're likely to have a strong, reliable data connection at all times. In the real world however, users often will be without connectivity, and your app should react appropriately.
 
-In this tutorial, a simple animated “No internet is available” bar will be displayed inside the app whilst there is no internet, and disappear when connectivity returns. An [example no internet bar project](https://github.com/JakeSteam/WarningBarDemo) is available, as well as a [video of the finished implementation](https://www.youtube.com/watch?v=refrQSsaiyc).
+In this tutorial, a simple animated "No internet is available" bar will be displayed inside the app whilst there is no internet, and disappear when connectivity returns. An [example no internet bar project](https://github.com/JakeSteam/WarningBarDemo) is available, as well as a [video of the finished implementation](https://www.youtube.com/watch?v=refrQSsaiyc).
 
 ## Add network state permission
 
-First, permission to access the network state is needed. This permission doesn’t need to be requested at runtime, and just being included in the `AndroidManifest.xml` is sufficient:
+First, permission to access the network state is needed. This permission doesn't need to be requested at runtime, and just being included in the `AndroidManifest.xml` is sufficient:
 
 ```
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -26,7 +26,7 @@ First, permission to access the network state is needed. This permission doesn�
 
 ## Add bar to layout
 
-Next, the bar has to actually be added to the layout. This can of course be customised easily, I’ve gone for a solid bright pink bar to grab attention!
+Next, the bar has to actually be added to the layout. This can of course be customised easily, I've gone for a solid bright pink bar to grab attention!
 
 ```
     <TextView

@@ -16,11 +16,11 @@ Whilst developing Android apps, performing a scheduled task at set intervals is 
 
 [![](/wp-content/uploads/2018/12/comparison.png)](/wp-content/uploads/2018/12/comparison.png)
 
-This tutorial will walk you through the simple steps needed to implement Firebase JobDispatcher, as well as the customisation options available. A minimal example project of this tutorial’s implementation is available [as a repository](https://github.com/JakeSteam/ScheduledJobs), or as a [Gist](https://gist.github.com/JakeSteam/4d87c6472914c714214d9511db340b09). Kotlin is used, but all code is straightforward and can be converted to Java.
+This tutorial will walk you through the simple steps needed to implement Firebase JobDispatcher, as well as the customisation options available. A minimal example project of this tutorial's implementation is available [as a repository](https://github.com/JakeSteam/ScheduledJobs), or as a [Gist](https://gist.github.com/JakeSteam/4d87c6472914c714214d9511db340b09). Kotlin is used, but all code is straightforward and can be converted to Java.
 
 ## Checking scheduled jobs
 
-Throughout this tutorial, the ability to check the currently scheduled tasks / jobs is extremely useful. As there is no GUI for this, it must be done by running the following in the “Terminal” tab of Android Studio (replacing `uk.co.jakelee.scheduledjobs` with your app’s package name):
+Throughout this tutorial, the ability to check the currently scheduled tasks / jobs is extremely useful. As there is no GUI for this, it must be done by running the following in the "Terminal" tab of Android Studio (replacing `uk.co.jakelee.scheduledjobs` with your app's package name):
 
 ```
 adb shell dumpsys activity service GcmService --endpoints uk.co.jakelee.scheduledjobs
@@ -43,7 +43,7 @@ Past executions:
 successes: 60 reschedules: 0 failures: 0 timeouts: 0 invalid_service: 0 total_elapsed_millis: 2842 total_uptime_millis: 2848
 ```
 
-`[NET_ANY]` shows that any internet connection type is acceptable, `[RECURRING]` shows that I’ve set it to repeat, `window{start=15s,end=30s ... }` shows that I’ve scheduled it to repeat very frequently.
+`[NET_ANY]` shows that any internet connection type is acceptable, `[RECURRING]` shows that I've set it to repeat, `window{start=15s,end=30s ... }` shows that I've scheduled it to repeat very frequently.
 
 ## Adding Firebase JobDispatcher library
 
@@ -53,7 +53,7 @@ First, add the [Firebase JobDispatcher library](https://github.com/firebase/fire
 implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
 ```
 
-Next, add a service for the JobScheduler to your `AndroidManifest.xml`. The `.JobScheduler` doesn’t exist yet, but you’ll be making it in the next step!
+Next, add a service for the JobScheduler to your `AndroidManifest.xml`. The `.JobScheduler` doesn't exist yet, but you'll be making it in the next step!
 
 ```xml
 <service
@@ -69,7 +69,7 @@ Next, add a service for the JobScheduler to your `AndroidManifest.xml`. The `.Jo
 
 `JobScheduler.kt` is the class that handles the actual scheduling. The rest of this tutorial will describe the implementation process, but there is also a[ Gist of the implementation](https://gist.github.com/JakeSteam/4d87c6472914c714214d9511db340b09#file-jobscheduler-kt).
 
-First, create the class, making sure to extend JobDispatcher’s `JobService`:
+First, create the class, making sure to extend JobDispatcher's `JobService`:
 
 ```
 class JobScheduler : JobService() {
@@ -83,7 +83,7 @@ companion object {
 }
 ```
 
-When a scheduled task starts, `onStartJob` is called. This method is overridden to trigger the intended job. We’ll cover setting the tag later, but for now just check it has been correctly set and pass the `JobParameters` object to `simpleJob`. Note that this method returns a boolean determining whether it has more work to do. This should almost always be false.
+When a scheduled task starts, `onStartJob` is called. This method is overridden to trigger the intended job. We'll cover setting the tag later, but for now just check it has been correctly set and pass the `JobParameters` object to `simpleJob`. Note that this method returns a boolean determining whether it has more work to do. This should almost always be false.
 
 ```
 override fun onStartJob(job: JobParameters): Boolean {
@@ -96,7 +96,7 @@ override fun onStartJob(job: JobParameters): Boolean {
 }
 ```
 
-Next up is actually creating the job function. This can do anything you want (that doesn’t require an activity), in this example it just writes a line to the log and finishes the job. Note that `jobFinished` needs to be passed the `JobParameters` object initially passed to `onStartJob`, as well as a boolean for whether the task needs to be retried (usually false).
+Next up is actually creating the job function. This can do anything you want (that doesn't require an activity), in this example it just writes a line to the log and finishes the job. Note that `jobFinished` needs to be passed the `JobParameters` object initially passed to `onStartJob`, as well as a boolean for whether the task needs to be retried (usually false).
 
 ```
 private fun simpleJob(job: JobParameters) {
@@ -134,8 +134,8 @@ fun scheduleJob(context: Context) {
 
 In this example, the following parameters apply:
 
-- `setService` determines the class called when this job triggers. This is sometimes another class, but it’s often easier to trigger the same class as the scheduling occurs in.
-- `setTag` sets the job’s tag, used when the job starts to check which job it is.
+- `setService` determines the class called when this job triggers. This is sometimes another class, but it's often easier to trigger the same class as the scheduling occurs in.
+- `setTag` sets the job's tag, used when the job starts to check which job it is.
 - `setRecurring` sets whether a job should repeat or not.
 - `setLifetime` determines if the job scheduling should last `UNTIL_NEXT_BOOT` or `FOREVER`.
 - `setReplaceCurrent` decides if this job should replace existing tasks with the same tag, or leave them.
@@ -149,8 +149,8 @@ Once you have a JobDispatcher instance with `FirebaseJobDispatcher(GooglePlayDri
 
 ## Conclusion
 
-Firebase’s JobDispatcher library provides a simple way to schedule future tasks. I recently used this approach to implement an app “heartbeat”, where it sends a small message to a server every 24 hours. The time of the heartbeat was very flexible, so a large window of activation is provided (20-28 hours). Having this window (in `setTrigger()`) as large as possible helps reduce your app’s battery usage, as it allows the device to stay in [Doze mode](https://developer.android.com/training/monitoring-device-state/doze-standby) for as long as possible.
+Firebase's JobDispatcher library provides a simple way to schedule future tasks. I recently used this approach to implement an app "heartbeat", where it sends a small message to a server every 24 hours. The time of the heartbeat was very flexible, so a large window of activation is provided (20-28 hours). Having this window (in `setTrigger()`) as large as possible helps reduce your app's battery usage, as it allows the device to stay in [Doze mode](https://developer.android.com/training/monitoring-device-state/doze-standby) for as long as possible.
 
-The only downside is the requirement on Google Play Services to centrally coordinate your job scheduling. If you distribute your app via the Play Store this isn’t an issue, but will cause serious problems for those distributing externally.
+The only downside is the requirement on Google Play Services to centrally coordinate your job scheduling. If you distribute your app via the Play Store this isn't an issue, but will cause serious problems for those distributing externally.
 
 Note that this is just one of the many services Firebase offers, and there is [an ongoing series covering each one](/search/?q=firebase/).

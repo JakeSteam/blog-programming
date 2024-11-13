@@ -22,7 +22,7 @@ The basic idea for the solution comes from [a 5 year old StackOverflow answer](h
 
 #### Media Service
 
-The media service is a relatively basic service that creates a media player and starts it. The code is [available on this article’s Gist](https://gist.github.com/JakeSteam/55cd4384f92b76f8a6f1c82a32e04124#file-musicservice-java), but essentially the track to play is passed via a reference to the asset (e.g. `R.raw.music`) on the service’s start intent.
+The media service is a relatively basic service that creates a media player and starts it. The code is [available on this article's Gist](https://gist.github.com/JakeSteam/55cd4384f92b76f8a6f1c82a32e04124#file-musicservice-java), but essentially the track to play is passed via a reference to the asset (e.g. `R.raw.music`) on the service's start intent.
 
 A reference to the service is stored within the `MusicHelper`, and assigned by the following:
 
@@ -33,9 +33,9 @@ musicService = new Intent(context.getApplicationContext(), MusicService.class)
 
 #### Base Activity
 
-This article assumes all of the application’s activities extend the same base activity. If this isn’t the case, the following can be implemented on every activity, but this is obviously more effort.
+This article assumes all of the application's activities extend the same base activity. If this isn't the case, the following can be implemented on every activity, but this is obviously more effort.
 
-When an activity is paused (application exited, user receives a call, starting a new activity, etc) if the `movingInApp` flag isn’t set, the music is paused.
+When an activity is paused (application exited, user receives a call, starting a new activity, etc) if the `movingInApp` flag isn't set, the music is paused.
 
 ```
 @Override
@@ -76,7 +76,7 @@ To play music, the `playIfPossible()` function can be used, passing the asset th
 MusicHelper.getInstance(this).playIfPossible(R.raw.village_consort);
 ```
 
-As mentioned before, `playIfPossible()` checks if the track isn’t currently playing, then starts the service if necessary. This is done in a new thread to avoid UI stutters. Note that the project used as an example allows the user to mute music at any time, including before settings have been setup, hence playing if it is intro music, and checking the user’s preference. This is of course optional.
+As mentioned before, `playIfPossible()` checks if the track isn't currently playing, then starts the service if necessary. This is done in a new thread to avoid UI stutters. Note that the project used as an example allows the user to mute music at any time, including before settings have been setup, hence playing if it is intro music, and checking the user's preference. This is of course optional.
 
 ```
 public void playIfPossible(final int trackToPlay) {
@@ -101,10 +101,10 @@ public void playIfPossible(final int trackToPlay) {
 
 ## The Conclusion
 
-Background music is absolutely essential in a game, and being able to control this playback is just as important. If a game’s music continues when the app is closed, the user is likely to uninstall it pretty quickly, and understandably so.
+Background music is absolutely essential in a game, and being able to control this playback is just as important. If a game's music continues when the app is closed, the user is likely to uninstall it pretty quickly, and understandably so.
 
-The implementation described in this article will also stop music when the activity is temporarily paused, and start it again when it is resumed. In most cases this isn’t ideal, so the media player’s start and stop functions could probably be replaced with play and pause functions, but it was not necessary for this use case.
+The implementation described in this article will also stop music when the activity is temporarily paused, and start it again when it is resumed. In most cases this isn't ideal, so the media player's start and stop functions could probably be replaced with play and pause functions, but it was not necessary for this use case.
 
-I’d also like to say thank you to [the user](https://stackoverflow.com/users/1069068/raghav-sood) who posted the initial idea, it’s a rather elegant solution to a tricky problem. I’m sure in the 5 years since it was posted, there have been libraries and better solutions discovered, but I was unable to find any. Besides, this one works perfectly!
+I'd also like to say thank you to [the user](https://stackoverflow.com/users/1069068/raghav-sood) who posted the initial idea, it's a rather elegant solution to a tricky problem. I'm sure in the 5 years since it was posted, there have been libraries and better solutions discovered, but I was unable to find any. Besides, this one works perfectly!
 
 As always, all code used in this article is available as a [GitHub Gist](https://gist.github.com/JakeSteam/55cd4384f92b76f8a6f1c82a32e04124).

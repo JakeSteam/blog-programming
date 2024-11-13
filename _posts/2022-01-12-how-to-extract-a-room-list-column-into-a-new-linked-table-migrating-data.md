@@ -13,7 +13,7 @@ tags:
     - Migration
 ---
 
-On a project recently the Room database consisted of a single table with many fields, some of which were `List`s. This was fine, and easy to work with until… it wasn’t. We started [seeing an error](https://i.imgur.com/a1Jcd6Y.png) in Crashlytics caused by certain columns exceeding size limits. Uh oh.
+On a project recently the Room database consisted of a single table with many fields, some of which were `List`s. This was fine, and easy to work with until… it wasn't. We started [seeing an error](https://i.imgur.com/a1Jcd6Y.png) in Crashlytics caused by certain columns exceeding size limits. Uh oh.
 
 The solution was obvious: The biggest column needs to be split out into a new table. Actually doing this however, is a bit trickier…
 
@@ -28,7 +28,7 @@ To summarise the problem using a simplified `Car` example:
 - When serialised, this column is waaaay too big!
 - We need to extract this data into a new `Component` table, and link it to our `Car`.
 
-Our `Database.kt` is nothing unusual, and here’s how our `Car.kt` starts off looking:
+Our `Database.kt` is nothing unusual, and here's how our `Car.kt` starts off looking:
 
 ```
 @Entity(tableName = "Cars")
@@ -157,14 +157,14 @@ data class Component(
 
 ### Step 3.1: Preparing the database schema changes
 
-So, we now have our new database schema set up, we’re done right? Well.. not quite. We need to migrate existing users! There’s 2 parts to this, migrating the database schema, and migrating the data itself.
+So, we now have our new database schema set up, we're done right? Well.. not quite. We need to migrate existing users! There's 2 parts to this, migrating the database schema, and migrating the data itself.
 
-Our changes are too complex for Room’s [automigrations](https://developer.android.com/training/data-storage/room/migrating-db-versions#automated), but we can use that to get us started. To generate an automigration script (using Room 2.4.0-alpha01 or above):
+Our changes are too complex for Room's [automigrations](https://developer.android.com/training/data-storage/room/migrating-db-versions#automated), but we can use that to get us started. To generate an automigration script (using Room 2.4.0-alpha01 or above):
 
 1. Build the app with our old schema, and `version = 1`.
 2. Add `automigrations = [AutoMigration(from = 1, to = 2)]` into the `@Database` annotation.
 3. Build the app with our new schema, and `version = 2`.
-4. You should now be able to open a Room generated `CarDatabase_AutoMigration_1_2_Impl.java` file, containing Room’s best guess at migration.
+4. You should now be able to open a Room generated `CarDatabase_AutoMigration_1_2_Impl.java` file, containing Room's best guess at migration.
 
 This migration script contains 2 main parts:
 
@@ -195,14 +195,14 @@ Our database is now being migrated, and we have control over the process! Next s
 
 Before we remove our `components` column, we need to pull all of the existing data out of it.
 
-To do this, we’re going to:
+To do this, we're going to:
 
 1. Fetch every `Car`‘s `id` and its serialised `List<Component>`.
 2. Parse this serialised data back into useful objects.
 3. Update every `Component`‘s `carId` so it is linked with the `Car`.
 4. Return this list of updated `Component`s.
 
-We’ll extract most of this complexity into a `cursorToComponents` function, called via:
+We'll extract most of this complexity into a `cursorToComponents` function, called via:
 
 ```
 override fun migrate(database: SupportSQLiteDatabase) {
@@ -240,7 +240,7 @@ private fun cursorToComponents(cursor: Cursor): List<Component> {
 }
 ```
 
-It’s worth mentioning this `ComponentTypeConverter` is a `TypeAdapter`, whatever was previously used to store the `List<Component>` can be reused. The bare minimum needed is:
+It's worth mentioning this `ComponentTypeConverter` is a `TypeAdapter`, whatever was previously used to store the `List<Component>` can be reused. The bare minimum needed is:
 
 ```
 @TypeConverter
@@ -253,9 +253,9 @@ fun toComponents(jsonComponents: String): List<Component> {
 
 ### Step 3.3: Storing the updated data
 
-We’re nearly there! After step 3.2, we have a list of updated components. Once the schema changes in step 3.1 are performed, we can add our data back in.
+We're nearly there! After step 3.2, we have a list of updated components. Once the schema changes in step 3.1 are performed, we can add our data back in.
 
-To do this, we’re unfortunately going to need to manually write some SQL for an `insertComponents` function. We can make this a bit easier, and much safer, by using prepared statements:
+To do this, we're unfortunately going to need to manually write some SQL for an `insertComponents` function. We can make this a bit easier, and much safer, by using prepared statements:
 
 ```
 private fun insertComponents(database: SupportSQLiteDatabase, components: List<Component>) {
@@ -275,7 +275,7 @@ private fun insertComponents(database: SupportSQLiteDatabase, components: List<C
 }
 ```
 
-As you can see, the SQL isn’t at all complex, we’re just looping through every component object and inserting it in our updated database.
+As you can see, the SQL isn't at all complex, we're just looping through every component object and inserting it in our updated database.
 
 ### Step 3.4: Putting the pieces together
 
@@ -312,16 +312,16 @@ As mentioned previously, we need to pull the existing data, update the schema, t
 
 ## Summary
 
-You’re done! Of course, there’ll likely be some minor issues here and there before it all works flawlessly, and the following section should help with that.
+You're done! Of course, there'll likely be some minor issues here and there before it all works flawlessly, and the following section should help with that.
 
-Overall, whilst this solution isn’t as neat as it could be, I’m pretty happy that it **works**! I wasn’t sure if this migration was possible initially, and hopefully this guide saves others the same trial and error that I did.
+Overall, whilst this solution isn't as neat as it could be, I'm pretty happy that it **works**! I wasn't sure if this migration was possible initially, and hopefully this guide saves others the same trial and error that I did.
 
-If this “extract column into table” process is a regular occurrence there are many potential improvements, such as:
+If this "extract column into table" process is a regular occurrence there are many potential improvements, such as:
 
 - Better error handling for the entire process, besides a blind try/catch.
-- A “Please wait, updating” screen to avoid any user interactions during this process.
+- A "Please wait, updating" screen to avoid any user interactions during this process.
 - Performing this upgrade as a WorkManager task silently in the background.
-- Tidying up the code in general, as it’s still fairly “proof of concept”.
+- Tidying up the code in general, as it's still fairly "proof of concept".
 
 The finished files are available [as a GitHub gist](https://gist.github.com/JakeSteam/831c9ea7962f923a01d451e650918031), seeing an overview may help. Good luck!
 
@@ -329,7 +329,7 @@ The finished files are available [as a GitHub gist](https://gist.github.com/Jake
 
 ### Updating existing codebase
 
-Of course, these changes will break some existing code. Most are easy to fix, here’s a summary:
+Of course, these changes will break some existing code. Most are easy to fix, here's a summary:
 
 - Make sure you update every instance where `Component`s are created to now have a `carId`, otherwise they will become orphaned in the database.
 - Every call to `car.type` etc will now need to use `car.metadata.type`.
@@ -366,15 +366,15 @@ Similarly, I had issues with needing to serialise the type of a sealed class, lu
 
 ### Debugging
 
-It’s really, really, really important to **test** this migration extremely carefully. I’d recommend [inspecting your Room database](https://developer.android.com/studio/inspect/database#open) before and after migration multiple times, with every possible combination of your data.
+It's really, really, really important to **test** this migration extremely carefully. I'd recommend [inspecting your Room database](https://developer.android.com/studio/inspect/database#open) before and after migration multiple times, with every possible combination of your data.
 
 ### Transactions &amp; time
 
 One bit that initially tripped me up is the migration will only be performed the first time the **database is accessed**, not on app startup.
 
-The migration process was relatively quick, with &lt;10ms to parse &amp; insert each `Component` meaning a total time of 1-2s. Your time will obviously depend on the data size and complexity, but this approach’s speed seems OK for up to 100-200 rows.
+The migration process was relatively quick, with &lt;10ms to parse &amp; insert each `Component` meaning a total time of 1-2s. Your time will obviously depend on the data size and complexity, but this approach's speed seems OK for up to 100-200 rows.
 
-Various comments online indicate Room executes migrations in a transaction, however I’m not certain. Assuming this is true, this means any failed migration will automatically rollback, and be tried again the next time the database is accessed.
+Various comments online indicate Room executes migrations in a transaction, however I'm not certain. Assuming this is true, this means any failed migration will automatically rollback, and be tried again the next time the database is accessed.
 
 ## Further reading / references
 

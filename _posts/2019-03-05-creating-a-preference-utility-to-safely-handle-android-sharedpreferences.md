@@ -35,7 +35,7 @@ The `PreferenceHelper` class needs to be constructed with a context, as preferen
 
 For each data type (just `boolean`, `string`, and `integer` in this example), 3 things are needed:
 
-1. An enum of all preferences of this type, defining both the preference’s key and default value.
+1. An enum of all preferences of this type, defining both the preference's key and default value.
 2. A getter, which can be passed an enum to return either the saved value or the predetermined default value.
 3. A setter, which can be passed an enum as well as a value, to then save that value.
 
@@ -58,7 +58,7 @@ class PreferenceHelper(val context: Context) {
 }
 ```
 
-This can of course be easily extended to cover strings and integers, as in [this article’s Gist](https://gist.github.com/JakeSteam/0dd41b8ffeedbc8d0d21b182f9e60357#file-preferenceshelper-kt).
+This can of course be easily extended to cover strings and integers, as in [this article's Gist](https://gist.github.com/JakeSteam/0dd41b8ffeedbc8d0d21b182f9e60357#file-preferenceshelper-kt).
 
 ## Using utility
 
@@ -76,4 +76,4 @@ val myString = prefHelper.getStringPref(PreferenceHelper.StringPref.setting1)
 prefHelper.setStringPref(PreferenceHelper.StringPref.setting1, "abc")
 ```
 
-As enums are used for the preferences, it’s impossible to pass a string reference to `getBooleanPref`, and vice versa. This means preferences can be saved and accessed with complete certainty of their datatype and default value.
+As enums are used for the preferences, it's impossible to pass a string reference to `getBooleanPref`, and vice versa. This means preferences can be saved and accessed with complete certainty of their datatype and default value.

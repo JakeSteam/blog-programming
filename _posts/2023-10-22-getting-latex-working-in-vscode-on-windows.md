@@ -165,7 +165,7 @@ This was far more complicated than it needed to be. I admittedly made it harder 
 The [LaTeX Project](https://www.latex-project.org/) does do a good job from the documentation side, providing a high level overview without unnecessary technical detail. However, as soon as you click "Get", and are met by multiple ways of getting multiple distributions for multiple OS... it falls apart. 
 
 The very first section starts off extremely promising, drawing complete newcomers in with this wording:
-> If you’re new to TeX and LaTeX or just want an easy installation, get a full TeX distribution. The TeX Users Group (TUG) has a list of notable distributions that are entirely, or least primarily, free software.
+> If you're new to TeX and LaTeX or just want an easy installation, get a full TeX distribution. The TeX Users Group (TUG) has a list of notable distributions that are entirely, or least primarily, free software.
 
 Unfortunately, the link takes me to `tug.org`, which is actually timing out for me currently. Once it came back up, the result is not very intuitive. Is one of these better? Is one of them awful? No idea. Whilst I know from elsewhere that the top option is 100% what I want, I could easily have picked an incorrect option!
 

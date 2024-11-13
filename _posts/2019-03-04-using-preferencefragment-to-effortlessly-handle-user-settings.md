@@ -14,13 +14,13 @@ tags:
 
 Handling user settings in an Android app is initially quite straightforward. Most apps use SharedPreferences to save a few booleans or strings, then read these values when necessary.
 
-A downside of this is a lack of safety. You might save the user’s name under “Username”, then retrieve it as “UserName”, resulting in never managing to retrieve the name! You also have to create all the switches, text fields, and sliders yourself. Luckily, PreferenceFragment provides an easy way to safely show and change user preferences.
+A downside of this is a lack of safety. You might save the user's name under "Username", then retrieve it as "UserName", resulting in never managing to retrieve the name! You also have to create all the switches, text fields, and sliders yourself. Luckily, PreferenceFragment provides an easy way to safely show and change user preferences.
 
 There is an [entire sample project available on GitHub](https://github.com/JakeSteam/PreferencesExample), ([and a Gist](https://gist.github.com/JakeSteam/6937ef3b6c217a330ec4822dd8c5d1bf)) for those that prefer to just see the code. Note that some of the code is in Kotlin, but most is XML.
 
 ## Preparing your project
 
-Whilst we will be using PreferenceFragment in this example, we’ll actually be using PreferenceFragmentCompat to ensure the app looks great on earlier API versions.
+Whilst we will be using PreferenceFragment in this example, we'll actually be using PreferenceFragmentCompat to ensure the app looks great on earlier API versions.
 
 To add the preference library, add the following to your app-level `build.gradle`‘s dependencies and perform a Gradle sync:
 
@@ -32,20 +32,20 @@ implementation 'com.android.support:preference-v7:28.0.0'
 
 Every setting in your list needs to have a few strings defined. I recommend doing this in a separate `preferences.xml` file, to avoid them mixing with your localised strings, but this is personal preference.
 
-For booleans and strings, you need 4 things. In this example, we’re configuring a “Use mobile data” boolean switch:
+For booleans and strings, you need 4 things. In this example, we're configuring a "Use mobile data" boolean switch:
 
-1. An internal reference (the preference’s name in SharedPreferences), e.g. `<string name="pref_useMobileData">useMobileData</string>`.
+1. An internal reference (the preference's name in SharedPreferences), e.g. `<string name="pref_useMobileData">useMobileData</string>`.
 2. A default value, e.g. `<bool name="pref_useMobileData_default">false</bool>`.
 3. A title to be displayed to the user, e.g. `<string name="useMobileData_title">Use mobile data</string>`.
 4. A description to be displayed to the user, e.g. `<string name="useMobileData_desc">Sync on mobile networks as well as wifi</string>`.
 
-Notice that the default value isn’t a string, and is the datatype of the preference. For numerical settings, there are a few additional parameters required so that a value slider can be displayed:
+Notice that the default value isn't a string, and is the datatype of the preference. For numerical settings, there are a few additional parameters required so that a value slider can be displayed:
 
 1. The minimum value, e.g. `<integer name="pref_myInt_min">1</integer>`.
 2. The maximum value, e.g. `<integer name="pref_myInt_max">10</integer>`.
 3. The step value (how much the number can be changed by), e.g. `<integer name="pref_myInt_step">1</integer>`.
 
-I’ve previously had problems getting step to be obeyed, but minimum and maximum work reliably. Here’s a complete example of an example integer preference:
+I've previously had problems getting step to be obeyed, but minimum and maximum work reliably. Here's a complete example of an example integer preference:
 
 ```
 <string name="pref_int1">int1</string>
@@ -59,9 +59,9 @@ I’ve previously had problems getting step to be obeyed, but minimum and maximu
 
 ## Configuring your preference UI
 
-Now that your strings are all prepared, you can create a UI out of them. Inside the `/res/xml/` folder, create an XML file to configure your preferences screen. I’ve named mine `preferences_ui.xml`.
+Now that your strings are all prepared, you can create a UI out of them. Inside the `/res/xml/` folder, create an XML file to configure your preferences screen. I've named mine `preferences_ui.xml`.
 
-This XML file defines a `PreferenceScreen` root object, and then contains multiple `Preference`, `PreferenceScreen`, or `PreferenceCategory`s. Here’s an example of each in action:
+This XML file defines a `PreferenceScreen` root object, and then contains multiple `Preference`, `PreferenceScreen`, or `PreferenceCategory`s. Here's an example of each in action:
 
 ```
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
@@ -91,7 +91,7 @@ This XML file defines a `PreferenceScreen` root object, and then contains multip
 
 ### PreferenceScreen
 
-Whilst a `PreferenceScreen` is the root of your UI, it can also be used to [nest additional screens of preferences](https://developer.android.com/reference/android/preference/PreferenceScreen) inside your main layout. Additionally, it can be used to open a desired URL, such as an app’s code repository (with the URL stored in `strings.xml`):
+Whilst a `PreferenceScreen` is the root of your UI, it can also be used to [nest additional screens of preferences](https://developer.android.com/reference/android/preference/PreferenceScreen) inside your main layout. Additionally, it can be used to open a desired URL, such as an app's code repository (with the URL stored in `strings.xml`):
 
 ```
 <PreferenceScreen
@@ -111,7 +111,7 @@ When dealing with many options, grouping them into categories helps associate re
 
 ### Preference
 
-Preferences are what handle the actual value changing. There’s a `SwitchPreference` for booleans, `EditTextPreference` for strings, and a `SeekBarPreference` for integers among others. What they all have in common is the following attributes:
+Preferences are what handle the actual value changing. There's a `SwitchPreference` for booleans, `EditTextPreference` for strings, and a `SeekBarPreference` for integers among others. What they all have in common is the following attributes:
 
 - `android:key`: The setting identifier. This should be your internal reference from earlier, e.g. `pref_useMobileData`.
 - `android:defaultValue`: The default value. This should be your default value from earlier, e.g. `false`.
@@ -135,7 +135,7 @@ class PrefsFragment : PreferenceFragmentCompat() {
 
 ## Navigating to your fragment
 
-Next, add a link to your soon-to-be-created settings fragment however you currently utilise fragments. For example, I have a `FrameLayout` in my XML called `fragment_frame`, so I replace that with my fragment inside my Activity’s `onCreate`:
+Next, add a link to your soon-to-be-created settings fragment however you currently utilise fragments. For example, I have a `FrameLayout` in my XML called `fragment_frame`, so I replace that with my fragment inside my Activity's `onCreate`:
 
 ```
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -148,13 +148,13 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-That’s it! You can now navigate to your settings page, and save and load as many booleans, integers, and strings as you like! However, there’s a lot of extra functionality that you’ll be missing out on…
+That's it! You can now navigate to your settings page, and save and load as many booleans, integers, and strings as you like! However, there's a lot of extra functionality that you'll be missing out on…
 
 ## Adding extra functionality
 
 ### Dependent boolean preferences
 
-`android:dependency` allows a setting to be disabled until another setting has been turned on. This is useful for disabling feature configuration until the setting is enabled. To use it, just add the enabling preference’s key as the `dependency` value on the preference being enabled. For example, to disable `boolean2` unless `boolean1` is turned on:
+`android:dependency` allows a setting to be disabled until another setting has been turned on. This is useful for disabling feature configuration until the setting is enabled. To use it, just add the enabling preference's key as the `dependency` value on the preference being enabled. For example, to disable `boolean2` unless `boolean1` is turned on:
 
 ```
 <SwitchPreference

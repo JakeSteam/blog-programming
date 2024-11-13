@@ -13,9 +13,9 @@ tags:
     - Wordpress
 ---
 
-Whilst trying to [RAMP](https://shop.crowdfavorite.com/ramp/) posts from your staging environment to live, or import posts using [WordPress Importer](https://en-gb.wordpress.org/plugins/wordpress-importer/), a lot of under-the-hood code has to be run. One of the safety checks included in this is comparing the expected size of files with the actual size. Whilst this usually passes without any issues, occasionally it can cause the transfer to fail, leading to the “Remote file is incorrect size” error.
+Whilst trying to [RAMP](https://shop.crowdfavorite.com/ramp/) posts from your staging environment to live, or import posts using [WordPress Importer](https://en-gb.wordpress.org/plugins/wordpress-importer/), a lot of under-the-hood code has to be run. One of the safety checks included in this is comparing the expected size of files with the actual size. Whilst this usually passes without any issues, occasionally it can cause the transfer to fail, leading to the "Remote file is incorrect size" error.
 
-This error is occasionally caused by a corrupted file or network issues, but in those cases trying again resolves the issue. If a retry doesn’t fix it, more drastic action has to be taken! Removing the error handling code is an extreme step, so should only be taken if nothing else fixes the issue. That being said, it does instantly solve the problem with no noticeable side effects.
+This error is occasionally caused by a corrupted file or network issues, but in those cases trying again resolves the issue. If a retry doesn't fix it, more drastic action has to be taken! Removing the error handling code is an extreme step, so should only be taken if nothing else fixes the issue. That being said, it does instantly solve the problem with no noticeable side effects.
 
 [![](/wp-content/uploads/2018/12/broken.png)](/wp-content/uploads/2018/12/broken.png)
 
@@ -64,4 +64,4 @@ Finally save your file, push it to your server, then try the importer / RAMP act
 
 [![](/wp-content/uploads/2018/12/cslrcIr.png)](/wp-content/uploads/2018/12/cslrcIr.png)
 
-Thanks to Codeboxr’s [Sabuj Kundu’s article](https://codeboxr.com/fix-remote-file-is-incorrect-size-for-wordpress-import-error/) for the WordPress Importer addition.
+Thanks to Codeboxr's [Sabuj Kundu's article](https://codeboxr.com/fix-remote-file-is-incorrect-size-for-wordpress-import-error/) for the WordPress Importer addition.

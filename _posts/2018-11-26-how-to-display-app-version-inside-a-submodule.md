@@ -11,9 +11,9 @@ tags:
     - Modules
 ---
 
-Usually, getting the current version code of your app is as simple as `BuildConfig.VERSION_CODE`. Easy! However, this doesn’t work if you want to retrieve your app’s version code whilst inside a submodule. Instead, the *submodule*‘s version code is returned.
+Usually, getting the current version code of your app is as simple as `BuildConfig.VERSION_CODE`. Easy! However, this doesn't work if you want to retrieve your app's version code whilst inside a submodule. Instead, the *submodule*‘s version code is returned.
 
-The solution is to use the package manager to get your application’s `PackageInfo`. Next, the `versionCode` and `versionName` can be retrieved (if in a fragment, replace `this` with `activity?`):
+The solution is to use the package manager to get your application's `PackageInfo`. Next, the `versionCode` and `versionName` can be retrieved (if in a fragment, replace `this` with `activity?`):
 
 ```
 try {
@@ -25,6 +25,6 @@ try {
 }
 ```
 
-Note that whilst technically a `NameNotFoundException` can be thrown, since you’re looking up your own app it’s a safe bet that it exists on the device! Additionally, there is a lot of other information available from the `PackageInfo` object returned, with no extra permissions required.
+Note that whilst technically a `NameNotFoundException` can be thrown, since you're looking up your own app it's a safe bet that it exists on the device! Additionally, there is a lot of other information available from the `PackageInfo` object returned, with no extra permissions required.
 
 [![](/wp-content/uploads/2018/11/info.png)](/wp-content/uploads/2018/11/info.png)

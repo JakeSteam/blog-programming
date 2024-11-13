@@ -12,7 +12,7 @@ tags:
     - Manifest
 ---
 
-Whilst it is possible to set a variable in your `AndroidManifest.xml` using `manifestPlaceholders` and setting the value in your `build.gradle`, it can often be useful to access these values in your code too. For example, I recently used this post’s technique to define a deep link path (defined in the manifest) and check the url’s path at runtime (checked in the code).
+Whilst it is possible to set a variable in your `AndroidManifest.xml` using `manifestPlaceholders` and setting the value in your `build.gradle`, it can often be useful to access these values in your code too. For example, I recently used this post's technique to define a deep link path (defined in the manifest) and check the url's path at runtime (checked in the code).
 
 Defining these variables twice is likely to cause future discrepancies, a much more reliable approach is to set them in the manifest and the code at the same time. Luckily, your build config can store custom values just as well as your manifest!
 
@@ -54,7 +54,7 @@ fun isDeeplink() = arguments.data.encodedPath == BuildConfig.DEEPLINK_PATH
 
 ## Adding a flavor / build type dependant variable
 
-This approach unfortunately won’t work by default if you utilise flavors or build types in your app. For this you need to add a `target` parameter to your function, inside `buildTypes { }` or `productFlavors { }`:
+This approach unfortunately won't work by default if you utilise flavors or build types in your app. For this you need to add a `target` parameter to your function, inside `buildTypes { }` or `productFlavors { }`:
 
 ```
 def addConstantTo = {target, constantName, constantValue ->
@@ -63,7 +63,7 @@ def addConstantTo = {target, constantName, constantValue ->
 }
 ```
 
-This new `target` parameter should always be set to `owner`, the behaviour of other two parameters is unchanged. For example, here’s a usage within product flavors:
+This new `target` parameter should always be set to `owner`, the behaviour of other two parameters is unchanged. For example, here's a usage within product flavors:
 
 ```
 productFlavors {
@@ -79,6 +79,6 @@ productFlavors {
     }
 ```
 
-Hopefully this makes it a bit easier to use flavor / build type specific variables in your apps. A common use is safely setting debug and release remote server URLs. Since the function just performs the same two actions as setting them manually, it’s unlikely to cause any side effects. Note that if you want to store anything besides a `String` inside your `BuildConfig` using this you’ll need to further modify the function.
+Hopefully this makes it a bit easier to use flavor / build type specific variables in your apps. A common use is safely setting debug and release remote server URLs. Since the function just performs the same two actions as setting them manually, it's unlikely to cause any side effects. Note that if you want to store anything besides a `String` inside your `BuildConfig` using this you'll need to further modify the function.
 
-Many thanks to [TmTron on StackOverflow for this solution](https://stackoverflow.com/a/40592469/608312), it’s definitely an underappreciated and elegant solution!
+Many thanks to [TmTron on StackOverflow for this solution](https://stackoverflow.com/a/40592469/608312), it's definitely an underappreciated and elegant solution!

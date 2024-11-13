@@ -12,9 +12,9 @@ tags:
     - ViewHolder
 ---
 
-Once you’ve created a RecyclerView with headers and content, it’s often useful to have the headers “sticky”. Sticky headers will display over the top of your content, and help your app’s users keep track of which section they are currently in.
+Once you've created a RecyclerView with headers and content, it's often useful to have the headers "sticky". Sticky headers will display over the top of your content, and help your app's users keep track of which section they are currently in.
 
-This tutorial will cover adding sticky headers to your existing implementation in just a few lines using [qiujayen’s Sticky-LayoutManager library](https://github.com/qiujayen/sticky-layoutmanager). If you haven’t yet created a RecyclerView, I’ve [previously written a tutorial on creating RecyclerViews](https://blog.jakelee.co.uk/creating-a-recyclerview-with-multiple-content-types-and-layouts-in-kotlin) with multiple content types which may be useful.
+This tutorial will cover adding sticky headers to your existing implementation in just a few lines using [qiujayen's Sticky-LayoutManager library](https://github.com/qiujayen/sticky-layoutmanager). If you haven't yet created a RecyclerView, I've [previously written a tutorial on creating RecyclerViews](https://blog.jakelee.co.uk/creating-a-recyclerview-with-multiple-content-types-and-layouts-in-kotlin) with multiple content types which may be useful.
 
 ## Adding StickyLayoutManager library
 
@@ -58,6 +58,6 @@ recyclerView.adapter = ContentAdapter()
 recyclerView.layoutManager = StickyHeadersLinearLayoutManager<ContentAdapter>(this)
 ```
 
-That’s it! This tutorial is [available as a GitHub repo](https://github.com/JakeSteam/StickyHeaders).
+That's it! This tutorial is [available as a GitHub repo](https://github.com/JakeSteam/StickyHeaders).
 
 [![](/wp-content/uploads/2019/01/Screenshot_20190128-232345.png)](/wp-content/uploads/2019/01/Screenshot_20190128-232345.png)

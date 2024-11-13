@@ -23,7 +23,7 @@ If you'd like to skip aaaaallll the personal information, back-story, and explan
 2. **Be honest with yourself about burnout.**
 3. **Supportive colleagues are essential.**
 4. **Pay attention to your job market.**
-5. **Don’t be blinded by the money.**
+5. **Don't be blinded by the money.**
 6. **Try out different employer & team types.**
 7. **If a job seems too good to be true… you might as well interview!**
 

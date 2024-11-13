@@ -15,7 +15,7 @@ tags:
 
 After recently struggling to make a small modification to a simple translucent overlay, I decided to experiment with gradients in Android drawables. After a few hours, I discovered a few new possibilities! Drawable gradients seem to be rarely used despite their simple syntax, with people preferring to use SVGs or static images.
 
-I’ve included a few example outputs in this post, hopefully these help those struggling to create a gradient. I also recommend taking a look at [AngryTools’ gradient generator](https://angrytools.com/gradient/) (Android tab), to easily generate the XML for simpler gradients automatically.
+I've included a few example outputs in this post, hopefully these help those struggling to create a gradient. I also recommend taking a look at [AngryTools' gradient generator](https://angrytools.com/gradient/) (Android tab), to easily generate the XML for simpler gradients automatically.
 
 This post is also [available as a GitHub repo](https://github.com/JakeSteam/android-gradient-playground).
 
@@ -87,7 +87,7 @@ This post is also [available as a GitHub repo](https://github.com/JakeSteam/andr
 &lt;/layer-list&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Radial gradients</strong> <br>So far we've only seen linear gradients, now we'll use radial gradients. The easiest way of thinking about them is as a “point” of colour, radiating out. <code>centerX</code> and <code>centerY</code> can be used to move this point anywhere on the canvas, in this case 10% from the left and 10% from the top.  Again, the <code>startColor</code>, <code>centerColor</code>, and <code>endColor</code> are used to set the colour, along with <code>gradientRadius</code> being used to set the overall size of the gradient.</td>
+        <td><strong>Radial gradients</strong> <br>So far we've only seen linear gradients, now we'll use radial gradients. The easiest way of thinking about them is as a "point" of colour, radiating out. <code>centerX</code> and <code>centerY</code> can be used to move this point anywhere on the canvas, in this case 10% from the left and 10% from the top.  Again, the <code>startColor</code>, <code>centerColor</code>, and <code>endColor</code> are used to set the colour, along with <code>gradientRadius</code> being used to set the overall size of the gradient.</td>
         <td><a href="/assets/images/2024/gradient-radialgradients.png"><img src="/assets/images/2024/gradient-radialgradients.png"></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:shape=&quot;rectangle&quot;&gt;
@@ -95,7 +95,7 @@ This post is also [available as a GitHub repo](https://github.com/JakeSteam/andr
 &lt;/shape&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Floating blobs</strong> <br>Combining multiple radial gradients using the same overlapping technique as our “vertical rainbow” before, we can end up with this collection of floating blobs. This effect is often hunted for by people looking to create an Instagram style logo, and is very easy to achieve. So long as you know your colours, it's just a matter of adjusting the radius, x position, and y position until each blob is in the correct place. I used this to <a href="https://stackoverflow.com/a/63162666/608312">answer a question on StackOverflow</a>, and the OP raised a reasonable counterpoint. If you need a particularly complex gradient, you could just try exporting an SVG / PNG. However, with vector graphics sometimes gradients aren't translated properly, and a PNG will either be too large, or may not scale perfectly to the user's screen. If possible, creating an image as a gradient drawable will ensure it is perfect!</td>
+        <td><strong>Floating blobs</strong> <br>Combining multiple radial gradients using the same overlapping technique as our "vertical rainbow" before, we can end up with this collection of floating blobs. This effect is often hunted for by people looking to create an Instagram style logo, and is very easy to achieve. So long as you know your colours, it's just a matter of adjusting the radius, x position, and y position until each blob is in the correct place. I used this to <a href="https://stackoverflow.com/a/63162666/608312">answer a question on StackOverflow</a>, and the OP raised a reasonable counterpoint. If you need a particularly complex gradient, you could just try exporting an SVG / PNG. However, with vector graphics sometimes gradients aren't translated properly, and a PNG will either be too large, or may not scale perfectly to the user's screen. If possible, creating an image as a gradient drawable will ensure it is perfect!</td>
         <td><a href="/assets/images/2024/gradient-floatingblobs.png"><img src="/assets/images/2024/gradient-floatingblobs.png"></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
@@ -132,13 +132,13 @@ This post is also [available as a GitHub repo](https://github.com/JakeSteam/andr
 &lt;/layer-list&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Sweep gradient</strong> <br>The final type of gradients are sweep. These don’t seem to make sense at first glance, I find the easiest way of thinking of them is as a “cone” shaped linear gradient, viewed from above. However you interpret them, they still use all the attributes we’ve picked up in previous gradients.</td>
+        <td><strong>Sweep gradient</strong> <br>The final type of gradients are sweep. These don't seem to make sense at first glance, I find the easiest way of thinking of them is as a "cone" shaped linear gradient, viewed from above. However you interpret them, they still use all the attributes we've picked up in previous gradients.</td>
         <td><a href="/assets/images/2024/gradient-sweepgradient.png"><img src="/assets/images/2024/gradient-sweepgradient.png" alt=""></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  android:shape=&quot;rectangle&quot;&gt;  &lt;gradientandroid:startColor=&quot;@android:color/holo_blue_dark&quot;android:endColor=&quot;@android:color/holo_orange_dark&quot;android:type=&quot;sweep&quot; /&gt; &lt;/shape&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Sweep offsets</strong> <br>Whilst not quite as pretty as the “rainbow” or “floating blobs” seen with other gradients, offsetting radial drawables creates a pretty odd effect.  I’m not <strong>entirely</strong> sure I can think of a valid use case for this, but presumably someone needs a gradient that looks like an open doorway!</td>
+        <td><strong>Sweep offsets</strong> <br>Whilst not quite as pretty as the "rainbow" or "floating blobs" seen with other gradients, offsetting radial drawables creates a pretty odd effect.  I'm not <strong>entirely</strong> sure I can think of a valid use case for this, but presumably someone needs a gradient that looks like an open doorway!</td>
         <td><a href="/assets/images/2024/gradient-sweepoffsets.png"><img src="/assets/images/2024/gradient-sweepoffsets.png" alt=""></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
@@ -175,7 +175,7 @@ This post is also [available as a GitHub repo](https://github.com/JakeSteam/andr
 &lt;/layer-list&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Sweep rotations</strong> <br>Just like the last gradient, I can’t think of a valid use case for this! Wrapping each <code>shape</code> inside a <code>rotate</code> allows rotating it at any angle, although interestingly it still retains the “edges” from the original shape. I suspect this is solvable by rotating the gradient not the shape, which might produce a more aesthetically pleasing output.</td>
+        <td><strong>Sweep rotations</strong> <br>Just like the last gradient, I can't think of a valid use case for this! Wrapping each <code>shape</code> inside a <code>rotate</code> allows rotating it at any angle, although interestingly it still retains the "edges" from the original shape. I suspect this is solvable by rotating the gradient not the shape, which might produce a more aesthetically pleasing output.</td>
         <td><a href="/assets/images/2024/gradient-sweeprotations.png"><img src="/assets/images/2024/gradient-sweeprotations.png" alt=""></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
@@ -222,7 +222,7 @@ This post is also [available as a GitHub repo](https://github.com/JakeSteam/andr
 &lt;/layer-list&gt;</code></pre></td>
     </tr>
     <tr>
-        <td><strong>Sweep split</strong> <br>Finally, one little curiosity about sweep gradients. By offsetting the <code>centerX</code> very far to the left, you’ll end up with a top and bottom that are solid colours. This creates an interesting effect, although it could obviously be done much easier by using <code>solid</code>! If you need a similar gradient, I recommend reading the <a href="https://stackoverflow.com/questions/4381033/multi-gradient-shapes">answers on this StackOverflow question</a> for simpler ways of achieving it.</td>
+        <td><strong>Sweep split</strong> <br>Finally, one little curiosity about sweep gradients. By offsetting the <code>centerX</code> very far to the left, you'll end up with a top and bottom that are solid colours. This creates an interesting effect, although it could obviously be done much easier by using <code>solid</code>! If you need a similar gradient, I recommend reading the <a href="https://stackoverflow.com/questions/4381033/multi-gradient-shapes">answers on this StackOverflow question</a> for simpler ways of achieving it.</td>
         <td><a href="/assets/images/2024/gradient-sweepsplit.png"><img src="/assets/images/2024/gradient-sweepsplit.png" alt=""></a></td>
         <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
 &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  android:shape=&quot;rectangle&quot;&gt;

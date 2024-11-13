@@ -123,7 +123,7 @@ Each of these types should also have an XML layout:
 
 ## Creating the view holder classes
 
-Each content type’s ViewHolder should map the UI elements that need to be populated to a local variable that can be referenced later:
+Each content type's ViewHolder should map the UI elements that need to be populated to a local variable that can be referenced later:
 
 ```
 class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -266,6 +266,6 @@ private fun getSampleRows(numSections: Int): List<ContentAdapter.IRow> {
 
 ## Conclusion
 
-Hopefully after checking out [the repository](https://github.com/JakeSteam/StickyHeaders/tree/remove-stickyheaders) or [the Gist](https://gist.github.com/JakeSteam/97a827d4d7ccced73fed798025f61ea1) of this tutorial, the approach makes sense. In general, RecyclerViews are extremely powerful, and should almost always be used when there’s a dynamic list of content to be displayed, whether finite or infinite.
+Hopefully after checking out [the repository](https://github.com/JakeSteam/StickyHeaders/tree/remove-stickyheaders) or [the Gist](https://gist.github.com/JakeSteam/97a827d4d7ccced73fed798025f61ea1) of this tutorial, the approach makes sense. In general, RecyclerViews are extremely powerful, and should almost always be used when there's a dynamic list of content to be displayed, whether finite or infinite.
 
 This approach is easily extendable, and a future post will cover easily adding sticky headers to this RecyclerView implementation. Good luck!

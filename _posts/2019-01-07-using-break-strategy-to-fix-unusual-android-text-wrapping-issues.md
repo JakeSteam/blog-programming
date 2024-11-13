@@ -12,7 +12,7 @@ tags:
     - UI
 ---
 
-An easy way of creating simple, aligned layouts in XML is using a TableLayout and TableRows. This works excellently for most situations, but unfortunately has a few quirks when it comes to handling TextView text wrapping. Recently a bug report was received where very long emails addresses weren’t displayed correctly, and flowed offscreen.
+An easy way of creating simple, aligned layouts in XML is using a TableLayout and TableRows. This works excellently for most situations, but unfortunately has a few quirks when it comes to handling TextView text wrapping. Recently a bug report was received where very long emails addresses weren't displayed correctly, and flowed offscreen.
 
 This post will cover how to fix the text flowing off screen, and the subsequent wrapping issue encountered. Just for reference, this is how the TextView in a TableRow looked when populated with a long word (in this case an email address):
 
@@ -47,15 +47,15 @@ The TableLayout itself should also have `android:stretchColumns="*"` (or your sp
 
 ## Fixing text not filling TextView
 
-Our text is now wrapping correctly but.. not in the way we’d expect! Despite how it looks, the TextView is correctly taking up all available space (this can be verified by viewing bounds or setting a background colour), it’s the text itself misbehaving.
+Our text is now wrapping correctly but.. not in the way we'd expect! Despite how it looks, the TextView is correctly taking up all available space (this can be verified by viewing bounds or setting a background colour), it's the text itself misbehaving.
 
-This is caused by Android’s default [break strategy](https://developer.android.com/reference/android/widget/TextView.html#attr_android:breakStrategy) handling long words poorly. The break strategy determines how a word should be broken if it cannot fit all in one line, and can be `simple`, `balanced` (default) or `high_quality`. `balanced` is trying to make all lines the same length, which is not really what we want. Instead we want `simple`, to just start a new line when it’s needed.
+This is caused by Android's default [break strategy](https://developer.android.com/reference/android/widget/TextView.html#attr_android:breakStrategy) handling long words poorly. The break strategy determines how a word should be broken if it cannot fit all in one line, and can be `simple`, `balanced` (default) or `high_quality`. `balanced` is trying to make all lines the same length, which is not really what we want. Instead we want `simple`, to just start a new line when it's needed.
 
 So, just adding `android:breakStrategy="simple"` to your TextView will make the text wrap as expected. However, this is only available on API levels 23+, so you may want to create a style of this in your `styles.xml` and apply it to your TextView for API levels &gt; M, so at least those versions wrap correctly:
 
 [![](/wp-content/uploads/2019/01/Screenshot_20190106-010215.png)](/wp-content/uploads/2019/01/Screenshot_20190106-010215.png)
 
-Here’s the final XML, for completeness’ sake:
+Here's the final XML, for completeness' sake:
 
 ```
 <TableRow

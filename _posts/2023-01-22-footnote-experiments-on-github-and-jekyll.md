@@ -24,7 +24,7 @@ All of a page's footnotes are merged together & numbered automatically during th
 If you'd like a more detailed & step-by-step explanation of the basics of footnotes in Markdown, Linux Hint has [an excellent guide](https://linuxhint.com/markdown-footnotes/).
 
 [^footnote-definition]: Non-essential information such as the fact that Grammarly describes footnotes as 
-    > Footnotes are small notations at the bottom of a page that provide additional information or cite the source of a passage in the page’s text.
+    > Footnotes are small notations at the bottom of a page that provide additional information or cite the source of a passage in the page's text.
     [^grammarly]
 
 [^grammarly]: <https://www.grammarly.com/blog/footnotes/>

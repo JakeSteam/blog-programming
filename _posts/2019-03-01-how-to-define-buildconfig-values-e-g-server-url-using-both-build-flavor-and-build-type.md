@@ -11,13 +11,13 @@ tags:
     - Gradle
 ---
 
-When creating an app, build variants are almost always used to some degree. For example, working on a `debug` build during development but publishing a `release` build. These `buildTypes` are a good way of distinguishing between multiple environments your app may run in. You’ll often have a QA `buildType` that talks to a different server than your live app. Setting server URLs for each `buildType` is a very common practice, and is usually enough.
+When creating an app, build variants are almost always used to some degree. For example, working on a `debug` build during development but publishing a `release` build. These `buildTypes` are a good way of distinguishing between multiple environments your app may run in. You'll often have a QA `buildType` that talks to a different server than your live app. Setting server URLs for each `buildType` is a very common practice, and is usually enough.
 
 However, some apps have multiple flavours, such as an app that is [branded with different colours](/how-to-handle-colours-logically-in-a-multi-flavour-android-app/) for multiple clients. The problem arises when these two approaches are combined, and a wildly different server URL is needed for every combination of flavour and `buildType`.
 
 ## Approach
 
-There are a few different solutions to this problem, some more elegant than others. This post will cover an implementation of Alex Kucherenko’s excellent [StackOverflow answer](https://stackoverflow.com/a/47199250). An example implementation project is [available on GitHub](https://github.com/JakeSteam/CombinedBuildConfigVariables).
+There are a few different solutions to this problem, some more elegant than others. This post will cover an implementation of Alex Kucherenko's excellent [StackOverflow answer](https://stackoverflow.com/a/47199250). An example implementation project is [available on GitHub](https://github.com/JakeSteam/CombinedBuildConfigVariables).
 
 The core idea of the approach is to define a dictionary of key-value pairs called `serverUrl` inside each product flavour. This will contain every `buildType` as a key, and the appropriate server URL as the value. Then, a function will determine the correct URL to use during the build.
 
@@ -72,6 +72,6 @@ applicationVariants.all { variant ->
 
 This approach can be used for much more than just server URLs, and the BuildConfig setting function is generic enough that new build variant specific variables can be added just by adding a new line.
 
-Note that [some alternative approaches](https://stackoverflow.com/a/30486355) use large if / else trees, by checking what the final build name starts with or contains. An issue with this is if you assume any build with “qa” in should get a QA url, what happens if you make a version for a client called “Kwiqapps”? They’re always going to get QA builds! The approach in this post is safe to use, regardless of the flavour or build type name.
+Note that [some alternative approaches](https://stackoverflow.com/a/30486355) use large if / else trees, by checking what the final build name starts with or contains. An issue with this is if you assume any build with "qa" in should get a QA url, what happens if you make a version for a client called "Kwiqapps"? They're always going to get QA builds! The approach in this post is safe to use, regardless of the flavour or build type name.
 
 *Shoutout to David Medenjak, who posted [a very similar approach](https://blog.davidmedenjak.com/android/2016/11/09/build-variants.html) I came across just as I was finishing this article!*

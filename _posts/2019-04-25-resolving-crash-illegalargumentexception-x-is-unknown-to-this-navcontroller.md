@@ -12,16 +12,16 @@ tags:
     - Navigation
 ---
 
-Google’s [AndroidX navigation libraries](https://developer.android.com/guide/navigation/navigation-getting-started) are undoubtedly extremely useful, however they have a few quirks. For example, the following stack trace recently started showing up in my [Crashlytics crash logs](/ensuring-your-android-apps-quality-with-firebase-crashlytics/):
+Google's [AndroidX navigation libraries](https://developer.android.com/guide/navigation/navigation-getting-started) are undoubtedly extremely useful, however they have a few quirks. For example, the following stack trace recently started showing up in my [Crashlytics crash logs](/ensuring-your-android-apps-quality-with-firebase-crashlytics/):
 
 ```
 Fatal Exception: java.lang.IllegalArgumentException
 navigation destination com.example.myapp:id/myActionId is unknown to this NavController
 ```
 
-I couldn’t figure out how it was happening, as all other logging seemed normal. It was happening very rarely on a wide variety of devices, and the root cause was a little surprising. When navigating to another fragment using `myNavController.navigate(R.id.myFragment, bundle)`, a crash happens if two navigation events are triggered close together. This often happens if you have a list of links, and the user (accidentally) presses on two at once.
+I couldn't figure out how it was happening, as all other logging seemed normal. It was happening very rarely on a wide variety of devices, and the root cause was a little surprising. When navigating to another fragment using `myNavController.navigate(R.id.myFragment, bundle)`, a crash happens if two navigation events are triggered close together. This often happens if you have a list of links, and the user (accidentally) presses on two at once.
 
-This is caused by the navigation controller changing the user’s location in the app to the destination immediately. This means the second navigation click can’t find the navigation action, as the action is not available on the destination fragment. For example, if a fragment has nav graph actions to go to SubFragmentA and SubFragmentB, pressing both links at once will result in:
+This is caused by the navigation controller changing the user's location in the app to the destination immediately. This means the second navigation click can't find the navigation action, as the action is not available on the destination fragment. For example, if a fragment has nav graph actions to go to SubFragmentA and SubFragmentB, pressing both links at once will result in:
 
 1. First, NavController receives SubFragmentA navigation event whilst on Fragment1.
 2. The NavController looks up navigation event on Fragment1, and finds it.

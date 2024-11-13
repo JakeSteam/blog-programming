@@ -11,7 +11,7 @@ tags:
     - Tiles
 ---
 
-Whilst building a turn based strategy shooter, weapons needed to have “ideal ranges”. For example, a melee weapon should only work from 1 tile away, a shotgun should prefer short ranges, a sniper rifle should prefer long ranges, etc. The non-melee weapons should still work outside of their ideal range, but with reduced damage.
+Whilst building a turn based strategy shooter, weapons needed to have "ideal ranges". For example, a melee weapon should only work from 1 tile away, a shotgun should prefer short ranges, a sniper rifle should prefer long ranges, etc. The non-melee weapons should still work outside of their ideal range, but with reduced damage.
 
 ## The Solution
 
@@ -26,11 +26,11 @@ These are the minimum and maximum ranges for each type of weapon, along with how
 | Medium | 5 | 7 | 3 |
 | Long | 8 | 15 | 8 |
 
-For this post a consistent set of test values will be used: 1, 2, 3, 5, 8, and 10 tiles away, providing a range of values that fall in and out of all weapon’s ideal ranges.
+For this post a consistent set of test values will be used: 1, 2, 3, 5, 8, and 10 tiles away, providing a range of values that fall in and out of all weapon's ideal ranges.
 
 ### Tiles Out Of Range
 
-First, if our test value is within a weapon’s ideal range, then it is 0 outside of ideal range. Alternatively, get the minimum absolute value of the difference between the value and the minimum and maximum bounds of the range. That was a bit of a mouthful, an example should clarify!
+First, if our test value is within a weapon's ideal range, then it is 0 outside of ideal range. Alternatively, get the minimum absolute value of the difference between the value and the minimum and maximum bounds of the range. That was a bit of a mouthful, an example should clarify!
 
 In this example the long weapon type (range 8-15 tiles) will be firing at a target 5 tiles away. 5 is -3 away from the minimum, 8, and -10 away from the maximum, 15. The absolute value of these two is 3 and 10, the minimum of which is 3. Via this rather convoluted process, the fact that the target is 3 tiles out of range is now known.
 
@@ -58,11 +58,11 @@ As before, the below table shows a full matrix of damage multiplier for each wea
 
 ### Damage
 
-Now, the final step! Simply multiply the weapon’s base damage by the multiplier to calculate the actual weapon damage dealt. For such a basic calculation no table is needed, but if the sample long distance weapon is assumed to deal 100 damage, we end up with the conclusion that the weapon will deal 38 damage to a target 5 tiles away. Melee weapons are also only effective 1 tile away.
+Now, the final step! Simply multiply the weapon's base damage by the multiplier to calculate the actual weapon damage dealt. For such a basic calculation no table is needed, but if the sample long distance weapon is assumed to deal 100 damage, we end up with the conclusion that the weapon will deal 38 damage to a target 5 tiles away. Melee weapons are also only effective 1 tile away.
 
 ### Misc
 
-Below I’ve quoted my rough notes for the formula, as a more concise but less clear version of the calculations above:
+Below I've quoted my rough notes for the formula, as a more concise but less clear version of the calculations above:
 
 > **Weapon Range** = (Maximum – Minimum) + 1.  
 > **Tiles Out Of Range** = If in range, then 0. Otherwise, the minimum (absolute) distance between the tile and the minimum or maximum.  
@@ -73,8 +73,8 @@ Additionally, a Java implementation is available as [a Gist](https://gist.github
 
 ## The Conclusion
 
-Whilst the actual use case is fairly niche, this post should indicate why a generic formula is often the preferred approach instead of hardcoding lookup tables. With the approach taken, adding a new weapon type or dynamically adjusting a weapon’s range is very easy, and the damage is quickly calculated.
+Whilst the actual use case is fairly niche, this post should indicate why a generic formula is often the preferred approach instead of hardcoding lookup tables. With the approach taken, adding a new weapon type or dynamically adjusting a weapon's range is very easy, and the damage is quickly calculated.
 
 The formula may be useful for anyone needing to calculate values that need to drop off outside of a specific range at a varying rate, based on the size of the range.
 
-Additionally, this was a “iteratively created” formula, where I essentially [played with variables](https://i.imgur.com/QO62X0P.png) in Excel / Google Sheets until I got values that matched what I wanted to see. As such, I strongly suspect some steps are inefficient, particularly when calculating how far out of range a target is.
+Additionally, this was a "iteratively created" formula, where I essentially [played with variables](https://i.imgur.com/QO62X0P.png) in Excel / Google Sheets until I got values that matched what I wanted to see. As such, I strongly suspect some steps are inefficient, particularly when calculating how far out of range a target is.

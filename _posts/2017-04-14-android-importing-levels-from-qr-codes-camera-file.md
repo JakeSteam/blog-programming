@@ -16,15 +16,15 @@ tags:
     - ZXing
 ---
 
-In a [previous post](/exporting-levels-into-qr-codes-using-zxing/), it was discussed how to export levels from an Android game (in this case [Connect Quest](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow)) so that other players could play them. Now that they’re exported, we need to be able to import them again! This post will explain how to import QR codes either directly from the camera, or embedded within an image on the file system.
+In a [previous post](/exporting-levels-into-qr-codes-using-zxing/), it was discussed how to export levels from an Android game (in this case [Connect Quest](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow)) so that other players could play them. Now that they're exported, we need to be able to import them again! This post will explain how to import QR codes either directly from the camera, or embedded within an image on the file system.
 
 ## The Solution
 
 #### Camera
 
-To avoid including a barcode reader, camera display, orientation tracking, and requiring the camera permission, we offload this responsibility to an existing app that is present on many phones, [Barcode Scanner by ZXing](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en_GB). Whilst there is a risk of the user not having this app installed, in my specific use case it wasn’t worth spending weeks reinventing the wheel for a little used feature. It is possible to embed ZXing and do the barcode scanning without a third party application.
+To avoid including a barcode reader, camera display, orientation tracking, and requiring the camera permission, we offload this responsibility to an existing app that is present on many phones, [Barcode Scanner by ZXing](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en_GB). Whilst there is a risk of the user not having this app installed, in my specific use case it wasn't worth spending weeks reinventing the wheel for a little used feature. It is possible to embed ZXing and do the barcode scanning without a third party application.
 
-When launching the barcode scanner, we also inform it (via the `SCAN_MODE` intent data) that we’re looking for QR Codes, to avoid it looking for other unrelated formats. If the user doesn’t have the application installed, we can’t scan, so we redirect the user to the store page for the ZXing app, and inform them what is happening.
+When launching the barcode scanner, we also inform it (via the `SCAN_MODE` intent data) that we're looking for QR Codes, to avoid it looking for other unrelated formats. If the user doesn't have the application installed, we can't scan, so we redirect the user to the store page for the ZXing app, and inform them what is happening.
 
 The following is set as the `onClick` action for an import button, the result will be received by `onActivityResult`, described later in this post.
 
@@ -49,7 +49,7 @@ A video of this in action is embedded below. Note the quick scanning of the QR c
 
 #### Photo
 
-Retrieving a photo is a little more complex than live scanning a QR code, but it’s done without requiring another application. First, the `onClick` method of the import button is called, and passes the permission required (`READ_EXTERNAL_STORAGE`) and work to do (`importFromFile()`) to a `runIfPossible` function.
+Retrieving a photo is a little more complex than live scanning a QR code, but it's done without requiring another application. First, the `onClick` method of the import button is called, and passes the permission required (`READ_EXTERNAL_STORAGE`) and work to do (`importFromFile()`) to a `runIfPossible` function.
 
 ```
 public void importFromFile(View v) {
@@ -84,7 +84,7 @@ public static void runIfPossible(final String permission, final Runnable callbac
 }
 ```
 
-To gain the permission, a standard Android permission request is displayed, where the user can choose to allow or deny the app access to external storage. If it is approved (`result.isGranted()`), then the callback is run. If they deny the permission, then nothing is done, since we don’t have the access we need. Note that the request code here is irrelevant, since there are no other request codes being used in this code area.
+To gain the permission, a standard Android permission request is displayed, where the user can choose to allow or deny the app access to external storage. If it is approved (`result.isGranted()`), then the callback is run. If they deny the permission, then nothing is done, since we don't have the access we need. Note that the request code here is irrelevant, since there are no other request codes being used in this code area.
 
 ![permissions prompt](/wp-content/uploads/2017/04/hme7ygb.png)
 
@@ -104,7 +104,7 @@ private void importFromFile() {
 
 The activity that launched the camera or file import tasks now needs to be notified that there is incoming data. This is done via `onActivityResult`, since both of the previous tasks used `startActivityForResult`, so will return data when they are completed (either cancelled, or found an image / QR code to import).
 
-The `INTENT_CAMERA` and `INTENT_FILE` values are just constants we used when starting the data-retrieval actions, so that we know which is returning data. They can be any integer, they should be unique though. First, we check that the action wasn’t a cancellation using `resultCode == RESULT_OK`, then process the retrieved data (covered after code snippet).
+The `INTENT_CAMERA` and `INTENT_FILE` values are just constants we used when starting the data-retrieval actions, so that we know which is returning data. They can be any integer, they should be unique though. First, we check that the action wasn't a cancellation using `resultCode == RESULT_OK`, then process the retrieved data (covered after code snippet).
 
 If the `puzzleString` has data, and it is successfully imported (split up, sanity checked, and added to database), then perform any post-import actions required.
 
@@ -166,9 +166,9 @@ The camera or file QR code has now been successfully read, the puzzle imported, 
 
 ## The Conclusion
 
-Supporting user created content can be a daunting task at first, but it’s worth the investment to increase engagement and allow the game a life of it’s own. Of course, if the app has the server resources to create a hosted content hub, that is superior, but offline distribution like this post describes is suitable for most smaller apps.
+Supporting user created content can be a daunting task at first, but it's worth the investment to increase engagement and allow the game a life of it's own. Of course, if the app has the server resources to create a hosted content hub, that is superior, but offline distribution like this post describes is suitable for most smaller apps.
 
-Whilst offloading the camera barcode scanning to a third party app isn’t ideal, it was decided upon as the approach to prevent having to integrate camera APIs, and to increase reliability. The file import option is also far more likely to be used, as users are more likely to save a picture from the internet than to scan a live QR code. Additionally, the user could just take a photo and scan that if they were unwilling to install another app.
+Whilst offloading the camera barcode scanning to a third party app isn't ideal, it was decided upon as the approach to prevent having to integrate camera APIs, and to increase reliability. The file import option is also far more likely to be used, as users are more likely to save a picture from the internet than to scan a live QR code. Additionally, the user could just take a photo and scan that if they were unwilling to install another app.
 
 Hopefully this post about how Connect Quest handles level sharing has encouraged you to consider it for your next game, and use this guide as a starting point. Good luck!
 

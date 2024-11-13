@@ -12,7 +12,7 @@ tags:
     - XP
 ---
 
-Many games (such as my own [Pixel Blacksmith](https://play.google.com/store/apps/details?id=uk.co.jakelee.blacksmith) and [Blacksmith Slots](https://www.reddit.com/r/BlacksmithSlots/)) contain an XP / level system, where performing actions will reward experience, and eventually new levels. These new levels often unlock new content, or provide currency, so keeping players incentivised without feeling like a “grind” is a tricky balance.
+Many games (such as my own [Pixel Blacksmith](https://play.google.com/store/apps/details?id=uk.co.jakelee.blacksmith) and [Blacksmith Slots](https://www.reddit.com/r/BlacksmithSlots/)) contain an XP / level system, where performing actions will reward experience, and eventually new levels. These new levels often unlock new content, or provide currency, so keeping players incentivised without feeling like a "grind" is a tricky balance.
 
 ## The Solution
 
@@ -20,7 +20,7 @@ First, come up with a basic formula to use for calculating the XP required for a
 
 Next, make a spreadsheet where `x` and `y` can be quickly and easily modified, and the XP per level seen. [Here is my spreadsheet](https://docs.google.com/spreadsheets/d/1uFed4cKE1BxxZ19BKuAbbo7Gk6_ezCDmFMV5fwCCxqw/), feel free to make a copy.
 
-As an example, here’s a comparison of the XP required for levels using varying values of `x` and `y`. Note that using 2/3 for `y` is recommended, so that built in squaring / cubing functions can be used.
+As an example, here's a comparison of the XP required for levels using varying values of `x` and `y`. Note that using 2/3 for `y` is recommended, so that built in squaring / cubing functions can be used.
 
 ### Example 1: X: 0.07, Y: 2
 
@@ -78,9 +78,9 @@ This uses a different value for `y` than the other 2 examples, and as such the X
 
 ### Using The Formula
 
-Now that we have a formula for XP required for any level (using Example 1: `XP = (level/0.07)^2`), we also need to know the current level based on XP. Inverting the formula gives us `level = 0.07 * √XP`. The second formula can be harder to implement due to requiring “nth root of”, hence why using a value of 2/3 is recommended.
+Now that we have a formula for XP required for any level (using Example 1: `XP = (level/0.07)^2`), we also need to know the current level based on XP. Inverting the formula gives us `level = 0.07 * √XP`. The second formula can be harder to implement due to requiring "nth root of", hence why using a value of 2/3 is recommended.
 
-XP and levels can now be converted easily and efficiently, without requiring any lengthy formulas. However, how useful the formula will be depends entirely on how well the `x` and `y` values are tuned for the specific use case. Get it wrong, and players will power through content or complain about being too grindy, get it right and they’ll never mention it!
+XP and levels can now be converted easily and efficiently, without requiring any lengthy formulas. However, how useful the formula will be depends entirely on how well the `x` and `y` values are tuned for the specific use case. Get it wrong, and players will power through content or complain about being too grindy, get it right and they'll never mention it!
 
 ## The Conclusion
 

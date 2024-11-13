@@ -64,7 +64,7 @@ It got the attention of a few Googlers lurking on the subreddit, who raised it i
 
 The short term fix was disabling the malicious app that was spreading like wildfire, and long term fixes were being investigated:
 
-> We have taken action to protect users against an e-mail impersonating Google Docs & have disabled offending accounts. We’ve removed the fake pages [and] pushed updates through Safe Browsing, and our abuse team is working to prevent this kind of spoofing from happening again. We encourage users to report phishing e-mails in Gmail.
+> We have taken action to protect users against an e-mail impersonating Google Docs & have disabled offending accounts. We've removed the fake pages [and] pushed updates through Safe Browsing, and our abuse team is working to prevent this kind of spoofing from happening again. We encourage users to report phishing e-mails in Gmail.
 
 *Quote from [@googledocs on Twitter](https://twitter.com/googledocs/status/859878989250215937).*
 

@@ -13,9 +13,9 @@ tags:
     - Kotlin
 ---
 
-Firebase Cloud Functions provide an easy way to execute JavaScript on Google’s servers, and call this code from your own apps. It removes the need to manually manage any sort of server, and can be up and running very quickly. Firebase’s free plan is somewhat limited, and cannot make network requests to other servers, but it can do plenty of processing.
+Firebase Cloud Functions provide an easy way to execute JavaScript on Google's servers, and call this code from your own apps. It removes the need to manually manage any sort of server, and can be up and running very quickly. Firebase's free plan is somewhat limited, and cannot make network requests to other servers, but it can do plenty of processing.
 
-This post is part of [The Complete Guide to Firebase](/search/?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Cloud Functions dashboard](https://console.firebase.google.com/u/0/project/_/functions/list), and the [official documentation](https://cloud.google.com/functions/docs/) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase). Throughout this tutorial, you'll need access to the [Firebase Cloud Functions dashboard](https://console.firebase.google.com/u/0/project/_/functions/list), and the [official documentation](https://cloud.google.com/functions/docs/) may be useful too.
 
 ## Implementation
 
@@ -31,10 +31,10 @@ This tutorial assumes you already have [Firebase added to your project](/adding-
 4. Next run `firebase init functions`, which will ask you a few questions about your setup. Click any of the following items to view a screenshot of the installation at that point. 
     1. [The project to use](https://i.imgur.com/WD5ZNUk.png), I chose my Firebase Reference Project.
     2. [The language to use](https://i.imgur.com/taBpPWI.png), I chose JavaScript.
-    3. [Whether style checker ESLint should be used &amp; dependencies should be installed](https://i.imgur.com/h6b7TFp.png), I chose “Yes” to both.
-5. You should now have a project folder containing a few files and folders. `functions/index.js` is the most important file, as it contains your functions’ actual code. Open this file up and uncomment the lines relating to `export.helloWorld`.
+    3. [Whether style checker ESLint should be used &amp; dependencies should be installed](https://i.imgur.com/h6b7TFp.png), I chose "Yes" to both.
+5. You should now have a project folder containing a few files and folders. `functions/index.js` is the most important file, as it contains your functions' actual code. Open this file up and uncomment the lines relating to `export.helloWorld`.
 
-That’s it, your local environment is now fully setup, and you’ve got a “Hello World” function ready to deploy!
+That's it, your local environment is now fully setup, and you've got a "Hello World" function ready to deploy!
 
 ### Deploying Firebase Cloud Functions
 
@@ -50,11 +50,11 @@ Our Hello World function is now ready to call! Visiting the URL outputted (<http
 
 ### Creating a Cloud Function
 
-You may have noticed the existing Hello World functions inside `index.js` uses `functions.https.onRequest`. This means it can be visited / called like a normal webpage, and has `Content-Type` headers etc. Whilst you can get URL parameters from these methods (using `request.query.text`), it’s safer to provide actual functions that can be called remotely. There’s a reason it’s called Cloud **Functions**!
+You may have noticed the existing Hello World functions inside `index.js` uses `functions.https.onRequest`. This means it can be visited / called like a normal webpage, and has `Content-Type` headers etc. Whilst you can get URL parameters from these methods (using `request.query.text`), it's safer to provide actual functions that can be called remotely. There's a reason it's called Cloud **Functions**!
 
-We’re going to create a function that receives a phone’s manufacturer’s name from the app, converts it to uppercase, and then returns it to be shown in the app. This is obviously a pretty useless function that would usually be handled entirely inside the app, but it’s a simple way to show passing data back and forth.
+We're going to create a function that receives a phone's manufacturer's name from the app, converts it to uppercase, and then returns it to be shown in the app. This is obviously a pretty useless function that would usually be handled entirely inside the app, but it's a simple way to show passing data back and forth.
 
-To do this, use `functions.https.onCall` instead, which can also receive a data object with any additional parameters you’ve chosen to send. We’re going to receive a manufacturer parameter, so first check it has a length, then convert whatever it contains to uppercase and return it. Add the following into your `index.js`:
+To do this, use `functions.https.onCall` instead, which can also receive a data object with any additional parameters you've chosen to send. We're going to receive a manufacturer parameter, so first check it has a length, then convert whatever it contains to uppercase and return it. Add the following into your `index.js`:
 
 ```
 exports.uppercaseDeviceName = functions.https.onCall((data) => {
@@ -65,7 +65,7 @@ exports.uppercaseDeviceName = functions.https.onCall((data) => {
 });
 ```
 
-Save and redeploy the functions, and your custom function is now ready to be called. Note that to return data we just used `return x`, instead of the `response.send(x)` required by `onRequest` functions. Google’s example `index.js`> contains [more complex examples](https://github.com/firebase/quickstart-js/blob/master/functions/functions/index.js) that may be useful for further work.
+Save and redeploy the functions, and your custom function is now ready to be called. Note that to return data we just used `return x`, instead of the `response.send(x)` required by `onRequest` functions. Google's example `index.js`> contains [more complex examples](https://github.com/firebase/quickstart-js/blob/master/functions/functions/index.js) that may be useful for further work.
 
 Time to programmatically call our new function from inside an app!
 
@@ -77,7 +77,7 @@ First, add the Firebase Cloud Functions dependency in your app-level `build.grad
 implementation 'com.google.firebase:firebase-functions:16.1.2'
 ```
 
-Next, use the following to make a call to your new uppercaseDeviceName function, passing it a HashMap containing your device’s manufacturer (as the manufacturer key), and displaying a Toast of the result:
+Next, use the following to make a call to your new uppercaseDeviceName function, passing it a HashMap containing your device's manufacturer (as the manufacturer key), and displaying a Toast of the result:
 
 ```
 FirebaseFunctions.getInstance()
@@ -94,11 +94,11 @@ FirebaseFunctions.getInstance()
 
 In the example app, this is triggered inside an `onClick()`.
 
-Due to Firebase already knowing which project you’re calling (due to the `google-services.json`), just passing the function’s name is enough to call the function. Pretty cool, right? If you encounter problems in getting a response from the server, the “Web interface” part of this post covers how to view server logs containing any runtime errors. ESLint should also alert you on deployment if your code contains incorrect syntax, helpful if JavaScript isn’t one of your core languages.
+Due to Firebase already knowing which project you're calling (due to the `google-services.json`), just passing the function's name is enough to call the function. Pretty cool, right? If you encounter problems in getting a response from the server, the "Web interface" part of this post covers how to view server logs containing any runtime errors. ESLint should also alert you on deployment if your code contains incorrect syntax, helpful if JavaScript isn't one of your core languages.
 
 ### Automatically triggering Cloud Functions
 
-Whilst both the Hello World and Uppercase Manufacturer Name functions in this tutorial were triggered on demand, it’s also possible to automatically call cloud functions when an event happens. Using Google’s example, you could trigger functions when a new image is uploaded to Firebase Storage to store the location in Firebase Database, and create a thumbnail of the image using an external API.
+Whilst both the Hello World and Uppercase Manufacturer Name functions in this tutorial were triggered on demand, it's also possible to automatically call cloud functions when an event happens. Using Google's example, you could trigger functions when a new image is uploaded to Firebase Storage to store the location in Firebase Database, and create a thumbnail of the image using an external API.
 
 [![](/wp-content/uploads/2018/11/intensive.png)](/wp-content/uploads/2018/11/intensive.png)
 
@@ -124,7 +124,7 @@ Many Firebase services provide these listeners that your Cloud Functions can sub
 
 ## Web interface
 
-The majority of Cloud Functions’ interface is in Firebase, but certain actions (e.g. deleting a function) can only be performed in Google Cloud Platform, so both will be covered.
+The majority of Cloud Functions' interface is in Firebase, but certain actions (e.g. deleting a function) can only be performed in Google Cloud Platform, so both will be covered.
 
 ### Firebase
 
@@ -136,7 +136,7 @@ The dashboard shows an overview of all of your current cloud functions, with bas
 
 #### Health
 
-The Health tab shows an overview of your functions’ error rates and overall performance (times invoked, latency, memory usage, network usage). Checking this regularly can help you stay on track of any errors, and provide a quick health check of your functions.
+The Health tab shows an overview of your functions' error rates and overall performance (times invoked, latency, memory usage, network usage). Checking this regularly can help you stay on track of any errors, and provide a quick health check of your functions.
 
 [![](/wp-content/uploads/2018/11/performance.png)](/wp-content/uploads/2018/11/performance.png)
 
@@ -148,7 +148,7 @@ The Logs tab provides a simple log viewer, that can be used for basic analysis o
 
 #### Usage
 
-This tab displays a simple chart of total invocations in a selected date range, and a link to your current quota. As it is essentially a repeat of the Health tab, it’s not included here!
+This tab displays a simple chart of total invocations in a selected date range, and a link to your current quota. As it is essentially a repeat of the Health tab, it's not included here!
 
 ### Google Cloud Platform
 
@@ -162,7 +162,7 @@ As Cloud Functions technically run on Google Cloud, some statistics can only be 
 
 #### Quotas
 
-[The quotas page](https://console.cloud.google.com/apis/api/cloudfunctions.googleapis.com/quotas) shows your functions’ usage against all applicable resource limits. For example, your plan is subject to read limits, write limits, CPU limits, traffic limits, DNS limits, build time limits, etc. You should occasionally check the graphs on this page to make sure no functions are misbehaving.
+[The quotas page](https://console.cloud.google.com/apis/api/cloudfunctions.googleapis.com/quotas) shows your functions' usage against all applicable resource limits. For example, your plan is subject to read limits, write limits, CPU limits, traffic limits, DNS limits, build time limits, etc. You should occasionally check the graphs on this page to make sure no functions are misbehaving.
 
 [![](/wp-content/uploads/2018/11/quotas.png)](/wp-content/uploads/2018/11/quotas.png)
 
@@ -174,7 +174,7 @@ The [Cloud Platform functions overview tab](https://console.cloud.google.com/fun
 
 ## Conclusion
 
-Firebase’s Cloud Functions service is extremely powerful, and should definitely be investigated if looking into server side processing or considering managing a server yourself.
+Firebase's Cloud Functions service is extremely powerful, and should definitely be investigated if looking into server side processing or considering managing a server yourself.
 
 However, for many use cases it can be simpler to perform basic functionality client-side. Afterwards, this data can then be passed straight to Firestore or Database instead of handling it with a function. Additionally, the ability to only write code in JavaScript (or TypeScript, a slightly extended variant) severely limits the usefulness. Many Android developers will have little to no JavaScript experience, so learning a whole new language with a whole host of [unique quirks](https://developer.telerik.com/featured/seven-javascript-quirks-i-wish-id-known-about/) can be a daunting experience.
 

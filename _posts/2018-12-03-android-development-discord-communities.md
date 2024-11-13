@@ -10,7 +10,7 @@ tags:
     - Discord
 ---
 
-Whilst developing for Android, it’s often necessary to ask others for help, or discuss concepts / news. Whilst [StackOverflow](https://stackoverflow.com/questions/tagged/android) is excellent for solving problems long-term, sometimes it’s easier to talk through something in realtime. To that end, [Discord](https://discordapp.com/) is an excellent resource, this post will introduce a few of the larger communities.
+Whilst developing for Android, it's often necessary to ask others for help, or discuss concepts / news. Whilst [StackOverflow](https://stackoverflow.com/questions/tagged/android) is excellent for solving problems long-term, sometimes it's easier to talk through something in realtime. To that end, [Discord](https://discordapp.com/) is an excellent resource, this post will introduce a few of the larger communities.
 
 I currently help moderate all of these communities, so feel free to message me on Discord (@JakeSteam#9845) with any questions!
 
@@ -20,7 +20,7 @@ I currently help moderate all of these communities, so feel free to message me o
 
 [![](/wp-content/uploads/2018/12/androiddev.png)](https://discordapp.com/invite/TnJRnf4)
 
-[Flutter Dev](https://discord.gg/qgs7DNe): Whilst smaller than the main server (1.6k members), the specialised nature of the server (Google’s Flutter framework) means it is much more helpful than the #flutter channel of Android Dev. As it is part of the same server network as Android Dev ([Devs on Discord](https://discord.gg/B5YCN6N)), they share the same channel structure.
+[Flutter Dev](https://discord.gg/qgs7DNe): Whilst smaller than the main server (1.6k members), the specialised nature of the server (Google's Flutter framework) means it is much more helpful than the #flutter channel of Android Dev. As it is part of the same server network as Android Dev ([Devs on Discord](https://discord.gg/B5YCN6N)), they share the same channel structure.
 
 [![](/wp-content/uploads/2018/12/flutterdev.png)](https://discordapp.com/invite/qgs7DNe)
 
@@ -34,6 +34,6 @@ I currently help moderate all of these communities, so feel free to message me o
 
 [![](/wp-content/uploads/2018/12/androidgaming.png)](https://discordapp.com/invite/Fa9ahHK)
 
-[/r/AndroidQuestions](https://discord.gg/Cw62EkV): This server is quieter than the others (500 members), and is full of people asking questions, and a few helping. Generally the subreddit is a better place to ask, but it can’t hurt asking here too.
+[/r/AndroidQuestions](https://discord.gg/Cw62EkV): This server is quieter than the others (500 members), and is full of people asking questions, and a few helping. Generally the subreddit is a better place to ask, but it can't hurt asking here too.
 
 [![](/wp-content/uploads/2018/12/androidquestions.png)](https://discordapp.com/invite/Cw62EkV)

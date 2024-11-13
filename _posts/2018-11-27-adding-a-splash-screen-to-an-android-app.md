@@ -13,9 +13,9 @@ tags:
     - UX
 ---
 
-Often, an app may take a few seconds to start-up, especially the first time. A plain white screen is shown by default, luckily this can be customised relatively easily! The solution is to add a splash screen to your app, whilst being careful to avoid increasing the app’s load time.
+Often, an app may take a few seconds to start-up, especially the first time. A plain white screen is shown by default, luckily this can be customised relatively easily! The solution is to add a splash screen to your app, whilst being careful to avoid increasing the app's load time.
 
-Many naïve splash screens actually make the app take longer to load by introducing an artificial delay. The approach in this tutorial doesn’t increase load time, and only displays as long as the app loads. An [example implementation is available](https://github.com/JakeSteam/SplashScreenDemo).
+Many naïve splash screens actually make the app take longer to load by introducing an artificial delay. The approach in this tutorial doesn't increase load time, and only displays as long as the app loads. An [example implementation is available](https://github.com/JakeSteam/SplashScreenDemo).
 
 First, add a design for the splash screen and name it `splash_screen_background.xml` inside `/drawable/`. For this example, a new drawable `ic_time` was created and layered on top of the default `colorPrimary`.
 
@@ -32,7 +32,7 @@ First, add a design for the splash screen and name it `splash_screen_background.
 </layer-list>
 ```
 
-Unfortunately, this can’t be a normal XML layout, and must instead be an XML drawable. Layer lists are used for the most common splash screens; coloured background with an icon in the middle. This may take some experimentation, as scaling the image correctly can be tricky.
+Unfortunately, this can't be a normal XML layout, and must instead be an XML drawable. Layer lists are used for the most common splash screens; coloured background with an icon in the middle. This may take some experimentation, as scaling the image correctly can be tricky.
 
 Next, add a new style `SplashScreen` to your `styles.xml`, this is the style for the splash screen and uses your newly created background:
 
@@ -60,8 +60,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-Your application will now use the activity’s default splash screen theme until `onCreate` is called, when it will load the normal theme!
+Your application will now use the activity's default splash screen theme until `onCreate` is called, when it will load the normal theme!
 
-For testing, it’s often handy to add a `sleep(5000)` before setting the theme on `onCreate`, otherwise the app loads too quickly to get a long look at the splash screen. Drawables inside your splash screen background should also be non-vector images, as parsing the vectors often causes unexpected effects.
+For testing, it's often handy to add a `sleep(5000)` before setting the theme on `onCreate`, otherwise the app loads too quickly to get a long look at the splash screen. Drawables inside your splash screen background should also be non-vector images, as parsing the vectors often causes unexpected effects.
 
 Full implementation source code: <https://github.com/JakeSteam/SplashScreenDemo>

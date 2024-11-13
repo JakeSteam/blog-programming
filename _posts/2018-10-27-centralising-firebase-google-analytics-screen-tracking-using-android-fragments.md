@@ -13,11 +13,11 @@ tags:
     - Marketing
 ---
 
-Whilst tracking user’s screen views with Firebase / Google Analytics can be very simple to setup, it can easily result in a very messy codebase, with hardcoded strings all over the place. Keeping all of the tracking logic in one place allows an instant overview of all tracked screens, as well as easily checking where a screen is reporting a view. Note that this tutorial is for fragments, activities can already be tracked easily automatically.
+Whilst tracking user's screen views with Firebase / Google Analytics can be very simple to setup, it can easily result in a very messy codebase, with hardcoded strings all over the place. Keeping all of the tracking logic in one place allows an instant overview of all tracked screens, as well as easily checking where a screen is reporting a view. Note that this tutorial is for fragments, activities can already be tracked easily automatically.
 
 This guide on how to create a `TrackingUtil()` class is also [available as a Gist](https://gist.github.com/JakeSteam/19c4d4869001b41c81de9c5b91dfd4c3). It also assumes Analytics has already been setup!
 
-In our `TrackingUtil` class, we’re going to achieve two goals. Centralise all screen name definitions, and provide a simple interface to report views via.
+In our `TrackingUtil` class, we're going to achieve two goals. Centralise all screen name definitions, and provide a simple interface to report views via.
 
 ## Centralised screen name definition
 
@@ -72,13 +72,13 @@ Now, just call `.track` on an instance of `TrackingUtil` and pass a screen from 
 
 Whilst this solution does require access to a context, the core Firebase Analytics call does too, so this is no more trouble than using the original reporting method.
 
-Performing “Find Usages” on any screen in the enum provides a quick way to check the correct places are calling each screen, and any unused screen name will be immediately obvious due to the grey colour caused by an unused resource.
+Performing "Find Usages" on any screen in the enum provides a quick way to check the correct places are calling each screen, and any unused screen name will be immediately obvious due to the grey colour caused by an unused resource.
 
 ## Viewing screen view data
 
-On the main Analytics dashboard, the user engagement widget provides a link to “View screen\_view event details”, which will take you to an overview of where users have been in your app.
+On the main Analytics dashboard, the user engagement widget provides a link to "View screen\_view event details", which will take you to an overview of where users have been in your app.
 
-Next, selecting “Screen name” in the “User engagement” widget will show where users have been in your app, broken down by percentage and average time.  
+Next, selecting "Screen name" in the "User engagement" widget will show where users have been in your app, broken down by percentage and average time.  
 ![screen view data](/wp-content/uploads/2018/10/axtxt2h.png)
 
-This data on a per-screen basis should help analyse and improve user’s experiences in your app, and tell you the areas people care most about. Even if there is no current goal to track and analyse this data, it’s worth tracking in case it’s needed in the future.
+This data on a per-screen basis should help analyse and improve user's experiences in your app, and tell you the areas people care most about. Even if there is no current goal to track and analyse this data, it's worth tracking in case it's needed in the future.

@@ -16,7 +16,7 @@ During various events in [Pixel Blacksmith](https://play.google.com/store/apps/d
 
 ## The Solution
 
-First, arrays of references to all possible sound files (stored in `.ogg` / `.mp3` / `.wav` format in `src/main/res/raw`) are created. They can be final and static, since they’re never going to change, but need to be public so that the rest of the application can refer to them.
+First, arrays of references to all possible sound files (stored in `.ogg` / `.mp3` / `.wav` format in `src/main/res/raw`) are created. They can be final and static, since they're never going to change, but need to be public so that the rest of the application can refer to them.
 
 ```
 public static final int[] enchantingSounds = {R.raw.enchant1};
@@ -38,7 +38,7 @@ public static void playSound(Context context, int[] sounds) {
 }
 ```
 
-Now that the specific file has been identified, a check is performed to see if the player has sounds enabled. If they don’t, they won’t be happy if the sound plays! If they do, a new `MediaPlayer` is created and started. This is wrapped in a try/catch as I’ve personally found media players to be somewhat error prone, despite being a core Android building block.
+Now that the specific file has been identified, a check is performed to see if the player has sounds enabled. If they don't, they won't be happy if the sound plays! If they do, a new `MediaPlayer` is created and started. This is wrapped in a try/catch as I've personally found media players to be somewhat error prone, despite being a core Android building block.
 
 ```
 private static void playSound(Context context, int soundID) {
@@ -56,7 +56,7 @@ private static void playSound(Context context, int soundID) {
 
 ## The Conclusion
 
-This solution works well for quick and simple playing of short sound effects. However, sound effects can overlap, so it would not be suitable for more complex sound effects such as an enemy boss making specific noises per attack. It’s very reliable however, and even short sound effects can help add character to the game.
+This solution works well for quick and simple playing of short sound effects. However, sound effects can overlap, so it would not be suitable for more complex sound effects such as an enemy boss making specific noises per attack. It's very reliable however, and even short sound effects can help add character to the game.
 
 Additionally, a large number of free sound samples are available from [FreeSound](https://www.freesound.org/), and I highly recommend taking a look if a specific sound sample is wanted.
 

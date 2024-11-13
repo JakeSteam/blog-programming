@@ -16,7 +16,7 @@ Firebase Realtime Database is the more traditional predecessor to [Firestore](/d
 
 Note that the JSON structured format can be quite limiting, and often requires thinking outside the box to make your existing data format fit inside it.
 
-This post is part of [The Complete Guide to Firebase](/search/?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Realtime Database dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/database/android/start/) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase). Throughout this tutorial, you'll need access to the [Firebase Realtime Database dashboard](https://console.firebase.google.com/project/_/database), and the [official documentation](https://firebase.google.com/docs/database/android/start/) may be useful too.
 
 ## Implementation
 
@@ -26,7 +26,7 @@ This tutorial assumes you already have [Firebase added to your project](/adding-
 
 ### Setting up
 
-As Google recommends Cloud Firestore, it can be a little tricky to actually create the traditional Realtime Database. On [the Fireside Database page](https://console.firebase.google.com/u/0/project/_/database), scroll down to the Realtime Database banner and select “Create database”.  
+As Google recommends Cloud Firestore, it can be a little tricky to actually create the traditional Realtime Database. On [the Fireside Database page](https://console.firebase.google.com/u/0/project/_/database), scroll down to the Realtime Database banner and select "Create database".  
 ![f6fuu6w](/wp-content/uploads/2018/10/f6fuu6w.png)
 
 Create the database in **test mode**, making sure to set up proper access control later on before the app gets released to a wider audience.
@@ -37,11 +37,11 @@ Next, add the dependency to your app-level `build.gradle` file:
 implementation 'com.google.firebase:firebase-database:16.0.3'
 ```
 
-That’s it, it’s implemented!
+That's it, it's implemented!
 
 ### Getting data
 
-Setting up an automatic data change listener is the most convenient way to be notified on any data changes, including when the activity / fragment starts up. To do this, select the specific node to be monitored, and add a listener. In the following example, the node “nestedData” is used:
+Setting up an automatic data change listener is the most convenient way to be notified on any data changes, including when the activity / fragment starts up. To do this, select the specific node to be monitored, and add a listener. In the following example, the node "nestedData" is used:
 
 ```
      FirebaseDatabase.getInstance().getReference("nestedData").addValueEventListener(object : ValueEventListener {
@@ -87,7 +87,7 @@ key?.let {
 }
 ```
 
-This child node will now be saved under a random ID inside `nestedData`, with a key similar to “-LPc3jx0y-Hg6aITpvw2”.
+This child node will now be saved under a random ID inside `nestedData`, with a key similar to "-LPc3jx0y-Hg6aITpvw2".
 
 #### Manual ID
 
@@ -99,7 +99,7 @@ nestedData.child("collection").child("group").setValue(DataRow("anotheruuid, 432
 
 ### Updating data
 
-Updating data is almost identical to adding new rows, you just need to set the new value of a node. The example below loops through every returned node, retrieves the key, then uses that to get a reference to the updateable node. It then sets the “uuid” value to the current value, except with an asterisk before it.
+Updating data is almost identical to adding new rows, you just need to set the new value of a node. The example below loops through every returned node, retrieves the key, then uses that to get a reference to the updateable node. It then sets the "uuid" value to the current value, except with an asterisk before it.
 
 The `.addListenerForSingleValueEvent()` listener is important, as it stops any future data changes (such as the current update!) triggering the listener again.
 
@@ -116,7 +116,7 @@ nestedData.addListenerForSingleValueEvent(object : ValueEventListener {
 
 ### Deleting data
 
-Again, deleting data is very similar to updating it. The easiest way to remove data is to simply set it to null. That’s it!
+Again, deleting data is very similar to updating it. The easiest way to remove data is to simply set it to null. That's it!
 
 For example, to wipe everything inside `nestedData`:
 
@@ -130,12 +130,12 @@ The web interface for Realtime Database allows reading / modifying the stored da
 
 ### Data tab
 
-This tab allows adding, editing, and deleting nodes. It’s also possible to create new nested data, and is a good way to form the basic data structure before beginning programmatically adding data.  
+This tab allows adding, editing, and deleting nodes. It's also possible to create new nested data, and is a good way to form the basic data structure before beginning programmatically adding data.  
 ![data tab](/wp-content/uploads/2018/10/pib8cpx.png)
 
 ### Rules tab
 
-The rules tab handles security for your database. These aren’t covered in this tutorial, but [the official documentation](https://firebase.google.com/docs/database/security) is very comprehensive.
+The rules tab handles security for your database. These aren't covered in this tutorial, but [the official documentation](https://firebase.google.com/docs/database/security) is very comprehensive.
 
 ### Backups tab
 
@@ -148,7 +148,7 @@ This tab provides information on the recent usage of your database. It is update
 
 ## Conclusion
 
-Whilst Realtime Database’s node based architecture is perfect for some projects, its features pale in comparison to the more modern Cloud Firestore. As such, it’s hard to recommend Realtime Database for any new projects, except those that already have a node-based data structure.
+Whilst Realtime Database's node based architecture is perfect for some projects, its features pale in comparison to the more modern Cloud Firestore. As such, it's hard to recommend Realtime Database for any new projects, except those that already have a node-based data structure.
 
 The offline data caching and syncing between all clients is as powerful as ever, but I find it hard to see any benefits over Firestore.
 

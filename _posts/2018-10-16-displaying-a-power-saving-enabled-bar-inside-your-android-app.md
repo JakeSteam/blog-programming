@@ -11,13 +11,13 @@ tags:
     - PowerSaving
 ---
 
-If your app uses Android hardware features or otherwise needs to be running most of the time, tools such as power saving mode can limit your app’s freedom. Whilst the mode is great for users, the inconsistent implementation (much better now that Doze mode exists, and power saving is more standardised) often leads to unreliable performance on certain devices. Making users aware of this can prevent giving users a negative impression of your app.
+If your app uses Android hardware features or otherwise needs to be running most of the time, tools such as power saving mode can limit your app's freedom. Whilst the mode is great for users, the inconsistent implementation (much better now that Doze mode exists, and power saving is more standardised) often leads to unreliable performance on certain devices. Making users aware of this can prevent giving users a negative impression of your app.
 
-In this tutorial, a simple animated “Power saving mode enabled” bar will be displayed inside the app whilst there any power saving mode is enabled, and disappear when it is disabled. An [example power saving bar project](https://github.com/JakeSteam/PowerSavingBarDemo) is available, as well as a [video of the finished implementation](https://www.youtube.com/watch?v=AbYpf-pjPxI).
+In this tutorial, a simple animated "Power saving mode enabled" bar will be displayed inside the app whilst there any power saving mode is enabled, and disappear when it is disabled. An [example power saving bar project](https://github.com/JakeSteam/PowerSavingBarDemo) is available, as well as a [video of the finished implementation](https://www.youtube.com/watch?v=AbYpf-pjPxI).
 
 Please note that this **only works on Lollipop and above**, the APIs needed to safely get power saving status are not available before then.
 
-This tutorial also shares most of it’s code with [an earlier post about displaying a “No Internet” bar](/displaying-a-no-internet-bar-inside-your-android-app/) in a similar way.
+This tutorial also shares most of it's code with [an earlier post about displaying a "No Internet" bar](/displaying-a-no-internet-bar-inside-your-android-app/) in a similar way.
 
 ## Add bar to layout
 
@@ -127,9 +127,9 @@ private fun togglePowerSavingBar(display: Boolean) {
 
 ## Conclusion
 
-The main drawback of this simple solution is the requirement for Android Lollipop. Luckily, on older devices the functionality simply won’t be enabled, so users won’t actually be aware they are missing out.
+The main drawback of this simple solution is the requirement for Android Lollipop. Luckily, on older devices the functionality simply won't be enabled, so users won't actually be aware they are missing out.
 
-Additionally, during testing I discovered Sony’s “STAMINA MODE” isn’t implemented in the same standardised way as other manufacturers, meaning it cannot be listened to in the same way. A partial workaround is available, by checking Sony device’s settings when the app starts (or `onResume`):
+Additionally, during testing I discovered Sony's "STAMINA MODE" isn't implemented in the same standardised way as other manufacturers, meaning it cannot be listened to in the same way. A partial workaround is available, by checking Sony device's settings when the app starts (or `onResume`):
 
 ```
 private fun performSonyPowerSavingCheck() {
@@ -141,6 +141,6 @@ private fun performSonyPowerSavingCheck() {
 }
 ```
 
-This workaround isn’t perfect, as it only tells you if the user has STAMINA MODE enabled, not whether it is currently active. For example, the user may have it set to activate at 20% battery, and currently be at 100%, yet the check will still return true. As such, consider whether it is worth implementing for Sony devices.
+This workaround isn't perfect, as it only tells you if the user has STAMINA MODE enabled, not whether it is currently active. For example, the user may have it set to activate at 20% battery, and currently be at 100%, yet the check will still return true. As such, consider whether it is worth implementing for Sony devices.
 
 An [example power saving bar project](https://github.com/JakeSteam/PowerSavingBarDemo) has also been created for this tutorial.

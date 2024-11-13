@@ -82,4 +82,4 @@ In case it helps, the exact layout xml used is similarly self explanatory:
 
 ## Conclusion
 
-While this workaround does work, it definitely isn’t ideal! If at all possible, the original drawable should be resized to fit in the target area. That being said, the example above is relatively clean, allowing a style to resize the drawable instead of multiple modifiers.
+While this workaround does work, it definitely isn't ideal! If at all possible, the original drawable should be resized to fit in the target area. That being said, the example above is relatively clean, allowing a style to resize the drawable instead of multiple modifiers.

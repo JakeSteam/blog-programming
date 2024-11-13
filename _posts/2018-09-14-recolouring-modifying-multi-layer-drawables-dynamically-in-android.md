@@ -71,7 +71,7 @@ Using the `layerDrawable` from earlier, set the `foreground_icon` to an existing
 layerDrawable.setDrawableByLayerId(R.id.foreground_icon, ContextCompat.getDrawable(context, R.drawable.new_foreground_icon))
 ```
 
-That’s it! Both the composite drawable and background color have been changed, and this technique can be used for as many layers as required.
+That's it! Both the composite drawable and background color have been changed, and this technique can be used for as many layers as required.
 
 ### Conclusion
 

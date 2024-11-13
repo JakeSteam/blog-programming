@@ -18,15 +18,15 @@ tags:
 
 Setting up Fabric is usually pretty straightforward, especially as they have a [step by step guide](https://fabric.io/kits/android/crashlytics/install), and even an [Android Studio plugin](https://fabric.io/downloads/android-studio) that can do it all for you.
 
-Initialising Fabric is also just a simple one-liner in your application class’ `onCreate()`:
+Initialising Fabric is also just a simple one-liner in your application class' `onCreate()`:
 
 ```
 Fabric.with(this, new Crashlytics());
 ```
 
-Easy, run the app and we’re done! Except.. not if we’re using more than one flavour. The package names of the alternate flavours won’t register, uh oh…
+Easy, run the app and we're done! Except.. not if we're using more than one flavour. The package names of the alternate flavours won't register, uh oh…
 
-Since Fabric automatically picks up the app identifier from the manifest, it isn’t possible to manually add an alternate flavour, and even running the alternate flavour doesn’t force Fabric to add it.
+Since Fabric automatically picks up the app identifier from the manifest, it isn't possible to manually add an alternate flavour, and even running the alternate flavour doesn't force Fabric to add it.
 
 To get around this, the app identifier has to be manually set when Fabric is initialised, based on the current `BuildConfig`:
 

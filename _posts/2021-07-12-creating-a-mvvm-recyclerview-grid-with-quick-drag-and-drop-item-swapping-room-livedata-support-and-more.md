@@ -14,14 +14,14 @@ tags:
     - RecyclerView
 ---
 
-As part of my current project [BocaBase](https://twitter.com/BocaBase), I needed a grid of items that could be swapped around easily. Whilst there were a few answers on StackOverflow, most of them resulted in flickering animations, didn’t work with Room / LiveData / MVVM, or were awful to use!
+As part of my current project [BocaBase](https://twitter.com/BocaBase), I needed a grid of items that could be swapped around easily. Whilst there were a few answers on StackOverflow, most of them resulted in flickering animations, didn't work with Room / LiveData / MVVM, or were awful to use!
 
-One of the biggest challenges is moving items when the items are loaded and sorted from a database. They must have their ordering changed in the database, moved within the RecyclerView’s adapter, AND visually be moved.
+One of the biggest challenges is moving items when the items are loaded and sorted from a database. They must have their ordering changed in the database, moved within the RecyclerView's adapter, AND visually be moved.
 
-Whilst the solution in this post definitely isn’t perfect, it’s much better than snippets I could find already. There’s a video preview below, and a [full Gist of the solution](https://gist.github.com/JakeSteam/b5739b3fbdd367a9fb624b85196d8fcc) is available, this post is mostly to point out the interesting parts of it.
+Whilst the solution in this post definitely isn't perfect, it's much better than snippets I could find already. There's a video preview below, and a [full Gist of the solution](https://gist.github.com/JakeSteam/b5739b3fbdd367a9fb624b85196d8fcc) is available, this post is mostly to point out the interesting parts of it.
 
 <div class="video-container"><span class="embed-youtube" style="text-align:center; display: block;"><iframe allowfullscreen="true" class="youtube-player" height="394" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" src="https://www.youtube.com/embed/78WBKo7e9Jw?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-GB&autohide=2&wmode=transparent" style="border:0;" width="700"></iframe></span></div>
-*Note: The video also contains “merging” items together, which isn’t included in this tutorial.*
+*Note: The video also contains "merging" items together, which isn't included in this tutorial.*
 
 ## XML (table\_fragment.xml)
 
@@ -29,7 +29,7 @@ A RecyclerView with a GridLayoutManager is used to let us use more up-to-date An
 
 - `app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"`: Use a grid instead of simple list.
 - `app:spanCount="5"`: Use a 5 column grid.
-- `android:overScrollMode="never"`: Disables the “overscroll” animations (the semi-circles of colour when you reach the start / end of a RecyclerView).
+- `android:overScrollMode="never"`: Disables the "overscroll" animations (the semi-circles of colour when you reach the start / end of a RecyclerView).
 
 ```xml
 <androidx.recyclerview.widget.RecyclerView
@@ -52,8 +52,8 @@ A RecyclerView with a GridLayoutManager is used to let us use more up-to-date An
 The fragment just sets up the adapter and RecyclerView, and observes a `items` LiveData from the ViewModel. The important parts are:
 
 - `viewModel.items.observe ... setItems`: Updates the UI if the grid items change for a non-drag and drop reason, and handles initial load.
-- `ItemAdapter( ... )`: We pass in a reference to the ViewModel’s item click and item save functions, so the adapter can call them directly
-- `adapter.itemTouchHelper.attachToRecyclerView`: Adds the touch listener that we’ll set up later.
+- `ItemAdapter( ... )`: We pass in a reference to the ViewModel's item click and item save functions, so the adapter can call them directly
+- `adapter.itemTouchHelper.attachToRecyclerView`: Adds the touch listener that we'll set up later.
 - `setHasFixedSize(true)`: Lets the RecyclerView optimise for a fixed length of content.
 
 ```kotlin
@@ -113,7 +113,7 @@ The ViewModel usually does most of the work, but in this example the adapter han
 
 ## Adapter (ItemAdapter.kt)
 
-The Adapter is very simple, but quite lengthy due to using `DiffUtil` and `ItemTouchHelper` (covered next). It’s pretty much just a bare-bones adapter:
+The Adapter is very simple, but quite lengthy due to using `DiffUtil` and `ItemTouchHelper` (covered next). It's pretty much just a bare-bones adapter:
 
 ```kotlin
 class ItemAdapter(
@@ -209,13 +209,13 @@ Using a DiffUtil essentially enables clever animations when data changes, just b
 
 This is probably the most complicated part of the entire setup, since it handles the actual swapping.
 
-`onMove` is triggered as you drag an item over another, hence why we update the `newPosition`. Similarly, `oldPosition` is updated inside `onSelectedChanged` when the item is “picked up”.
+`onMove` is triggered as you drag an item over another, hence why we update the `newPosition`. Similarly, `oldPosition` is updated inside `onSelectedChanged` when the item is "picked up".
 
-These two positions are then “swapped” when the item is “dropped” (`ACTION_STATE_IDLE`), with the following steps:
+These two positions are then "swapped" when the item is "dropped" (`ACTION_STATE_IDLE`), with the following steps:
 
 1. Get the old and new object to be swapped.
 2. Set their internal positions to each other (so that when the data is reloaded from database it will be ordered correctly).
-3. Swap their positions within the adapter’s list of items (so that the adapter is currently correct).
+3. Swap their positions within the adapter's list of items (so that the adapter is currently correct).
 4. Save the items from step 2 (this `itemSaver` is the `viewModel::saveItems` passed inside the adapter constructor, that inserts them into the database!)
 
 ```kotlin
@@ -268,15 +268,15 @@ These two positions are then “swapped” when the item is “dropped” (`ACTI
 
 This is a bit of a weird post, since the code is essentially combining disparate StackOverflow answers into one useful whole. However, I struggled finding anything similar already existing, so this will hopefully save a few people many, many hours!
 
-There’s also quite a few parts that I intend to improve upon. For example, it shouldn’t be necessary to call `notifyDataSetChanged` inside `onSelectedChanged`, since we know the exact positions changed. However, notifying just the changed items plays an unwanted and confusing animation that I couldn’t figure out how to disable. I’ll update this post when I inevitably decide to spend a few days deep diving RecyclerView animations, I’m not quite that far gone yet though..!
+There's also quite a few parts that I intend to improve upon. For example, it shouldn't be necessary to call `notifyDataSetChanged` inside `onSelectedChanged`, since we know the exact positions changed. However, notifying just the changed items plays an unwanted and confusing animation that I couldn't figure out how to disable. I'll update this post when I inevitably decide to spend a few days deep diving RecyclerView animations, I'm not quite that far gone yet though..!
 
-If you found this post helpful, please go upvote the StackOverflow questions &amp; answers below. They’re quite old, mostly in Java, and deserve far more attention.
+If you found this post helpful, please go upvote the StackOverflow questions &amp; answers below. They're quite old, mostly in Java, and deserve far more attention.
 
 ## References
 
 - Basic RecyclerView info: <https://developer.android.com/guide/topics/ui/layout/recyclerview>
 - Core swapping functionality, albeit a quite buggy looking one: <https://stackoverflow.com/a/62147429/608312>
 - Dragging items immediately, instead of waiting for long press: <https://stackoverflow.com/a/50058957/608312>
-- Dragging items outside the RecyclerView’s bounds: <https://stackoverflow.com/a/41071941/608312>
-- Disabling RecyclerView’s scrolling animations: <https://stackoverflow.com/a/27724949/608312>
+- Dragging items outside the RecyclerView's bounds: <https://stackoverflow.com/a/41071941/608312>
+- Disabling RecyclerView's scrolling animations: <https://stackoverflow.com/a/27724949/608312>
 - MVVM RecyclerView: <https://medium.com/@ali.muzaffar/android-recyclerview-using-mvvm-and-databinding-d9c659236908>

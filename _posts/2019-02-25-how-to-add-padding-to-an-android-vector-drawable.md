@@ -12,11 +12,11 @@ tags:
     - 'Vector Drawable'
 ---
 
-When adding icons to Android apps, you’ll generally be working with square icons. For example, the excellent built-in vector icon library ([also available online](https://material.io/tools/icons/?style=baseline)) only contains perfectly square icons.
+When adding icons to Android apps, you'll generally be working with square icons. For example, the excellent built-in vector icon library ([also available online](https://material.io/tools/icons/?style=baseline)) only contains perfectly square icons.
 
 Sometimes however, these vector icons are used in a non-square place. With a normal image file adding extra padding is easy, not so with a vector file!
 
-This tutorial will cover how to modify a square vector image to add any padding you want, without any changes to your app’s layouts. The icon used is a white [access_time](https://material.io/tools/icons/?search=tim&icon=access_time), used to represent a loading state.
+This tutorial will cover how to modify a square vector image to add any padding you want, without any changes to your app's layouts. The icon used is a white [access_time](https://material.io/tools/icons/?search=tim&icon=access_time), used to represent a loading state.
 
 In my app, a `StaggeredGridLayoutManager` is used to display 3 movie posters per row. These movie posters are always the same size, and a ratio of 1:1.5 width:height.
 
@@ -36,7 +36,7 @@ If the `ImageView`s are initially set to our loading icon (either as a default i
 
 ## Resizing our vector drawable
 
-Our vector image is too small! This is due to the `android:height="24dp" android:width="24dp"` initially included in the icon, enforcing a maximum size. Setting these both to `240dp` fixes the horizontal spacing issue, but the 1:1 ratio conflicts with the movie poster’s 1:1.5. This results in the movie posters constantly pushing each other and the loading icons around as they load, making for a very unappealing UI.
+Our vector image is too small! This is due to the `android:height="24dp" android:width="24dp"` initially included in the icon, enforcing a maximum size. Setting these both to `240dp` fixes the horizontal spacing issue, but the 1:1 ratio conflicts with the movie poster's 1:1.5. This results in the movie posters constantly pushing each other and the loading icons around as they load, making for a very unappealing UI.
 
 [![](/wp-content/uploads/2019/02/2.png)](/wp-content/uploads/2019/02/2.png)
 

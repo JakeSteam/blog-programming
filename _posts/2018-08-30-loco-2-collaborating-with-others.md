@@ -22,16 +22,16 @@ These articles are **not** sponsored!
 
 Most commercial projects will end up with at least a few developers, a project manager or two, and various translators. The project used for this article currently has a total of 18 users in a mixture of countries and roles.
 
-Your team is accessed via the “users” icon in the top right, and will show the roles of all team members, as well as precisely which permissions they have been given.  
+Your team is accessed via the "users" icon in the top right, and will show the roles of all team members, as well as precisely which permissions they have been given.  
 ![viewing team](/wp-content/uploads/2018/08/zk7zzby.png)
 
-Clicking a team member will let you view some basic information such as locale and last login. Additionally, if your account has the “Manage project permissions” permission you can modify that user’s access to Loco, covered further in the next section.
+Clicking a team member will let you view some basic information such as locale and last login. Additionally, if your account has the "Manage project permissions" permission you can modify that user's access to Loco, covered further in the next section.
 
 ### Adding new users
 
-Adding a new user requires the “Add new project members” permission, and is accessed via the “Invite new team member” button. Existing users in other projects can be added, or an email address and name (optional) can be submitted.
+Adding a new user requires the "Add new project members" permission, and is accessed via the "Invite new team member" button. Existing users in other projects can be added, or an email address and name (optional) can be submitted.
 
-After these details have been entered, the user’s role must be picked. If on the free plan, only Translator (edit existing strings for one or more languages) can be selected. If on a paid plan, an existing project role can be selected (by default Administrator, Developer, or Project Manager), or custom roles can be created. More info on custom roles is [available on the Loco site](https://localise.biz/help/management/project-roles/custom-roles).  
+After these details have been entered, the user's role must be picked. If on the free plan, only Translator (edit existing strings for one or more languages) can be selected. If on a paid plan, an existing project role can be selected (by default Administrator, Developer, or Project Manager), or custom roles can be created. More info on custom roles is [available on the Loco site](https://localise.biz/help/management/project-roles/custom-roles).  
 ![adding users](/wp-content/uploads/2018/08/mbdqrph.png)
 
 Once the user has been invited, they will receive an invitation email inviting them to create an account and gain access to the project. Note that users will only have a profile picture if they have logged in using a third party login (Facebook, Twitter, GitHub).
@@ -56,4 +56,4 @@ Notifications are by default received for all languages on all projects, and pro
 
 ### Summary
 
-Overall, Loco’s collaboration functionality goes above and beyond similar offerings, and the string history ensures the source of any unexpected text can easily be tracked down. Additionally, clarifying translations and adding additional users is very straightforward. Considering only a single user needs to pay for the paid plans, and unlimited extra users can be added, the plans are likely to be worth it for most companies for the custom roles / full string history alone! A detailed comparison of the plans is available in [Part 1](/loco-1-string-management-for-multi-platform-multi-locale-projects/).
+Overall, Loco's collaboration functionality goes above and beyond similar offerings, and the string history ensures the source of any unexpected text can easily be tracked down. Additionally, clarifying translations and adding additional users is very straightforward. Considering only a single user needs to pay for the paid plans, and unlimited extra users can be added, the plans are likely to be worth it for most companies for the custom roles / full string history alone! A detailed comparison of the plans is available in [Part 1](/loco-1-string-management-for-multi-platform-multi-locale-projects/).

@@ -18,11 +18,11 @@ Chrome extensions are small plugins that modify how Chrome (or websites viewed i
 
 A couple of years ago, I made a very simple Chrome extension called [Selective Scrubber](https://chrome.google.com/webstore/detail/selective-scrubber/ljjdcbfpdmjelppcfeiadnjagdhompkb) that removed predefined domains &amp; terms from your Chrome history. This tutorial will cover the code behind it, as well as how to upload an extension like this.
 
-Before diving into this project, I strongly recommend [looking at the final result](https://chrome.google.com/webstore/detail/selective-scrubber/ljjdcbfpdmjelppcfeiadnjagdhompkb), and checking out the [extension’s repository](https://github.com/JakeSteam/SelectiveScrubber). It’s also worth noting that this extension doesn’t work if using Chrome history sync, due to [a long-standing bug](https://github.com/JakeSteam/SelectiveScrubber/issues/1) (4 years!).
+Before diving into this project, I strongly recommend [looking at the final result](https://chrome.google.com/webstore/detail/selective-scrubber/ljjdcbfpdmjelppcfeiadnjagdhompkb), and checking out the [extension's repository](https://github.com/JakeSteam/SelectiveScrubber). It's also worth noting that this extension doesn't work if using Chrome history sync, due to [a long-standing bug](https://github.com/JakeSteam/SelectiveScrubber/issues/1) (4 years!).
 
 ## Creating extension framework
 
-To start, we’re going to use the simplest extension possible, a project folder containing a file called `manifest.json`. Add the following into the file:
+To start, we're going to use the simplest extension possible, a project folder containing a file called `manifest.json`. Add the following into the file:
 
 ```
 {
@@ -33,23 +33,23 @@ To start, we’re going to use the simplest extension possible, a project folder
 }
 ```
 
-Technically you’ve now created an extension, congratulations! There’s a bit more work to do for it to be actually useful however…
+Technically you've now created an extension, congratulations! There's a bit more work to do for it to be actually useful however…
 
 ## Preparing Chrome for extension development
 
 Before any extension code can be run, running local unpacked extensions must be enabled. This is done by navigating to your extensions page (chrome://extensions/), and:
 
-1. Toggling “Developer mode” to on in the top right.
-2. Selecting the newly visible “Load unpacked” option.
+1. Toggling "Developer mode" to on in the top right.
+2. Selecting the newly visible "Load unpacked" option.
 3. Selecting your project folder.
 
-Your extension should now be visible in your extensions list! The little “Reload” icon must be clicked after every time you make code changes to make Chrome run the updated code.
+Your extension should now be visible in your extensions list! The little "Reload" icon must be clicked after every time you make code changes to make Chrome run the updated code.
 
 [![](/wp-content/uploads/2018/12/extensionoverview.png)](/wp-content/uploads/2018/12/extensionoverview.png)
 
 ## Preparing the manifest
 
-First, add the following snippet to your `manifest.json` file, to tell Chrome that we’re going to be using a background JavaScript file:
+First, add the following snippet to your `manifest.json` file, to tell Chrome that we're going to be using a background JavaScript file:
 
 ```
 "background": {
@@ -60,7 +60,7 @@ First, add the following snippet to your `manifest.json` file, to tell Chrome th
 
 Next, create a folder called `js` and add `clear_history.js` into it. This can be left empty for now.
 
-We’re also going to have an options page, so that must be registered in the `manifest.json` too:
+We're also going to have an options page, so that must be registered in the `manifest.json` too:
 
 ```
 "options_ui": {
@@ -69,11 +69,11 @@ We’re also going to have an options page, so that must be registered in the `m
 }
 ```
 
-Again, create the `options.html` page in the project folder. After reloading the extension (with the reload button on the extension’s card), you should now see a “Inspect views background page” link. Clicking this won’t do anything, but it’s presence confirms your background script earlier has been registered successfully!
+Again, create the `options.html` page in the project folder. After reloading the extension (with the reload button on the extension's card), you should now see a "Inspect views background page" link. Clicking this won't do anything, but it's presence confirms your background script earlier has been registered successfully!
 
 [![](/wp-content/uploads/2018/12/extensionbackground.png)](/wp-content/uploads/2018/12/extensionbackground.png)
 
-We’re also going to need permissions for storage (for preferences) and history (for deleting entries), so add the following into the manifest too:
+We're also going to need permissions for storage (for preferences) and history (for deleting entries), so add the following into the manifest too:
 
 ```
 "permissions": ["history", "storage"],
@@ -81,11 +81,11 @@ We’re also going to need permissions for storage (for preferences) and history
 
 ## Adding toolbar icon
 
-Next, we’re going to add a toolbar icon for our extension, so that we can see it is installed and access the options. To do this, we need an app icon in both 48×48 and 96×96 sizes. I’d recommend using [Google’s Material Design icon library](https://material.io/tools/icons/), and exporting PNG icons in 48dp (this provides both the necessary app sizes). For this tutorial, I’ll use [the `find_replace` icon](https://material.io/tools/icons/?icon=find_replace&style=baseline).
+Next, we're going to add a toolbar icon for our extension, so that we can see it is installed and access the options. To do this, we need an app icon in both 48×48 and 96×96 sizes. I'd recommend using [Google's Material Design icon library](https://material.io/tools/icons/), and exporting PNG icons in 48dp (this provides both the necessary app sizes). For this tutorial, I'll use [the `find_replace` icon](https://material.io/tools/icons/?icon=find_replace&style=baseline).
 
 [![](/wp-content/uploads/2018/12/icon.png)](/wp-content/uploads/2018/12/icon.png)
 
-Once you’ve got your icons, rename them to `icon_48.png` and `icon_96.png`, then place them inside an `images` folder in your project folder. Now that we’ve got image assets, edit the `manifest.json` to include them as icons (for the extension store), and as a `browser_action` to appear in the toolbar.
+Once you've got your icons, rename them to `icon_48.png` and `icon_96.png`, then place them inside an `images` folder in your project folder. Now that we've got image assets, edit the `manifest.json` to include them as icons (for the extension store), and as a `browser_action` to appear in the toolbar.
 
 ```
 "icons": {
@@ -97,13 +97,13 @@ Once you’ve got your icons, rename them to `icon_48.png` and `icon_96.png`, th
 },
 ```
 
-After reloading the extension, it will now appear in your Chrome toolbar! Right clicking it shows an “Options” menu, which currently… opens an empty page. Time to fix that!
+After reloading the extension, it will now appear in your Chrome toolbar! Right clicking it shows an "Options" menu, which currently… opens an empty page. Time to fix that!
 
 [![](/wp-content/uploads/2018/12/options.png)](/wp-content/uploads/2018/12/options.png)
 
 ## Creating the options screen
 
-In this section, we’ll be creating the Chrome extension’s options, where users can edit their scrub list and toggle a scrub summary message.
+In this section, we'll be creating the Chrome extension's options, where users can edit their scrub list and toggle a scrub summary message.
 
 ### Options HTML
 
@@ -121,19 +121,19 @@ Open up the `options.html` file inside the project root. The HTML content is ver
 </html>
 ```
 
-Accessing the options screen will now show our options! However, since there’s no functional code yet, it’s not particularly useful.
+Accessing the options screen will now show our options! However, since there's no functional code yet, it's not particularly useful.
 
 Create the `options.js` file inside the `js` folder, this will contain all of the JavaScript for our options page. The options page contains 2 pieces of functionality; saving preferences, and loading preferences.
 
 ### Saving options
 
-First, an event listener must be added to the “Save” button, so that saving happens when it is pressed. Add the following into `options.js`:
+First, an event listener must be added to the "Save" button, so that saving happens when it is pressed. Add the following into `options.js`:
 
 ```javascript
 document.getElementById('save').addEventListener('click', save);
 ```
 
-Now we need to create the `save` function that the listener calls. This function gets the list of sites from the text area and the “Display scrub summary?” checkbox answer, then places them in Chrome storage. Note that `displaySavedMessage` is the function to be called when data has been successfully saved. This function just displays a piece of text in the status field of the page, then removes it after 2 seconds.
+Now we need to create the `save` function that the listener calls. This function gets the list of sites from the text area and the "Display scrub summary?" checkbox answer, then places them in Chrome storage. Note that `displaySavedMessage` is the function to be called when data has been successfully saved. This function just displays a piece of text in the status field of the page, then removes it after 2 seconds.
 
 ```javascript
 function save() {
@@ -182,7 +182,7 @@ Saving and loading data is now complete! This can be tested by changing your opt
 
 ## Clearing out history when clicked
 
-For the actual history clearing, we’re going to need to open up the `clear_history.js` file created at the very start.
+For the actual history clearing, we're going to need to open up the `clear_history.js` file created at the very start.
 
 First, add a listener to the browser button being clicked. When clicked, the options will be loaded, then passed to `deleteBySites` when ready:
 
@@ -208,7 +208,7 @@ function deleteBySites(storage) {
 }
 ```
 
-`deleteBySite` performs a search of Chrome’s history for the specified phrase, which returns a list of results. These results are then iterated over, deleting all, as well as keeping a running tally of the number of results deleted. Finally, if the `popup` option is true, the results are passed to `siteDeleted`.
+`deleteBySite` performs a search of Chrome's history for the specified phrase, which returns a list of results. These results are then iterated over, deleting all, as well as keeping a running tally of the number of results deleted. Finally, if the `popup` option is true, the results are passed to `siteDeleted`.
 
 ```js
 function deleteBySite(site, popup) {
@@ -253,23 +253,23 @@ The extension is now fully working! The only thing left to do is prepare it for 
 
 ## Preparing your Chrome extension for release
 
-Your app’s name and description in your `manifest.json` should now be changed to something unique. Additionally, you might want to set a `` and a `version`. Whilst `version` must be numerical, `versionName` can be anything you want. [Semantic Versioning](https://semver.org/) is a good way of ensuring consistent, understandable version codes.
+Your app's name and description in your `manifest.json` should now be changed to something unique. Additionally, you might want to set a `` and a `version`. Whilst `version` must be numerical, `versionName` can be anything you want. [Semantic Versioning](https://semver.org/) is a good way of ensuring consistent, understandable version codes.
 
-Finally, right click your extension’s folder, and make a `.zip` archive of it (“Send to” -&gt; “Compressed (zipped) folder”).
+Finally, right click your extension's folder, and make a `.zip` archive of it ("Send to" -&gt; "Compressed (zipped) folder").
 
 ## Publishing your Chrome extension
 
 1. Go to the beta [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole/) (you may need to opt in).
 2. Register as a developer, and pay the necessary $5 registration fee (to prevent spam).
-3. Click “New item” in the top right, and select your `.zip` file.
+3. Click "New item" in the top right, and select your `.zip` file.
 4. You will then have a draft extension, which needs the following fields to be filled in before publishing: 
-    1. Extension’s language
-    2. Extension’s primary category
+    1. Extension's language
+    2. Extension's primary category
     3. 1-5 screenshots (1280×800 or 640×400)
 
-Once these 3 fields have been filled in, your extension is ready to publish! However, you’ll likely want to customise the support URLs, app icons, detailed description, and a few other pieces of metadata. When you’re ready to go, press “Publish item” in the top right.
+Once these 3 fields have been filled in, your extension is ready to publish! However, you'll likely want to customise the support URLs, app icons, detailed description, and a few other pieces of metadata. When you're ready to go, press "Publish item" in the top right.
 
-**Congratulations, it’s published!**
+**Congratulations, it's published!**
 
 [![](/wp-content/uploads/2018/12/dashboard.png)](/wp-content/uploads/2018/12/dashboard.png)
 

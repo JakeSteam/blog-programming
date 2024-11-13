@@ -28,17 +28,17 @@ First, a few of the errors encountered:
 The reason behind these issues ultimately boiled down to:
 
 1. The Gradle plugin being useful in an ideal situation, but just muddying the waters if trying to resolve an issue manually.
-2. The [library’s `build.gradle`](https://github.com/OneSignal/OneSignal-Android-SDK/blob/master/OneSignalSDK/onesignal/build.gradle) containing a few old Google Play Services dependencies (e.g. 12.0.1), and some unusual syntax.
+2. The [library's `build.gradle`](https://github.com/OneSignal/OneSignal-Android-SDK/blob/master/OneSignalSDK/onesignal/build.gradle) containing a few old Google Play Services dependencies (e.g. 12.0.1), and some unusual syntax.
 3. The OneSignal library not being designed for a project with many modules.
 
 The solution settled on was unfortunately not at all ideal, but it *did* get notifications working perfectly:
 
-1. Remove all code to do with the Gradle plugin, it’s not necessary.
+1. Remove all code to do with the Gradle plugin, it's not necessary.
 2. Download the module as a `.zip` and import it into your project manually.
 3. Update the Google Play Services version to the same as the rest of your project.
-4. Add `implementation ‘com.google.android.gms:play-services-ads:15.0.1’` to the new submodule’s `build.gradle`, or a few files within won’t compile.
+4. Add `implementation ‘com.google.android.gms:play-services-ads:15.0.1'` to the new submodule's `build.gradle`, or a few files within won't compile.
 5. Fix a couple of files that have missing imports.
 6. Resync Gradle, and skip to [Step 2 of the OneSignal setup docs](https://documentation.onesignal.com/docs/android-sdk-setup).
-7. *Note: If you’re using build flavours, make sure you change those in the new submodule to match your own.*
+7. *Note: If you're using build flavours, make sure you change those in the new submodule to match your own.*
 
-Whilst the solution did work, unfortunately it’s a very hacky approach, just downloading the library and manually messing the the gradle files. Hopefully in the future the OneSignal library’s multi module support improves.
+Whilst the solution did work, unfortunately it's a very hacky approach, just downloading the library and manually messing the the gradle files. Hopefully in the future the OneSignal library's multi module support improves.

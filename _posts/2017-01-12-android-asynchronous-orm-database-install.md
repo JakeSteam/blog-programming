@@ -15,17 +15,17 @@ tags:
     - Java
 ---
 
-Many apps need to ship with a local database, and many apps also use a ORM to handle their database actions (I personally use and recommend [Sugar](http://satyan.github.io/sugar/)). Tying together these two approaches requires some sort of compromise, often manually copying a SQLite database around the device’s filesystem.
+Many apps need to ship with a local database, and many apps also use a ORM to handle their database actions (I personally use and recommend [Sugar](http://satyan.github.io/sugar/)). Tying together these two approaches requires some sort of compromise, often manually copying a SQLite database around the device's filesystem.
 
 Instead for City Flow a different approach was decided: Installing the database on first run, providing progress updates to the user.
 
 ## The Solution
 
-The core part of the solution will be the `AsyncTask` described in an earlier article about [asynchronous map generation](https://blog.jakelee.co.uk/android-asynchronous-map-generator/). We’ll be starting an asynchronous task on first start, which will be reporting progress back to the progress bar and text on screen. In addition, we’ll be using ORM-specific techniques to actually save the new data, however they are common to almost every ORM.
+The core part of the solution will be the `AsyncTask` described in an earlier article about [asynchronous map generation](https://blog.jakelee.co.uk/android-asynchronous-map-generator/). We'll be starting an asynchronous task on first start, which will be reporting progress back to the progress bar and text on screen. In addition, we'll be using ORM-specific techniques to actually save the new data, however they are common to almost every ORM.
 
 #### Preparing The Installer
 
-A separate `PatchHelper` class is used to handle the initial database install and subsequent patches. This is then called every time the app starts, in case any new databases patches are available. The app’s main activity creates a new `PatchHelper` instance (passing itself), then starts the AsyncTask.
+A separate `PatchHelper` class is used to handle the initial database install and subsequent patches. This is then called every time the app starts, in case any new databases patches are available. The app's main activity creates a new `PatchHelper` instance (passing itself), then starts the AsyncTask.
 
 ```
     new PatchHelper(this).execute();
@@ -50,7 +50,7 @@ public class PatchHelper extends AsyncTask {
 
 #### Starting The Installer
 
-Shared preferences are used to store the current database version. It’s very reliable, and we aren’t concerned about the user modifying this value if they’re rooted, so security is a non-issue.
+Shared preferences are used to store the current database version. It's very reliable, and we aren't concerned about the user modifying this value if they're rooted, so security is a non-issue.
 
 If the current database version is non-existent, or set to `NO_DATABASE`(0), then the initial database install needs to be performed, and the new database version saved. Otherwise, just return, since no install is needed.
 
@@ -83,7 +83,7 @@ private void createDatabase() {
 
 Two parameters are passed to `setProgress()`, the name of the current item, and the percentage of progress made. The percentage progress is fixed in this implementation based on usual installation times.
 
-`setProgress()` updates the progress bar’s value, and passes the current item text onto `publishProgress()`. Somewhat confusingly, calling `publishProgress` triggers `onProgressUpdate`, which updates the progress text’s value. Note that multiple strings could very easily be passed.
+`setProgress()` updates the progress bar's value, and passes the current item text onto `publishProgress()`. Somewhat confusingly, calling `publishProgress` triggers `onProgressUpdate`, which updates the progress text's value. Note that multiple strings could very easily be passed.
 
 ```
 private void setProgress(String currentTask, int percentage) {
@@ -112,7 +112,7 @@ private void createAchievement() {
 
 #### Tidying Up
 
-Finally, the “progress” container is hidden, and the normal main menu is displayed. Included below for completeness, but hopefully it should be pretty obvious!
+Finally, the "progress" container is hidden, and the normal main menu is displayed. Included below for completeness, but hopefully it should be pretty obvious!
 
 ```
     progressWrapper.setVisibility(View.GONE);
@@ -123,4 +123,4 @@ Finally, the “progress” container is hidden, and the normal main menu is dis
 
 Whilst the actual installation is ORM specific, the overall mechanism of installing is applicable regardless of ORM, and even applicable to non-database background installations.
 
-Additionally, it’s worth pointing out that an asynchronous database installation on first launch isn’t necessarily the best implementation for all use cases. If there is a very large amount of data for example, it may be more efficient to copy the database on launch, synchronise it from a remote server, or have a small “default” database replaced later on during a sync.
+Additionally, it's worth pointing out that an asynchronous database installation on first launch isn't necessarily the best implementation for all use cases. If there is a very large amount of data for example, it may be more efficient to copy the database on launch, synchronise it from a remote server, or have a small "default" database replaced later on during a sync.

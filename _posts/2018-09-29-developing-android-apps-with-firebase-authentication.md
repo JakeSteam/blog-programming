@@ -15,7 +15,7 @@ tags:
 
 Firebase Authentication provides an app with the ability to handle user registration, user logging in, and retrieving user data. It has the ability to integrate with phone-based authentication as well as common services such as Facebook, Twitter, and Github. This tutorial will cover the simplest integrations, email and Google account.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase). Throughout this tutorial, you’ll need access to the [Firebase Authentication dashboard](https://console.firebase.google.com/project/_/authentication/users), and the [official documentation](https://firebase.google.com/docs/auth/) may be useful too.
+This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase). Throughout this tutorial, you'll need access to the [Firebase Authentication dashboard](https://console.firebase.google.com/project/_/authentication/users), and the [official documentation](https://firebase.google.com/docs/auth/) may be useful too.
 
 ## Implementation
 
@@ -33,7 +33,7 @@ implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
 
 ### Enabling sign-in methods
 
-Next, the required sign in methods need to be activated in [the console](https://console.firebase.google.com/project/_/authentication/providers). For each, click the relevant row then toggle “Enable”, whilst leaving the other settings as default.
+Next, the required sign in methods need to be activated in [the console](https://console.firebase.google.com/project/_/authentication/providers). For each, click the relevant row then toggle "Enable", whilst leaving the other settings as default.
 
 #### Email
 
@@ -41,7 +41,7 @@ The first, email, is very simple. No extra work is required, and it also allows 
 
 #### Google
 
-The second, Google account, requires some more work. The SHA-1 fingerprint of your keystore (used to verify a version of your app is legitimate) needs to be added to your [Settings page](https://console.firebase.google.com/project/_/settings/general/). With your settings page open, a SHA-1 fingerprint can be added by pressing “Add Fingerprint”. This should be done for both debug and release keystores, so that Firebase Auth works in development and when released.
+The second, Google account, requires some more work. The SHA-1 fingerprint of your keystore (used to verify a version of your app is legitimate) needs to be added to your [Settings page](https://console.firebase.google.com/project/_/settings/general/). With your settings page open, a SHA-1 fingerprint can be added by pressing "Add Fingerprint". This should be done for both debug and release keystores, so that Firebase Auth works in development and when released.
 
 A [full guide to generating a SHA-1 fingerprint](https://developers.google.com/android/guides/client-auth) is provided by Google.
 
@@ -52,7 +52,7 @@ Your Firebase project is now ready to receive authentication requests from your 
 
 ### Signing in
 
-Signing in just requires setting the login methods desired (called providers), and starting Firebase Auth’s login activity along with a request code. Once the sign-in attempt is completed (successfully or unsuccessfully), `onActivityResult` will be called. The following function can be called when a login button is pressed.
+Signing in just requires setting the login methods desired (called providers), and starting Firebase Auth's login activity along with a request code. Once the sign-in attempt is completed (successfully or unsuccessfully), `onActivityResult` will be called. The following function can be called when a login button is pressed.
 
 ```
     private fun clickLogin() = startActivityForResult(
@@ -66,7 +66,7 @@ Signing in just requires setting the login methods desired (called providers), a
 
 #### Customisation
 
-The login experience can be customised to better fit your app. By default your app’s default theme is used, but a custom theme can be set using `setTheme()` on the `SignInIntentBuilder`. Additionally, calling `setLogo()` allows a drawable (e.g. your app’s logo) to be shown in the middle of the screen. Finally, custom Terms of Service and Privacy Policy links can be added using `setTosAndPrivacyPolicyUrls()`. The following snippet functions identically to that above, but is much more customised:
+The login experience can be customised to better fit your app. By default your app's default theme is used, but a custom theme can be set using `setTheme()` on the `SignInIntentBuilder`. Additionally, calling `setLogo()` allows a drawable (e.g. your app's logo) to be shown in the middle of the screen. Finally, custom Terms of Service and Privacy Policy links can be added using `setTosAndPrivacyPolicyUrls()`. The following snippet functions identically to that above, but is much more customised:
 
 ```
     private fun clickCustomLogin() = startActivityForResult(
@@ -116,11 +116,11 @@ Now that login has been successful, we can lookup the current user in Firebase u
 
 Most of the useful information is stored within the `user.providerData`; an array of every service the user has authenticated to your app with. This will usually only have 1 service in it, and the data available does vary by provider. That being said, the following should usually be available on each provider:
 
-- `providerId`: The provider’s name, e.g. “firebase”.
-- `uid`: The user’s ID for that provider, format varies between provider.
+- `providerId`: The provider's name, e.g. "firebase".
+- `uid`: The user's ID for that provider, format varies between provider.
 - `displayName`: The name the user has chosen on that provider.
 - `email`: The email the user signed up to the provider with.
-- `photoUrl`: A publicly accessible image URL containing the user’s profile picture for that provider.
+- `photoUrl`: A publicly accessible image URL containing the user's profile picture for that provider.
 
 This data is shown in the [reference app](https://github.com/JakeSteam/FirebaseReference/):  
 ![auth example](/wp-content/uploads/2018/09/v2fiwrl.png)

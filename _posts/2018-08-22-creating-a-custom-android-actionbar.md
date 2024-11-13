@@ -12,7 +12,7 @@ tags:
     - Styles
 ---
 
-By default, new Android projects have an ActionBar at the top (also known as a title bar), which usually contains a title, an optional back button on the left, and optional action(s) on the right. For many cases, minor customisations to colour are enough, but if a project requires exactly meeting a client’s design more advanced functionality will need to be utilised.
+By default, new Android projects have an ActionBar at the top (also known as a title bar), which usually contains a title, an optional back button on the left, and optional action(s) on the right. For many cases, minor customisations to colour are enough, but if a project requires exactly meeting a client's design more advanced functionality will need to be utilised.
 
 This tutorial will walk through the steps needed to turn a default ActionBar into a fully customised area of the screen, whilst keeping useful functionality like displaying a back button intact. Kotlin is used for [this sample project](https://github.com/JakeSteam/BlogCustomActionBar), but all code can be easily converted to Java.
 
@@ -48,7 +48,7 @@ myBar.setDisplayShowCustomEnabled(true)
 myBar.setCustomView(R.layout.element_toolbar)
 ```
 
-Additionally, since we’re going to be handling title text in our `element_toolbar.xml`, we should turn off displaying text:
+Additionally, since we're going to be handling title text in our `element_toolbar.xml`, we should turn off displaying text:
 
 ```
 myBar.setDisplayShowTitleEnabled(false)
@@ -56,7 +56,7 @@ myBar.setDisplayShowTitleEnabled(false)
 
 ![3](/wp-content/uploads/2018/08/3.png)
 
-We now have a custom toolbar! However, there’s a pretty glaring issue, in that our custom layout doesn’t actually reach the edges of the ActionBar, so the default design can still be seen. To fix that we need to…
+We now have a custom toolbar! However, there's a pretty glaring issue, in that our custom layout doesn't actually reach the edges of the ActionBar, so the default design can still be seen. To fix that we need to…
 
 ### Override ActionBar background
 

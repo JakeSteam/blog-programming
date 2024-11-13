@@ -12,9 +12,9 @@ tags:
     - Sharing
 ---
 
-Often, users of your app will want to share images from it. Whether this is their own content, their friend’s content, or content published by you to your users, sharing can massively help your app’s popularity. This can be a little tricky if you’re displaying images from inside your app’s directory, since these files aren’t accessible from other apps! This means that when a user tries to share the image, the app it is shared to will be unable to access it.
+Often, users of your app will want to share images from it. Whether this is their own content, their friend's content, or content published by you to your users, sharing can massively help your app's popularity. This can be a little tricky if you're displaying images from inside your app's directory, since these files aren't accessible from other apps! This means that when a user tries to share the image, the app it is shared to will be unable to access it.
 
-The solution to this is creating a `FileProvider` that makes your images’ directory accessible. Then, forming an intent that grants the app that was shared to permission to view the image.
+The solution to this is creating a `FileProvider` that makes your images' directory accessible. Then, forming an intent that grants the app that was shared to permission to view the image.
 
 The code used in this tutorial was used to add image sharing to my upcoming [Astronomy Picture of the Day app](https://github.com/JakeSteam/APODWallpaper). All code used is also [available as a GitHub Gist](https://gist.github.com/JakeSteam/3a685edee460ad2497fd3827b70622df), if you just want to skip to copy and pasting code!
 
@@ -55,11 +55,11 @@ Now that our directory to share has been defined, it has to be added to the `And
 
 ## Adding image sharing function
 
-To actually share the image, first the file’s URI is retrieved using the previously defined authority and `getUriForFile`. Next, an intent is created with the following parameters set:
+To actually share the image, first the file's URI is retrieved using the previously defined authority and `getUriForFile`. Next, an intent is created with the following parameters set:
 
 - `setAction`: Determines the intent is for sending content.
 - `addFlags`: Gives the receiving app permission to view the attached image.
-- `setDataAndType`: This set the image’s URI, as well as the filetype (e.g. PNG / JPG).
+- `setDataAndType`: This set the image's URI, as well as the filetype (e.g. PNG / JPG).
 - `putExtra(Intent.EXTRA_STREAM`: This adds the URI as a streamable data source.
 - `putExtra(Intent.EXTRA_TEXT`: This sets the text to be shared alongside the image (where supported).
 
@@ -89,7 +89,7 @@ val imageCache = File(context.cacheDir, "images")
 shareImage(File(imageCache, "myimage.png"))
 ```
 
-Note that I’m using the cache directory in this example, `.filesDir` can be used instead (make sure to change your `filepaths.xml` too!).
+Note that I'm using the cache directory in this example, `.filesDir` can be used instead (make sure to change your `filepaths.xml` too!).
 
 When your image sharing function is called, the user will receive a popup suggesting many, many locations to share their content to. A screenshot from newly created emulator is below, real devices will have many pages of options instead!
 

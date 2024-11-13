@@ -13,13 +13,13 @@ tags:
     - Postman
 ---
 
-NASA’s [Astronomy Picture of the Day API](https://api.nasa.gov/api.html) is an amazing service providing free, reliably sourced space images. However, the official documentation can be a little lacking, hopefully this post will improve on it somewhat.
+NASA's [Astronomy Picture of the Day API](https://api.nasa.gov/api.html) is an amazing service providing free, reliably sourced space images. However, the official documentation can be a little lacking, hopefully this post will improve on it somewhat.
 
-I’m currently using the API to [create an Android app that changes your wallpaper everyday](https://github.com/JakeSteam/APODWallpaper), so all lessons here were learnt through trial and error. The app isn’t quite finished yet, but already has more features and reliability than all other similar offerings!
+I'm currently using the API to [create an Android app that changes your wallpaper everyday](https://github.com/JakeSteam/APODWallpaper), so all lessons here were learnt through trial and error. The app isn't quite finished yet, but already has more features and reliability than all other similar offerings!
 
 ## Postman collection
 
-Every request made in this tutorial is available in a Postman collection, so you can start using the API instantly. You’ll need to [create an environment variable](http://blog.getpostman.com/2014/02/20/using-variables-inside-postman-and-collection-runner/) called `api_key` with your API key.
+Every request made in this tutorial is available in a Postman collection, so you can start using the API instantly. You'll need to [create an environment variable](http://blog.getpostman.com/2014/02/20/using-variables-inside-postman-and-collection-runner/) called `api_key` with your API key.
 
 To use the collection, [save this link](https://pastebin.com/raw/nwvEaHHN) as `postman.json`, then import it into your Postman collections:
 
@@ -29,10 +29,10 @@ To use the collection, [save this link](https://pastebin.com/raw/nwvEaHHN) as `p
 
 To return an APOD, make a `GET` request to `https://api.nasa.gov/planetary/apod`. Whilst the following 4 URL parameters are optional, your requests will almost certainly need a couple of them:
 
-- `api_key`: Using an API key allows you to make up to 1000 requests per hour. If you do not set one, you’ll hit quota limits pretty quickly. You can get one by filling in the [simple API key form](https://api.nasa.gov/index.html#apply-for-an-api-key), you’ll then be emailed an API key within a few minutes.
-- `date`: This is the date you want to return the APOD for (in `YYYY-MM-DD` format), if none is set the latest APOD will be returned. Please see the “Limitations” section for more information on this.
+- `api_key`: Using an API key allows you to make up to 1000 requests per hour. If you do not set one, you'll hit quota limits pretty quickly. You can get one by filling in the [simple API key form](https://api.nasa.gov/index.html#apply-for-an-api-key), you'll then be emailed an API key within a few minutes.
+- `date`: This is the date you want to return the APOD for (in `YYYY-MM-DD` format), if none is set the latest APOD will be returned. Please see the "Limitations" section for more information on this.
 - `start_date` and `end_date`: This is an alternative to `date`, and returns an array of all APODs inside the range.
-- `hd`: This specifies whether the image’s HD URL should be returned alongside a regular quality URL, and should be set to `true` or `false`. However, the API doesn’t seem to always follow this parameter, and sometimes returns the HD URL even if you haven’t asked for it!
+- `hd`: This specifies whether the image's HD URL should be returned alongside a regular quality URL, and should be set to `true` or `false`. However, the API doesn't seem to always follow this parameter, and sometimes returns the HD URL even if you haven't asked for it!
 
 A fully populated example URL is `https://api.nasa.gov/planetary/apod?api_key=xxxxxxxxxxxxxxxxxxxxxxxx&date=2018-12-28`, the response for this will be described below.
 
@@ -57,18 +57,18 @@ The response is a JSON object (or if using a date range, an array of objects), w
 - `date`: This field just returns the date passed in the URL, so is only useful if not defining a target APOD date.
 - `explanation`: A text description of the photo. This usually contains 100-200 words.
 - `hdurl` (optional): If requested, this field contains the full quality version of the image. Note that this can be missing, even if you request it!
-- `media_type`: This field determines the type of content. Usually this is `image`, but can be `video`. There may be other `media_type`s, but I haven’t found any.
+- `media_type`: This field determines the type of content. Usually this is `image`, but can be `video`. There may be other `media_type`s, but I haven't found any.
 - `service_version`: This has always been `v1`, but.. could one day change.
 - `title`: This APOD title is usually 3-6 words long, and is reliably concise, factual, and descriptive.
 - `url`: This field contains the actual APOD URL. Usually a `.jpg`, but for non-image APODs may be a YouTube video or another arbitrary URL.
 
 ## Limitations
 
-Whilst the API is an excellent service, it definitely isn’t perfect. The following few sections are things that may be unclear initially, but need to be considered when using the API.
+Whilst the API is an excellent service, it definitely isn't perfect. The following few sections are things that may be unclear initially, but need to be considered when using the API.
 
 ### Reliability
 
-The API quite often simply doesn’t work. It’ll return a (HTML) server error page from their CDN after a long delay (20-30 seconds). This usually persists for 5-10 minutes, the API then performs normally again. Luckily, these failed requests don’t seem to use up your quota, but you’ll still need to handle this unusual response.
+The API quite often simply doesn't work. It'll return a (HTML) server error page from their CDN after a long delay (20-30 seconds). This usually persists for 5-10 minutes, the API then performs normally again. Luckily, these failed requests don't seem to use up your quota, but you'll still need to handle this unusual response.
 
 ```html
 <html>
@@ -110,7 +110,7 @@ According to [the APOD archive](https://apod.nasa.gov/apod/archivepix.html), the
 }
 ```
 
-It’s also not guaranteed that today’s APOD will be ready at midnight, especially when considering time zones. As such, any implementation should have the ability to handle today’s date not returning results, and potentially falling back to the day before.
+It's also not guaranteed that today's APOD will be ready at midnight, especially when considering time zones. As such, any implementation should have the ability to handle today's date not returning results, and potentially falling back to the day before.
 
 ### Non-image dates
 
@@ -129,13 +129,13 @@ Whilst most days return image URLs, some return video URLs (or potentially other
 
 ### Image size
 
-Whilst the `url` field has reasonably sized images (usually 1000-2000px width / height), the `hdurl` field can have absolutely massive images. For example, 2018-12-02 returns `https://apod.nasa.gov/apod/image/1812/FairyPillar_Hubble_3857.jpg`, a 3857×7804 image! There’s certainly larger ones out there, so HD images need to be handled carefully to avoid excessive memory usage.
+Whilst the `url` field has reasonably sized images (usually 1000-2000px width / height), the `hdurl` field can have absolutely massive images. For example, 2018-12-02 returns `https://apod.nasa.gov/apod/image/1812/FairyPillar_Hubble_3857.jpg`, a 3857×7804 image! There's certainly larger ones out there, so HD images need to be handled carefully to avoid excessive memory usage.
 
 ### Quota
 
 Your API key has a default limit of 1000 requests per hour. Every response contains a header `X-RateLimit-Remaining` with your remaining requests, and a header `X-RateLimit-Limit` with your current quota.
 
-If the 1000/hr quota isn’t enough, NASA ask you to contact them for a higher limit, although no contact details are provided!
+If the 1000/hr quota isn't enough, NASA ask you to contact them for a higher limit, although no contact details are provided!
 
 ### Headers
 
@@ -160,6 +160,6 @@ Content-Encoding → gzip
 
 ## Summary
 
-As mentioned at the start of this post, NASA’s APOD API is an extremely useful resource, even with it’s faults and quirks.
+As mentioned at the start of this post, NASA's APOD API is an extremely useful resource, even with it's faults and quirks.
 
 I strongly recommend you [download the Postman collection I created](https://pastebin.com/raw/nwvEaHHN) (save as a `.json` and import) and start playing around yourself!

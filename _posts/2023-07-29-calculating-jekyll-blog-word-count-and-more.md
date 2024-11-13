@@ -76,7 +76,7 @@ This will (when deployed locally) show something like:
 * Total site words: 152243 (average 945 per post)
 * Total site characters: 1767231 (average 10976 per post)
 * Longest post: [Asynchronous Map Generator for Android](https://blog.jakelee.co.uk/android-asynchronous-map-generator/) (3661 words)
-* Shortest post: [2020’s essential Android development techniques](https://blog.jakelee.co.uk/2020s-essential-android-development-techniques/) (62 words)
+* Shortest post: [2020's essential Android development techniques](https://blog.jakelee.co.uk/2020s-essential-android-development-techniques/) (62 words)
 
 3.6k words in a single post!? The map generator writeup was my very first post on the site way back in 2017, so I understandably spend quite a lot of time going into... perhaps too much detail. However, I wonder if code is somehow included, since the post doesn't seem *that* long. The shortest post is essentially just an advert for an article I wrote for my employer, hence the impressively low 62 words.
 
@@ -88,7 +88,7 @@ Oh, and these stats exclude... most of this post, as they were calculated during
 
 * Total site words: 72107 (average 1716 per post)
 * Total site characters: 613702 (average 14611 per post)
-* Longest post: [Reviewing ALL 83 Steam games from the Yogscast’s Jingle Jam charity bundle (part 1 of 3)](https://jakelee.co.uk/reviewing-every-jingle-jam-steam-game/) (6700 words)
+* Longest post: [Reviewing ALL 83 Steam games from the Yogscast's Jingle Jam charity bundle (part 1 of 3)](https://jakelee.co.uk/reviewing-every-jingle-jam-steam-game/) (6700 words)
 * Shortest post: [How to replace a faulty Flexispot standing desk leg motor](https://jakelee.co.uk/replacing-flexispot-e7-leg-motor/) (348 words)
 
 Okay, 6.7k words on a single post is clearly too many, *especially* as it is just 1 of 3 parts! The Jingle Jam write-up was an incredibly time-consuming project, but I didn't realise quite how detailed my reviews were until now. Terrifying.
@@ -100,7 +100,7 @@ The short Flexispot article is primarily photos with descriptive text, so no con
 * Total site words: 5776 (average 1444 per post)
 * Total site characters: 49704 (average 12426 per post)
 * Longest post: [17 years ago today, the Million Dollar Homepage was completed, making a student $1m in 5 months](https://history.jakelee.co.uk/million-dollar-homepage/) (2373 words)
-* Shortest post: [20 years ago today, the ‘Most Annoying Webpage’ was launched, trapping victims in popups for a few minutes](https://history.jakelee.co.uk/most-annoying-webpage/) (1392 words)
+* Shortest post: [20 years ago today, the ‘Most Annoying Webpage' was launched, trapping victims in popups for a few minutes](https://history.jakelee.co.uk/most-annoying-webpage/) (1392 words)
 
 I probably could have worked this out manually, there's only 3 posts! They're not as long as I was expecting, especially since these posts usually take multiple days to research. I guess their research per paragraph ratio is far higher, but this isn't reflected in a simple word count! Similarly, the tens of references in each post aren't included in the word count.
 

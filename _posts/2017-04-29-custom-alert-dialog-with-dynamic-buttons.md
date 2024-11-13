@@ -13,21 +13,21 @@ tags:
     - Java
 ---
 
-Alert Dialogs are an excellent way of providing a confirmation screen, or letting users select from a set of options. However, customising them can be tricky, and they have a maximum of 3 buttons (positive, neutral, negative), all of which are positioned differently in different Android versions. If advanced customisation or more than 3 buttons are required, the usual method of modifying colours etc (styles) isn’t enough!
+Alert Dialogs are an excellent way of providing a confirmation screen, or letting users select from a set of options. However, customising them can be tricky, and they have a maximum of 3 buttons (positive, neutral, negative), all of which are positioned differently in different Android versions. If advanced customisation or more than 3 buttons are required, the usual method of modifying colours etc (styles) isn't enough!
 
 ## The Solution
 
-The core part of the solution is using our own layout for the alert dialog, and handling button creation ourselves. Once we’ve created custom layouts, they’ll need to be populated, and passed Runnables of the actions to be performed.
+The core part of the solution is using our own layout for the alert dialog, and handling button creation ourselves. Once we've created custom layouts, they'll need to be populated, and passed Runnables of the actions to be performed.
 
 #### Layouts
 
-First, a layout is required for the dialog, and for the buttons. Examples are available on [this article’s gist](https://gist.github.com/JakeSteam/0ee444726efb9776bcd5046ad66f9006), but essentially the dialog layout is a simple linearlayout with textviews, and the button layout is just a styled textview.
+First, a layout is required for the dialog, and for the buttons. Examples are available on [this article's gist](https://gist.github.com/JakeSteam/0ee444726efb9776bcd5046ad66f9006), but essentially the dialog layout is a simple linearlayout with textviews, and the button layout is just a styled textview.
 
 #### Inflating
 
 The parameters required to create an AlertDialog using the custom class are context (for inflating), title text, body text, and any number of `DialogAction`s.
 
-A `DialogAction` is a container object that holds the text to be displayed on a button, and the `Runnable` that should be run when it is clicked. It doesn’t need any functionality besides getters and setters, so is a very simple construct:
+A `DialogAction` is a container object that holds the text to be displayed on a button, and the `Runnable` that should be run when it is clicked. It doesn't need any functionality besides getters and setters, so is a very simple construct:
 
 ```
 public class DialogAction {
@@ -92,7 +92,7 @@ for (final DialogAction action : actions) {
 }
 ```
 
-That’s it! It’s a relatively simple concept, but allows a lot more flexibility and consistency between Android versions.
+That's it! It's a relatively simple concept, but allows a lot more flexibility and consistency between Android versions.
 
 #### Example
 
@@ -127,6 +127,6 @@ public static void outOfItems(final Activity activity, final int itemTier, final
 
 ## The Conclusion
 
-Alert dialogs are very easy to use, but can be tricky to customise. Using a custom layout allows full control over the dialog, and the code in this article can easily be expanded on to create more advanced functionality. It’s also worth noting that 9patch images should be used as a background for the button &amp; alertdialog layouts, as it allows the elements to resize without stretching.
+Alert dialogs are very easy to use, but can be tricky to customise. Using a custom layout allows full control over the dialog, and the code in this article can easily be expanded on to create more advanced functionality. It's also worth noting that 9patch images should be used as a background for the button &amp; alertdialog layouts, as it allows the elements to resize without stretching.
 
 The full gist of code used is [available here](https://gist.github.com/JakeSteam/0ee444726efb9776bcd5046ad66f9006).

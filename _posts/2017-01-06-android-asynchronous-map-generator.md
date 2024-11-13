@@ -13,7 +13,7 @@ tags:
   - Java
 ---
 
-[City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow) is an Android game that tasks players with solving puzzles by rotating tiles to make all “flows” match up with no loose ends. Each tile has a flow (e.g. road, path, grass, river) on each side, as well as a height (high, normal, low). There are a few hundred built-in levels, but players can also create, share, and import their own levels for extended playability.
+[City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow) is an Android game that tasks players with solving puzzles by rotating tiles to make all "flows" match up with no loose ends. Each tile has a flow (e.g. road, path, grass, river) on each side, as well as a height (high, normal, low). There are a few hundred built-in levels, but players can also create, share, and import their own levels for extended playability.
 
 The game features a level generator, where players can specify:
 
@@ -29,13 +29,13 @@ Additionally, since this process could take a long time, it must be performed of
 
 ## The Solution
 
-We’re going to display an updating popup on screen, whilst the generation happens in the background using an `AsyncTask` . Generation will occur by cycling through every x and y position, generating a list of all possible tiles, then randomly selecting one. If a “dead end” is reached (e.g. a non-existent tile configuration is requested), limited backtracking will occur.
+We're going to display an updating popup on screen, whilst the generation happens in the background using an `AsyncTask` . Generation will occur by cycling through every x and y position, generating a list of all possible tiles, then randomly selecting one. If a "dead end" is reached (e.g. a non-existent tile configuration is requested), limited backtracking will occur.
 
 ### Updating Dialog
 
-First of all, a “currently generating” popup is displayed on screen, which calls the Puzzle Generator and handles displaying progress.
+First of all, a "currently generating" popup is displayed on screen, which calls the Puzzle Generator and handles displaying progress.
 
-Note the “execute” method called immediately after creation, this is what actually triggers the `AsyncTask` to start.
+Note the "execute" method called immediately after creation, this is what actually triggers the `AsyncTask` to start.
 
 ```
 private static void puzzleLoadingProgress(final Activity activity, int xValue, int yValue, int environmentId, boolean blankPuzzle, boolean shuffleAndPlay) {
@@ -108,7 +108,7 @@ public void cancel() {
 
 ### Beginning Generation
 
-After `onPreExecute` has run, the main meat of the task `doInBackground` is called. This checks whether full puzzle generation needs to happen. If a blank puzzle is requested, then all tiles are selected as a predetermined “empty” tile for the selected environment, with no flow &amp; a normal height on all sides.
+After `onPreExecute` has run, the main meat of the task `doInBackground` is called. This checks whether full puzzle generation needs to happen. If a blank puzzle is requested, then all tiles are selected as a predetermined "empty" tile for the selected environment, with no flow &amp; a normal height on all sides.
 
 This article will only cover `createFilledPuzzle()`, since `createEmptyPuzzle()` is just a simpler version.
 
@@ -149,7 +149,7 @@ private int createFilledPuzzle(int maxX, int maxY, int environmentId) {
     puzzleCustom.save();
 ```
 
-Whilst the process can initially seem complex, essentially we’re just looping through every y position for every x position, from 0 to the maximum. Note the `cancelReceived` check, which will cancel puzzle generation if the back button has been pressed.
+Whilst the process can initially seem complex, essentially we're just looping through every y position for every x position, from 0 to the maximum. Note the `cancelReceived` check, which will cancel puzzle generation if the back button has been pressed.
 
 `getPossibleTiles()` is explained fully in the next step, it essentially returns a list of all tiles (and their rotation) that could fit into the specified x and y, based on the existing tiles. If any tiles are returned, one of them is randomly picked using [a simple Math.random() function](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range). Alternatively, the failed attempt counters are increased, and we move on to the next code block…
 
@@ -179,11 +179,11 @@ for (int x = 0; x < maxX; x++) {
             failedTiles++;
 ```
 
-First, we check if the current tile has been tried too many times, or we’ve failed too many times during the puzzle in general. If so, we just give up, and put in an empty tile, otherwise we’ll end up backtracking forever! This happens more often the more complex the flow / height setup of the puzzle is.
+First, we check if the current tile has been tried too many times, or we've failed too many times during the puzzle in general. If so, we just give up, and put in an empty tile, otherwise we'll end up backtracking forever! This happens more often the more complex the flow / height setup of the puzzle is.
 
-If we want to try again, we remove the last tile in the generated tiles list, and get the previous tile’s x and y, so that the next generation iteration can try it again.
+If we want to try again, we remove the last tile in the generated tiles list, and get the previous tile's x and y, so that the next generation iteration can try it again.
 
-Whilst being able to do multiple backtracks is essential, it’s important to set some kind of global maximum, otherwise a puzzle can get stuck, and it’s very hard to detect this situation (since tiles are generating successfully, but creating an impossible situation for the next tile).
+Whilst being able to do multiple backtracks is essential, it's important to set some kind of global maximum, otherwise a puzzle can get stuck, and it's very hard to detect this situation (since tiles are generating successfully, but creating an impossible situation for the next tile).
 
 Note the `publishProgress` method being called after each iteration, as mentioned earlier.
 
@@ -209,7 +209,7 @@ Note the `publishProgress` method being called after each iteration, as mentione
 }
 ```
 
-The puzzle is now generated, so we shuffle it if the user wants to play it immediately, otherwise save all the tiles, and return the new puzzle’s ID, so that we can redirect the player to either play or edit the level.
+The puzzle is now generated, so we shuffle it if the user wants to play it immediately, otherwise save all the tiles, and return the new puzzle's ID, so that we can redirect the player to either play or edit the level.
 
 ```
 
@@ -225,11 +225,11 @@ The puzzle is now generated, so we shuffle it if the user wants to play it immed
 
 ### Get All Possible Tiles For Position
 
-To identify possible tiles, we need to know the existing tiles (since we usually need to match their flow &amp; height), as well as what position we’re looking for.
+To identify possible tiles, we need to know the existing tiles (since we usually need to match their flow &amp; height), as well as what position we're looking for.
 
-First we get the south &amp; west tiles. If we’re on the furthest south / west position (X / Y = 0), then there won’t be a tile in that position. These 2 tiles are required to calculate what flows we need. We get the tile type to avoid looking it up repeatedly.
+First we get the south &amp; west tiles. If we're on the furthest south / west position (X / Y = 0), then there won't be a tile in that position. These 2 tiles are required to calculate what flows we need. We get the tile type to avoid looking it up repeatedly.
 
-Next we calculate what flows are allowed on all sides. If we’re at the max X / Y, we’re at the edge, so no flows are allowed on that side. Otherwise, we look at the previously fetched tile types (using our knowledge of the tile’s current rotation) to identify what flows are allowed. Height is a very similar process, except that any height can touch the edge of the puzzle.
+Next we calculate what flows are allowed on all sides. If we're at the max X / Y, we're at the edge, so no flows are allowed on that side. Otherwise, we look at the previously fetched tile types (using our knowledge of the tile's current rotation) to identify what flows are allowed. Height is a very similar process, except that any height can touch the edge of the puzzle.
 
 Then we call the `getPossibleTilesByRotation` function 4 times, once assuming all potential tiles are facing North, then East, South, and West. This ensures that tiles that are suitable in multiple rotations are included repeatedly.
 
@@ -264,13 +264,13 @@ private List getPossibleTiles(int puzzleId, List existingTiles, int tileX, int t
 
 ### Get Possible Tiles For Current Rotation
 
-Since we’re using a database to store all our tile information, we manually construct a query to get all possible tiles based on the parameters received.
+Since we're using a database to store all our tile information, we manually construct a query to get all possible tiles based on the parameters received.
 
-The `match` function is used extensively, it is used so that -1 can be used to represent “Any”. For example, a value of 1 would result in `name = 1`, whilst -1 would result in `name >= -1`.
+The `match` function is used extensively, it is used so that -1 can be used to represent "Any". For example, a value of 1 would result in `name = 1`, whilst -1 would result in `name >= -1`.
 
 First, we construct the SQL for checking the flow. This is relatively straightforward, the only complexity is forcing the very first tile to have a flow (otherwise we might get a puzzle of all decorative / empty tiles!). We then repeat the process for height.
 
-Next, we make sure we’re only selecting from tiles that are unlocked (unless they have unlocked accessing all tiles) in the selected environment. The final list of tile types are then made into tile objects for the puzzle, most importantly with the selected rotation.
+Next, we make sure we're only selecting from tiles that are unlocked (unless they have unlocked accessing all tiles) in the selected environment. The final list of tile types are then made into tile objects for the puzzle, most importantly with the selected rotation.
 
 ```
 private List getPossibleTilesByRotation(int puzzleId, int x, int y, int environmentId, int rotation, int nFlow, int eFlow, int sFlow, int wFlow, int nHeight, int eHeight, int sHeight, int wHeight) {
@@ -310,7 +310,7 @@ private static String match(String name, int value) {
 
 ## The Conclusion
 
-The puzzle generator is very much an optional feature of City Flow, but one which has grown more and more powerful over time. It has gone through various refactorings to improve readability, but unfortunately the more complex parts are still rather hard to understand. However, it performs excellently, and should hopefully provide increased longevity to the game’s lifespan by allowing more levels to be generated than players can ever complete.
+The puzzle generator is very much an optional feature of City Flow, but one which has grown more and more powerful over time. It has gone through various refactorings to improve readability, but unfortunately the more complex parts are still rather hard to understand. However, it performs excellently, and should hopefully provide increased longevity to the game's lifespan by allowing more levels to be generated than players can ever complete.
 
 Whilst there are quite a few domain specific elements in the code (e.g. `hasAllTiles`, `environmentId`), the general idea of generating a data structure in the background and keeping users updated is definitely applicable to other scenarios.
 
@@ -318,4 +318,4 @@ To improve performance, reducing the number of `String.format`s would be a good 
 
 The full `PuzzleGenerator.java` file can be downloaded from [GitHub Gist](https://gist.github.com/JakeSteam/b4821859e08202a0040d67f0b6158bec).
 
-_Disclaimer: I wrote [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow), I’m featuring it here because I know the codebase very well!_
+_Disclaimer: I wrote [City Flow](https://play.google.com/store/apps/details?id=uk.co.jakelee.cityflow), I'm featuring it here because I know the codebase very well!_

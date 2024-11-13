@@ -22,7 +22,7 @@ On a bad connection, loading the [search page](/search) would completely block t
 
 In a [recent post](https://blog.jakelee.co.uk/introducing-minimajake-for-jekyll/#lunrjs-search) I laid out some of the problems with my current search, and proposed a better approach:
 
-> Eventually I’d like to export the text from all posts to a static file during compilation / publishing, then just use this for future lookups instead of essentially regenerating this data every time the page is loaded.
+> Eventually I'd like to export the text from all posts to a static file during compilation / publishing, then just use this for future lookups instead of essentially regenerating this data every time the page is loaded.
 
 And, luckily, this is pretty much exactly what SimpleJekyllSearch does. This library has [unfortunately been deprecated in 2022](https://github.com/christian-fei/Simple-Jekyll-Search), and hasn't had major development in a couple of years, but despite this seems to work perfectly. It consists of 2 parts:
 

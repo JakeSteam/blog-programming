@@ -11,9 +11,9 @@ tags:
     - TaskSwitcher
 ---
 
-The easiest way to disable your app’s preview when your app is shown in task switcher is `FLAG_SECURE`.
+The easiest way to disable your app's preview when your app is shown in task switcher is `FLAG_SECURE`.
 
-When this is enabled, your app won’t display any previews, and instead shows a blank screen for most devices.
+When this is enabled, your app won't display any previews, and instead shows a blank screen for most devices.
 
 This can be done by creating a base `Activity` class that all activities extend, containing this in the `onCreate`:
 

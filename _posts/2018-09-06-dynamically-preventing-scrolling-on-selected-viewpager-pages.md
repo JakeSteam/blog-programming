@@ -12,7 +12,7 @@ tags:
     - ViewPager
 ---
 
-ViewPagers are an extremely powerful UI tool that by default can be swiped left and right freely. In some cases however, it can be useful to prevent the user swiping in certain directions on certain pages, i.e. a “LockableViewPager”. For example, the first 2 pages might have to be passed programmatically, and then all other pages can be navigated between freely.
+ViewPagers are an extremely powerful UI tool that by default can be swiped left and right freely. In some cases however, it can be useful to prevent the user swiping in certain directions on certain pages, i.e. a "LockableViewPager". For example, the first 2 pages might have to be passed programmatically, and then all other pages can be navigated between freely.
 
 This article will implement determining and changing at any time the current permitted swipe direction(s) (left, right, both, neither) using a custom ViewPager, concluding with a full use case. The end result of this article is also available as a [Gist](https://gist.github.com/JakeSteam/d69275118bd47984e94ee40d00aee219).
 
@@ -62,7 +62,7 @@ Next, wrappers around the existing `onTouchEvent` and `onInterceptTouchEvent` fu
 
 Now, the `isSwipeAllowed` function from the previous wrappers has to be implemented, returning a boolean. If the permitted direction is `BOTH`, `true` can be returned instantly, and the same for `NONE` and returning false.
 
-When the `MotionEvent.ACTION_DOWN` is fired, the `initialXValue` is updated, so we know where the swipe started. When any subsequent `MotionEvent.ACTION_MOVE` event occurs, the `initialXValue` and swipe event’s `x` can be used to calculate which way the user is swiping. The function can then return whether or not the swipe event is in a permitted direction.
+When the `MotionEvent.ACTION_DOWN` is fired, the `initialXValue` is updated, so we know where the swipe started. When any subsequent `MotionEvent.ACTION_MOVE` event occurs, the `initialXValue` and swipe event's `x` can be used to calculate which way the user is swiping. The function can then return whether or not the swipe event is in a permitted direction.
 
 ```
     private fun isSwipeAllowed(event: MotionEvent): Boolean {
@@ -107,7 +107,7 @@ pager.setAllowedSwipeDirection(SwipeDirection.LEFT)
 
 ### Example use case: unskippable pages
 
-This code was originally used for inviting other users to an account. In this use case, some users were required (e.g. couldn’t be skipped), whereas others were optional (e.g. could be skipped). As such, the required users were displayed first, and had to be passed by completing an invite process which then programmatically moved to the next page. Required users could not be swiped away, but the subsequent optional users could be swiped between freely.
+This code was originally used for inviting other users to an account. In this use case, some users were required (e.g. couldn't be skipped), whereas others were optional (e.g. could be skipped). As such, the required users were displayed first, and had to be passed by completing an invite process which then programmatically moved to the next page. Required users could not be swiped away, but the subsequent optional users could be swiped between freely.
 
 First, during the `onCreate` / `onViewCreated`, a custom page change listener is set using `pager.addOnPageChangeListener(pageChangeListener())` so that swipe logic can be updated whenever a new page is navigated to. This listener is defined as:
 
@@ -159,6 +159,6 @@ Now that all the information required to calculate the permitted swipe direction
 
 Whilst the initial idea of having varying swipe options on a per-page basis seems simple, the default `ViewPager` has no capabilities for this. Luckily, the extension described in this post adds the functionality in a very easy to use way, and has no noticeable performance impact.
 
-Further improvements would be adding an optional “bounce” animation when trying to navigate in a non-permitted direction, instead of just ignoring the swipe. The `getSwipeDirection` function could also be improved by reducing the amount of if statements and distinct boolean statements, albeit at a risk of decreased readability.
+Further improvements would be adding an optional "bounce" animation when trying to navigate in a non-permitted direction, instead of just ignoring the swipe. The `getSwipeDirection` function could also be improved by reducing the amount of if statements and distinct boolean statements, albeit at a risk of decreased readability.
 
 As mentioned before, all of this [code is available as a Gist](https://gist.github.com/JakeSteam/d69275118bd47984e94ee40d00aee219). Additionally, the core locking idea is originally from [**andre719mv**‘s answer on StackOverflow](https://stackoverflow.com/a/34076649/608312).

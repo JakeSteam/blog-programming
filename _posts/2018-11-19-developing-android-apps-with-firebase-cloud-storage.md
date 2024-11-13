@@ -12,9 +12,9 @@ tags:
     - Kotlin
 ---
 
-Firebase Cloud Storage provides an easy way to store user’s files, or provide existing files to the user. Additionally, heavily customisable access control is included, and all files can be browsed via a web interface. In this tutorial’s implementation, the user will be able to download sample files, and upload / delete their own arbitrary files.
+Firebase Cloud Storage provides an easy way to store user's files, or provide existing files to the user. Additionally, heavily customisable access control is included, and all files can be browsed via a web interface. In this tutorial's implementation, the user will be able to download sample files, and upload / delete their own arbitrary files.
 
-This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Throughout this tutorial, you’ll need access to the [Firebase Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage), and the [official documentation](https://firebase.google.com/docs/storage/) may be useful too.
+This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Throughout this tutorial, you'll need access to the [Firebase Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage), and the [official documentation](https://firebase.google.com/docs/storage/) may be useful too.
 
 ## Implementation
 
@@ -24,7 +24,7 @@ This tutorial assumes you already have [Firebase added to your project](/adding-
 
 ### Setting up Firebase Cloud Storage environment
 
-Visiting the [Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage) and clicking “Get Started” will display a dialog confirming the default security rules. These rules state that any logged-in users can read and write any files, a relatively lax default ruleset! Once these default rules have been agreed to, you’ll have an empty storage “bucket”, ready to fill up with files.
+Visiting the [Cloud Storage dashboard](https://console.firebase.google.com/u/0/project/_/storage) and clicking "Get Started" will display a dialog confirming the default security rules. These rules state that any logged-in users can read and write any files, a relatively lax default ruleset! Once these default rules have been agreed to, you'll have an empty storage "bucket", ready to fill up with files.
 
 [![](/wp-content/uploads/2018/11/nofiles.png)](/wp-content/uploads/2018/11/nofiles.png)
 
@@ -44,7 +44,7 @@ service firebase.storage {
 }
 ```
 
-Finally, to include Cloud Storage in your project, add the following to your app-level build.gradle. If you are prompted to update the library’s version number, do so.
+Finally, to include Cloud Storage in your project, add the following to your app-level build.gradle. If you are prompted to update the library's version number, do so.
 
 ```groovy
 implementation 'com.google.firebase:firebase-storage:16.0.4'
@@ -77,7 +77,7 @@ The `StorageMetadata` object returned on successful metadata retrieval contains 
 
 ### Downloading a file from Cloud Storage
 
-First, create a local file to save the remote file into. For example, to create a temporary file with the remote file’s name prefixed by `download_`, use `File.createTempFile("download_", reference.name)`.
+First, create a local file to save the remote file into. For example, to create a temporary file with the remote file's name prefixed by `download_`, use `File.createTempFile("download_", reference.name)`.
 
 The remote file can then be copied into the local file using `reference.getFile(file)`. Additionally, call `.addOnSuccessListener` and `.addOnFailureListener`, to end up with the following:
 
@@ -107,7 +107,7 @@ When the file selector is closed, `onActivityResult` will be called. Inside this
 
 First, check a file was successfully selected, by exiting if the `resultCode != RESULT_OK`. Afterwards, convert the file path string into a Uri, and take the last part to use as a filename.
 
-Next, create a reference to your target file’s location. In this example, `getUserDirectory` gets a unique bucket for each phone model, to avoid everyone using the same storage bucket. A reference is then created in this bucket using `.child(name)`.
+Next, create a reference to your target file's location. In this example, `getUserDirectory` gets a unique bucket for each phone model, to avoid everyone using the same storage bucket. A reference is then created in this bucket using `.child(name)`.
 
 Finally, `.putFile()` uploads the actual file, with `.addOnSuccessListener` and `.addOnFailureListener` used as callbacks.
 
@@ -175,7 +175,7 @@ The usage tab shows a summary of your storage space used, number of files, bandw
 
 ## Conclusion
 
-Firebase’s Cloud Storage provides an extremely easy to use way to allow users to host files, for free. Due to this, and the quite generous 5TB total storage limit, it is a serious contender for any use cases that include user files. For example, backing up user’s data to the cloud, or sharing images in a chat program.
+Firebase's Cloud Storage provides an extremely easy to use way to allow users to host files, for free. Due to this, and the quite generous 5TB total storage limit, it is a serious contender for any use cases that include user files. For example, backing up user's data to the cloud, or sharing images in a chat program.
 
 The 1GB/day bandwidth limit may be an issue for applications that need to transfer large files often, but should be enough for smaller implementations. Of course, since it runs on Google Cloud Platform, these limits can be scaled up to suit any use case… [for a cost](https://firebase.google.com/pricing/)!
 

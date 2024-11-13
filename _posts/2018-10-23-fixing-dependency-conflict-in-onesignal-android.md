@@ -15,7 +15,7 @@ tags:
     - OneSignal
 ---
 
-Whilst following OneSignal’s [setup guide](https://documentation.onesignal.com/docs/android-sdk-setup) for their [Android SDK](https://github.com/OneSignal/OneSignal-Android-SDK), everything went smoothly until attempting to run the build past our CI (continuous integration) server, [CircleCI](https://circleci.com/). I’ve [encountered various issues](/getting-onesignal-working-on-a-multi-module-project/) when using custom build flavours with OneSignal before, and expect that was the cause of this issue too.
+Whilst following OneSignal's [setup guide](https://documentation.onesignal.com/docs/android-sdk-setup) for their [Android SDK](https://github.com/OneSignal/OneSignal-Android-SDK), everything went smoothly until attempting to run the build past our CI (continuous integration) server, [CircleCI](https://circleci.com/). I've [encountered various issues](/getting-onesignal-working-on-a-multi-module-project/) when using custom build flavours with OneSignal before, and expect that was the cause of this issue too.
 
 The build failed, due to the following exception:
 

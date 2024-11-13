@@ -26,9 +26,9 @@ For this example, the following 4 weights (and 4 italic versions) of [The Sans C
 
 ### Font XMLs
 
-The core idea is to have two XML fonts defined; one for “semi” weights (semilight and semibold), and one for “regular” weights (regular and bold).
+The core idea is to have two XML fonts defined; one for "semi" weights (semilight and semibold), and one for "regular" weights (regular and bold).
 
-The first file, `the_sans_c4s.xml` is for “regular” weights:
+The first file, `the_sans_c4s.xml` is for "regular" weights:
 
 ```
 <font-family
@@ -55,7 +55,7 @@ The first file, `the_sans_c4s.xml` is for “regular” weights:
 </font-family>
 ```
 
-The second, `the_sans_c4s_semi.xml` is for “semi” weights:
+The second, `the_sans_c4s_semi.xml` is for "semi" weights:
 
 ```
 <font-family

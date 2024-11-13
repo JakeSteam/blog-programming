@@ -13,9 +13,9 @@ tags:
   - "ML Kit"
 ---
 
-Machine Learning is, at its core, a way of letting programs learn how to do things by example. It can be used to get a program to self-learn [how to play Mario](https://www.youtube.com/watch?v=qv6UVOQ0F44), or [how to walk](https://www.youtube.com/watch?v=gn4nRCC9TwQ). In this tutorial, Firebase’s Machine Learning Kit (commonly known as ML Kit) will be used to retrieve text, faces, barcodes, and objects from an image.
+Machine Learning is, at its core, a way of letting programs learn how to do things by example. It can be used to get a program to self-learn [how to play Mario](https://www.youtube.com/watch?v=qv6UVOQ0F44), or [how to walk](https://www.youtube.com/watch?v=gn4nRCC9TwQ). In this tutorial, Firebase's Machine Learning Kit (commonly known as ML Kit) will be used to retrieve text, faces, barcodes, and objects from an image.
 
-Firebase’s API provides “models” (knowledge based on data sets) for common actions such as identifying faces or objects in images. Firebase also provides the ability to utilise custom models (via TensorFlow), but only the built-in models will be covered in this tutorial. Additionally, only on-device APIs will be utilised, as cloud APIs require paid plans.
+Firebase's API provides "models" (knowledge based on data sets) for common actions such as identifying faces or objects in images. Firebase also provides the ability to utilise custom models (via TensorFlow), but only the built-in models will be covered in this tutorial. Additionally, only on-device APIs will be utilised, as cloud APIs require paid plans.
 
 This post is part of [The Complete Guide to Firebase](/search/?q=firebase/). Throughout this tutorial, the [official documentation](https://firebase.google.com/docs/ml-kit/) may be useful.
 
@@ -33,7 +33,7 @@ First, add the ML Kit library to your app-level `build.gradle`:
 implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 ```
 
-Next, add the models you’ll be using to your `AndroidManifest.xml` as a `meta-data` entry. This allows your app to automatically download the model when your app is installed, instead of waiting until they are actually needed. The following example includes all models used in this tutorial:
+Next, add the models you'll be using to your `AndroidManifest.xml` as a `meta-data` entry. This allows your app to automatically download the model when your app is installed, instead of waiting until they are actually needed. The following example includes all models used in this tutorial:
 
 ```
 <meta-data
@@ -52,7 +52,7 @@ private val BARCODE_RESPONSE = 4443
 private val LABEL_RESPONSE = 4143
 ```
 
-Next, a button is created for each ML Kit identifying API demonstrated (Text, Face, Barcode, Object). [Example XML is available](https://github.com/JakeSteam/FirebaseReference/blob/284fb6a0bded83d9972f907b24e45fcd7fbf4dd4/app/src/main/res/layout/fragment_develop_ml_kit.xml), but the layout doesn’t matter. Each of these buttons then has an `onClickListener` set, which opens the system’s file picker, filtered to images only:
+Next, a button is created for each ML Kit identifying API demonstrated (Text, Face, Barcode, Object). [Example XML is available](https://github.com/JakeSteam/FirebaseReference/blob/284fb6a0bded83d9972f907b24e45fcd7fbf4dd4/app/src/main/res/layout/fragment_develop_ml_kit.xml), but the layout doesn't matter. Each of these buttons then has an `onClickListener` set, which opens the system's file picker, filtered to images only:
 
 ```
 textButton.setOnClickListener {
@@ -75,7 +75,7 @@ objectButton.setOnClickListener {
 
 Once the user picks an image, `onActivityResult` is then called. Once the `resultCode` has been checked, an Uri of the image can be created using `Uri.parse(data!!.dataString)`. This Uri can then be passed to `FirebaseVisionImage.fromFilePath(context, uri)` to obtain the image in the required format.
 
-This image (after updating the layout’s preview) is then passed to the appropriate function based on the desired ML Kit operation to be performed:
+This image (after updating the layout's preview) is then passed to the appropriate function based on the desired ML Kit operation to be performed:
 
 ```
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -153,7 +153,7 @@ Next, a `FirebaseVisionFaceDetectorOptions` needs to be built. There are 5 toggl
 - `setClassificationMode()` can be `NO_CLASSIFICATIONS` (default) or `ALL_CLASSIFICATIONS`. This feature is useful when information such as likelihood of smiling / eyes being open is needed.
 - `enableTracking()` enabled assigning IDs to faces. When enabled, this identifies users across multiple images.
 
-Contours and face tracking cannot currently both be enabled at the same time. As such, for this example we’ll enable everything except contours:
+Contours and face tracking cannot currently both be enabled at the same time. As such, for this example we'll enable everything except contours:
 
 ```
 val options = FirebaseVisionFaceDetectorOptions.Builder()
@@ -164,7 +164,7 @@ val options = FirebaseVisionFaceDetectorOptions.Builder()
         .build()
 ```
 
-These options are then passed to `firebase.getVisionFaceDetector(options)` and `.detectInImage(image)` is called. An (potentially empty) array of faces is returned, each of which contains information on the face’s ID, head rotation, body part positions, etc. Probabilities (eyes open, smiling) are given between 0 and 1, so multiply by 100 to get a confidence percentage. `headEulerAngleY` refers to the angle the head is looking left or right. 0 degrees is looking directly at the camera, negative values are looking to the left, positive values to the right (from the detected face’s perspective).
+These options are then passed to `firebase.getVisionFaceDetector(options)` and `.detectInImage(image)` is called. An (potentially empty) array of faces is returned, each of which contains information on the face's ID, head rotation, body part positions, etc. Probabilities (eyes open, smiling) are given between 0 and 1, so multiply by 100 to get a confidence percentage. `headEulerAngleY` refers to the angle the head is looking left or right. 0 degrees is looking directly at the camera, negative values are looking to the left, positive values to the right (from the detected face's perspective).
 
 ```
 FirebaseVision.getInstance()
@@ -254,7 +254,7 @@ implementation 'com.google.firebase:firebase-ml-vision:18.0.1'
 implementation 'com.google.firebase:firebase-ml-vision-image-label-model:17.0.2'
 ```
 
-The only option for `FirebaseVisionLabelDetector` is the minimum confidence (0 to 1) threshold to display a result, and won’t be used in this example. Calling `firebase.visionLabelDetector.detectInImage(image)` will return a list of `FirebaseVisionLabel`. Each of these contains a `label` (the detected object’s name), `confidence` (the confidence that the object has been detected), and an `entityId` (a unique ID of the object).
+The only option for `FirebaseVisionLabelDetector` is the minimum confidence (0 to 1) threshold to display a result, and won't be used in this example. Calling `firebase.visionLabelDetector.detectInImage(image)` will return a list of `FirebaseVisionLabel`. Each of these contains a `label` (the detected object's name), `confidence` (the confidence that the object has been detected), and an `entityId` (a unique ID of the object).
 
 ```
 private fun retrieveLabels(image: FirebaseVisionImage) {
@@ -289,12 +289,12 @@ The [APIs tab of the web interface](https://console.firebase.google.com/u/0/proj
 
 ## Conclusion
 
-Firebase’s ML Kit provides an excellent introduction to the power of machine learning assisted image analysis. Whilst the OCR, object identification, barcode reading, and facial recognition are just examples, the models are extremely powerful already. Considering the free and offline nature of these models, they are perfect for almost any implementation.
+Firebase's ML Kit provides an excellent introduction to the power of machine learning assisted image analysis. Whilst the OCR, object identification, barcode reading, and facial recognition are just examples, the models are extremely powerful already. Considering the free and offline nature of these models, they are perfect for almost any implementation.
 
 However, the very nature of the image analysis technique means that there is no debug information available. The high success rate of the models should prevent this being an issue, but the lack of information is worth keeping in mind.
 
-From my own experimentation, the facial analysing performed amazingly well, as did the object recognition. However, somewhat surprisingly, the text identification was much less successful. This is likely due to the large number of fonts available, as well as the similarity between many letters, but it’s still unusual that the most common use case is the least accurate!
+From my own experimentation, the facial analysing performed amazingly well, as did the object recognition. However, somewhat surprisingly, the text identification was much less successful. This is likely due to the large number of fonts available, as well as the similarity between many letters, but it's still unusual that the most common use case is the least accurate!
 
 Previous: [Developing Android Apps With Firebase Cloud Storage](/developing-android-apps-with-firebase-cloud-storage/)
 
-Next: [Ensuring Your Android App’s Quality With Firebase Crashlytics](/ensuring-your-android-apps-quality-with-firebase-crashlytics/)
+Next: [Ensuring Your Android App's Quality With Firebase Crashlytics](/ensuring-your-android-apps-quality-with-firebase-crashlytics/)

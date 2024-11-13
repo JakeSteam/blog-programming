@@ -17,19 +17,19 @@ Firebase Crashlytics provides an extremely powerful automatic crash reporting to
 
 This data is then aggregated, and widespread issues can be quickly identified and prioritised. Unlimited Crashlytics usage is provided for free, and basic integration can be completed in a couple of minutes.
 
-This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase/). Throughout this tutorial, you’ll need access to the [Firebase Crashlytics dashboard](https://console.firebase.google.com/u/0/project/_/crashlytics), and the [official documentation](https://firebase.google.com/docs/crashlytics/) may be useful.
+This post is part of [The Complete Guide to Firebase](https://blog.jakelee.co.uk/search/?q=firebase/). Throughout this tutorial, you'll need access to the [Firebase Crashlytics dashboard](https://console.firebase.google.com/u/0/project/_/crashlytics), and the [official documentation](https://firebase.google.com/docs/crashlytics/) may be useful.
 
 ## Implementation
 
 As always, the entire [Firebase Reference Project is open source](https://github.com/JakeSteam/FirebaseReference), and there is a [pull request for adding Firebase Crashlytics](https://github.com/JakeSteam/FirebaseReference/pull/9) if you just want to see the code changes required. This tutorial assumes you already have [Firebase added to your project](/adding-firebase-to-an-android-project/).
 
-In this tutorial, you’ll learn how to implement Crashlytics into your existing app. You’ll also learn how to customise these crash reports, receive crash reports through various platforms, and view your crashes online.
+In this tutorial, you'll learn how to implement Crashlytics into your existing app. You'll also learn how to customise these crash reports, receive crash reports through various platforms, and view your crashes online.
 
 ### Setting up Crashlytics
 
 #### Web interface
 
-On the Crashlytics web interface, click “Set up Crashlytics”, then select “This app is new to Crashlytics” and press next. That’s it, Crashlytics is now listening for crashes, time to make your app send them!
+On the Crashlytics web interface, click "Set up Crashlytics", then select "This app is new to Crashlytics" and press next. That's it, Crashlytics is now listening for crashes, time to make your app send them!
 
 [![](/wp-content/uploads/2018/11/vHVuA82.png)](/wp-content/uploads/2018/11/vHVuA82.png)
 
@@ -97,7 +97,7 @@ All crashes / ANRs will now be recorded.
 
 #### Logging
 
-If you are already using Firebase Analytics, any screen view events in there will appear under the “Logs” tab of your crash.
+If you are already using Firebase Analytics, any screen view events in there will appear under the "Logs" tab of your crash.
 
 [![](/wp-content/uploads/2018/11/logs-1.png)](/wp-content/uploads/2018/11/logs-1.png)
 
@@ -105,7 +105,7 @@ You can also add your own events to this log manually. These can be added with `
 
 #### Keys
 
-You can also add custom “keys” to your crashes. This is useful for recording the current state of a user when the crash occurred, for example if they are a new or returning user. This is done using `Crashlytics.setString`, `.setBool`, `setDouble`, `setFloat`, or `setInt`. These functions all take a key string (e.g. “isNewUser”), and a value (e.g. “true”). These can be overwritten at any time.
+You can also add custom "keys" to your crashes. This is useful for recording the current state of a user when the crash occurred, for example if they are a new or returning user. This is done using `Crashlytics.setString`, `.setBool`, `setDouble`, `setFloat`, or `setInt`. These functions all take a key string (e.g. "isNewUser"), and a value (e.g. "true"). These can be overwritten at any time.
 
 #### Identifiers
 
@@ -117,13 +117,13 @@ By default, you will receive email warning (shown below) of all fatal crashes wi
 
 [![](/wp-content/uploads/2018/11/email.png)](/wp-content/uploads/2018/11/email.png)
 
-Additionally, you can add Slack integration to Crashlytics, as well as Jira, BigQuery, and more. These integrations can be managed via the settings icon in the top left, then “Project settings”, and the “Integrations” tab. Once this has been configured, you can receive instant notifications of all crashes (or only fatal issues) in your chosen Slack channel. This can be extremely useful for teams that tend to not monitor their email too closely, as it means any issue can immediately be investigated.
+Additionally, you can add Slack integration to Crashlytics, as well as Jira, BigQuery, and more. These integrations can be managed via the settings icon in the top left, then "Project settings", and the "Integrations" tab. Once this has been configured, you can receive instant notifications of all crashes (or only fatal issues) in your chosen Slack channel. This can be extremely useful for teams that tend to not monitor their email too closely, as it means any issue can immediately be investigated.
 
 [![](/wp-content/uploads/2018/11/slack.png)](/wp-content/uploads/2018/11/slack.png)
 
 ### Additional Crashlytics functionality
 
-Crashlytics’ core functionality of bug reporting is very powerful by itself, but it can be improved with additional functionality. For example, all new issues can be responded to in [Firebase Cloud Functions](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-cloud-functions/) via the `crashlytics.issue().onNew()` trigger. Additionally, regressed (`onRegressed()`) and large issue volume increases (`onVelocityAlert()`) are available to listen to. An [official Firebase guide is available for this](https://firebase.google.com/docs/crashlytics/extend-with-cloud-functions).
+Crashlytics' core functionality of bug reporting is very powerful by itself, but it can be improved with additional functionality. For example, all new issues can be responded to in [Firebase Cloud Functions](https://blog.jakelee.co.uk/developing-android-apps-with-firebase-cloud-functions/) via the `crashlytics.issue().onNew()` trigger. Additionally, regressed (`onRegressed()`) and large issue volume increases (`onVelocityAlert()`) are available to listen to. An [official Firebase guide is available for this](https://firebase.google.com/docs/crashlytics/extend-with-cloud-functions).
 
 To allow Crashlytics to [automatically deobfuscate](https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports) your ProGuarded stack traces, make sure to remove `-printmapping mapping.txt` from your ProGuard config, and add:
 
@@ -134,18 +134,18 @@ To allow Crashlytics to [automatically deobfuscate](https://firebase.google.com/
 
 ## Web interface
 
-Crashlytics’ web interface is a dashboard showing a record of all recent crashes, and how many users are encountering them. A summary of all encountered crashes is also shown.
+Crashlytics' web interface is a dashboard showing a record of all recent crashes, and how many users are encountering them. A summary of all encountered crashes is also shown.
 
 [![](/wp-content/uploads/2018/11/overview.png)](/wp-content/uploads/2018/11/overview.png)
 
-The rest of the page is dedicated to listing all encountered crashes. Clicking any of these will provide metadata such as app versions that are crashing, devices encountering it, and detailed information about the crash. This detailed information consists of a full stack trace, information about the user’s devices, and any custom logs / data that has been added.
+The rest of the page is dedicated to listing all encountered crashes. Clicking any of these will provide metadata such as app versions that are crashing, devices encountering it, and detailed information about the crash. This detailed information consists of a full stack trace, information about the user's devices, and any custom logs / data that has been added.
 
 [![](/wp-content/uploads/2018/11/stacktrace.png)](/wp-content/uploads/2018/11/stacktrace.png)
 
 ## Conclusion
 
-Firebase Crashlytics is an extremely powerful automatic crash reporter, and is unlikely to be surpassed by any alternatives. Due to the unlimited free usage, simple integration, and ability to integrate with third party systems, it’s hard to see any major drawbacks. In 2015, it was used in [42% of the top 200 apps](https://fabric.io/blog/2015/05/20/just-in-crashlytics-1-in-performance-answers-2-in-mobile-analytics), and this figure has only grown since then. As such, the system has a very reliable history, and should almost always be the choice for crash monitoring.
+Firebase Crashlytics is an extremely powerful automatic crash reporter, and is unlikely to be surpassed by any alternatives. Due to the unlimited free usage, simple integration, and ability to integrate with third party systems, it's hard to see any major drawbacks. In 2015, it was used in [42% of the top 200 apps](https://fabric.io/blog/2015/05/20/just-in-crashlytics-1-in-performance-answers-2-in-mobile-analytics), and this figure has only grown since then. As such, the system has a very reliable history, and should almost always be the choice for crash monitoring.
 
-It’s worth noting that the product has a rather complex history. Unlike most Firebase services which are developed in-house by Google, Crashlytics was originally a start-up (2011), then owned by Twitter (2013), then became a part of Fabric (2014), and is now owned by Google (2017)! The final transition is due to Fabric shutting down, with support ending in mid-2019. Migration is simple with [Fabric / Google’s guide](https://get.fabric.io/roadmap), hopefully Crashlytics has a permanent home now!
+It's worth noting that the product has a rather complex history. Unlike most Firebase services which are developed in-house by Google, Crashlytics was originally a start-up (2011), then owned by Twitter (2013), then became a part of Fabric (2014), and is now owned by Google (2017)! The final transition is due to Fabric shutting down, with support ending in mid-2019. Migration is simple with [Fabric / Google's guide](https://get.fabric.io/roadmap), hopefully Crashlytics has a permanent home now!
 
 Previous: [Developing Android Apps With Firebase ML Kit](/developing-android-apps-with-firebase-ml-kit/)

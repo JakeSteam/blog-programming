@@ -14,13 +14,13 @@ tags:
     - Merge
 ---
 
-Recently, I merged a repository’s main branch into an older feature branch, only to get a mysterious `InvocationTargetException` during compilation:  
+Recently, I merged a repository's main branch into an older feature branch, only to get a mysterious `InvocationTargetException` during compilation:  
 
 [![](/wp-content/uploads/2021/10/originalerror.png)](/wp-content/uploads/2021/10/originalerror.png)
 
-Viewing the full error (by clicking “Build: failed”) provided lots more information but… only deepened the mystery! All of the apparently duplicate classes are temporary Java files (the codebase is 100% Kotlin) and the classes all only have 1 definition.
+Viewing the full error (by clicking "Build: failed") provided lots more information but… only deepened the mystery! All of the apparently duplicate classes are temporary Java files (the codebase is 100% Kotlin) and the classes all only have 1 definition.
 
-There’s also various errors to do with “ANTLR Tool version”, and even some lint warnings about deprecated methods sneaking in. Definitely important, but very unrelated to the duplicate class mystery. My first thought was Android Studio’s cache causing issues, but a project clean and cache clear didn’t help. Hmm!
+There's also various errors to do with "ANTLR Tool version", and even some lint warnings about deprecated methods sneaking in. Definitely important, but very unrelated to the duplicate class mystery. My first thought was Android Studio's cache causing issues, but a project clean and cache clear didn't help. Hmm!
 
 [![](/wp-content/uploads/2021/10/3czsRYU.png)](/wp-content/uploads/2021/10/3czsRYU.png)
 

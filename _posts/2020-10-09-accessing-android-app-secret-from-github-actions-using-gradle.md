@@ -13,20 +13,20 @@ tags:
     - Secrets
 ---
 
-Often an open source project will have API keys, auth tokens, and other secrets that definitely shouldn’t end up in source code. In my [current open source project](https://github.com/JakeSteam/Apod-Wallpaper-2) (a rewrite of APOD Wallpaper) I needed to store my APOD API key.
+Often an open source project will have API keys, auth tokens, and other secrets that definitely shouldn't end up in source code. In my [current open source project](https://github.com/JakeSteam/Apod-Wallpaper-2) (a rewrite of APOD Wallpaper) I needed to store my APOD API key.
 
-In the past, I’ve just added it to my `local.properties` and [removed the file from git](https://stackoverflow.com/a/2047477/608312), but this approach doesn’t work when using GitHub Actions!
+In the past, I've just added it to my `local.properties` and [removed the file from git](https://stackoverflow.com/a/2047477/608312), but this approach doesn't work when using GitHub Actions!
 
 This post is available [as a GitHub gist](https://gist.github.com/JakeSteam/4ff98553691d1d30949fb1de6adf83a5).
 
-**Note:** As per a couple of comments, you could skip the properties file and use `System.getEnv(x)`. I personally prefer keeping it in the project’s gradle file, to keep the secret only accessible from the project itself.
+**Note:** As per a couple of comments, you could skip the properties file and use `System.getEnv(x)`. I personally prefer keeping it in the project's gradle file, to keep the secret only accessible from the project itself.
 
 ## Approach to secrets
 
-The approach to storing the secret isn’t going to change too much, there’ll just be a few changes to cater for GitHub Actions (italic = new):
+The approach to storing the secret isn't going to change too much, there'll just be a few changes to cater for GitHub Actions (italic = new):
 
 1. Store the secret in our local properties
-2. *Store the secret in GitHub’s “secret” functionality*
+2. *Store the secret in GitHub's "secret" functionality*
 3. *In the CI, load this secret into a new `local.properties` file.*
 4. *In Gradle, manually load the `local.properties` file*
 5. Load the secret into the `BuildConfig`.
@@ -42,13 +42,13 @@ APOD_API_KEY="abcd1234"
 
 ## 2. Adding secret to GitHub
 
-Next, we need to go to the repository’s “Settings”, then “Secrets”, then “New secret”. This will let us add a secret with a name &amp; value. Don’t include speech marks this time!
+Next, we need to go to the repository's "Settings", then "Secrets", then "New secret". This will let us add a secret with a name &amp; value. Don't include speech marks this time!
 
 [![](/wp-content/uploads/2020/10/zsffTDX.png)](/wp-content/uploads/2020/10/zsffTDX.png)
 
 ## 3. Accessing secret in GitHub Actions
 
-There’s already plenty of great guides to getting GitHub Actions working with Android ([simple](https://proandroiddev.com/how-to-github-actions-building-your-android-app-773779bcacab), [more complex](https://www.coletiv.com/blog/android-github-actions-setup/), [even more complex](https://medium.com/@wkrzywiec/github-actions-for-android-first-approach-f616c24aa0f9)). For this project, [here’s the full](https://gist.github.com/JakeSteam/4ff98553691d1d30949fb1de6adf83a5#file-build-yml) `build.yml`.
+There's already plenty of great guides to getting GitHub Actions working with Android ([simple](https://proandroiddev.com/how-to-github-actions-building-your-android-app-773779bcacab), [more complex](https://www.coletiv.com/blog/android-github-actions-setup/), [even more complex](https://medium.com/@wkrzywiec/github-actions-for-android-first-approach-f616c24aa0f9)). For this project, [here's the full](https://gist.github.com/JakeSteam/4ff98553691d1d30949fb1de6adf83a5#file-build-yml) `build.yml`.
 
 The only addition we need to make is a new job step in `build.yml` to put the secret into a new `local.properties` file. This must be done **after** the code is checked out, or the file will be put in the wrong location:
 
@@ -59,7 +59,7 @@ The only addition we need to make is a new job step in `build.yml` to put the se
   run: echo APOD_API_KEY=\"$APOD_API_KEY\" > ./local.properties
 ```
 
-There’s 4 steps to this process:
+There's 4 steps to this process:
 
 1. Access the secret itself (`${{ secrets.APOD_API_KEY }}`)
 2. Use it to set an environment variable (`env: APOD_API_KEY`)
@@ -68,7 +68,7 @@ There’s 4 steps to this process:
 
 ## 4. Loading the local properties file in Gradle
 
-In our app-level `build.gradle`, we need to load our properties file manually, then access the key within. This isn’t necessary when running locally, but will be needed for the CI!
+In our app-level `build.gradle`, we need to load our properties file manually, then access the key within. This isn't necessary when running locally, but will be needed for the CI!
 
 We do this by adding a new function, outside of `android {}` or `dependencies {}` etc:
 
@@ -83,7 +83,7 @@ String getApiKey() {
 
 ## 5. Loading the secret into BuildConfig
 
-Next, still in the same file, we need to add our secret into the `BuildConfig`. I’m using the default config, but it’s [pretty straightforward](/how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/) to have different values for different flavours / build types:
+Next, still in the same file, we need to add our secret into the `BuildConfig`. I'm using the default config, but it's [pretty straightforward](/how-to-define-buildconfig-values-e-g-server-url-using-both-build-flavor-and-build-type/) to have different values for different flavours / build types:
 
 ```groovy
 android {
@@ -97,17 +97,17 @@ android {
 
 ## 6. Accessing the value at runtime
 
-Finally, the simplest step of all! Once we’ve done a build to populate the `BuildConfig`, we can just access our secret with `BuildConfig.API_KEY`. Now, when GitHub actions runs our app can access the secret, and the build passes.
+Finally, the simplest step of all! Once we've done a build to populate the `BuildConfig`, we can just access our secret with `BuildConfig.API_KEY`. Now, when GitHub actions runs our app can access the secret, and the build passes.
 
 [![](/wp-content/uploads/2020/10/0L626L8.png)](/wp-content/uploads/2020/10/0L626L8.png)
 
 ## Conclusion
 
-Whilst trying to find a way to store my secret, I was quite surprised there didn’t seem to be any complete guides around. The closest I could find was [an unvoted StackOverflow post](https://stackoverflow.com/a/62296987/608312) that had most of the information, and still required figuring a few things out!
+Whilst trying to find a way to store my secret, I was quite surprised there didn't seem to be any complete guides around. The closest I could find was [an unvoted StackOverflow post](https://stackoverflow.com/a/62296987/608312) that had most of the information, and still required figuring a few things out!
 
-Currently this post’s method only covers the case where there’s 1 secret to store. If multiple are needed, a quick solution would be just manually adding more to each step, but I’m sure it’s not ideal.
+Currently this post's method only covers the case where there's 1 secret to store. If multiple are needed, a quick solution would be just manually adding more to each step, but I'm sure it's not ideal.
 
-GitHub actions is still (somewhat) new, but so far it definitely seems a strong contender to traditional CIs. The “actions” store seems an excellent way to share functionality between projects, and encourage a strong CI community. Having simple tasks like checking out code and setting up the JAVA JDK as actions makes sure everyone is comfortable with the process, whilst keeping the build config readable.
+GitHub actions is still (somewhat) new, but so far it definitely seems a strong contender to traditional CIs. The "actions" store seems an excellent way to share functionality between projects, and encourage a strong CI community. Having simple tasks like checking out code and setting up the JAVA JDK as actions makes sure everyone is comfortable with the process, whilst keeping the build config readable.
 
 ## Resources
 

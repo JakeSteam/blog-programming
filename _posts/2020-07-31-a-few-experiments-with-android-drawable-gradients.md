@@ -19,15 +19,215 @@ I’ve included a few example outputs in this post, hopefully these help those s
 
 This post is also [available as a GitHub repo](https://github.com/JakeSteam/android-gradient-playground).
 
-| Notes | Gradient | XML |
-|---|---|---|
-| **Simple linear gradient** <br>A really simple gradient to start, our first type is “linear”. All we have is a `startColor` of white and an `endColor` of black, resulting in the nice smooth transition shown. | [![](/assets/images/2024/gradient-simplelinear.png)](/assets/images/2024/gradient-simplelinear.png) | ``` <?xml version="1.0" encoding="utf-8"?><shape xmlns:android="http://schemas.android.com/apk/res/android"><gradient android:startColor="@android:color/white" android:endColor="@android:color/black" /></shape> ``` |
-| **Centre offsetting** <br>Whilst this gradient might look very similar to the previous, there’s a secret inside: `centerY`.  Setting a centre colour (`holo_blue_dark` in this case) allows for slightly more complex gradients, but the interesting bit happens when you redefine where the centre is. `centerX` and `centerY` will both be used extensively throughout this post, and work by redefining where the centre colour should appear. For example, a value of `20%` or `0.2` will ensure your `centerColor` appears 20% down the drawable vertically. | [![](/assets/images/2024/gradient-centreoffsetting.png)](/assets/images/2024/gradient-centreoffsetting.png) | ``` <?xml version="1.0" encoding="utf-8"?> <shape xmlns:android="http://schemas.android.com/apk/res/android"> <gradient android:startColor="@android:color/white" android:centerColor="@android:color/holo_blue_dark" android:endColor="@android:color/black" android:centerY="0.2" /> </shape> ``` |
-| **Overlapping layers** <br>Building up on our previous gradient, adding an extra layer (via `layer-list`) drastically increases the complexity of the output. `layer-list` simply lets you overlap multiple gradients without making new `ImageView`s or drawables.  In this case, a transparent -&gt; black gradient has been added on top of our existing white -&gt; blue -&gt; black gradient, at an `angle` (essentially rotation) of 180. | [![](/assets/images/2024/gradient-overlappinglayers.png)](/assets/images/2024/gradient-overlappinglayers.png) | ``` <?xml version="1.0" encoding="utf-8"?> <layer-list xmlns:android="http://schemas.android.com/apk/res/android"> <item><shape> <gradient  android:startColor="@android:color/white" android:centerColor="@android:color/holo_blue_dark" android:endColor="@android:color/black" android:centerY="0.2" /> </shape></item> <item><shape> <gradient android:startColor="@android:color/black" android:endColor="@android:color/transparent" android:angle="180"/> </shape></item> </layer-list> ``` |
-| **Overlapping layers at the same angle** <br>Just as the last gradient overlapped gradients at right angles, you can also overlap them without rotating. If a layer has a transparent `startColor` and `endColor`, but a non-transparent `centerColor`, it will appear as a horizontal strip of colour. Offsetting this strip using `centerY`, then repeating the process, allows a full rainbow of colours to be created. Note that this gradient also has a base white layer, to help the gradient be visible. | [![](/assets/images/2024/gradient-overlappinglayerssameangle.png)](/assets/images/2024/gradient-overlappinglayerssameangle.png) | ``` <?xml version="1.0" encoding="utf-8"?> <layer-list xmlns:android="http://schemas.android.com/apk/res/android"> <item><shape> <solid android:color="@android:color/white" /> </shape></item> <item><shape> <gradient android:startColor="@android:color/holo_purple" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent" android:centerY="0.4" /> </shape></item> <item><shape> <gradient android:startColor="@android:color/transparent" android:centerColor="@android:color/holo_orange_light" android:endColor="@android:color/transparent" android:centerY="0.4" /> </shape></item> <item><shape> <gradient android:startColor="@android:color/transparent" android:centerColor="@android:color/holo_blue_light" android:endColor="@android:color/transparent" android:centerY="0.7" /> </shape></item> <item><shape> <gradient android:startColor="@android:color/transparent" android:centerColor="@android:color/transparent" android:endColor="@android:color/holo_green_dark" /> </shape></item> </layer-list> ``` |
-| **Radial gradients** <br>So far we’ve only seen linear gradients, now we’ll use radial gradients. The easiest way of thinking about them is as a “point” of colour, radiating out. `centerX` and `centerY` can be used to move this point anywhere on the canvas, in this case 10% from the left and 10% from the top.  Again, the `startColor`, `centerColor`, and `endColor` are used to set the colour, along with `gradientRadius` being used to set the overall size of the gradient. | [![](/assets/images/2024/gradient-radialgradients.png)](/assets/images/2024/gradient-radialgradients.png) | ``` <?xml version="1.0" encoding="utf-8"?> <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"> <gradient android:type="radial" android:gradientRadius="100%" android:startColor="@android:color/black" android:centerColor="@android:color/holo_blue_light" android:centerX="0.1" android:centerY="0.1" android:endColor="@android:color/white" /> </shape> ``` |
-| **Floating blobs** <br>Combining multiple radial gradients using the same overlapping technique as our “vertical rainbow” before, we can end up with this collection of floating blobs. This effect is often hunted for by people looking to create an Instagram style logo, and is very easy to achieve. So long as you know your colours, it’s just a matter of adjusting the radius, x position, and y position until each blob is in the correct place. I used this to [answer a question on StackOverflow](https://stackoverflow.com/a/63162666/608312), and the OP raised a reasonable counterpoint. If you need a particularly complex gradient, you could just try exporting an SVG / PNG. However, with vector graphics sometimes gradients aren’t translated properly, and a PNG will either be too large, or may not scale perfectly to the user’s screen. If possible, creating an image as a gradient drawable will ensure it is perfect! | [![](/assets/images/2024/gradient-floatingblobs.png)](/assets/images/2024/gradient-floatingblobs.png) | ``` <?xml version="1.0" encoding="utf-8"?> <layer-list xmlns:android="http://schemas.android.com/apk/res/android">  <item><shape android:layout_height="wrap_content"> <solid android:color="@android:color/black" /></shape></item>  <item><shape><gradient android:type="radial" android:gradientRadius="100%" android:startColor="@android:color/holo_purple" android:centerX="0.1" android:centerY="0.1" android:endColor="@android:color/transparent" />  </shape></item>  <item><shape><gradient android:type="radial" android:gradientRadius="70%" android:startColor="@android:color/holo_orange_light" android:centerX="0.8" android:centerY="0.5" android:endColor="@android:color/transparent" />  </shape></item>  <item><shape><gradient android:type="radial" android:gradientRadius="40%" android:startColor="@android:color/holo_blue_light" android:centerX="0.8" android:centerY="0.1" android:endColor="@android:color/transparent" />  </shape></item>  <item><shape><gradient android:type="radial" android:gradientRadius="70%" android:startColor="@android:color/holo_green_light" android:centerX="0.2" android:centerY="0.8" android:endColor="@android:color/transparent" />  </shape></item>  <item><shape><gradient android:type="radial" android:gradientRadius="50%" android:startColor="@android:color/holo_red_light" android:centerX="0.7" android:centerY="0.85" android:endColor="@android:color/transparent" />  </shape></item>  </layer-list> ``` |
-| **Sweep gradient** <br>The final type of gradients are sweep. These don’t seem to make sense at first glance, I find the easiest way of thinking of them is as a “cone” shaped linear gradient, viewed from above. However you interpret them, they still use all the attributes we’ve picked up in previous gradients. | [![](/assets/images/2024/gradient-sweepgradient.png)](/assets/images/2024/gradient-sweepgradient.png) | ``` <?xml version="1.0" encoding="utf-8"?> <shape xmlns:android="http://schemas.android.com/apk/res/android"  android:shape="rectangle">  <gradientandroid:startColor="@android:color/holo_blue_dark"android:endColor="@android:color/holo_orange_dark"android:type="sweep" /> </shape> ``` |
-| **Sweep offsets** <br>Whilst not quite as pretty as the “rainbow” or “floating blobs” seen with other gradients, offsetting radial drawables creates a pretty odd effect.  I’m not **entirely** sure I can think of a valid use case for this, but presumably someone needs a gradient that looks like an open doorway! | [![](/assets/images/2024/gradient-sweepoffsets.png)](/assets/images/2024/gradient-sweepoffsets.png) | ``` <?xml version="1.0" encoding="utf-8"?> <layer-list xmlns:android="http://schemas.android.com/apk/res/android">  <item><shape><solid android:color="@android:color/black" />  </shape></item>  <item><shape><gradient android:type="sweep" android:centerX="0.3" android:centerY="0.1" android:startColor="@android:color/holo_red_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></item>  <item><shape><gradient android:type="sweep" android:centerX="0.8" android:centerY="0.3" android:startColor="@android:color/holo_blue_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></item>  <item><shape><gradient android:type="sweep" android:centerX="0.1" android:centerY="0.5" android:startColor="@android:color/holo_green_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></item>  <item><shape><gradient android:type="sweep" android:centerX="0.6" android:centerY="0.7" android:startColor="@android:color/holo_orange_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></item>  <item><shape><gradient android:type="sweep" android:centerX="0.1" android:centerY="0.9" android:startColor="@android:color/holo_purple" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></item>  </layer-list> ``` |
-| **Sweep rotations** <br>Just like the last gradient, I can’t think of a valid use case for this! Wrapping each `shape` inside a `rotate` allows rotating it at any angle, although interestingly it still retains the “edges” from the original shape. I suspect this is solvable by rotating the gradient not the shape, which might produce a more aesthetically pleasing output. | [![](/assets/images/2024/gradient-sweeprotations.png)](/assets/images/2024/gradient-sweeprotations.png) | ``` <?xml version="1.0" encoding="utf-8"?> <layer-list xmlns:android="http://schemas.android.com/apk/res/android">  <item><shape><solid android:color="@android:color/black" />  </shape></item><item><rotate android:fromDegrees="66" android:toDegrees="0" android:pivotY="50%" android:pivotX="50%"><shape><gradient android:type="sweep" android:centerX="0.3" android:centerY="0.5" android:startColor="@android:color/holo_red_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></rotate></item><item><rotate android:fromDegrees="290" android:toDegrees="0" android:pivotY="40%" android:pivotX="30%"><shape><gradient android:type="sweep" android:centerX="0.8" android:centerY="0.3" android:startColor="@android:color/holo_blue_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></rotate></item><item><rotate android:fromDegrees="18" android:toDegrees="0" android:pivotY="40%" android:pivotX="30%"><shape><gradient android:type="sweep" android:centerX="0.1" android:centerY="0.5" android:startColor="@android:color/holo_green_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></rotate></item><item><rotate android:fromDegrees="280" android:toDegrees="0" android:pivotY="50%" android:pivotX="30%"><shape><gradient android:type="sweep" android:centerX="0.6" android:centerY="0.7" android:startColor="@android:color/holo_orange_dark" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></rotate></item><item><rotate android:fromDegrees="0" android:toDegrees="0" android:pivotY="50%" android:pivotX="30%"><shape><gradient android:type="sweep" android:centerX="0.0" android:centerY="0.0" android:startColor="@android:color/holo_purple" android:centerColor="@android:color/transparent" android:endColor="@android:color/transparent"/>  </shape></rotate></item>  </layer-list> ``` |
-| **Sweep split** <br>Finally, one little curiosity about sweep gradients. By offsetting the `centerX` very far to the left, you’ll end up with a top and bottom that are solid colours. This creates an interesting effect, although it could obviously be done much easier by using `solid`! If you need a similar gradient, I recommend reading the [answers on this StackOverflow question](https://stackoverflow.com/questions/4381033/multi-gradient-shapes) for simpler ways of achieving it. | [![](/assets/images/2024/gradient-sweepsplit.png)](/assets/images/2024/gradient-sweepsplit.png) | ``` <?xml version="1.0" encoding="utf-8"?> <shape xmlns:android="http://schemas.android.com/apk/res/android"  android:shape="rectangle">  <gradient android:startColor="@android:color/red" android:endColor="@android:color/holo_orange_dark" android:centerX="-99" android:type="sweep" />  <corners android:radius="20dp" /> </shape> ``` |
+<table>
+    <tr><th>Notes</th><th>Gradient</th><th>XML</th></tr>
+    <tr>
+        <td><strong>Simple linear gradient</strong><br>A really simple gradient to start, our first type is "linear". All we have is a <code>startColor</code> of white and an <code>endColor</code> of black, resulting in the nice smooth transition shown.</td>
+        <td><a href="/assets/images/2024/gradient-simplelinear.png"><img src="/assets/images/2024/gradient-simplelinear.png" /></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;gradient android:startColor=&quot;@android:color/white&quot; android:endColor=&quot;@android:color/black&quot; /&gt;
+&lt;/shape&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Centre offsetting</strong> <br>Whilst this gradient might look very similar to the previous, there's a secret inside: <code>centerY</code>.  Setting a centre colour (<code>holo_blue_dark</code> in this case) allows for slightly more complex gradients, but the interesting bit happens when you redefine where the centre is. <code>centerX</code> and <code>centerY</code> will both be used extensively throughout this post, and work by redefining where the centre colour should appear. For example, a value of <code>20%</code> or <code>0.2</code> will ensure your <code>centerColor</code> appears 20% down the drawable vertically.</td>
+        <td><a href="/assets/images/2024/gradient-centreoffsetting.png"><img src="/assets/images/2024/gradient-centreoffsetting.png"></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;gradient android:startColor=&quot;@android:color/white&quot; android:centerColor=&quot;@android:color/holo_blue_dark&quot; android:endColor=&quot;@android:color/black&quot; android:centerY=&quot;0.2&quot; /&gt;
+&lt;/shape&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Overlapping layers</strong><br>Building up on our previous gradient, adding an extra layer (via <code>layer-list</code>) drastically increases the complexity of the output. <code>layer-list</code> simply lets you overlap multiple gradients without making new <code>ImageView</code>s or drawables.  In this case, a transparent -&gt; black gradient has been added on top of our existing white -&gt; blue -&gt; black gradient, at an <code>angle</code> (essentially rotation) of 180.</td>
+        <td><a href="/assets/images/2024/gradient-overlappinglayers.png"><img src="/assets/images/2024/gradient-overlappinglayers.png"></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/white&quot; android:centerColor=&quot;@android:color/holo_blue_dark&quot; android:endColor=&quot;@android:color/black&quot; android:centerY=&quot;0.2&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/black&quot; android:endColor=&quot;@android:color/transparent&quot; android:angle=&quot;180&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+&lt;/layer-list&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Overlapping layers at the same angle</strong> <br>Just as the last gradient overlapped gradients at right angles, you can also overlap them without rotating. If a layer has a transparent <code>startColor</code> and <code>endColor</code>, but a non-transparent <code>centerColor</code>, it will appear as a horizontal strip of colour. Offsetting this strip using <code>centerY</code>, then repeating the process, allows a full rainbow of colours to be created. Note that this gradient also has a base white layer, to help the gradient be visible.</td>
+        <td><a href="/assets/images/2024/gradient-overlappinglayerssameangle.png"><img src="/assets/images/2024/gradient-overlappinglayerssameangle.png"></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;solid android:color=&quot;@android:color/white&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/holo_purple&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot; android:centerY=&quot;0.4&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/transparent&quot; android:centerColor=&quot;@android:color/holo_orange_light&quot; android:endColor=&quot;@android:color/transparent&quot; android:centerY=&quot;0.4&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/transparent&quot; android:centerColor=&quot;@android:color/holo_blue_light&quot; android:endColor=&quot;@android:color/transparent&quot; android:centerY=&quot;0.7&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:startColor=&quot;@android:color/transparent&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/holo_green_dark&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+&lt;/layer-list&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Radial gradients</strong> <br>So far we've only seen linear gradients, now we'll use radial gradients. The easiest way of thinking about them is as a “point” of colour, radiating out. <code>centerX</code> and <code>centerY</code> can be used to move this point anywhere on the canvas, in this case 10% from the left and 10% from the top.  Again, the <code>startColor</code>, <code>centerColor</code>, and <code>endColor</code> are used to set the colour, along with <code>gradientRadius</code> being used to set the overall size of the gradient.</td>
+        <td><a href="/assets/images/2024/gradient-radialgradients.png"><img src="/assets/images/2024/gradient-radialgradients.png"></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:shape=&quot;rectangle&quot;&gt;
+   &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;100%&quot; android:startColor=&quot;@android:color/black&quot; android:centerColor=&quot;@android:color/holo_blue_light&quot; android:centerX=&quot;0.1&quot; android:centerY=&quot;0.1&quot; android:endColor=&quot;@android:color/white&quot; /&gt;
+&lt;/shape&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Floating blobs</strong> <br>Combining multiple radial gradients using the same overlapping technique as our “vertical rainbow” before, we can end up with this collection of floating blobs. This effect is often hunted for by people looking to create an Instagram style logo, and is very easy to achieve. So long as you know your colours, it's just a matter of adjusting the radius, x position, and y position until each blob is in the correct place. I used this to <a href="https://stackoverflow.com/a/63162666/608312">answer a question on StackOverflow</a>, and the OP raised a reasonable counterpoint. If you need a particularly complex gradient, you could just try exporting an SVG / PNG. However, with vector graphics sometimes gradients aren't translated properly, and a PNG will either be too large, or may not scale perfectly to the user's screen. If possible, creating an image as a gradient drawable will ensure it is perfect!</td>
+        <td><a href="/assets/images/2024/gradient-floatingblobs.png"><img src="/assets/images/2024/gradient-floatingblobs.png"></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;item&gt;
+      &lt;shape android:layout_height=&quot;wrap_content&quot;&gt;
+         &lt;solid android:color=&quot;@android:color/black&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;100%&quot; android:startColor=&quot;@android:color/holo_purple&quot; android:centerX=&quot;0.1&quot; android:centerY=&quot;0.1&quot; android:endColor=&quot;@android:color/transparent&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;70%&quot; android:startColor=&quot;@android:color/holo_orange_light&quot; android:centerX=&quot;0.8&quot; android:centerY=&quot;0.5&quot; android:endColor=&quot;@android:color/transparent&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;40%&quot; android:startColor=&quot;@android:color/holo_blue_light&quot; android:centerX=&quot;0.8&quot; android:centerY=&quot;0.1&quot; android:endColor=&quot;@android:color/transparent&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;70%&quot; android:startColor=&quot;@android:color/holo_green_light&quot; android:centerX=&quot;0.2&quot; android:centerY=&quot;0.8&quot; android:endColor=&quot;@android:color/transparent&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;radial&quot; android:gradientRadius=&quot;50%&quot; android:startColor=&quot;@android:color/holo_red_light&quot; android:centerX=&quot;0.7&quot; android:centerY=&quot;0.85&quot; android:endColor=&quot;@android:color/transparent&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+&lt;/layer-list&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Sweep gradient</strong> <br>The final type of gradients are sweep. These don’t seem to make sense at first glance, I find the easiest way of thinking of them is as a “cone” shaped linear gradient, viewed from above. However you interpret them, they still use all the attributes we’ve picked up in previous gradients.</td>
+        <td><a href="/assets/images/2024/gradient-sweepgradient.png"><img src="/assets/images/2024/gradient-sweepgradient.png" alt=""></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  android:shape=&quot;rectangle&quot;&gt;  &lt;gradientandroid:startColor=&quot;@android:color/holo_blue_dark&quot;android:endColor=&quot;@android:color/holo_orange_dark&quot;android:type=&quot;sweep&quot; /&gt; &lt;/shape&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Sweep offsets</strong> <br>Whilst not quite as pretty as the “rainbow” or “floating blobs” seen with other gradients, offsetting radial drawables creates a pretty odd effect.  I’m not <strong>entirely</strong> sure I can think of a valid use case for this, but presumably someone needs a gradient that looks like an open doorway!</td>
+        <td><a href="/assets/images/2024/gradient-sweepoffsets.png"><img src="/assets/images/2024/gradient-sweepoffsets.png" alt=""></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;solid android:color=&quot;@android:color/black&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.3&quot; android:centerY=&quot;0.1&quot; android:startColor=&quot;@android:color/holo_red_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.8&quot; android:centerY=&quot;0.3&quot; android:startColor=&quot;@android:color/holo_blue_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.1&quot; android:centerY=&quot;0.5&quot; android:startColor=&quot;@android:color/holo_green_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.6&quot; android:centerY=&quot;0.7&quot; android:startColor=&quot;@android:color/holo_orange_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.1&quot; android:centerY=&quot;0.9&quot; android:startColor=&quot;@android:color/holo_purple&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+&lt;/layer-list&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Sweep rotations</strong> <br>Just like the last gradient, I can’t think of a valid use case for this! Wrapping each <code>shape</code> inside a <code>rotate</code> allows rotating it at any angle, although interestingly it still retains the “edges” from the original shape. I suspect this is solvable by rotating the gradient not the shape, which might produce a more aesthetically pleasing output.</td>
+        <td><a href="/assets/images/2024/gradient-sweeprotations.png"><img src="/assets/images/2024/gradient-sweeprotations.png" alt=""></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+   &lt;item&gt;
+      &lt;shape&gt;
+         &lt;solid android:color=&quot;@android:color/black&quot; /&gt;
+      &lt;/shape&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;rotate android:fromDegrees=&quot;66&quot; android:toDegrees=&quot;0&quot; android:pivotY=&quot;50%&quot; android:pivotX=&quot;50%&quot;&gt;
+         &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.3&quot; android:centerY=&quot;0.5&quot; android:startColor=&quot;@android:color/holo_red_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+         &lt;/shape&gt;
+      &lt;/rotate&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;rotate android:fromDegrees=&quot;290&quot; android:toDegrees=&quot;0&quot; android:pivotY=&quot;40%&quot; android:pivotX=&quot;30%&quot;&gt;
+         &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.8&quot; android:centerY=&quot;0.3&quot; android:startColor=&quot;@android:color/holo_blue_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+         &lt;/shape&gt;
+      &lt;/rotate&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;rotate android:fromDegrees=&quot;18&quot; android:toDegrees=&quot;0&quot; android:pivotY=&quot;40%&quot; android:pivotX=&quot;30%&quot;&gt;
+         &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.1&quot; android:centerY=&quot;0.5&quot; android:startColor=&quot;@android:color/holo_green_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+         &lt;/shape&gt;
+      &lt;/rotate&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;rotate android:fromDegrees=&quot;280&quot; android:toDegrees=&quot;0&quot; android:pivotY=&quot;50%&quot; android:pivotX=&quot;30%&quot;&gt;
+         &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.6&quot; android:centerY=&quot;0.7&quot; android:startColor=&quot;@android:color/holo_orange_dark&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+         &lt;/shape&gt;
+      &lt;/rotate&gt;
+   &lt;/item&gt;
+   &lt;item&gt;
+      &lt;rotate android:fromDegrees=&quot;0&quot; android:toDegrees=&quot;0&quot; android:pivotY=&quot;50%&quot; android:pivotX=&quot;30%&quot;&gt;
+         &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:centerX=&quot;0.0&quot; android:centerY=&quot;0.0&quot; android:startColor=&quot;@android:color/holo_purple&quot; android:centerColor=&quot;@android:color/transparent&quot; android:endColor=&quot;@android:color/transparent&quot;/&gt;
+         &lt;/shape&gt;
+      &lt;/rotate&gt;
+   &lt;/item&gt;
+&lt;/layer-list&gt;</code></pre></td>
+    </tr>
+    <tr>
+        <td><strong>Sweep split</strong> <br>Finally, one little curiosity about sweep gradients. By offsetting the <code>centerX</code> very far to the left, you’ll end up with a top and bottom that are solid colours. This creates an interesting effect, although it could obviously be done much easier by using <code>solid</code>! If you need a similar gradient, I recommend reading the <a href="https://stackoverflow.com/questions/4381033/multi-gradient-shapes">answers on this StackOverflow question</a> for simpler ways of achieving it.</td>
+        <td><a href="/assets/images/2024/gradient-sweepsplit.png"><img src="/assets/images/2024/gradient-sweepsplit.png" alt=""></a></td>
+        <td><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  android:shape=&quot;rectangle&quot;&gt;
+   &lt;gradient android:startColor=&quot;@android:color/red&quot; android:endColor=&quot;@android:color/holo_orange_dark&quot; android:centerX=&quot;-99&quot; android:type=&quot;sweep&quot; /&gt;
+   &lt;corners android:radius=&quot;20dp&quot; /&gt;
+&lt;/shape&gt;</code></pre></td>
+    </tr> 
+</table>

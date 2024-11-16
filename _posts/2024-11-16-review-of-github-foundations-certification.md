@@ -125,6 +125,8 @@ After 20 minutes of slow & pointless back and forth, he asked if I'd restarted t
 
 Over on GitHub I raised a support ticket, and had a far better experience. They replied within an hour that they are aware of the issue and are "coordinating with PSI" on it, with updates promised. 6 hours later, I received an email from Credly with my GitHub Foundation badge, I guess they managed to fix it!
 
+[![GitHub Foundations Credly email](/assets/images/2024/github-badge-email.png)](/assets/images/2024/github-badge-email.png)
+
 Overall PSI were very unhelpful, and I had to fend off multiple pointless suggestions (e.g. "Talk to your professor and ask to retake") whilst also being pushed between support platforms (PSI email, PSI live chat, GitHub support) without any handover. This meant I had to explain my situation 3x, with only GitHub showing any empathy or responsibility.
 
 ### Exam contents
@@ -146,7 +148,9 @@ Finally, one particularly silly example. One question asked about "Private beta"
 
 ## Conclusion
 
-I really enjoyed the studying for this exam, especially the hands-on exercises, even if the majority of it wasn't new information. This was fully expected, since I've been a software engineer [for 10 years](/7-lessons-from-a-decade-in-tech/) so should know my way around GitHub! Unfortunately the exam's tendency to test pointless trivia (not to mention fatal technical issues) was far less enjoyable.
+[![GitHub Foundations Microsoft learning path](/assets/images/2024/github-certification-banner.png)](/assets/images/2024/github-certification-banner.png)
+
+I really enjoyed the studying for the GitHub Foundations Certification exam, especially the hands-on exercises, even if the majority of it wasn't new information. This was fully expected, since I've been a software engineer [for 10 years](/7-lessons-from-a-decade-in-tech/) so should know my way around GitHub! Unfortunately the exam's tendency to test pointless trivia (not to mention fatal technical issues) was far less enjoyable.
 
 ### Reputability
 

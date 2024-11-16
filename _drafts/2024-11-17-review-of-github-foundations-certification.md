@@ -1,43 +1,46 @@
 ---
 title: My experience with the GitHub Foundations Certification process
-image: /assets/images/2024/github_foundations.png
+image: /assets/images/2024/github-certification.png
 tags:
   - GitHub
   - Education
 ---
 
-Did you know GitHub offer paid certifications? They do! The first of these is "Foundations", offered for free to students, here's my somewhat rocky experience obtaining it.
+Did you know GitHub offer paid certifications? They do! The first of these is "GitHub Foundations", offered for free to students, here's my somewhat rocky experience of studying & taking the exam.
+
+_Want to skip directly [to my study notes](https://github.com/JakeSteam/github-foundations-notes) or [the conclusion](#conclusion)?_
 
 ## Overview
 
-The [Foundations Certification](https://education.github.com/experiences/foundations_certificate) came out earlier this year, and later on was made free for students with access to the [GitHub Student Developer Pack](https://education.github.com/pack). Completion of the program rewards [a Credly badge](https://www.credly.com/badges/25737bc2-bf67-428c-9e77-0df2fd3980bd/), as is typical of other online training courses.
-
-This can be added to your LinkedIn:
-[![GitHub Foundations LinkedIn credential](/assets/images/2024/github-linkedin-credential.png)](/assets/images/2024/github-linkedin-credential.png)
-
-To quote GitHub's docs, this certification covers "your understanding of the foundational topics and concepts of collaborating, contributing, and working on GitHub", specifically:
+The [Foundations Certification](https://education.github.com/experiences/foundations_certificate) came out earlier this year, and later on was made free for students with access to the [GitHub Student Developer Pack](https://education.github.com/pack). To quote GitHub's docs, this certification covers "your understanding of the foundational topics and concepts of collaborating, contributing, and working on GitHub", specifically:
 
 - Collaboration
 - GitHub products
 - Git basics
 - Working within GitHub repositories
 
+Completion of the program rewards [a Credly badge](https://www.credly.com/badges/25737bc2-bf67-428c-9e77-0df2fd3980bd/), as is typical of other online training courses.
+
+This can be added to your LinkedIn:
+
+[![GitHub Foundations LinkedIn credential](/assets/images/2024/github-linkedin-credential.png)](/assets/images/2024/github-linkedin-credential.png)
+
 ## Studying
 
 As a certification aimed at covering a wide area, some studying is required!
 
-Somewhat bizarrely, GitHub recommends _multiple_ study guides, namely:
+Somewhat bizarrely, GitHub recommends _multiple_ study guides on various platforms, namely:
 
 1. [DataCamp's 4-course "Skill Track"](https://www.datacamp.com/tracks/github-foundations)
 2. [A LinkedIn 7-course "Learning Path"](https://www.linkedin.com/learning/paths/prepare-for-the-github-foundations-certification)
 3. [A question-based study guide](https://github.com/LadyKerr/github-certification-guide/blob/main/study-guides/gh-foundations.md) by a GitHub Developer Advocate. This is just a list of questions (e.g. "Describe branching") with no answers or information provided.
-4. Finally, a [16-module Microsoft "Learning Path"](https://learn.microsoft.com/en-us/training/paths/github-foundations/), which is what I used to study (since Microsoft owns GitHub, and this was text & activity based, not video tutorials).
+4. Finally, a [16-module Microsoft "Learning Path"](https://learn.microsoft.com/en-us/training/paths/github-foundations/), which is what I used to study since Microsoft owns GitHub, this is [recommended](https://resources.github.com/learn/certifications/), and is text & activity based, not video tutorials.
 
 Throughout my studying I made [various notes along the way](https://github.com/JakeSteam/github-foundations-notes) of bits from Microsoft's training I might forget, feel free to fork the repo if you find it helpful.
 
 ### Training contents
 
-I really, really enjoyed Microsoft's Learning Path for this exam!
+I really, really enjoyed [Microsoft's Learning Path](https://learn.microsoft.com/en-us/collections/o1njfe825p602p) for this exam!
 
 The typical format for a module is a few pages of text / diagrams to read, a 10-15 minute exercise performed on GitHub.com itself, then a (short, retakeable, multiple choice) knowledge check quiz. This adds up to around 30 minutes per module, so 8 hours for the entire learning path.
 
@@ -47,9 +50,15 @@ Whilst the overall learning path wasn't especially well organised, this was clea
 
 This led to a small amount of going over topics again, but this was probably beneficial for the target audience of the course, since the minor parts of repeated content would typically be approached from a new perspective, and in a different level of detail. In general each module built on earlier modules' teachings, so this is a minor complaint.
 
+[![GitHub Foundations study module](/assets/images/2024/github-module-git.png)](/assets/images/2024/github-module-git.png)
+
 #### Exercises
 
 Easily the best feature of the training was the exercise repos on GitHub itself! Each of these (e.g. "[Review pull requests](https://github.com/skills/review-pull-requests)") requires forking a project, which triggers the `README.md`'s instructions to update in your fork of the project. Once the new instructions are followed, the `README.md` updates with extra information on what happened, and newer instructions to continue the exercise. Once this is repeated a few times, and the hands-on lessons have been learned, the exercise is complete.
+
+All the exercises have the same getting started instructions:
+
+[![GitHub Foundations exercise example](/assets/images/2024/github-exercise-example.png)](/assets/images/2024/github-exercise-example.png)
 
 This simple cycle, performed by GitHub Actions, excellently highlights how to use GitHub by forcing the user to _actually perform the steps_. It also gives a hint at how powerful GitHub is, and that it is far more than just a file storage or a collaboration tool. The exercises even cover useful yet rarely taught abilities like "[connecting the dots](https://github.com/skills/connect-the-dots)" to hunt down a bug in a project using git blame.
 
@@ -77,14 +86,18 @@ Some unusual additional information was required, such as a full home address wi
 
 The exam can be taken whenever you want, within 60 days of your registration. The scheduling confirmation email had some... odd parts (it was actually a 2-hour exam, and it had a name!), which was perhaps yet another warning that this process wasn't perfect:
 
-> **Test**: Exam Name
-> **Duration**: 11 minutes
-> **Exam Availability**: Anytime 24/7
-> **Location**: On Demand Testing
+> - **Test**: Exam Name
+> - **Duration**: 11 minutes
+> - **Exam Availability**: Anytime 24/7
+> - **Location**: On Demand Testing
+
+The actual booking process was uneventful:
+
+[![GitHub Foundations order summary](/assets/images/2024/github-order-summary.png)](/assets/images/2024/github-order-summary.png)
 
 ### Taking exam
 
-Finally, I went to start my exam. It required downloading and installing "PSI Bridge Secure Browser" which actually seemed shady enough that I double-checked the domain & company were legitimate! They were and I had no other options if I wanted the certification, so I installed the browser.
+Finally, I went to start my exam. It required downloading and installing "PSI Bridge Secure Browser" which actually seemed shady enough that I double-checked the domain & company were legitimate! They were, and I had no other options if I wanted the certification, so I installed the browser.
 
 #### Security check
 
@@ -102,7 +115,9 @@ After an hour or so of answering every question (more on those later), I clicked
 
 Not ideal. I tried every control I had available to me (changing colour scheme, contrast, navigating via different routes, refreshing the exam) and it would happen every time. I tried reopening the secure browser and luckily the answers saved, but same error. Restarted laptop, same error. Uh oh.
 
-#### Custommer support pain
+#### Customer support pain
+
+Ready for a rant? Feel free to skip!
 
 I reached out to PSI's support email and was told I had to talk to the technical team instead, via phone or live chat. Opening live chat led to a very frustrating conversation with an obviously script-following support agent who essentially ignored what I said unless it directly answered a question, despite me showing him the error at the very start!
 
@@ -116,12 +131,12 @@ Overall PSI were very unhelpful, and I had to fend off multiple pointless sugges
 
 The exam's contents were surprising. Instead of being a knowledge check of GitHub basics, it was more of a trivia and obscure information check.
 
-I would estimate the exam was made of:
+I would estimate the exam consisted of:
 
-- 30%: Things a developer would actually need to know, and should be tested on (what is a branch, what is a fork),
-- 60%: Entirely pointless trivia that there is no value whatsoever in memorising, and can be easily looked up (how to access a setting, what view options are available for projects, features in GitHub paid plans).
-- 5%: Debatable answers that have different answers for different teams (best practices, how to interact on open source repositories, PR behaviour).
-- 5%: Incorrect, outdated, or unclear questions.
+- **30%**: Things a developer would actually need to know, and should be tested on (what is a branch, what is a fork),
+- **60%**: Entirely pointless trivia that there is no value whatsoever in memorising, and can be easily looked up (how to access a setting, what view options are available for projects, features in GitHub paid plans).
+- **5%**: Debatable answers that have different answers for different teams (best practices, how to interact on open source repositories, PR behaviour).
+- **5%**: Incorrect, outdated, or unclear questions.
 
 For example, one question asked "Which of the following can be performed within GitHub Mobile?", with 5 possible answers. The correct answer was "Managing notifications from github.com", and incorrect answers included "Managing enterprise and organization settings" but what is the point in knowing this? A user with the app installed can just use the website if they need to, and the app isn't required anyway!
 
@@ -130,3 +145,25 @@ Another poor question asked where the 2FA settings can be found, with options in
 Finally, one particularly silly example. One question asked about "Private beta" and "Public beta" feature previews. This terminology was [replaced a month ago](https://github.blog/changelog/2024-10-18-new-terminology-for-github-previews/), so there is no correct answer to the question!
 
 ## Conclusion
+
+I really enjoyed the studying for this exam, especially the hands-on exercises, even if the majority of it wasn't new information. This was fully expected, since I've been a software engineer [for 10 years](/7-lessons-from-a-decade-in-tech/) so should know my way around GitHub! Unfortunately the exam's tendency to test pointless trivia (not to mention fatal technical issues) was far less enjoyable.
+
+### Reputability
+
+I discovered _after_ passing the exam that there's many "practice exams" available online that essentially have very similar / identical questions and answers. I won't link to them here since I'm pretty sure that's essentially cheating, but it's worth mentioning!
+
+Due to this, and the basic sounding "Foundations" certification, I'm not sure how much value this certification will actually add to a LinkedIn profile or Resume. I'd actually find completing Microsoft's study guide training far more impressive (if the exercises are included), since it's real, hands-on experience, in contrast to the exam's trivia.
+
+### Other certifications
+
+Overall I don't think this certification is a good "advert" for GitHub's certification program, at least for personal development. The study guides are essentially a more focused version of the existing documentation, with the exam more covering how well you can memorise minutia than actually use the tools.
+
+If my employment heavily involved GitHub [Actions](https://learn.microsoft.com/en-us/users/githubtraining/collections/n5p4a5z7keznp5), [Administration](https://learn.microsoft.com/en-us/users/githubtraining/collections/mom7u1gzjdxw03), [Advanced Security](https://learn.microsoft.com/en-us/users/githubtraining/collections/rqymc6yw8q5rey), or [Copilot](https://learn.microsoft.com/en-us/training/paths/copilot/) I might consider working through the study guides and getting corporate sponsorship (especially Actions), but as an Android Engineer they're not worth it yet. [A redditor](https://reddit.com/r/github/comments/1f4g2td/passed_all_5_github_exams_in_1_month/) has compared their experience taking all 5 exams.
+
+### Summary
+
+I'd absolutely recommend the [GitHub Foundations Certification](https://education.github.com/experiences/foundations_certificate) to students since **it's completely free**, or those with a corporate sponsor. It teaches skills that almost every software engineer _will_ need in their very first role. However, I would not recommend paying for it yourself, since arguably the most valuable part is the [freely available training](https://learn.microsoft.com/en-us/training/paths/github-foundations/).
+
+The training even gives a trophy, almost as good as taking the actual exam!
+
+[![GitHub Foundations Microsoft learning path](/assets/images/2024/github-microsoft-learning-path.png)](/assets/images/2024/github-microsoft-learning-path.png)

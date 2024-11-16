@@ -150,7 +150,11 @@ Finally, one particularly silly example. One question asked about "Private beta"
 
 [![GitHub Foundations Microsoft learning path](/assets/images/2024/github-certification-banner.png)](/assets/images/2024/github-certification-banner.png)
 
-I really enjoyed the studying for the GitHub Foundations Certification exam, especially the hands-on exercises, even if the majority of it wasn't new information. This was fully expected, since I've been a software engineer [for 10 years](/7-lessons-from-a-decade-in-tech/) so should know my way around GitHub! Unfortunately the exam's tendency to test pointless trivia (not to mention fatal technical issues) was far less enjoyable.
+I really enjoyed the studying for the GitHub Foundations Certification exam, especially the hands-on exercises, even if the majority of it wasn't new information. This was fully expected, since I've been a software engineer [for 10 years](/7-lessons-from-a-decade-in-tech/) so should know my way around GitHub! The training even gives a trophy, arguably almost as good as taking the actual exam:
+
+[![GitHub Foundations Microsoft learning path](/assets/images/2024/github-microsoft-learning-path.png)](/assets/images/2024/github-microsoft-learning-path.png)
+
+Unfortunately the exam's tendency to test pointless trivia (not to mention fatal technical issues) was far less enjoyable.
 
 ### Reputability
 
@@ -166,8 +170,6 @@ If my employment heavily involved GitHub [Actions](https://learn.microsoft.com/e
 
 ### Summary
 
-I'd absolutely recommend the [GitHub Foundations Certification](https://education.github.com/experiences/foundations_certificate) to students since **it's completely free**, or those with a corporate sponsor. It teaches skills that almost every software engineer _will_ need in their very first role. However, I would not recommend paying for it yourself, since arguably the most valuable part is the [freely available training](https://learn.microsoft.com/en-us/training/paths/github-foundations/).
+I'd absolutely recommend the [GitHub Foundations Certification](https://education.github.com/experiences/foundations_certificate) to students since **it's completely free**, or those with a corporate sponsor who will support their education. It teaches skills that almost every software engineer _will_ need in their very first role.
 
-The training even gives a trophy, almost as good as taking the actual exam!
-
-[![GitHub Foundations Microsoft learning path](/assets/images/2024/github-microsoft-learning-path.png)](/assets/images/2024/github-microsoft-learning-path.png)
+However, I wouldn't recommend paying for it yourself, since arguably the most valuable part is the [freely available training](https://learn.microsoft.com/en-us/training/paths/github-foundations/). I'd also not recommend it if you have a year or two of real world software engineering experience, instead it's more useful as a "bridge" between a Computer Science degree education and actually using GitHub day-to-day.

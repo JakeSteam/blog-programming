@@ -437,6 +437,86 @@ Dark shading around eyes, 3D effect on head
       <b>#124: Skatetocat</b><br><i><a href="https://github.com/suziejurado">Suzie Jurado</a> ()</i><br>
       A description goes here
     </td>
+    <td>
+      <a href="https://octodex.github.com/dinotocat/"><img src="/assets/images/2024/octocats/dinotocat.png" /></a><br>
+      <b>#128: Dinotocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> & <a href="https://github.com/kimestoesta">Kim Estoesta</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/saint_nictocat/"><img src="/assets/images/2024/octocats/saint_nictocat.jpg" /></a><br>
+      <b>#130: Saint Nictocat (v2)</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/justicetocat/"><img src="/assets/images/2024/octocats/justicetocat.jpg" /></a><br>
+      <b>#132: Justicetocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/snowtocat/"><img src="/assets/images/2024/octocats/snowtocat.jpg" /></a><br>
+      <b>#133: Snowtocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/tentocat/"><img src="/assets/images/2024/octocats/tentocat.jpg" /></a><br>
+      <b>#134: Tentocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> & <a href="https://github.com/cameronfoxly">Cameron Foxly</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/vinyltocat/"><img src="/assets/images/2024/octocats/vinyltocat.jpg" /></a><br>
+      <b>#135: Vinyltocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> & <a href="https://github.com/suziejurado">Suzie Jurado</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/scubatocat/"><img src="/assets/images/2024/octocats/scubatocat.jpg" /></a><br>
+      <b>#136: Scubatocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/surftocat/"><img src="/assets/images/2024/octocats/surftocat.jpg" /></a><br>
+      <b>#138: Surftocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/umbrellatocat/"><img src="/assets/images/2024/octocats/umbrellatocat.jpg" /></a><br>
+      <b>#140: Umbrellatocat</b><br><i><a href="https://github.com/rubyjazzy">Ruby Jazz</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/sentrytocat/"><img src="/assets/images/2024/octocats/sentrytocat.jpg" /></a><br>
+      <b>#141: Sentrytocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/fintechtocat/"><img src="/assets/images/2024/octocats/fintechtocat.jpg" /></a><br>
+      <b>#144: Fintechtocat</b><br><i><a href="https://github.com/ceciliorz">Cecilio Ruiz</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/manufacturetocat/"><img src="/assets/images/2024/octocats/manufacturetocat.jpg" /></a><br>
+      <b>#150: Manufacturetocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/yogitocat/"><img src="/assets/images/2024/octocats/yogitocat.jpg" /></a><br>
+      <b>#152: Yogitocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> ()</i><br>
+      A description goes here
+    </td>   
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/godotocat/"><img src="/assets/images/2024/octocats/godotocat.jpg" /></a><br>
+      <b>#154: Godotocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> & <a href="https://github.com/leereilly">Lee Reilly</a> ()</i><br>
+      A description goes here
+    </td>   
   </tr>
 </table>
 
@@ -486,6 +566,18 @@ Dark shading around eyes, 3D effect on head
     <td>
       <a href="https://octodex.github.com/gobbleotron/"><img src="/assets/images/2024/octocats/gobbleotron.gif" /></a><br>
       <b>#117: Gobble-o-tron</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/hulatocat/"><img src="/assets/images/2024/octocats/hulatocat.gif" /></a><br>
+      <b>#137: Hulatocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/nuxtocat/"><img src="/assets/images/2024/octocats/nuxtocat.gif" /></a><br>
+      <b>#153: NUXtocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> ()</i><br>
       A description goes here
     </td>
   </tr>
@@ -706,6 +798,28 @@ A surprising number of the Octocats are drawn in the style of a TV show or other
       <b>#126: Catstello</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> ()</i><br>
       A description goes here
     </td>
+    <td>
+      <a href="https://octodex.github.com/boxertocat/"><img src="/assets/images/2024/octocats/boxertocat.jpg" /></a><br>
+      <b>#139: Boxertocat</b><br><i><a href="https://github.com/rubyjazzy">Ruby Jazz</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/filmtocats/"><img src="/assets/images/2024/octocats/filmtocats.png" /></a><br>
+      <b>#142: Filmtocats</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/brennatocat/"><img src="/assets/images/2024/octocats/brennatocat.png" /></a><br>
+      <b>#143: Brennatocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> ()</i><br>
+      A description goes here
+    </td>
+    <td>
+      <a href="https://octodex.github.com/mona-the-rivertocat/"><img src="/assets/images/2024/octocats/mona-the-rivertocat.png" /></a><br>
+      <b>#143: Mona the Rivertocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> ()</i><br>
+      A description goes here
+    </td>
   </tr>
 </table>
 
@@ -765,11 +879,16 @@ Some are based on real people.
       A description goes here
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/mona-lovelace/"><img src="/assets/images/2024/octocats/mona-lovelace.png" /></a><br>
+      <b>#129: Mona Lovelace</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> ()</i><br>
+      A description goes here
+    </td>
+  </tr>
 </table>
 
-## Odd Octocats
-
-### Not Octocats
+## Not Octocats
 
 <table style="text-align: center;">
   <tr>
@@ -798,6 +917,108 @@ Some are based on real people.
   </tr>
 </table>
 
-### Series Octocats
+## Series Octocats
 
-[![](/assets/images/2024/example-thumbnail.png)](/assets/images/2024/example.png)
+**#131: Blacktocats** by <a href="https://github.com/cameronfoxly">Cameron Foxly</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats.png" /></a></td>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_1.jpg" /></a></td>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_2.jpg" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_3.jpg" /></a></td>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_4.jpg" /></a></td>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_5.jpg" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/blacktocats/"><img src="/assets/images/2024/octocats/blacktocats_6.jpg" /></a></td>
+  </tr>
+</table>
+
+**#145: Adacats** by <a href="https://github.com/cameronfoxly">Cameron Foxly</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_2.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_5.png" /></a></td>
+  </tr>
+</table>
+
+**#146: Octogatos** by <a href="https://github.com/cameronfoxly">Cameron Foxly</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_2.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_5.png" /></a></td>
+  </tr>
+</table>
+
+**#147: Terracottocat** by <a href="https://github.com/chubbmo">Chubbmo</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/terracottocat/"><img src="/assets/images/2024/octocats/Terracottocat.png" /></a></td>
+    <td><a href="https://octodex.github.com/terracottocat/"><img src="/assets/images/2024/octocats/Terracottocat_1.png" /></a></td>
+  </tr>
+</table>
+
+**#148: Octoqueer** by <a href="https://github.com/cameronfoxly">Cameron Foxly</a> & <a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_2.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_4.png" /></a></td>
+    <td></td>
+  </tr>
+</table>
+
+**#149: OctoAsians** by <a href="https://github.com/cameronfoxly">Cameron Foxly</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_2.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_5.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_6.png" /></a></td>
+  </tr>
+</table>
+
+**#155: Parentocats** by <a href="https://github.com/JohnCreek">Joao Ribeiro</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/parentocats/"><img src="/assets/images/2024/octocats/parentocats.png" /></a></td>
+    <td><a href="https://octodex.github.com/parentocats/"><img src="/assets/images/2024/octocats/parentocats_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/parentocats/"><img src="/assets/images/2024/octocats/parentocats_2.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/parentocats/"><img src="/assets/images/2024/octocats/parentocats_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/parentocats/"><img src="/assets/images/2024/octocats/parentocats_4.png" /></a></td>
+  </tr>
+</table>

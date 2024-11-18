@@ -12,9 +12,10 @@ If you've used GitHub for any length of time, you've probably seen their odd "Oc
 
 The full list of Octocats [is available in GitHub's "Octodex"](https://octodex.github.com/), and they may be used to refer to GitHub or as a _personal_ avatar picture, but (unsurprisingly) not for commercial purposes or physical products. They're very, very cool, and they definitely deserve a bit more visibility. Maybe this article will help!
 
+https://cameronmcefee.com/work/the-octocat/
+
 ## Todo
 
-- Go through and add dates for all
 - Go through and add back story for all
 - Add category descriptions, better banner, summary, etc
 
@@ -38,257 +39,257 @@ First up, the earlier Octocat variants. They are still very clearly Octocat, and
     <td>
       <a href="https://octodex.github.com/class-act/"><img src="/assets/images/2024/octocats/class-act.png" /></a><br>
       <b>#2: Class Act</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-28)</i><br>
-      A description goes here
+      Unknown
     </td>
     <td>
       <a href="https://octodex.github.com/puppeteer/"><img src="/assets/images/2024/octocats/puppeteer.png" /></a><br>
       <b>#4: Puppeteer</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-30)</i><br>
-      A description goes here
+      Unknown
     </td>
     </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/scottocat/"><img src="/assets/images/2024/octocats/scottocat.jpg" /></a><br>
       <b>#5: Scottocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-30)</i><br>
-      A description goes here
+      This is most likely <a href="https://github.com/schacon">Scott Chacon</a>, a GitHub co-founder with a similar profile picture.
     </td>
     <td>
       <a href="https://octodex.github.com/benevocats/"><img src="/assets/images/2024/octocats/benevocats.png" /></a><br>
       <b>#6: Benevocats</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-31)</i><br>
-      A description goes here
+      Unknown, but presumably a play on "benevolent".
     </td>
     <td>
       <a href="https://octodex.github.com/forktocat/"><img src="/assets/images/2024/octocats/forktocat.jpg" /></a><br>
       <b>#7: Forktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-31)</i><br>
-      A description goes here
+      A reference to <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">"Fork"ing</a> a repository.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/repo/"><img src="/assets/images/2024/octocats/repo.png" /></a><br>
       <b>#8: Repo</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-31)</i><br>
-      A description goes here
+      A reference to <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories">repositories</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/setuptocat/"><img src="/assets/images/2024/octocats/setuptocat.jpg" /></a><br>
       <b>#9: Setuptocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-31)</i><br>
-      A description goes here
+      Unknown, presumably something to do with setting up, or code diffs (+ & -).
     </td>
     <td>
       <a href="https://octodex.github.com/socialite/"><img src="/assets/images/2024/octocats/socialite.jpg" /></a><br>
       <b>#10: Socialite</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-31)</i><br>
-      A description goes here
+      Unknown, presumably related to following other GitHub users.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/drupalcat/"><img src="/assets/images/2024/octocats/drupalcat.jpg" /></a><br>
       <b>#11: Drupalcat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-01)</i><br>
-      A description goes here
+      A reference to the <a href="https://www.drupal.org/">Drupal</a> CMS.
     </td>
     <td>
       <a href="https://octodex.github.com/pythocat/"><img src="/assets/images/2024/octocats/pythocat.png" /></a><br>
       <b>#12: Pythocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-01)</i><br>
-      A description goes here
+      A reference to the <a href="https://www.python.org/">Python</a> language.
     </td>
     <td>
       <a href="https://octodex.github.com/bouncer/"><img src="/assets/images/2024/octocats/bouncercat.png" /></a><br>
       <b>#14: Bouncer</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-03)</i><br>
-      A description goes here
+      Unknown, perhaps to do with security.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/octonaut/"><img src="/assets/images/2024/octocats/octonaut.jpg" /></a><br>
       <b>#15: Octonaut</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-04)</i><br>
-      A description goes here
+      A play on "Astronaut".
     </td>
     <td>
       <a href="https://octodex.github.com/swagtocat/"><img src="/assets/images/2024/octocats/swagtocat.png" /></a><br>
       <b>#19: Swagtocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-09)</i><br>
-      A description goes here
+      A reference to free items from the <a href="https://github.blog/news-insights/announcing-codeconf-2011/">CodeConf 2011</a> event.
     </td>
     <td>
       <a href="https://octodex.github.com/inspectocat/"><img src="/assets/images/2024/octocats/inspectocat.jpg" /></a><br>
       <b>#23: Inspectocat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-04-13)</i><br>
-      A description goes here
+      Likely a reference to a browser's <a href="https://developer.chrome.com/docs/devtools/inspect-mode">"Inspect Element"</a> feature. This was the first octocat not by Cameron McEfee!
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/agendacat/"><img src="/assets/images/2024/octocats/agendacat.png" /></a><br>
       <b>#25: Agendacat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-04-15)</i><br>
-      A description goes here
+      An agenda, presumably also used in relation to CodeConf 2011.
     </td>
     <td>
       <a href="https://octodex.github.com/total-eclipse-of-the-octocat/"><img src="/assets/images/2024/octocats/total-eclipse-of-the-octocat.jpg" /></a><br>
       <b>#29: Total Eclipse of the Octocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-19)</i><br>
-      A description goes here
+      Probably a reference to the 1983 song <a href="https://en.wikipedia.org/wiki/Total_Eclipse_of_the_Heart">"Total Eclipse of the Heart"</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/constructocat-v2/"><img src="/assets/images/2024/octocats/constructocat2.jpg" /></a><br>
       <b>#30: Constructocat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-05-01)</i><br>
-      A description goes here
+      Probably used for "Under Construction" screen(s).
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/collabocats/"><img src="/assets/images/2024/octocats/collabocats.jpg" /></a><br>
       <b>#31: Collabocats</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-05-02)</i><br>
-      A description goes here
+      A play on the word "collaboration".
     </td>
     <td>
       <a href="https://octodex.github.com/supportcat/"><img src="/assets/images/2024/octocats/supportcat.png" /></a><br>
       <b>#32: Supportcat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-05-03)</i><br>
-      A description goes here
+      Presumably used in relation to help / support.
     </td>
     <td>
       <a href="https://octodex.github.com/cherryontop-o-cat/"><img src="/assets/images/2024/octocats/cherryontop-o-cat.png" /></a><br>
       <b>#33: Cherryontop-o-cat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-05-04)</i><br>
-      A description goes here
+      Unknown
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/jenktocat/"><img src="/assets/images/2024/octocats/jenktocat.jpg" /></a><br>
       <b>#36: Jenktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-12)</i><br>
-      A description goes here
+      A reference to the <a href="https://www.jenkins.io/">Jenkins</a> CI system.
     </td>
     <td>
       <a href="https://octodex.github.com/poptocat/"><img src="/assets/images/2024/octocats/poptocat.png" /></a><br>
       <b>#37: Poptocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-13)</i><br>
-      A description goes here
+      Likely a play on "Pop", since there is also a "Momtocat". Possibly used for Father's Day in June.
     </td>
     <td>
       <a href="https://octodex.github.com/scarletteocat/"><img src="/assets/images/2024/octocats/scarletteocat.jpg" /></a><br>
       <b>#38: Scarletteocat</b><br><i><a href="https://github.com/jordanmccullough">Jordan McCullough</a> (2011-05-14)</i><br>
-      A description goes here
+      Based on <a href="https://github.com/wilkie/githubber-announce-scraper/blob/master/output.md#matthew-mccullough">a scraped employee announcement from 2012</a>, I suspect this is based on a former employee due to: "Scarletteocat, jointly designed by both Scarlette and ...".
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/dodgetocat/"><img src="/assets/images/2024/octocats/dodgetocat.jpg" /></a><br>
       <b>#40: Dodge, Duck, Dip, Dive, Dodgetocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-16)</i><br>
-      A description goes here
+      A reference to <a href="https://www.youtube.com/watch?v=plXIfAQ_JWw">The Five D's of Dodgeball</a> from the film Dodgeball. Possibly used in relation to <a href="https://www.jina.me/cv#:~:text=graphic%20design%20for-,Dodgeball%20uniforms,-and%20a%20company">a Dodgeball event</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/notocat/"><img src="/assets/images/2024/octocats/notocat.jpg" /></a><br>
       <b>#41: Not Octocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-06-10)</i><br>
-      A description goes here
+      Translates from French into "this is not an octopus cat".
     </td>
     <td>
       <a href="https://octodex.github.com/bear-cavalry/"><img src="/assets/images/2024/octocats/bear-cavalry.png" /></a><br>
       <b>#43: Bear Cavalry</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-02)</i><br>
-      A description goes here
+      Presumably a reference to the <a href="https://9gag.com/gag/aVO1QP8">"Bear Cavalry" meme</a> popular at the time.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/spectrocat/"><img src="/assets/images/2024/octocats/spectrocat.png" /></a><br>
       <b>#44: Spectrocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-02)</i><br>
-      A description goes here
+      Unknown, possibly just a play on "Spectre".
     </td>
     <td>
       <a href="https://octodex.github.com/shoptocat/"><img src="/assets/images/2024/octocats/shoptocat.png" /></a><br>
       <b>#47: Shoptocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-05)</i><br>
-      A description goes here
+      Likely used for a shopping page.
     </td>
     <td>
       <a href="https://octodex.github.com/oktobercat/"><img src="/assets/images/2024/octocats/oktobercat.png" /></a><br>
       <b>#48: Oktobercat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-06)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Oktoberfest">Oktoberfest</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/hipster-partycat/"><img src="/assets/images/2024/octocats/hipster-partycat.jpg" /></a><br>
       <b>#51: Hipster Partycat</b><br><i><a href="https://github.com/jina">Jina Anne</a> (2011-07-09)</i><br>
-      A description goes here
+      Likely used for "a company party invitation" as mentioned on <a href="https://www.jina.me/cv#:~:text=company%20party%20invitation">the creator's CV</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/father-timeout/"><img src="/assets/images/2024/octocats/father_timeout.jpg" /></a><br>
       <b>#53: Father Timeout</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-10-02)</i><br>
-      A description goes here
+      Presumably used for some sort of timeout error screen. A play on <a href="https://en.wikipedia.org/wiki/Father_Time">"Father Time"</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/grim-repo/"><img src="/assets/images/2024/octocats/grim-repo.jpg" /></a><br>
       <b>#54: Grim Repo</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-10-27)</i><br>
-      A description goes here
+      Presumably used for some sort of deleted repository screen. A play on <a href="https://en.wikipedia.org/wiki/Personifications_of_death">"Grim Reaper"</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/octocat-de-los-muertos/"><img src="/assets/images/2024/octocats/octocat-de-los-muertos.jpg" /></a><br>
       <b>#55: Octocat De Los Muertos</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-10-28)</i><br>
-      A description goes here
+      A reference to the Mexican holiday <a href="https://en.wikipedia.org/wiki/Day_of_the_Dead">Dia de los Muertos</a> (Day of the Dead).
     </td>
     <td>
       <a href="https://octodex.github.com/thanktocat/"><img src="/assets/images/2024/octocats/thanktocat.png" /></a><br>
       <b>#61: Thanktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-11-23)</i><br>
-      A description goes here
+      A reference to the holiday <a href="https://en.wikipedia.org/wiki/Thanksgiving">Thanksgiving</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/orderedlistocat/"><img src="/assets/images/2024/octocats/orderedlistocat.png" /></a><br>
       <b>#62: Ordered Listocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-12-05)</i><br>
-      A description goes here
+      Presumably used to promote ordered list support on GitHub in Markdown.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/saint-nicktocat/"><img src="/assets/images/2024/octocats/saint-nicktocat.jpg" /></a><br>
       <b>#63: Saint Nicktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-12-05)</i><br>
-      A description goes here
+      A play on <a href="https://en.wikipedia.org/wiki/Santa_Claus">Saint Nick / Santa Claus</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/dojocat/"><img src="/assets/images/2024/octocats/dojocat.jpg" /></a><br>
       <b>#66: Dojocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-01-18)</i><br>
-      A description goes here
+      A reference to ninjas and dojos, unknown purpose.
     </td>
     <td>
       <a href="https://octodex.github.com/codercat/"><img src="/assets/images/2024/octocats/codercat.jpg" /></a><br>
       <b>#70: Codercat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-02-15)</i><br>
-      A description goes here
+      A typical GitHub user.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/electrocat/"><img src="/assets/images/2024/octocats/electrocat.png" /></a><br>
       <b>#71: Electrocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-02-29)</i><br>
-      A description goes here
+      A reference to electricity, unknown purpose.
     </td>
     <td>
       <a href="https://octodex.github.com/snowoctocat/"><img src="/assets/images/2024/octocats/snowoctocat.png" /></a><br>
       <b>#72: Snow Octocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-03-05)</i><br>
-      A description goes here
+      A reference to snow, unknown purpose.
     </td>
     <td>
       <a href="https://octodex.github.com/momtocat/"><img src="/assets/images/2024/octocats/momtocat.png" /></a><br>
       <b>#73: Momtocat</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2012-05-13)</i><br>
-      A description goes here
+      A reference to Mom / Mum, likely used for Mother's day around this time.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/red-polo/"><img src="/assets/images/2024/octocats/red-polo.png" /></a><br>
       <b>#75: Red Polo</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-06-21)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Scott_Guthrie">Scott Guthrie</a>, a senior leader at Microsoft who often wears a red polo. Unknown purpose.
     </td>
     <td>
       <a href="https://octodex.github.com/droidtocat/"><img src="/assets/images/2024/octocats/droidtocat.png" /></a><br>
       <b>#78: Droidtocat</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2012-07-09)</i><br>
-      A description goes here
+      Used for the first GitHub Android app release in July 2012.
     </td>
     <td>
       <a href="https://octodex.github.com/deckfailcat/"><img src="/assets/images/2024/octocats/deckfailcat.png" /></a><br>
       <b>#82: Deckfailcat</b><br><i><a href="https://github.com/mattgraham">Matt Graham</a> (2012-08-02)</i><br>
-      A description goes here
+      Likely used as a reference to some internal unfortunate event involving the <a href="https://speakerdeck.com/">Speaker Deck software</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/privateinvestocat/"><img src="/assets/images/2024/octocats/privateinvestocat.jpg" /></a><br>
       <b>#119: Private Investocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2015-01-27)</i><br>
-      A description goes here
+      Presumably a reference to private investors, for unknown purpose.
     </td>
   </tr>
 </table>
@@ -743,7 +744,7 @@ A surprising number of the Octocats are drawn in the style of a TV show or other
     <td>
       <a href="https://octodex.github.com/stormtroopocat/"><img src="/assets/images/2024/octocats/stormtroopocat.png" /></a><br>
       <b>#84: Stormtroopocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2012-10-15)</i><br>
-      A description goes here
+      Based on <a href="https://starwars.fandom.com/wiki/Stormtrooper">Star Wars' Stormtrooper</a>, <a href="https://github.com/wilkie/githubber-announce-scraper/blob/master/output.md#james-kang">created when</a> "[GitHub] asked James to design the Octocat he thought the Octodex was missing most and he completely dazzled [GitHub] with his Stormtroopocat"
     </td>
     <td>
       <a href="https://octodex.github.com/megacat-2/"><img src="/assets/images/2024/octocats/megacat-2.png" /></a><br>
@@ -852,7 +853,7 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/defunktocat/"><img src="/assets/images/2024/octocats/defunktocat.png" /></a><br>
       <b>#65: Defunktocat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2012-01-13)</i><br>
-      A description goes here
+      Mentioned here: https://scottchacon.com/2011/08/31/github-flow
     </td>
   </tr>
   <tr>
@@ -893,7 +894,7 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/hubot/"><img src="/assets/images/2024/octocats/hubot.jpg" /></a><br>
       <b>#18: Hubot</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-07)</i><br>
-      A description goes here
+      https://hubot.github.com/
     </td>
     <td>
       <a href="https://octodex.github.com/cloud/"><img src="/assets/images/2024/octocats/cloud.jpg" /></a><br>

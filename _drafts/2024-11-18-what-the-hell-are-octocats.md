@@ -12,12 +12,12 @@ If you've used GitHub for any length of time, you've probably seen their odd "Oc
 
 The full list of Octocats [is available in GitHub's "Octodex"](https://octodex.github.com/), and they may be used to refer to GitHub or as a _personal_ avatar picture, but (unsurprisingly) not for commercial purposes or physical products. They're very, very cool, and they definitely deserve a bit more visibility. Maybe this article will help!
 
-https://cameronmcefee.com/work/the-octocat/
-
 ## Todo
 
 - Go through and add back story for all
 - Add category descriptions, better banner, summary, etc
+- Add intro to octocat itself https://cameronmcefee.com/work/the-octocat/
+- Fix capitalisations octocat vs Octocat
 
 ## Statistics
 
@@ -27,7 +27,11 @@ https://cameronmcefee.com/work/the-octocat/
 
 ### Classic Octocats
 
-First up, the earlier Octocat variants. They are still very clearly Octocat, and typically have a 2D, face-on appearance, with limited details and a recognisable stance. Whilst some have a modified appearance, they're all easily identifiable as Octocat.
+First up, the earlier Octocat variants. They are still very clearly variants on the original Octocat, and typically have a 2D, face-on appearance, with limited details and a recognisable stance. Whilst some have a modified position or other characters, they're all easily identifiable as Octocat.
+
+The majority of [Pop Culture Octocats](#pop-culture-octocats) and around half of the [Real People Octocats](#real-people-octocats) are from this fruitful period.
+
+This era lasted from early 2011 to late 2012.
 
 <table style="text-align: center;">
   <tr>
@@ -296,109 +300,106 @@ First up, the earlier Octocat variants. They are still very clearly Octocat, and
 
 ### Modern Octocats
 
-White bits in eyes
+After the "Classic" octocats and their relatively static appearances came the "Modern" octocats, with each clearly being a distinct piece of art, often with a unique position. Although Tony Jaramillo created the first of this era (Dodgetocat v2), it's James Kang who really churned out creations!
+
+This era lasted from late 2012 to late 2014.
 
 <table style="text-align: center;">
   <tr>
     <td>
       <a href="https://octodex.github.com/dodgetocat-v2/"><img src="/assets/images/2024/octocats/dodgetocat_v2.png" /></a><br>
       <b>#85: Dodgetocat v2</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2012-10-25)</i><br>
-      A description goes here
+      Another dodgeball cat, perhaps another dodgeball event?
     </td>
     <td>
       <a href="https://octodex.github.com/skitchtocat/"><img src="/assets/images/2024/octocats/skitchtocat.png" /></a><br>
       <b>#90: Skitchtocat</b><br><i><a href="https://github.com/jonrohan">Jon Rohan</a> (2012-12-15)</i><br>
-      A description goes here
+      Presumably a reference to the <a href="https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12">screen annotating software Skitch</a> (now owned by Evernote), as evidenced by the octocat being made up of arrow annotations.
     </td>
     <td>
       <a href="https://octodex.github.com/motherhubbertocat/"><img src="/assets/images/2024/octocats/motherhubbertocat.png" /></a><br>
       <b>#91: Motherhubbertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-01-27)</i><br>
-      A description goes here
+      Unknown, possibly a reference to <a href="https://en.wikipedia.org/wiki/Old_Mother_Hubbard">Old Mother Hubbard</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/Robotocat/"><img src="/assets/images/2024/octocats/robotocat.png" /></a><br>
       <b>#92: Robotocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-01-28)</i><br>
-      A description goes here
+      A robotic octocat, unknown purpose.
     </td>
     <td>
       <a href="https://octodex.github.com/Professortocat_v2/"><img src="/assets/images/2024/octocats/Professortocat_v2.png" /></a><br>
       <b>#94: Professortocat v2</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-02-11)</i><br>
-      A description goes here
+      A stereotypical professor with an apple and cane.
     </td>
     <td>
       <a href="https://octodex.github.com/Kimonotocat/"><img src="/assets/images/2024/octocats/kimonotocat.png" /></a><br>
       <b>#95: Kimonotocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-02-27)</i><br>
-      A description goes here
+      A reference to the Japanese clothing <a href="https://en.wikipedia.org/wiki/Kimono">Kimono</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/Mardigrastocat/"><img src="/assets/images/2024/octocats/Mardigrastocat.png" /></a><br>
       <b>#96: Mardigrastocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-02-27)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Mardi_Gras">Mardi Gras</a>, occurring a few days after this released.
     </td>
     <td>
       <a href="https://octodex.github.com/poptocat_v2/"><img src="/assets/images/2024/octocats/poptocat_v2.png" /></a><br>
       <b>#97: Poptocat v2</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-04-19)</i><br>
-      A description goes here
+      An iteration on the earlier "Pop" octocat, possibly for Father's Day in a couple of months.
     </td>
     <td>
-      <a href="https://octodex.github.com/foundingfather_v2/"><img src="/assets/images/2024/octocats/foundingfather_v2.png" /></a><br>
-      <b>#98: Founding Father v2</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-05-24)</i><br>
-      A description goes here
+      <a href="https://octodex.github.com/femalecodertocat/"><img src="/assets/images/2024/octocats/femalecodertocat.png" /></a><br>
+      <b>#101: Femalecodertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-07-01)</i><br>
+      Another typical GitHub user (see Codercat too).
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://octodex.github.com/femalecodertocat/"><img src="/assets/images/2024/octocats/femalecodertocat.png" /></a><br>
-      <b>#101: Femalecodertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-07-01)</i><br>
-      A description goes here
-    </td>
-    <td>
       <a href="https://octodex.github.com/octoliberty/"><img src="/assets/images/2024/octocats/octoliberty.png" /></a><br>
       <b>#102: Octoliberty</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-07-05)</i><br>
-      A description goes here
+      A reference to the <a href="https://en.wikipedia.org/wiki/Statue_of_Liberty">Statue of Liberty</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/labtocat/"><img src="/assets/images/2024/octocats/labtocat.png" /></a><br>
       <b>#104: Labtocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2013-08-18)</i><br>
-      A description goes here
+      Possibly a reference to some sort of "feature lab", unknown.
+    </td>
+    <td>
+      <a href="https://octodex.github.com/steroidtocat/"><img src="/assets/images/2024/octocats/steroidtocat.png" /></a><br>
+      <b>#106: Steroidtocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-12-13)</i><br>
+      A reference to steroids, possibly a replacement for "Bouncer".
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://octodex.github.com/steroidtocat/"><img src="/assets/images/2024/octocats/steroidtocat.png" /></a><br>
-      <b>#106: Steroidtocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-12-13)</i><br>
-      A description goes here
-    </td>
-    <td>
       <a href="https://octodex.github.com/yaktocat/"><img src="/assets/images/2024/octocats/yaktocat.png" /></a><br>
       <b>#107: Yaktocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-12-13)</i><br>
-      A description goes here
+      Possibly a reference to the Japanese crime syndicate <a href="https://en.wikipedia.org/wiki/Yakuza">"Yakuza"</a>, although the Thai traditional <a href="https://en.wikipedia.org/wiki/Khon">"Khon"</a> looks very similar, especially <a href="https://www.vectorstock.com/royalty-free-vector/cute-style-thai-khon-yak-tossakan-dancing-cartoon-vector-36227734">this image</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/saritocat/"><img src="/assets/images/2024/octocats/saritocat.png" /></a><br>
       <b>#112: Saritocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2014-04-30)</i><br>
-      A description goes here
+      Unknown, presumably something from south Asia.
+    </td>
+    <td>
+      <a href="https://octodex.github.com/luchadortocat/"><img src="/assets/images/2024/octocats/luchadortocat.png" /></a><br>
+      <b>#113: Luchadortocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2014-09-26)</i><br>
+      A reference to Mexican wrestlers (<a href="https://en.wikipedia.org/wiki/Lucha_libre">Luchadors</a>).
     </td>
   </tr>
   <tr>
     <td>
-      <a href="https://octodex.github.com/luchadortocat/"><img src="/assets/images/2024/octocats/luchadortocat.png" /></a><br>
-      <b>#113: Luchadortocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2014-09-26)</i><br>
-      A description goes here
-    </td>
-    <td>
       <a href="https://octodex.github.com/saketocat/"><img src="/assets/images/2024/octocats/saketocat.png" /></a><br>
       <b>#114: Saketocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-09-27)</i><br>
-      A description goes here
+      A Japanese themed octocat, specifically the rice wine <a href="https://en.wikipedia.org/wiki/Sake">sake</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/minertocat/"><img src="/assets/images/2024/octocats/minertocat.png" /></a><br>
       <b>#115: Minertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-09-29)</i><br>
-      A description goes here
+      An octocat <a href="https://en.wikipedia.org/wiki/Gold_panning">panning for gold</a>, unknown usage.
     </td>
   </tr>
 </table>
@@ -406,6 +407,10 @@ White bits in eyes
 ### Extra Modern Octocats
 
 Dark shading around eyes, 3D effect on head
+
+Towards the end of 2014, something unusual happened to octocat! It gained more detailed features, distinctive expressions, eyes, and other facial features, and it is clearly not a human. The limbs seem much "stretchier", and the character is in much more active poses.
+
+This era started in late 2014 and is still dominant.
 
 <table style="text-align: center;">
   <tr>
@@ -826,7 +831,7 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/founding-father/"><img src="/assets/images/2024/octocats/founding-father.jpg" /></a><br>
       <b>#13: Founding Father</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-02)</i><br>
-      A description goes here
+      A reference to the USA Founding Father <a href="https://en.wikipedia.org/wiki/George_Washington">George Washington</a>.
     </td>
       <td>
       <a href="https://octodex.github.com/monroe/"><img src="/assets/images/2024/octocats/monroe.jpg" /></a><br>
@@ -863,17 +868,22 @@ Some are based on real people.
       https://en.wikipedia.org/wiki/Frank_Gore
     </td>
     <td>
+      <a href="https://octodex.github.com/foundingfather_v2/"><img src="/assets/images/2024/octocats/foundingfather_v2.png" /></a><br>
+      <b>#98: Founding Father v2</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-05-24)</i><br>
+      A reference to the USA Founding Father <a href="https://en.wikipedia.org/wiki/George_Washington">George Washington</a>.
+    </td>
+    <td>
       <a href="https://octodex.github.com/gracehoppertocat/"><img src="/assets/images/2024/octocats/gracehoppertocat.jpg" /></a><br>
       <b>#118: Gracehoppertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-12-03)</i><br>
       A description goes here
     </td>
+  </tr>
+  <tr>
     <td>
       <a href="https://octodex.github.com/mcefeeline/"><img src="/assets/images/2024/octocats/mcefeeline.jpg" /></a><br>
       <b>#125: McEfeeline</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2017-01-27)</i><br>
       Cameron McEfee who made many of the early Octocats!
     </td>
-  </tr>
-  <tr>
     <td>
       <a href="https://octodex.github.com/bannekat/"><img src="/assets/images/2024/octocats/bannekat.png" /></a><br>
       <b>#127: Benjamin Bannekat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> & <a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2017-02-28)</i><br>

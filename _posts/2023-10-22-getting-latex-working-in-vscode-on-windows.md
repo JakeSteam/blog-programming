@@ -2,9 +2,10 @@
 title: How to install LaTeX (with previews & autocomplete) for VSCode on Windows
 image: /assets/images/2023/latex-banner.png
 tags:
-    - VSCode
-    - LaTeX
-    - Windows
+  - VSCode
+  - LaTeX
+  - Windows
+last_modified_at: 2024-11-21
 ---
 
 I recently decided to learn the basics of [LaTeX](https://www.latex-project.org/about/), a way of preparing documents primarily used in STEM academia. I also decided to use VSCode, as I do for almost all other work. This was not as easy as I expected, so here's a complete beginner's guide to getting LaTeX working in Visual Studio Code on Windows!
@@ -59,7 +60,7 @@ Click "Change" next to "full scheme (everything)", and this dialog will pop up:
 
 [![](/assets/images/2023/latex-install5.png)](/assets/images/2023/latex-install5.png)
 
-Change the scheme to "basic scheme", then click "Install". This scheme is more reasonable, around 430MB, and will take a couple of minutes to install on an SSD. 
+Change the scheme to "basic scheme", then click "Install". This scheme is more reasonable, around 430MB, and will take a couple of minutes to install on an SSD.
 
 Here's how it'll look when finished:
 
@@ -89,13 +90,15 @@ This bit is much more straightforward, thankfully.
 
 Search for "LaTeX Workshop" and "LTeX - LanguageTool" in VSCode's extensions tab, and click to install both. Only the first is required, but the second will give very useful grammar and spellchecking capabilities.
 
+Make sure you install the LanguageTool extension by "LTeX+", as the one by "Julian Valentin" [is not maintained](https://github.com/valentjn/vscode-ltex/issues/884#issuecomment-2481694378) and has been forked.
+
 [![](/assets/images/2023/latex-install9.png)](/assets/images/2023/latex-install9.png)
 
 VSCode will probably ask you to "Reload", if not then close and reopen it yourself.
 
 ## Testing your installation
 
-Okay, you're good to go! 
+Okay, you're good to go!
 
 To test this, create a new `.tex` file in VSCode. Add some basic LaTeX code, such as:
 
@@ -110,11 +113,11 @@ When you save this document, you should notice 4 things:
 
 ### 1: New LaTeX buttons
 
-The top right of your file should have buttons to build your LaTeX project and preview it. 
+The top right of your file should have buttons to build your LaTeX project and preview it.
 
 [![](/assets/images/2023/latex-installed1.png)](/assets/images/2023/latex-installed1.png)
 
-Clicking the preview icon will hopefully... preview your file! 
+Clicking the preview icon will hopefully... preview your file!
 
 [![](/assets/images/2023/latex-installed2.png)](/assets/images/2023/latex-installed2.png)
 
@@ -130,7 +133,7 @@ It's worth pointing out that this is also where any issues will surface themselv
 
 ### 3: Lots of new files
 
-Your single `.tex` file now has 6 new friends! 
+Your single `.tex` file now has 6 new friends!
 
 [![](/assets/images/2023/latex-installed3.png)](/assets/images/2023/latex-installed3.png)
 
@@ -162,9 +165,10 @@ I'm going to be using [this tutorial](https://www.overleaf.com/learn/latex/Learn
 
 This was far more complicated than it needed to be. I admittedly made it harder on myself by not just accepting the 1 hour 8GB install, but even then there were so many small areas of friction!
 
-The [LaTeX Project](https://www.latex-project.org/) does do a good job from the documentation side, providing a high level overview without unnecessary technical detail. However, as soon as you click "Get", and are met by multiple ways of getting multiple distributions for multiple OS... it falls apart. 
+The [LaTeX Project](https://www.latex-project.org/) does do a good job from the documentation side, providing a high level overview without unnecessary technical detail. However, as soon as you click "Get", and are met by multiple ways of getting multiple distributions for multiple OS... it falls apart.
 
 The very first section starts off extremely promising, drawing complete newcomers in with this wording:
+
 > If you're new to TeX and LaTeX or just want an easy installation, get a full TeX distribution. The TeX Users Group (TUG) has a list of notable distributions that are entirely, or least primarily, free software.
 
 Unfortunately, the link takes me to `tug.org`, which is actually timing out for me currently. Once it came back up, the result is not very intuitive. Is one of these better? Is one of them awful? No idea. Whilst I know from elsewhere that the top option is 100% what I want, I could easily have picked an incorrect option!
@@ -181,13 +185,8 @@ Regardless, now it's all setup, I'm looking forward to doing more than writing "
 
 ## Useful links
 
-* [LaTeX Project homepage](https://www.latex-project.org/about/)
-* LaTeX Workshop [GitHub](https://github.com/James-Yu/LaTeX-Workshop/) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-* LTeX Language Tool [GitHub](https://github.com/valentjn/vscode-ltex) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)
-* [Beginner-friendly LaTeX Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
-* [TeX Live](https://tug.org/texlive/)
-
-
-
-
-
+- [LaTeX Project homepage](https://www.latex-project.org/about/)
+- LaTeX Workshop [GitHub](https://github.com/James-Yu/LaTeX-Workshop/) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+- LTeX Language Tool [GitHub](https://github.com/ltex-plus/vscode-ltex-plus) & [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=ltex-plus.vscode-ltex-plus)
+- [Beginner-friendly LaTeX Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+- [TeX Live](https://tug.org/texlive/)

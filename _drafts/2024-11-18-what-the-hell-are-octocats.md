@@ -23,6 +23,7 @@ The full list of Octocats [is available in GitHub's "Octodex"](https://octodex.g
 
 - Secret extras: https://jeejkang.com/GitHub-Octocats (and other authors)
 - TONS on LinkedIn https://www.linkedin.com/posts/github_calling-all-space-enthusiasts-the-nasa-activity-7111044741042987008-bYx5/
+- https://myoctocat.com/
 
 ## Statistics
 
@@ -588,6 +589,8 @@ This era started in late 2014 and is still dominant.
       A reference to "New User Experience" (<a href="https://medium.com/meta-research/speaking-design-what-a-few-key-terms-taught-me-82d1491d6da2#:~:text=1.-,NUX,-NUX%20literally%20means">NUX</a>), hence the capitalisation, <i>not</i> the framework "nuxt"!
     </td>
   </tr>
+  <tr></tr>
+  <tr></tr>
 </table>
 
 ### Pop Culture Octocats
@@ -660,7 +663,7 @@ A surprising number of the Octocats are drawn in the style of a TV show or other
     <td>
       <a href="https://octodex.github.com/riddlocat/"><img src="/assets/images/2024/octocats/riddlocat.png" /></a><br>
       <b>#50: Riddlocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-08)</i><br>
-      A reference to <a href="https://en.wikipedia.org/wiki/Riddler"> from Batman.
+      A reference to <a href="https://en.wikipedia.org/wiki/Riddler">Riddler</a> from Batman.
     </td>
   </tr>
   <tr>
@@ -839,36 +842,36 @@ Some are based on real people.
       <td>
       <a href="https://octodex.github.com/monroe/"><img src="/assets/images/2024/octocats/monroe.jpg" /></a><br>
       <b>#17: Monroe</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-06)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Marilyn_Monroe">Marilyn Monroe</a>, see also "Andycat".
     </td>
     <td>
       <a href="https://octodex.github.com/wilson/"><img src="/assets/images/2024/octocats/wilson.jpg" /></a><br>
       <b>#20: Wilson</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-10)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Brian_Wilson_(baseball)">Brian Wilson</a>, a baseball player.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/octdrey-catburn/"><img src="/assets/images/2024/octocats/octdrey-catburn.jpg" /></a><br>
       <b>#45: Octdrey Catburn</b><br><i><a href="https://github.com/jordanmccullough">Jordan McCullough</a> (2011-07-03)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Audrey_Hepburn">Audrey Hepburn</a>, an actress.
     </td>
     <td>
       <a href="https://octodex.github.com/visionary/"><img src="/assets/images/2024/octocats/visionary.jpg" /></a><br>
       <b>#49: Visionary</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-07)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a>, former Apple CEO.
     </td>
     <td>
       <a href="https://octodex.github.com/defunktocat/"><img src="/assets/images/2024/octocats/defunktocat.png" /></a><br>
       <b>#65: Defunktocat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2012-01-13)</i><br>
-      Mentioned here: https://scottchacon.com/2011/08/31/github-flow
+      Styled after GitHub Co-founder Chris Wanstrath (aka <a href="https://github.com/defunkt">defunkt</a>).
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/goretocat/"><img src="/assets/images/2024/octocats/goretocat.png" /></a><br>
       <b>#93: Goretocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-02-03)</i><br>
-      https://en.wikipedia.org/wiki/Frank_Gore
+      A reference to <a href="https://en.wikipedia.org/wiki/Frank_Gore">Frank Gore</a>, american football player.
     </td>
     <td>
       <a href="https://octodex.github.com/foundingfather_v2/"><img src="/assets/images/2024/octocats/foundingfather_v2.png" /></a><br>
@@ -878,24 +881,24 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/gracehoppertocat/"><img src="/assets/images/2024/octocats/gracehoppertocat.jpg" /></a><br>
       <b>#118: Gracehoppertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-12-03)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>, an early computer scientist.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/mcefeeline/"><img src="/assets/images/2024/octocats/mcefeeline.jpg" /></a><br>
       <b>#125: McEfeeline</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2017-01-27)</i><br>
-      Cameron McEfee who made many of the early Octocats!
+      A reference to <a href="https://cameronmcefee.com/">Cameron McEfee</a> who made an overwhelmingly number of early Octocats (~60 total, including the first 10!)
     </td>
     <td>
       <a href="https://octodex.github.com/bannekat/"><img src="/assets/images/2024/octocats/bannekat.png" /></a><br>
       <b>#127: Benjamin Bannekat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> & <a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2017-02-28)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Benjamin_Banneker">Benjamin Banneker</a>, a mathematician.
     </td>
     <td>
       <a href="https://octodex.github.com/mona-lovelace/"><img src="/assets/images/2024/octocats/mona-lovelace.jpg" /></a><br>
       <b>#129: Mona Lovelace</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> (2017-12-12)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a> (Mona is Octocat's nickname).
     </td>
   </tr>
 </table>
@@ -907,24 +910,24 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/hubot/"><img src="/assets/images/2024/octocats/hubot.jpg" /></a><br>
       <b>#18: Hubot</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-07)</i><br>
-      https://hubot.github.com/
+      <a href="https://hubot.github.com/">Hubot is GitHub's mostly internal chatbot platform that enables automations like translating texts.
     </td>
     <td>
       <a href="https://octodex.github.com/cloud/"><img src="/assets/images/2024/octocats/cloud.jpg" /></a><br>
       <b>#39: Cloud</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-15)</i><br>
-      A description goes here
+      Probably a reference to GitHub being a "<a href="https://en.wikipedia.org/wiki/Cloud_computing">cloud</a>" service, unknown usage.
     </td>
     <td>
       <a href="https://octodex.github.com/nemesis/"><img src="/assets/images/2024/octocats/herme-t-crabb.png" /></a><br>
       <b>#64: Nemesis</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-01-09)</i><br>
-      A description goes here
+      Unknown
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/octofez/"><img src="/assets/images/2024/octocats/octofez.png" /></a><br>
       <b>#77: Octofez</b><br><i><a href="https://github.com/nickh">Nick Hengeveld</a> (2012-07-04)</i><br>
-      A description goes here
+      Unknown, a complete guess would be a typo of Octodex's "dex" as "fez", that then became a character?
     </td>
   </tr>
 </table>

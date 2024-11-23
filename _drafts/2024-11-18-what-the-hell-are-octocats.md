@@ -1,5 +1,5 @@
 ---
-title: What the hell are "Octocats"!? Explaining all 150+ of GitHub's unique cat designs
+title: What on earth are "Octocats"!? Explaining all 150+ of GitHub's unique cat designs
 image: /assets/images/2024/octocat-banner.png
 tags:
   - GitHub
@@ -18,6 +18,11 @@ The full list of Octocats [is available in GitHub's "Octodex"](https://octodex.g
 - Add category descriptions, better banner, summary, etc
 - Add intro to octocat itself https://cameronmcefee.com/work/the-octocat/
 - Fix capitalisations octocat vs Octocat
+
+## Unrecorded Octocats
+
+- Secret extras: https://jeejkang.com/GitHub-Octocats (and other authors)
+- TONS on LinkedIn https://www.linkedin.com/posts/github_calling-all-space-enthusiasts-the-nasa-activity-7111044741042987008-bYx5/
 
 ## Statistics
 
@@ -259,7 +264,7 @@ This era lasted from early 2011 to late 2012.
     <td>
       <a href="https://octodex.github.com/electrocat/"><img src="/assets/images/2024/octocats/electrocat.png" /></a><br>
       <b>#71: Electrocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2012-02-29)</i><br>
-      A reference to electricity, unknown purpose.
+      A reference to electricity, used for GitHub's "<a href="https://www.github.careers/experienced-professionals">Security and IT</a>" jobs, possibly other uses.
     </td>
     <td>
       <a href="https://octodex.github.com/snowoctocat/"><img src="/assets/images/2024/octocats/snowoctocat.png" /></a><br>
@@ -406,9 +411,7 @@ This era lasted from late 2012 to late 2014.
 
 ### Extra Modern Octocats
 
-Dark shading around eyes, 3D effect on head
-
-Towards the end of 2014, something unusual happened to octocat! It gained more detailed features, distinctive expressions, eyes, and other facial features, and it is clearly not a human. The limbs seem much "stretchier", and the character is in much more active poses.
+Towards the end of 2014, something unusual happened to Octocat! It gained more detailed features, distinctive expressions, eyes, and other facial features, and it is clearly not a human. The limbs seem much "stretchier", and the character is in much more active poses.
 
 This era started in late 2014 and is still dominant.
 
@@ -417,12 +420,12 @@ This era started in late 2014 and is still dominant.
     <td>
       <a href="https://octodex.github.com/jetpacktocat/"><img src="/assets/images/2024/octocats/jetpacktocat.png" /></a><br>
       <b>#116: Jetpacktocat</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2014-11-11)</i><br>
-      A description goes here
+      Used for GitHub's <a href="https://github.com/integrations">integrations organisation, possibly other uses</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/filmtocat/"><img src="/assets/images/2024/octocats/filmtocat.png" /></a><br>
       <b>#120: Filmtocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2015-04-29)</i><br>
-      A description goes here
+      Used for GitHub's "<a href="https://www.github.careers/experienced-professionals">Marketing and Communications</a>" jobs, possibly other uses.
     </td>
     <td>
       <a href="https://octodex.github.com/welcometocat/"><img src="/assets/images/2024/octocats/welcometocat.png" /></a><br>
@@ -456,7 +459,7 @@ This era started in late 2014 and is still dominant.
     <td>
       <a href="https://octodex.github.com/justicetocat/"><img src="/assets/images/2024/octocats/justicetocat.jpg" /></a><br>
       <b>#132: Justicetocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> (2018-03-01)</i><br>
-      A description goes here
+      Used for GitHub's "<a href="https://www.github.careers/experienced-professionals">Corporate, External, and Legal Affairs</a>" jobs, possibly other uses.
     </td>
     <td>
       <a href="https://octodex.github.com/snowtocat/"><img src="/assets/images/2024/octocats/snowtocat_final.jpg" /></a><br>
@@ -531,58 +534,58 @@ This era started in late 2014 and is still dominant.
     <td>
       <a href="https://octodex.github.com/nyantocat/"><img src="/assets/images/2024/octocats/nyantocat.gif" /></a><br>
       <b>#46: Nyantocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-04)</i><br>
-      A description goes here
+      A recreation of the <a href="https://en.wikipedia.org/wiki/Nyan_Cat">Nyan Cat</a> meme.
     </td>
     <td>
       <a href="https://octodex.github.com/daftpunktocat-guy/"><img src="/assets/images/2024/octocats/daftpunktocat-guy.gif" /></a><br>
       <b>#99: Daftpunktocat-Guy</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-06-10)</i><br>
-      A description goes here
+      A reference to Guy in <a href="https://en.wikipedia.org/wiki/Daft_Punk">Daft Punk</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/daftpunktocat-thomas/"><img src="/assets/images/2024/octocats/daftpunktocat-thomas.gif" /></a><br>
       <b>#100: Daftpunktocat-Thomas</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-06-10)</i><br>
-      A description goes here
+      A reference to Thomas in <a href="https://en.wikipedia.org/wiki/Daft_Punk">Daft Punk</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/mummytocat/"><img src="/assets/images/2024/octocats/mummytocat.gif" /></a><br>
       <b>#105: Mummytocat</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2013-10-31)</i><br>
-      A description goes here
+      A mummy, used in <a href="https://github.blog/open-source/gaming/13-ghoulish-games-to-play-hack-and-slash-this-weekend/">a gaming post</a> but likely has other uses.
     </td>
     <td>
       <a href="https://octodex.github.com/maxtocat/"><img src="/assets/images/2024/octocats/maxtocat.gif" /></a><br>
       <b>#108: Maxtocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-12-25)</i><br>
-      A description goes here
+      A reference to Christmas (released on Christmas day!), unknown purpose. 
     </td>
     <td>
       <a href="https://octodex.github.com/grinchtocat/"><img src="/assets/images/2024/octocats/grinchtocat.gif" /></a><br>
       <b>#109: Grinchtocat</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> (2013-12-26)</i><br>
-      A description goes here
+      A reference to the <a href="https://en.wikipedia.org/wiki/Grinch">Grinch</a> character & Christmas (released on Boxing day!), unknown purpose. 
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/carlostocat/"><img src="/assets/images/2024/octocats/carlostocat.gif" /></a><br>
       <b>#110: Carlostocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-01-01)</i><br>
-      A description goes here
+      A reference to the baby <a href="https://thehangover.fandom.com/wiki/Tyler">Carlos</a> from The Hangover film, possibly due to partying on New Year's Eve the day before!
     </td>
     <td>
       <a href="https://octodex.github.com/gobbleotron/"><img src="/assets/images/2024/octocats/gobbleotron.gif" /></a><br>
       <b>#117: Gobble-o-tron</b><br><i><a href="https://github.com/tonyjaramillo">Tony Jaramillo</a> & <a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2014-11-27)</i><br>
-      A description goes here
+      A reference to Thanksgiving (a Turkey's noise is often described as "gobble gobble").
     </td>
     <td>
       <a href="https://octodex.github.com/hulatocat/"><img src="/assets/images/2024/octocats/hulatocat.gif" /></a><br>
       <b>#137: Hulatocat</b><br><i><a href="https://github.com/heyhayhay">Haley Carroll</a> (2018-06-11)</i><br>
-      A description goes here
+      A reference to the Hawaiian dance <a href="https://en.wikipedia.org/wiki/Hula">Hula</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/nuxtocat/"><img src="/assets/images/2024/octocats/nuxtocat.gif" /></a><br>
       <b>#153: NUXtocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2021-07-19)</i><br>
-      A description goes here
+      A reference to "New User Experience" (<a href="https://medium.com/meta-research/speaking-design-what-a-few-key-terms-taught-me-82d1491d6da2#:~:text=1.-,NUX,-NUX%20literally%20means">NUX</a>), hence the capitalisation, <i>not</i> the framework "nuxt"!
     </td>
   </tr>
 </table>
@@ -596,85 +599,85 @@ A surprising number of the Octocats are drawn in the style of a TV show or other
     <td>
       <a href="https://octodex.github.com/octobiwan/"><img src="/assets/images/2024/octocats/octobiwan.jpg" /></a><br>
       <b>#3: Octobi Wan Catnobi</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-03-29)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Obi-Wan_Kenobi">Obi-Wan Kenobi</a> from Star Wars, used on <a href="https://github.com/!!!!!!!!">404 page</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/trekkie/"><img src="/assets/images/2024/octocats/trekkie.png" /></a><br>
       <b>#16: Trekkie</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-05)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Star_Trek">Star Trek</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/spocktocat/"><img src="/assets/images/2024/octocats/spocktocat.png" /></a><br>
       <b>#21: Spocktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-11)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Spock">Spock</a> from Star Trek.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/jean-luc-picat/"><img src="/assets/images/2024/octocats/jean-luc-picat.jpg" /></a><br>
       <b>#22: Jean-Luc Picat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-12)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Jean-Luc_Picard">Jean-Luc Picard</a> from Star Trek.
     </td>
     <td>
       <a href="https://octodex.github.com/ironcat/"><img src="/assets/images/2024/octocats/ironcat.jpg" /></a><br>
       <b>#24: Ironcat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-14)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Iron_Man">Iron Man</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/octoclarkkentocat/"><img src="/assets/images/2024/octocats/octoclark-kentocat.jpg" /></a><br>
       <b>#26: Octoclark Kentocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-16)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Superman">Superman</a> AKA Clark Kent.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/okal-eltocat/"><img src="/assets/images/2024/octocats/okal-eltocat.jpg" /></a><br>
       <b>#27: Okal-Eltocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-17)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Superman">Superman</a> AKA Kal-El.
     </td>
     <td>
       <a href="https://octodex.github.com/pacman-ghosts/"><img src="/assets/images/2024/octocats/pacman-ghosts.jpg" /></a><br>
       <b>#28: Blinktocat, Pinktocat, Inktocat, and Clyde</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-18)</i><br>
-      A description goes here
+      A reference to the 4 ghosts (Blinky, Pinky, Inky, Clyde) in <a href="https://en.wikipedia.org/wiki/Ghosts_(Pac-Man)">Pac Man</a>.
     </td>
     <td>
       <a href="https://octodex.github.com/chellocat/"><img src="/assets/images/2024/octocats/chellocat.jpg" /></a><br>
       <b>#34: Chellocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-10)</i><br>
-      A description goes here
+      A reference to Chell from <a href="https://en.wikipedia.org/wiki/Chell_(Portal)">Portal</a>.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/xtocat/"><img src="/assets/images/2024/octocats/xtocat.jpg" /></a><br>
       <b>#35: X-tocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-05-11)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Wolverine_(character)">Wolverine</a> from X-Men.
     </td>
     <td>
       <a href="https://octodex.github.com/andycat/"><img src="/assets/images/2024/octocats/andycat.jpg" /></a><br>
       <b>#42: Andycat</b><br><i><a href="https://github.com/jordanmccullough">Jordan McCullough</a> (2011-07-01)</i><br>
-      A description goes here
+      A reference to the "<a href="https://en.wikipedia.org/wiki/Shot_Marilyns">Shot Marilyns</a>" series of paintings by Andy Warhol.
     </td>
     <td>
       <a href="https://octodex.github.com/riddlocat/"><img src="/assets/images/2024/octocats/riddlocat.png" /></a><br>
       <b>#50: Riddlocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-07-08)</i><br>
-      A description goes here
+      A reference to <a href="https://en.wikipedia.org/wiki/Riddler"> from Batman.
     </td>
   </tr>
   <tr>
     <td>
       <a href="https://octodex.github.com/wheres-waldocat/"><img src="/assets/images/2024/octocats/waldocat.png" /></a><br>
       <b>#52: Where's Waldocat</b><br><i><a href="https://github.com/jasoncostello">Jason Costello</a> (2011-10-01)</i><br>
-      A description goes here
+      A reference to the <a href="https://en.wikipedia.org/wiki/Where%27s_Wally%3F">Where's Wally / Waldo</a> series.
     </td>
     <td>
       <a href="https://octodex.github.com/baracktocat/"><img src="/assets/images/2024/octocats/baracktocat.jpg" /></a><br>
       <b>#56: Baracktocat</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-10-29)</i><br>
-      A description goes here
+      A reference to Barack Obama's "<a href="https://en.wikipedia.org/wiki/Barack_Obama_2008_presidential_campaign#Slogan">Yes We Can</a>" slogan.
     </td>
     <td>
       <a href="https://octodex.github.com/octotron/"><img src="/assets/images/2024/octocats/octotron.jpg" /></a><br>
       <b>#57: Octotron</b><br><i><a href="https://github.com/broccolini">Diana Mounter</a> (2011-10-29)</i><br>
-      A description goes here
+      A reference to the <a href="https://en.wikipedia.org/wiki/Tron">Tron</a> series of films.
     </td>
   </tr>
   <tr>

@@ -1,6 +1,6 @@
 ---
 title: How to force update (& test) your Android app using Google's in-app update library
-image: /assets/images/2024/inapp-banner.png
+image: /assets/images/banners/inapp-banner.png
 tags:
   - Android
   - Kotlin
@@ -248,7 +248,7 @@ It's fine to reopen the app during this wait, I didn't find any way to "force" t
 
 Anyway, eventually you'll open your app and... be prompted to update!
 
-[![](/assets/images/2024/inapp-banner.png)](/assets/images/2024/inapp-banner.png)
+[![](/assets/images/banners/inapp-banner.png)](/assets/images/banners/inapp-banner.png)
 
 ## Next steps
 

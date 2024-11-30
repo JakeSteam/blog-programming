@@ -1,6 +1,6 @@
 ---
 title: "Ten years in tech: 7 career lessons from my decade in software development 🐸"
-image: /assets/images/2024/10-years-in-tech.png
+image: /assets/images/banners/10-years-in-tech.png
 tags:
   - Career
   - Software engineering

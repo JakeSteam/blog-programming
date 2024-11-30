@@ -1,6 +1,6 @@
 ---
 title: My experience with the GitHub Foundations Certification process
-image: /assets/images/2024/github-certification.png
+image: /assets/images/banners/github-certification.png
 tags:
   - GitHub
   - Education

@@ -1,6 +1,6 @@
 ---
 title: Introducing a PLATO character overwriting emulator
-image: /assets/images/2024/plato.png
+image: /assets/images/banners/plato.png
 tags:
   - Emulation
   - Text
@@ -13,7 +13,7 @@ I recently had a GREAT idea to overlap pixel art letters to form artwork... then
 
 Available at **[plato.jakelee.co.uk](https://plato.jakelee.co.uk/)**, the core concept is you type letters, and they get overlapped. For example `o` and `l` would draw a circle with a vertical line through it, and so on. Sounds simple, but it's surprising how complex the images can get!
 
-[![](/assets/images/2024/plato.png)](https://plato.jakelee.co.uk)
+[![](/assets/images/banners/plato.png)](https://plato.jakelee.co.uk)
 
 My emulator uses the original PLATO font "PlatoAscii.ttf", available from the PLATO preservation group [cyber1](https://www.cyber1.org/keyboard.asp). Whilst I did install their full "Pterm" emulator and connect to their mainframe, it's a little unintuitive for beginners!
 

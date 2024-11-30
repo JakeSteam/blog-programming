@@ -1,6 +1,6 @@
 ---
 title: How to bulk download all past versions of a webpage, parse the data in Python, and save to CSV
-image: /assets/images/2024/stumbleupon_final_data-740w.png
+image: /assets/images/banners/stumbleupon_final_data-740w.png
 tags:
   - Python
   - Archive.org
@@ -324,7 +324,7 @@ Running this creates a new, deduplicated [`parsed-cleaned.csv`](https://github.c
 
 This data is also available [as a Google Sheet](https://docs.google.com/spreadsheets/d/13B15seLVLj4Upvxf0gFHNB-NWBLcrnbL8r9ucMtZIVg/edit?usp=sharing).
 
-[![](/assets/images/2024/stumbleupon_final_data-740w.png)](/assets/images/2024/stumbleupon_final_data.png)
+[![](/assets/images/banners/stumbleupon_final_data-740w.png)](/assets/images/banners/stumbleupon_final_data.png)
 
 ## Conclusion
 

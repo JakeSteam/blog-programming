@@ -1,6 +1,6 @@
 ---
 title: A possible fix for intermittently hanging Android builds on GitHub
-image: /assets/images/2024/github-ram-banner.png
+image: /assets/images/banners/github-ram-banner.png
 tags:
   - Android
   - GitHub

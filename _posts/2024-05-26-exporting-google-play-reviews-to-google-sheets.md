@@ -1,6 +1,6 @@
 ---
 title: How to bulk export your Android app's reviews into a Google Sheet for analysis
-image: /assets/images/2024/reviews-banner.png
+image: /assets/images/banners/reviews-banner.png
 tags:
   - Google Sheets
   - Google Play

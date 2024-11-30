@@ -910,7 +910,7 @@ Some are based on real people.
     <td>
       <a href="https://octodex.github.com/hubot/"><img src="/assets/images/2024/octocats/hubot.jpg" /></a><br>
       <b>#18: Hubot</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-07)</i><br>
-      <a href="https://hubot.github.com/">Hubot is GitHub's mostly internal chatbot platform that enables automations like translating texts.
+      <a href="https://hubot.github.com/">Hubot</a> is GitHub's mostly internal chatbot platform that enables automations like translating texts.
     </td>
     <td>
       <a href="https://octodex.github.com/cloud/"><img src="/assets/images/2024/octocats/cloud.jpg" /></a><br>

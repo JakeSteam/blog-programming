@@ -22,7 +22,7 @@ giscus_category: Comments
 giscus_category_id: DIC_kwDOFXQ2Oc4CQ06o
 
 network:
-  - { name: Programming, url: "https://blog.jakelee.co.uk", colour: "#2a7ae2" }
+  - { name: Programming, url: "https://blog.jakelee.co.uk", colour: "#2a7ae2", current: true }
   - {
       name: Internet History,
       url: "https://history.jakelee.co.uk",
@@ -96,6 +96,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-webp
 
 # Pagination settings
 paginate: 10
@@ -106,3 +107,12 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: kotlin
     guess_lang: true
+
+# Webp conversion settings
+webp: 
+  enabled: true
+  quality: 95
+  img_dir: ["/assets/images/banners"]
+  nested: true
+  regenerate: false # Set to true if settings have been changed
+  formats: [".jpeg", ".jpg", ".png"]

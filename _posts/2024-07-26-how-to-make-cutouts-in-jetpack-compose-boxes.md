@@ -1,6 +1,6 @@
 ---
 title: How to make cutouts or transparent sections in Jetpack Compose
-image: /assets/images/2024/compose-cutouts-banner.png
+image: /assets/images/banners/compose-cutouts-banner.png
 tags:
   - Compose
   - Android

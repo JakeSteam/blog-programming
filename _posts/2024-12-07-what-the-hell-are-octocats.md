@@ -1068,11 +1068,11 @@ Finally, don't forget [you can create your own Octocat](https://myoctocat.com/) 
 
 _Note: Tables in this section count [series](#series-octocats) as 1 each, and uses [this Python code](https://gist.github.com/JakeSteam/86201fee9c0c06f319d7742436e0e364) to [parse the XML data](https://octodex.github.com/atom.xml)_
 
-### Octocats By Author
+### Octocats By Artist
 
-With the excellent artwork in this post, credit absolutely has to be given to the talented artists who created them. These are typically designers creating promotional octocats, but in the early days some designers clearly created them as a hobby (Cameron McEfee, James Kang)! They are responsible for many of the pop culture octocats, here's a summary of the octocats by author:
+With the excellent artwork in this post, credit absolutely has to be given to the talented artists who created them. These are typically designers creating promotional octocats, but in the early days some designers clearly created them as a hobby (Cameron McEfee, James Kang)! They are responsible for many of the pop culture octocats, here's a summary of the octocats by artist:
 
-| Author           | Count |
+| Artist           | Count |
 | ---------------- | ----- |
 | cameronmcefee    | 58    |
 | jeejkang         | 27    |

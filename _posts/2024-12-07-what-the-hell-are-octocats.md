@@ -323,7 +323,7 @@ This era lasted from late 2012 to late 2014.
   </tr>
   <tr>
     <td>
-      <a href="https://octodex.github.com/Robotocat/"><img src="/assets/images/2024/octocats/robotocat.png" /></a><br>
+      <a href="https://octodex.github.com/Robotocat/"><img src="/assets/images/2024/octocats/Robotocat.png" /></a><br>
       <b>#92: Robotocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2013-01-28)</i><br>
       A robotic octocat, unknown purpose.
     </td>
@@ -499,7 +499,7 @@ This era started in late 2014 and is still dominant, with minor changes along th
   </tr>
   <tr>
     <td>
-      <a href="https://octodex.github.com/fintechtocat/"><img src="/assets/images/2024/octocats/fintechtocat.png" /></a><br>
+      <a href="https://octodex.github.com/fintechtocat/"><img src="/assets/images/2024/octocats/Fintechtocat.png" /></a><br>
       <b>#144: Fintechtocat</b><br><i><a href="https://github.com/ceciliorz">Cecilio Ruiz</a> (2019-06-18)</i><br>
       A reference to fintech (<a href="https://en.wikipedia.org/wiki/Fintech">Financial technology</a>), used to announce <a href="https://github.blog/news-insights/the-library/github-partners-with-finos/">partnership with Fintech Open Source Foundation</a>.
     </td>
@@ -892,7 +892,7 @@ Some are based on real people, a mixture of historical figures, current celebrit
       A reference to "Jason Costello", who created a few Octocats! <a href="https://dribbble.com/shots/3274206-Catstello">Apparently</a> "Originally bred in the hills of New Jersey, it has migrated west spreading good vibes, stunning design, and an unapologetic bias towards proper typography".
     </td>
     <td>
-      <a href="https://octodex.github.com/brennatocat/"><img src="/assets/images/2024/octocats/brennatocat.png" /></a><br>
+      <a href="https://octodex.github.com/brennatocat/"><img src="/assets/images/2024/octocats/Brennatocat.png" /></a><br>
       <b>#143: Brennatocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> (2019-03-29)</i><br>
       LIkely a colleague, possibly <a href="https://www.linkedin.com/in/brennakuan/">Brenna Kuan</a>, GitHub's Accounting Project Manager for 5 years. 
     </td>
@@ -962,14 +962,14 @@ Created [for GitHub's Gender Minorities Employee Resource Group](https://dribbbl
 
 <table style="text-align: center;">
   <tr>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats.png" /></a></td>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_1.png" /></a></td>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_2.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats_2.png" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_3.png" /></a></td>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_4.png" /></a></td>
-    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/adacats_5.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/adacats/"><img src="/assets/images/2024/octocats/Adacats_5.png" /></a></td>
   </tr>
 </table>
 
@@ -979,14 +979,14 @@ Created [for GitHub's Latinx Employee Resource Group](https://dribbble.com/shots
 
 <table style="text-align: center;">
   <tr>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos.png" /></a></td>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_1.png" /></a></td>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_2.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos_2.png" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_3.png" /></a></td>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_4.png" /></a></td>
-    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/octogatos_5.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/octogatos/"><img src="/assets/images/2024/octocats/Octogatos_5.png" /></a></td>
   </tr>
 </table>
 
@@ -1007,13 +1007,13 @@ Created [for GitHub's LGBTQ Employee Resource Group](https://dribbble.com/shots/
 
 <table style="text-align: center;">
   <tr>
-    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_1.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_2.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/Octoqueer.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/Octoqueer_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/Octoqueer_2.png" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_3.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/octoqueer_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/Octoqueer_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoqueer/"><img src="/assets/images/2024/octocats/Octoqueer_4.png" /></a></td>
     <td></td>
   </tr>
 </table>
@@ -1024,17 +1024,17 @@ Created [for GitHub's Asian Employee Resource Group](https://dribbble.com/shots/
 
 <table style="text-align: center;">
   <tr>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_1.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_2.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_1.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_2.png" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_3.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_4.png" /></a></td>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_5.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_3.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_4.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_5.png" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/octoasians_6.png" /></a></td>
+    <td><a href="https://octodex.github.com/octoasians/"><img src="/assets/images/2024/octocats/Octoasians_6.png" /></a></td>
   </tr>
 </table>
 

@@ -6,7 +6,7 @@ tags:
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2024-12-10
+last_modified_at: 2024-12-12
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -521,6 +521,16 @@ This era started in late 2014 and is still dominant, with minor changes along th
       <b>#154: Godotocat</b><br><i><a href="https://github.com/JohnCreek">Joao Ribeiro</a> & <a href="https://github.com/leereilly">Lee Reilly</a> (2023-03-21)</i><br>
       Used to announce a <a href="https://github.blog/news-insights/godot-4-0-release-party/">Godot 4.0 Release Party</a>.
     </td>   
+    <td>
+      <a href="https://octodex.github.com/sponsotocat/"><img src="/assets/images/2024/octocats/sponsortocat.png" /></a><br>
+      <b>#156: Sponsortocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2024-12-12)</i><br>
+      Presumably used in relation to the <a href="https://github.com/sponsors">GitHub Sponsors</a> program.
+    </td>   
+    <td>
+      <a href="https://octodex.github.com/universetocat/"><img src="/assets/images/2024/octocats/universetocat.png" /></a><br>
+      <b>#157: Universetocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2024-12-12)</i><br>
+      Used for <a href="https://githubuniverse.com/">GitHub Universe</a> 2024, with Mona the Octocat accompanied by Copilot (AI). The wings are code brackets, and the icon on her head is a commit, as <a href="https://www.youtube.com/watch?v=o04e5Vz3ujg&t=98s">discussed in an accompanying video</a>.  
+    </td>   
   </tr>
 </table>
 
@@ -603,7 +613,7 @@ A surprising number of the octocats are drawn in the style of a TV show or other
     <td>
       <a href="https://octodex.github.com/trekkie/"><img src="/assets/images/2024/octocats/trekkie.png" /></a><br>
       <b>#16: Trekkie</b><br><i><a href="https://github.com/cameronmcefee">Cameron McEfee</a> (2011-04-05)</i><br>
-      A reference to <a href="https://en.wikipedia.org/wiki/Star_Trek">Star Trek</a>.
+      A reference to <a href="https://en.wikipedia.org/wiki/Geordi_La_Forge">Geordi La Forge</a> from Star Trek.
     </td>
     <td>
       <a href="https://octodex.github.com/spocktocat/"><img src="/assets/images/2024/octocats/spocktocat.png" /></a><br>
@@ -1083,7 +1093,7 @@ With the excellent artwork in this post, credit absolutely has to be given to th
 | tonyjaramillo    | 14    |
 | heyhayhay        | 11    |
 | jasoncostello    | 11    |
-| cameronfoxly     | 8     |
+| cameronfoxly     | 10    |
 | jonrohan         | 4     |
 | rubyjazzy        | 3     |
 | nickh            | 3     |
@@ -1122,6 +1132,7 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2020 | 5     |
 | 2021 | 4     |
 | 2023 | 2     |
+| 2024 | 2     |
 
 ## Conclusion
 

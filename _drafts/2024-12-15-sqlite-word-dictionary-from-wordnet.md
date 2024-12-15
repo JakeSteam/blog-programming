@@ -1,0 +1,84 @@
+---
+title: Generating a SQLite word dictionary (with definitions) from WordNet using Python
+image: /assets/images/banners/
+tags:
+  - Python
+  - SQLite
+---
+
+I recently needed a SQLite dictionary with word, type, and definition(s). Turns out, it was easy to make my own!
+
+All code in this article is available in [WordNetToSQLite repo](https://github.com/jakesteam/wordnetToSQLite/), as is [the final `words.db`](https://github.com/JakeSteam/WordNetToSQLite/blob/main/words.db) database ([license](https://github.com/JakeSteam/WordNetToSQLite/blob/main/LICENSE)).
+
+## Objective
+
+For an upcoming word game app, I wanted a relatively small dictionary of words. I wanted to know the type of word (noun, verb, adjective, adverb), and any relevant definitions. I also wanted to only have sensible words (e.g. no proper nouns, or acronyms).
+
+I decided to prefill a SQLite database and ship it with my app, since I can easily update it (just ship a new database, or even remotely update with SQL), easily browse it, and Android has good support for SQLite.
+
+However, finding a suitable list of words was tricky! I found plenty containing just the words, or with no information on source or licensing. Luckily, [Princeton University's WordNet](https://wordnet.princeton.edu/) exists, and is free to use!
+
+However, it contains a lot of unneeded information and complexity, and is 33MB+ uncompressed. Time to filter it...
+
+## Approach
+
+- Description of data format
+- Description of target outcome
+
+## Results
+
+### Sample data
+
+Filtering `word` to `article`, alphabetical order:
+
+| word          | type      | definitions                                                                                                                                                                                                                                                  |
+| :------------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| antiparticle  | noun      | a particle that has the same mass as another particle but has opposite values for its other properties                                                                                                                                                       |
+| article       | noun      | one of a class of artifacts#nonfictional prose forming an independent part of a publication#(grammar) a determiner that may indicate the specificity of reference of a noun phrase#a separate section of a legal document (as a statute or contract or will) |
+| article       | verb      | bind by a contract                                                                                                                                                                                                                                           |
+| articled      | adjective | bound by contract                                                                                                                                                                                                                                            |
+| particle      | noun      | a function word that can be used in English to form phrasal verbs#a body having finite mass and internal structure but negligible dimensions#(nontechnical usage) a tiny piece of anything                                                                   |
+| quasiparticle | noun      | a quantum of energy (in a crystal lattice or other system) that has position and momentum and can in some respects be regarded as a particle                                                                                                                 |
+
+### Notes on contents
+
+Word definitions for the same `type` are combined (e.g. with the noun `article`, but not the verb) with a `#` between definitions.
+
+- `word`:
+  - Any words with uppercase letters (e.g. proper nouns) are removed.
+  - Any 1 character words are removed.
+  - Any words with numbers are removed.
+  - Any words with other characters (apostrophes, spaces) are removed.
+  - Most profane words (133) are removed.
+  - Roman numerals are removed (e.g. `XVII`).
+- `type`:
+  - Always `adjective` / `adverb` / `noun` / `verb`.
+- `definition`:
+  - Definition of the word, will contain multiple separated by `#` if the word appears as a synonym for another word.
+  - Most profane definitions (385) are replaced with empty space.
+  - May contain bracketed usage information, e.g. `(dated)`.
+  - May contain special characters like `'`, `$`, `!`, `<`, `[`, etc.
+
+Profanity removal (90% of the processing time) is performed using [better_profanity 0.6.1](https://github.com/snguyenthanh/better_profanity) (with a whitelist for the word "horny", only used in a lizard context). This isn't perfect for biological words, but works quite well on the higher priority slurs. A full list of removed words and definitions is available in [removed-data.txt](/notes/removed-data.txt).
+
+## Creating your own
+
+If you wish to recreate `words.db` from scratch, you can:
+
+1. Download `WNdb-3.0.tar.gz` from [WordNet](https://wordnet.princeton.edu/download/current-version).
+2. Extract it, and place the `data.x` files in `/wordnet-data/`.
+3. Run `py wordnet-to-sqlite.py`.
+
+The raw data looks like this ("unknown" is the only valid noun to extract):
+
+```
+08632096 15 n 03 unknown 0 unknown_region 0 terra_incognita 0 001 @ 08630985 n 0000 | an unknown and unexplored region; "they came like angels out the unknown"
+```
+
+This script takes 10-15 seconds on an average laptop. Efficiency is not a priority (with profanity removal taking the majority of the time), as the output database only needs generating once ever.
+
+Notes on WordNet's data files [are here](https://wordnet.princeton.edu/documentation/wndb5wn), this repo just does a "dumb" parse then filters out numerical data.
+
+## Explanation of code
+
+## Conclusion

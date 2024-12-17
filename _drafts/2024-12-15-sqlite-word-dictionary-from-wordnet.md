@@ -12,7 +12,7 @@ All code in this article is available in [WordNetToSQLite repo](https://github.c
 
 ## Objective
 
-For an upcoming word game app, I wanted a relatively small dictionary of words. I wanted to know the type of word (noun, verb, adjective, adverb), and any relevant definitions. I also wanted to only have sensible words (e.g. no proper nouns, or acronyms).
+For an upcoming word game app, I wanted a relatively small dictionary of words. I wanted to know the type of word (noun, verb, adjective, adverb), and any relevant definitions. Plus, it should only include sensible words (e.g. no proper nouns, or acronyms).
 
 I decided to prefill a SQLite database and ship it with my app, since I can easily update it (just ship a new database, or even remotely update with SQL), easily browse it, and Android has good support for SQLite.
 

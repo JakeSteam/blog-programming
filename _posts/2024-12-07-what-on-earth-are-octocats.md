@@ -6,7 +6,7 @@ tags:
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2024-12-13
+last_modified_at: 2024-12-17
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -531,6 +531,13 @@ This era started in late 2014 (primarily due to Joao Ribeiro's work, his [many y
       <b>#157: Universetocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2024-12-12)</i><br>
       Used for <a href="https://githubuniverse.com/">GitHub Universe</a> 2024, with Mona the Octocat accompanied by Copilot (AI). The wings are code brackets, and the icon on her head is a commit, as <a href="https://www.youtube.com/watch?v=o04e5Vz3ujg&t=98s">discussed in an accompanying video</a>.  
     </td>   
+  </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/securityknightocat/"><img src="/assets/images/2024/octocats/securityknightocat.png" /></a><br>
+      <b>#158: Securityknightocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2024-12-17)</i><br>
+      Unknown, presumably used in relation to some sort of GitHub verification / security, perhaps <a href="https://github.com/enterprise/advanced-security">Advanced Security</a> due to similar "checkmark shield" designs (also note Copilot on the belt, and commit / fork icons on armour).
+    </td>
   </tr>
 </table>
 
@@ -1097,7 +1104,7 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | tonyjaramillo    | 14    |
 | heyhayhay        | 11    |
 | jasoncostello    | 11    |
-| cameronfoxly     | 10    |
+| cameronfoxly     | 11    |
 | jonrohan         | 4     |
 | rubyjazzy        | 3     |
 | nickh            | 3     |

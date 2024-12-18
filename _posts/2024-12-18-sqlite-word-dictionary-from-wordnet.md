@@ -15,9 +15,9 @@ All code in this article is available in a [WordNetToSQLite repo](https://github
 
 For an upcoming word game app, I needed a dictionary of words. I wanted to know the type of word (noun / verb / adjective / adverb), and a definition for each. Plus, it should only include sensible words (e.g. no proper nouns, acronyms, or profanity).
 
-I decided to prefill a **SQLite database** and ship it with my app, since I can easily update it by just shipping a new database, or even remotely with SQL. Android also has good support for retrieving the data from SQLite.
+I decided to prefill a **SQLite database** and ship it with my app, since I can easily update it by just shipping a new database (or even remotely with SQL!). Android also has good support for retrieving the data from SQLite.
 
-However, finding a suitable list of words was tricky! I found plenty of sources containing just words, or with no information on source or licensing. Eventually, I discovered [Princeton University's WordNet](https://wordnet.princeton.edu/) exists, and is free to use! There's also a [more up to date fork](https://github.com/globalwordnet/english-wordnet) (2024 instead of 2006).
+However, finding a suitable list of words was tricky! I found plenty of sources containing just words, or with no information on source or licensing. Eventually, I discovered [Princeton University's WordNet](https://wordnet.princeton.edu/) exists, and luckily it's free to use and has a very liberal license. There's also a [more up to date fork](https://github.com/globalwordnet/english-wordnet) (2024 instead of 2006).
 
 However, it contains a lot of unneeded information and complexity, and is 33MB+ uncompressed. Time to get filtering…
 
@@ -28,7 +28,7 @@ If you wish to recreate [`words.db`](https://github.com/JakeSteam/WordNetToSQLit
 1. Obtain a WordNet format database.
    - I used [a regularly updated fork](https://github.com/globalwordnet/english-wordnet) (2024 edition, WNDB format)
    - You can also use the original WordNet files from 2006 (`WNdb-3.0.tar.gz` from [WordNet](https://wordnet.princeton.edu/download/current-version))
-2. Extract it, and place the `data.x` files in `/wordnet-data/`.
+2. Extract your download, and place the `data.x` files in `/wordnet-data/`.
 3. Run `py wordnet-to-sqlite.py`.
 4. In a minute, you'll have a word database!
 
@@ -36,13 +36,13 @@ Out of the box, the script takes ~60 seconds to run. This slightly slow speed is
 
 ## Notes on results
 
-The database contains over 73k word & word type combinations, each with a definition. I use the open source [DB Browser for SQLite](https://sqlitebrowser.org/) to browse the results, looking something like this:
+The database contains over 71k word & word type combinations, each with a definition. I use the open source [DB Browser for SQLite](https://sqlitebrowser.org/) to browse the results, looking something like this:
 
 [![](/assets//images/2024/sqlite-browser.png)](/assets//images/2024/sqlite-browser.png)
 
 ### Schema definition
 
-Only one definition per word for the same `type` are combined (e.g. with the noun `article`, but not the verb):
+Only one definition per word for the same `type` is used (e.g. with the noun `article`, but not the verb):
 
 - `word`:
   - Any words with uppercase letters (e.g. proper nouns) are removed.
@@ -61,7 +61,7 @@ Only one definition per word for the same `type` are combined (e.g. with the nou
 
 ## Notes on code
 
-Whilst [`wordnet-to-sqlite.py`](https://github.com/JakeSteam/WordNetToSQLite/blob/main/wordnet-to-sqlite.py) is under 100 lines of not-very-good Python, I'll briefly walk through what it does.
+Whilst [`wordnet-to-sqlite.py`](https://github.com/JakeSteam/WordNetToSQLite/blob/main/wordnet-to-sqlite.py) is under 100 lines of not-very-good Python and doesn't do anything _too_ crazy, I'll briefly walk through how it works.
 
 ### Raw data
 
@@ -81,11 +81,24 @@ Further notes on WordNet's data files [are here](https://wordnet.princeton.edu/d
 4. If the word is valid, add it to the dictionary so long as it isn't already defined for the current word type. For example, a word might be used as a noun _and_ an adjective.
 5. Finally, output all these word, type, and definition rows into a SQLite database we prepared earlier.
 
+Luckily, as Python is a very readable language, function definitions almost read like sentences:
+
+```python
+def is_valid_word(word, definition):
+    return (
+        word.islower() and
+        word.isalpha() and
+        len(word) > 1 and
+        not is_roman_numeral(word, definition) and
+        not is_profanity(word)
+    )
+```
+
 ### Profanity removal
 
 Since this dictionary is for a child-friendly game, profane words should be removed if possible. Players are spelling the words themselves, so I don't need to filter _too_ aggressively, but slurs should never be possible.
 
-The eventual solution is in [`/profanity/`](https://github.com/JakeSteam/WordNetToSQLite/tree/main/profanity), where `wordlist.json` is the words to remove, `whitelisted.txt` is the words I've manually removed from the wordlist, and `log.txt` is every removed word & definition.
+The eventual solution is in [`/profanity/`](https://github.com/JakeSteam/WordNetToSQLite/tree/main/profanity), where `wordlist.json` is the words to remove, `manually-removed.txt` & `manually-added.txt` are the words I've manually removed from / added to the wordlist, and `log.txt` is every removed word & definition.
 
 #### Choice of package
 
@@ -105,6 +118,12 @@ Whilst I now had a good word list, at this point I gave up using libraries, and 
 
 I implemented a solution that just checks every word (& word of definition) against a combined regex of every profane word. Yes, this is a bit slow and naive, but it finally gives correct results!
 
+```python
+with open(wordlist_path, 'r', encoding='utf-8') as f:
+    profane_words = set(json.load(f))
+combined_profanity_regex = re.compile(r'\b(?:' + '|'.join(re.escape(word) for word in profane_words) + r')\b', re.IGNORECASE)
+```
+
 The script takes about a minute to parse the 161,705 word candidates, pull out 71,361 acceptable words, and store them in the database. Fast enough for a rarely run task.
 
 ### Optimisation
@@ -120,9 +139,11 @@ A few steps are taken to improve performance:
 
 The approach taken to generate the database had quite a lot of trial and error. Multiple times I thought I was "done", then I'd check the database or raw data and discover I was incorrectly including or excluding data!
 
-I'll absolutely tweak this script a bit as I go forward and my requirements change, but it's good enough for a starting point. Specifically, next steps are probably:
+[SQLite Browser](https://sqlitebrowser.org/) was extremely useful during this process, as the near-instant filtering helped me check profane words weren't slipping through. It also helped me catch a few times when technical data would leak into the definitions.
+
+I'll absolutely tweak this script a bit as I go forward (I've implemented all my initial ideas since starting the article!) and my requirements change, but it's good enough for a starting point. Specifically, next steps are probably:
 
 - ~~Try the [WordNet 3.1](https://wordnet.princeton.edu/download/current-version) database instead of 3.0, and see if there's any noticeable differences (there's no release notes!)~~ Tried, not much change
 - ~~Use [an open source fork](https://github.com/globalwordnet/english-wordnet), since it has yearly updates so should be higher quality than WordNet's 2006 data.~~ Done!
 - ~~Replace the current profanity library, since it takes far longer than the rest of the process, and pointlessly checks letter replacements (e.g. `h3ll0`) despite knowing my words are all lowercase letters.~~ Done!
-- Use the word + type combo as a composite primary key on the database, and ensure querying it is as efficient as possible.
+- ~~Use the word + type combo as a composite primary key on the database, and ensure querying it is as efficient as possible.~~ Done! Increased database size by ~20%, so will see if it's necessary.

@@ -24,31 +24,22 @@ However, it contains a lot of unneeded information and complexity, and is 33MB+ 
 
 If you wish to recreate [`words.db`](https://github.com/JakeSteam/WordNetToSQLite/blob/main/words.db) from scratch, or customise the results, you can:
 
-1. Download `WNdb-3.0.tar.gz` from [WordNet](https://wordnet.princeton.edu/download/current-version).
+1. Obtain a WordNet format database.
+
+- I used a regularly updated fork (2024 edition, WNDB format)
+- You can also use the original WordNet files from 2006 (`WNdb-3.0.tar.gz` from [WordNet](https://wordnet.princeton.edu/download/current-version))
+
 2. Extract it, and place the `data.x` files in `/wordnet-data/`.
 3. Run `py wordnet-to-sqlite.py`.
-4. After 10-15 seconds, you'll have a word database!
+4. Eventually, you'll have a word database!
 
-This script takes 10-15 seconds on an average laptop. Efficiency is not a priority (with profanity removal taking the majority of the time), as the output database only needs generating once.
+Out of the box, the script takes ~10 minutes to run due to filtering word definitions too. Removing all the logic from `clean_definition` will reduce this down to around 15 seconds! This slow speed is an intentional trade-off in exchange for having full control over the language filter (see [profanity removal](#profanity-removal)).
 
-## Results
+## Notes on results
 
-The database contains just over 70k word & word type combinations, each with 1+ definitions. I use the open source [DB Browser for SQLite](https://sqlitebrowser.org/) to browse the results, looking something like this:
+The database contains over 73k word & word type combinations, each with a definition. I use the open source [DB Browser for SQLite](https://sqlitebrowser.org/) to browse the results, looking something like this:
 
 [![](/assets//images/2024/sqlite-browser.png)](/assets//images/2024/sqlite-browser.png)
-
-### Sample data
-
-Filtering `word` to `article`, alphabetical order, gives:
-
-| word          | type      | definitions                                                                                                                                                                                                                                                  |
-| :------------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| antiparticle  | noun      | a particle that has the same mass as another particle but has opposite values for its other properties                                                                                                                                                       |
-| article       | noun      | one of a class of artifacts#nonfictional prose forming an independent part of a publication#(grammar) a determiner that may indicate the specificity of reference of a noun phrase#a separate section of a legal document (as a statute or contract or will) |
-| article       | verb      | bind by a contract                                                                                                                                                                                                                                           |
-| articled      | adjective | bound by contract                                                                                                                                                                                                                                            |
-| particle      | noun      | a function word that can be used in English to form phrasal verbs#a body having finite mass and internal structure but negligible dimensions#(nontechnical usage) a tiny piece of anything                                                                   |
-| quasiparticle | noun      | a quantum of energy (in a crystal lattice or other system) that has position and momentum and can in some respects be regarded as a particle                                                                                                                 |
 
 ### Schema definition
 
@@ -59,27 +50,25 @@ Word definitions for the same `type` are combined (e.g. with the noun `article`,
   - Any 1 character words are removed.
   - Any words with numbers are removed.
   - Any words with other characters (apostrophes, spaces) are removed.
-  - Most profane words (133) are removed.
+  - Most profane words (626) are removed.
   - Roman numerals are removed (e.g. `XVII`).
 - `type`:
   - Always `adjective` / `adverb` / `noun` / `verb`.
 - `definition`:
-  - Definition of the word, will contain multiple separated by `#` if the word appears as a synonym for another word.
-  - Most profane definitions (385) are replaced with empty space.
+  - Definition of the word, uses the first definition found.
+  - Most profane definitions (1124) are replaced with empty space.
   - May contain bracketed usage information, e.g. `(dated)`.
   - May contain special characters like `'`, `$`, `!`, `<`, `[`, etc.
 
-Profanity removal (90% of the processing time) is performed using [`better_profanity` 0.6.1](https://github.com/snguyenthanh/better_profanity) (with a whitelist for the word "horny", since it's only used in a lizard context). This isn't perfect for biological words, but works quite well on slurs. A full list of removed words and definitions is available in [`removed-data.txt`](https://github.com/JakeSteam/WordNetToSQLite/blob/main/notes/removed-data.txt).
+## Notes on code
 
-## Explanation of code
-
-Whilst [`wordnet-to-sqlite.py](https://github.com/JakeSteam/WordNetToSQLite/blob/main/wordnet-to-sqlite.py) is pretty straight forward (I'm not particularly good at Python!), I'll briefly walk through what it does.
+Whilst [`wordnet-to-sqlite.py](https://github.com/JakeSteam/WordNetToSQLite/blob/main/wordnet-to-sqlite.py) is under 100 lines of not-very-good Python, I'll briefly walk through what it does.
 
 ### Raw data
 
-The raw data in Princeton's WordNet looks like this (`unknown` is the only valid noun to extract, with a single definition):
+The raw data in WordNet databases looks like this (`unknown` is the only valid noun to extract, with a single definition):
 
-```
+```text
 08632096 15 n 03 unknown 0 unknown_region 0 terra_incognita 0 001 @ 08630985 n 0000 | an unknown and unexplored region; "they came like angels out the unknown"
 ```
 
@@ -90,8 +79,42 @@ Further notes on WordNet's data files [are here](https://wordnet.princeton.edu/d
 1. For each word type file (`data.noun`, `data.adj`, etc), pass it to `parse_file`.
 2. Loop through every line in this file, primarily using `split` / `range` to fetch as many words as are defined, without taking the `0` and other non-word data.
 3. Check each of these words is "valid", specifically that it's lowercase letters only (no symbols / spaces), isn't a Roman numeral (by matching the word & description), and isn't a profane word.
-4. If the word is valid, either add it to the dictionary, or append the new description if the word + type combo is already present. For example the noun & verb versions of a word will have different definitions.
+4. If the word is valid, add it to the dictionary so long as it isn't already defined for the current word type. For example, a word might be used as a noun _and_ an adjective.
 5. Finally, output all these word, type, and definition rows into a SQLite database we prepared earlier.
+
+### Profanity removal
+
+Since this dictionary is for a child-friendly game, profane words should be removed if possible. Players are spelling the words themselves, so I don't need to filter _too_ aggressively, but slurs should never be possible.
+
+The eventual solution is in [`/profanity/`](https://github.com/JakeSteam/WordNetToSQLite/tree/main/profanity), where `wordlist.json` is the words to remove, `whitelisted.txt` is the words I've manually removed from the wordlist, and `log.txt` is every removed word & definition.
+
+#### Choice of package
+
+I tried out quite a few Python packages for filtering out the profane words, with pretty poor results overall. They were generally far too simple, required building a whole AI model, were intended for machine learning tasks, or seemed entirely abandoned / non-functional.
+
+Eventually, I used [`better_profanity` 0.6.1](https://github.com/snguyenthanh/better_profanity) for filtering (0.7.0 [has performance issues](https://github.com/snguyenthanh/better_profanity/issues/19)), and whilst it was fast, it missed very obvious explicit words, whilst triggering hundreds of false positives. However, this was the best package so far despite being semi-abandoned, so I used it for most of the project (before rolling my own).
+
+#### Word list
+
+With a [4 year old wordlist](https://github.com/snguyenthanh/better_profanity/blob/master/better_profanity/profanity_wordlist.txt), missing quite common slurs wasn't too surprising. As such, I tried using [a much more comprehensive wordlist](https://github.com/zacanger/profane-words/blob/master/words.json) (2823 words vs better profanity's 835). However, the "fuzzy" matching was far too fuzzy, and half the words had their definitions removed!
+
+After logging all the removed words and definitions, I noticed this list was quite over-zealous. I ended up manually removing 123 words (see `whitelisted.txt`), since words like "illegal", "kicking", "commie" are absolutely fine to all but the most prudish people.
+
+Whilst I now had a good word list, at this point I gave up using libraries, and decided to just solve it myself. It's fine if the solution is slow and inefficient, so long as the output is correct.
+
+#### Slow regexes
+
+I implemented a solution that just checks every word (& word of definition) against a combined regex of every profane word. Yes, this is a bit slow and naive, but it finally gives correct results!
+
+The script takes about a minute to parse the 161,705 word candidates, pull out 71,361 acceptable words, and store them in the database. Fast enough for a rarely run task.
+
+### Efficiency
+
+A few steps are taken to improve performance:
+
+- `executemany` is used to insert all the database rows at once.
+- A combined (very long) regex is used since it's far faster than checking a word against 2700 regexes.
+- A `set` is used for the word list, so words can be quickly checked against it.
 
 ## Conclusion
 
@@ -100,6 +123,8 @@ The approach taken to generate the database had quite a lot of trial and error. 
 I'll absolutely tweak this script a bit as I go forward and my requirements change, but it's good enough for a starting point. Specifically, next steps are probably:
 
 - Try the [WordNet 3.1](https://wordnet.princeton.edu/download/current-version) database instead of 3.0, and see if there's any noticeable differences (there's no release notes!)
-- Use [an open source fork](https://github.com/globalwordnet/english-wordnet) with a completely different format, since it has yearly updates so should be higher quality than WordNet's 2006 data.
+- Use [an open source fork](https://github.com/globalwordnet/english-wordnet), since it has yearly updates so should be higher quality than WordNet's 2006 data.
 - Replace the current profanity library, since it takes far longer than the rest of the process, and pointlessly checks letter replacements (e.g. `h3ll0`) despite knowing my words are all lowercase letters.
+  - profanity-check broken
+  - alt-profanity-check slow, and too aggressive
 - Use the word + type combo as a composite primary key on the database, and ensure querying it is as efficient as possible.

@@ -1,5 +1,5 @@
 ---
-title: An Android in-app rating prompt helper to rapidly improve Play Store rating (from 2.0 - 4.2 in 8 days!)
+title: Rapidly improving Play Store rating with an Android in-app review prompt helper (from 2.0 to 4.3 in 9 days!)
 image: /assets/images/banners/rating-browser.png
 tags:
   - Android
@@ -70,11 +70,13 @@ So, why add complexity to a fairly simple to use library? Well, there are a few 
 
 1. **Simple to use**: Any ViewModel that wants to display a review prompt shouldn't need to keep track of the request status, handle errors etc. It should just be able to request the prompt's appearance, and optionally pre-load.
 2. **Remotely configurable triggers**: I want to be able to remotely control where this prompt appears. For example, I may want to disable it appearing after a successful bud due to some unrelated technical issue.
-3. **Triggered on button click or without specific interaction**: The review prompt should be triggerable by a variety of trigger types.
+3. **Triggered on button click or without specific interaction**: The review prompt should be triggerable by a variety of trigger types`^`.
 4. **Able to remotely disable**: In case there's some catastrophic issue in Google's library, I want the ability to ensure it isn't relied upon at all if there's no enabled triggers.
 5. **Requests aren't spammed**: Whilst Google [doesn't explicitly state quotas](https://developer.android.com/guide/playcore/in-app-review#quotas), they do say:
    1. "_To provide a great user experience, Google Play enforces a time-bound quota on how often a user can be shown the review dialog._"
    2. "_Because the quota is subject to change, it's important to apply your own logic and target the best possible moment to request a review._"
+
+`^`: Note that Google advises "_you should not have a call-to-action option (such as a button) to trigger the API, as a user might have already hit their quota and the flow won’t be shown_", this is **not applicable** here since we're using a callback to still perform the button's usual function, not a dedicated CTA button!
 
 Okay, pretty sensible requirements. How can they be all be implemented?
 
@@ -271,4 +273,63 @@ You'll see slightly different messages when testing via internal app sharing vs 
 
 _Note: The oddly zoomed-in app icon happens on my device for all prod apps, presumably it's a Google / Samsung issue!_
 
+## Extra notes
+
+### Monitoring store rating
+
+To keep an eye on my app's rating, I checked into the console once or twice a day.
+
+Whilst [there is a Google Play Console app](https://play.google.com/store/apps/details?id=com.google.android.apps.playconsole) (which is rated 2.8!), and it has attractive data visualisations, the data updates are painfully slow. The data was typically 12 hours _behind_ Google Play Console web, which is _itself_ 12-24 hours behind!
+
+The main number is the "Default Google Play rating" on the "Ratings" screen:
+
+[![](/assets/images/2024/rating-ratingsummary.png)](/assets/images/2024/rating-ratingsummary.png)
+
+However, the app is the only way to see charts of Google Play rating and many other KPIs (Key Performance Indicators) over time:
+
+|                                                Overview                                                 |                                             Specific metric                                             |                                                KPI list                                                 |
+| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2024/rating-screenshot1-thumbnail.jpg)](/assets/images/2024/rating-screenshot1.jpg) | [![](/assets/images/2024/rating-screenshot2-thumbnail.jpg)](/assets/images/2024/rating-screenshot2.jpg) | [![](/assets/images/2024/rating-screenshot3-thumbnail.jpg)](/assets/images/2024/rating-screenshot3.jpg) |
+
+### Speed of increase
+
+Whilst Google Play Console does have an "Average rating over time" chart, this won't match up with your displayed store rating due to how Google weights reviews based on time.
+
+As such, I had to manually keep a note each day of the rating! Once the version with review prompting was rolled out to 100% (12th December), the rating improved by 0.1 to 0.5 per day(!):
+
+- 19/11/24: **2.088**
+- 09/12/24: **2.187**
+- 11/12/24: **2.249**
+- 12/12/24: **2.327**
+- 13/12/24: **2.719**
+- 14/12/24: **2.819**
+- 15/12/24: **3.335**
+- 16/12/24: **3.796**
+- 17/12/24: **3.922**
+- 18/12/24: **4.082**
+- 19/12/24: **4.145**
+- 20/12/24: **4.285**
+
+An increase from 2.2 to 4.3 in just 9 days is absolutely amazing, and far exceeded my expectations for this project!
+
+### Cached rating
+
+A rapid rise in rating for a well-established app is pretty unusual, so other services will take multiple weeks to notice this rating has changed.
+
+For example, whilst the store itself currently shows 4.3 for Seatfrog, Google Search shows a rating from around July!
+
+[![](/assets/images/2024/rating-googleresults.png)](/assets/images/2024/rating-googleresults.png)
+
 ## Conclusion
+
+Adding an in-app review rating prompt had an unbelievably rapid improvement to my app's rating.
+
+I'd absolutely recommend adding a prompt to pretty much any app, with the resulting rating essentially depending on how well you pick your triggers. If you prompt whilst the user is frustrated, putting a pop-up in their face is going to make things even worse!
+
+I see in-app review prompts pretty regularly for other apps, however they are usually implemented in a seemingly untargeted way. For example, 2 I saw recently were obviously triggered by the number of times the app has been opened, when I didn't have a particular positive sentiment and was trying to complete a task.
+
+Whilst I did begin working on an "after X days" prompt, I eventually decided a smarter implementation was prompting _less often_ but in a _more targeted_ way. It seems to have been the correct call, with almost every review being 5-star.
+
+As I write the first draft of this article, the app is sitting around 4.3. However, the rise is so rapid that I'm going to hold off until it reaches the expected final value (based on average rating) of 4.8. Fingers crossed!
+
+One last time, all code used is available on GitHub: <https://gist.github.com/JakeSteam/c09c7bd980095a8a26649419d49d393e>

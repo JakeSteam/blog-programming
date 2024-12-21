@@ -308,7 +308,7 @@ As such, I had to manually keep a note each day of the rating! Once the version 
 - 17/12/24: **3.922**
 - 18/12/24: **4.082**
 - 19/12/24: **4.145**
-- 20/12/24: **4.285**
+- 20/12/24: **4.317**
 
 An increase from 2.2 to 4.3 in just 9 days is absolutely amazing, and far exceeded my expectations for this project!
 

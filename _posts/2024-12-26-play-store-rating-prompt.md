@@ -69,7 +69,7 @@ So, why add complexity to a fairly simple to use library? Well, there are a few 
 ### Requirements
 
 1. **Simple to use**: Any ViewModel that wants to display a review prompt shouldn't need to keep track of the request status, handle errors etc. It should just be able to request the prompt's appearance, and optionally pre-load.
-2. **Remotely configurable triggers**: I want to be able to remotely control where this prompt appears. For example, I may want to disable it appearing after a successful bud due to some unrelated technical issue.
+2. **Remotely configurable triggers**: I want to be able to remotely control where this prompt appears. For example, I may want to disable it appearing after a successful bid due to some unrelated technical issue.
 3. **Triggered on button click or without specific interaction**: The review prompt should be triggerable by a variety of trigger types`^`.
 4. **Able to remotely disable**: In case there's some catastrophic issue in Google's library, I want the ability to ensure it isn't relied upon at all if there's no enabled triggers.
 5. **Requests aren't spammed**: Whilst Google [doesn't explicitly state quotas](https://developer.android.com/guide/playcore/in-app-review#quotas), they do say:

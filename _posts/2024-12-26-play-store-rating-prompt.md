@@ -1,5 +1,5 @@
 ---
-title: Rapidly improving Play Store rating with an Android in-app review prompt helper (from 2.0 to 4.3 in 9 days!)
+title: Rapidly improving Play Store rating with an Android in-app review prompt helper (from 2.2 to 4.7 in 2 weeks!)
 image: /assets/images/banners/rating-browser.png
 tags:
   - Android
@@ -7,17 +7,17 @@ tags:
   - Kotlin
 ---
 
-I recently worked on an app that had been rated between 1 and 2 stars for months, despite no major issues. The solution? In-app rating prompts!
+I recently worked on an app, Seatfrog, that had been rated between 1 and 2 stars for months, despite no major issues. The solution? In-app rating prompts!
 
 All code in this article [is available as a GitHub Gist](https://gist.github.com/JakeSteam/c09c7bd980095a8a26649419d49d393e).
 
 ## Play Store Rating
 
-Like a lot of people, I rely on an app's Play Store rating as a rough indicator of quality / trustworthiness. Typically, anything below 4 stars needs a closer look, but above is probably fine. Despite this, the app I spend most of my time on was rated 2.0! Time to fix that.
+Like a lot of people, I rely on an app's Play Store rating as a rough indicator of quality / trustworthiness. Typically, anything below 4 stars needs a closer look, but above is probably fine. Despite this, the app I spend most of my time on was rated around 2.0! Time to fix that.
 
 ### Why was the rating so low?
 
-Historically, the app had a number of pretty severe problems. This included features not working, instability, unresponsive UI, etc. All of this resulted in an abysmal **rating of 1.4 in February 2024**.
+Historically, the app previously had a number of pretty severe problems. This included features not working, instability, unresponsive UI, etc. All of this resulted in an abysmal **rating of 1.4 in February 2024**.
 
 Since the app typically received just 2 - 5 reviews a week, almost all were from unhappy customers!
 
@@ -37,9 +37,9 @@ Looking at a chart of number of ratings over the past 3 months explains what hap
 
 [![](/assets/images/2024/rating-perday.png)](/assets/images/2024/rating-perday.png)
 
-With a regular release schedule, the per-version average rating can also be used to check which is responsible for the flood of reviews. It might be the version with at least 30x as many reviews as any other!
+With a regular release schedule, the per-version average rating can also be used to check which is responsible for the flood of reviews. It might be the version with at least 40x as many reviews as any other!
 
-[![](/assets/images/2024/rating-perversion.png)](/assets/images/2024/rating-perversion.png)
+[![](/assets/images/2024/rating-per-version.png)](/assets/images/2024/rating-per-version.png)
 
 ### How was the rating improved?
 
@@ -254,9 +254,9 @@ fun onLookAtMyTicket(navigation: () -> Unit) {
 
 ### How to test
 
-Similar to testing whilst [implementing Google's force upgrade library](/googles-force-update-android-app-library/), this can't be tested easily on your local machine, and must be obtained via the Google Play Store.
+Similar to testing whilst [implementing Google's force upgrade library](/googles-force-update-android-app-library/), this can't be tested easily on your local machine, and the app must be installed via the Google Play Store.
 
-Thankfully, it's far easier to test than force upgrade! Note that due to the "black box" of the library, you might not see the prompt despite following all the steps. Additionally, once you've seen _one_ prompt, you likely won't see any others.
+Thankfully, it's far easier to test than force upgrade! Note that due to the "black box" of the library, you might not see the prompt despite following all the steps. Additionally, once you've seen _one_ prompt, you might not see any others for a few weeks.
 
 1. Prepare a build, and upload it to Google Play Console internal app sharing.
 2. Uninstall your app from your device.
@@ -277,15 +277,15 @@ _Note: The oddly zoomed-in app icon happens on my device for all prod apps, pres
 
 ### Monitoring store rating
 
-To keep an eye on my app's rating, I checked into the console once or twice a day.
+To keep an eye on my app's rating throughout this process, I checked the Google Play Console once or twice a day.
 
 Whilst [there is a Google Play Console app](https://play.google.com/store/apps/details?id=com.google.android.apps.playconsole) (which is rated 2.8!), and it has attractive data visualisations, the data updates are painfully slow. The data was typically 12 hours _behind_ Google Play Console web, which is _itself_ 12-24 hours behind!
 
-The main number is the "Default Google Play rating" on the "Ratings" screen:
+The main number is the "Default Google Play rating" on the "Ratings" screen. This will show your overall Google Play rating, and should be treated as your source of truth. However, each individual device will see a slightly different score (due to OS, device type, etc), so there'll be a slight spread around this value.
 
 [![](/assets/images/2024/rating-ratingsummary.png)](/assets/images/2024/rating-ratingsummary.png)
 
-However, the app is the only way to see charts of Google Play rating and many other KPIs (Key Performance Indicators) over time:
+Currently, the Google Play Console app is the only way to see charts of Google Play rating and many other KPIs (Key Performance Indicators) over time:
 
 |                                                Overview                                                 |                                             Specific metric                                             |                                                KPI list                                                 |
 | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
@@ -309,14 +309,19 @@ As such, I had to manually keep a note each day of the rating! Once the version 
 - 18/12/24: **4.082**
 - 19/12/24: **4.145**
 - 20/12/24: **4.317**
+- 21/12/24: **4.390**
+- 22/12/24: **4.498**
+- 23/12/24: **4.589**
+- 24/12/24: **4.638**
+- 25/12/24: **4.667** 🎄
 
-An increase from 2.2 to 4.3 in just 9 days is absolutely amazing, and far exceeded my expectations for this project!
+An increase from 2.2 to 4.7 in exactly 2 weeks is absolutely amazing (and an excellent Christmas present), and far exceeded my expectations for this project!
 
 ### Cached rating
 
-A rapid rise in rating for a well-established app is pretty unusual, so other services will take multiple weeks to notice this rating has changed.
+A rapid rise in rating for a well-established app is pretty unusual, so other services will take multiple weeks or months to notice this rating has changed.
 
-For example, whilst the store itself currently shows 4.3 for Seatfrog, Google Search shows a rating from around July!
+For example, whilst the store itself currently shows a rating of 4.7 for Seatfrog, Google Search results show a far lower rating from around July!
 
 [![](/assets/images/2024/rating-googleresults.png)](/assets/images/2024/rating-googleresults.png)
 
@@ -324,12 +329,12 @@ For example, whilst the store itself currently shows 4.3 for Seatfrog, Google Se
 
 Adding an in-app review rating prompt had an unbelievably rapid improvement to my app's rating.
 
-I'd absolutely recommend adding a prompt to pretty much any app, with the resulting rating essentially depending on how well you pick your triggers. If you prompt whilst the user is frustrated, putting a pop-up in their face is going to make things even worse!
+I'd absolutely recommend adding a prompt to pretty much any app, with the resulting rating score essentially depending on how well you pick your triggers. If you prompt whilst the user is frustrated, putting a pop-up in their face is going to make things even worse!
 
-I see in-app review prompts pretty regularly for other apps, however they are usually implemented in a seemingly untargeted way. For example, 2 I saw recently were obviously triggered by the number of times the app has been opened, when I didn't have a particular positive sentiment and was trying to complete a task.
+I see in-app review prompts pretty regularly for other apps, however they are usually implemented in a seemingly untargeted way. For example, 2 I saw recently were obviously triggered by the number of times the app has been opened, when I didn't have a particularly positive sentiment and was just trying to complete a task. As such, I dismissed instead of rating.
 
 Whilst I did begin working on an "after X days" prompt, I eventually decided a smarter implementation was prompting _less often_ but in a _more targeted_ way. It seems to have been the correct call, with almost every review being 5-star.
 
-As I write the first draft of this article, the app is sitting around 4.3. However, the rise is so rapid that I'm going to hold off until it reaches the expected final value (based on average rating) of 4.8. Fingers crossed!
+As I write the first draft of this article, the app is sitting around 4.3, and still rising by 0.1 - 0.2 per day, expected to end up at 4.8 (average rating is 4.825). The next rating goal? 4.9!
 
 One last time, all code used is available on GitHub: <https://gist.github.com/JakeSteam/c09c7bd980095a8a26649419d49d393e>

@@ -538,6 +538,11 @@ This era started in late 2014 (primarily due to Joao Ribeiro's work, his [many y
       <b>#158: Securityknightocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2024-12-17)</i><br>
       Unknown, presumably used in relation to some sort of GitHub verification / security, perhaps <a href="https://github.com/enterprise/advanced-security">Advanced Security</a> due to similar "checkmark shield" designs (also note Copilot on the belt, and commit / fork icons on armour).
     </td>
+    <td>
+      <a href="https://octodex.github.com/securitocat/"><img src="/assets/images/2024/octocats/securitocat.png" /></a><br>
+      <b>#159: Securitocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2025-01-17)</i><br>
+      Used for the <a href="https://securitylab.github.com/events/ekoparty2024/">"EkoParty 2024" event</a>.
+    </td>
   </tr>
 </table>
 
@@ -1102,9 +1107,9 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | jeejkang         | 27    |
 | johncreek        | 15    |
 | tonyjaramillo    | 14    |
+| cameronfoxly     | 13    |
 | heyhayhay        | 11    |
 | jasoncostello    | 11    |
-| cameronfoxly     | 11    |
 | jonrohan         | 4     |
 | rubyjazzy        | 3     |
 | nickh            | 3     |
@@ -1143,7 +1148,8 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2020 | 5     |
 | 2021 | 4     |
 | 2023 | 2     |
-| 2024 | 2     |
+| 2024 | 3     |
+| 2025 | 1     |
 
 ## Conclusion
 

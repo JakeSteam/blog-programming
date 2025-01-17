@@ -158,4 +158,13 @@ Once these changes and verifications have all gone through, you'll have a _verif
 
 - Transfer Firebase? Google Play Games?
 
+Done:
+
+- Set up account group, change primary, old leaves
+- Submit request (pics about IDs)
+
+https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/
+
+https://support.google.com/googleplay/android-developer/contact/dev_registration?extra.IssueType=cancel
+
 [![](/assets/images/2025/gpc-warning.png)](/assets/images/2025/gpc-warning.png)

@@ -11,6 +11,7 @@ tags:
 - Uses Cloudflare
 - Uses unusual fonts
 - Only recently active
+- Registered ja.co.ke...
 
 ## Wayback machine
 
@@ -43,6 +44,10 @@ Even Kenya registry's whois [gives an error](https://www.webhostkenya.co.ke/wp-c
 ## Mail server
 
 MX records (MX, SPF) confirm using Google (so probably Google Workspace), plus a `google-site-verification`.
+
+## Robots.txt
+
+Blocks internet archive (`ia_archiver`).
 
 ## Source code clues
 

@@ -87,7 +87,7 @@ This is a quite technical diagram (it's taken from my PR for the feature!), howe
 To clarify the 3 coloured sections:
 
 - **Yellow**: The rest of the app, usually the calling `ViewModel`. It knows almost nothing, and just calls functions.
-- **Green**: The `ReviewPromptHandler.kt` described in the next section. This abstracts all the complexity way, and is the only class that interfaces with the in-app review prompt library.
+- **Green**: The `ReviewPromptHandler.kt` described in the next section. This abstracts all of the complexity away, and is the only class that interfaces with the in-app review prompt library.
 - **Blue**: Google's in-app review prompt library, where all decision-making is intentionally obfuscated from the calling codebase.
 
 [![](/assets/images/2024/rating-flow.png)](/assets/images/2024/rating-flow.png)

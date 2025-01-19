@@ -1,17 +1,27 @@
 ---
-title: How to verify your UK Google Play account... without publicly sharing ALL your information
-image: /assets/images/banners/
+title: "Please don't dox me Google: How to verify your Google Play account without exposing ALL your information"
+image: /assets/images/banners/gpc-warning.png
 tags:
   - Google Play
 ---
 
-In 2023, Google began requiring verification for Google Play, especially if earning money. Unfortunately, this required publicly exposing your **home address** and **phone number**. Here's how to earn money without revealing this info.
+In 2023, Google began requiring verification for Google Play, especially if earning any money. Unfortunately, this required publicly exposing your **home address** and **phone number**! Here's how to earn money without revealing this info.
 
 Before we get started, **this will require setting up a company and a forwarding address**. Whilst there is a cost, in the UK neither of them are too tricky. I'd recommend [Rapid Formations](https://www.rapidformations.co.uk/) which offer this for around £67/yr, more on that later in "[Solution](#solution)".
 
+## Tl;dr
+
+Don't want to read the full post? No worries! Here's the entire thing:
+
+1. You'll need to **form a company** in your country using a **forwarding address**.
+2. You'll then make a **new "Organisation" Google Play profile**, and verify it with your company's info.
+3. Finally, you'll **transfer your apps** and all associated services, and delete your old profile.
+
+That's it! If any of it seems at all unclear, time to get into lots of detail as I document this process I _never_ want to go through it again...
+
 ## Scenario
 
-In July 2023, Google announced [a controversial policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html) requiring all developers to verify this information. This sounded fairly innocent and easy, until [looking at the detailed requirements](https://support.google.com/googleplay/android-developer/answer/14177239) for personal accounts. Specifically, if you're earning money:
+In July 2023, Google announced [a controversial policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html) requiring all developers to verify this information. This sounded fairly innocent and easy, until [looking at the detailed requirements](https://support.google.com/googleplay/android-developer/answer/14177239) for **personal accounts**. Specifically, if you're earning money:
 
 1. Your legal name
 2. Your phone number
@@ -24,7 +34,7 @@ If you want to earn money, the only official options are:
 1. Reveal all your information publicly.
 2. Let Google close your account and remove all your apps.
 
-Luckily, there is a way to solve this in a Google- and privacy-friendly way by creating a new Google Play Console account. More details after information on my personal scenario!
+Luckily, there is a way to solve this in a Google- and privacy-friendly way by creating a new Google Play Console account. More details after information on / ranting about my personal scenario!
 
 ## Personal scenario
 
@@ -36,7 +46,7 @@ I did some work last year to get my old games running, conforming to Google Play
 
 ## Failed attempts
 
-Before solving the issue, I failed multiple times. I'll condense these multi-week stressful struggles into 2 summaries, and spare the details.
+Before solving the issue, I failed multiple times. I'll condense these multi-week stressful struggles into 2 summaries, and spare too many details.
 
 ### Attempt 1, Apr '24
 
@@ -84,9 +94,9 @@ Either way, the final 24 hours expired and... I didn't receive any updates, but 
 
 ## Solution
 
--- overview of steps to take --
+So, how can this be solved properly?
 
-### Part 1: Making an account
+### Part 1: Preparing your details
 
 #### Setting up a company
 
@@ -115,6 +125,8 @@ This is a privacy trade-off (since a phone network now has your address), but I'
 
 Finally, you'll have an email address, phone number, and website you can use.
 
+### Part 2: Creating a Google Play profile
+
 #### Setting up an organisation
 
 Next up, you need to create a Google Play Console organisation. Organisations have [a simpler verification process](https://static.googleusercontent.com/media/play.google.com/en//console/about/static/pdf/Verifying_your_Play_Console_developer_account_for_organizations.pdf) (presumably since they rely on existing company verification), which we can use.
@@ -140,7 +152,7 @@ Once you've submitted this, and it's been reviewed (this can take a while, see "
 
 Once your payment profile has been verified, and you have no outstanding alerts, you will need to register for a Google Play Console account _again_, select this payment profile, and attempt the fee payment again.
 
-This time, it should succeed, and you'll finally have an Google Play Console organisation account!
+This time, it should succeed, and you'll finally have a Google Play Console organisation account!
 
 Of course, as soon as you open it you'll be told you need to verify it. Well, that's fine, we have our Certificate of Incorporation and other information from the payment profile. This only took a day or so for me, and didn't require any new information.
 
@@ -151,12 +163,57 @@ There are various settings here you'll likely want to fix. For example:
 1. You'll need to verify and link a bank account (Settings -> Payments profile).
 2. You'll need to check your public information (email, description etc) are correct.
 3. You'll need to add a developer profile picture, and banner.
+4. You'll need to verify tax information for the USA and other countries. My payments got suspended (again) whilst doing this!
 
 Once these changes and verifications have all gone through, you'll have a _verified_ Google Play Console organisation account! Phew, we're getting closer.
 
-### Part 2: Transferring apps
+### Part 3: Transferring apps
 
-- Transfer Firebase? Google Play Games?
+Great, now you've got a new, verified account, you need to transfer your apps! Luckily, this step [actually has some official documentation](https://support.google.com/googleplay/android-developer/answer/6230247) containing the required steps.
+
+#### Account group
+
+First, you'll need to invite your new account to an "Account Group" ([more info](https://support.google.com/googleplay/android-developer/answer/10627869?hl=en-GB)), accept the invite on the new account, and then make it the primary developer account.
+
+This just lets Google knows your 2 profiles are related, and I suspect it makes the app transfer process a bit easier. Since the current profile is owned by **you**, and the new profile is owned by a company where **you** are the only shareholder... they're linked pretty closely!
+
+#### Sharing access
+
+Next, you need to make sure any Google-related services you're using in your apps keep working once the apps have transferred.
+
+For me this required giving my new account access to my apps' Google Analytics, Google Cloud (for Google Play Games, and Maps API), and Firebase (for crash logs). You might also need to do the same for AdMob. The instructions vary by service, however this should be a simple process since it's just adding a new user.
+
+|                                             Firebase                                              |                                              Google Cloud                                               |
+| :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2025/gpc-firebasetransfer.png)](/assets/images/2025/gpc-firebasetransfer.png) | [![](/assets/images/2025/gpc-googlecloudtransfer.png)](/assets/images/2025/gpc-googlecloudtransfer.png) |
+
+#### Requesting transfer
+
+Okay, it's time to finally transfer your apps! This is surprisingly easy, with [official documentation](https://support.google.com/googleplay/android-developer/answer/6230247) walking you through the process.
+
+One complexity is you'll need a "registration transaction ID" for your old and new developer account. This is the payment reference for your Google Play registration fee, created when you opened your account. For my old account I had to scroll through all my Google Play transactions back to 2016, for my new account it was in a recent email.
+
+Pay close attention to Google's (vague) advice here about the transaction ID. You need to remove placeholder-y prefixes from the ID, or the transfer will be rejected:
+
+> Important: When providing your transaction ID during the app transfer request process, remove the first part of the Order ID (for example, discard '0.G.' or the digits before the words 'token' or 'Registration'):
+
+|                                             Old account                                             |                                             New account                                             |
+| :-------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2025/gpc-developertokenold.png)](/assets/images/2025/gpc-developertokenold.png) | [![](/assets/images/2025/gpc-developertokennew.png)](/assets/images/2025/gpc-developertokennew.png) |
+
+#### Transferring
+
+Once you've got your ID ready, and entered all the new account's details, you can submit a request. I transferred an unused app first to check it worked, and then did the rest in one big go. You'll receive a quite helpful email before the transfer, and one confirming the transfer has been successful.
+
+This part was surprisingly easy after all the headaches of payment profiles and addresses. Both my transfers went smoothly, and it seemed like a well-oiled process!
+
+| Transfer confirmation | Pre-transfer email | Post-transfer email |
+| :-: | :-: | :\_: |
+| [![](/assets/images/2025/gpc-transferconfirm.png)](/assets/images/2025/gpc-transferconfirm.png) | [![](/assets/images/2025/gpc-transferemail1.png)](/assets/images/2025/gpc-transferemail1.png) | [![](/assets/images/2025/gpc-transferemail2.png)](/assets/images/2025/gpc-transferemail2.png) |
+
+### Part 4: Tidying up
+
+- Delete old payments profile [![](/assets/images/2025/gpc-payments-close.png)](/assets/images/2025/gpc-payments-close.png)
 
 Done:
 
@@ -167,4 +224,4 @@ https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp
 
 https://support.google.com/googleplay/android-developer/contact/dev_registration?extra.IssueType=cancel
 
-[![](/assets/images/2025/gpc-warning.png)](/assets/images/2025/gpc-warning.png)
+https://support.google.com/googleplay/android-developer/answer/6230247

@@ -1,5 +1,5 @@
 ---
-title: "Please don't dox me Google: How to verify your Google Play account without exposing ALL your information"
+title: "Please don't dox me Google: How to verify your Google Play account without exposing ALL of your information"
 image: /assets/images/banners/gpc-warning.png
 tags:
   - Google Play
@@ -77,7 +77,7 @@ Specifically, I was told:
 >
 > **If action is not taken on this issue within 10 days, your Google services will be suspended.**
 
-No problem, it asks for a "Certificate of Incorporation" and I have that. I immediately submitted the files requested, a review time of 24-48 hours was mentioned, easily within the 10 day warning.
+No problem, it asks for a "Certificate of Incorporation" and I have that. I immediately submitted the files requested, a review time of 24-48 hours was mentioned, easily within the 10-day warning.
 
 And then I waited. And waited.
 
@@ -251,7 +251,7 @@ This process likely wouldn't have had such a positive outcome if I hadn't:
 1. Had a career as an Android Developer, and therefore having any action taken against my account being a worst case scenario.
 2. Had spare time and money to pay for the various services required to protect my privacy.
 
-For a new Android engineer, or one with limited resources (e.g. a student), it seems impossible to actually publish apps without revealing all of their information to the world, forever. I understand the Google Play Store is primarily made for businesses (the verification process was painless when I did it for my employer), but you know how you get good Android engineers? By letting them experiment and try building their own apps, and maybe even making money from it.
+For a new Android engineer, or one with limited resources (e.g. a student), it seems impossible to actually publish apps earning any revenue without revealing all of their information to the world, forever. I understand the Google Play Store is primarily made for businesses (the verification process was painless when I did it for my employer), but you know how you get good Android engineers? By letting them experiment and try building their own apps, and maybe even making money from it.
 
 If these rules had been in place back in 2016 when I published my first Android game, I'm not sure whether it would have ever been published. Without it, my career & life would have taken a different, likely much less fulfilling and enjoyable, path.
 

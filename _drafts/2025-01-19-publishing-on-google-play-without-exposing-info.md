@@ -3,6 +3,9 @@ title: "Please don't dox me Google: How to verify your Google Play account witho
 image: /assets/images/banners/gpc-warning.png
 tags:
   - Google Play
+  - Company
+  - Payments
+  - Privacy
 ---
 
 In 2023, Google began requiring verification for Google Play, especially if earning any money. Unfortunately, this required publicly exposing your **home address** and **phone number**! Here's how to earn money without revealing this info.
@@ -17,11 +20,11 @@ Don't want to read the full post? No worries! Here's the entire thing:
 2. You'll then make a **new "Organisation" Google Play profile**, and verify it with your company's info.
 3. Finally, you'll **transfer your apps** and all associated services, and delete your old profile.
 
-That's it! If any of it seems at all unclear, time to get into lots of detail as I document this process I _never_ want to go through it again...
+That's it! If any of it seems at all unclear, time to get into lots of detail as I document this process I _never_ want to go through it again! There's also lots of tips around verification [in this r/androiddev post](https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/).
 
 ## Scenario
 
-In July 2023, Google announced [a controversial policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html) requiring all developers to verify this information. This sounded fairly innocent and easy, until [looking at the detailed requirements](https://support.google.com/googleplay/android-developer/answer/14177239) for **personal accounts**. Specifically, if you're earning money:
+In July 2023, Google announced [a controversial policy](https://android-developers.googleblog.com/2023/07/boosting-trust-and-transparency-in-google-play.html) requiring all developers to verify this information. This sounded fairly innocent and easy, until [looking at the detailed requirements](https://support.google.com/googleplay/android-developer/answer/14177239) for **personal accounts**. Specifically, if you're earning money the following will be public:
 
 1. Your legal name
 2. Your phone number
@@ -34,13 +37,13 @@ If you want to earn money, the only official options are:
 1. Reveal all your information publicly.
 2. Let Google close your account and remove all your apps.
 
-Luckily, there is a way to solve this in a Google- and privacy-friendly way by creating a new Google Play Console account. More details after information on / ranting about my personal scenario!
+Luckily, there is a way to solve this in a Google- and privacy-friendly way by creating a new Google Play Console account. More details [in "Solution"](#solution) after information on / ranting about my personal scenario!
 
 ## Personal scenario
 
 I've been earning money on Google Play since 2016, and once upon a time it earned more than my (low!) salary, encouraging me to [become an Android developer](/7-lessons-from-a-decade-in-tech/#why-did-i-leave), a job I love.
 
-Whilst my apps no longer earn significant amounts (typically £10-20/month), it's still a nice bit of bonus money to fund other projects. Similarly, players are clearly still enjoying the apps, so the apps should stay available as long as possible!
+Whilst [my apps](https://play.google.com/store/apps/dev?id=5592731197904864672) (e.g. Pixel Blacksmith) no longer earn significant amounts (typically £10-50/month), it's still a nice bit of bonus money to fund other projects. Similarly, players are clearly still enjoying the apps, so the apps should stay available as long as possible!
 
 I did some work last year to get my old games running, conforming to Google Play's latest requirements, and sorting out any policy paperwork that needed solving. There was still the developer verification, but that wasn't required until 2025 so I left it. Now it's time to solve it!
 
@@ -94,30 +97,32 @@ Either way, the final 24 hours expired and... I didn't receive any updates, but 
 
 ## Solution
 
-So, how can this be solved properly?
+So, how can this be solved properly, and we can continue earning money whilst keeping private information private?
 
 ### Part 1: Preparing your details
 
 #### Setting up a company
 
-To earn money, you will need to share a legal address, this is absolutely required. However, if you're an organisation this can be your _office_ address, which can be done with a virtual office address, since the government accepts them.
+To earn money, you will need to share a legal address, this is absolutely required. However, if you're an organisation this can be your _office_ address, which can be done with a virtual office address, since the government (at least in the UK) accepts them.
 
 So, to set up a company without revealing your home address:
 
-1. Set up a company (I have [Jake Lee Ltd](https://find-and-update.company-information.service.gov.uk/company/10660441)).
+1. Set up a company (I already have [Jake Lee Ltd](https://find-and-update.company-information.service.gov.uk/company/10660441)).
 2. Set up a forwarding address for your company (I pay [£39/yr](https://www.rapidformations.co.uk/additional-services/london-registered-office/)).
 3. Set up a forwarding address for your personal correspondence (I pay [£26/yr](https://www.rapidformations.co.uk/additional-services/service-address/)).
 4. Request your D-U-N-S number ([this is free](https://www.dnb.co.uk/duns-number/lookup/request-a-duns-number.html)).
 
 Rapid Formations [offer an all-in-one package](https://www.rapidformations.co.uk/package/privacy-package/) that seems to do pretty much everything (including business bank account, domain name, and more). I only began using a virtual office after establishing my company, so cannot personally vouch for this service, only confirm that the virtual office service has been perfect.
 
-Okay, so you now have a legal UK company with a legal address. That's the biggest hurdle overcome!
+Okay, so you now have a legal company with a legal address. That's the biggest hurdle overcome!
 
 #### Setting up contact details
 
-**Email**: Google requires a public-facing & Google-only email address. These can be the same, and don't have any specific requirements besides being able to verify them. I've had a Google Play specific email address for years and only receive spam once every few months.
+Next, you need to give Google some other information to list publicly:
 
-**Phone**: Similarly, Google will want a phone number to contact you, and a number for users to contact you. This is trickier, since you likely don't want to give away your phone number. Whilst there are various ways to pay for a virtual number, the easiest way is just to request a free SIM card (e.g. [from giffgaff](https://www.giffgaff.com/free-sim-cards)), pop it in your phone to verify, then take it out.
+**Email**: Google requires a public-facing & Google-only email address. These can be the same, and don't have any specific requirements besides being able to verify them. I've had a Google Play specific email address for years and only receive spam (usually about buying apps) once every few months.
+
+**Phone**: Similarly, Google will want a phone number to contact you, and a number for users to contact you. This is trickier, since you likely don't want to give away your phone number. Whilst there are various ways to pay for a virtual number, the easiest way is just to request a free SIM card (e.g. [from giffgaff](https://www.giffgaff.com/free-sim-cards)), pop it in your phone to verify, then take it out or put in a spare phone.
 
 This is a privacy trade-off (since a phone network now has your address), but I'm only concerned about _public_ sharing of this information so it's fine. I've changed networks enough that most of them know where I live!
 
@@ -125,7 +130,9 @@ This is a privacy trade-off (since a phone network now has your address), but I'
 
 Finally, you'll have an email address, phone number, and website you can use.
 
-### Part 2: Creating a Google Play profile
+### Part 2: Creating a Google Play Console profile
+
+Now, you need to use your business' information to form a Google Play Console profile, and a payments profile.
 
 #### Setting up an organisation
 
@@ -154,7 +161,7 @@ Once your payment profile has been verified, and you have no outstanding alerts,
 
 This time, it should succeed, and you'll finally have a Google Play Console organisation account!
 
-Of course, as soon as you open it you'll be told you need to verify it. Well, that's fine, we have our Certificate of Incorporation and other information from the payment profile. This only took a day or so for me, and didn't require any new information.
+Of course, as soon as you open it you'll be told you need to verify it. Well, that's easy now, we have our Certificate of Incorporation and other information from the payments profile. This only took a day or so for me, and didn't require any new information.
 
 #### Tidying up
 
@@ -163,7 +170,7 @@ There are various settings here you'll likely want to fix. For example:
 1. You'll need to verify and link a bank account (Settings -> Payments profile).
 2. You'll need to check your public information (email, description etc) are correct.
 3. You'll need to add a developer profile picture, and banner.
-4. You'll need to verify tax information for the USA and other countries. My payments got suspended (again) whilst doing this!
+4. You'll need to verify tax information for the USA and other countries. My payments got temporarily suspended (again) whilst doing this!
 
 Once these changes and verifications have all gone through, you'll have a _verified_ Google Play Console organisation account! Phew, we're getting closer.
 
@@ -183,9 +190,9 @@ Next, you need to make sure any Google-related services you're using in your app
 
 For me this required giving my new account access to my apps' Google Analytics, Google Cloud (for Google Play Games, and Maps API), and Firebase (for crash logs). You might also need to do the same for AdMob. The instructions vary by service, however this should be a simple process since it's just adding a new user.
 
-|                                             Firebase                                              |                                              Google Cloud                                               |
-| :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-| [![](/assets/images/2025/gpc-firebasetransfer.png)](/assets/images/2025/gpc-firebasetransfer.png) | [![](/assets/images/2025/gpc-googlecloudtransfer.png)](/assets/images/2025/gpc-googlecloudtransfer.png) |
+|                                                  Firebase                                                   |                                                   Google Cloud                                                    |
+| :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2025/gpc-firebasetransfer-thumbnail.png)](/assets/images/2025/gpc-firebasetransfer.png) | [![](/assets/images/2025/gpc-googlecloudtransfer-thumbnail.png)](/assets/images/2025/gpc-googlecloudtransfer.png) |
 
 #### Requesting transfer
 
@@ -197,9 +204,9 @@ Pay close attention to Google's (vague) advice here about the transaction ID. Yo
 
 > Important: When providing your transaction ID during the app transfer request process, remove the first part of the Order ID (for example, discard '0.G.' or the digits before the words 'token' or 'Registration'):
 
-|                                             Old account                                             |                                             New account                                             |
-| :-------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| [![](/assets/images/2025/gpc-developertokenold.png)](/assets/images/2025/gpc-developertokenold.png) | [![](/assets/images/2025/gpc-developertokennew.png)](/assets/images/2025/gpc-developertokennew.png) |
+|                                                  Old account                                                  |                                                  New account                                                  |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+| [![](/assets/images/2025/gpc-developertokenold-thumbnail.png)](/assets/images/2025/gpc-developertokenold.png) | [![](/assets/images/2025/gpc-developertokennew-thumbnail.png)](/assets/images/2025/gpc-developertokennew.png) |
 
 #### Transferring
 
@@ -209,19 +216,43 @@ This part was surprisingly easy after all the headaches of payment profiles and 
 
 | Transfer confirmation | Pre-transfer email | Post-transfer email |
 | :-: | :-: | :\_: |
-| [![](/assets/images/2025/gpc-transferconfirm.png)](/assets/images/2025/gpc-transferconfirm.png) | [![](/assets/images/2025/gpc-transferemail1.png)](/assets/images/2025/gpc-transferemail1.png) | [![](/assets/images/2025/gpc-transferemail2.png)](/assets/images/2025/gpc-transferemail2.png) |
+| [![](/assets/images/2025/gpc-transferconfirm-thumbnail.png)](/assets/images/2025/gpc-transferconfirm.png) | [![](/assets/images/2025/gpc-transferemail1-thumbnail.png)](/assets/images/2025/gpc-transferemail1.png) | [![](/assets/images/2025/gpc-transferemail2-thumbnail.png)](/assets/images/2025/gpc-transferemail2.png) |
+
+You're done! A few hours / days / weeks of paperwork, and you're finally done!
+
+Well, there's a tiny bit of tidyup of course...
 
 ### Part 4: Tidying up
 
-- Delete old payments profile [![](/assets/images/2025/gpc-payments-close.png)](/assets/images/2025/gpc-payments-close.png)
+Whilst your old Google Play profile now has no apps, it still has a verification deadline. To avoid any action being taken against your account (and to get $25 back!), you can submit a request to close your Google Play profile and get a registration refund.
 
-Done:
+For me this was 8 years after registering, and was done by [submitting a request to their cancellation form](https://support.google.com/googleplay/android-developer/contact/dev_registration?extra.IssueType=cancel). I received an email asking me to confirm the deletion, and which added card the money should be refunded to. Again, this went through smoothly, and the $25 was a nice surprise.
 
-- Set up account group, change primary, old leaves
-- Submit request (pics about IDs)
+I had a few extra payment profiles made during my various earlier attempts to resolve my verification issues, so these had to be closed too. They can only be closed if there's no linked payments or accounts, including Google Play Console:
 
-https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/
+[![](/assets/images/2025/gpc-payments-close-thumbnail.png)](/assets/images/2025/gpc-payments-close.png)
 
-https://support.google.com/googleplay/android-developer/contact/dev_registration?extra.IssueType=cancel
+If your info was previously listed on the store, you may want to [request its removal from Archive.org](https://help.archive.org/help/how-do-i-request-to-remove-something-from-archive-org/). Finally, you _might_ want to remove access to Firebase / Google Cloud etc from your old account. I didn't bother since it makes accessing the data a bit easier.
 
-https://support.google.com/googleplay/android-developer/answer/6230247
+### Conclusion
+
+This was probably the most painful yet stressful experience I've gone through since buying my house, made significantly worse due to vague wording everywhere, nobody to talk to, and unknown consequences.
+
+Whilst it all ended well, and [my apps are now listed](https://play.google.com/store/apps/dev?id=5592731197904864672) with my business name & address, the solution wasn't obvious. Instead, on my personal account, I essentially just got threats and impossible requests. It took lots and lots of Googling to find the "create new account and transfer" solution, since it isn't at all intuitive.
+
+I'd also like to give a massive shoutout to [u/yiotro on r/androiddev](https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/) for compiling a list of extremely helpful bits of advice about verification. The most helpful ones for me were:
+
+> - Individual accounts are not allowed to use anything other than a home address
+> - Google doesn't say this directly anywhere, but it is believed that account types must match, otherwise there will be problems.
+> - If the payment profile is linked to a developer account, it is impossible to unlink it. You can only create new account from scratch and transfer your apps there.
+
+This process likely wouldn't have had such a positive outcome if I hadn't:
+
+1. Had a career as an Android Developer, and therefore having any action taken against my account being a worst case scenario.
+2. Had spare time and money to pay for the various services required to protect my privacy.
+
+For a new Android engineer, or one with limited resources (e.g. a student), it seems impossible to actually publish apps without revealing all of their information to the world, forever. I understand the Google Play Store is primarily made for businesses (the verification process was painless when I did it for my employer), but you know how you get good Android engineers? By letting them experiment and try building their own apps, and maybe even making money from it.
+
+If these rules had been in place back in 2016 when I published my first Android game, I'm not sure whether it would have ever been published. Without it, my career & life would have taken a different, likely much less fulfilling and enjoyable, path.
+
+It's worth mentioning if you don't make _any_ money from your apps only your country and name is revealed, but for some people even this can be too much. For me personally, I have no idea why a customer in another continent considering playing my free game needs the ability to visit my home address! I guarantee they're not going to get any technical support on the doorstep...

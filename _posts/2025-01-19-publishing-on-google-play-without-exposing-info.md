@@ -20,7 +20,7 @@ Don't want to read the full post? No worries! Here's the entire thing:
 2. You'll then make a **new "Organisation" Google Play profile**, and verify it with your company's info.
 3. Finally, you'll **transfer your apps** and all associated services, and delete your old profile.
 
-That's it! If any of it seems at all unclear, time to get into lots of detail as I document this process I _never_ want to go through it again! There's also lots of tips around verification [in this r/androiddev post](https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/).
+That's it! If any of it seems at all unclear, time to get into lots of detail as I document this process I _never_ want to go through again! There's also lots of tips around verification [in this r/androiddev post](https://www.reddit.com/r/androiddev/comments/1emalfy/useful_information_about_gp_account_verification/).
 
 ## Scenario
 

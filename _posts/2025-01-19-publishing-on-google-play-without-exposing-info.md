@@ -214,8 +214,8 @@ Once you've got your ID ready, and entered all the new account's details, you ca
 
 This part was surprisingly easy after all the headaches of payment profiles and addresses. Both my transfers went smoothly, and it seemed like a well-oiled process!
 
-| Transfer confirmation | Pre-transfer email | Post-transfer email |
-| :-: | :-: | :\_: |
+|                                           Transfer confirmation                                           |                                           Pre-transfer email                                            |                                           Post-transfer email                                           |
+| :-------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
 | [![](/assets/images/2025/gpc-transferconfirm-thumbnail.png)](/assets/images/2025/gpc-transferconfirm.png) | [![](/assets/images/2025/gpc-transferemail1-thumbnail.png)](/assets/images/2025/gpc-transferemail1.png) | [![](/assets/images/2025/gpc-transferemail2-thumbnail.png)](/assets/images/2025/gpc-transferemail2.png) |
 
 You're done! A few hours / days / weeks of paperwork, and you're finally done!

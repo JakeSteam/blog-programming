@@ -109,7 +109,7 @@ Starting the exam immediately took me into what seemed like a **post**-exam surv
 
 #### Submitting exam
 
-After an hour or so of answering every question (more on those later), I clicked submit and... received a fullscreen "Something went wrong" message. There was a "Details" button, so of course I clicked it to discover it was a TypeScript error around an undefined `total`!
+After an hour or so of answering every question (more on those later), I clicked submit and... received a fullscreen "Something went wrong" message. There was a "Details" button, so of course I clicked it to discover it was a TypeError around an undefined `total`!
 
 [![GitHub Foundations exam error](/assets/images/2024/github-exam-error.png)](/assets/images/2024/github-exam-error.png)
 

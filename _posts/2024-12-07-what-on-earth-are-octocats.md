@@ -1079,7 +1079,7 @@ Likely created for GitHub's parents Employee Resource Group.
 
 **#160: Neurocats** by <a href="https://github.com/kuuchen">kuuchen</a> (2025-04-15)
 
-Created for <a href="https://github.com/about/diversity/report#:~:text=Farms%20Park%20Conservancy.-,Neurocats,-Neurocats%20is%20a">Neurocats Employee Resource Group</a>
+Created for <a href="https://github.com/about/diversity/report#:~:text=Farms%20Park%20Conservancy.-,Neurocats,-Neurocats%20is%20a">Neurocats Employee Resource Group</a>.
 
 <table style="text-align: center;">
   <tr>

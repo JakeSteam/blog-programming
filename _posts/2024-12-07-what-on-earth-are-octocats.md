@@ -6,7 +6,7 @@ tags:
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2024-12-17
+last_modified_at: 2025-04-15
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -1077,6 +1077,26 @@ Likely created for GitHub's parents Employee Resource Group.
   </tr>
 </table>
 
+**#160: Neurocats** by <a href="https://github.com/kuuchen">kuuchen</a> (2025-04-15)
+
+Created for <a href="https://github.com/about/diversity/report#:~:text=Farms%20Park%20Conservancy.-,Neurocats,-Neurocats%20is%20a">Neurocats Employee Resource Group</a>
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats.png" /></a></td>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_A.png" /></a></td>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_B.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_C.png" /></a></td>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_D.png" /></a></td>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_E.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/neurocats/"><img src="/assets/images/2024/octocats/neurocats_F.png" /></a></td>
+  </tr>
+</table>
+
 ### Undocumented Octocats
 
 In addition to the 150+ documented octocats in the Octodex, there are tons of other ones hidden all over the place if you keep an eye out!
@@ -1125,6 +1145,7 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | jina             | 1     |
 | jordanmccullough | 1     |
 | simon            | 1     |
+| kuuchen          | 1     |
 
 I really like how many employees have only ever created one, with some perhaps only being a temporary intern yet still getting a chance to make permanent mark on the culture.
 
@@ -1149,7 +1170,7 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2021 | 4     |
 | 2023 | 2     |
 | 2024 | 3     |
-| 2025 | 1     |
+| 2025 | 2     |
 
 ## Conclusion
 

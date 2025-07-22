@@ -6,7 +6,7 @@ tags:
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2025-04-15
+last_modified_at: 2025-07-22
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -888,7 +888,7 @@ Some are based on real people, a mixture of historical figures, current celebrit
     <td>
       <a href="https://octodex.github.com/gracehoppertocat/"><img src="/assets/images/2024/octocats/gracehoppertocat.jpg" /></a><br>
       <b>#118: Gracehoppertocat</b><br><i><a href="https://github.com/jeejkang">James Kang</a> (2014-12-03)</i><br>
-      A reference to <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>, an early computer scientist. Also used for <a href="https://github.com/about/diversity/report#:~:text=and%20the%20planet.-,Octovets,-The%20Octovets%20CoB">Octovets CoB</a>.
+      A reference to <a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>, an early computer scientist. Also previously used for <a href="https://github.com/about/diversity/report#:~:text=and%20the%20planet.-,Octovets,-The%20Octovets%20CoB">Octovets CoB</a>.
     </td>
   </tr>
   <tr>
@@ -1097,6 +1097,26 @@ Created for <a href="https://github.com/about/diversity/report#:~:text=Farms%20P
   </tr>
 </table>
 
+**#161: Octovets** by <a href="https://github.com/kuuchen">kuuchen</a> (2025-07-22)
+
+Created for <a href="https://github.com/about/diversity/report#:~:text=and%20the%20planet.-,Octovets,-The%20Octovets%20CoB">Octovets Employee Resource Group</a>.
+
+<table style="text-align: center;">
+  <tr>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets.png" /></a></td>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_A.png" /></a></td>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_B.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_C.png" /></a></td>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_D.png" /></a></td>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_E.png" /></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://octodex.github.com/octovets/"><img src="/assets/images/2024/octocats/octovets_F.png" /></a></td>
+  </tr>
+</table>
+
 ### Undocumented Octocats
 
 In addition to the 150+ documented octocats in the Octodex, there are tons of other ones hidden all over the place if you keep an eye out!
@@ -1136,6 +1156,7 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | leereilly        | 2     |
 | suziejurado      | 2     |
 | billyroh         | 2     |
+| kuuchen          | 2     |
 | chubbmo          | 1     |
 | ceciliorz        | 1     |
 | kimestoesta      | 1     |
@@ -1145,7 +1166,6 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | jina             | 1     |
 | jordanmccullough | 1     |
 | simon            | 1     |
-| kuuchen          | 1     |
 
 I really like how many employees have only ever created one, with some perhaps only being a temporary intern yet still getting a chance to make permanent mark on the culture.
 
@@ -1170,7 +1190,7 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2021 | 4     |
 | 2023 | 2     |
 | 2024 | 3     |
-| 2025 | 2     |
+| 2025 | 3     |
 
 ## Conclusion
 

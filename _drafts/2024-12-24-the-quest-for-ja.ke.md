@@ -22,6 +22,8 @@ All entries ([source](https://web.archive.org/web/20240000000000*/ja.ke)):
 - Oct 8th: Error 521
 - Nov 18th: "ja.ke"
 - Dec 18th: "ja.ke"
+- Feb 6th: "ja.ke"
+- Oct 1st: "jake"
 
 Note that error 521 is a Cloudflare issue.
 

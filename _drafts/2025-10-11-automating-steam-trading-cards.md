@@ -45,6 +45,8 @@ There are a few automation tools available, I personally chose [Idle Master Exte
 3. **The project is mentioned often** on Reddit and other places, with all the natural [tech support questions](https://www.reddit.com/r/Steam/comments/1hpo3za/steam_idle_master_still_working/m4j7543/) and [comparison between similar tools](https://www.reddit.com/r/Steam/comments/qloexq/is_idle_master_still_safe/ki3lql9/) you would expect from real software.
 4. **It looks like a developer's tool**. Completely showing my bias here, the simple nature of the UI (screenshot below) clearly indicates a utility tool, exactly what we need. It's also only 1MB big!
 
+[![Idle Master Extended running](/assets/images/2025/steam_running.png)](/assets/images/2025/steam_running.png)
+
 [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) is far more popular (12k stars), however the regular releases, [more complex setup process](https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Setting-up), request for your [username and password(!)](https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Setting-up#:~:text=next%3A%20SteamLogin%20and-,SteamPassword,-.%20You%20can%20make) and serious complexity / feature set made it unappealing. We just need a simple tool!
 
 ### Setup
@@ -57,9 +59,9 @@ Idle Master Extended [has a nice and simple guide](https://github.com/JonasNilso
 
 ### Logging in
 
-Since Idle Master Extended needs to join games and monitor cards on your behalf, it needs to use your login token. This is obviously a risk, consider your own risk tolerance before proceeding. For me, it's worth it, due to the reasons listed previously.
+Since Idle Master Extended needs to join games and monitor card drops on your behalf, it needs to use your login token. This is obviously a risk, consider your own risk tolerance before proceeding. For me, it's worth it, due to the reasons listed previously.
 
-To find them:
+To find these details:
 
 1. Go to <https://steamcommunity.com>.
 2. Open the developer console (`F12`, or "More tools" -> "Developer tools" in Chrome).
@@ -68,18 +70,61 @@ To find them:
 5. Look for your `sessionId` and `steamLoginSecure`.
 6. Double click each in turn, and copy then paste into Idle Master Extension.
 
-Once submitted, Idle Master Extended will log in, and say "Idle Master is connected to Steam", and look up your card eligibility.
+Once submitted, Idle Master Extended will log in, and say "Idle Master is connected to Steam", look up your card eligibility, and start farming cards.
 
 [![Steam Community session cookies](/assets/images/2025/steam_cookies.png)](/assets/images/2025/steam_cookies.png)
 
-### Running automation
+### Running
 
 Idle Master Extended's default settings are typically exactly what you want, and it will try to automatically begin optimised idling on program startup. However, you can also configure features like shutting down Windows when done, or dark theme, in the "File" -> "Settings" menu.
+
+[![Idle Master Extended settings](/assets/images/2025/steam_settings.png)](/assets/images/2025/steam_settings.png)
 
 Whilst running, your friends will receive lots of game open and close notifications, so you may want to turn these off! This can be done by setting your "Game details" to "Private" in [your privacy settings](https://steamcommunity.com/my/edit/settings).
 
 [![Steam game visibility](/assets/images/2025/steam_visibility.png)](/assets/images/2025/steam_visibility.png)
 
+And now... you wait!
+
+Cards drop at random intervals, so it's hard to gain detailed estimates for the number of cards per hour. For me personally, I've used the tool for 6 days at around 12-16 hours a day (autorunning whenever my laptop is on), and have gone from 867 cards remaining to 488. If we estimate running for 14 hours a day, so 84 hours total, we get an **average 4.2 cards earned per hour**!
+
+|                                                        4th October                                                        |                                                          10th October                                                          |
+| :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+| [![Idle Master Extended running initially](/assets/images/2025/steam_running.png)](/assets/images/2025/steam_running.png) | [![Idle Master Extended running a week later](/assets/images/2025/steam_running2.png)](/assets/images/2025/steam_running.png2) |
+
 ## Selling cards
+
+Okay, so we've got some free cards, what do we do with them? Sell them!
+
+Whilst you can do this step automatically, it's fairly slow to manually set an appropriate price for a few hundred items. Instead, we're again going to rely on a "userscript" to do the heavy lifting for us.
+
+### Preparing to sell
+
+Unfortunately, the tool we want to use can't be run on Chrome. Instead, you'll need to use Firefox, Brave, or whatever other browser you want to use. I used Firefox.
+
+1. Install a _userscript manager_, I used [Tampermonkey](https://addons.mozilla.org/en-GB/firefox/addon/tampermonkey/) since it's been around for a _very_ long time. "[Violentmonkey](https://violentmonkey.github.io/)" is an alternative.
+2. Install [Steam Economy Enhancer](https://github.com/Nuklon/Steam-Economy-Enhancer) by tapping "Install Steam Economy Enhancer", then "Install" (next to Cancel).
+3. Open up [your Steam inventory](https://steamcommunity.com/my/inventory), and you should see a new "Sell All Items" button among others!
+4. Additionally, market prices for your cards will start loading and being displayed:
+
+[![Steam inventory](/assets/images/2025/steam_inventory.png)](/assets/images/2025/steam_inventory-thumbnail.png)
+
+_Note: There is also an extension "Steam Inventory Helper" with more advanced functionality, however it is full of shady adverts, wants quite extensive permissions and has [overgathered data before](https://www.reddit.com/r/GlobalOffensive/comments/70xofs/warning_trusted_steam_inventory_helper_now/). I don't recommend it!_
+
+### Selling
+
+Tap "Sell All Cards" and... it'll start! There's also a "Sell All Items" option, but obviously don't tap this if you have things you don't want to sell (backgrounds, emotes, etc).
+
+Once tapped, it'll run through every marketable item you own, and tell you the sale price and your earnings after Valve & the game's commission (typically 1-2 pennies / cents per item). These cards won't sell immediately, as most already have thousands listed. Instead, a few sales will trickle through every day as prices adjust up and down.
+
+[![Steam automated selling](/assets/images/2025/steam_selling.png)](/assets/images/2025/steam_selling.png)
+
+### Confirming
+
+_However_, there might be another reason the cards don't sell: You haven't confirmed them yet! Depending on your Steam Guard settings, you may need to approve every marketplace listing on your phone, a feature implemented to protect expensive items but a bit silly for hundreds of cheap ones.
+
+Open up Steam on your phone, go to your notifications, tap "X pending confirmations", and tap every single confirmation one at a time. Whilst there are ways to automate this (setting up your browser as a 2-factor device), for me personally this risked account security too much. As such, I just did it manually.
+
+[![Steam mobile confirmations](/assets/images/2025/steam_mobile.jpg)](/assets/images/2025/steam_mobile-thumbnail.jpg)
 
 ## Profits

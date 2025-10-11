@@ -6,7 +6,7 @@ tags:
   - Automation
 ---
 
-Steam Trading Cards have been out for a _long_ time, but you probably didn't realise you likely have tens of games with earning potential just sitting in your library. Here's how to earn and sell the cards quickly.
+Steam Trading Cards have been out for a _long_ time, but you probably didn't realise you likely have tens of games with earning potential just sitting in your library! Here's how to earn and sell the cards quickly.
 
 ## What are cards?
 

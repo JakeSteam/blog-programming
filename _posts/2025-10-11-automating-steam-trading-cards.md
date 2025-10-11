@@ -1,26 +1,26 @@
 ---
-title: A detailed guide to automated farming & selling of Steam Trading Cards for free money!
+title: A detailed guide to automated farming & selling of Steam Trading Cards 🧑‍🌾🎴
 image: /assets/images/banners/steam-cards-banner.png
 tags:
   - Steam
   - Automation
 ---
 
-Steam Trading Cards have been out for a _long_ time (they launched in 2011!), but you probably didn't realise you likely have tens of games with earning potential just sitting in your library! Here's how to earn the cards, and sell them.
+Steam Trading Cards have been out for a _long_ time, but you probably didn't realise you likely have tens of games with earning potential just sitting in your library. Here's how to earn and sell the cards quickly.
 
 ## What are cards?
 
-In case you haven't used them much, Steam Trading Cards are inventory items earned by having eligible games open (e.g. paid games that have opted in). The cards have a few possible uses:
+In case you haven't used them much, [Steam Trading Cards](https://steamcommunity.com/tradingcards/) (launched in 2011) are Steam inventory items earned by having eligible games open (e.g. paid games that have opted in). The cards have a few possible uses:
 
 1. Sold on the Steam Market (what we'll be doing).
-2. Crafted into cosmetic badges for your profile (this is who will be buying your cards).
+2. Crafted into cosmetic badges for your profile (this is why people will be buying your cards).
 3. Turned into gems for card booster packs (not worth it).
 
 Ultimately though, all that matters is that they only require time to earn and can be sold for Steam Wallet currency. This is directly spendable on games or other inventory items, so is pretty close to just earning cash.
 
 ## Farming cards
 
-First, it's worth checking you have unearned cards. If you only play free games, or own very few games, you may not. Since I've purchased a few game bundles over the years, I had almost 1000 unearned cards!
+First, it's worth checking that you have unearned cards. If you only play free games, or own very few games, you may not. Since I've purchased a few game bundles over the years, I had almost 1000 unearned cards!
 
 ### Eligibility
 
@@ -40,7 +40,7 @@ Additionally, the automated process is optimised to factor in the variable per-g
 
 There are a few automation tools available, I personally chose [Idle Master Extended](https://github.com/JonasNilson/idle_master_extended). Installing any software, especially one gaming-related, is always a risk. However, here's why I decided this was safe:
 
-1. **The repository has 3k stars**, plus an appropriate number of forks, watches, issues, and pull requests for a project of this side. Malware will typically just have stars.
+1. **The repository has 3k stars**, plus an appropriate number of forks, watchers, issues, and pull requests for a project of this size. Malware will typically just have stars.
 2. **The project is stable**, with no releases in 2.5 years. Considering Steam hasn't changed much in that time, this is actually a good thing!
 3. **The project is mentioned often** on Reddit and other places, with all the natural [tech support questions](https://www.reddit.com/r/Steam/comments/1hpo3za/steam_idle_master_still_working/m4j7543/) and [comparison between similar tools](https://www.reddit.com/r/Steam/comments/qloexq/is_idle_master_still_safe/ki3lql9/) you would expect from real software.
 4. **It looks like a developer's tool**. Completely showing my bias here, the simple nature of the UI (screenshot below) clearly indicates a utility tool, exactly what we need. It's also only 1MB big!
@@ -70,7 +70,7 @@ To find these details:
 5. Look for your `sessionId` and `steamLoginSecure`.
 6. Double click each in turn, and copy then paste into Idle Master Extended.
 
-Once submitted, Idle Master Extended will log in, and say "Idle Master is connected to Steam", look up your card eligibility, and start farming cards.
+Once submitted, Idle Master Extended will log in, show "Idle Master is connected to Steam", look up your card eligibility, and start farming cards.
 
 [![Steam Community session cookies](/assets/images/2025/steam_cookies.png)](/assets/images/2025/steam_cookies.png)
 
@@ -131,7 +131,7 @@ Open up Steam on your phone, go to your notifications, tap "X pending confirmati
 
 _Note: The app lags quite significantly when accepting lots of confirmations at once. Be patient, it'll get there!_
 
-## Profits
+## Profitability
 
 So how much will you actually earn from this?
 
@@ -139,7 +139,7 @@ Each game will drop you half the cards needed for a badge (typically between 5 a
 
 1. **Foil cards**: In addition to regular cards, you will sometimes find foil cards. These are usually worth 3-10x as much, with some obscure games having zero listed so you can name your own price in case someone is desperate to complete a collection!
 2. **Obscure games**: For games with few players, the card price will be much higher (although liquidity will be lower). For example, in "Arcade Spirits", my [regular card](https://steamcommunity.com/market/listings/753/910630-QueenBee) is worth £0.12, whilst [my foil card](<https://steamcommunity.com/market/listings/753/910630-Teo%20(Foil)>) has no accepted price.
-3. **Booster packs**: Once you have collected all the cards for a game, you are eligible for a [booster pack](https://steamtradingcards.fandom.com/wiki/Booster_Packs). These are essentially blind boxes with 3 cards in, however they can be sold directly too (and this is usually slightly better profit).
+3. **Booster packs**: Once you have collected all the cards for a game, you are eligible for a [booster pack](https://steamtradingcards.fandom.com/wiki/Booster_Packs). These are essentially blind boxes with 3 cards in, however they can be sold directly too (and this is usually slightly better profit than opening).
 
 The random nature of foil cards and booster packs makes getting an average profit essentially impossible. However, I would personally **estimate around £0.13 per game** once all lucky drops are factored in.
 
@@ -149,6 +149,14 @@ So, for my 250 eligible games, I'd expect to receive around **£30**. Not bad fo
 
 I guess technically not? However, is it enforced? Definitely not.
 
-Valve have historically been very, very lenient with automation around the Steam platform (hence [Team Fortress 2 trading bots](https://scrap.tf/about), [Steam Achievement Manager](https://github.com/gibbed/SteamAchievementManager) operating since 2008, and many more examples!), only stepping in when automation is _disadvantaging_ other users (or Valve). In this case, we're adding more cards into the economy, helping supply cards for rarely played games, and of course making Valve & the game company at least £0.01 per sale!
+Valve have historically been very, very lenient with automation around the Steam platform (hence [Team Fortress 2 trading bots](https://scrap.tf/about), [Steam Achievement Manager](https://github.com/gibbed/SteamAchievementManager) operating since 2008, and many more examples!), only stepping in when automation is _disadvantaging_ other users (or Valve). In this case, we're adding more cards into the economy, helping supply cards for rarely played games, and of course making Valve & the game companies at least £0.01 per sale!
+
+Additionally, the card drops are part of the perks of purchasing on Steam, so you've already paid for them. The automation just makes the farming much easier.
 
 Whilst it's obviously impossible to say the tools recommended in this post are _safe_, it's worth observing how their subreddits / discussions / GitHub issues don't include [any mentions of bans](https://github.com/JonasNilson/idle_master_extended/issues?q=is%3Aissue%20ban) whatsoever despite tens of thousands of users.
+
+## Conclusion
+
+With both the farming and selling stages requiring ~2 minutes setup work each, then just letting them run, getting the most out of your purchased games seems like a win-win for everyone (you, badge hunters, Valve, game publishers). I'd highly recommend this process to anyone with a substantial library, however obviously assess the risks yourself before starting.
+
+Happy farming! 🧑‍🌾🎴

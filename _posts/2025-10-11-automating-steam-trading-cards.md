@@ -141,9 +141,13 @@ Each game will drop you half the cards needed for a badge (typically between 5 a
 2. **Obscure games**: For games with few players, the card price will be much higher (although liquidity will be lower). For example, in "Arcade Spirits", my [regular card](https://steamcommunity.com/market/listings/753/910630-QueenBee) is worth £0.12, whilst [my foil card](<https://steamcommunity.com/market/listings/753/910630-Teo%20(Foil)>) has no accepted price.
 3. **Booster packs**: Once you have collected all the cards for a game, you are eligible for a [booster pack](https://steamtradingcards.fandom.com/wiki/Booster_Packs). These are essentially blind boxes with 3 cards in, however they can be sold directly too (and this is usually slightly better profit than opening).
 
-The random nature of foil cards and booster packs makes getting an average profit essentially impossible. However, I would personally **estimate around £0.13 per game** once all lucky drops are factored in.
+The random nature of foil cards and booster packs makes getting an average profit essentially impossible. For example, one of my [obscure foil cards](https://steamcommunity.com/market/listings/753/933860-Colors%20Restored%20%28Foil%29) sold for £10, twice as much [as the game itself](https://store.steampowered.com/app/933860/Discolored/)!
 
-So, for my 250 eligible games, I'd expect to receive around **£30**. Not bad for running some automated tools!
+[![Steam card £10 sale](/assets/images/2025/steam_ten.png)](/assets/images/2025/steam_ten.png)
+
+However, I would personally **estimate around £0.16 per game** once all lucky drops are factored in. So, for my 250 eligible games, I'd expect to receive around **£40**. Not bad for running some automated tools!
+
+_Note: This doesn't include the increased chance of future booster pack drops._
 
 ## Is it allowed?
 

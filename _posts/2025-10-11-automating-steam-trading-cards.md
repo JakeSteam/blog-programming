@@ -4,6 +4,7 @@ image: /assets/images/banners/steam-cards-banner.png
 tags:
   - Steam
   - Automation
+last_modified_at: 2025-10-15
 ---
 
 Steam Trading Cards have been out for a _long_ time, but you probably didn't realise you likely have tens of games with earning potential just sitting in your library! Here's how to earn and sell the cards quickly.
@@ -63,7 +64,7 @@ Since Idle Master Extended needs to join games and monitor card drops on your be
 
 To find these details:
 
-1. Go to <https://steamcommunity.com>.
+1. Go to <https://steamcommunity.com> (not the store!).
 2. Open the developer console (`F12`, or "More tools" -> "Developer tools" in Chrome).
 3. Select the "Application" tab at the top.
 4. Select "Cookies" under the "Storage" categories on the left, and click `https://steamcommunity.com`.
@@ -71,6 +72,8 @@ To find these details:
 6. Double click each in turn, and copy then paste into Idle Master Extended.
 
 Once submitted, Idle Master Extended will log in, show "Idle Master is connected to Steam", look up your card eligibility, and start farming cards.
+
+_Note: Your session will expire every 2-3 days for security, indicated by Idle Master Extended showing an "X" next to logged in status, so you'll memorise these steps pretty quickly!_
 
 [![Steam Community session cookies](/assets/images/2025/steam_cookies.png)](/assets/images/2025/steam_cookies.png)
 

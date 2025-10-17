@@ -4,7 +4,7 @@ image: /assets/images/banners/steam-cards-banner.png
 tags:
   - Steam
   - Automation
-last_modified_at: 2025-10-15
+last_modified_at: 2025-10-17
 ---
 
 Steam Trading Cards have been out for a _long_ time, but you probably didn't realise you likely have tens of games with earning potential just sitting in your library! Here's how to earn and sell the cards quickly.
@@ -133,6 +133,8 @@ Open up Steam on your phone, go to your notifications, tap "X pending confirmati
 [![Steam mobile confirmations](/assets/images/2025/steam_mobile-thumbnail.jpg)](/assets/images/2025/steam_mobile.jpg)
 
 _Note: The app lags quite significantly when accepting lots of confirmations at once. Be patient, it'll get there!_
+
+_Note 2: The selling process will begin failing with a "too many pending confirmations" error after 100-200 items listed, so you might want to regularly approve them as it autosells._
 
 ## Profitability
 

@@ -124,6 +124,8 @@ Once tapped, it'll run through every marketable item you own, and tell you the s
 
 _Note: Sometimes this process gets "stuck" due to a failed request. Refreshing the page and tapping "Sell All Cards" again continues from where it paused._
 
+_Note 2: Some cards (e.g. from delisted games) are not marketable. These can be converted into gems, but are almost worthless._
+
 ### Confirming
 
 _However_, there might be another reason the cards don't sell: You haven't confirmed them yet! Depending on your Steam Guard settings, you may need to approve every marketplace listing on your phone, a feature implemented to protect expensive items but a bit silly for hundreds of cheap ones.

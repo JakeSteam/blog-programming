@@ -1,6 +1,6 @@
 ---
 title: A real-world comparison between Lenovo's ThinkBook 16p Gen 2 and 16p Gen 6 (with photos!)
-image: /assets/images/banners/thinkbook.png
+image: /assets/images/banners/thinkbook-banner.jpg
 tags:
   - Technology
   - Lenovo
@@ -108,7 +108,7 @@ Not noticeable in these images is a small improvement to the webcam privacy shut
 
 This is only relevant to my under-desk mounting setup ([documented here](/improving-my-triple-monitor-dual-laptop-standing-desk/#after)), the Gen 6 is a _far_ better fit.
 
-|                                                               ThinkBook Gen 2                                                               |                                                               ThinkBook Gen 6                                                               |
+|                                                             ThinkBook 16p Gen 2                                                             |                                                             ThinkBook 16p Gen 6                                                             |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
 | [![ThinkBook Gen 2 underdesk mounting](/assets/images/2025/thinkbook-mounted-1-thumbnail.png)](/assets/images/2025/thinkbook-mounted-1.jpg) | [![ThinkBook Gen 6 underdesk mounting](/assets/images/2025/thinkbook-mounted-2-thumbnail.jpg)](/assets/images/2025/thinkbook-mounted-2.jpg) |
 

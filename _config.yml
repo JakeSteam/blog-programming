@@ -7,7 +7,7 @@ url: https://blog.jakelee.co.uk
 
 # Optional native feature customisation (delete to turn off)
 table_of_contents_header: "Jump to:"
-post_end_promo: <i><b>Enjoyed this article? You'll like "<a href="https://jakeweeklee.substack.com">Jake Week Lee</a>", a newsletter of articles & online things!</b></i>
+post_end_promo: <i><b>Enjoyed this article? You'll like "<a href="https://jakeweeklee.substack.com">Jake Occasional Lee</a>", a newsletter of articles & online things!</b></i>
 google_analytics: G-99X0QYL39T
 outdated_content_warning:
   warning_text: "⚠️ This article was last updated <b>TIME_AGO</b> and may be outdated."
@@ -22,7 +22,12 @@ giscus_category: Comments
 giscus_category_id: DIC_kwDOFXQ2Oc4CQ06o
 
 network:
-  - { name: Programming, url: "https://blog.jakelee.co.uk", colour: "#2a7ae2", current: true }
+  - {
+      name: Programming,
+      url: "https://blog.jakelee.co.uk",
+      colour: "#2a7ae2",
+      current: true,
+    }
   - {
       name: Internet History,
       url: "https://history.jakelee.co.uk",
@@ -67,7 +72,7 @@ minima:
     - {
         platform: substack,
         user_url: "https://jakeweeklee.substack.com/",
-        user_title: "Jake Week Lee",
+        user_title: "Jake Occasional Lee",
       }
   #   - { platform: devto,          user_url: "https://dev.to/jekyll" }
   #   - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
@@ -109,7 +114,7 @@ kramdown:
     guess_lang: true
 
 # Webp conversion settings
-webp: 
+webp:
   enabled: true
   quality: 95
   img_dir: ["/assets/images/banners"]

@@ -5,6 +5,7 @@ tags:
   - Technology
   - Lenovo
   - Laptop
+last_modified_at: 2025-12-04
 ---
 
 I recently replaced my aging Lenovo ThinkBook 16p Gen 2 with a Gen 6, so here's benchmarks, side-by-side photos, and general notes on their differences!
@@ -130,7 +131,7 @@ With the new laptop mounted the other way round (back facing outwards) purely fo
 
 ## Summary
 
-Overall, I'm very happy with the purchase! As with the occasional phone upgrade, I just wanted "the same, but better", and there's definitely what I got. After a few hours of setup, the new laptop feels almost identical[^identical], with the only difference being essentially everything being speedier and more reliable. Yippee!
+Overall, I'm very happy with the purchase! As with the occasional phone upgrade, I just wanted "the same, but better", and that's definitely what I got. After a few hours of setup, the new laptop feels almost identical[^identical], with the only difference being essentially everything being speedier and more reliable. Yippee!
 
 Hopefully this laptop lasts at least 2 more years, and is up to the task of playing Forza Horizon 6 when it releases in 2026 🤞.
 

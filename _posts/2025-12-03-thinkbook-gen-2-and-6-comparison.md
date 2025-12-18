@@ -70,7 +70,7 @@ More realistic however are the [3DMark benchmark](https://store.steampowered.com
 |     **Jekyll build time seconds[^jekyll]**      |   Cold: **21.50s**, Warm: **12.52s**   |           Cold: **7.4s**, Warm: **4.37s**            |     -65%     |
 | **Forza Horizon 5 FPS[^fh5-method] (High, 4K)** | 55 (Sim: 159, Render: 98, GPU: **57**) | 60 (Sim 283, Render: 223, GPU **107**)[^fh5-results] | +78% - +127% |
 
-In addition to the benchmarks, here's a time comparison for a few things I actually do day-to-day. Startup time, a programming-y task, and a gaming-y task. My anecdotal experience fron the very start was a clearly snappier and more responsive system, although a lot of this is of course due to just being a clean system.
+In addition to the benchmarks, here's a time comparison for a few things I actually do day-to-day. Startup time, a programming-y task, and a gaming-y task. My anecdotal experience from the very start was a clearly snappier and more responsive system, although a lot of this is of course due to just being a clean system.
 
 The results are about as expected, with the key difference for me being doubled performance on high graphics at 4K resolution. Whilst time saving during tasks is good, the ability to actually play games in high quality is a far more immediate benefit!
 

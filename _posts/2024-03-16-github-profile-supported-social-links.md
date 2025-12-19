@@ -4,24 +4,26 @@ image: /assets/images/2024/githubprofile-banner.png
 tags:
   - GitHub
   - JavaScript
+last_modified_at: 2025-12-19
 ---
 
-A somewhat hidden feature of GitHub profiles is the special treatment of profile links from 10 social networks. Here's a full list, how they are detected, and a way to check for yourself!
+A somewhat hidden feature of GitHub profiles is the special treatment of profile links from 11 social networks. Here's a full list, how they are detected, and a way to check for yourself!
 
 ## Supported social networks
 
 Putting profile links from any of the following websites as a link on GitHub should make the icon appear, and only your username shown. You've probably heard of most of them!
 
-The supported networks are 8 traditional social networks:
+The supported networks are 9 traditional social networks:
 
-1. [Facebook](https://www.facebook.com/)
-2. [Instagram](https://www.instagram.com/)
-3. [LinkedIn](https://www.instagram.com/)
-4. [npm](https://www.npmjs.com/)
-5. [Reddit](https://www.reddit.com/)
-6. [Twitch](https://twitch.tv/)
-7. [X (formerly Twitter)](https://twitter.com/)
-8. [YouTube](https://www.youtube.com/)
+1. [Bluesky](https://bsky.app/)
+2. [Facebook](https://www.facebook.com/)
+3. [Instagram](https://www.instagram.com/)
+4. [LinkedIn](https://www.instagram.com/)
+5. [npm](https://www.npmjs.com/)
+6. [Reddit](https://www.reddit.com/)
+7. [Twitch](https://twitch.tv/)
+8. [X (formerly Twitter)](https://twitter.com/)
+9. [YouTube](https://www.youtube.com/)
 
 Plus, 2 decentralised networks:
 
@@ -36,6 +38,8 @@ Additionally, any verified emails or a verified ORCID iD can be displayed, altho
 
 Each network has 1 or more regular expressions to detect profile URLs, and that's it! Any URLs added to a profile are run through this, and a match triggers the special behaviour:
 
+- Bluesky
+  - `^https://bsky\\.app/profile/([^@/]+)/?$`
 - Facebook
   - `^https://(?:[^.]+\\.)?facebook\\.com/(?:[^/?]+/?|profile\\.php\\?id=\\d+)$`
 - Instagram
@@ -120,7 +124,7 @@ This simple but helpful feature is almost completely undocumented, with only [a 
 
 > You can now add up to 4 links to any social accounts to your user profile, with special support for popular platforms.
 
-It's a shame GitHub don't seem to be actively adding new platforms, especially with platforms like Kick, TikTok, Pinterest, Discord, Threads etc all completely absent. However, they are adding verified identities such as [ORCID iD](https://github.blog/changelog/2024-03-13-authenticate-orcid-id/) (added 2 days before this article!) to display on your profile:
+It's a shame GitHub don't seem to be actively adding new platforms, especially with platforms like Kick, TikTok, Pinterest, Discord, Threads etc all completely absent (although Bluesky _was_ added after this article was originally published). However, they are adding verified identities such as [ORCID iD](https://github.blog/changelog/2024-03-13-authenticate-orcid-id/) (added 2 days before this article!) to display on your profile:
 
 |                                                  ORCID settings                                                   |                                                ORCID on profile                                                 |
 | :---------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |

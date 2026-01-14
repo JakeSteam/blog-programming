@@ -1,12 +1,12 @@
 ---
-title: What on earth is an Octocat!? Exploring all 150+ variations of GitHub's mascot
+title: What on earth is an Octocat!? Exploring all 160+ variations of GitHub's mascot
 image: /assets/images/banners/octocats.jpg
 tags:
   - GitHub
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2025-07-22
+last_modified_at: 2026-01-14
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -542,6 +542,11 @@ This era started in late 2014 (primarily due to Joao Ribeiro's work, his [many y
       <a href="https://octodex.github.com/securitocat/"><img src="/assets/images/2024/octocats/securitocat.png" /></a><br>
       <b>#159: Securitocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2025-01-17)</i><br>
       Used for the <a href="https://securitylab.github.com/events/ekoparty2024/">"EkoParty 2024" event</a>.
+    </td>
+    <td>
+      <a href="https://octodex.github.com/bombacat/"><img src="/assets/images/2024/octocats/bombacat.png" /></a><br>
+      <b>#162: Bombacat</b><br><i><a href="https://github.com/kuuchen">kuuchen</a> (2026-01-14)</i><br>
+      An octocat <a href="https://en.wikipedia.org/wiki/Bomba_(Puerto_Rico)">performing a "Bomba" dance</a>, unknown usage.
     </td>
   </tr>
 </table>
@@ -1153,10 +1158,10 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | jonrohan         | 4     |
 | rubyjazzy        | 3     |
 | nickh            | 3     |
+| kuuchen          | 3     |
 | leereilly        | 2     |
 | suziejurado      | 2     |
 | billyroh         | 2     |
-| kuuchen          | 2     |
 | chubbmo          | 1     |
 | ceciliorz        | 1     |
 | kimestoesta      | 1     |
@@ -1191,6 +1196,7 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2023 | 2     |
 | 2024 | 3     |
 | 2025 | 3     |
+| 2026 | 1     |
 
 ## Conclusion
 

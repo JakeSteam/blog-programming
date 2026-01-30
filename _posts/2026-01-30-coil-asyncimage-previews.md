@@ -1,6 +1,6 @@
 ---
 title: Adding accurate AsyncImage previews in Coil 3 with a Compose wrapper
-image: /assets/images/banners/asyncimage-header
+image: /assets/images/banners/asyncimage-header.png
 tags:
   - Android
   - Coil
@@ -52,7 +52,7 @@ fun PreviewAsyncImage(
 }
 ```
 
-And here's how to use it, where every `AsyncImage` will display `preview_image`:
+And here's how to use it as a wrapper, where every `AsyncImage` will display `preview_image`:
 
 ```kotlin
 @Preview

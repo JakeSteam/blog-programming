@@ -68,7 +68,42 @@ This group, whilst a great initiative, ultimately died out as students went on d
 
 The quantity and type of work will vary significantly between modules. Earlier modules contain lots of group forum discussions and quizzes throughout the learning, presumably to help new students feel invested in their learning process.
 
-## Personal motivation
+- mention pointless busywork sometimes
+- mention ability to "cram"
+
+### Learning resources
+
+- books, videos, etc
+
+### Day schools
+
+### Assignments
+
+## Financial
+
+There's no sugarcoating it, Open University (well, higher education in general) is expensive. The total cost for the MBA was around £20k[^course-costs], spread over the 4 years of study.
+
+It's hard to decide if this is good value or not, since most MBAs will cost around the same, and it's hard to determine the value of an experience, knowledge, etc. I personally think it was a good decision, and I'm really happy with the personal growth gained from the experience (see ["Personal experience"](#personal-experience)), however this is entirely dependent on financial and life circumstances.
+
+[^course-costs]: <https://business-school.open.ac.uk/study/postgraduate-qualifications/mba/entry-requirements-fees-and-funding>
+
+### Financing
+
+I took student finance for my first module or two, available to UK citizens (and sometimes EU) studying their first masters and meeting various requirements[^loan-requirements]. This process was straightforward, and similar to the same process at a Bachelor's level.
+
+However, I later decided to pay upfront for my modules instead, as career progression had enabled more disposable income (see [salary history](/7-lessons-from-a-decade-in-tech/#conclusion)) and I preferred the flexibility versus student loan payments being taken from paychecks. The amount paid is the same regardless of method, so it is entirely up to personal finances.
+
+Another option, which seemed to be the case for quite a few students based on occasional small-talk, is employer funded learning. This of course requires your employer's support, and students who mentioned this were typically working for a larger organisation and had recently been promoted into a more senior managerial role. I changed employers 3-4 times throughout my studies, mostly in a non-managerial role, so this obviously wasn't an option!
+
+[^loan-requirements]: <https://www.gov.uk/masters-loan/eligibility>
+
+### Student discounts
+
+## Personal experience
+
+### Motivation
+
+### Personal growth
 
 ## Conclusion
 

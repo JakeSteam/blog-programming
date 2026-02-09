@@ -70,6 +70,14 @@ This group, whilst a great initiative, ultimately died out as students went on d
 
 Overall, Open University modules consist of week-by-week work, typically consisting of consuming a mixture of online content (primarily text, but also video and audio), then answering a variety of questions related to this content.
 
+### OpenLearn
+
+For a good preview of this, check out [Open University's "OpenLearn" system](https://www.open.edu/openlearn/badged-courses). These are each a self-contained short course on a specific topic, and can be compared to part of a large module. Whilst they do record badges upon completion, these have no particular value, and are instead useful for their content and as a way to find out whether you work well in this style of learning.
+
+I completed 6 of these whilst I waited for my MBA to start, and they were fairly simple yet interesting. Regardless of whether you intend to study at Open University, they are high quality free content.
+
+[![Open University OpenLearn badges](/assets/images/2026/mba-badges-thumbnail.png)](/assets/images/2026/mba-badges.png)
+
 ### Types of activity
 
 The quantity and type of work will vary significantly between modules. Earlier modules contain lots of group forum discussions and quizzes throughout the learning, presumably to help new students feel invested in their learning process.
@@ -95,6 +103,10 @@ If you intently read & reread every piece of content, and spent as much time as 
 As such, it was often easier to do no work whatsoever for 2-3 weeks, then spend an entire day doing a month's work all at once, as all the topics were interconnected so this felt far more efficient. Similarly, whilst the modules try hard to get you to "build up" your assignments over time, this isn't how I work. I vastly prefer a large, painful work session over lots of small ones.
 
 For example, one module's last ~8 weeks of work were all essentially helper activities for the final assignment (see [more about assignments](#assignments)). Stretching my thoughts over 2 months is going to lead to half my time being spent remembering what I did a week ago! Instead, cramming them all into a weekend means the work can be completed efficiently and to a consistent standard. It's also a much easier pill to swallow.
+
+As such, every 6-8 weeks I'd sacrifice 12-18 hours across a day or two of a weekend to assignment writing, then a few hours of proofreading. This was pretty rough at the time, and far harder mentally than a typical work day! It's hard to say whether this was the _best_ approach, but it's what worked for me to never submit a late assignment or get behind on work.
+
+Overall, I strongly suspect you could complete an Open University module in around half the stated time if you had previous tutorial recordings, whilst alongside a full-time job. However, the longer timeframe allows for flexibility in work style and work rate, so I am in favour of the current system.
 
 [^finding-time]: <https://www.open.ac.uk/courses/do-it/finding-time>
 

@@ -7,7 +7,7 @@ tags:
 
 At the end of 2025, I received my MBA after 4 years of part-time fully remote study. Here's a review of the entire process!
 
-Before diving in, it's important to note that this is only _my experience_, and totally dependant on the course I completed, the specific modules I chose, and even the tutors and students I studied with. Additionally, I suspect a part-time Masters-level course is a very, very different experience to a full-time Bachelors-level course.
+Before diving in, it's important to note that this is only _my experience_, and totally dependent on the course I completed, the specific modules I chose, and even the tutors and students I studied with. Additionally, I suspect a part-time Masters-level course is a very, very different experience to a full-time Bachelors-level course.
 
 ## Overall
 
@@ -24,7 +24,11 @@ The course's contents changes over time, with the specific modules I studied bei
 - (2024) BXR873: Technology Management MBA residential school
 - (2025) B875: Leaders of change (MBA project)
 
-I won't review each module individually, since my knowledge is likely outdated, but will mention specific examples where relevant.
+Here's how my study record looks after completing all required modules:
+
+[![Open University MBA study record](/assets/images/2026/mba-studyrecord-thumbnail.png)](/assets/images/2026/mba-studyrecord.png)
+
+I won't review each module individually, since my knowledge is likely outdated and the experience varies by tutor, but I will mention specific examples where relevant.
 
 ## Flexibility
 
@@ -64,20 +68,63 @@ This group, whilst a great initiative, ultimately died out as students went on d
 
 ## Workload
 
+Overall, Open University modules consist of week-by-week work, typically consisting of consuming a mixture of online content (primarily text, but also video and audio), then answering a variety of questions related to this content.
+
 ### Types of activity
 
 The quantity and type of work will vary significantly between modules. Earlier modules contain lots of group forum discussions and quizzes throughout the learning, presumably to help new students feel invested in their learning process.
 
-- mention pointless busywork sometimes
-- mention ability to "cram"
+This even extends to early tutor marked assignments (TMAs) _requiring_ forum engagement. These were fairly useful, with individuals giving each other feedback and ideas, and putting effort in to engage productively and usefully.
 
-### Learning resources
+Later modules dropped this requirement, with activities mostly being reading, quizzes, and preparing for large TMA / EMA assignments. Unfortunately, the work quite often felt a little... pointless. For example, the work might be applying a concept to your workplace, a reasonable and productive thing to spend a few minutes considering. However, it may then be requested to spend 20-30 minutes writing a few paragraphs in a strict format about it, into a text field that nobody else will ever see!
 
-- books, videos, etc
+As an adult in the workplace, it is hard to justify spending so much time on an optional activity, especially if you do not feel it will improve your understanding.
+
+### Unmarked
+
+Unexpectedly, this online content is not judged by your tutor whatsoever (although not completing it at all _may_ be noticed), meaning it is really just to improve your understanding of the content. Personally, whilst I strictly completed all work in the first few modules, in later modules I would usually complete the work in my head or write brief notes instead of detailed answers.
+
+As part of this, I'd sometimes entirely skimread or skip a section, coming back to it later during my assignments when it was more directly useful. With assignment contents entirely visible from the start, it is a little frustrating knowing the current work is irrelevant to actually earning your qualification. Whilst this skimreading helped avoid getting bored or burned out on the repetitive process, it is a very different experience to my undergraduate degree, where marked work was frequent and relevant.
+
+### Cramming
+
+The open university suggests 16-18 hours per week per 30-credit module (of which you will usually do 1 at a time), 2 per year[^finding-time]. This does not seem at all accurate based on my experience.
+
+If you intently read & reread every piece of content, and spent as much time as possible on every question asked and all your assignments, you might just about come up to around 12 hours a week, but it is hard to see how the average student will come close. Each week's work, once I was in "the flow" of studying, was closer to 3-4 hours of work, excluding large assignments every couple of months.
+
+As such, it was often easier to do no work whatsoever for 2-3 weeks, then spend an entire day doing a month's work all at once, as all the topics were interconnected so this felt far more efficient. Similarly, whilst the modules try hard to get you to "build up" your assignments over time, this isn't how I work. I vastly prefer a large, painful work session over lots of small ones.
+
+For example, one module's last ~8 weeks of work were all essentially helper activities for the final assignment (see [more about assignments](#assignments)). Stretching my thoughts over 2 months is going to lead to half my time being spent remembering what I did a week ago! Instead, cramming them all into a weekend means the work can be completed efficiently and to a consistent standard. It's also a much easier pill to swallow.
+
+[^finding-time]: <https://www.open.ac.uk/courses/do-it/finding-time>
+
+### Physical books
+
+### Tutorials
 
 ### Day schools
 
+### Tutors
+
+Each module has a tutor, who marks all of your assignments. As with a lot of Open University, they can be as relevant or irrelevant as you want, depending on how you want to learn.
+
+Personally I am a very self-sufficient person when possible, and as such I only had a single 121 call with a tutor during my MBA, upon his request to chat about an assignment idea. This was supplemented by perhaps 1-2 short email threads with other tutors, usually confirming details of a project or a requirement, although tutorials were definitely the preferred format on both sides for this
+
+All tutors made themselves available, and as far I'm aware tutors were happy to provide other students with frequent email / video calls. This isn't dissimilar to my Bachelors' degree experience, whereby information was communicated well enough via online resources that 121 conversations weren't necessary.
+
 ### Assignments
+
+I don't like writing assignments! I didn't enjoy it in school, massively preferring Maths / Science over English, and I don't enjoy it now. This was part of why I chose Open University and stuck with it, to force myself to engage with a format I would typically avoid wherever possible.
+
+Assignments are split into TMAs (tutor marked, feedback given, some flexibility on deadline) and 1 EMA (marked by multiple tutors, no feedback, no flexibility), with most modules having 2-3 TMAs then a relevant EMA at the end. TMAs often "build up" to the EMA, allowing tutors to give feedback and guide your work before it is too late.
+
+These assignments are fairly typical Word documents running X thousand words, with the online assignment guide usually providing pretty good information on what it needs to contain. Whilst they obviously vary significantly, essays will typically be about applying a few concepts to your workplace, showing you truly understand how they apply, whilst also critiquing their relevancy in an academic format.
+
+The academic referencing itself is fine, Open University provides a library but far, far more papers are available via Google Scholar. It's hard to care about whether the paper is from the "proper" source when journals want $50+ just to read a PDF that is a simple Google search away! Luckily Open University has a consistent referencing style (Harvard Cite Them Right), and you should have this sorted within your first module or two (and there are plenty of online resources).
+
+I used simple Microsoft Word for all my assignments (provided for free as a student), and manually managed my references. The requirements didn't seem too strict, so long as sources are cited properly and your student information is readily available, although this will vary by tutor.
+
+Finally, watching your tutor's tutorials before writing an assignment is pretty much essential. As TMAs are only marked by your tutor, knowing exactly what they want to see, and what they _don't_ want to see, is ultimately what matters even more than the official marking criteria. They want you to pass, so will hint as much as they can about what a good assignment looks like, don't assume you know best!
 
 ## Financial
 

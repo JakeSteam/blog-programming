@@ -6,7 +6,7 @@ tags:
   - Design
   - Cats
 maxheader: 3
-last_modified_at: 2026-01-14
+last_modified_at: 2026-10-30
 ---
 
 If you've used GitHub for any length of time, you've probably seen their odd "Octocat" logo. This cute little cat also has a _lot_ of bizarre variations, here's an explanation of them all!
@@ -549,6 +549,13 @@ This era started in late 2014 (primarily due to Joao Ribeiro's work, his [many y
       An octocat <a href="https://en.wikipedia.org/wiki/Bomba_(Puerto_Rico)">performing a "Bomba" dance</a>, unknown usage.
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://octodex.github.com/partymartytocat/"><img src="/assets/images/2024/octocats/partymartytocat.png" /></a><br>
+      <b>#163: Partymartytocat</b><br><i><a href="https://github.com/cameronfoxly">Cameron Foxly</a> (2026-10-30)</i><br>
+      Unknown, released during GitHub Universe 2026 so likely related. 
+    </td>
+  </tr>
 </table>
 
 ### Animated Octocats
@@ -612,8 +619,6 @@ This era started in late 2014 (primarily due to Joao Ribeiro's work, his [many y
       A reference to "New User Experience" (<a href="https://medium.com/meta-research/speaking-design-what-a-few-key-terms-taught-me-82d1491d6da2#:~:text=1.-,NUX,-NUX%20literally%20means">NUX</a>), hence the capitalisation, <i>not</i> the framework "nuxt"! Used <a href="https://dribbble.com/shots/16080750-World-Building-Octocat-Animation">for sign-up flow</a>.
     </td>
   </tr>
-  <tr></tr>
-  <tr></tr>
 </table>
 
 ### Pop Culture Octocats
@@ -1152,7 +1157,7 @@ I've also heard rumours of an upcoming increased focus on Mona the Octocat, so t
 | jeejkang         | 27    |
 | johncreek        | 15    |
 | tonyjaramillo    | 14    |
-| cameronfoxly     | 13    |
+| cameronfoxly     | 14    |
 | heyhayhay        | 11    |
 | jasoncostello    | 11    |
 | jonrohan         | 4     |
@@ -1196,7 +1201,7 @@ The creator of the first Octocat adaptation (Cameron McEfee) maintained the Octo
 | 2023 | 2     |
 | 2024 | 3     |
 | 2025 | 3     |
-| 2026 | 1     |
+| 2026 | 2     |
 
 ## Conclusion
 
